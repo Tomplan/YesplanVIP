@@ -15,6 +15,7 @@
 		3CE7102C2121827A00EBF6A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */; };
 		3CE710372121827A00EBF6A5 /* YesplanVIPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710362121827A00EBF6A5 /* YesplanVIPTests.swift */; };
 		3CE710422121827A00EBF6A5 /* YesplanVIPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */; };
+		3CE710502121860F00EBF6A5 /* teset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7104F2121860F00EBF6A5 /* teset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3CE7103D2121827A00EBF6A5 /* YesplanVIPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YesplanVIPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesplanVIPUITests.swift; sourceTree = "<group>"; };
 		3CE710432121827A00EBF6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CE7104F2121860F00EBF6A5 /* teset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
+				3CE7104F2121860F00EBF6A5 /* teset.swift */,
 			);
 			path = YesplanVIP;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				3CE710212121827900EBF6A5 /* ViewController.swift in Sources */,
 				3CE710272121827900EBF6A5 /* YesplanVIP.xcdatamodeld in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
+				3CE710502121860F00EBF6A5 /* teset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
