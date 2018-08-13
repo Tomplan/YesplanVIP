@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4228F21F967962BA1CD4FB /* Pods_YesplanVIPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */; };
 		3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7101E2121827900EBF6A5 /* AppDelegate.swift */; };
 		3CE710212121827900EBF6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710202121827900EBF6A5 /* ViewController.swift */; };
 		3CE710242121827900EBF6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE710222121827900EBF6A5 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 		3CE710372121827A00EBF6A5 /* YesplanVIPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710362121827A00EBF6A5 /* YesplanVIPTests.swift */; };
 		3CE710422121827A00EBF6A5 /* YesplanVIPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */; };
 		3CE710502121860F00EBF6A5 /* teset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7104F2121860F00EBF6A5 /* teset.swift */; };
+		83379D76E58865BE931CA92B /* Pods_YesplanVIPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */; };
+		96D2045E3AAC4C7CD2A4377D /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D92707E0DF9C4F638252B21 /* Pods_YesplanVIP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07715810F8C33A7564D73404 /* Pods-YesplanVIPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIPTests/Pods-YesplanVIPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D92707E0DF9C4F638252B21 /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE7101B2121827900EBF6A5 /* YesplanVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesplanVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE7101E2121827900EBF6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CE710202121827900EBF6A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesplanVIPUITests.swift; sourceTree = "<group>"; };
 		3CE710432121827A00EBF6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE7104F2121860F00EBF6A5 /* teset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teset.swift; sourceTree = "<group>"; };
+		6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
+		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
+		CEF2A0577CF15C1A88C11CD1 /* Pods-YesplanVIPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIPUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIPUITests/Pods-YesplanVIPUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E55F0A741FF245F7CF3BFD19 /* Pods-YesplanVIPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIPTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIPTests/Pods-YesplanVIPTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF4F76BAFA49A7D1E327D553 /* Pods-YesplanVIPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIPUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIPUITests/Pods-YesplanVIPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D2045E3AAC4C7CD2A4377D /* Pods_YesplanVIP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4228F21F967962BA1CD4FB /* Pods_YesplanVIPTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83379D76E58865BE931CA92B /* Pods_YesplanVIPUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		067B5A996D35E6233F0B75A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D92707E0DF9C4F638252B21 /* Pods_YesplanVIP.framework */,
+				1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */,
+				1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3CE710122121827900EBF6A5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				3CE710352121827A00EBF6A5 /* YesplanVIPTests */,
 				3CE710402121827A00EBF6A5 /* YesplanVIPUITests */,
 				3CE7101C2121827900EBF6A5 /* Products */,
+				8270B23A3095913C66C9DB3C /* Pods */,
+				067B5A996D35E6233F0B75A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +158,19 @@
 			path = YesplanVIPUITests;
 			sourceTree = "<group>";
 		};
+		8270B23A3095913C66C9DB3C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */,
+				75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */,
+				07715810F8C33A7564D73404 /* Pods-YesplanVIPTests.debug.xcconfig */,
+				E55F0A741FF245F7CF3BFD19 /* Pods-YesplanVIPTests.release.xcconfig */,
+				FF4F76BAFA49A7D1E327D553 /* Pods-YesplanVIPUITests.debug.xcconfig */,
+				CEF2A0577CF15C1A88C11CD1 /* Pods-YesplanVIPUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CE710462121827A00EBF6A5 /* Build configuration list for PBXNativeTarget "YesplanVIP" */;
 			buildPhases = (
+				E9250E09F3080259DD52CD7D /* [CP] Check Pods Manifest.lock */,
 				3CE710172121827900EBF6A5 /* Sources */,
 				3CE710182121827900EBF6A5 /* Frameworks */,
 				3CE710192121827900EBF6A5 /* Resources */,
+				E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */,
+				565C71D73C785F6F43099377 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CE710492121827A00EBF6A5 /* Build configuration list for PBXNativeTarget "YesplanVIPTests" */;
 			buildPhases = (
+				2A3F1511170C400032804029 /* [CP] Check Pods Manifest.lock */,
 				3CE7102E2121827A00EBF6A5 /* Sources */,
 				3CE7102F2121827A00EBF6A5 /* Frameworks */,
 				3CE710302121827A00EBF6A5 /* Resources */,
+				9550D9A890C1E1792014DBD3 /* [CP] Embed Pods Frameworks */,
+				ECF1923DEB66AC306C2CCBB2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CE7104C2121827A00EBF6A5 /* Build configuration list for PBXNativeTarget "YesplanVIPUITests" */;
 			buildPhases = (
+				D8ED761C398DDA580B1A6494 /* [CP] Check Pods Manifest.lock */,
 				3CE710392121827A00EBF6A5 /* Sources */,
 				3CE7103A2121827A00EBF6A5 /* Frameworks */,
 				3CE7103B2121827A00EBF6A5 /* Resources */,
+				444C0A9C4411CF3DB4A3303D /* [CP] Embed Pods Frameworks */,
+				6D82532F876669AEB7E50C17 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,160 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A3F1511170C400032804029 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YesplanVIPTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		444C0A9C4411CF3DB4A3303D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIPUITests/Pods-YesplanVIPUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		565C71D73C785F6F43099377 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D82532F876669AEB7E50C17 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIPUITests/Pods-YesplanVIPUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9550D9A890C1E1792014DBD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIPTests/Pods-YesplanVIPTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8ED761C398DDA580B1A6494 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YesplanVIPUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9250E09F3080259DD52CD7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YesplanVIP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECF1923DEB66AC306C2CCBB2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIPTests/Pods-YesplanVIPTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3CE710172121827900EBF6A5 /* Sources */ = {
@@ -436,15 +639,13 @@
 		};
 		3CE710472121827A00EBF6A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -454,15 +655,13 @@
 		};
 		3CE710482121827A00EBF6A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -472,17 +671,14 @@
 		};
 		3CE7104A2121827A00EBF6A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07715810F8C33A7564D73404 /* Pods-YesplanVIPTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -493,17 +689,14 @@
 		};
 		3CE7104B2121827A00EBF6A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E55F0A741FF245F7CF3BFD19 /* Pods-YesplanVIPTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -514,16 +707,13 @@
 		};
 		3CE7104D2121827A00EBF6A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF4F76BAFA49A7D1E327D553 /* Pods-YesplanVIPUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -534,16 +724,13 @@
 		};
 		3CE7104E2121827A00EBF6A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEF2A0577CF15C1A88C11CD1 /* Pods-YesplanVIPUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
