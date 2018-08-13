@@ -145,6 +145,9 @@
 		3CE711012121A84400EBF6A5 /* HelpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */; };
 		3CE711022121A84400EBF6A5 /* HelpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */; };
 		3CE711032121A84400EBF6A5 /* HelpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */; };
+		3CE711062121AD7100EBF6A5 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE711052121AD7100EBF6A5 /* DictionaryExtension.swift */; };
+		3CE711072121AD7100EBF6A5 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE711052121AD7100EBF6A5 /* DictionaryExtension.swift */; };
+		3CE711082121AD7100EBF6A5 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE711052121AD7100EBF6A5 /* DictionaryExtension.swift */; };
 		83379D76E58865BE931CA92B /* Pods_YesplanVIPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */; };
 		96D2045E3AAC4C7CD2A4377D /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D92707E0DF9C4F638252B21 /* Pods_YesplanVIP.framework */; };
 /* End PBXBuildFile section */
@@ -228,6 +231,7 @@
 		3CE710EF2121A84400EBF6A5 /* HelpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpModels.swift; sourceTree = "<group>"; };
 		3CE710F02121A84400EBF6A5 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInteractor.swift; sourceTree = "<group>"; };
+		3CE711052121AD7100EBF6A5 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
 		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		CEF2A0577CF15C1A88C11CD1 /* Pods-YesplanVIPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIPUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIPUITests/Pods-YesplanVIPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 			children = (
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
 				3CE710512121A68000EBF6A5 /* MainTabBarController.swift */,
+				3CE711052121AD7100EBF6A5 /* DictionaryExtension.swift */,
 				3CE7106E2121A74600EBF6A5 /* Scenes */,
 				3CE710222121827900EBF6A5 /* Main.storyboard */,
 				3CE710282121827A00EBF6A5 /* Assets.xcassets */,
@@ -780,6 +785,7 @@
 				3CE7107B2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
 				3CE710C02121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */,
 				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,
+				3CE711062121AD7100EBF6A5 /* DictionaryExtension.swift in Sources */,
 				3CE710DF2121A82100EBF6A5 /* UserRouter.swift in Sources */,
 				3CE7106A2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */,
 				3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
@@ -821,6 +827,7 @@
 				3CE710792121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
 				3CE710372121827A00EBF6A5 /* YesplanVIPTests.swift in Sources */,
 				3CE710F32121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
+				3CE711072121AD7100EBF6A5 /* DictionaryExtension.swift in Sources */,
 				3CE710682121A6D100EBF6A5 /* EventsViewController.swift in Sources */,
 				3CE710B72121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3CE710E62121A82100EBF6A5 /* UserViewController.swift in Sources */,
@@ -872,6 +879,7 @@
 				3CE7107A2121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
 				3CE710422121827A00EBF6A5 /* YesplanVIPUITests.swift in Sources */,
 				3CE710F42121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
+				3CE711082121AD7100EBF6A5 /* DictionaryExtension.swift in Sources */,
 				3CE710692121A6D100EBF6A5 /* EventsViewController.swift in Sources */,
 				3CE710B82121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3CE710E72121A82100EBF6A5 /* UserViewController.swift in Sources */,
