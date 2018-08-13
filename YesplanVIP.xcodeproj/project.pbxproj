@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F4228F21F967962BA1CD4FB /* Pods_YesplanVIPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */; };
 		3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7101E2121827900EBF6A5 /* AppDelegate.swift */; };
-		3CE710212121827900EBF6A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710202121827900EBF6A5 /* ViewController.swift */; };
 		3CE710242121827900EBF6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE710222121827900EBF6A5 /* Main.storyboard */; };
 		3CE710272121827900EBF6A5 /* YesplanVIP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */; };
 		3CE710292121827A00EBF6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CE710282121827A00EBF6A5 /* Assets.xcassets */; };
@@ -17,6 +16,135 @@
 		3CE710372121827A00EBF6A5 /* YesplanVIPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710362121827A00EBF6A5 /* YesplanVIPTests.swift */; };
 		3CE710422121827A00EBF6A5 /* YesplanVIPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */; };
 		3CE710502121860F00EBF6A5 /* teset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7104F2121860F00EBF6A5 /* teset.swift */; };
+		3CE710522121A68000EBF6A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710512121A68000EBF6A5 /* MainTabBarController.swift */; };
+		3CE710532121A68000EBF6A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710512121A68000EBF6A5 /* MainTabBarController.swift */; };
+		3CE710542121A68000EBF6A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710512121A68000EBF6A5 /* MainTabBarController.swift */; };
+		3CE7105B2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */; };
+		3CE7105C2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */; };
+		3CE7105D2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */; };
+		3CE7105E2121A6D100EBF6A5 /* EventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710562121A6D100EBF6A5 /* EventsWorker.swift */; };
+		3CE7105F2121A6D100EBF6A5 /* EventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710562121A6D100EBF6A5 /* EventsWorker.swift */; };
+		3CE710602121A6D100EBF6A5 /* EventsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710562121A6D100EBF6A5 /* EventsWorker.swift */; };
+		3CE710612121A6D100EBF6A5 /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710572121A6D100EBF6A5 /* EventsRouter.swift */; };
+		3CE710622121A6D100EBF6A5 /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710572121A6D100EBF6A5 /* EventsRouter.swift */; };
+		3CE710632121A6D100EBF6A5 /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710572121A6D100EBF6A5 /* EventsRouter.swift */; };
+		3CE710642121A6D100EBF6A5 /* EventsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710582121A6D100EBF6A5 /* EventsModels.swift */; };
+		3CE710652121A6D100EBF6A5 /* EventsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710582121A6D100EBF6A5 /* EventsModels.swift */; };
+		3CE710662121A6D100EBF6A5 /* EventsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710582121A6D100EBF6A5 /* EventsModels.swift */; };
+		3CE710672121A6D100EBF6A5 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710592121A6D100EBF6A5 /* EventsViewController.swift */; };
+		3CE710682121A6D100EBF6A5 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710592121A6D100EBF6A5 /* EventsViewController.swift */; };
+		3CE710692121A6D100EBF6A5 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710592121A6D100EBF6A5 /* EventsViewController.swift */; };
+		3CE7106A2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7105A2121A6D100EBF6A5 /* EventsInteractor.swift */; };
+		3CE7106B2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7105A2121A6D100EBF6A5 /* EventsInteractor.swift */; };
+		3CE7106C2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7105A2121A6D100EBF6A5 /* EventsInteractor.swift */; };
+		3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7106F2121A76400EBF6A5 /* TeamplannerPresenter.swift */; };
+		3CE710762121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7106F2121A76400EBF6A5 /* TeamplannerPresenter.swift */; };
+		3CE710772121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7106F2121A76400EBF6A5 /* TeamplannerPresenter.swift */; };
+		3CE710782121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710702121A76400EBF6A5 /* TeamplannerWorker.swift */; };
+		3CE710792121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710702121A76400EBF6A5 /* TeamplannerWorker.swift */; };
+		3CE7107A2121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710702121A76400EBF6A5 /* TeamplannerWorker.swift */; };
+		3CE7107B2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710712121A76400EBF6A5 /* TeamplannerRouter.swift */; };
+		3CE7107C2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710712121A76400EBF6A5 /* TeamplannerRouter.swift */; };
+		3CE7107D2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710712121A76400EBF6A5 /* TeamplannerRouter.swift */; };
+		3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710722121A76400EBF6A5 /* TeamplannerModels.swift */; };
+		3CE7107F2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710722121A76400EBF6A5 /* TeamplannerModels.swift */; };
+		3CE710802121A76400EBF6A5 /* TeamplannerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710722121A76400EBF6A5 /* TeamplannerModels.swift */; };
+		3CE710812121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710732121A76400EBF6A5 /* TeamplannerViewController.swift */; };
+		3CE710822121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710732121A76400EBF6A5 /* TeamplannerViewController.swift */; };
+		3CE710832121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710732121A76400EBF6A5 /* TeamplannerViewController.swift */; };
+		3CE710842121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710742121A76400EBF6A5 /* TeamplannerInteractor.swift */; };
+		3CE710852121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710742121A76400EBF6A5 /* TeamplannerInteractor.swift */; };
+		3CE710862121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710742121A76400EBF6A5 /* TeamplannerInteractor.swift */; };
+		3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710882121A78800EBF6A5 /* TasksPresenter.swift */; };
+		3CE7108F2121A78800EBF6A5 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710882121A78800EBF6A5 /* TasksPresenter.swift */; };
+		3CE710902121A78800EBF6A5 /* TasksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710882121A78800EBF6A5 /* TasksPresenter.swift */; };
+		3CE710912121A78800EBF6A5 /* TasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710892121A78800EBF6A5 /* TasksWorker.swift */; };
+		3CE710922121A78800EBF6A5 /* TasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710892121A78800EBF6A5 /* TasksWorker.swift */; };
+		3CE710932121A78800EBF6A5 /* TasksWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710892121A78800EBF6A5 /* TasksWorker.swift */; };
+		3CE710942121A78800EBF6A5 /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108A2121A78800EBF6A5 /* TasksRouter.swift */; };
+		3CE710952121A78800EBF6A5 /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108A2121A78800EBF6A5 /* TasksRouter.swift */; };
+		3CE710962121A78800EBF6A5 /* TasksRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108A2121A78800EBF6A5 /* TasksRouter.swift */; };
+		3CE710972121A78800EBF6A5 /* TasksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108B2121A78800EBF6A5 /* TasksModels.swift */; };
+		3CE710982121A78800EBF6A5 /* TasksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108B2121A78800EBF6A5 /* TasksModels.swift */; };
+		3CE710992121A78800EBF6A5 /* TasksModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108B2121A78800EBF6A5 /* TasksModels.swift */; };
+		3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108C2121A78800EBF6A5 /* TasksViewController.swift */; };
+		3CE7109B2121A78800EBF6A5 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108C2121A78800EBF6A5 /* TasksViewController.swift */; };
+		3CE7109C2121A78800EBF6A5 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108C2121A78800EBF6A5 /* TasksViewController.swift */; };
+		3CE7109D2121A78800EBF6A5 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108D2121A78800EBF6A5 /* TasksInteractor.swift */; };
+		3CE7109E2121A78800EBF6A5 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108D2121A78800EBF6A5 /* TasksInteractor.swift */; };
+		3CE7109F2121A78800EBF6A5 /* TasksInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7108D2121A78800EBF6A5 /* TasksInteractor.swift */; };
+		3CE710A72121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A12121A7A900EBF6A5 /* ContactsPresenter.swift */; };
+		3CE710A82121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A12121A7A900EBF6A5 /* ContactsPresenter.swift */; };
+		3CE710A92121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A12121A7A900EBF6A5 /* ContactsPresenter.swift */; };
+		3CE710AA2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A22121A7A900EBF6A5 /* ContactsWorker.swift */; };
+		3CE710AB2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A22121A7A900EBF6A5 /* ContactsWorker.swift */; };
+		3CE710AC2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A22121A7A900EBF6A5 /* ContactsWorker.swift */; };
+		3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A32121A7A900EBF6A5 /* ContactsRouter.swift */; };
+		3CE710AE2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A32121A7A900EBF6A5 /* ContactsRouter.swift */; };
+		3CE710AF2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A32121A7A900EBF6A5 /* ContactsRouter.swift */; };
+		3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A42121A7A900EBF6A5 /* ContactsModels.swift */; };
+		3CE710B12121A7A900EBF6A5 /* ContactsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A42121A7A900EBF6A5 /* ContactsModels.swift */; };
+		3CE710B22121A7A900EBF6A5 /* ContactsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A42121A7A900EBF6A5 /* ContactsModels.swift */; };
+		3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A52121A7A900EBF6A5 /* ContactsViewController.swift */; };
+		3CE710B42121A7A900EBF6A5 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A52121A7A900EBF6A5 /* ContactsViewController.swift */; };
+		3CE710B52121A7A900EBF6A5 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A52121A7A900EBF6A5 /* ContactsViewController.swift */; };
+		3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A62121A7A900EBF6A5 /* ContactsInteractor.swift */; };
+		3CE710B72121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A62121A7A900EBF6A5 /* ContactsInteractor.swift */; };
+		3CE710B82121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710A62121A7A900EBF6A5 /* ContactsInteractor.swift */; };
+		3CE710C02121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BA2121A7E300EBF6A5 /* ToDoPresenter.swift */; };
+		3CE710C12121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BA2121A7E300EBF6A5 /* ToDoPresenter.swift */; };
+		3CE710C22121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BA2121A7E300EBF6A5 /* ToDoPresenter.swift */; };
+		3CE710C32121A7E300EBF6A5 /* ToDoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BB2121A7E300EBF6A5 /* ToDoWorker.swift */; };
+		3CE710C42121A7E300EBF6A5 /* ToDoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BB2121A7E300EBF6A5 /* ToDoWorker.swift */; };
+		3CE710C52121A7E300EBF6A5 /* ToDoWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BB2121A7E300EBF6A5 /* ToDoWorker.swift */; };
+		3CE710C62121A7E300EBF6A5 /* ToDoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BC2121A7E300EBF6A5 /* ToDoRouter.swift */; };
+		3CE710C72121A7E300EBF6A5 /* ToDoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BC2121A7E300EBF6A5 /* ToDoRouter.swift */; };
+		3CE710C82121A7E300EBF6A5 /* ToDoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BC2121A7E300EBF6A5 /* ToDoRouter.swift */; };
+		3CE710C92121A7E300EBF6A5 /* ToDoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BD2121A7E300EBF6A5 /* ToDoModels.swift */; };
+		3CE710CA2121A7E300EBF6A5 /* ToDoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BD2121A7E300EBF6A5 /* ToDoModels.swift */; };
+		3CE710CB2121A7E300EBF6A5 /* ToDoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BD2121A7E300EBF6A5 /* ToDoModels.swift */; };
+		3CE710CC2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BE2121A7E300EBF6A5 /* ToDoViewController.swift */; };
+		3CE710CD2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BE2121A7E300EBF6A5 /* ToDoViewController.swift */; };
+		3CE710CE2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BE2121A7E300EBF6A5 /* ToDoViewController.swift */; };
+		3CE710CF2121A7E300EBF6A5 /* ToDoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BF2121A7E300EBF6A5 /* ToDoInteractor.swift */; };
+		3CE710D02121A7E300EBF6A5 /* ToDoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BF2121A7E300EBF6A5 /* ToDoInteractor.swift */; };
+		3CE710D12121A7E300EBF6A5 /* ToDoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710BF2121A7E300EBF6A5 /* ToDoInteractor.swift */; };
+		3CE710D92121A82100EBF6A5 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D32121A82100EBF6A5 /* UserPresenter.swift */; };
+		3CE710DA2121A82100EBF6A5 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D32121A82100EBF6A5 /* UserPresenter.swift */; };
+		3CE710DB2121A82100EBF6A5 /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D32121A82100EBF6A5 /* UserPresenter.swift */; };
+		3CE710DC2121A82100EBF6A5 /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D42121A82100EBF6A5 /* UserWorker.swift */; };
+		3CE710DD2121A82100EBF6A5 /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D42121A82100EBF6A5 /* UserWorker.swift */; };
+		3CE710DE2121A82100EBF6A5 /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D42121A82100EBF6A5 /* UserWorker.swift */; };
+		3CE710DF2121A82100EBF6A5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D52121A82100EBF6A5 /* UserRouter.swift */; };
+		3CE710E02121A82100EBF6A5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D52121A82100EBF6A5 /* UserRouter.swift */; };
+		3CE710E12121A82100EBF6A5 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D52121A82100EBF6A5 /* UserRouter.swift */; };
+		3CE710E22121A82100EBF6A5 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D62121A82100EBF6A5 /* UserModels.swift */; };
+		3CE710E32121A82100EBF6A5 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D62121A82100EBF6A5 /* UserModels.swift */; };
+		3CE710E42121A82100EBF6A5 /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D62121A82100EBF6A5 /* UserModels.swift */; };
+		3CE710E52121A82100EBF6A5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D72121A82100EBF6A5 /* UserViewController.swift */; };
+		3CE710E62121A82100EBF6A5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D72121A82100EBF6A5 /* UserViewController.swift */; };
+		3CE710E72121A82100EBF6A5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D72121A82100EBF6A5 /* UserViewController.swift */; };
+		3CE710E82121A82100EBF6A5 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D82121A82100EBF6A5 /* UserInteractor.swift */; };
+		3CE710E92121A82100EBF6A5 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D82121A82100EBF6A5 /* UserInteractor.swift */; };
+		3CE710EA2121A82100EBF6A5 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710D82121A82100EBF6A5 /* UserInteractor.swift */; };
+		3CE710F22121A84400EBF6A5 /* HelpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EC2121A84400EBF6A5 /* HelpPresenter.swift */; };
+		3CE710F32121A84400EBF6A5 /* HelpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EC2121A84400EBF6A5 /* HelpPresenter.swift */; };
+		3CE710F42121A84400EBF6A5 /* HelpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EC2121A84400EBF6A5 /* HelpPresenter.swift */; };
+		3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710ED2121A84400EBF6A5 /* HelpWorker.swift */; };
+		3CE710F62121A84400EBF6A5 /* HelpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710ED2121A84400EBF6A5 /* HelpWorker.swift */; };
+		3CE710F72121A84400EBF6A5 /* HelpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710ED2121A84400EBF6A5 /* HelpWorker.swift */; };
+		3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EE2121A84400EBF6A5 /* HelpRouter.swift */; };
+		3CE710F92121A84400EBF6A5 /* HelpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EE2121A84400EBF6A5 /* HelpRouter.swift */; };
+		3CE710FA2121A84400EBF6A5 /* HelpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EE2121A84400EBF6A5 /* HelpRouter.swift */; };
+		3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EF2121A84400EBF6A5 /* HelpModels.swift */; };
+		3CE710FC2121A84400EBF6A5 /* HelpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EF2121A84400EBF6A5 /* HelpModels.swift */; };
+		3CE710FD2121A84400EBF6A5 /* HelpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710EF2121A84400EBF6A5 /* HelpModels.swift */; };
+		3CE710FE2121A84400EBF6A5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F02121A84400EBF6A5 /* HelpViewController.swift */; };
+		3CE710FF2121A84400EBF6A5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F02121A84400EBF6A5 /* HelpViewController.swift */; };
+		3CE711002121A84400EBF6A5 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F02121A84400EBF6A5 /* HelpViewController.swift */; };
+		3CE711012121A84400EBF6A5 /* HelpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */; };
+		3CE711022121A84400EBF6A5 /* HelpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */; };
+		3CE711032121A84400EBF6A5 /* HelpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */; };
 		83379D76E58865BE931CA92B /* Pods_YesplanVIPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */; };
 		96D2045E3AAC4C7CD2A4377D /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D92707E0DF9C4F638252B21 /* Pods_YesplanVIP.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +173,6 @@
 		1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE7101B2121827900EBF6A5 /* YesplanVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesplanVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE7101E2121827900EBF6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3CE710202121827900EBF6A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3CE710232121827900EBF6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CE710262121827900EBF6A5 /* YesplanVIP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YesplanVIP.xcdatamodel; sourceTree = "<group>"; };
 		3CE710282121827A00EBF6A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +185,49 @@
 		3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesplanVIPUITests.swift; sourceTree = "<group>"; };
 		3CE710432121827A00EBF6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CE7104F2121860F00EBF6A5 /* teset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teset.swift; sourceTree = "<group>"; };
+		3CE710512121A68000EBF6A5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
+		3CE710562121A6D100EBF6A5 /* EventsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsWorker.swift; sourceTree = "<group>"; };
+		3CE710572121A6D100EBF6A5 /* EventsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRouter.swift; sourceTree = "<group>"; };
+		3CE710582121A6D100EBF6A5 /* EventsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModels.swift; sourceTree = "<group>"; };
+		3CE710592121A6D100EBF6A5 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		3CE7105A2121A6D100EBF6A5 /* EventsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsInteractor.swift; sourceTree = "<group>"; };
+		3CE7106F2121A76400EBF6A5 /* TeamplannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerPresenter.swift; sourceTree = "<group>"; };
+		3CE710702121A76400EBF6A5 /* TeamplannerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerWorker.swift; sourceTree = "<group>"; };
+		3CE710712121A76400EBF6A5 /* TeamplannerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerRouter.swift; sourceTree = "<group>"; };
+		3CE710722121A76400EBF6A5 /* TeamplannerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerModels.swift; sourceTree = "<group>"; };
+		3CE710732121A76400EBF6A5 /* TeamplannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerViewController.swift; sourceTree = "<group>"; };
+		3CE710742121A76400EBF6A5 /* TeamplannerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerInteractor.swift; sourceTree = "<group>"; };
+		3CE710882121A78800EBF6A5 /* TasksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksPresenter.swift; sourceTree = "<group>"; };
+		3CE710892121A78800EBF6A5 /* TasksWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksWorker.swift; sourceTree = "<group>"; };
+		3CE7108A2121A78800EBF6A5 /* TasksRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRouter.swift; sourceTree = "<group>"; };
+		3CE7108B2121A78800EBF6A5 /* TasksModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModels.swift; sourceTree = "<group>"; };
+		3CE7108C2121A78800EBF6A5 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		3CE7108D2121A78800EBF6A5 /* TasksInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksInteractor.swift; sourceTree = "<group>"; };
+		3CE710A12121A7A900EBF6A5 /* ContactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
+		3CE710A22121A7A900EBF6A5 /* ContactsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsWorker.swift; sourceTree = "<group>"; };
+		3CE710A32121A7A900EBF6A5 /* ContactsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
+		3CE710A42121A7A900EBF6A5 /* ContactsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModels.swift; sourceTree = "<group>"; };
+		3CE710A52121A7A900EBF6A5 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		3CE710A62121A7A900EBF6A5 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
+		3CE710BA2121A7E300EBF6A5 /* ToDoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoPresenter.swift; sourceTree = "<group>"; };
+		3CE710BB2121A7E300EBF6A5 /* ToDoWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoWorker.swift; sourceTree = "<group>"; };
+		3CE710BC2121A7E300EBF6A5 /* ToDoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRouter.swift; sourceTree = "<group>"; };
+		3CE710BD2121A7E300EBF6A5 /* ToDoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModels.swift; sourceTree = "<group>"; };
+		3CE710BE2121A7E300EBF6A5 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		3CE710BF2121A7E300EBF6A5 /* ToDoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInteractor.swift; sourceTree = "<group>"; };
+		3CE710D32121A82100EBF6A5 /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		3CE710D42121A82100EBF6A5 /* UserWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
+		3CE710D52121A82100EBF6A5 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		3CE710D62121A82100EBF6A5 /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		3CE710D72121A82100EBF6A5 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		3CE710D82121A82100EBF6A5 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		3CE710EC2121A84400EBF6A5 /* HelpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpPresenter.swift; sourceTree = "<group>"; };
+		3CE710ED2121A84400EBF6A5 /* HelpWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpWorker.swift; sourceTree = "<group>"; };
+		3CE710EE2121A84400EBF6A5 /* HelpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpRouter.swift; sourceTree = "<group>"; };
+		3CE710EF2121A84400EBF6A5 /* HelpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpModels.swift; sourceTree = "<group>"; };
+		3CE710F02121A84400EBF6A5 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpInteractor.swift; sourceTree = "<group>"; };
 		6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
 		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		CEF2A0577CF15C1A88C11CD1 /* Pods-YesplanVIPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIPUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIPUITests/Pods-YesplanVIPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,7 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
-				3CE710202121827900EBF6A5 /* ViewController.swift */,
+				3CE710512121A68000EBF6A5 /* MainTabBarController.swift */,
+				3CE7106E2121A74600EBF6A5 /* Scenes */,
 				3CE710222121827900EBF6A5 /* Main.storyboard */,
 				3CE710282121827A00EBF6A5 /* Assets.xcassets */,
 				3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */,
@@ -156,6 +327,111 @@
 				3CE710432121827A00EBF6A5 /* Info.plist */,
 			);
 			path = YesplanVIPUITests;
+			sourceTree = "<group>";
+		};
+		3CE7106D2121A6DC00EBF6A5 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */,
+				3CE710562121A6D100EBF6A5 /* EventsWorker.swift */,
+				3CE710572121A6D100EBF6A5 /* EventsRouter.swift */,
+				3CE710582121A6D100EBF6A5 /* EventsModels.swift */,
+				3CE710592121A6D100EBF6A5 /* EventsViewController.swift */,
+				3CE7105A2121A6D100EBF6A5 /* EventsInteractor.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		3CE7106E2121A74600EBF6A5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3CE7106D2121A6DC00EBF6A5 /* Events */,
+				3CE710872121A76B00EBF6A5 /* Teamplanner */,
+				3CE710A02121A79200EBF6A5 /* Tasks */,
+				3CE710B92121A7B200EBF6A5 /* Contacts */,
+				3CE710D22121A7EB00EBF6A5 /* ToDo */,
+				3CE710EB2121A82A00EBF6A5 /* User */,
+				3CE711042121A84C00EBF6A5 /* Help */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3CE710872121A76B00EBF6A5 /* Teamplanner */ = {
+			isa = PBXGroup;
+			children = (
+				3CE7106F2121A76400EBF6A5 /* TeamplannerPresenter.swift */,
+				3CE710702121A76400EBF6A5 /* TeamplannerWorker.swift */,
+				3CE710712121A76400EBF6A5 /* TeamplannerRouter.swift */,
+				3CE710722121A76400EBF6A5 /* TeamplannerModels.swift */,
+				3CE710732121A76400EBF6A5 /* TeamplannerViewController.swift */,
+				3CE710742121A76400EBF6A5 /* TeamplannerInteractor.swift */,
+			);
+			path = Teamplanner;
+			sourceTree = "<group>";
+		};
+		3CE710A02121A79200EBF6A5 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				3CE710882121A78800EBF6A5 /* TasksPresenter.swift */,
+				3CE710892121A78800EBF6A5 /* TasksWorker.swift */,
+				3CE7108A2121A78800EBF6A5 /* TasksRouter.swift */,
+				3CE7108B2121A78800EBF6A5 /* TasksModels.swift */,
+				3CE7108C2121A78800EBF6A5 /* TasksViewController.swift */,
+				3CE7108D2121A78800EBF6A5 /* TasksInteractor.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		3CE710B92121A7B200EBF6A5 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				3CE710A12121A7A900EBF6A5 /* ContactsPresenter.swift */,
+				3CE710A22121A7A900EBF6A5 /* ContactsWorker.swift */,
+				3CE710A32121A7A900EBF6A5 /* ContactsRouter.swift */,
+				3CE710A42121A7A900EBF6A5 /* ContactsModels.swift */,
+				3CE710A52121A7A900EBF6A5 /* ContactsViewController.swift */,
+				3CE710A62121A7A900EBF6A5 /* ContactsInteractor.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		3CE710D22121A7EB00EBF6A5 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				3CE710BA2121A7E300EBF6A5 /* ToDoPresenter.swift */,
+				3CE710BB2121A7E300EBF6A5 /* ToDoWorker.swift */,
+				3CE710BC2121A7E300EBF6A5 /* ToDoRouter.swift */,
+				3CE710BD2121A7E300EBF6A5 /* ToDoModels.swift */,
+				3CE710BE2121A7E300EBF6A5 /* ToDoViewController.swift */,
+				3CE710BF2121A7E300EBF6A5 /* ToDoInteractor.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		3CE710EB2121A82A00EBF6A5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3CE710D32121A82100EBF6A5 /* UserPresenter.swift */,
+				3CE710D42121A82100EBF6A5 /* UserWorker.swift */,
+				3CE710D52121A82100EBF6A5 /* UserRouter.swift */,
+				3CE710D62121A82100EBF6A5 /* UserModels.swift */,
+				3CE710D72121A82100EBF6A5 /* UserViewController.swift */,
+				3CE710D82121A82100EBF6A5 /* UserInteractor.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		3CE711042121A84C00EBF6A5 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				3CE710EC2121A84400EBF6A5 /* HelpPresenter.swift */,
+				3CE710ED2121A84400EBF6A5 /* HelpWorker.swift */,
+				3CE710EE2121A84400EBF6A5 /* HelpRouter.swift */,
+				3CE710EF2121A84400EBF6A5 /* HelpModels.swift */,
+				3CE710F02121A84400EBF6A5 /* HelpViewController.swift */,
+				3CE710F12121A84400EBF6A5 /* HelpInteractor.swift */,
+			);
+			path = Help;
 			sourceTree = "<group>";
 		};
 		8270B23A3095913C66C9DB3C /* Pods */ = {
@@ -465,10 +741,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CE710212121827900EBF6A5 /* ViewController.swift in Sources */,
+				3CE710DC2121A82100EBF6A5 /* UserWorker.swift in Sources */,
+				3CE710E82121A82100EBF6A5 /* UserInteractor.swift in Sources */,
+				3CE710AA2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
 				3CE710272121827900EBF6A5 /* YesplanVIP.xcdatamodeld in Sources */,
+				3CE710FE2121A84400EBF6A5 /* HelpViewController.swift in Sources */,
+				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
+				3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
+				3CE710D92121A82100EBF6A5 /* UserPresenter.swift in Sources */,
+				3CE710912121A78800EBF6A5 /* TasksWorker.swift in Sources */,
+				3CE710F22121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
+				3CE710612121A6D100EBF6A5 /* EventsRouter.swift in Sources */,
+				3CE710C92121A7E300EBF6A5 /* ToDoModels.swift in Sources */,
+				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
+				3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */,
+				3CE7105B2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */,
+				3CE711012121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
+				3CE710C62121A7E300EBF6A5 /* ToDoRouter.swift in Sources */,
+				3CE710C32121A7E300EBF6A5 /* ToDoWorker.swift in Sources */,
+				3CE710522121A68000EBF6A5 /* MainTabBarController.swift in Sources */,
+				3CE710972121A78800EBF6A5 /* TasksModels.swift in Sources */,
+				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
+				3CE710E22121A82100EBF6A5 /* UserModels.swift in Sources */,
+				3CE7105E2121A6D100EBF6A5 /* EventsWorker.swift in Sources */,
+				3CE7109D2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
+				3CE710CF2121A7E300EBF6A5 /* ToDoInteractor.swift in Sources */,
+				3CE710642121A6D100EBF6A5 /* EventsModels.swift in Sources */,
+				3CE710782121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
+				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
+				3CE710A72121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
+				3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
+				3CE710842121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */,
+				3CE710CC2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */,
+				3CE710812121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
+				3CE710E52121A82100EBF6A5 /* UserViewController.swift in Sources */,
+				3CE710942121A78800EBF6A5 /* TasksRouter.swift in Sources */,
+				3CE7107B2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
+				3CE710C02121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */,
+				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,
+				3CE710DF2121A82100EBF6A5 /* UserRouter.swift in Sources */,
+				3CE7106A2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */,
+				3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
+				3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
 				3CE710502121860F00EBF6A5 /* teset.swift in Sources */,
+				3CE710672121A6D100EBF6A5 /* EventsViewController.swift in Sources */,
+				3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +794,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE710D02121A7E300EBF6A5 /* ToDoInteractor.swift in Sources */,
+				3CE710622121A6D100EBF6A5 /* EventsRouter.swift in Sources */,
+				3CE7109E2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
+				3CE710E92121A82100EBF6A5 /* UserInteractor.swift in Sources */,
+				3CE710FF2121A84400EBF6A5 /* HelpViewController.swift in Sources */,
+				3CE710FC2121A84400EBF6A5 /* HelpModels.swift in Sources */,
+				3CE710762121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
+				3CE710E02121A82100EBF6A5 /* UserRouter.swift in Sources */,
+				3CE710F62121A84400EBF6A5 /* HelpWorker.swift in Sources */,
+				3CE710F92121A84400EBF6A5 /* HelpRouter.swift in Sources */,
+				3CE710C42121A7E300EBF6A5 /* ToDoWorker.swift in Sources */,
+				3CE710852121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */,
+				3CE710C12121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */,
+				3CE710AB2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
+				3CE710952121A78800EBF6A5 /* TasksRouter.swift in Sources */,
+				3CE7106B2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */,
+				3CE710CD2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */,
+				3CE710822121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
+				3CE7105F2121A6D100EBF6A5 /* EventsWorker.swift in Sources */,
+				3CE710CA2121A7E300EBF6A5 /* ToDoModels.swift in Sources */,
+				3CE7108F2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
+				3CE710532121A68000EBF6A5 /* MainTabBarController.swift in Sources */,
+				3CE710A82121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
+				3CE711022121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
+				3CE710792121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
 				3CE710372121827A00EBF6A5 /* YesplanVIPTests.swift in Sources */,
+				3CE710F32121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
+				3CE710682121A6D100EBF6A5 /* EventsViewController.swift in Sources */,
+				3CE710B72121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
+				3CE710E62121A82100EBF6A5 /* UserViewController.swift in Sources */,
+				3CE710DA2121A82100EBF6A5 /* UserPresenter.swift in Sources */,
+				3CE710982121A78800EBF6A5 /* TasksModels.swift in Sources */,
+				3CE710652121A6D100EBF6A5 /* EventsModels.swift in Sources */,
+				3CE710922121A78800EBF6A5 /* TasksWorker.swift in Sources */,
+				3CE710B12121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
+				3CE7109B2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
+				3CE7107F2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
+				3CE710DD2121A82100EBF6A5 /* UserWorker.swift in Sources */,
+				3CE710C72121A7E300EBF6A5 /* ToDoRouter.swift in Sources */,
+				3CE710AE2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
+				3CE7105C2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */,
+				3CE7107C2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
+				3CE710E32121A82100EBF6A5 /* UserModels.swift in Sources */,
+				3CE710B42121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +845,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE710D12121A7E300EBF6A5 /* ToDoInteractor.swift in Sources */,
+				3CE710632121A6D100EBF6A5 /* EventsRouter.swift in Sources */,
+				3CE7109F2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
+				3CE710EA2121A82100EBF6A5 /* UserInteractor.swift in Sources */,
+				3CE711002121A84400EBF6A5 /* HelpViewController.swift in Sources */,
+				3CE710FD2121A84400EBF6A5 /* HelpModels.swift in Sources */,
+				3CE710772121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
+				3CE710E12121A82100EBF6A5 /* UserRouter.swift in Sources */,
+				3CE710F72121A84400EBF6A5 /* HelpWorker.swift in Sources */,
+				3CE710FA2121A84400EBF6A5 /* HelpRouter.swift in Sources */,
+				3CE710C52121A7E300EBF6A5 /* ToDoWorker.swift in Sources */,
+				3CE710862121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */,
+				3CE710C22121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */,
+				3CE710AC2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
+				3CE710962121A78800EBF6A5 /* TasksRouter.swift in Sources */,
+				3CE7106C2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */,
+				3CE710CE2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */,
+				3CE710832121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
+				3CE710602121A6D100EBF6A5 /* EventsWorker.swift in Sources */,
+				3CE710CB2121A7E300EBF6A5 /* ToDoModels.swift in Sources */,
+				3CE710902121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
+				3CE710542121A68000EBF6A5 /* MainTabBarController.swift in Sources */,
+				3CE710A92121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
+				3CE711032121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
+				3CE7107A2121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
 				3CE710422121827A00EBF6A5 /* YesplanVIPUITests.swift in Sources */,
+				3CE710F42121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
+				3CE710692121A6D100EBF6A5 /* EventsViewController.swift in Sources */,
+				3CE710B82121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
+				3CE710E72121A82100EBF6A5 /* UserViewController.swift in Sources */,
+				3CE710DB2121A82100EBF6A5 /* UserPresenter.swift in Sources */,
+				3CE710992121A78800EBF6A5 /* TasksModels.swift in Sources */,
+				3CE710662121A6D100EBF6A5 /* EventsModels.swift in Sources */,
+				3CE710932121A78800EBF6A5 /* TasksWorker.swift in Sources */,
+				3CE710B22121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
+				3CE7109C2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
+				3CE710802121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
+				3CE710DE2121A82100EBF6A5 /* UserWorker.swift in Sources */,
+				3CE710C82121A7E300EBF6A5 /* ToDoRouter.swift in Sources */,
+				3CE710AF2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
+				3CE7105D2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */,
+				3CE7107D2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
+				3CE710E42121A82100EBF6A5 /* UserModels.swift in Sources */,
+				3CE710B52121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +1049,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -661,7 +1068,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -678,7 +1088,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -696,7 +1110,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -713,7 +1131,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -730,7 +1152,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
