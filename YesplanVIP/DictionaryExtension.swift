@@ -15,6 +15,7 @@ extension Dictionary {
         }
     }
     
+    
     func merged<S: Sequence>(with other: S) -> [Key: Value] where S.Iterator.Element == (key: Key, value: Value) {
         var dic = self
         dic.merge(contentsOf: other)
