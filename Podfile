@@ -9,8 +9,10 @@ target 'YesplanVIP' do
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Alamofire', '~> 4.7'
 pod "PromiseKit", "~> 6.0"
-
-
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+pod 'SearchTextField'
 
   target 'YesplanVIPTests' do
     inherit! :search_paths
