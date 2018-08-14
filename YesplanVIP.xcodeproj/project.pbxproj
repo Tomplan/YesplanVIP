@@ -15,7 +15,6 @@
 		3CE7102C2121827A00EBF6A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */; };
 		3CE710372121827A00EBF6A5 /* YesplanVIPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710362121827A00EBF6A5 /* YesplanVIPTests.swift */; };
 		3CE710422121827A00EBF6A5 /* YesplanVIPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */; };
-		3CE710502121860F00EBF6A5 /* teset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7104F2121860F00EBF6A5 /* teset.swift */; };
 		3CE710522121A68000EBF6A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710512121A68000EBF6A5 /* MainTabBarController.swift */; };
 		3CE710532121A68000EBF6A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710512121A68000EBF6A5 /* MainTabBarController.swift */; };
 		3CE710542121A68000EBF6A5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710512121A68000EBF6A5 /* MainTabBarController.swift */; };
@@ -187,7 +186,6 @@
 		3CE7103D2121827A00EBF6A5 /* YesplanVIPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YesplanVIPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE710412121827A00EBF6A5 /* YesplanVIPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesplanVIPUITests.swift; sourceTree = "<group>"; };
 		3CE710432121827A00EBF6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CE7104F2121860F00EBF6A5 /* teset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teset.swift; sourceTree = "<group>"; };
 		3CE710512121A68000EBF6A5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
 		3CE710562121A6D100EBF6A5 /* EventsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsWorker.swift; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 				3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
-				3CE7104F2121860F00EBF6A5 /* teset.swift */,
 			);
 			path = YesplanVIP;
 			sourceTree = "<group>";
@@ -790,7 +787,6 @@
 				3CE7106A2121A6D100EBF6A5 /* EventsInteractor.swift in Sources */,
 				3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
 				3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
-				3CE710502121860F00EBF6A5 /* teset.swift in Sources */,
 				3CE710672121A6D100EBF6A5 /* EventsViewController.swift in Sources */,
 				3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
 			);
