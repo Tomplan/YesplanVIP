@@ -14,7 +14,7 @@ import UIKit
 
 protocol LoginBusinessLogic
 {
-  func doSomething(request: Login.Something.Request)
+  func loginPressed(request: Login.EnterLogin.Request)
 }
 
 protocol LoginDataStore
@@ -30,12 +30,21 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
   
   // MARK: Do something
   
-  func doSomething(request: Login.Something.Request)
-  {
+    func loginPressed(request: Login.EnterLogin.Request) {
+      
     worker = LoginWorker()
     worker?.doSomeWork()
-    
-    let response = Login.Something.Response()
+        
+        let companyUrl = request.companyURL
+        let apiKey = request.apiKey
+        if companyUrl != "" && apiKey != "" {
+    let response = Login.EnterLogin.Response(success: true)
     presenter?.presentSomething(response: response)
+        }
+        else {
+            let response = Login.EnterLogin.Response(success: false)
+            print("please fill")
+            presenter?.presentSomething(response: response)
+        }
   }
 }

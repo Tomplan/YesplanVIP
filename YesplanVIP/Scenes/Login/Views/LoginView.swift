@@ -19,14 +19,14 @@ class LoginView: UIView {
     }
     
     func setup() {
-        let stackView = createStackView(views: [emailTextField,
-                                                passwordTextField,
+        let stackView = createStackView(views: [companyURLTextField,
+                                                apiKeyTextField,
                                                 loginButton,
                                                 signupButton])
         addSubview(backgroundImageView)
         addSubview(stackView)
 //        backgroundImageView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        backgroundImageView.setAnchor(top: nil, left: nil, bottom: emailTextField.topAnchor, right: nil, paddingTop: 100, paddingLeft: 100, paddingBottom: -50 , paddingRight: 100)
+        backgroundImageView.setAnchor(top: nil, left: nil, bottom: companyURLTextField.topAnchor, right: nil, paddingTop: 100, paddingLeft: 100, paddingBottom: -50 , paddingRight: 100)
         backgroundImageView.setAnchor(width: 100, height: 100)
 //        backgroundImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         backgroundImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -44,12 +44,12 @@ class LoginView: UIView {
         return iv
     }()
     
-    let emailTextField: UITextField = {
+    let companyURLTextField: UITextField = {
         let tf = UITextField(placeHolder: "'your_organization.yesplan.be'")
         return tf
     }()
     
-    let passwordTextField: UITextField = {
+    let apiKeyTextField: UITextField = {
         let tf = UITextField(placeHolder: "API_Key")
         return tf
     }()
@@ -69,7 +69,7 @@ class LoginView: UIView {
     @objc func handleLogin() {
         loginAction?()
     }
-    
+
     @objc func handleSignup() {
         signupAction?()
     }

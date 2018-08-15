@@ -15,7 +15,7 @@ import Firebase
 
 protocol LoginDisplayLogic: class
 {
-  func displaySomething(viewModel: Login.Something.ViewModel)
+  func displaySomething(viewModel: Login.EnterLogin.ViewModel)
 }
 
 class LoginViewController: UIViewController, LoginDisplayLogic
@@ -79,7 +79,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     super.viewDidLoad()
     
     title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
-    doSomething()
+//    doSomething()
     setupView()
     }
     
@@ -91,31 +91,33 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     func setupView() {
         let mainView = LoginView(frame: self.view.frame)
         self.loginView = mainView
-        self.loginView.loginAction = loginPressed
+        self.loginView.loginAction = doSomething // login
         self.loginView.signupAction = signupPressed
         self.view.addSubview(loginView)
         loginView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
   
-    func loginPressed() {
-        guard let email = loginView.emailTextField.text else { return }
-        guard let password = loginView.passwordTextField.text else { return }
+    func login() {
+        print("login")
+//        guard let companyUrl = loginView.emailTextField.text else { return }
+//        guard let apiKey = loginView.passwordTextField.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if let err = error {
-                print(err.localizedDescription)
-            } else {
-//                print("User: \(user?.uid) signed in")
-                self.defaults.set(true, forKey: "UserIsLoggedIn")
-                // show main controller
-                let mainController = UINavigationController(rootViewController: MainTabBarController())
-                self.present(mainController, animated: true, completion: nil)
-            }
-        }
+//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+//            if let err = error {
+//                print(err.localizedDescription)
+//            } else {
+////                print("User: \(user?.uid) signed in")
+//                self.defaults.set(true, forKey: "UserIsLoggedIn")
+//                // show main controller
+//                let mainController = UINavigationController(rootViewController: MainTabBarController())
+//                self.present(mainController, animated: true, completion: nil)
+//            }
+//        }
     }
     
     func signupPressed() {
         // 1
+        print("SignUp")
 //        let signUpVC = SignUpController()
 //        present(signUpVC, animated: true, completion: nil)
     }
@@ -127,12 +129,24 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   func doSomething()
   {
-    let request = Login.Something.Request()
-    interactor?.doSomething(request: request)
+    let companyUrl = loginView.companyURLTextField.text
+    let apiKey = loginView.apiKeyTextField.text
+    let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey)
+    interactor?.loginPressed(request: request)
   }
   
-  func displaySomething(viewModel: Login.Something.ViewModel)
+  func displaySomething(viewModel: Login.EnterLogin.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    if viewModel.success {
+        print(loginView.companyURLTextField.text)
+        print(loginView.apiKeyTextField.text)
+
+        print("Succes")
+//        performSegue(withIdentifier: "Home", sender: nil)
+    } else {
+        print("back to the beginning")
+        loginView.companyURLTextField.text = nil
+        loginView.apiKeyTextField.text = nil
+    }
   }
 }
