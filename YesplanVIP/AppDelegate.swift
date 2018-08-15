@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let mainVC = MainTabBarController()
+//        let mainVC = MainTabBarController()
 //        window?.rootViewController = mainVC
         window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
         
