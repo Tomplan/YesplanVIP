@@ -22,11 +22,11 @@ class LoginViewController: UIViewController, LoginDisplayLogic
 {
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
-
  
     var loginView: LoginView!
     let defaults = UserDefaults.standard
-    
+    var autofillArray: [String] = UserDefaults.standard.array(forKey: "autofillArray") as! [String]
+
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -97,8 +97,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         loginView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
   
-    func login() {
-        print("login")
+//    func login() {
+//        print("login")
 //        guard let companyUrl = loginView.emailTextField.text else { return }
 //        guard let apiKey = loginView.passwordTextField.text else { return }
         
@@ -113,7 +113,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
 //                self.present(mainController, animated: true, completion: nil)
 //            }
 //        }
-    }
+//    }
     
     func signupPressed() {
         // 1
@@ -138,15 +138,20 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   func displaySomething(viewModel: Login.EnterLogin.ViewModel)
   {
     if viewModel.success {
-        print(loginView.companyURLTextField.text)
-        print(loginView.apiKeyTextField.text)
+//        print(loginView.companyURLTextField.text!)
+//        print(loginView.apiKeyTextField.text!)
 
+        print("autofillArray: ", autofillArray)
+        autofillArray.append(loginView.companyURLTextField.text!)
+        autofillArray = Array(Set(autofillArray))
+        self.defaults.set(autofillArray, forKey: "autofillArray" )
         print("Succes")
 //        performSegue(withIdentifier: "Home", sender: nil)
     } else {
         print("back to the beginning")
-        loginView.companyURLTextField.text = nil
+//        loginView.companyURLTextField.text = nil
         loginView.apiKeyTextField.text = nil
+        
     }
   }
 }

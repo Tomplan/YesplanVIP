@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SearchTextField
 
 class LoginView: UIView {
     
@@ -44,8 +45,11 @@ class LoginView: UIView {
         return iv
     }()
     
-    let companyURLTextField: UITextField = {
-        let tf = UITextField(placeHolder: "'your_organization.yesplan.be'")
+    let companyURLTextField: SearchTextField = {
+        let tf = SearchTextField(placeHolder: "'your_organization.yesplan.be'")
+        tf.autocapitalizationType = .none
+        tf.inlineMode = true
+        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillArray") as! [String])
         return tf
     }()
     
