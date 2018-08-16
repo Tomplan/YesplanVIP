@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0F4228F21F967962BA1CD4FB /* Pods_YesplanVIPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */; };
+		3C95D35A2124ABD0009EBC47 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D3592124ABD0009EBC47 /* EventsView.swift */; };
+		3C95D35B2124ABD0009EBC47 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D3592124ABD0009EBC47 /* EventsView.swift */; };
+		3C95D35C2124ABD0009EBC47 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D3592124ABD0009EBC47 /* EventsView.swift */; };
+		3C95D35F2124AC26009EBC47 /* EventsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D35E2124AC26009EBC47 /* EventsViewCell.swift */; };
+		3C95D3602124AC26009EBC47 /* EventsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D35E2124AC26009EBC47 /* EventsViewCell.swift */; };
+		3C95D3612124AC26009EBC47 /* EventsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D35E2124AC26009EBC47 /* EventsViewCell.swift */; };
+		3C95D3632124AC4D009EBC47 /* EventsViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D3622124AC4C009EBC47 /* EventsViewHeader.swift */; };
+		3C95D3642124AC4D009EBC47 /* EventsViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D3622124AC4C009EBC47 /* EventsViewHeader.swift */; };
+		3C95D3652124AC4D009EBC47 /* EventsViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C95D3622124AC4C009EBC47 /* EventsViewHeader.swift */; };
 		3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE7101E2121827900EBF6A5 /* AppDelegate.swift */; };
-		3CE710242121827900EBF6A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE710222121827900EBF6A5 /* Main.storyboard */; };
 		3CE710272121827900EBF6A5 /* YesplanVIP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */; };
 		3CE710292121827A00EBF6A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CE710282121827A00EBF6A5 /* Assets.xcassets */; };
 		3CE7102C2121827A00EBF6A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */; };
@@ -209,9 +217,11 @@
 		0D92707E0DF9C4F638252B21 /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C95D3592124ABD0009EBC47 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		3C95D35E2124AC26009EBC47 /* EventsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewCell.swift; sourceTree = "<group>"; };
+		3C95D3622124AC4C009EBC47 /* EventsViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewHeader.swift; sourceTree = "<group>"; };
 		3CE7101B2121827900EBF6A5 /* YesplanVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesplanVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CE7101E2121827900EBF6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3CE710232121827900EBF6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CE710262121827900EBF6A5 /* YesplanVIP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YesplanVIP.xcdatamodel; sourceTree = "<group>"; };
 		3CE710282121827A00EBF6A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CE7102B2121827A00EBF6A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -323,6 +333,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C95D35D2124ABD5009EBC47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C95D3592124ABD0009EBC47 /* EventsView.swift */,
+				3C95D35E2124AC26009EBC47 /* EventsViewCell.swift */,
+				3C95D3622124AC4C009EBC47 /* EventsViewHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3CE710122121827900EBF6A5 = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +372,6 @@
 				3CE710512121A68000EBF6A5 /* MainTabBarController.swift */,
 				3CE711052121AD7100EBF6A5 /* DictionaryExtension.swift */,
 				3CE7106E2121A74600EBF6A5 /* Scenes */,
-				3CE710222121827900EBF6A5 /* Main.storyboard */,
 				3CE710282121827A00EBF6A5 /* Assets.xcassets */,
 				3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
@@ -383,6 +402,7 @@
 		3CE7106D2121A6DC00EBF6A5 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				3C95D35D2124ABD5009EBC47 /* Views */,
 				3CE710552121A6D100EBF6A5 /* EventsPresenter.swift */,
 				3CE710562121A6D100EBF6A5 /* EventsWorker.swift */,
 				3CE710572121A6D100EBF6A5 /* EventsRouter.swift */,
@@ -648,7 +668,6 @@
 			files = (
 				3CE7102C2121827A00EBF6A5 /* LaunchScreen.storyboard in Resources */,
 				3CE710292121827A00EBF6A5 /* Assets.xcassets in Resources */,
-				3CE710242121827900EBF6A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +871,7 @@
 				3CE9D1C221237C1800BFA730 /* LoginModels.swift in Sources */,
 				3CE710C92121A7E300EBF6A5 /* ToDoModels.swift in Sources */,
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
+				3C95D35A2124ABD0009EBC47 /* EventsView.swift in Sources */,
 				3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */,
 				3CE7105B2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */,
 				3CE711012121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
@@ -873,12 +893,14 @@
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 				3CE9D1C521237C1800BFA730 /* LoginViewController.swift in Sources */,
 				3CE710A72121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
+				3C95D3632124AC4D009EBC47 /* EventsViewHeader.swift in Sources */,
 				3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
 				3CE710842121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */,
 				3CE710CC2121A7E300EBF6A5 /* ToDoViewController.swift in Sources */,
 				3CE9D1DB2123832900BFA730 /* UITextField+Extension.swift in Sources */,
 				3CE710812121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
 				3CE9D1C821237C1800BFA730 /* LoginInteractor.swift in Sources */,
+				3C95D35F2124AC26009EBC47 /* EventsViewCell.swift in Sources */,
 				3CE710E52121A82100EBF6A5 /* UserViewController.swift in Sources */,
 				3CE710942121A78800EBF6A5 /* TasksRouter.swift in Sources */,
 				3CE9D1B921237C1800BFA730 /* LoginPresenter.swift in Sources */,
@@ -940,6 +962,7 @@
 				3CE710B72121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3CE710E62121A82100EBF6A5 /* UserViewController.swift in Sources */,
 				3CE710DA2121A82100EBF6A5 /* UserPresenter.swift in Sources */,
+				3C95D3642124AC4D009EBC47 /* EventsViewHeader.swift in Sources */,
 				3CE710982121A78800EBF6A5 /* TasksModels.swift in Sources */,
 				3CE9D1E42123835600BFA730 /* UIColor+Extension.swift in Sources */,
 				3CE710652121A6D100EBF6A5 /* EventsModels.swift in Sources */,
@@ -951,8 +974,10 @@
 				3CE9D1C021237C1800BFA730 /* LoginRouter.swift in Sources */,
 				3CE7107F2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
 				3CE710DD2121A82100EBF6A5 /* UserWorker.swift in Sources */,
+				3C95D35B2124ABD0009EBC47 /* EventsView.swift in Sources */,
 				3CE710C72121A7E300EBF6A5 /* ToDoRouter.swift in Sources */,
 				3CE710AE2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
+				3C95D3602124AC26009EBC47 /* EventsViewCell.swift in Sources */,
 				3CE7105C2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */,
 				3CE9D1DC2123832900BFA730 /* UITextField+Extension.swift in Sources */,
 				3CE7107C2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
@@ -1004,6 +1029,7 @@
 				3CE710B82121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3CE710E72121A82100EBF6A5 /* UserViewController.swift in Sources */,
 				3CE710DB2121A82100EBF6A5 /* UserPresenter.swift in Sources */,
+				3C95D3652124AC4D009EBC47 /* EventsViewHeader.swift in Sources */,
 				3CE710992121A78800EBF6A5 /* TasksModels.swift in Sources */,
 				3CE9D1E52123835600BFA730 /* UIColor+Extension.swift in Sources */,
 				3CE710662121A6D100EBF6A5 /* EventsModels.swift in Sources */,
@@ -1015,8 +1041,10 @@
 				3CE9D1C121237C1800BFA730 /* LoginRouter.swift in Sources */,
 				3CE710802121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
 				3CE710DE2121A82100EBF6A5 /* UserWorker.swift in Sources */,
+				3C95D35C2124ABD0009EBC47 /* EventsView.swift in Sources */,
 				3CE710C82121A7E300EBF6A5 /* ToDoRouter.swift in Sources */,
 				3CE710AF2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
+				3C95D3612124AC26009EBC47 /* EventsViewCell.swift in Sources */,
 				3CE7105D2121A6D100EBF6A5 /* EventsPresenter.swift in Sources */,
 				3CE9D1DD2123832900BFA730 /* UITextField+Extension.swift in Sources */,
 				3CE7107D2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
@@ -1042,14 +1070,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3CE710222121827900EBF6A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3CE710232121827900EBF6A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3CE7102A2121827A00EBF6A5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1183,7 +1203,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1199,7 +1222,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1216,7 +1242,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1234,7 +1264,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1251,7 +1285,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1268,7 +1306,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				INFOPLIST_FILE = YesplanVIPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIPUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -35,7 +35,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     worker = LoginWorker()
     worker?.doSomeWork()
         
-        let companyUrl = request.companyURL
+        let companyUrl = request.companyURL 
         let apiKey = request.apiKey
         if companyUrl != "" && apiKey != "" {
     let response = Login.EnterLogin.Response(success: true)

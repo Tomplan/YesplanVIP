@@ -70,16 +70,12 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   }
   
   // MARK: View lifecycle
-//    override func loadView() {
-//        view = loginView
-//    }
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
     
     title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
-//    doSomething()
     setupView()
     }
     
@@ -91,8 +87,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     func setupView() {
         let mainView = LoginView(frame: self.view.frame)
         self.loginView = mainView
-        self.loginView.loginAction = doSomething // login
-        self.loginView.signupAction = signupPressed
+        self.loginView.loginAction = login
+//        self.loginView.signupAction = signupPressed
         self.view.addSubview(loginView)
         loginView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
@@ -107,7 +103,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
 //                print(err.localizedDescription)
 //            } else {
 ////                print("User: \(user?.uid) signed in")
-//                self.defaults.set(true, forKey: "UserIsLoggedIn")
 //                // show main controller
 //                let mainController = UINavigationController(rootViewController: MainTabBarController())
 //                self.present(mainController, animated: true, completion: nil)
@@ -127,7 +122,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
+  func login()
   {
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text
@@ -140,13 +135,20 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     if viewModel.success {
 //        print(loginView.companyURLTextField.text!)
 //        print(loginView.apiKeyTextField.text!)
-
+        self.defaults.set(true, forKey: "UserIsLoggedIn")
+        
         print("autofillArray: ", autofillArray)
         autofillArray.append(loginView.companyURLTextField.text!)
         autofillArray = Array(Set(autofillArray))
         self.defaults.set(autofillArray, forKey: "autofillArray" )
+        
         print("Succes")
+        let mainController = UINavigationController(rootViewController: MainTabBarController())
+        self.present(mainController, animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+//        navigationController?.dismiss(animated: true, completion: nil)
 //        performSegue(withIdentifier: "Home", sender: nil)
+        
     } else {
         print("back to the beginning")
 //        loginView.companyURLTextField.text = nil
