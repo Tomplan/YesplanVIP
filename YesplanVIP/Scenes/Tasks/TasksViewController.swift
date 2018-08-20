@@ -69,6 +69,8 @@ class TasksViewController: UIViewController, TasksDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.green
+
     doSomething()
   }
   

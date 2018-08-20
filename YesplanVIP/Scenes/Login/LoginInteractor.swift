@@ -37,6 +37,9 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         
         let companyUrl = request.companyURL 
         let apiKey = request.apiKey
+        
+        // insert Alamofirerequest
+        
         if companyUrl != "" && apiKey != "" {
     let response = Login.EnterLogin.Response(success: true)
     presenter?.presentSomething(response: response)

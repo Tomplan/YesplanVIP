@@ -69,6 +69,7 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.blue
     doSomething()
   }
   

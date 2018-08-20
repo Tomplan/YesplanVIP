@@ -49,15 +49,21 @@ class LoginView: UIView {
         let tf = SearchTextField(placeHolder: "'your_organization.yesplan.be'")
         tf.autocapitalizationType = .none
         tf.inlineMode = true
-        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillArray") as! [String])
+        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String])
         return tf
     }()
     
-    let apiKeyTextField: UITextField = {
-        let tf = UITextField(placeHolder: "API_Key")
+//    let apiKeyTextField: UITextField = {
+//        let tf = UITextField(placeHolder: "API_Key")
+//        return tf
+//    }()
+    let apiKeyTextField: SearchTextField = {
+        let tf = SearchTextField(placeHolder: "API_Key")
+        tf.inlineMode = true
+        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillApiKey") as! [String])
+
         return tf
     }()
-    
     let loginButton: UIButton = {
         let button = UIButton(title: "Login", borderColor: .greenBorderColor)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)

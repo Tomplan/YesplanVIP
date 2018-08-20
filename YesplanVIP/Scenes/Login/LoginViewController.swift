@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 protocol LoginDisplayLogic: class
 {
@@ -25,18 +25,29 @@ class LoginViewController: UIViewController, LoginDisplayLogic
  
     var loginView: LoginView!
     let defaults = UserDefaults.standard
-    var autofillArray: [String] = UserDefaults.standard.array(forKey: "autofillArray") as! [String]
+//    var favouritessetCompanyURL = UserDefaults.standard.bool(forKey: "autofillCompanyURL")
+  
+    var autofillCompanyURL: [String] = UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String]
+
+//    var favouritessetApiKey = UserDefaults.standard.bool(forKey: "autofillCompanyURL")
+
+    var autofillApiKey: [String] = UserDefaults.standard.array(forKey: "autofillApiKey") as! [String]
+
+
 
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
+    print("override init nib")
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setup()
   }
-  
+//
   required init?(coder aDecoder: NSCoder)
   {
+    print("required init coder")
+
     super.init(coder: aDecoder)
     setup()
   }
@@ -45,6 +56,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   private func setup()
   {
+    print("LoginViewController setup")
     let viewController = self
     let interactor = LoginInteractor()
     let presenter = LoginPresenter()
@@ -55,6 +67,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     presenter.viewController = viewController
     router.viewController = viewController
     router.dataStore = interactor
+    print("LoginViewController setup finished")
+
   }
   
   // MARK: Routing
@@ -73,18 +87,22 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   override func viewDidLoad()
   {
+    print("LoginViewController viewDidLoad")
+
     super.viewDidLoad()
-    
     title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
     setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("LoginViewController viewWillAppear")
+
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
     
     func setupView() {
+        print("LoginViewController setupView")
         let mainView = LoginView(frame: self.view.frame)
         self.loginView = mainView
         self.loginView.loginAction = login
@@ -93,26 +111,10 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         loginView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
   
-//    func login() {
-//        print("login")
-//        guard let companyUrl = loginView.emailTextField.text else { return }
-//        guard let apiKey = loginView.passwordTextField.text else { return }
-        
-//        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-//            if let err = error {
-//                print(err.localizedDescription)
-//            } else {
-////                print("User: \(user?.uid) signed in")
-//                // show main controller
-//                let mainController = UINavigationController(rootViewController: MainTabBarController())
-//                self.present(mainController, animated: true, completion: nil)
-//            }
-//        }
-//    }
     
     func signupPressed() {
         // 1
-        print("SignUp")
+        print("LoginViewController signupPressed")
 //        let signUpVC = SignUpController()
 //        present(signUpVC, animated: true, completion: nil)
     }
@@ -124,30 +126,32 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   func login()
   {
+    print("LoginViewController login")
+
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text
     let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey)
     interactor?.loginPressed(request: request)
+    
   }
   
   func displaySomething(viewModel: Login.EnterLogin.ViewModel)
   {
+    print("LoginViewController displaySomething")
+
     if viewModel.success {
-//        print(loginView.companyURLTextField.text!)
-//        print(loginView.apiKeyTextField.text!)
-        self.defaults.set(true, forKey: "UserIsLoggedIn")
         
-        print("autofillArray: ", autofillArray)
-        autofillArray.append(loginView.companyURLTextField.text!)
-        autofillArray = Array(Set(autofillArray))
-        self.defaults.set(autofillArray, forKey: "autofillArray" )
+        self.defaults.set(true, forKey: "LOGGED_IN")
         
-        print("Succes")
-        let mainController = UINavigationController(rootViewController: MainTabBarController())
-        self.present(mainController, animated: true, completion: nil)
-//        self.dismiss(animated: true, completion: nil)
-//        navigationController?.dismiss(animated: true, completion: nil)
-//        performSegue(withIdentifier: "Home", sender: nil)
+        autofillCompanyURL.append(loginView.companyURLTextField.text!)
+        autofillCompanyURL = Array(Set(autofillCompanyURL))
+        self.defaults.set(autofillCompanyURL, forKey: "autofillCompanyURL" )
+
+        autofillApiKey.append(loginView.apiKeyTextField.text!)
+        autofillApiKey = Array(Set(autofillApiKey))
+        self.defaults.set(autofillApiKey, forKey: "autofillApiKey" )
+
+        AppDelegate.shared.rootViewController.switchToMainScreen()
         
     } else {
         print("back to the beginning")

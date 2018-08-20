@@ -69,6 +69,8 @@ class TeamplannerViewController: UIViewController, TeamplannerDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.red
+
     doSomething()
   }
   

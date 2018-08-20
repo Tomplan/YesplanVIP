@@ -69,6 +69,8 @@ class ToDoViewController: UIViewController, ToDoDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.purple
+
     doSomething()
   }
   

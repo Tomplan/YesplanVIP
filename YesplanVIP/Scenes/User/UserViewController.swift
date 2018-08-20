@@ -69,6 +69,8 @@ class UserViewController: UIViewController, UserDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.lightGray
+
     doSomething()
   }
   

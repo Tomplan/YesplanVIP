@@ -69,6 +69,8 @@ class HelpViewController: UIViewController, HelpDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    view.backgroundColor = UIColor.yellow
+
     doSomething()
   }
   
