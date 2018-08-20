@@ -53,13 +53,17 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         
         // Create defaults
         let defaults: UserDefaults = UserDefaults.standard
-        var tabOrder: [Int]?
+        
         // Create tabOrder
-        if defaults.bool(forKey: "tabOrder") == true {
+        var tabOrder: [Int]?
+
+        if defaults.bool(forKey: "tabOrderCheck") {
+            defaults.set(true, forKey: "tabOrderCheck")
             tabOrder = (defaults.object(forKey: "tabOrder") as? [Int])
         } else {
-                tabOrder = [0, 1, 2, 3, 4, 5, 6, 7]
-                        defaults.set(tabOrder, forKey: "tabOrder")
+            tabOrder = [0, 1, 2, 3, 4, 5, 6, 7]
+            defaults.set(tabOrder, forKey: "tabOrder")
+            defaults.set(true, forKey: "tabOrderCheck")
         }
         // Change vcOrder
         if tabOrder != nil {
@@ -80,8 +84,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         for item in items {
             item.imageInsets = UIEdgeInsetsMake(4, 0, -4, 0)
         }
-        
-       
     }
 }
 

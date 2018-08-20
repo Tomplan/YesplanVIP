@@ -61,6 +61,7 @@ class RootViewController: UIViewController {
 
         let loginViewController = LoginViewController()
         let logoutScreen = UINavigationController(rootViewController: loginViewController)
+        UserDefaults.standard.set(false, forKey: "LOGGED_IN")
         animateFadeTransition(to: logoutScreen)
     }
     
