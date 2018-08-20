@@ -59,10 +59,8 @@ class SplashViewController: UIViewController {
             //// Check if User is Logged In
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
-                print(UserDefaults.standard.bool(forKey: "LOGGED_IN"))
                 AppDelegate.shared.rootViewController.switchToMainScreen()
             } else {
-                print(UserDefaults.standard.bool(forKey: "LOGGED_IN"))
                 AppDelegate.shared.rootViewController.showLoginScreen()
             }
         }

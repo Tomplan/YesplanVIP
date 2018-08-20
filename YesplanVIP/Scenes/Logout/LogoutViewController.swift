@@ -82,17 +82,18 @@ class LogoutViewController: UIViewController, LogoutDisplayLogic
     let request = Logout.Something.Request()
     interactor?.doSomething(request: request)
   }
+    
     func setupView(){
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: true)
     }
+    
     @objc
     private func logout() {
-        print("MainTabBarViewController logout")
-    
         UserDefaults.standard.set(false, forKey: "LOGGED_IN")
         AppDelegate.shared.rootViewController.switchToLogout()
     }
+    
   func displaySomething(viewModel: Logout.Something.ViewModel)
   {
     //nameTextField.text = viewModel.name

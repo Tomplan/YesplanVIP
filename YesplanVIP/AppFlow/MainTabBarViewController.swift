@@ -13,8 +13,6 @@ class MainNavigationController: UINavigationController { }
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
-        print("MainTabBarViewController viewDidLoad")
-
         super.viewDidLoad()
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .normal)
@@ -31,8 +29,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabBar() {
-        print("MainTabBarViewController setupTabBar")
-
         // Create Navigation Controllers
         self.delegate = self
         let VC01 = createNavController(vc: EventsViewController(), title: "Events", selected: #imageLiteral(resourceName: "Events Selected"), unselected: #imageLiteral(resourceName: "Events Unselected"))
@@ -61,7 +57,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         // Create tabOrder
         if defaults.bool(forKey: "tabOrder") == true {
             tabOrder = (defaults.object(forKey: "tabOrder") as? [Int])
-        // use tabOrder definition underneath for first time to create total of [i] ints depending on viewControllers!.count // do not remove
         } else {
                 tabOrder = [0, 1, 2, 3, 4, 5, 6, 7]
                         defaults.set(tabOrder, forKey: "tabOrder")
@@ -93,7 +88,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 extension MainTabBarViewController {
     
     func createNavController(vc: UIViewController, title: String ,selected: UIImage, unselected: UIImage) -> UINavigationController {
-        print("MainTabBarViewController createNavController")
 
         let viewController = vc
         let navController = UINavigationController(rootViewController: viewController)

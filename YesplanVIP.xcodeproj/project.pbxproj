@@ -11,9 +11,6 @@
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
 		3C0DD7A92125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
 		3C0DD7AA2125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
-		3C0DD7B42126061B00F8FBDC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD7B32126061B00F8FBDC /* ActivityViewController.swift */; };
-		3C0DD7B52126061B00F8FBDC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD7B32126061B00F8FBDC /* ActivityViewController.swift */; };
-		3C0DD7B62126061B00F8FBDC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD7B32126061B00F8FBDC /* ActivityViewController.swift */; };
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarViewController.swift */; };
 		3C2D8FDD21270AF100BDEA18 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarViewController.swift */; };
 		3C2D8FDE21270AF100BDEA18 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarViewController.swift */; };
@@ -252,7 +249,6 @@
 		1976DFD84BC50D4BDB69A694 /* Pods_YesplanVIPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F26774F8EFAEB93EAF0F074 /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		3C0DD7B32126061B00F8FBDC /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		3C6AC88521260EEC0010DFA5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -377,31 +373,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3C0DD7AE2125FFAD00F8FBDC /* Root */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
 		3C2D8FE121270C8000BDEA18 /* AppFlow */ = {
 			isa = PBXGroup;
 			children = (
 				3C6AC89F212703040010DFA5 /* LaunchScreen.storyboard */,
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
 				3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */,
+				3C6AC88521260EEC0010DFA5 /* SplashViewController.swift */,
 				3C2D8FDB21270AF100BDEA18 /* MainTabBarViewController.swift */,
-				3C0DD7B32126061B00F8FBDC /* ActivityViewController.swift */,
 			);
 			path = AppFlow;
-			sourceTree = "<group>";
-		};
-		3C6AC89921260EF20010DFA5 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				3C6AC88521260EEC0010DFA5 /* SplashViewController.swift */,
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		3C95D35D2124ABD5009EBC47 /* Views */ = {
@@ -497,9 +478,7 @@
 		3CE7106E2121A74600EBF6A5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3C6AC89921260EF20010DFA5 /* Splash */,
 				3CE9D1CB21237C2700BFA730 /* Login */,
-				3C0DD7AE2125FFAD00F8FBDC /* Root */,
 				3CE7106D2121A6DC00EBF6A5 /* Events */,
 				3CE710872121A76B00EBF6A5 /* Teamplanner */,
 				3CE710A02121A79200EBF6A5 /* Tasks */,
@@ -1000,7 +979,6 @@
 				3CD5929E212AC57B005BBF71 /* LogoutRouter.swift in Sources */,
 				3CE9D1B921237C1800BFA730 /* LoginPresenter.swift in Sources */,
 				3CE7107B2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
-				3C0DD7B42126061B00F8FBDC /* ActivityViewController.swift in Sources */,
 				3C6AC89321260EEC0010DFA5 /* SplashViewController.swift in Sources */,
 				3CE710C02121A7E300EBF6A5 /* ToDoPresenter.swift in Sources */,
 				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,
@@ -1054,7 +1032,6 @@
 				3CE710CA2121A7E300EBF6A5 /* ToDoModels.swift in Sources */,
 				3CE7108F2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
 				3CE710A82121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
-				3C0DD7B52126061B00F8FBDC /* ActivityViewController.swift in Sources */,
 				3C0DD7A92125FFA500F8FBDC /* RootViewController.swift in Sources */,
 				3CE9D1D82123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
 				3CE711022121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
@@ -1132,7 +1109,6 @@
 				3CE710CB2121A7E300EBF6A5 /* ToDoModels.swift in Sources */,
 				3CE710902121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
 				3CE710A92121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
-				3C0DD7B62126061B00F8FBDC /* ActivityViewController.swift in Sources */,
 				3C0DD7AA2125FFA500F8FBDC /* RootViewController.swift in Sources */,
 				3CE9D1D92123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
 				3CE711032121A84400EBF6A5 /* HelpInteractor.swift in Sources */,

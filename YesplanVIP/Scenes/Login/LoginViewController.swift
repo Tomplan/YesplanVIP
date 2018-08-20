@@ -39,15 +39,12 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
-    print("override init nib")
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setup()
   }
 //
   required init?(coder aDecoder: NSCoder)
   {
-    print("required init coder")
-
     super.init(coder: aDecoder)
     setup()
   }
@@ -56,7 +53,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   private func setup()
   {
-    print("LoginViewController setup")
     let viewController = self
     let interactor = LoginInteractor()
     let presenter = LoginPresenter()
@@ -67,7 +63,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     presenter.viewController = viewController
     router.viewController = viewController
     router.dataStore = interactor
-    print("LoginViewController setup finished")
 
   }
   
@@ -87,22 +82,17 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   override func viewDidLoad()
   {
-    print("LoginViewController viewDidLoad")
-
     super.viewDidLoad()
     title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
     setupView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("LoginViewController viewWillAppear")
-
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
     
     func setupView() {
-        print("LoginViewController setupView")
         let mainView = LoginView(frame: self.view.frame)
         self.loginView = mainView
         self.loginView.loginAction = login
@@ -126,8 +116,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   func login()
   {
-    print("LoginViewController login")
-
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text
     let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey)
@@ -137,8 +125,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   
   func displaySomething(viewModel: Login.EnterLogin.ViewModel)
   {
-    print("LoginViewController displaySomething")
-
     if viewModel.success {
         
         self.defaults.set(true, forKey: "LOGGED_IN")
