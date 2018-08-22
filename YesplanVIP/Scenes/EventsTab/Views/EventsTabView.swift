@@ -1,14 +1,14 @@
 //
-//  EventsView.swift
+//  EventsTabView.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 15/08/18.
+//  Created by Techcc - FOH - Video on 22/08/18.
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
 import UIKit
 
-class EventsView: UIView {
+class EventsTabView: UIView {
     
     // MARK:- Properties:
     var eventsCollectionView: UICollectionView

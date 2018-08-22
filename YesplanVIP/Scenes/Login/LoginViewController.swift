@@ -26,7 +26,8 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     var loginView: LoginView!
     let defaults = UserDefaults.standard
 //    var favouritessetCompanyURL = UserDefaults.standard.bool(forKey: "autofillCompanyURL")
-  
+    var photos = [Photo]()
+
     var autofillCompanyURL: [String] = UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String]
 
 //    var favouritessetApiKey = UserDefaults.standard.bool(forKey: "autofillCompanyURL")
@@ -85,6 +86,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     super.viewDidLoad()
     title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
     setupView()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {

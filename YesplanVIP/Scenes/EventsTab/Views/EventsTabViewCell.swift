@@ -1,8 +1,8 @@
 //
-//  EventsViewCell.swift
+//  EventsTabViewCell.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 15/08/18.
+//  Created by Techcc - FOH - Video on 22/08/18.
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ struct EventsViewCellConstants {
     static let height: CGFloat = 5.5
 }
 
-class EventsViewCell: UICollectionViewCell {
+class EventsTabViewCell: UICollectionViewCell {
     
     // MARK: Properties
     var LblEventHeaderName = UILabel()

@@ -29,21 +29,24 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabBar() {
-        // Create Navigation Controllers
+        
+        // Mark: Create Navigation Controllers
+        
         self.delegate = self
-        let VC01 = createNavController(vc: EventsViewController(), title: "Events", selected: #imageLiteral(resourceName: "Events Selected"), unselected: #imageLiteral(resourceName: "Events Unselected"))
+        let VC01 = createNavController(vc: EventsTabViewController(), title: "Events", selected: #imageLiteral(resourceName: "Events Selected"), unselected: #imageLiteral(resourceName: "Events Unselected"))
         let VC02 = createNavController(vc: TasksViewController(), title: "Tasks", selected: #imageLiteral(resourceName: "Tasks Selected"), unselected: #imageLiteral(resourceName: "Tasks Unselected"))
-                let VC03 = createNavController(vc: ContactsViewController(), title: "Contacts", selected: #imageLiteral(resourceName: "Contacts Selected"), unselected: #imageLiteral(resourceName: "Contacts Unselected"))
-                let VC04 = createNavController(vc: TeamplannerViewController(), title: "Teamplanner", selected: #imageLiteral(resourceName: "Teamplanner Selected"), unselected: #imageLiteral(resourceName: "Teamplanner Unselected"))
-                let VC05 = createNavController(vc: ToDoViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: #imageLiteral(resourceName: "To Do Unselected"))
-                let VC06 = createNavController(vc: UserViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
-                let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
-                let VC08 = createNavController(vc: LogoutViewController(), title: "Logout", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
+        let VC03 = createNavController(vc: ContactsViewController(), title: "Contacts", selected: #imageLiteral(resourceName: "Contacts Selected"), unselected: #imageLiteral(resourceName: "Contacts Unselected"))
+        let VC04 = createNavController(vc: TeamplannerViewController(), title: "Teamplanner", selected: #imageLiteral(resourceName: "Teamplanner Selected"), unselected: #imageLiteral(resourceName: "Teamplanner Unselected"))
+        let VC05 = createNavController(vc: ToDoViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: #imageLiteral(resourceName: "To Do Unselected"))
+        let VC06 = createNavController(vc: UserTabViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
+        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
+        let VC08 = createNavController(vc: LogoutViewController(), title: "Logout", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
 
         let controllers = [VC01, VC02, VC03, VC04, VC05, VC06, VC07, VC08]
         setViewControllers(controllers, animated: false)
         
-        // Create tabBarItems
+        // Mark: Create tabBarItems
+        
         if viewControllers != nil {
             for i in 0 ..< viewControllers!.count {
                 let vc: UIViewController = viewControllers![i]
@@ -51,10 +54,12 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             }
         }
         
-        // Create defaults
+        // Mark: Create defaults
+        
         let defaults: UserDefaults = UserDefaults.standard
         
-        // Create tabOrder
+        // Mark: Create tabOrder
+        
         var tabOrder: [Int]?
 
         if defaults.bool(forKey: "tabOrderCheck") {
@@ -65,7 +70,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             defaults.set(tabOrder, forKey: "tabOrder")
             defaults.set(true, forKey: "tabOrderCheck")
         }
-        // Change vcOrder
+        // Mark: Update vcOrder
+        
         if tabOrder != nil {
             var vcOrder: [UIViewController] = []
             for tag: Int in tabOrder! {
@@ -78,7 +84,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             viewControllers = vcOrder
         }
         
-        // size items insets
+        // Mark: size items insets
         guard let items = tabBar.items else { return }
         
         for item in items {

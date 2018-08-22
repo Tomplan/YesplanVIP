@@ -1,14 +1,14 @@
 //
-//  EventsViewHeader.swift
+//  EventsTabViewHeader.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 15/08/18.
+//  Created by Techcc - FOH - Video on 22/08/18.
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
 import UIKit
 
-class EventsViewHeader: UICollectionViewCell {
+class EventsTabViewHeader: UICollectionViewCell {
     
     var EventsViewHeaderLabel: UILabel
         = {

@@ -11,6 +11,11 @@
 //
 
 import UIKit
+import Foundation
+import NetworkRequestKit
+import SwiftyJSON
+import Alamofire
+import PromiseKit
 
 protocol LoginBusinessLogic
 {
@@ -29,7 +34,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
   //var name: String = ""
   
   // MARK: Do something
-  
+    
     func loginPressed(request: Login.EnterLogin.Request) {
       
     worker = LoginWorker()
@@ -39,6 +44,36 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         let apiKey = request.apiKey
         
         // insert Alamofirerequest
+        
+        let urlComponents = NSURLComponents()
+        urlComponents.scheme = "https";
+        urlComponents.host = "\(String(describing: companyUrl))";
+        urlComponents.path = "";
+        urlComponents.query = "api_key=\(String(describing: apiKey))"
+        
+        if let url = try? urlComponents.url!.asURL() {
+        var urlRequest = URLRequest(url: url)
+//            
+//            final public class MakeRequestThenIgnoreResult : NetworkRequest {
+//                public typealias ResponseType = IgnorableResult
+//                
+//                public var baseURL: String { return "\(urlRequest)"}
+//                public var endpoint: String { return "/post" }
+//                public var method: HTTPMethod { return .post }
+//                public var parameters: [String : Any]? { return ["ignore": "this"] }
+//                
+//                public func perform() -> Promise<ResponseType> {
+//                    return networkClient.performRequest(self).then(responseHandler)
+//                }
+                
+//            }
+            
+        } else {
+            print("no valid url")
+            return
+            
+        }
+        
         
         if companyUrl != "" && apiKey != "" {
     let response = Login.EnterLogin.Response(success: true)
