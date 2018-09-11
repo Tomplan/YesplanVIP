@@ -16,73 +16,67 @@ import NetworkRequestKit
 import SwiftyJSON
 import Alamofire
 import PromiseKit
+import ws
+import Arrow
+import then
 
 protocol LoginBusinessLogic
 {
   func loginPressed(request: Login.EnterLogin.Request)
+    
 }
 
 protocol LoginDataStore
 {
-  //var name: String { get set }
+  var basic: Basic! { get set }
 }
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
+    var basic: Basic!
+    
   var presenter: LoginPresentationLogic?
   var worker: LoginWorker?
-  //var name: String = ""
+    var events = Events()
   
   // MARK: Do something
     
     func loginPressed(request: Login.EnterLogin.Request) {
       
-    worker = LoginWorker()
-    worker?.doSomeWork()
-        
-        let companyUrl = request.companyURL 
+        let companyUrl = request.companyURL
         let apiKey = request.apiKey
-        
-        // insert Alamofirerequest
         
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https";
-        urlComponents.host = "\(String(describing: companyUrl))";
-        urlComponents.path = "";
-        urlComponents.query = "api_key=\(String(describing: apiKey))"
+        urlComponents.host = "\(companyUrl!)";
+        urlComponents.path = "/api/events";
+        urlComponents.query = "api_key=\(apiKey!)";
         
-        if let url = try? urlComponents.url!.asURL() {
-        var urlRequest = URLRequest(url: url)
-//            
-//            final public class MakeRequestThenIgnoreResult : NetworkRequest {
-//                public typealias ResponseType = IgnorableResult
-//                
-//                public var baseURL: String { return "\(urlRequest)"}
-//                public var endpoint: String { return "/post" }
-//                public var method: HTTPMethod { return .post }
-//                public var parameters: [String : Any]? { return ["ignore": "this"] }
-//                
-//                public func perform() -> Promise<ResponseType> {
-//                    return networkClient.performRequest(self).then(responseHandler)
-//                }
-                
-//            }
+        var url = try? urlComponents.url!.asURL()
+//        print("url: ", url!)
+        
+    worker = LoginWorker()
+        
+        if worker?.verifyUrl(urlString: "\(String(describing: url!))") == true {
             
+            urlComponents.path = ""
+            urlComponents.query = nil
+            
+            url = try? urlComponents.url!.asURL()
+
+            let base = Basic()
+            base.ws = WS("\(String(describing: url!))")
+            
+            basic = base
+            print(basic.ws.baseURL)
+            
+            let response = Login.EnterLogin.Response(success: true)
+            presenter?.presentSomething(response: response)
         } else {
             print("no valid url")
-            return
-            
-        }
-        
-        
-        if companyUrl != "" && apiKey != "" {
-    let response = Login.EnterLogin.Response(success: true)
-    presenter?.presentSomething(response: response)
-        }
-        else {
-            let response = Login.EnterLogin.Response(success: false)
-            print("please fill")
+            let response = Login.EnterLogin.Response(success: false)            
             presenter?.presentSomething(response: response)
+            return
         }
-  }
+    }
 }

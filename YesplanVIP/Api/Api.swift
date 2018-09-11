@@ -7,6 +7,7 @@
 //
 
 import then
+import Arrow
 
 // This is our Api interface.
 // In theory we could use ws directly in controllers but this wouldn't be very clean.
@@ -16,10 +17,6 @@ import then
 // See "Dependency inversion principle" for more details.
 
 protocol ApiInterface {
-    func fetchPhotos() -> Promise<[Photo]>
-    func fetchEvents() -> Promise<Events>
-    
-    func fetchEvent(id: String) -> Promise<Event>
 }
 
 var api: ApiInterface!

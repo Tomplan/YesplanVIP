@@ -1,5 +1,5 @@
 //
-//  Usergroup.swift
+//  Base.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 22/08/18.
@@ -10,23 +10,28 @@ import Foundation
 import Arrow
 import then
 
-struct Usergroup {
+struct Base {
     
     var url: String = ""
-    var id: String = ""
+    var id: String?
     var name: String?
+    var _type: String?
+    
+//    init() {
+//        print("base")
+//        var b = Event()
+//        //        b.deserialize(JSON(self)!)
+//        //        print(b)
+////        self = .event(b)
+//    }
 }
 
-extension Usergroup : ArrowParsable {
+extension Base : ArrowParsable {
     
     public mutating func deserialize(_ json: JSON) {
         url <-- json["url"]
         id <-- json["id"]
         name <-- json["name"]
+        _type <-- json["_type"]
     }
-}
-
-extension Usergroup: RestResource {
-    static func restName() -> String { return "api/usergroup" }
-    func restId() -> String { return "\(id)" }
 }

@@ -56,6 +56,21 @@ class RootViewController: UIViewController {
         
         current = new
     }
+    func showWelcomeScreen() {
+        
+        let new = UINavigationController(rootViewController: WelcomeViewController())
+        
+        addChildViewController(new)
+        new.view.frame = view.bounds
+        view.addSubview(new.view)
+        new.didMove(toParentViewController: self)
+        
+        current.willMove(toParentViewController: nil)
+        current.view.removeFromSuperview()
+        current.removeFromParentViewController()
+        
+        current = new
+    }
     
     func switchToLogout() {
 
@@ -76,7 +91,6 @@ class RootViewController: UIViewController {
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParentViewController: nil)
         addChildViewController(new)
-//        transition(from: current, to: new, duration: 0.3, options: [.transitionCrossDissolve, .curveEaseOut], animations: {
         transition(from: current, to: new, duration: 0.3, options: [], animations: {
         
         }) { completed in
@@ -87,20 +101,20 @@ class RootViewController: UIViewController {
         }
     }
     
-    private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
-        let initialFrame = CGRect(x: -view.bounds.width, y: 0, width: view.bounds.width, height: view.bounds.height)
-        current.willMove(toParentViewController: nil)
-        addChildViewController(new)
-        new.view.frame = initialFrame
-        
-        transition(from: current, to: new, duration: 0.3, options: [], animations: {
-            new.view.frame = self.view.bounds
-        }) { completed in
-            self.current.removeFromParentViewController()
-            new.didMove(toParentViewController: self)
-            self.current = new
-            completion?()
-        }
-    }
+//    private func animateDismissTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
+//        let initialFrame = CGRect(x: -view.bounds.width, y: 0, width: view.bounds.width, height: view.bounds.height)
+//        current.willMove(toParentViewController: nil)
+//        addChildViewController(new)
+//        new.view.frame = initialFrame
+//        
+//        transition(from: current, to: new, duration: 0.3, options: [], animations: {
+//            new.view.frame = self.view.bounds
+//        }) { completed in
+//            self.current.removeFromParentViewController()
+//            new.didMove(toParentViewController: self)
+//            self.current = new
+//            completion?()
+//        }
+//    }
 }
 

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - Cartography (3.0.2)
   - NetworkRequestKit (2.2.0):
     - Alamofire (~> 4)
     - PromiseKit (~> 6)
@@ -13,23 +14,40 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.3.4):
     - PromiseKit/CorePromise
+  - PureLayout (3.0.2)
   - SearchTextField (1.2.1)
+  - Squeaky (1.3.2)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - Cartography (~> 3.0)
   - NetworkRequestKit (~> 2.2.0)
   - PromiseKit (~> 6.0)
+  - PureLayout
   - SearchTextField
+  - Squeaky (from `https://github.com/ajself/squeaky-clean.git`)
   - SwiftyJSON (~> 4.0)
+
+EXTERNAL SOURCES:
+  Squeaky:
+    :git: https://github.com/ajself/squeaky-clean.git
+
+CHECKOUT OPTIONS:
+  Squeaky:
+    :commit: b45f0ec920e8377fa5f4c0efcb6faba734654b25
+    :git: https://github.com/ajself/squeaky-clean.git
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Cartography: 231190d7d0b3107ce8d67c54189f059a509b3760
   NetworkRequestKit: 624f231f9faf6d5a665b223c3de78d80a9d6ee6d
   PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SearchTextField: 261b0febd49194492f29555fff3c5c0019ca84d2
+  Squeaky: daae1f5bf919b1940bbfb2591c6a1cce42d0b505
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: bb89b14213b9bd5d10560370edd7521c14a5f9ca
+PODFILE CHECKSUM: 5a41661c8262fb75ef0e06f7fd0e0574407b7e9a
 
 COCOAPODS: 1.4.0

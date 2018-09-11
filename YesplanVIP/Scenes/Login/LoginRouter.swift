@@ -12,12 +12,12 @@
 
 import UIKit
 
-@objc protocol LoginRoutingLogic
+ protocol LoginRoutingLogic
 {
-//  func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere()
 }
 
-protocol LoginDataPassing
+ protocol LoginDataPassing
 {
   var dataStore: LoginDataStore? { get }
 }
@@ -29,32 +29,30 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
   
   // MARK: Routing
   
-//  func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToSomewhere() {
+        print("LoginRouter.routeToSomewhere")
+         let destinationVC = EventsTabViewController()
+        var destinationDS = destinationVC.router!.dataStore!
+         passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+         navigateToSomewhere(source: viewController!, destination: destinationVC)
+    }
+    
+     // MARK: - Navigation
+     func navigateToSomewhere(source: LoginViewController, destination: EventsTabViewController) {
+       source.show(destination, sender: nil)
+     }
+     // MARK: - Passing data
+     func passDataToSomewhere(source: LoginDataStore, destination: inout EventsTabDataStore) {
+       destination.basic = source.basic
+     }
+}
+//  func passDataToMainTabBar(source: LoginDataStore, destination: inout EventsTabDataStore)
 //  {
-//    if let segue = segue {
-//      let destinationVC = segue.destination as! MainTabBarController
-////      var destinationDS = destinationVC.router!.dataStore!
-////      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//    } else {
-//      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//      let destinationVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
-////      var destinationDS = destinationVC.router!.dataStore!
-////      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-//      navigateToSomewhere(source: viewController!, destination: destinationVC)
-//    }
+//    destination.basic = source.basic
+//    print("source.basic: ", source.basic)
+//    print("destination.basic: ", destination.basic)
+//
 //  }
 
-  // MARK: Navigation
-  
-//  func navigateToSomewhere(source: LoginViewController, destination: MainTabBarController)
-//  {
-//    source.show(destination, sender: nil)
-//  }
-  
-  // MARK: Passing data
-  
-//  func passDataToSomewhere(source: LoginDataStore, destination: inout SomewhereDataStore)
-//  {
-//    destination.name = source.name
-//  }
-}
+    
+//}

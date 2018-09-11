@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stevia
 
 struct EventsViewCellConstants {
     
@@ -29,10 +30,30 @@ class EventsTabViewCell: UICollectionViewCell {
         setupConstraints()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+//    { super.init(coder: aDecoder)}
+    {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        fatalError("Interface Builder is not supported!")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.LblEventHeaderName.text = nil
+        self.LblEventName.text = nil
+        self.LblEventsDefaultschedulestarttime.text = nil
+        self.LblEventLocation.text = nil
+        self.LblEventGroupName.text = nil
+
+        
+        
+    }
     // MARK: Private methods
     private func setupComponents() {
         
@@ -43,41 +64,63 @@ class EventsTabViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.black.cgColor
         self.backgroundColor = UIColor.yellow
         
+//        sv(
+//            LblEventHeaderName,
+//            LblEventName,
+//            LblEventsDefaultschedulestarttime,
+//            LblEventLocation,
+//            LblEventGroupName
+//        )
+        
+//        layout(
+//            16,
+//            |-16-LblEventHeaderName-16-|,
+//            5,
+//            |-16-LblEventName-16-|,
+//            5,
+//            |-16-LblEventsDefaultschedulestarttime-16-|,
+//            5,
+//            |-16-LblEventLocation-16-|,
+//            5,
+//            |-16-LblEventGroupName-16-|,
+//            16
+//        )
+        
         self.LblEventName.translatesAutoresizingMaskIntoConstraints = false
         self.LblEventName.numberOfLines = 0
         self.LblEventName.font = UIFont.systemFont(ofSize: 15.0)
         self.LblEventName.textColor = UIColor.red
         self.contentView.addSubview(self.LblEventName)
-        
+
         self.LblEventsDefaultschedulestarttime.translatesAutoresizingMaskIntoConstraints = false
         self.LblEventsDefaultschedulestarttime.numberOfLines = 0
         self.LblEventsDefaultschedulestarttime.font = UIFont.systemFont(ofSize: 12.0)
         self.LblEventsDefaultschedulestarttime.textColor = UIColor.gray
         self.contentView.addSubview(self.LblEventsDefaultschedulestarttime)
-        
+
         self.LblEventLocation.translatesAutoresizingMaskIntoConstraints = false
         self.LblEventLocation.numberOfLines = 0
         self.LblEventLocation.font = UIFont.systemFont(ofSize: 12.0)
         self.LblEventLocation.textColor = UIColor.lightGray
         self.contentView.addSubview(self.LblEventLocation)
-        
+
         self.LblEventGroupName.translatesAutoresizingMaskIntoConstraints = false
         self.LblEventGroupName.numberOfLines = 0
         self.LblEventGroupName.font = UIFont.systemFont(ofSize: 12.0)
         self.LblEventGroupName.textColor = UIColor.lightGray
         self.contentView.addSubview(self.LblEventGroupName)
-        
+
         self.LblEventHeaderName.translatesAutoresizingMaskIntoConstraints = false
         self.LblEventHeaderName.numberOfLines = 0
         self.LblEventHeaderName.font = UIFont.systemFont(ofSize: 12.0)
         self.LblEventHeaderName.textColor = UIColor.lightGray
         self.contentView.addSubview(self.LblEventHeaderName)
+
         
         
-        
-        // self
-        //        contentView.layer.borderWidth = 2.0
-        //        contentView.layer.borderColor = UIColor.black.cgColor
+//         self
+//                contentView.layer.borderWidth = 2.0
+//                contentView.layer.borderColor = UIColor.black.cgColor
         
     }
     

@@ -7,15 +7,13 @@
 //
 
 import Foundation
-
-import Foundation
 import Arrow
 import then
 
-// This is the bare Photo model.
 struct Event {
-    var url:String = ""
-    var id:String = ""
+    
+    var url = URL(string: "http://")!
+    var id: String = ""
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
@@ -38,11 +36,19 @@ struct Event {
     var defaultscheduleendtime: String?  // time
     var defaultschedulestart: String? // timestamp
     var defaultscheduleend: String? // timestamp
+    
+    init() { guard self._type == "event" else { return } }
+
 }
 
-extension Event : ArrowParsable {
+extension Event: ArrowParsable {
     
     public mutating func deserialize(_ json: JSON) {
+//        print("Event")
+
+        _type <-- json["_type"]
+        
+
         id <-- json["id"]
         url <-- json["url"]
         owner <-- json["owner"]
@@ -60,16 +66,23 @@ extension Event : ArrowParsable {
         production <-- json["production"]
         isproduction <-- json["isproduction"]
         attributes <-- json["attributes"]
-        _type <-- json["_type"]
         defaultscheduledescription <-- json["defaultscheduledescription"]
         defaultschedulestarttime <-- json["defaultschedulestarttime"]
         defaultscheduleendtime <-- json["defaultscheduleendtime"]
         defaultschedulestart <-- json["defaultschedulestart"]
         defaultscheduleend <-- json["defaultscheduleend"]
+        
     }
 }
-extension Event {
-     func fetchEvent(id: String) -> Promise<Event> {
-        return api.fetchEvent(id: id)
-    }
+
+
+extension Event: RestResource {
+    static func restName() -> String { return "api/event" }
+    func restId() -> String { return "\(id)" }
 }
+
+//extension Event {
+//     func fetchEvent(id: String) -> Promise<Event> {
+//        return api.fetchEvent(id: id)
+//    }
+//}

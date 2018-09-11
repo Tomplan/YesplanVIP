@@ -2,46 +2,33 @@
 //  LoginView.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 14/08/18.
-//  Copyright © 2018 Yesplan. All rights reserved.
-//
+//  Created by Techcc - FOH - Video on 8/09/18.
+//  Copyright (c) 2018 Yesplan. All rights reserved.
 
 import UIKit
+
+import Cartography
+import Squeaky
+import PureLayout
 import SearchTextField
 
-class LoginView: UIView {
+// MARK: - Properties and initialization
+
+public class LoginView: UIView {
     
     var loginAction: (() -> Void)?
     var signupAction: (() -> Void)?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    func setup() {
-        let stackView = createStackView(views: [companyURLTextField,
-                                                apiKeyTextField,
-                                                loginButton
-                                                ,signupButton])
-
-
-        addSubview(backgroundImageView)
-        addSubview(stackView)
-//        backgroundImageView.setAnchor(top: self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, paddingTop: 100, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
-        backgroundImageView.setAnchor(top: nil, left: nil, bottom: companyURLTextField.topAnchor, right: nil, paddingTop: 100, paddingLeft: 100, paddingBottom: -50 , paddingRight: 100)
-        backgroundImageView.setAnchor(width: 100, height: 100)
-//        backgroundImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        backgroundImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-
-        stackView.setAnchor(width: self.frame.width/1.2, height: 210)
-        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-    }
+    // View properties
+    let containerView: UIView = {
+        let view = UIView.newAutoLayout()
+        view.backgroundColor = .clear
+        return view
+    }()
     
     let backgroundImageView: UIImageView = {
         let iv = UIImageView()
-                iv.image = UIImage(named: "yesplanNB 180x180.png")
+        iv.image = UIImage(named: "yesplanNB 180x180.png")
         iv.contentMode = .scaleAspectFit
         iv.backgroundColor = UIColor.black
         return iv
@@ -52,7 +39,6 @@ class LoginView: UIView {
         tf.autocapitalizationType = .none
         tf.inlineMode = true
         tf.filterStrings(UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String])
-//        tf.textColor = .gray
         tf.theme = SearchTextFieldTheme.darkTheme()
         return tf
     }()
@@ -61,9 +47,6 @@ class LoginView: UIView {
         let tf = SearchTextField(placeHolder: "API_Key")
         tf.inlineMode = true
         tf.filterStrings(UserDefaults.standard.array(forKey: "autofillApiKey") as! [String])
-//        tf.textColor = .gray
-//        tf.backgroundColor = .green
-//        tf.tintColor = .blue
         return tf
     }()
     
@@ -82,13 +65,105 @@ class LoginView: UIView {
     @objc func handleLogin() {
         loginAction?()
     }
-
+    
     @objc func handleSignup() {
         signupAction?()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    var viewsInStack = [UIView]()
+    
+    var stackView = UIStackView()
+    
+    var didSetupConstraints = false
+    
+    public init() {
+        super.init(frame: .zero)
+        setupViewConfiguration()
     }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupViewConfiguration()
+    }
+}
+
+// MARK: - Object lifecycle
+
+extension LoginView {
+    //    override public func layoutSubviews() {
+    //     super.layoutSubviews()
+    //
+    //      self.layer.cornerRadius = self.frame.height / 2
+    //   }
+}
+
+// MARK: - View configuration
+
+extension LoginView: ViewConfigurable {
+    public func setupViewHierarchy() {
+        print("func LoginView.setupViewHierarchy")
+        
+        //     addSubview(mySubView)
+    }
+    
+    public func setupViews() {
+        print("func LoginView.setupViews")
+        
+        viewsInStack = [companyURLTextField
+            ,apiKeyTextField
+            ,loginButton
+            ,signupButton
+        ]
+        stackView = createStackView(views: viewsInStack)
+        
+        addSubview(containerView)
+        addSubview(stackView)
+        addSubview(backgroundImageView)
+
+        
+        setNeedsUpdateConstraints() // bootstrap Auto Layout
+        
+    }
+    
+    public func setupConstraints() {
+        print("func LoginView.setupConstraints")
+        
+        if (!didSetupConstraints) {
+            
+            
+            containerView.autoMatch(.width, to: .width, of: self)
+            containerView.autoMatch(.height, to: .height, of: self)
+            
+            stackView.autoCenterInSuperview()
+            stackView.autoPinEdge(toSuperviewEdge: .left, withInset: 20.0)
+            stackView.autoPinEdge(toSuperviewEdge: .right, withInset: 20.0)
+            
+            backgroundImageView.autoAlignAxis(.vertical, toSameAxisOf: containerView)
+            backgroundImageView.autoPinEdge(.bottom, to: .top, of: stackView, withOffset: -5)
+            
+            backgroundImageView.autoSetDimensions(to: CGSize(width: 80, height: 80))
+            
+//            companyURLTextField.autoPinEdge(.top, to: .bottom, of: backgroundImageView, withOffset: 10)
+//
+//            apiKeyTextField.autoPinEdge(.top, to: .bottom, of: companyURLTextField, withOffset: 10)
+//
+//            loginButton.autoPinEdge(.top, to: .bottom, of: apiKeyTextField, withOffset: 10)
+//
+//            signupButton.autoPinEdge(.top, to: .bottom, of: loginButton, withOffset: 10)
+            
+            didSetupConstraints = true
+        }
+    }
+}
+
+// MARK: - Public API
+
+extension LoginView {
+    
+}
+
+// MARK: - Private API
+
+private extension LoginView {
     
 }

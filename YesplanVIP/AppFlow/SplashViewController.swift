@@ -20,7 +20,7 @@ class SplashViewController: UIViewController {
 
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
+//        view.backgroundColor = UIColor.white
         
         view.addSubview(activityIndicator)
         
@@ -36,7 +36,7 @@ class SplashViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
             self.activityIndicator.stopAnimating()
             
-            ///// Create autofillCompanyURL and autofillApiKey in Userdefaults if not existing
+            // Mark: Create autofillCompanyURL and autofillApiKey in Userdefaults if not existing
           
             if UserDefaults.standard.bool(forKey: "autofillCompanyURLCheck") {
                 UserDefaults.standard.set(true, forKey: "autofillCompanyURLCheck")
@@ -56,12 +56,16 @@ class SplashViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "autofillApiKeyCheck")
             }
             
-            //// Check if User is Logged In
+            // Mark: Check if User is Logged In
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
+                // Mark: if logged in, switch to main
                 AppDelegate.shared.rootViewController.switchToMainScreen()
             } else {
+                // Mark: if not logged in, show login
                 AppDelegate.shared.rootViewController.showLoginScreen()
+//                AppDelegate.shared.rootViewController.showWelcomeScreen()
+
             }
         }
     }

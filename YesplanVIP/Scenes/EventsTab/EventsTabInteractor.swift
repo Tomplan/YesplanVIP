@@ -19,23 +19,49 @@ protocol EventsTabBusinessLogic
 
 protocol EventsTabDataStore
 {
-  //var name: String { get set }
+  var basic: Basic? { get set }
 }
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
+    var basic: Basic? = Basic()
+    
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
-    var events:Events = Events()
-    var event:Event = Event()
+    var events: Events = Events()
+    var event: Event = Event()
+    var groups: Groups = Groups()
+    var group: Group = Group()
   // MARK: Do something
   
   func doSomething(request: EventsTab.Something.Request)
   {
+    print("EventsTabInteractor.doSomething")
     worker = EventsTabWorker()
     worker?.doSomeWork()
-    
-//    Events.fetchEvents().then { fetchedEvents in
+    print("basic: ", basic?.ws.baseURL)
+    if let base = basic?.ws {
+    print("base: ", base)
+        base.getAll(events).then { events in
+            print(events)
+//                    }.onError { e in
+//                        // An error occured :/
+//                        print(e)
+//                    }.finally {
+//            //            // In any case, reload the tableView
+//            //            //                print(self.events)
+//            //            //                print("data: ", self.events.data)
+//                        print("pagination: ", self.events.pagination)
+//            //            for event in self.events.data {
+//            //                print("id: ", event.id)
+                        }
+    } else {
+        print("no good")
+    }
+//
+//    base.getAll(events).then { events in
+//                        print(events.pagination)
+//                    }
 //        self.events = fetchedEvents
 //        }.onError { e in
 //            // An error occured :/
@@ -52,27 +78,20 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 //            //                self.v.refreshControl.endRefreshing()
 //        }
     
-    event.fetchEvent(id: "192337153-1479892000").then { fetchedEvent in
-        self.event = fetchedEvent
-        }.onError { e in
-            print(e)
-        }.finally {
-           
-//            dump(self.event)
-            print(self.event.defaultscheduleendtime!)
-            print(self.event.locations![0].name!)
-            print(self.event.locations![0]._type!)
-
-
-    }
-    
-//    fetchEvent(id: "44870913-1479566444").then { fetchedEvent in
+//    event.fetchEvent(id: "192337153-1479892000").then { fetchedEvent in
 //        self.event = fetchedEvent
 //        }.onError { e in
 //            print(e)
 //        }.finally {
-//            print("event: ", self.event)
-//        }
+//
+////            dump(self.event)
+//            print(self.event.defaultscheduleendtime!)
+//            print(self.event.locations![0].name!)
+//            print(self.event.locations![0]._type!)
+//
+//
+//    }
+    
     
     
     

@@ -11,9 +11,11 @@
 //
 
 import UIKit
-//import Firebase
+import Cartography
+import Squeaky
+import PureLayout
 
-protocol LoginDisplayLogic: class
+protocol LoginDisplayLogic: AnyObject
 {
   func displaySomething(viewModel: Login.EnterLogin.ViewModel)
 }
@@ -23,17 +25,22 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
  
-    var loginView: LoginView!
+//    var loginView: LoginView!
     let defaults = UserDefaults.standard
-//    var favouritessetCompanyURL = UserDefaults.standard.bool(forKey: "autofillCompanyURL")
-    var photos = [Photo]()
 
     var autofillCompanyURL: [String] = UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String]
 
-//    var favouritessetApiKey = UserDefaults.standard.bool(forKey: "autofillCompanyURL")
-
     var autofillApiKey: [String] = UserDefaults.standard.array(forKey: "autofillApiKey") as! [String]
 
+    // view:
+    
+    let loginView: LoginView = {
+        let view = LoginView.newAutoLayout()
+        view.backgroundColor = .clear
+        return view
+    }()
+
+    var didSetupConstraints = false
 
 
   // MARK: Object lifecycle
@@ -43,16 +50,27 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setup()
   }
-//
+
   required init?(coder aDecoder: NSCoder)
   {
     super.init(coder: aDecoder)
     setup()
   }
-  
-  // MARK: Setup
-  
-  private func setup()
+}
+
+  // MARK: View lifecycle
+
+extension LoginViewController {
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        setupViewConfiguration()
+    }
+}
+
+// MARK: - VIP configuration
+
+private extension LoginViewController {
+    func setup()
   {
     let viewController = self
     let interactor = LoginInteractor()
@@ -66,44 +84,77 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     router.dataStore = interactor
 
   }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
+    
+    // MARK: Routing
+    
+//    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//    {
+//        print("router")
+//        if let scene = segue.identifier {
+//            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+//            if let router = router, router.responds(to: selector) {
+//                router.perform(selector, with: segue)
+//            }
+//        }
+//    }
+}
+
+
+
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
-    setupView()
-    
+//  override func viewDidLoad()
+//  {
+//    super.viewDidLoad()
+//    title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
+//    setupView()
+//
+//    }
+
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.navigationBar.isHidden = true
+//    }
+
+extension LoginViewController: ViewConfigurable {
+    public func setupViewHierarchy() {
+        // Mark: this one we're not gonna use!!!! Forget about it!!!!
+        //    print("func WelcomeViewController.setupViewHierarchy")
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-    }
-    
-    func setupView() {
-        let mainView = LoginView(frame: self.view.frame)
-        self.loginView = mainView
+    public func setupViews() {
+        print("func WelcomeViewController.setupViews")
+        
+        // setup title
+        
+        title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
+        
+        // Mark: Setup containerView
+        
         self.loginView.loginAction = login
-//        self.loginView.signupAction = signupPressed
-        self.view.addSubview(loginView)
-        loginView.setAnchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
+        self.loginView.signupAction = signupPressed
+        view.addSubview(loginView)
+        
+        view.setNeedsUpdateConstraints() // bootstrap Auto Layout
     }
-  
     
+    public func setupConstraints() {
+        print("func WelcomeViewController.setupConstraints")
+        
+        if (!didSetupConstraints) {
+            
+            loginView.autoMatch(.width, to: .width, of: view)
+            loginView.autoMatch(.height, to: .height, of: view)
+            
+            didSetupConstraints = true
+        }
+        
+        super.updateViewConstraints()
+    }
+}
+
+private extension LoginViewController {
     func signupPressed() {
         // 1
         print("LoginViewController signupPressed")
@@ -122,27 +173,38 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     let apiKey = loginView.apiKeyTextField.text
     let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey)
     interactor?.loginPressed(request: request)
-    
   }
-  
+}
+
+extension LoginViewController {
   func displaySomething(viewModel: Login.EnterLogin.ViewModel)
   {
     if viewModel.success {
-        
+        // Mark: Set user is logged in
         self.defaults.set(true, forKey: "LOGGED_IN")
         
+        // Mark: append companyUrl to autofill
         autofillCompanyURL.append(loginView.companyURLTextField.text!)
         autofillCompanyURL = Array(Set(autofillCompanyURL))
         self.defaults.set(autofillCompanyURL, forKey: "autofillCompanyURL" )
-
+        
+        // Mark: append apiKey to autofill
         autofillApiKey.append(loginView.apiKeyTextField.text!)
         autofillApiKey = Array(Set(autofillApiKey))
         self.defaults.set(autofillApiKey, forKey: "autofillApiKey" )
+        
+        // TODO: set basic companyUrl and apiKey to open everywhere?
 
+        //Mark: switch to MainScreen
+        router?.routeToSomewhere()
         AppDelegate.shared.rootViewController.switchToMainScreen()
         
     } else {
         print("back to the beginning")
+        
+        // TODO: display alert
+        
+        // Mark: user have to add new apiKey
 //        loginView.companyURLTextField.text = nil
         loginView.apiKeyTextField.text = nil
         

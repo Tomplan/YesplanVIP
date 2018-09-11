@@ -1,5 +1,5 @@
 //
-//  Events.swift
+//  Groups.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 22/08/18.
@@ -10,12 +10,12 @@ import Foundation
 import Arrow
 import then
 
-struct Events {
+struct Groups {
     var pagination = Pagination()
-    var data = [Event]()
+    var data = [Group]()
 }
 
-extension Events : ArrowParsable {
+extension Groups : ArrowParsable {
     
     public mutating func deserialize(_ json: JSON) {
         pagination <-- json["pagination"]
@@ -23,13 +23,12 @@ extension Events : ArrowParsable {
     }
 }
 
-extension Events: RestResource {
-    static func restName() -> String { return "api/events" }
+extension Groups: RestResource {
+    static func restName() -> String { return "api/groups" }
     func restId() -> String { return "" }
 }
-
-//extension Events {
-//    static func fetchEvents() -> Promise<Events> {
-//        return api.fetchEvents()
+//extension Groups {
+//    static func fetchGroups() -> Promise<Groups> {
+//        return api.fetchGroups()
 //    }
 //}

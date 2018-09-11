@@ -17,11 +17,13 @@ protocol EventsTabDisplayLogic: class
   func displaySomething(viewModel: EventsTab.Something.ViewModel)
 }
 
-class EventsTabViewController: UIViewController, EventsTabDisplayLogic
+class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, EventsTabDisplayLogic
 {
+  
   var interactor: EventsTabBusinessLogic?
   var router: (NSObjectProtocol & EventsTabRoutingLogic & EventsTabDataPassing)?
-
+    var v = EventsTabView()
+    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -65,23 +67,38 @@ class EventsTabViewController: UIViewController, EventsTabDisplayLogic
   }
   
   // MARK: View lifecycle
-    override func loadView() {
-        view = EventsTabView()
-    }
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
+    override func loadView() { view = v }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//        v.collectionView.dataSource = self as? UICollectionViewDataSource
     doSomething()
   }
-  
+    
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
+    
   // MARK: Do something
   
-  //@IBOutlet weak var nameTextField: UITextField!
-  
+//  @IBOutlet weak var basic: UITextField!
+    
+    @objc private func refresh() {
+//        print("refresh")
+        doSomething()
+    }
+    
   func doSomething()
   {
+    print("doSomething")
+
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
+    self.v.collectionView.reloadData()
+    self.v.refreshControl.endRefreshing()
   }
   
   func displaySomething(viewModel: EventsTab.Something.ViewModel)
@@ -89,3 +106,4 @@ class EventsTabViewController: UIViewController, EventsTabDisplayLogic
     //nameTextField.text = viewModel.name
   }
 }
+

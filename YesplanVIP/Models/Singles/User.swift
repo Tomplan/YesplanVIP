@@ -27,3 +27,8 @@ extension User : ArrowParsable {
         email <-- json["email"]
     }
 }
+
+extension User: RestResource {
+    static func restName() -> String { return "api/user" }
+    func restId() -> String { return "\(id)" }
+}

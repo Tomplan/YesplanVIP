@@ -7,62 +7,54 @@
 //
 
 import UIKit
+import Stevia
 
-class EventsTabView: UIView {
+// Get the full documentation at https://github.com/freshOS/Stevia
+
+class EventsTabView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     
     // MARK:- Properties:
-    var eventsCollectionView: UICollectionView
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray) // UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    
-    // MARK:- Initializers:
-    init() {
-        
-        // eventsCollectionView
+    let refreshControl = UIRefreshControl()
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+
+    lazy var collectionView : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        eventsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+//        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
+//        collectionView.backgroundColor = .yellow
+        return collectionView
+    }()
+    
+    convenience init() {
+    self.init(frame: CGRect.zero)
+
+        sv(collectionView)
+        collectionView.fillContainer()
         
-        super.init(frame: CGRect.zero)
-        setupComponents()
-        setupConstraints()
+        collectionView.addSubview(refreshControl)
+        collectionView.addSubview(spinner)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
+        return 1
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 300
     }
     
-    // MARK:- Setup components
-    private func setupComponents() {
-        // self
-        backgroundColor = UIColor.black
-        
-        // spinner
-        addSubview(spinner)
-        
-        // eventsCollectionView
-        eventsCollectionView.backgroundColor = UIColor.clear
-        eventsCollectionView.showsVerticalScrollIndicator = false
-        eventsCollectionView.showsHorizontalScrollIndicator = false
-        eventsCollectionView.bounces = true
-        eventsCollectionView.decelerationRate = UIScrollViewDecelerationRateNormal
-        addSubview(eventsCollectionView)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventsTabViewCell", for: indexPath) as! EventsTabViewCell
+//        cell.backgroundColor = .cyan
+        return cell
     }
     
-    private func setupConstraints() {
-        
-        NSLayoutConstraint.activate([
-            // spinner
-            spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
-            
-            // eventsCollectionView
-            eventsCollectionView.topAnchor.constraint(equalTo: topAnchor),
-            eventsCollectionView.leftAnchor.constraint(equalTo: leftAnchor),
-            eventsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            eventsCollectionView.rightAnchor.constraint(equalTo: rightAnchor)
-            ])
-        
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        eventsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: self.collectionView.frame.size.width, height: 200)
+//    }
 }

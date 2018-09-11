@@ -10,7 +10,59 @@ import UIKit
 
 class MainNavigationController: UINavigationController { }
 
+
+protocol MainTabBarDisplayLogic: class
+{
+    func displaySomething(viewModel: MainTabBar.Something.ViewModel)
+}
+
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
+    
+    var interactor: MainTabBarBusinessLogic?
+    var router: (NSObjectProtocol & MainTabBarRoutingLogic & MainTabBarDataPassing)?
+    // MARK: Object lifecycle
+    
+      override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+      {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+      }
+    
+      required init?(coder aDecoder: NSCoder)
+      {
+        super.init(coder: aDecoder)
+        setup()
+      }
+    
+      // MARK: Setup
+    
+      private func setup()
+      {
+        let viewController = self
+        let interactor = MainTabBarInteractor()
+        let presenter = MainTabBarPresenter()
+        let router = MainTabBarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController as? MainTabBarDisplayLogic
+        router.viewController = viewController
+        router.dataStore = interactor
+      }
+    
+      // MARK: Routing
+    
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+      {
+        if let scene = segue.identifier {
+          let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+          if let router = router, router.responds(to: selector) {
+            router.perform(selector, with: segue)
+          }
+        }
+      }
+    
+      // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +72,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         UITabBar.appearance().barTintColor = UIColor.black
         // UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         setupTabBar()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,6 +144,11 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             item.imageInsets = UIEdgeInsetsMake(4, 0, -4, 0)
         }
     }
+    
+    func displaySomething(viewModel: MainTabBar.Something.ViewModel)
+      {
+    //nameTextField.text = viewModel.name
+      }
 }
 
 extension MainTabBarViewController {
