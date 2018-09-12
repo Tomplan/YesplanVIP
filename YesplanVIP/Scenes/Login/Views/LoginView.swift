@@ -101,13 +101,13 @@ extension LoginView {
 
 extension LoginView: ViewConfigurable {
     public func setupViewHierarchy() {
-        print("func LoginView.setupViewHierarchy")
+//        print("func LoginView.setupViewHierarchy")
         
         //     addSubview(mySubView)
     }
     
     public func setupViews() {
-        print("func LoginView.setupViews")
+//        print("func LoginView.setupViews")
         
         viewsInStack = [companyURLTextField
             ,apiKeyTextField
@@ -126,7 +126,7 @@ extension LoginView: ViewConfigurable {
     }
     
     public func setupConstraints() {
-        print("func LoginView.setupConstraints")
+//        print("func LoginView.setupConstraints")
         
         if (!didSetupConstraints) {
             

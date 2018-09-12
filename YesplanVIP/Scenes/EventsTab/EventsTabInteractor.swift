@@ -11,90 +11,74 @@
 //
 
 import UIKit
+import ws
+import then
 
 protocol EventsTabBusinessLogic
 {
   func doSomething(request: EventsTab.Something.Request)
+     var basic: Basic? { get set }
 }
 
 protocol EventsTabDataStore
 {
-  var basic: Basic? { get set }
+    var basic: Basic? { get set }
+    var baseKey: String? { get set }
 }
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
-    var basic: Basic? = Basic()
     
+    var basic: Basic?
+    var baseKey: String?
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
+    
     var events: Events = Events()
     var event: Event = Event()
     var groups: Groups = Groups()
     var group: Group = Group()
+    
   // MARK: Do something
   
   func doSomething(request: EventsTab.Something.Request)
   {
     print("EventsTabInteractor.doSomething")
+    print("EventsTabInteractor.basic :", basic)
     worker = EventsTabWorker()
     worker?.doSomeWork()
-    print("basic: ", basic?.ws.baseURL)
-    if let base = basic?.ws {
+    
+    print("URL: ", UserDefaults.standard.string(forKey: "URL")!)
+    print("KEY: ", UserDefaults.standard.string(forKey: "KEY")!)
+
+    
+    
+    let base = Basic()
+        base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+
     print("base: ", base)
+    print("base: ", base.ws.baseURL)
+
+////        let params = ["api_key":"\(UserDefaults.standard.string(forKey: "KEY")!)"]
+//    let params = ["":""]
+//
+//    print(params)
         base.getAll(events).then { events in
-            print(events)
-//                    }.onError { e in
-//                        // An error occured :/
-//                        print(e)
-//                    }.finally {
-//            //            // In any case, reload the tableView
-//            //            //                print(self.events)
-//            //            //                print("data: ", self.events.data)
-//                        print("pagination: ", self.events.pagination)
-//            //            for event in self.events.data {
-//            //                print("id: ", event.id)
-                        }
-    } else {
-        print("no good")
-    }
-//
-//    base.getAll(events).then { events in
-//                        print(events.pagination)
-//                    }
-//        self.events = fetchedEvents
-//        }.onError { e in
-//            // An error occured :/
-//            print(e)
-//        }.finally {
-//            // In any case, reload the tableView
-//            //                print(self.events)
-//            //                print("data: ", self.events.data)
-//            print("pagination: ", self.events.pagination)
-////            for event in self.events.data {
-////                print("id: ", event.id)
-////            }
-//            //                self.v.tableView.reloadData()
-//            //                self.v.refreshControl.endRefreshing()
-//        }
-    
-//    event.fetchEvent(id: "192337153-1479892000").then { fetchedEvent in
-//        self.event = fetchedEvent
-//        }.onError { e in
-//            print(e)
-//        }.finally {
-//
-////            dump(self.event)
-//            print(self.event.defaultscheduleendtime!)
-//            print(self.event.locations![0].name!)
-//            print(self.event.locations![0]._type!)
-//
-//
-//    }
-    
-    
-    
-    
+            self.events = events
+                    }.onError { e in
+                        // An error occured :/
+                        print(e)
+                    }.finally {
+            //            // In any case, reload the tableView
+            //            //                print(self.events)
+            //            //                print("data: ", self.events.data)
+                        print("pagination: ", self.events.pagination)
+//                        for event in self.events.data {
+//                            print("id: ", event.id)
+//                        }
+                    }
+   
+
     let response = EventsTab.Something.Response()
     presenter?.presentSomething(response: response)
   }

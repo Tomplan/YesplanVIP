@@ -27,7 +27,6 @@ class EventsTabRouter: NSObject, EventsTabRoutingLogic, EventsTabDataPassing
   weak var viewController: EventsTabViewController?
   var dataStore: EventsTabDataStore?
   
-    
   // MARK: Routing
   
   //func routeToSomewhere(segue: UIStoryboardSegue?)

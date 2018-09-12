@@ -33,7 +33,7 @@ extension WS {
     }
     
     public func getAll<T:ArrowParsable & RestResource>(_ restResource:T, params:[String:Any] = [String:Any]()) -> Promise<T> {
-        let paramsApiKey: [String:Any] = ["api_key":"4A0863B77CDA66EAE18095E1947048D9"]
+        let paramsApiKey: [String:Any] = ["":""]
         return get(allURL(restResource), params: params.merged(with: paramsApiKey))
     }
     

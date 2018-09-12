@@ -21,6 +21,8 @@ enum EventsTab
     
     struct Request
     {
+//        var base: Basic
+//        var baseKey: String
     }
     
     struct Response

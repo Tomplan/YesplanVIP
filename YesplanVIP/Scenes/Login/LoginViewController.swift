@@ -25,7 +25,6 @@ class LoginViewController: UIViewController, LoginDisplayLogic
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
  
-//    var loginView: LoginView!
     let defaults = UserDefaults.standard
 
     var autofillCompanyURL: [String] = UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String]
@@ -84,19 +83,6 @@ private extension LoginViewController {
     router.dataStore = interactor
 
   }
-    
-    // MARK: Routing
-    
-//    override internal func prepare(for segue: UIStoryboardSegue, sender: Any?)
-//    {
-//        print("router")
-//        if let scene = segue.identifier {
-//            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-//            if let router = router, router.responds(to: selector) {
-//                router.perform(selector, with: segue)
-//            }
-//        }
-//    }
 }
 
 
@@ -124,7 +110,7 @@ extension LoginViewController: ViewConfigurable {
     }
     
     public func setupViews() {
-        print("func WelcomeViewController.setupViews")
+        print("func LoginViewController.setupViews")
         
         // setup title
         
@@ -140,7 +126,7 @@ extension LoginViewController: ViewConfigurable {
     }
     
     public func setupConstraints() {
-        print("func WelcomeViewController.setupConstraints")
+        print("func LoginViewController.setupConstraints")
         
         if (!didSetupConstraints) {
             
@@ -187,17 +173,20 @@ extension LoginViewController {
         autofillCompanyURL.append(loginView.companyURLTextField.text!)
         autofillCompanyURL = Array(Set(autofillCompanyURL))
         self.defaults.set(autofillCompanyURL, forKey: "autofillCompanyURL" )
-        
+        print(UserDefaults.standard.string(forKey: "URL"))
+
         // Mark: append apiKey to autofill
         autofillApiKey.append(loginView.apiKeyTextField.text!)
         autofillApiKey = Array(Set(autofillApiKey))
         self.defaults.set(autofillApiKey, forKey: "autofillApiKey" )
-        
+        print(UserDefaults.standard.string(forKey: "KEY"))
         // TODO: set basic companyUrl and apiKey to open everywhere?
 
         //Mark: switch to MainScreen
+//        router?.routeToSomewhere()
+//        AppDelegate.shared.rootViewController.switchToMainScreen()
         router?.routeToSomewhere()
-        AppDelegate.shared.rootViewController.switchToMainScreen()
+
         
     } else {
         print("back to the beginning")

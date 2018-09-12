@@ -43,16 +43,11 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
      }
      // MARK: - Passing data
      func passDataToSomewhere(source: LoginDataStore, destination: inout EventsTabDataStore) {
-       destination.basic = source.basic
+        destination.basic = source.basic
+        print("LoginRouter.source.basic: ", source.basic)
+        destination.baseKey = source.baseKey
+        print("LoginRouter.source.baseKey: ", source.baseKey)
+
      }
 }
-//  func passDataToMainTabBar(source: LoginDataStore, destination: inout EventsTabDataStore)
-//  {
-//    destination.basic = source.basic
-//    print("source.basic: ", source.basic)
-//    print("destination.basic: ", destination.basic)
-//
-//  }
 
-    
-//}

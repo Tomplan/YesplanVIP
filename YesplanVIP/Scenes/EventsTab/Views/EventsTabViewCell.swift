@@ -64,27 +64,13 @@ class EventsTabViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.black.cgColor
         self.backgroundColor = UIColor.yellow
         
-//        sv(
-//            LblEventHeaderName,
-//            LblEventName,
-//            LblEventsDefaultschedulestarttime,
-//            LblEventLocation,
-//            LblEventGroupName
-//        )
-        
-//        layout(
-//            16,
-//            |-16-LblEventHeaderName-16-|,
-//            5,
-//            |-16-LblEventName-16-|,
-//            5,
-//            |-16-LblEventsDefaultschedulestarttime-16-|,
-//            5,
-//            |-16-LblEventLocation-16-|,
-//            5,
-//            |-16-LblEventGroupName-16-|,
-//            16
-//        )
+        sv(
+            LblEventHeaderName,
+            LblEventName,
+            LblEventsDefaultschedulestarttime,
+            LblEventLocation,
+            LblEventGroupName
+        )
         
         self.LblEventName.translatesAutoresizingMaskIntoConstraints = false
         self.LblEventName.numberOfLines = 0
@@ -125,6 +111,20 @@ class EventsTabViewCell: UICollectionViewCell {
     }
     
     private func setupConstraints() {
+        
+//        layout(
+//            5,
+//            |-16-LblEventHeaderName-16-|,
+//            5,
+//            |-16-LblEventName-16-|,
+//            5,
+//            |-16-LblEventsDefaultschedulestarttime-16-|,
+//            5,
+//            |-16-LblEventLocation-16-|,
+//            5,
+//            |-16-LblEventGroupName-16-|,
+//            5
+//        )
         
         self.LblEventName.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5.0).isActive = true
         self.LblEventName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true

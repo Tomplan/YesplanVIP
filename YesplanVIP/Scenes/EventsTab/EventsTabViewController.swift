@@ -56,15 +56,15 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   
   // MARK: Routing
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//  {
+//    if let scene = segue.identifier {
+//      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+//      if let router = router, router.responds(to: selector) {
+//        router.perform(selector, with: segue)
+//      }
+//    }
+//  }
   
   // MARK: View lifecycle
     override func loadView() { view = v }
@@ -87,14 +87,13 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 //  @IBOutlet weak var basic: UITextField!
     
     @objc private func refresh() {
-//        print("refresh")
+        print("refresh")
         doSomething()
     }
     
   func doSomething()
   {
-    print("doSomething")
-
+    print("EventsTabViewController.doSomething")
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
     self.v.collectionView.reloadData()
