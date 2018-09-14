@@ -30,24 +30,23 @@ class LoginRouter: NSObject, LoginRoutingLogic, LoginDataPassing
   // MARK: Routing
   
     func routeToSomewhere() {
-        print("LoginRouter.routeToSomewhere")
-         let destinationVC = EventsTabViewController()
-        var destinationDS = destinationVC.router!.dataStore!
-         passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-         navigateToSomewhere(source: viewController!, destination: destinationVC)
+//        print("LoginRouter.routeToSomewhere")
+//         let destinationVC = EventsTabViewController()
+//        var destinationDS = destinationVC.router!.dataStore!
+//         passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+//         navigateToSomewhere(source: viewController!, destination: destinationVC)
+//
     }
     
      // MARK: - Navigation
-     func navigateToSomewhere(source: LoginViewController, destination: EventsTabViewController) {
-       source.show(destination, sender: nil)
-     }
+//     func navigateToSomewhere(source: LoginViewController, destination: EventsTabViewController) {
+//       source.show(destination, sender: nil)
+//     }
      // MARK: - Passing data
-     func passDataToSomewhere(source: LoginDataStore, destination: inout EventsTabDataStore) {
-        destination.basic = source.basic
-        print("LoginRouter.source.basic: ", source.basic)
-        destination.baseKey = source.baseKey
-        print("LoginRouter.source.baseKey: ", source.baseKey)
-
-     }
+//     func passDataToSomewhere(source: LoginDataStore, destination: inout EventsTabDataStore) {
+////        destination.basic = source.basic
+////        destination.baseKey = source.baseKey
+//
+//     }
 }
 

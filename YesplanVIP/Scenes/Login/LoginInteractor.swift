@@ -28,15 +28,15 @@ protocol LoginBusinessLogic
 
 protocol LoginDataStore
 {
-  var basic: Basic! { get set }
-    var baseKey: String! { get set }
+//  var basic: Basic! { get set }
+//    var baseKey: String! { get set }
 
 }
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
-    var basic: Basic!
-    var baseKey: String!
+//    var basic: Basic!
+//    var baseKey: String!
     
   var presenter: LoginPresentationLogic?
   var worker: LoginWorker?
@@ -55,40 +55,45 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         urlComponents.path = "/api/events";
         urlComponents.query = "api_key=\(apiKey!)";
         
-        var url = try? urlComponents.url!.asURL()
-        print("url1: ", url!)
+        let url = try? urlComponents.url!.asURL()
+//        print("url1: ", url!)
         
     worker = LoginWorker()
         
-        if worker?.verifyUrl(urlString: "\(String(describing: url!))") == true {
-            
+        
+        print("worker: ", worker?.verifyUrl(urlString: "\(String(describing: url!))"))
+//        if worker?.verifyUrl(urlString: "\(String(describing: url!))") == true {
+        
+        worker?.verifyUrl(urlString: "\(String(describing: url!))").then { result in
+            print(result)
+
+            if result == true {
+                print("true indeed")
+                
             urlComponents.path = ""
             urlComponents.query = nil
-            
+//
             if let x = try? urlComponents.url!.asURL() {
             let y = (String(describing: x))
-                
+//
             UserDefaults.standard.set(y, forKey: "URL")
             UserDefaults.standard.set(apiKey, forKey: "KEY")
-            
-            baseKey = apiKey!
-            
-            let base = Basic()
-//            base.ws = WS("\(String(describing: x))")
-                base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
-            basic = base
-
+//
+//            let base = Basic()
+//            base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+//
             let response = Login.EnterLogin.Response(success: true)
-            presenter?.presentSomething(response: response)
+                self.presenter?.presentSomething(response: response)
             }
             else {
                 print("nope")
             }
         } else {
             print("no valid url")
-            let response = Login.EnterLogin.Response(success: false)            
-            presenter?.presentSomething(response: response)
+            let response = Login.EnterLogin.Response(success: false)
+                self.presenter?.presentSomething(response: response)
             return
+        }
         }
     }
 }

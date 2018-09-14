@@ -173,19 +173,15 @@ extension LoginViewController {
         autofillCompanyURL.append(loginView.companyURLTextField.text!)
         autofillCompanyURL = Array(Set(autofillCompanyURL))
         self.defaults.set(autofillCompanyURL, forKey: "autofillCompanyURL" )
-        print(UserDefaults.standard.string(forKey: "URL"))
 
         // Mark: append apiKey to autofill
         autofillApiKey.append(loginView.apiKeyTextField.text!)
         autofillApiKey = Array(Set(autofillApiKey))
         self.defaults.set(autofillApiKey, forKey: "autofillApiKey" )
-        print(UserDefaults.standard.string(forKey: "KEY"))
-        // TODO: set basic companyUrl and apiKey to open everywhere?
 
         //Mark: switch to MainScreen
+        AppDelegate.shared.rootViewController.switchToMainScreen()
 //        router?.routeToSomewhere()
-//        AppDelegate.shared.rootViewController.switchToMainScreen()
-        router?.routeToSomewhere()
 
         
     } else {

@@ -17,20 +17,20 @@ import then
 protocol EventsTabBusinessLogic
 {
   func doSomething(request: EventsTab.Something.Request)
-     var basic: Basic? { get set }
+//     var basic: Basic? { get set }
 }
 
 protocol EventsTabDataStore
 {
-    var basic: Basic? { get set }
-    var baseKey: String? { get set }
+//    var basic: Basic? { get set }
+//    var baseKey: String? { get set }
 }
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
     
-    var basic: Basic?
-    var baseKey: String?
+//    var basic: Basic?
+//    var baseKey: String?
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
     
@@ -43,27 +43,13 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   
   func doSomething(request: EventsTab.Something.Request)
   {
-    print("EventsTabInteractor.doSomething")
-    print("EventsTabInteractor.basic :", basic)
     worker = EventsTabWorker()
     worker?.doSomeWork()
-    
-    print("URL: ", UserDefaults.standard.string(forKey: "URL")!)
-    print("KEY: ", UserDefaults.standard.string(forKey: "KEY")!)
 
-    
-    
     let base = Basic()
-        base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+    base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
 
-    print("base: ", base)
-    print("base: ", base.ws.baseURL)
-
-////        let params = ["api_key":"\(UserDefaults.standard.string(forKey: "KEY")!)"]
-//    let params = ["":""]
-//
-//    print(params)
-        base.getAll(events).then { events in
+    base.getAll(events).then { events in
             self.events = events
                     }.onError { e in
                         // An error occured :/

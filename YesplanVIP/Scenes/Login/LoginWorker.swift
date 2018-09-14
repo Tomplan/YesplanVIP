@@ -11,14 +11,31 @@
 //
 
 import UIKit
+import Alamofire
+import then
+import ws
+import Arrow
 
 class LoginWorker
 {
-  func verifyUrl(urlString: String?) -> Bool {
-        guard let urlString = urlString,
-            let url = URL(string: urlString) else {
-                return false
+    var ikke: Bool = Bool()
+
+    func verifyUrl(urlString: String?) -> Promise<Bool> {
+    return Promise { resolve, reject in
+//        print("Testing URL ...")
+    Alamofire.request(urlString!)
+        .validate()
+        .responseJSON { response in
+            
+            switch response.result {
+            case .success(let data):
+                resolve(true)
+                
+            case .failure(let error):
+                print(error)
+                resolve(false)
             }
-        return UIApplication.shared.canOpenURL(url)
+            }
+        }
     }
 }
