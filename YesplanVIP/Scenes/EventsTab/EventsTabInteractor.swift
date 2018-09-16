@@ -59,9 +59,9 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
             //            //                print(self.events)
             //            //                print("data: ", self.events.data)
                         print("pagination: ", self.events.pagination)
-//                        for event in self.events.data {
-//                            print("id: ", event.id)
-//                        }
+                        for event in self.events.data {
+                            print("id: ", event.id)
+                        }
                     }
    
 

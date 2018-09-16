@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import Alamofire
 
 enum Login
 {
@@ -26,10 +27,12 @@ enum Login
     struct Response
     {
         var success: Bool
+        var error: String?
     }
     struct ViewModel
     {
         var success: Bool
+        var error: String?
     }
   }
 }

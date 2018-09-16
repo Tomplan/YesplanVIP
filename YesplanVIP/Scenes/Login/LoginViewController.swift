@@ -165,7 +165,7 @@ private extension LoginViewController {
 extension LoginViewController {
   func displaySomething(viewModel: Login.EnterLogin.ViewModel)
   {
-    if viewModel.success {
+    if viewModel.success == true {
         // Mark: Set user is logged in
         self.defaults.set(true, forKey: "LOGGED_IN")
         
@@ -185,11 +185,13 @@ extension LoginViewController {
 
         
     } else {
-        print("back to the beginning")
+        let alert = UIAlertController(title: "URLTest", message: "\(viewModel.error!)", preferredStyle: .alert)
         
-        // TODO: display alert
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        // Mark: user have to add new apiKey
+        self.present(alert, animated: true)
+        
+        // Mark: user has to add new apiKey
 //        loginView.companyURLTextField.text = nil
         loginView.apiKeyTextField.text = nil
         

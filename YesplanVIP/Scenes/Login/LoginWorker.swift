@@ -18,23 +18,89 @@ import Arrow
 
 class LoginWorker
 {
-    var ikke: Bool = Bool()
-
-    func verifyUrl(urlString: String?) -> Promise<Bool> {
+//    var ikke: Bool = Bool()
+//    var error
+    
+    func verifyUrl(urlString: String?) -> Promise<(Bool, String?)> {
     return Promise { resolve, reject in
-//        print("Testing URL ...")
+        
+        
+        
     Alamofire.request(urlString!)
-        .validate()
+//        .validate()
         .responseJSON { response in
             
+            print(response)
+            
+//            var ikke: Bool
+//            var error: String?
+            
             switch response.result {
-            case .success(let data):
-                resolve(true)
+            case .success( _):
+                resolve((true, nil))
                 
             case .failure(let error):
-                print(error)
-                resolve(false)
-            }
+//                print("error: ", error)
+                    if let error = error as? AFError {
+//                        print("AFERROR")
+                        switch error {
+                        case .invalidURL(let url):
+//                            print("Invalid URL: \(url) - \(error.localizedDescription)")
+                            resolve((false, "Invalid URL: \(url) - \(error.localizedDescription)"))
+
+                        case .parameterEncodingFailed(let reason):
+//                            print("Parameter encoding failed: \(error.localizedDescription)")
+//                            print("Failure Reason: \(reason)")
+                            resolve((false, "AFError: \(error.localizedDescription)"))
+
+                        case .multipartEncodingFailed(let reason):
+//                            print("Multipart encoding failed: \(error.localizedDescription)")
+//                            print("Failure Reason: \(reason)")
+                            resolve((false, "AFError: \(error.localizedDescription)"))
+
+                        case .responseValidationFailed(let reason):
+//                            print("Response validation failed: \(error.localizedDescription)")
+//                            print("Failure Reason: \(reason)")
+                            
+                            switch reason {
+                                
+                            case .dataFileNil, .dataFileReadFailed:
+//                                print("Downloaded file could not be read")
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+
+                            case .missingContentType(let acceptableContentTypes):
+//                                print("Content Type Missing: \(acceptableContentTypes)")
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+
+                            case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+//                                print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+
+                            case .unacceptableStatusCode(let code):
+//                                print("Response status code was unacceptable: \(code)")
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+
+                            }
+                        case .responseSerializationFailed(let reason):
+//                            print("Response serialization failed: \(error.localizedDescription)")
+//                            print("Failure Reason: \(reason)")
+                            resolve((false, "AFError: \(error.localizedDescription)"))
+
+                        }
+                        
+//                        print("Underlying error: \(error.underlyingError)")
+                    } else if let error = error as? URLError {
+//                        print("URLError")
+                       
+//                        print("\(error.localizedDescription)")
+                        resolve((false, "Url error: \(error.localizedDescription)"))
+
+                    } else {
+//                        print("Unknown error: \(error)")
+                        resolve((false, "Unknown error: \(error.localizedDescription)"))
+
+                    }
+                }
             }
         }
     }

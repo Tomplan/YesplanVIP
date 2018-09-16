@@ -25,8 +25,14 @@ class LoginPresenter: LoginPresentationLogic
   
   func presentSomething(response: Login.EnterLogin.Response)
   {
-    let viewModel = Login.EnterLogin.ViewModel(success: response.success)
+    if response.success == true {
+        let viewModel = Login.EnterLogin.ViewModel(success: response.success, error: nil)
     
     viewController?.displaySomething(viewModel: viewModel)
+    } else {
+        let viewModel = Login.EnterLogin.ViewModel(success: false, error: response.error)
+        
+        viewController?.displaySomething(viewModel: viewModel)
+    }
   }
 }

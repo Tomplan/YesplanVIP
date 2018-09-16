@@ -35,6 +35,7 @@ protocol LoginDataStore
 
 class LoginInteractor: LoginBusinessLogic, LoginDataStore
 {
+//    var error: AFError
 //    var basic: Basic!
 //    var baseKey: String!
     
@@ -60,37 +61,37 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         
     worker = LoginWorker()
         
-        
-        print("worker: ", worker?.verifyUrl(urlString: "\(String(describing: url!))"))
-//        if worker?.verifyUrl(urlString: "\(String(describing: url!))") == true {
-        
         worker?.verifyUrl(urlString: "\(String(describing: url!))").then { result in
-            print(result)
 
-            if result == true {
-                print("true indeed")
+            print("result: ", result)
+            var boolean = result.0
+            var error = result.1
+            
+            
+        if result.0 == true {
                 
             urlComponents.path = ""
             urlComponents.query = nil
 //
             if let x = try? urlComponents.url!.asURL() {
-            let y = (String(describing: x))
-//
-            UserDefaults.standard.set(y, forKey: "URL")
-            UserDefaults.standard.set(apiKey, forKey: "KEY")
-//
-//            let base = Basic()
-//            base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
-//
-            let response = Login.EnterLogin.Response(success: true)
-                self.presenter?.presentSomething(response: response)
-            }
-            else {
-                print("nope")
-            }
+                let y = (String(describing: x))
+    //
+                UserDefaults.standard.set(y, forKey: "URL")
+                UserDefaults.standard.set(apiKey, forKey: "KEY")
+    //
+    //            let base = Basic()
+    //            base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+    //
+                let response = Login.EnterLogin.Response(success: true, error: nil)
+                    self.presenter?.presentSomething(response: response)
+                }
+                else {
+                    print("nope")
+                }
         } else {
             print("no valid url")
-            let response = Login.EnterLogin.Response(success: false)
+                print(result.1)
+            let response = Login.EnterLogin.Response(success: false, error: "\(result.1!)")
                 self.presenter?.presentSomething(response: response)
             return
         }
