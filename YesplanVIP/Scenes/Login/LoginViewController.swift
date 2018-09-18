@@ -185,9 +185,9 @@ extension LoginViewController {
 
         
     } else {
-        let alert = UIAlertController(title: "URLTest", message: "\(viewModel.error!)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
         

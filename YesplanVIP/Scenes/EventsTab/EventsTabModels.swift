@@ -27,11 +27,12 @@ enum EventsTab
     
     struct Response
     {
-//        let events: Events
+        let events: Events
     }
     
     struct ViewModel
     {
+//        let events: Events
 //        let events: [EventViewModel]
 //    }
 //

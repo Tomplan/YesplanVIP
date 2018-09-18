@@ -11,8 +11,9 @@ import Stevia
 
 // Get the full documentation at https://github.com/freshOS/Stevia
 
-class EventsTabView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
-    
+//class EventsTabView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
+class EventsTabView: UIView {
+
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
@@ -23,9 +24,9 @@ class EventsTabView: UIView, UICollectionViewDataSource, UICollectionViewDelegat
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
 //        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+//        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
 //        collectionView.backgroundColor = .yellow
         return collectionView
     }()
@@ -38,23 +39,9 @@ class EventsTabView: UIView, UICollectionViewDataSource, UICollectionViewDelegat
         
         collectionView.addSubview(refreshControl)
         collectionView.addSubview(spinner)
-    }
+        
+        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell") // Use PhotoCell
 
-    func collectionView(_ collectionView: UICollectionView, numberOfSections section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 300
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventsTabViewCell", for: indexPath) as! EventsTabViewCell
-//        cell.backgroundColor = .cyan
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.size.width, height: 200)
     }
 }
+  

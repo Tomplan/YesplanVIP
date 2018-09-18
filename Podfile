@@ -7,16 +7,16 @@ target 'YesplanVIP' do
 
   # Pods for YesplanVIP
 pod 'SwiftyJSON', '~> 4.0'
-pod 'Alamofire', '~> 4.7'
-pod "PromiseKit", "~> 6.0"
+#pod 'Alamofire', '~> 4.7'
+#pod "PromiseKit", "~> 6.0"
 # pod 'Firebase/Core'
 # pod 'Firebase/Auth'
 # pod 'Firebase/Database'
 pod 'SearchTextField'
 pod 'NetworkRequestKit', '~> 2.2.0'
 pod 'Squeaky', git: 'https://github.com/ajself/squeaky-clean.git'
-pod 'Cartography', '~> 3.0'
-pod “PureLayout”
+#pod 'Cartography', '~> 3.0'
+pod 'PureLayout'
 
   target 'YesplanVIPTests' do
     inherit! :search_paths

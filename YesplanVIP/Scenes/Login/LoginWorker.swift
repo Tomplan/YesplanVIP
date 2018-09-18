@@ -48,12 +48,12 @@ class LoginWorker
 //                            print("Invalid URL: \(url) - \(error.localizedDescription)")
                             resolve((false, "Invalid URL: \(url) - \(error.localizedDescription)"))
 
-                        case .parameterEncodingFailed(let reason):
+                        case .parameterEncodingFailed(let _):
 //                            print("Parameter encoding failed: \(error.localizedDescription)")
 //                            print("Failure Reason: \(reason)")
                             resolve((false, "AFError: \(error.localizedDescription)"))
 
-                        case .multipartEncodingFailed(let reason):
+                        case .multipartEncodingFailed(let _):
 //                            print("Multipart encoding failed: \(error.localizedDescription)")
 //                            print("Failure Reason: \(reason)")
                             resolve((false, "AFError: \(error.localizedDescription)"))
@@ -68,20 +68,20 @@ class LoginWorker
 //                                print("Downloaded file could not be read")
                                 resolve((false, "AFError: \(error.localizedDescription)"))
 
-                            case .missingContentType(let acceptableContentTypes):
+                            case .missingContentType(let _):
 //                                print("Content Type Missing: \(acceptableContentTypes)")
                                 resolve((false, "AFError: \(error.localizedDescription)"))
 
-                            case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                            case .unacceptableContentType(let _, let _):
 //                                print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
                                 resolve((false, "AFError: \(error.localizedDescription)"))
 
-                            case .unacceptableStatusCode(let code):
+                            case .unacceptableStatusCode(let _):
 //                                print("Response status code was unacceptable: \(code)")
                                 resolve((false, "AFError: \(error.localizedDescription)"))
 
                             }
-                        case .responseSerializationFailed(let reason):
+                        case .responseSerializationFailed(let _):
 //                            print("Response serialization failed: \(error.localizedDescription)")
 //                            print("Failure Reason: \(reason)")
                             resolve((false, "AFError: \(error.localizedDescription)"))

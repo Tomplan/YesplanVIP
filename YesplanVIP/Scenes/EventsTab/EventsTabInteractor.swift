@@ -16,7 +16,7 @@ import then
 
 protocol EventsTabBusinessLogic
 {
-  func doSomething(request: EventsTab.Something.Request)
+  func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
 //     var basic: Basic? { get set }
 }
 
@@ -38,34 +38,48 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     var event: Event = Event()
     var groups: Groups = Groups()
     var group: Group = Group()
-    
+    var yesplan: Yesplan = Yesplan()
   // MARK: Do something
   
-  func doSomething(request: EventsTab.Something.Request)
+  func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
     worker?.doSomeWork()
 
-    let base = Basic()
-    base.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+    
+    let me = yesplan
+//    let meen = me.getAll(<#T##restResource: ArrowParsable & RestResource##ArrowParsable & RestResource#>)
+    print("me: ", me)
+    
+//    yesplan.ws
+//    yesplan.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+//    yesplan.ws = WS("https://dewerft.yesplan.be/api/events?api_key=C857C01360BB5777DABE5B7EE6594CD1")
 
-    base.getAll(events).then { events in
+    yesplan.getAll(events).then { events in
             self.events = events
                     }.onError { e in
                         // An error occured :/
                         print(e)
+                        
                     }.finally {
             //            // In any case, reload the tableView
             //            //                print(self.events)
             //            //                print("data: ", self.events.data)
-                        print("pagination: ", self.events.pagination)
-                        for event in self.events.data {
-                            print("id: ", event.id)
-                        }
-                    }
-   
+//                        for event in self.events.data {
+//                            print("id: ", event.id)
+//                        }
+//                        let eventsMore = Events()
+//                        let paginationNext = self.events.pagination.next!
 
-    let response = EventsTab.Something.Response()
-    presenter?.presentSomething(response: response)
+//                        self.yesplan.getMore(eventsMore, paginationNext: paginationNext).then { events in
+//                            print(events)
+//                        }
+                        
+                    }
+
+                        let response = EventsTab.Something.Response(events: self.events)
+//                        print("1: ", response)
+                        self.presenter?.presentSomething(response: response)
+    
   }
 }

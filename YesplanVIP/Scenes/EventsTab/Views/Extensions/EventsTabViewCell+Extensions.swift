@@ -15,13 +15,13 @@ import Kingfisher
 
 extension EventsTabViewCell {
     
-//    func populate(with p: Events) {
-//        LblEventHeaderName.text = Events
-//         LblEventName = UILabel()
+    func populate(with p: Event) {
+        LblEventHeaderName.text = p.name
+//         LblEventName.text = UILabel()
 //         LblEventsDefaultschedulestarttime = UILabel()
 //         LblEventLocation = UILabel()
 //         LblEventGroupName = UILabel()
-////        title.text = p.title
-////        photo.kf.setImage(with: p.imageUrl)
-//    }
+//        title.text = p.title
+//        photo.kf.setImage(with: p.imageUrl)
+    }
 }
