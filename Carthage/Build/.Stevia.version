@@ -1,0 +1,21 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+    {
+      "name" : "Stevia",
+      "hash" : "f703ecc7b33bb32e8ec75b4d29f513144567377060219a71136270697e55a1a0"
+    }
+  ],
+  "commitish" : "4.3.2",
+  "iOS" : [
+    {
+      "name" : "Stevia",
+      "hash" : "f20d376a736778d2efe8267dcdd0fd42cf33aa4161e0515c297f4deba784261e"
+    }
+  ]
+}

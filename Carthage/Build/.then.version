@@ -1,0 +1,9 @@
+{
+  "commitish" : "4.0.0",
+  "iOS" : [
+    {
+      "name" : "then",
+      "hash" : "caa6e8af640fe81422524772143308cda655056a9c0453fb3dfd856a6c428518"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Squeaky",
+  "version": "1.3.2",
+  "summary": "Keep your view controllers Squeaky Clean using Uncle Bob's Clean architecture",
+  "homepage": "https://github.com/ajself/squeaky-clean",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": "AJ Self",
+  "source": {
+    "git": "https://github.com/ajself/squeaky-clean.git",
+    "tag": "1.3.2"
+  },
+  "source_files": "Source/*.swift",
+  "platforms": {
+    "ios": "8.0"
+  }
+}

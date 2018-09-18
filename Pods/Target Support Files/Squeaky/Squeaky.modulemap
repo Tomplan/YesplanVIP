@@ -1,0 +1,6 @@
+framework module Squeaky {
+  umbrella header "Squeaky-umbrella.h"
+
+  export *
+  module * { export * }
+}
