@@ -47,9 +47,9 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     worker?.doSomeWork()
 
     
-    let me = yesplan
+//    let me = yesplan
 //    let meen = me.getAll(<#T##restResource: ArrowParsable & RestResource##ArrowParsable & RestResource#>)
-    print("me: ", me)
+//    print("me: ", me)
     
 //    yesplan.ws
 //    yesplan.ws = WS(UserDefaults.standard.string(forKey: "URL")!)

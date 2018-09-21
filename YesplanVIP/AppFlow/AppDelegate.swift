@@ -25,10 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // is where all view controllers and views appear.
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        if let bounds = window?.screen.bounds {
-            print("Size: \(bounds.size.width) x \(bounds.size.height)")
-        }
-        
         // Set the initial View Controller to  instance of ViewController
         window?.rootViewController = RootViewController()
         

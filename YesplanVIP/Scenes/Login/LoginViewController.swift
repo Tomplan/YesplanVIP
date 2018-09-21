@@ -110,7 +110,7 @@ extension LoginViewController: ViewConfigurable {
     }
     
     public func setupViews() {
-        print("func LoginViewController.setupViews")
+//        print("func LoginViewController.setupViews")
         
         // setup title
         
@@ -126,7 +126,7 @@ extension LoginViewController: ViewConfigurable {
     }
     
     public func setupConstraints() {
-        print("func LoginViewController.setupConstraints")
+//        print("func LoginViewController.setupConstraints")
         
         if (!didSetupConstraints) {
             

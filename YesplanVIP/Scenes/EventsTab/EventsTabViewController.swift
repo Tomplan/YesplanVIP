@@ -100,7 +100,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   
   func displaySomething(viewModel: EventsTab.Something.ViewModel)
   {
-    print(viewModel)
+//    print(viewModel)
     //nameTextField.text = viewModel.name
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()

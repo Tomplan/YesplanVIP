@@ -56,21 +56,6 @@ class RootViewController: UIViewController {
         
         current = new
     }
-    func showWelcomeScreen() {
-        
-        let new = UINavigationController(rootViewController: WelcomeViewController())
-        
-        addChild(new)
-        new.view.frame = view.bounds
-        view.addSubview(new.view)
-        new.didMove(toParent: self)
-        
-        current.willMove(toParent: nil)
-        current.view.removeFromSuperview()
-        current.removeFromParent()
-        
-        current = new
-    }
     
     func switchToLogout() {
 
