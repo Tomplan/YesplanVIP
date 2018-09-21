@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         api = Yesplan()
 
         //        ShortcutParser.shared.registerShortcuts()
@@ -59,11 +59,11 @@ extension AppDelegate {
     }
     
     var URL: String {
-        var url: String = String()
+        let url: String = String()
         return url
     }
     var Key: String {
-        var key: String = String()
+        let key: String = String()
         return key
     }
 }

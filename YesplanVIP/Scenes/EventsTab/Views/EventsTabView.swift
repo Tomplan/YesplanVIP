@@ -16,7 +16,7 @@ class EventsTabView: UIView {
 
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let spinner = UIActivityIndicatorView(style: .gray)
 
     lazy var collectionView : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()

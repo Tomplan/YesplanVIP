@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import then
+@testable import then
 import Dispatch
 
 var globalCount = 0
@@ -99,7 +99,7 @@ func failingFetchUserFollowStatusFromName(_ name: String) -> Promise<Bool> {
 }
 
 func waitTime(_ callback:@escaping () -> Void) {
-    let delay = 0.05 * Double(NSEC_PER_SEC)
+    let delay = 0.01 * Double(NSEC_PER_SEC)
     let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
     DispatchQueue.global(qos: DispatchQoS.QoSClass.background).asyncAfter(deadline: time) {
         callback()
@@ -138,4 +138,20 @@ func failingUpload() -> Promise<Void> {
 
 enum MyError: Error {
     case defaultError
+}
+
+extension Promise {
+    var blocks: PromiseBlocks<T> {
+        get {
+            return synchronize { _, blocks in
+                let temp = blocks
+                return temp
+            }
+        }
+        set {
+            synchronize { _, blocks in
+                blocks = newValue
+            }
+        }
+    }
 }

@@ -6,26 +6,26 @@ target 'YesplanVIP' do
   use_frameworks!
 
   # Pods for YesplanVIP
-pod 'SwiftyJSON', '~> 4.0'
-#pod 'Alamofire', '~> 4.7'
-#pod "PromiseKit", "~> 6.0"
+# pod 'SwiftyJSON', '~> 4.0'
+# pod 'Alamofire', '~> 4.7'
+# pod "PromiseKit", "~> 6.0"
 # pod 'Firebase/Core'
 # pod 'Firebase/Auth'
 # pod 'Firebase/Database'
 pod 'SearchTextField'
-pod 'NetworkRequestKit', '~> 2.2.0'
+#pod 'NetworkRequestKit', '~> 2.2.0'
 pod 'Squeaky', git: 'https://github.com/ajself/squeaky-clean.git'
-#pod 'Cartography', '~> 3.0'
-pod 'PureLayout'
+#pod 'Cartography'
+#pod 'PureLayout'
 
-  target 'YesplanVIPTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'YesplanVIPUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+#  target 'YesplanVIPTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#  target 'YesplanVIPUITests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
 
 end

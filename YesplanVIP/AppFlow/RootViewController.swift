@@ -34,10 +34,10 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addChildViewController(current)
+        addChild(current)
         current.view.frame = view.bounds
         view.addSubview(current.view)
-        current.didMove(toParentViewController: self)
+        current.didMove(toParent: self)
 
     }
     
@@ -45,14 +45,14 @@ class RootViewController: UIViewController {
 
         let new = UINavigationController(rootViewController: LoginViewController())
         
-        addChildViewController(new)
+        addChild(new)
         new.view.frame = view.bounds
         view.addSubview(new.view)
-        new.didMove(toParentViewController: self)
+        new.didMove(toParent: self)
         
-        current.willMove(toParentViewController: nil)
+        current.willMove(toParent: nil)
         current.view.removeFromSuperview()
-        current.removeFromParentViewController()
+        current.removeFromParent()
         
         current = new
     }
@@ -60,14 +60,14 @@ class RootViewController: UIViewController {
         
         let new = UINavigationController(rootViewController: WelcomeViewController())
         
-        addChildViewController(new)
+        addChild(new)
         new.view.frame = view.bounds
         view.addSubview(new.view)
-        new.didMove(toParentViewController: self)
+        new.didMove(toParent: self)
         
-        current.willMove(toParentViewController: nil)
+        current.willMove(toParent: nil)
         current.view.removeFromSuperview()
-        current.removeFromParentViewController()
+        current.removeFromParent()
         
         current = new
     }
@@ -89,13 +89,13 @@ class RootViewController: UIViewController {
     }
     
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
-        current.willMove(toParentViewController: nil)
-        addChildViewController(new)
+        current.willMove(toParent: nil)
+        addChild(new)
         transition(from: current, to: new, duration: 0.3, options: [], animations: {
         
         }) { completed in
-            self.current.removeFromParentViewController()
-            new.didMove(toParentViewController: self)
+            self.current.removeFromParent()
+            new.didMove(toParent: self)
             self.current = new
             completion?()
         }

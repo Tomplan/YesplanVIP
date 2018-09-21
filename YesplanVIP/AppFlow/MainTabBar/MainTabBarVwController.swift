@@ -67,8 +67,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.lightGray], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .selected)
         UITabBar.appearance().barTintColor = UIColor.black
         // UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         setupTabBar()
@@ -141,7 +141,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         guard let items = tabBar.items else { return }
         
         for item in items {
-            item.imageInsets = UIEdgeInsetsMake(4, 0, -4, 0)
+            item.imageInsets = UIEdgeInsets.init(top: 4, left: 0, bottom: -4, right: 0)
         }
     }
     

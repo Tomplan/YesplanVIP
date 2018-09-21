@@ -34,7 +34,7 @@ extension ErrorPresenter where Self: UIViewController {
             
             for title in buttonTitles {
                 
-                let action = UIAlertAction(title: title, style: UIAlertActionStyle.default, handler: nil)
+                let action = UIAlertAction(title: title, style: UIAlertAction.Style.default, handler: nil)
                 alertController.addAction(action)
             }
         }

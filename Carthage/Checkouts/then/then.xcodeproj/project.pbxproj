@@ -96,6 +96,9 @@
 		9962ADC61D585A06005769CD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9962ADC51D585A06005769CD /* Helpers.swift */; };
 		9962ADC81D585B00005769CD /* OnErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9962ADC71D585B00005769CD /* OnErrorTests.swift */; };
 		9962ADCA1D585E12005769CD /* RegisterThenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9962ADC91D585E12005769CD /* RegisterThenTests.swift */; };
+		996FBD9120BEE6CD00858D4A /* Await+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FBD9020BEE6CD00858D4A /* Await+Operators.swift */; };
+		996FBD9220BEE6D100858D4A /* Await+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FBD9020BEE6CD00858D4A /* Await+Operators.swift */; };
+		996FBD9320BEE6D100858D4A /* Await+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FBD9020BEE6CD00858D4A /* Await+Operators.swift */; };
 		997949C620221FAA00F4D964 /* Promise+nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997949C520221FAA00F4D964 /* Promise+nil.swift */; };
 		997949C82022201100F4D964 /* Promise+First.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997949C72022201100F4D964 /* Promise+First.swift */; };
 		997949C9202220A100F4D964 /* Promise+nil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997949C520221FAA00F4D964 /* Promise+nil.swift */; };
@@ -151,6 +154,7 @@
 		9962ADC71D585B00005769CD /* OnErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnErrorTests.swift; sourceTree = "<group>"; };
 		9962ADC91D585E12005769CD /* RegisterThenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterThenTests.swift; sourceTree = "<group>"; };
 		9962ADCB1D58610E005769CD /* PromiseState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseState.swift; sourceTree = "<group>"; };
+		996FBD9020BEE6CD00858D4A /* Await+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Await+Operators.swift"; sourceTree = "<group>"; };
 		997949C520221FAA00F4D964 /* Promise+nil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+nil.swift"; sourceTree = "<group>"; };
 		997949C72022201100F4D964 /* Promise+First.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Promise+First.swift"; sourceTree = "<group>"; };
 		998C51BF1E7DBB280088DEBC /* Promise+Unwrap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Unwrap.swift"; sourceTree = "<group>"; };
@@ -339,6 +343,7 @@
 				991E16C61F3C45A800BC997F /* Promise+Zip.swift */,
 				9907A5E41E76FC7C00826BBE /* Async.swift */,
 				9907A5E61E76FC8200826BBE /* Await.swift */,
+				996FBD9020BEE6CD00858D4A /* Await+Operators.swift */,
 				99FC637E1C86085C008C1155 /* then.h */,
 			);
 			path = Source;
@@ -551,6 +556,7 @@
 				99329EEA1FA725B30020347F /* PromiseState.swift in Sources */,
 				99329EEB1FA725B30020347F /* VoidPromise.swift in Sources */,
 				99329EEC1FA725B30020347F /* PromiseError.swift in Sources */,
+				996FBD9320BEE6D100858D4A /* Await+Operators.swift in Sources */,
 				99329EED1FA725B30020347F /* Promise.swift in Sources */,
 				99329EEE1FA725B30020347F /* PromiseBlocks.swift in Sources */,
 				99329EEF1FA725B30020347F /* Promise+Progress.swift in Sources */,
@@ -585,6 +591,7 @@
 				99329EB81FA7259D0020347F /* PromiseState.swift in Sources */,
 				99329EB91FA7259D0020347F /* VoidPromise.swift in Sources */,
 				99329EBA1FA7259D0020347F /* PromiseError.swift in Sources */,
+				996FBD9120BEE6CD00858D4A /* Await+Operators.swift in Sources */,
 				99329EBB1FA7259D0020347F /* Promise.swift in Sources */,
 				99329EBC1FA7259D0020347F /* PromiseBlocks.swift in Sources */,
 				99329EBD1FA7259D0020347F /* Promise+Progress.swift in Sources */,
@@ -646,6 +653,7 @@
 				99329ED11FA725A80020347F /* PromiseState.swift in Sources */,
 				99329ED21FA725A80020347F /* VoidPromise.swift in Sources */,
 				99329ED31FA725A80020347F /* PromiseError.swift in Sources */,
+				996FBD9220BEE6D100858D4A /* Await+Operators.swift in Sources */,
 				99329ED41FA725A80020347F /* Promise.swift in Sources */,
 				99329ED51FA725A80020347F /* PromiseBlocks.swift in Sources */,
 				99329ED61FA725A80020347F /* Promise+Progress.swift in Sources */,
@@ -702,7 +710,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -727,7 +735,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -786,6 +794,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -837,6 +846,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -862,7 +872,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -884,7 +894,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -897,7 +907,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.s4cha.then.thenTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -911,7 +921,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -937,7 +947,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -963,7 +973,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

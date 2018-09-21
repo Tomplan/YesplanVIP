@@ -12,10 +12,10 @@
 
 import UIKit
 import Foundation
-import NetworkRequestKit
-import SwiftyJSON
+//import NetworkRequestKit
+//import SwiftyJSON
 import Alamofire
-import PromiseKit
+//import PromiseKit
 import ws
 import Arrow
 import then
