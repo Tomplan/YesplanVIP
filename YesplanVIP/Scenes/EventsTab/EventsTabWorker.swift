@@ -11,10 +11,60 @@
 //
 
 import UIKit
+import then
 
 class EventsTabWorker
 {
-  func doSomeWork()
+    var yesplan: Yesplan = Yesplan()
+//    var eventsDict: [String:[Event]] = [:]
+    
+    func getDates() -> Promise<String>
   {
+    let now = Date()
+    
+    let formatter = DateFormatter()
+    
+    formatter.timeZone = TimeZone.current
+    
+    formatter.dateFormat = "dd-MM-yyyy"
+    
+    let selectedDateString = formatter.string(from: now)
+    let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: now)
+    let selectedEndDateString = formatter.string(from:selectedEndDate!)
+    let dates: String = "\(selectedDateString) TO \(selectedEndDateString)"
+    
+    return Promise(dates)
+
   }
+    
+//    func getProfiles() -> Promise<[String:String]>
+//    {
+//    var profileDict: [String:String] = [:]
+//        var profiles: Profiles = Profiles()
+//        yesplan.getAll(profiles).then { profiles in
+//            for i in 0 ..< profiles.data.count {
+//                //        print(profiles.data[i].id)
+//                //        print(profiles.data[i].color!)
+//                profileDict[profiles.data[i].id] = profiles.data[i].color
+//            }
+//        }
+//
+//        return Promise(profileDict)
+//    }
+    
+    func getStatuses() -> Promise<[String:String]>
+    {
+        var statusDict: [String:String] = [:]
+        var statuses: Statuses = Statuses()
+        yesplan.getAll(statuses).then { statuses in
+            for i in 0 ..< statuses.data.count {
+                //                print(statuses.data[i].name)
+                //                print(statuses.data[i].backgroundcolor!)
+                if let statusName = statuses.data[i].name {
+                statusDict[statusName] = statuses.data[i].backgroundcolor
+                }
+            }
+        }
+        return Promise(statusDict)
+    }
 }

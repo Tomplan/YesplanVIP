@@ -22,6 +22,8 @@ protocol EventsTabBusinessLogic
 
 protocol EventsTabDataStore
 {
+//    var events: [Event] { get }
+
 //    var basic: Basic? { get set }
 //    var baseKey: String? { get set }
 }
@@ -34,52 +36,64 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
     
-    var events: Events = Events()
-    var event: Event = Event()
-    var groups: Groups = Groups()
-    var group: Group = Group()
+    var fetchedEvents: Events = Events()
+    var events: [Event] = []
+//    var events: [Event] = []
     var yesplan: Yesplan = Yesplan()
   // MARK: Do something
   
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-    worker?.doSomeWork()
-
+    worker?.getDates().then { dates in
+        print("dates:", dates)
+//        let untillDate = date
+        self.worker?.getStatuses().then { statuses in
+            print("statuses: ", statuses)
+        
+//        self.yesplan.getAll(self.fetchedEvents).then { result in
+            self.yesplan.getAll(self.fetchedEvents, query: "event:date:#nextYear").then { result in
+            print("result: ", result)
+            self.fetchedEvents = result
+            }.onError { e in print(e)
+            }.finally {
+                
+                
+                self.events = self.fetchedEvents.data
+                let response = EventsTab.Something.Response(events: self.events)
+                //            print("response: ", response)
+                self.presenter?.presentEvents(response: response)
+                
+                print("pagination: ", self.fetchedEvents.pagination )
+                self.yesplan.getMore(self.fetchedEvents, paginationNext: self.fetchedEvents.pagination.next!).then { more in
+                    print("more", more.pagination)
+                }
+        }
+    }
     
-//    let me = yesplan
-//    let meen = me.getAll(<#T##restResource: ArrowParsable & RestResource##ArrowParsable & RestResource#>)
-//    print("me: ", me)
     
-//    yesplan.ws
-//    yesplan.ws = WS(UserDefaults.standard.string(forKey: "URL")!)
-//    yesplan.ws = WS("https://dewerft.yesplan.be/api/events?api_key=C857C01360BB5777DABE5B7EE6594CD1")
-
-    yesplan.getAll(events).then { events in
-            self.events = events
-                    }.onError { e in
-                        // An error occured :/
-                        print(e)
-                        
-                    }.finally {
-            //            // In any case, reload the tableView
-            //            //                print(self.events)
-            //            //                print("data: ", self.events.data)
-//                        for event in self.events.data {
-//                            print("id: ", event.id)
-//                        }
-//                        let eventsMore = Events()
-//                        let paginationNext = self.events.pagination.next!
-
-//                        self.yesplan.getMore(eventsMore, paginationNext: paginationNext).then { events in
-//                            print(events)
-//                        }
-                        
-                    }
-
-                        let response = EventsTab.Something.Response(events: self.events)
-//                        print("1: ", response)
-                        self.presenter?.presentSomething(response: response)
+        
+        //    yesplan.getAll(events).then { events in
+        //            self.events = events
+        //                    }.onError { e in
+        //                        print(e)
+        //
+        //                    }.finally {
+        //            //            // In any case, reload the tableView
+        //            //            //                print(self.events)
+        //            //            //                print("data: ", self.events.data)
+        ////                        for event in self.events.data {
+        ////                            print("id: ", event.id)
+        ////                        }
+        ////                        let eventsMore = Events()
+        ////                        let paginationNext = self.events.pagination.next!
+        //
+        ////                        self.yesplan.getMore(eventsMore, paginationNext: paginationNext).then { events in
+        ////                            print(events)
+        ////                        }
+        //
+        //                    }
+    }
     
   }
 }

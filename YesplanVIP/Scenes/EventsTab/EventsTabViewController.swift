@@ -23,7 +23,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   var interactor: EventsTabBusinessLogic?
   var router: (NSObjectProtocol & EventsTabRoutingLogic & EventsTabDataPassing)?
     var v = EventsTabView()
-    var events = Events()
+    var displayedEvents: [EventsTab.Something.ViewModel.DisplayedEvent] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -73,9 +73,11 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        doSomething()
+
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     v.collectionView.dataSource = self // as? UICollectionViewDataSource
-    doSomething()
+//        displaySomething(viewModel: <#T##EventsTab.Something.ViewModel#>)
   }
     
 //    override func viewWillAppear(animated: Bool) {
@@ -98,9 +100,12 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: EventsTab.Something.ViewModel)
+  func displaySomething(viewModel: EventsTab.Something.ViewModel )
   {
-//    print(viewModel)
+//    print("viewModel: ", viewModel)
+    displayedEvents = viewModel.displayedEvents
+    print("displayedEvents.count: ", displayedEvents.count)
+//    print("displayedEvents: ", displayedEvents)
     //nameTextField.text = viewModel.name
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()

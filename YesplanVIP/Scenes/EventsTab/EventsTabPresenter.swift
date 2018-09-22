@@ -14,18 +14,30 @@ import UIKit
 
 protocol EventsTabPresentationLogic
 {
-  func presentSomething(response: EventsTab.Something.Response)
+  func presentEvents(response: EventsTab.Something.Response)
 }
 
 class EventsTabPresenter: EventsTabPresentationLogic
 {
   weak var viewController: EventsTabDisplayLogic?
-  
+//        let dateFormatter: DateFormatter = {
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateStyle = .short
+//            dateFormatter.timeStyle = .none
+//            return dateFormatter
+//        }()
+
   // MARK: Do something
   
-  func presentSomething(response: EventsTab.Something.Response)
+  func presentEvents(response: EventsTab.Something.Response)
   {
-    let viewModel = EventsTab.Something.ViewModel()
+    var events: [EventsTab.Something.ViewModel.DisplayedEvent] = []
+    let eventsDict = Dictionary(grouping: response.events, by: { $0.startdate! })
+        for (key, value) in eventsDict {
+            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
+            events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: key, event: valueSorted))
+    }
+    let viewModel = EventsTab.Something.ViewModel(displayedEvents: events)
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

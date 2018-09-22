@@ -21,24 +21,23 @@ enum EventsTab
     
     struct Request
     {
-//        var base: Basic
-//        var baseKey: String
     }
     
     struct Response
     {
-        let events: Events
+        let events: [Event]
     }
     
     struct ViewModel
     {
-//        let events: Events
-//        let events: [EventViewModel]
-//    }
-//
-//    struct EventViewModel {
-//        let date: String
-//        let event: Event
+        struct DisplayedEvent {
+            let date: String
+            let event: [Event]
+        }
+        
+        var displayedEvents: [DisplayedEvent]
     }
+//
+    
   }
 }

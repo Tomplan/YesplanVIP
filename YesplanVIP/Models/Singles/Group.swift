@@ -72,7 +72,7 @@ extension Group : ArrowParsable {
 }
 
 extension Group: RestResource {
-    static func restName() -> String { return "api/group" }
+    static func restName() -> String { return "api/group/" }
     func restId() -> String { return "\(id)" }
 }
 //extension Group {

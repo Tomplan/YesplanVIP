@@ -10,6 +10,8 @@
 		3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */; };
 		3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */; };
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
+		3C230AA821558BA5004477A3 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C230AA721558BA5004477A3 /* Statuses.swift */; };
+		3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24BAEB215613AB00E28966 /* String+Extensions.swift */; };
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */; };
 		3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */; };
 		3C40AEC5212D82460077DDC5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AEC4212D82460077DDC5 /* Photo.swift */; };
@@ -119,6 +121,8 @@
 		3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3C230AA721558BA5004477A3 /* Statuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
+		3C24BAEB215613AB00E28966 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVwController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		3C40AEC4212D82460077DDC5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 			children = (
 				3C40AED7212D8C090077DDC5 /* Events.swift */,
 				3CF142E2212DE257001FC532 /* Groups.swift */,
+				3C230AA721558BA5004477A3 /* Statuses.swift */,
 			);
 			path = Multiples;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				3CE9D1E22123835600BFA730 /* UIColor+Extension.swift */,
 				3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */,
 				3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */,
+				3C24BAEB215613AB00E28966 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
+				3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */,
 				3C40AED8212D8C090077DDC5 /* Events.swift in Sources */,
 				3CE710AA2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
 				3C40AEFD212D8E920077DDC5 /* EventsTabView.swift in Sources */,
@@ -804,6 +811,7 @@
 				3C40AEF5212D8E550077DDC5 /* EventsTabViewController.swift in Sources */,
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
+				3C230AA821558BA5004477A3 /* Statuses.swift in Sources */,
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 				3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */,
 				3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */,

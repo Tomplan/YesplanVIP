@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsTabViewHeader: UICollectionViewCell {
+class EventsTabViewHeader: UICollectionReusableView {
     
     var EventsViewHeaderLabel: UILabel
         = {

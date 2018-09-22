@@ -45,15 +45,61 @@ class Yesplan: ApiInterface {
         return ws.get(oneURL(restResource, id: id), params: params)
     }
     
-    func getAll<T:ArrowParsable & RestResource>(_ restResource:T, params:[String:Any] = [String:Any]()) -> Promise<T> {
+    func getAll<T:ArrowParsable & RestResource>(_ restResource:T, query: String = String() , params:[String:Any] = [String:Any]()) -> Promise<T> {
+        
+        var urlString = "\(allURL(restResource))"
+        print("urlString: ", urlString)
+        var url = URL(string: urlString)
+        print("url: ", url)
+        
+        if query.isEmpty {
+            print("empty string")
+            urlString = url!.absoluteString
+        } else {
+            print("query: ", query)
+//            urlString
+            url?.appendPathComponent(query)
+            print("url: ", url)
+            urlString = url!.absoluteString
+            print("urlString: ", urlString)
+        }
+//        let url = URL(string: urlString)!
+//        print("url: ", url)
         let paramsApiKey: [String:Any] = ["api_key":"\(key!)"]
-        return ws.get(allURL(restResource), params: params.merged(with: paramsApiKey))
+//        print("paramsApiKey: ", paramsApiKey)
+//        var compQueryDict = [String:Any]()
+//        var all = [String:Any]()
+//        
+        if let components = URLComponents(string: urlString) {
+        print("path: ", components.percentEncodedPath)
+            
+        }
+//        print("componentsOptional: ", components)
+//        if let components = mycomponents {
+//            print("components: ", components)
+//
+//            if let queryItems = components.queryItems {
+//                print("queryItems: ", queryItems)
+//                for queryItem in queryItems {
+//                    compQueryDict["\(queryItem.name)"] = "\(String(describing: queryItem.value!))"
+//                }
+//                 all = compQueryDict.merged(with: params)
+//                print("all: ", all)
+//            }
+//
+//        }
+        
+        
+        return ws.get(urlString, params: params.merged(with: paramsApiKey))
+
     }
     
     func getMore<T:ArrowParsable & RestResource>(_ restResource:T, paginationNext:String) -> Promise<T> {
-        
-        let url = URL(string: paginationNext)!
         var compQueryDict = [String:Any]()
+
+        if let url = URL(string: paginationNext) {
+            print("moreUrl: ", url)
+        
         let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
         if let components = components {
@@ -64,6 +110,8 @@ class Yesplan: ApiInterface {
                 }
             }
         }
+        }
         return getAll(T(), params: compQueryDict)
-    }
+        }
+    
 }

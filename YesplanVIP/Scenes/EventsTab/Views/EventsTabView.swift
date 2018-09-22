@@ -23,12 +23,25 @@ class EventsTabView: UIView {
         flowLayout.scrollDirection = .vertical
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let cellHeight: CGFloat = 100
+        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
+//        flowLayout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
+        flowLayout.itemSize = size
 //        collectionView.translatesAutoresizingMaskIntoConstraints = false
 //        collectionView.delegate = self
 //        collectionView.dataSource = self
 //        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
 //        collectionView.backgroundColor = .yellow
         return collectionView
+    }()
+    
+    let backgroundImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "yesplanNB 1024x1024")
+        return iv
     }()
     
     convenience init() {
@@ -41,7 +54,8 @@ class EventsTabView: UIView {
         collectionView.addSubview(spinner)
         
         collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell") // Use PhotoCell
-
+//        collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
     }
+    
 }
   

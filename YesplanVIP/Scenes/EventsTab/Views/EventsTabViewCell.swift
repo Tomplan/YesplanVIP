@@ -11,8 +11,8 @@ import Stevia
 
 struct EventsViewCellConstants {
     
-    static let width: CGFloat = 1.12
-    static let height: CGFloat = 5.5
+//    static let width: CGFloat = 1.12
+//    static let height: CGFloat = 5.5
 }
 
 class EventsTabViewCell: UICollectionViewCell {

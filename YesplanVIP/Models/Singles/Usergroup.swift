@@ -27,6 +27,6 @@ extension Usergroup : ArrowParsable {
 }
 
 extension Usergroup: RestResource {
-    static func restName() -> String { return "api/usergroup" }
+    static func restName() -> String { return "api/usergroup/" }
     func restId() -> String { return "\(id)" }
 }

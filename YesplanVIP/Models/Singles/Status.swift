@@ -17,8 +17,8 @@ struct Status: Codable {
     var _type = "status"
     var name: String?
     var backgroundcolor: String?
-    var textcolor: String = ""
-    var statustypes: [String] = [""]
+//    var textcolor: String = ""
+//    var statustypes: [String]? = [""]
 }
 
 extension Status : ArrowParsable {
@@ -28,14 +28,14 @@ extension Status : ArrowParsable {
         _type <-- json["_type"]
         name <-- json["name"]
         backgroundcolor <-- json["backgroundcolor"]
-        textcolor <-- json["textcolor"]
-        statustypes <-- json["statustypes"]
+//        textcolor <-- json["textcolor"]
+//        statustypes <-- json["statustypes"]
 
     }
 }
 
 extension Status: RestResource {
-    static func restName() -> String { return "api/status" }
+    static func restName() -> String { return "api/status/" }
     func restId() -> String { return "\(name!)" }
 }
 

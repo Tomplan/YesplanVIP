@@ -1,8 +1,8 @@
 //
-//  Events.swift
+//  Statuses.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 22/08/18.
+//  Created by Techcc - FOH - Video on 21/09/18.
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
@@ -10,12 +10,12 @@ import Foundation
 import Arrow
 import then
 
-struct Events {
+struct Statuses {
     var pagination = Pagination()
-    var data = [Event]()
+    var data = [Status]()
 }
 
-extension Events : ArrowParsable {
+extension Statuses : ArrowParsable {
     
     public mutating func deserialize(_ json: JSON) {
         pagination <-- json["pagination"]
@@ -23,8 +23,8 @@ extension Events : ArrowParsable {
     }
 }
 
-extension Events: RestResource {
-    static func restName() -> String { return "api/events/" }
+extension Statuses: RestResource {
+    static func restName() -> String { return "api/statuses/" }
     func restId() -> String { return "" }
 }
 

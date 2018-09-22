@@ -77,7 +77,7 @@ extension Event: ArrowParsable {
 
 
 extension Event: RestResource {
-    static func restName() -> String { return "api/event" }
+    static func restName() -> String { return "api/event/" }
     func restId() -> String { return "\(id)" }
 }
 
