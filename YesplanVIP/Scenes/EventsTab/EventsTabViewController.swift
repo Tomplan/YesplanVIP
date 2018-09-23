@@ -24,6 +24,9 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   var router: (NSObjectProtocol & EventsTabRoutingLogic & EventsTabDataPassing)?
     var v = EventsTabView()
     var displayedEvents: [EventsTab.Something.ViewModel.DisplayedEvent] = []
+    var displayedStatuses: [String:String] = [:]
+    var displayedProfiles: [String:String] = [:]
+    
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -104,6 +107,11 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   {
 //    print("viewModel: ", viewModel)
     displayedEvents = viewModel.displayedEvents
+    displayedProfiles = viewModel.displayedProfiles
+    print("displayedProfiles:", displayedProfiles)
+    displayedStatuses = viewModel.displayedStatuses
+    print("displayedStatuses:", displayedStatuses)
+
     print("displayedEvents.count: ", displayedEvents.count)
 //    print("displayedEvents: ", displayedEvents)
     //nameTextField.text = viewModel.name

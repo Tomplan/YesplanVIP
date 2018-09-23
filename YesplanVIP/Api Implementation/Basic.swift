@@ -25,8 +25,8 @@ class Yesplan: ApiInterface {
     
     init() {
         let defaults = UserDefaults.standard
-        let check = defaults.contains(key: "URL")
-        if check == true {
+        let urlExists = defaults.contains(key: "URL")
+        if urlExists == true {
             ws = WS(UserDefaults.standard.string(forKey: "URL")!)
         }
         // This will print network requests & responses to the console.
@@ -47,48 +47,16 @@ class Yesplan: ApiInterface {
     
     func getAll<T:ArrowParsable & RestResource>(_ restResource:T, query: String = String() , params:[String:Any] = [String:Any]()) -> Promise<T> {
         
+        let paramsApiKey: [String:Any] = ["api_key":"\(key!)"]
         var urlString = "\(allURL(restResource))"
-        print("urlString: ", urlString)
         var url = URL(string: urlString)
-        print("url: ", url)
         
         if query.isEmpty {
-            print("empty string")
             urlString = url!.absoluteString
         } else {
-            print("query: ", query)
-//            urlString
             url?.appendPathComponent(query)
-            print("url: ", url)
             urlString = url!.absoluteString
-            print("urlString: ", urlString)
         }
-//        let url = URL(string: urlString)!
-//        print("url: ", url)
-        let paramsApiKey: [String:Any] = ["api_key":"\(key!)"]
-//        print("paramsApiKey: ", paramsApiKey)
-//        var compQueryDict = [String:Any]()
-//        var all = [String:Any]()
-//        
-        if let components = URLComponents(string: urlString) {
-        print("path: ", components.percentEncodedPath)
-            
-        }
-//        print("componentsOptional: ", components)
-//        if let components = mycomponents {
-//            print("components: ", components)
-//
-//            if let queryItems = components.queryItems {
-//                print("queryItems: ", queryItems)
-//                for queryItem in queryItems {
-//                    compQueryDict["\(queryItem.name)"] = "\(String(describing: queryItem.value!))"
-//                }
-//                 all = compQueryDict.merged(with: params)
-//                print("all: ", all)
-//            }
-//
-//        }
-        
         
         return ws.get(urlString, params: params.merged(with: paramsApiKey))
 
@@ -98,18 +66,15 @@ class Yesplan: ApiInterface {
         var compQueryDict = [String:Any]()
 
         if let url = URL(string: paginationNext) {
-            print("moreUrl: ", url)
         
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        
-        if let components = components {
-            
-            if let queryItems = components.queryItems {
-                for queryItem in queryItems {
-                    compQueryDict["\(queryItem.name)"] = "\(String(describing: queryItem.value!))"
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            if let components = components {
+                if let queryItems = components.queryItems {
+                    for queryItem in queryItems {
+                        compQueryDict["\(queryItem.name)"] = "\(String(describing: queryItem.value!))"
+                    }
                 }
             }
-        }
         }
         return getAll(T(), params: compQueryDict)
         }

@@ -32,12 +32,37 @@ class EventsTabPresenter: EventsTabPresentationLogic
   func presentEvents(response: EventsTab.Something.Response)
   {
     var events: [EventsTab.Something.ViewModel.DisplayedEvent] = []
-    let eventsDict = Dictionary(grouping: response.events, by: { $0.startdate! })
-        for (key, value) in eventsDict {
-            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
-            events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: key, event: valueSorted))
+    var profilesDict: [String:String] = [:]
+    var statusesDict: [String:String] = [:]
+
+//    let eventsDict = Dictionary(grouping: response.events, by: { $0.startdate! })
+//        for (key, value) in eventsDict {
+//            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
+//            events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: key, event: valueSorted))
+//    }
+    for (key, value) in response.events {
+        events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: key, events: value))
     }
-    let viewModel = EventsTab.Something.ViewModel(displayedEvents: events)
+    
+    for profile in response.profiles {
+        //        print(profiles.data[i].id)
+        //        print(profiles.data[i].color!)
+        profilesDict[profile.id] = profile.color
+    }
+    print("profilesDict: ", profilesDict)
+    
+    for status in response.statuses {
+        //        print(profiles.data[i].id)
+        //        print(profiles.data[i].color!)
+        if let name = status.name {
+        statusesDict[name] = status.backgroundcolor
+        }
+    }
+    let viewModel = EventsTab.Something.ViewModel(
+        displayedEvents: events,
+        displayedStatuses: statusesDict,
+        displayedProfiles: profilesDict
+    )
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

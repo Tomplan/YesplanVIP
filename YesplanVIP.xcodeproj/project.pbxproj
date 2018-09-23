@@ -47,6 +47,8 @@
 		3C7337B321504F310045F9E1 /* Arrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949E212D756A00CE518C /* Arrow.framework */; };
 		3C7337B421504F310045F9E1 /* then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949C212D756000CE518C /* then.framework */; };
 		3C7337B521504F310045F9E1 /* ws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949A212D755500CE518C /* ws.framework */; };
+		3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF52157C1DB00428BF9 /* Profile.swift */; };
+		3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF72157C2F700428BF9 /* Profiles.swift */; };
 		3CB468C121479A330088A8B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB468C021479A330088A8B8 /* LoginView.swift */; };
 		3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */; };
 		3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E692140794800B6E458 /* MainTabBarRouter.swift */; };
@@ -152,6 +154,8 @@
 		3C6AC89F212703040010DFA5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C70E1802154EAC1009F640D /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		3C7337A82150427C0045F9E1 /* EventsTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3C862BF52157C1DB00428BF9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		3C862BF72157C2F700428BF9 /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		3CB468C021479A330088A8B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		3CB59E692140794800B6E458 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 				3C40AED7212D8C090077DDC5 /* Events.swift */,
 				3CF142E2212DE257001FC532 /* Groups.swift */,
 				3C230AA721558BA5004477A3 /* Statuses.swift */,
+				3C862BF72157C2F700428BF9 /* Profiles.swift */,
 			);
 			path = Multiples;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				3C40AF30212D92610077DDC5 /* Usergroup.swift */,
 				3C40AF36212DAE8E0077DDC5 /* Base.swift */,
 				3CF142DE212DDFF9001FC532 /* Status.swift */,
+				3C862BF52157C1DB00428BF9 /* Profile.swift */,
 			);
 			path = Singles;
 			sourceTree = "<group>";
@@ -793,6 +799,7 @@
 				3CE711012121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
 				3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */,
 				3CE710C62121A7E300EBF6A5 /* ToDoRouter.swift in Sources */,
+				3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */,
 				3CE9D1E32123835600BFA730 /* UIColor+Extension.swift in Sources */,
 				3CE710C32121A7E300EBF6A5 /* ToDoWorker.swift in Sources */,
 				3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */,
@@ -848,6 +855,7 @@
 				3C40AEEC212D8E550077DDC5 /* EventsTabWorker.swift in Sources */,
 				3C40AF26212D91F30077DDC5 /* UserTabModels.swift in Sources */,
 				3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
+				3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */,
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 			);

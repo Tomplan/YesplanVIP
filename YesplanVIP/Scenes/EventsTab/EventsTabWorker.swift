@@ -18,6 +18,44 @@ class EventsTabWorker
     var yesplan: Yesplan = Yesplan()
 //    var eventsDict: [String:[Event]] = [:]
     
+    func printFetchedEvents(events: Events) -> Events
+    {
+        print("events: \(events)")
+        return events
+    }
+    
+    func groupEventsByStartdate(events: Events) -> [String:[Event]]
+    {
+        let dictEvents = Dictionary(grouping: events.data, by: { $0.startdate! })
+        return dictEvents
+    }
+    
+    func printGroupedEvents(dictEvents: [String:[Event]]) {
+        print("dictEvents: ", dictEvents)
+    }
+    
+    func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> [String:[Event]] {
+        var events: [String:[Event]] = [String:[Event]]()
+
+        for (key, value) in dictEvents {
+            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
+            events[key] = valueSorted
+        }
+//        events = YPgroupedEvents.sorted(by: { $0.date < $1.date } )
+        return events
+    }
+    
+    func printsortedEventsInEachGroupByTime(dictEvents: [String:[Event]]) {
+        print("dictEvents: ", dictEvents)
+    }
+    
+    func sortDictByDate(dictEvents: [String:[Event]]) -> [(key: String, value: [Event])] {
+        
+        let sortedDictByDate = dictEvents.sorted(by:  { $0.0 < $1.0 })
+//        print("sorted: ", sortedDictByDate)
+        return sortedDictByDate
+    }
+    
     func getDates() -> Promise<String>
   {
     let now = Date()
@@ -37,34 +75,46 @@ class EventsTabWorker
 
   }
     
-//    func getProfiles() -> Promise<[String:String]>
-//    {
-//    var profileDict: [String:String] = [:]
-//        var profiles: Profiles = Profiles()
-//        yesplan.getAll(profiles).then { profiles in
-//            for i in 0 ..< profiles.data.count {
-//                //        print(profiles.data[i].id)
-//                //        print(profiles.data[i].color!)
-//                profileDict[profiles.data[i].id] = profiles.data[i].color
-//            }
-//        }
-//
-//        return Promise(profileDict)
-//    }
+    func getProfiles() -> Promise<[String:String]>
+    {
+    var profileDict: [String:String] = [:]
+        let profiles: Profiles = Profiles()
+        yesplan.getAll(profiles).then { profiles in
+            for i in 0 ..< profiles.data.count {
+                //        print(profiles.data[i].id)
+                //        print(profiles.data[i].color!)
+                profileDict[profiles.data[i].id] = profiles.data[i].color
+            }
+        }
+        print(profileDict)
+        return Promise(profileDict)
+    }
     
+    func printProfiles(profiles: Profiles) {
+        print("profiles: \(profiles)")
+    }
+
     func getStatuses() -> Promise<[String:String]>
     {
         var statusDict: [String:String] = [:]
-        var statuses: Statuses = Statuses()
+        let statuses: Statuses = Statuses()
         yesplan.getAll(statuses).then { statuses in
             for i in 0 ..< statuses.data.count {
-                //                print(statuses.data[i].name)
-                //                print(statuses.data[i].backgroundcolor!)
-                if let statusName = statuses.data[i].name {
-                statusDict[statusName] = statuses.data[i].backgroundcolor
+                if let statusName = statuses.data[i].name,
+                 let statusBackgroundcolor = statuses.data[i].backgroundcolor {
+                statusDict[statusName] = statusBackgroundcolor
                 }
             }
+//            print("statusDict: ", statusDict)
         }
         return Promise(statusDict)
     }
+    
+    func printStatuses(statuses: Statuses) {
+        print("statuses: \(statuses)") 
+    }
+    
+    func showErrorPopup(e:Error) { print("An error occured \(e)") }
+    
+
 }

@@ -22,78 +22,75 @@ protocol EventsTabBusinessLogic
 
 protocol EventsTabDataStore
 {
-//    var events: [Event] { get }
-
-//    var basic: Basic? { get set }
-//    var baseKey: String? { get set }
 }
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
-    
-//    var basic: Basic?
-//    var baseKey: String?
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
     
     var fetchedEvents: Events = Events()
-    var events: [Event] = []
-//    var events: [Event] = []
+    var fetchedStatuses: Statuses = Statuses()
+    var fetchedProfiles: Profiles = Profiles()
+    
+    var eventsDict: [(key: String, value: [Event])] = [(key: String, value: [Event])]()
+    var statusesArray: [Status] = [Status]()
+    var profilesArray: [Profile] = [Profile]()
+    
     var yesplan: Yesplan = Yesplan()
+    
   // MARK: Do something
-  
+
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-    worker?.getDates().then { dates in
-        print("dates:", dates)
-//        let untillDate = date
-        self.worker?.getStatuses().then { statuses in
-            print("statuses: ", statuses)
+
+
+    yesplan.getAll(fetchedEvents, query: "event:date:#nextweek")
         
-//        self.yesplan.getAll(self.fetchedEvents).then { result in
-            self.yesplan.getAll(self.fetchedEvents, query: "event:date:#nextYear").then { result in
-            print("result: ", result)
-            self.fetchedEvents = result
-            }.onError { e in print(e)
-            }.finally {
-                
-                
-                self.events = self.fetchedEvents.data
-                let response = EventsTab.Something.Response(events: self.events)
-                //            print("response: ", response)
-                self.presenter?.presentEvents(response: response)
-                
-                print("pagination: ", self.fetchedEvents.pagination )
-                self.yesplan.getMore(self.fetchedEvents, paginationNext: self.fetchedEvents.pagination.next!).then { more in
-                    print("more", more.pagination)
-                }
+//        .then {
+//            [weak self] response in
+//            guard let s = self else { return }
+//            s.fetchedEvents = response
+//            }
+//        .then((worker?.printFetchedEvents)!)
+        .then((worker?.groupEventsByStartdate)!)
+//        .then((worker?.printGroupedEvents)!)
+        .then((worker?.sortEventsInEachGroupByTime)!)
+//        .then((worker?.printsortedEventsInEachGroupByTime)!)
+        .then((worker?.sortDictByDate)!)
+        .then { result in
+            self.eventsDict = result
         }
-    }
     
-    
+        .then(yesplan.getAll(fetchedStatuses))
+//            .then((worker?.printStatuses)!)
+        .then { result in
+            self.statusesArray = result.data
+        }
         
-        //    yesplan.getAll(events).then { events in
-        //            self.events = events
-        //                    }.onError { e in
-        //                        print(e)
-        //
-        //                    }.finally {
-        //            //            // In any case, reload the tableView
-        //            //            //                print(self.events)
-        //            //            //                print("data: ", self.events.data)
-        ////                        for event in self.events.data {
-        ////                            print("id: ", event.id)
-        ////                        }
-        ////                        let eventsMore = Events()
-        ////                        let paginationNext = self.events.pagination.next!
-        //
-        ////                        self.yesplan.getMore(eventsMore, paginationNext: paginationNext).then { events in
-        ////                            print(events)
-        ////                        }
-        //
-        //                    }
+        .then(yesplan.getAll(fetchedProfiles))
+//            .then((worker?.printProfiles)!)
+        .then { result in
+            self.profilesArray = result.data
+        }
+        
+        .onError((worker?.showErrorPopup)!)
+
+        .finally {
+     
+        let response = EventsTab.Something.Response(
+            events: self.eventsDict,
+            statuses: self.statusesArray,
+            profiles: self.profilesArray
+        )
+        self.presenter?.presentEvents(response: response)
     }
-    
+
+//                print("pagination: ", s.fetchedEvents.pagination )
+//                s.yesplan.getMore(s.fetchedEvents, paginationNext: s.fetchedEvents.pagination.next!).then { more in
+//                    print("more", more.pagination)
+//                }
+
   }
 }

@@ -25,17 +25,21 @@ enum EventsTab
     
     struct Response
     {
-        let events: [Event]
+        var events: [(key: String, value: [Event])]
+        var statuses: [Status]
+        var profiles: [Profile]
     }
     
     struct ViewModel
     {
         struct DisplayedEvent {
             let date: String
-            let event: [Event]
+            let events: [Event]
         }
         
         var displayedEvents: [DisplayedEvent]
+        var displayedStatuses: [String:String]
+        var displayedProfiles: [String:String]
     }
 //
     
