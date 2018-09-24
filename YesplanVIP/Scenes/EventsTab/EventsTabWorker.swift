@@ -30,8 +30,10 @@ class EventsTabWorker
         return dictEvents
     }
     
-    func printGroupedEvents(dictEvents: [String:[Event]]) {
+    func printGroupedEventsByStartdate(dictEvents: [String:[Event]])  -> [String:[Event]]
+    {
         print("dictEvents: ", dictEvents)
+        return dictEvents
     }
     
     func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> [String:[Event]] {
@@ -64,7 +66,7 @@ class EventsTabWorker
     
     formatter.timeZone = TimeZone.current
     
-    formatter.dateFormat = "dd-MM-yyyy"
+    formatter.dateFormat = "weekday, dd-MM-yyyy"
     
     let selectedDateString = formatter.string(from: now)
     let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: now)

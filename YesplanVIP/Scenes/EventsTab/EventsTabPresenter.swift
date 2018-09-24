@@ -26,7 +26,20 @@ class EventsTabPresenter: EventsTabPresentationLogic
 //            dateFormatter.timeStyle = .none
 //            return dateFormatter
 //        }()
-
+    func stringToEventsDate(myDateString: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale // save locale temporarily
+        dateFormatter.locale = Locale(identifier: "nl_BE") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.date(from: myDateString)!
+        dateFormatter.dateFormat = "EEEE, dd MMMM yyyy"
+        let dateString = dateFormatter.string(from: date)
+        dateFormatter.locale = tempLocale // reset the locale
+        //                    print("EXACT_DATE : \(dateString)")
+        return dateString
+        
+    }
   // MARK: Do something
   
   func presentEvents(response: EventsTab.Something.Response)
@@ -35,13 +48,8 @@ class EventsTabPresenter: EventsTabPresentationLogic
     var profilesDict: [String:String] = [:]
     var statusesDict: [String:String] = [:]
 
-//    let eventsDict = Dictionary(grouping: response.events, by: { $0.startdate! })
-//        for (key, value) in eventsDict {
-//            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
-//            events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: key, event: valueSorted))
-//    }
     for (key, value) in response.events {
-        events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: key, events: value))
+        events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: stringToEventsDate(myDateString: key), events: value))
     }
     
     for profile in response.profiles {
@@ -49,7 +57,7 @@ class EventsTabPresenter: EventsTabPresentationLogic
         //        print(profiles.data[i].color!)
         profilesDict[profile.id] = profile.color
     }
-    print("profilesDict: ", profilesDict)
+//    print("profilesDict: ", profilesDict)
     
     for status in response.statuses {
         //        print(profiles.data[i].id)

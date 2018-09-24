@@ -98,7 +98,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     
   func doSomething()
   {
-    print("EventsTabViewController.doSomething")
+//    print("EventsTabViewController.doSomething")
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
   }
@@ -108,11 +108,11 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 //    print("viewModel: ", viewModel)
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
-    print("displayedProfiles:", displayedProfiles)
+//    print("displayedProfiles:", displayedProfiles)
     displayedStatuses = viewModel.displayedStatuses
-    print("displayedStatuses:", displayedStatuses)
+//    print("displayedStatuses:", displayedStatuses)
 
-    print("displayedEvents.count: ", displayedEvents.count)
+//    print("displayedEvents.count: ", displayedEvents.count)
 //    print("displayedEvents: ", displayedEvents)
     //nameTextField.text = viewModel.name
     self.v.collectionView.reloadData()

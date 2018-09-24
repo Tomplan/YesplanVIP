@@ -45,7 +45,7 @@ class EventsTabViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.LblEventHeaderName.text = nil
+//        self.LblEventHeaderName.text = nil
         self.LblEventName.text = nil
         self.LblEventsDefaultschedulestarttime.text = nil
         self.LblEventLocation.text = nil
@@ -96,11 +96,11 @@ class EventsTabViewCell: UICollectionViewCell {
         self.LblEventGroupName.textColor = UIColor.lightGray
         self.contentView.addSubview(self.LblEventGroupName)
 
-        self.LblEventHeaderName.translatesAutoresizingMaskIntoConstraints = false
-        self.LblEventHeaderName.numberOfLines = 0
-        self.LblEventHeaderName.font = UIFont.systemFont(ofSize: 12.0)
-        self.LblEventHeaderName.textColor = UIColor.lightGray
-        self.contentView.addSubview(self.LblEventHeaderName)
+//        self.LblEventHeaderName.translatesAutoresizingMaskIntoConstraints = false
+//        self.LblEventHeaderName.numberOfLines = 0
+//        self.LblEventHeaderName.font = UIFont.systemFont(ofSize: 12.0)
+//        self.LblEventHeaderName.textColor = UIColor.lightGray
+//        self.contentView.addSubview(self.LblEventHeaderName)
 
         
         

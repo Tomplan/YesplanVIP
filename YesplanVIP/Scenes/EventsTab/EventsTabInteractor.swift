@@ -46,7 +46,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     worker = EventsTabWorker()
 
 
-    yesplan.getAll(fetchedEvents, query: "event:date:#nextweek")
+    yesplan.getAll(fetchedEvents, query: "event:date:#thisweek")
         
 //        .then {
 //            [weak self] response in
@@ -55,7 +55,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 //            }
 //        .then((worker?.printFetchedEvents)!)
         .then((worker?.groupEventsByStartdate)!)
-//        .then((worker?.printGroupedEvents)!)
+        .then((worker?.printGroupedEventsByStartdate)!)
         .then((worker?.sortEventsInEachGroupByTime)!)
 //        .then((worker?.printsortedEventsInEachGroupByTime)!)
         .then((worker?.sortDictByDate)!)

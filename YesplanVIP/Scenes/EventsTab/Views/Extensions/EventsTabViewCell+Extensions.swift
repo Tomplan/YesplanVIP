@@ -16,8 +16,8 @@ import Kingfisher
 extension EventsTabViewCell {
     
     func populate(with event: Event) {
-        if let startdate = event.startdate {
-            LblEventHeaderName.text = startdate }
+//        if let startdate = event.startdate {
+//            LblEventHeaderName.text = startdate }
         if let name = event.name {
             LblEventName.text = name }
         if let defaultschedulestarttime = event.defaultschedulestarttime {

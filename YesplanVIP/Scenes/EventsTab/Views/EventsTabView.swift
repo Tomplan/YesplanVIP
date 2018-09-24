@@ -33,7 +33,8 @@ class EventsTabView: UIView {
 //        collectionView.delegate = self
 //        collectionView.dataSource = self
 //        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
-//        collectionView.backgroundColor = .yellow
+        flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 40)
+        collectionView.backgroundColor = .darkGray
         return collectionView
     }()
     
@@ -54,7 +55,8 @@ class EventsTabView: UIView {
         collectionView.addSubview(spinner)
         
         collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell") // Use PhotoCell
-//        collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
+//        collectionView.register(EventsTabViewHeader.self, forCellWithReuseIdentifier: "EventsTabViewHeader")
+        collectionView.register(EventsTabViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "EventsTabViewHeader")
     }
     
 }
