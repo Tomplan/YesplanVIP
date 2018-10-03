@@ -11,10 +11,12 @@
 //
 
 import UIKit
+import ws
+import then
 
 protocol TasksBusinessLogic
 {
-  func doSomething(request: Tasks.Something.Request)
+  func doSomething(request: TasksTab.Something.Request)
 }
 
 protocol TasksDataStore
@@ -26,16 +28,35 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
 {
   var presenter: TasksPresentationLogic?
   var worker: TasksWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: Tasks.Something.Request)
-  {
-    worker = TasksWorker()
-    worker?.doSomeWork()
     
-    let response = Tasks.Something.Response()
-    presenter?.presentSomething(response: response)
+    var yesplan: Yesplan = Yesplan()
+    var fetchedTasks: Tasks = Tasks()
+
+    var tasksArray: [(key: String, value: [Task])] = [(key: String, value: [Task])]()
+  // MARK: Do something
+   
+    
+  func doSomething(request: TasksTab.Something.Request)
+  {
+    print("TasksInteractor doSomething")
+    worker = TasksWorker()
+    
+    yesplan.getAll(fetchedTasks, query: "task:team:1203 - task:status:done")
+        .then((worker?.groupTasksByDue)!)
+        .then((worker?.sortTasksInEachGroupByDue)!)
+        .then((worker?.sortDictByDate)!)
+        .then { result in
+            self.tasksArray = result
+        }
+        .onError((worker?.showErrorPopup)!)
+        
+        .finally {
+            
+        let response = TasksTab.Something.Response(
+            tasks: self.tasksArray
+        )
+//            print("response: ", response)
+        self.presenter?.presentSomething(response: response)
+    }
   }
 }

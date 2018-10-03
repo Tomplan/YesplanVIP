@@ -33,7 +33,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     var fetchedStatuses: Statuses = Statuses()
     var fetchedProfiles: Profiles = Profiles()
     
-    var eventsDict: [(key: String, value: [Event])] = [(key: String, value: [Event])]()
+    var eventsArray: [(key: String, value: [Event])] = [(key: String, value: [Event])]()
     var statusesArray: [Status] = [Status]()
     var profilesArray: [Profile] = [Profile]()
     
@@ -55,12 +55,12 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 //            }
 //        .then((worker?.printFetchedEvents)!)
         .then((worker?.groupEventsByStartdate)!)
-        .then((worker?.printGroupedEventsByStartdate)!)
+//        .then((worker?.printGroupedEventsByStartdate)!)
         .then((worker?.sortEventsInEachGroupByTime)!)
 //        .then((worker?.printsortedEventsInEachGroupByTime)!)
         .then((worker?.sortDictByDate)!)
         .then { result in
-            self.eventsDict = result
+            self.eventsArray = result
         }
     
         .then(yesplan.getAll(fetchedStatuses))
@@ -80,7 +80,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
         .finally {
      
         let response = EventsTab.Something.Response(
-            events: self.eventsDict,
+            events: self.eventsArray,
             statuses: self.statusesArray,
             profiles: self.profilesArray
         )

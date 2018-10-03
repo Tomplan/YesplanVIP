@@ -16,19 +16,18 @@ import Kingfisher
 extension EventsTabViewCell {
     
     func populate(with event: Event) {
-//        if let startdate = event.startdate {
-//            LblEventHeaderName.text = startdate }
+        print("populate")
         if let name = event.name {
-            LblEventName.text = name }
+            lblName.text = name }
         if let defaultschedulestarttime = event.defaultschedulestarttime {
-            LblEventsDefaultschedulestarttime.text = defaultschedulestarttime}
+            lblDefaultschedulestarttime.text = defaultschedulestarttime}
         if let locations = event.locations {
             if locations.count != 0 {
         if let location = locations[0].name {
-            LblEventLocation.text = location } } }
+            lblLocation.text = location } } }
         
         if let groupName = event.group!.name {
-            LblEventGroupName.text = groupName }
+            lblGroupName.text = groupName }
 //        title.text = p.title
 //        photo.kf.setImage(with: p.imageUrl)
     }

@@ -14,7 +14,46 @@ import UIKit
 
 class TasksWorker
 {
-  func doSomeWork()
-  {
-  }
+    func stringToDateShort(myDateString: String) -> String {
+        if myDateString != "no deadline" {
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale // save locale temporarily
+        dateFormatter.locale = Locale(identifier: "nl_BE") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: myDateString)!
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
+        dateFormatter.locale = tempLocale // reset the locale
+        return dateString
+        }
+        else{
+            return myDateString
+        }
+    }
+    
+    func groupTasksByDue(tasks: Tasks) -> [String : [Task]]
+    {
+        var taskDict = [String : [Task]]()
+        taskDict = Dictionary(grouping: tasks.data, by: { $0.due})
+        return taskDict
+    }
+    
+    func sortTasksInEachGroupByDue(taskDict: [String : [Task]]) -> [String : [Task]]
+    {
+        var tasks: [String:[Task]] = [String:[Task]]()
+        for (key, value) in taskDict {
+            let valueSorted = value.sorted(by: { $0.due < $1.due } )
+            tasks[key] = valueSorted
+            
+        }
+        return tasks
+    }
+    func sortDictByDate(dictTasks: [String:[Task]]) -> [(key: String, value: [Task])] {
+        
+        let sortedDictByDate = dictTasks.sorted(by:  { $0.0 < $1.0 })
+        return sortedDictByDate
+    }
+    
+    func showErrorPopup(e:Error) { print("An error occured \(e)") }
+    
 }

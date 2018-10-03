@@ -42,10 +42,8 @@ extension EventsTabViewController: UICollectionViewDataSource {
                 cell.populate(with: event)
                 
                 if let eventProfileId = displayedEvents[indexPath.section].events[indexPath.item].profile?.id {
-                print("eventProfileId: ", eventProfileId)
                     if let eventProfileColor = displayedProfiles[eventProfileId]
                     {
-                        print("eventProfileColor: ", eventProfileColor)
                         if let bordercolor = UIColor(rgbString: eventProfileColor) {
                             cell.layer.borderColor = bordercolor.cgColor
                         } else {
@@ -55,10 +53,8 @@ extension EventsTabViewController: UICollectionViewDataSource {
                 }
                 
                 if let eventStatusName = displayedEvents[indexPath.section].events[indexPath.item].status?.name {
-                    print("eventStatusName: ", eventStatusName)
                     if let eventStatusColor = displayedStatuses[eventStatusName]
                     {
-                        print("eventStatusColor: ", eventStatusColor)
                         if let backgroundColor = UIColor(rgbString: eventStatusColor) {
                             cell.backgroundColor = backgroundColor
                         } else {

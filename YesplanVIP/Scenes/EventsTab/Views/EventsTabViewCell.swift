@@ -18,13 +18,15 @@ struct EventsViewCellConstants {
 class EventsTabViewCell: UICollectionViewCell {
     
     // MARK: Properties
-    var LblEventHeaderName = UILabel()
-    var LblEventName = UILabel()
-    var LblEventsDefaultschedulestarttime = UILabel()
-    var LblEventLocation = UILabel()
-    var LblEventGroupName = UILabel()
+    var lblHeaderName = UILabel()
+    var lblName = UILabel()
+    var lblDefaultschedulestarttime = UILabel()
+    var lblLocation = UILabel()
+    var lblGroupName = UILabel()
     
     override init(frame: CGRect) {
+        print("override init")
+
         super.init(frame: frame)
         setupComponents()
         setupConstraints()
@@ -44,19 +46,19 @@ class EventsTabViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-//        self.LblEventHeaderName.text = nil
-        self.LblEventName.text = nil
-        self.LblEventsDefaultschedulestarttime.text = nil
-        self.LblEventLocation.text = nil
-        self.LblEventGroupName.text = nil
+        print("prepareForReuse")
+        self.lblName.text = nil
+        self.lblDefaultschedulestarttime.text = nil
+        self.lblLocation.text = nil
+        self.lblGroupName.text = nil
 
         
         
     }
     // MARK: Private methods
     private func setupComponents() {
-        
+        print("setupComponents")
+
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 5
         self.layer.borderWidth = 4
@@ -65,42 +67,42 @@ class EventsTabViewCell: UICollectionViewCell {
         self.backgroundColor = UIColor.yellow
         
         sv(
-            LblEventHeaderName,
-            LblEventName,
-            LblEventsDefaultschedulestarttime,
-            LblEventLocation,
-            LblEventGroupName
+            lblHeaderName,
+            lblName,
+            lblDefaultschedulestarttime,
+            lblLocation,
+            lblGroupName
         )
         
-        self.LblEventName.translatesAutoresizingMaskIntoConstraints = false
-        self.LblEventName.numberOfLines = 0
-        self.LblEventName.font = UIFont.systemFont(ofSize: 15.0)
-        self.LblEventName.textColor = UIColor.red
-        self.contentView.addSubview(self.LblEventName)
+        self.lblName.translatesAutoresizingMaskIntoConstraints = false
+        self.lblName.numberOfLines = 0
+        self.lblName.font = UIFont.systemFont(ofSize: 15.0)
+        self.lblName.textColor = UIColor.red
+        self.contentView.addSubview(self.lblName)
 
-        self.LblEventsDefaultschedulestarttime.translatesAutoresizingMaskIntoConstraints = false
-        self.LblEventsDefaultschedulestarttime.numberOfLines = 0
-        self.LblEventsDefaultschedulestarttime.font = UIFont.systemFont(ofSize: 12.0)
-        self.LblEventsDefaultschedulestarttime.textColor = UIColor.gray
-        self.contentView.addSubview(self.LblEventsDefaultschedulestarttime)
+        self.lblDefaultschedulestarttime.translatesAutoresizingMaskIntoConstraints = false
+        self.lblDefaultschedulestarttime.numberOfLines = 0
+        self.lblDefaultschedulestarttime.font = UIFont.systemFont(ofSize: 12.0)
+        self.lblDefaultschedulestarttime.textColor = UIColor.gray
+        self.contentView.addSubview(self.lblDefaultschedulestarttime)
 
-        self.LblEventLocation.translatesAutoresizingMaskIntoConstraints = false
-        self.LblEventLocation.numberOfLines = 0
-        self.LblEventLocation.font = UIFont.systemFont(ofSize: 12.0)
-        self.LblEventLocation.textColor = UIColor.lightGray
-        self.contentView.addSubview(self.LblEventLocation)
+        self.lblLocation.translatesAutoresizingMaskIntoConstraints = false
+        self.lblLocation.numberOfLines = 0
+        self.lblLocation.font = UIFont.systemFont(ofSize: 12.0)
+        self.lblLocation.textColor = UIColor.lightGray
+        self.contentView.addSubview(self.lblLocation)
 
-        self.LblEventGroupName.translatesAutoresizingMaskIntoConstraints = false
-        self.LblEventGroupName.numberOfLines = 0
-        self.LblEventGroupName.font = UIFont.systemFont(ofSize: 12.0)
-        self.LblEventGroupName.textColor = UIColor.lightGray
-        self.contentView.addSubview(self.LblEventGroupName)
+        self.lblGroupName.translatesAutoresizingMaskIntoConstraints = false
+        self.lblGroupName.numberOfLines = 0
+        self.lblGroupName.font = UIFont.systemFont(ofSize: 12.0)
+        self.lblGroupName.textColor = UIColor.lightGray
+        self.contentView.addSubview(self.lblGroupName)
 
-//        self.LblEventHeaderName.translatesAutoresizingMaskIntoConstraints = false
-//        self.LblEventHeaderName.numberOfLines = 0
-//        self.LblEventHeaderName.font = UIFont.systemFont(ofSize: 12.0)
-//        self.LblEventHeaderName.textColor = UIColor.lightGray
-//        self.contentView.addSubview(self.LblEventHeaderName)
+//        self.lblHeaderName.translatesAutoresizingMaskIntoConstraints = false
+//        self.lblHeaderName.numberOfLines = 0
+//        self.lblHeaderName.font = UIFont.systemFont(ofSize: 12.0)
+//        self.lblHeaderName.textColor = UIColor.lightGray
+//        self.contentView.addSubview(self.lblHeaderName)
 
         
         
@@ -111,39 +113,40 @@ class EventsTabViewCell: UICollectionViewCell {
     }
     
     private func setupConstraints() {
-        
+        print("setupConstraints")
+
 //        layout(
 //            5,
-//            |-16-LblEventHeaderName-16-|,
+//            |-16-lblHeaderName-16-|,
 //            5,
-//            |-16-LblEventName-16-|,
+//            |-16-lblName-16-|,
 //            5,
-//            |-16-LblEventsDefaultschedulestarttime-16-|,
+//            |-16-lblsDefaultschedulestarttime-16-|,
 //            5,
-//            |-16-LblEventLocation-16-|,
+//            |-16-lblLocation-16-|,
 //            5,
-//            |-16-LblEventGroupName-16-|,
+//            |-16-lblGroupName-16-|,
 //            5
 //        )
         
-        self.LblEventName.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5.0).isActive = true
-        self.LblEventName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
-        self.LblEventName.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
-        self.LblEventName.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -4.0).isActive = true
+        self.lblName.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5.0).isActive = true
+        self.lblName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
+        self.lblName.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
+        self.lblName.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -4.0).isActive = true
         
-        self.LblEventsDefaultschedulestarttime.topAnchor.constraint(equalTo: self.LblEventName.bottomAnchor, constant: 0.0).isActive = true
-        self.LblEventsDefaultschedulestarttime.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
-        self.LblEventsDefaultschedulestarttime.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
-        self.LblEventsDefaultschedulestarttime.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -4.0).isActive = true
+        self.lblDefaultschedulestarttime.topAnchor.constraint(equalTo: self.lblName.bottomAnchor, constant: 0.0).isActive = true
+        self.lblDefaultschedulestarttime.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
+        self.lblDefaultschedulestarttime.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
+        self.lblDefaultschedulestarttime.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -4.0).isActive = true
         
-        self.LblEventLocation.topAnchor.constraint(equalTo: self.LblEventsDefaultschedulestarttime.bottomAnchor, constant: 0.0).isActive = true
-        self.LblEventLocation.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
-        self.LblEventLocation.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
-        self.LblEventLocation.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -2.0).isActive = true
+        self.lblLocation.topAnchor.constraint(equalTo: self.lblDefaultschedulestarttime.bottomAnchor, constant: 0.0).isActive = true
+        self.lblLocation.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
+        self.lblLocation.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
+        self.lblLocation.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -2.0).isActive = true
         
-        self.LblEventGroupName.topAnchor.constraint(equalTo: self.LblEventLocation.bottomAnchor, constant: 0.0).isActive = true
-        self.LblEventGroupName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
-        self.LblEventGroupName.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
-        self.LblEventGroupName.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -2.0).isActive = true
+        self.lblGroupName.topAnchor.constraint(equalTo: self.lblLocation.bottomAnchor, constant: 0.0).isActive = true
+        self.lblGroupName.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15.0).isActive = true
+        self.lblGroupName.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -15.0).isActive = true
+        self.lblGroupName.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant: -2.0).isActive = true
     }
 }

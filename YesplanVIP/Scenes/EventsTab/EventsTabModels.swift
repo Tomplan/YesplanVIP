@@ -40,8 +40,6 @@ enum EventsTab
         var displayedEvents: [DisplayedEvent]
         var displayedStatuses: [String:String]
         var displayedProfiles: [String:String]
-    }
-//
-    
+    }    
   }
 }

@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum Tasks
+enum TasksTab
 {
   // MARK: Use cases
   
@@ -23,9 +23,16 @@ enum Tasks
     }
     struct Response
     {
+        var tasks: [(key: String, value: [Task])]
     }
     struct ViewModel
     {
+        struct DisplayedTask {
+            let date: String
+            let tasks: [Task]
+        }
+
+        var displayedTasks: [DisplayedTask]
     }
   }
 }

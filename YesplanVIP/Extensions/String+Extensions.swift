@@ -1,13 +1,30 @@
-////
-////  String+Extensions.swift
-////  YesplanVIP
-////
-////  Created by Techcc - FOH - Video on 22/09/18.
-////  Copyright © 2018 Yesplan. All rights reserved.
-////
 //
-//import Foundation
+//  String+Extensions.swift
+//  YesplanVIP
 //
+//  Created by Techcc - FOH - Video on 22/09/18.
+//  Copyright © 2018 Yesplan. All rights reserved.
+//
+
+import Foundation
+
+
+extension String {
+    
+    func convertDateString(dateFormat format  : String ) -> String? {
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale // save locale temporarily
+        dateFormatter.locale = Locale(identifier: "nl_BE") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: self)!
+        dateFormatter.dateFormat = format
+        let dateString = dateFormatter.string(from: date)
+        dateFormatter.locale = tempLocale // reset the locale
+        //                    print("EXACT_DATE : \(dateString)")
+        return dateString
+    }
+    
+}
 ///**
 // A String extension that provides percent encoding of URL
 // strings following RFC 3986 or the W3C HTML specification.

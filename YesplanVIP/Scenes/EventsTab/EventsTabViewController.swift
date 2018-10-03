@@ -45,6 +45,8 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   
   private func setup()
   {
+    print("EventsViewController setup")
+
     let viewController = self
     let interactor = EventsTabInteractor()
     let presenter = EventsTabPresenter()
@@ -79,12 +81,16 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         doSomething()
 
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    v.collectionView.dataSource = self // as? UICollectionViewDataSource
-//        displaySomething(viewModel: <#T##EventsTab.Something.ViewModel#>)
+    v.collectionView.dataSource = self
   }
     
-//    override func viewWillAppear(animated: Bool) {
+//    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
+//        doSomething()
+//        
+//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//        v.collectionView.dataSource = self
+//        print("v.collectionView.dataSource: ", v.collectionView.dataSource)
 //    }
     
   // MARK: Do something
@@ -98,23 +104,16 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     
   func doSomething()
   {
-//    print("EventsTabViewController.doSomething")
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
   func displaySomething(viewModel: EventsTab.Something.ViewModel )
   {
-//    print("viewModel: ", viewModel)
+    print("EventsTabViewController displaySomething")
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
-//    print("displayedProfiles:", displayedProfiles)
     displayedStatuses = viewModel.displayedStatuses
-//    print("displayedStatuses:", displayedStatuses)
-
-//    print("displayedEvents.count: ", displayedEvents.count)
-//    print("displayedEvents: ", displayedEvents)
-    //nameTextField.text = viewModel.name
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

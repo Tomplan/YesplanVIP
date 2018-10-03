@@ -14,14 +14,15 @@ import UIKit
 
 protocol TasksDisplayLogic: class
 {
-  func displaySomething(viewModel: Tasks.Something.ViewModel)
+  func displaySomething(viewModel: TasksTab.Something.ViewModel)
 }
 
-class TasksViewController: UIViewController, TasksDisplayLogic
+class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout, TasksDisplayLogic
 {
   var interactor: TasksBusinessLogic?
   var router: (NSObjectProtocol & TasksRoutingLogic & TasksDataPassing)?
-
+    var v = TasksTabView()
+    var displayedTasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -40,6 +41,8 @@ class TasksViewController: UIViewController, TasksDisplayLogic
   
   private func setup()
   {
+    print("TasksViewController setup")
+
     let viewController = self
     let interactor = TasksInteractor()
     let presenter = TasksPresenter()
@@ -54,38 +57,63 @@ class TasksViewController: UIViewController, TasksDisplayLogic
   
   // MARK: Routing
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//  {
+//    if let scene = segue.identifier {
+//      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+//      if let router = router, router.responds(to: selector) {
+//        router.perform(selector, with: segue)
+//      }
+//    }
+//  }
+//
   // MARK: View lifecycle
-  
+    override func loadView() { view = v }
+
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.green
+    print("TasksViewController viewDidLoad")
 
     doSomething()
+    
+    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    v.collectionView.dataSource = self
   }
-  
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//            super.viewWillAppear(animated)
+//            doSomething()
+//            
+//            v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//            v.collectionView.dataSource = self
+//            print("v.collectionView.dataSource: ", v.collectionView.dataSource)
+//        }
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
-  
+    
+    @objc private func refresh() {
+        print("refresh")
+        doSomething()
+    }
+    
   func doSomething()
   {
-    let request = Tasks.Something.Request()
+    print("TasksViewController doSomething")
+
+    let request = TasksTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: Tasks.Something.ViewModel)
+  func displaySomething(viewModel: TasksTab.Something.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    print("TasksViewController displaySomething")
+
+    displayedTasks = viewModel.displayedTasks
+     self.v.collectionView.reloadData()
+    print("TasksViewController reloadData()", self.v.collectionView)
+
+    self.v.refreshControl.endRefreshing()
   }
 }

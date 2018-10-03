@@ -1,5 +1,5 @@
 //
-//  ToDoRouter.swift
+//  ToDosRouter.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 13/08/18.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol ToDoRoutingLogic
+@objc protocol ToDosRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol ToDoDataPassing
+protocol ToDosDataPassing
 {
-  var dataStore: ToDoDataStore? { get }
+  var dataStore: ToDosDataStore? { get }
 }
 
-class ToDoRouter: NSObject, ToDoRoutingLogic, ToDoDataPassing
+class ToDosRouter: NSObject, ToDosRoutingLogic, ToDosDataPassing
 {
-  weak var viewController: ToDoViewController?
-  var dataStore: ToDoDataStore?
+  weak var viewController: ToDosViewController?
+  var dataStore: ToDosDataStore?
   
   // MARK: Routing
   
@@ -46,14 +46,14 @@ class ToDoRouter: NSObject, ToDoRoutingLogic, ToDoDataPassing
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: ToDoViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: ToDosViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: ToDoDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: ToDosDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

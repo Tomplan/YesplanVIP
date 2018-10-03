@@ -20,7 +20,7 @@ class EventsTabWorker
     
     func printFetchedEvents(events: Events) -> Events
     {
-        print("events: \(events)")
+//        print("events: \(events)")
         return events
     }
     
@@ -88,7 +88,6 @@ class EventsTabWorker
                 profileDict[profiles.data[i].id] = profiles.data[i].color
             }
         }
-        print(profileDict)
         return Promise(profileDict)
     }
     
