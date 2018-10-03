@@ -105,7 +105,7 @@ extension TasksViewController: UICollectionViewDataSource {
             //
 //                        let dateString = formatter.string(from: displayedTasks[indexPath.section].date)
             if displayedTasks[indexPath.section].date != "no deadline" {
-            headerView.TasksViewHeaderLabel.text = displayedTasks[indexPath.section].date.convertDateString(dateFormat: "EEEE, dd MMMM yyyy")
+            headerView.TasksViewHeaderLabel.text = displayedTasks[indexPath.section].date.convertDateStringShort(dateFormat: "EEEE, dd MMMM yyyy")
             } else {
             headerView.TasksViewHeaderLabel.text = "no deadline"
             }

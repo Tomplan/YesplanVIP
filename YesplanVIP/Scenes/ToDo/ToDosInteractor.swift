@@ -41,7 +41,7 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
         print("ToDosInteractor doSomething")
         worker = ToDosWorker()
         
-        yesplan.getAll(fetchedToDos, query: "task:assignedto:mat - task:status:done")
+        yesplan.getAll(fetchedToDos, query: "task:assignedto:tom - task:status:done")
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)
             .then((worker?.sortDictByDate)!)

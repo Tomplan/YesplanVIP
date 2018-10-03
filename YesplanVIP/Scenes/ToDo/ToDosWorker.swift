@@ -34,7 +34,8 @@ class ToDosWorker
     func groupToDosByDue(toDos: Tasks) -> [String : [Task]]
     {
         var taskDict = [String : [Task]]()
-        taskDict = Dictionary(grouping: toDos.data, by: { $0.due})
+//        taskDict = Dictionary(grouping: toDos.data, by: { $0.due})
+         taskDict = Dictionary(grouping: toDos.data, by: { $0.due.convertDateString(dateFormat: "yyyy-MM-dd")!})
         return taskDict
     }
     
