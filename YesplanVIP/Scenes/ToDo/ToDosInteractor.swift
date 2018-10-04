@@ -38,10 +38,9 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     
     func doSomething(request: ToDosTab.Something.Request)
     {
-        print("ToDosInteractor doSomething")
         worker = ToDosWorker()
         
-        yesplan.getAll(fetchedToDos, query: "task:assignedto:tom - task:status:done")
+        yesplan.getAll(fetchedToDos, query: "task:assignedto:pascal - task:status:done")
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)
             .then((worker?.sortDictByDate)!)
@@ -55,7 +54,6 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
                 let response = ToDosTab.Something.Response(
                     toDos: self.toDosArray
                 )
-                //            print("response: ", response)
                 self.presenter?.presentSomething(response: response)
         }
     }

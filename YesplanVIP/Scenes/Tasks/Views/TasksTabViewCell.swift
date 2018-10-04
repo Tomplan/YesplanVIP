@@ -19,14 +19,13 @@ class TasksTabViewCell: UICollectionViewCell {
     var lblAssignedTo = UILabel()
     
     override init(frame: CGRect) {
-
         super.init(frame: frame)
+        
         setupComponents()
         setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder)
-        //    { super.init(coder: aDecoder)}
     {
         fatalError("init(coder:) has not been implemented")
     }

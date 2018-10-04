@@ -13,78 +13,69 @@
 import UIKit
 import then
 
-class EventsTabWorker
-{
-    var yesplan: Yesplan = Yesplan()
-//    var eventsDict: [String:[Event]] = [:]
+class EventsTabWorker {
     
-    func printFetchedEvents(events: Events) -> Events
-    {
-//        print("events: \(events)")
+    var yesplan: Yesplan = Yesplan()
+    
+    func printFetchedEvents(events: Events) -> Events {
+        
+        print("events: \(events)")
         return events
     }
     
-    func groupEventsByStartdate(events: Events) -> [String:[Event]]
-    {
+    func groupEventsByStartdate(events: Events) -> [String:[Event]] {
+        
         let dictEvents = Dictionary(grouping: events.data, by: { $0.startdate! })
         return dictEvents
     }
     
-    func printGroupedEventsByStartdate(dictEvents: [String:[Event]])  -> [String:[Event]]
-    {
+    func printGroupedEventsByStartdate(dictEvents: [String:[Event]])  -> [String:[Event]] {
+        
         print("dictEvents: ", dictEvents)
         return dictEvents
     }
     
     func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> [String:[Event]] {
+        
         var events: [String:[Event]] = [String:[Event]]()
-
         for (key, value) in dictEvents {
             let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
             events[key] = valueSorted
         }
-//        events = YPgroupedEvents.sorted(by: { $0.date < $1.date } )
         return events
     }
     
     func printsortedEventsInEachGroupByTime(dictEvents: [String:[Event]]) {
+        
         print("dictEvents: ", dictEvents)
     }
     
     func sortDictByDate(dictEvents: [String:[Event]]) -> [(key: String, value: [Event])] {
         
         let sortedDictByDate = dictEvents.sorted(by:  { $0.0 < $1.0 })
-//        print("sorted: ", sortedDictByDate)
         return sortedDictByDate
     }
     
-    func getDates() -> Promise<String>
-  {
-    let now = Date()
+    func getDates() -> Promise<String> {
+        
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "weekday, dd-MM-yyyy"
+        let selectedDateString = formatter.string(from: now)
+        let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: now)
+        let selectedEndDateString = formatter.string(from:selectedEndDate!)
+        let dates: String = "\(selectedDateString) TO \(selectedEndDateString)"
+        
+        return Promise(dates)
+    }
     
-    let formatter = DateFormatter()
-    
-    formatter.timeZone = TimeZone.current
-    
-    formatter.dateFormat = "weekday, dd-MM-yyyy"
-    
-    let selectedDateString = formatter.string(from: now)
-    let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: now)
-    let selectedEndDateString = formatter.string(from:selectedEndDate!)
-    let dates: String = "\(selectedDateString) TO \(selectedEndDateString)"
-    
-    return Promise(dates)
-
-  }
-    
-    func getProfiles() -> Promise<[String:String]>
-    {
-    var profileDict: [String:String] = [:]
+    func getProfiles() -> Promise<[String:String]> {
+        
+        var profileDict: [String:String] = [:]
         let profiles: Profiles = Profiles()
         yesplan.getAll(profiles).then { profiles in
             for i in 0 ..< profiles.data.count {
-                //        print(profiles.data[i].id)
-                //        print(profiles.data[i].color!)
                 profileDict[profiles.data[i].id] = profiles.data[i].color
             }
         }
@@ -95,19 +86,18 @@ class EventsTabWorker
         print("profiles: \(profiles)")
     }
 
-    func getStatuses() -> Promise<[String:String]>
-    {
+    func getStatuses() -> Promise<[String:String]> {
+        
         var statusDict: [String:String] = [:]
         let statuses: Statuses = Statuses()
         yesplan.getAll(statuses).then { statuses in
             for i in 0 ..< statuses.data.count {
                 if let statusName = statuses.data[i].name,
-                 let statusBackgroundcolor = statuses.data[i].backgroundcolor {
-                statusDict[statusName] = statusBackgroundcolor
+                    let statusBackgroundcolor = statuses.data[i].backgroundcolor {
+                    statusDict[statusName] = statusBackgroundcolor
+                    }
                 }
             }
-//            print("statusDict: ", statusDict)
-        }
         return Promise(statusDict)
     }
     
@@ -115,7 +105,7 @@ class EventsTabWorker
         print("statuses: \(statuses)") 
     }
     
-    func showErrorPopup(e:Error) { print("An error occured \(e)") }
-    
-
+    func showErrorPopup(e:Error) {
+        print("An error occured \(e)")
+    }
 }

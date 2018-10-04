@@ -25,13 +25,11 @@ class TasksPresenter: TasksPresentationLogic
   
   func presentSomething(response: TasksTab.Something.Response)
   {
-    print("TasksPresenter")
     var tasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
     
     for (key, value) in response.tasks {
         tasks.append(TasksTab.Something.ViewModel.DisplayedTask(date: key, tasks: value))
     }
-//    print("tasks: ", tasks)
     let viewModel = TasksTab.Something.ViewModel(displayedTasks: tasks)
     viewController?.displaySomething(viewModel: viewModel)
   }

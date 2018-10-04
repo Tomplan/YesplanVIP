@@ -16,8 +16,7 @@ import then
 
 protocol EventsTabBusinessLogic
 {
-  func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
-//     var basic: Basic? { get set }
+  func doSomething(request: EventsTab.Something.Request)
 }
 
 protocol EventsTabDataStore
@@ -46,31 +45,20 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     worker = EventsTabWorker()
 
 
-    yesplan.getAll(fetchedEvents, query: "event:date:#thisweek")
-        
-//        .then {
-//            [weak self] response in
-//            guard let s = self else { return }
-//            s.fetchedEvents = response
-//            }
-//        .then((worker?.printFetchedEvents)!)
+    yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
         .then((worker?.groupEventsByStartdate)!)
-//        .then((worker?.printGroupedEventsByStartdate)!)
         .then((worker?.sortEventsInEachGroupByTime)!)
-//        .then((worker?.printsortedEventsInEachGroupByTime)!)
         .then((worker?.sortDictByDate)!)
         .then { result in
             self.eventsArray = result
         }
     
         .then(yesplan.getAll(fetchedStatuses))
-//            .then((worker?.printStatuses)!)
         .then { result in
             self.statusesArray = result.data
         }
         
         .then(yesplan.getAll(fetchedProfiles))
-//            .then((worker?.printProfiles)!)
         .then { result in
             self.profilesArray = result.data
         }
@@ -83,6 +71,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
             events: self.eventsArray,
             statuses: self.statusesArray,
             profiles: self.profilesArray
+            
         )
         self.presenter?.presentEvents(response: response)
     }
@@ -91,6 +80,5 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 //                s.yesplan.getMore(s.fetchedEvents, paginationNext: s.fetchedEvents.pagination.next!).then { more in
 //                    print("more", more.pagination)
 //                }
-
   }
 }

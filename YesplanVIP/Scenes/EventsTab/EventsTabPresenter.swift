@@ -20,12 +20,7 @@ protocol EventsTabPresentationLogic
 class EventsTabPresenter: EventsTabPresentationLogic
 {
   weak var viewController: EventsTabDisplayLogic?
-//        let dateFormatter: DateFormatter = {
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateStyle = .short
-//            dateFormatter.timeStyle = .none
-//            return dateFormatter
-//        }()
+
     func stringToEventsDate(myDateString: String) -> String {
         
         let dateFormatter = DateFormatter()
@@ -48,29 +43,38 @@ class EventsTabPresenter: EventsTabPresentationLogic
     var profilesDict: [String:String] = [:]
     var statusesDict: [String:String] = [:]
 
+    if response.events.isEmpty { let viewModel = EventsTab.Something.ViewModel(
+        displayedEvents: events,
+        displayedStatuses: statusesDict,
+        displayedProfiles: profilesDict,
+        error: nil
+        )
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+    else {
     for (key, value) in response.events {
         events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: stringToEventsDate(myDateString: key), events: value))
     }
     
     for profile in response.profiles {
-        //        print(profiles.data[i].id)
-        //        print(profiles.data[i].color!)
         profilesDict[profile.id] = profile.color
     }
-//    print("profilesDict: ", profilesDict)
     
     for status in response.statuses {
-        //        print(profiles.data[i].id)
-        //        print(profiles.data[i].color!)
         if let name = status.name {
         statusesDict[name] = status.backgroundcolor
         }
     }
+        
     let viewModel = EventsTab.Something.ViewModel(
         displayedEvents: events,
         displayedStatuses: statusesDict,
-        displayedProfiles: profilesDict
+        displayedProfiles: profilesDict,
+        error: nil
     )
+        
     viewController?.displaySomething(viewModel: viewModel)
+        
+    }
   }
 }

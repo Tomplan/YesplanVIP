@@ -35,7 +35,6 @@ class EventsTabView: UIView {
 //        collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 40)
         collectionView.backgroundColor = .darkGray
-        print("collectionViewEvents: ", collectionView)
         return collectionView
     }()
     
@@ -49,7 +48,6 @@ class EventsTabView: UIView {
     convenience init() {
     self.init(frame: CGRect.zero)
 
-        print("collectionviewEvents init")
         sv(collectionView)
         collectionView.fillContainer()
         

@@ -45,7 +45,6 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
   
   private func setup()
   {
-    print("EventsViewController setup")
 
     let viewController = self
     let interactor = EventsTabInteractor()
@@ -80,8 +79,8 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     
         doSomething()
 
-    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    v.collectionView.dataSource = self
+        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        v.collectionView.dataSource = self
   }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -98,19 +97,18 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 //  @IBOutlet weak var basic: UITextField!
     
     @objc private func refresh() {
-        print("refresh")
+        
         doSomething()
     }
     
-  func doSomething()
-  {
+  func doSomething() {
+    
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: EventsTab.Something.ViewModel )
-  {
-    print("EventsTabViewController displaySomething")
+  func displaySomething(viewModel: EventsTab.Something.ViewModel ) {
+    
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
     displayedStatuses = viewModel.displayedStatuses

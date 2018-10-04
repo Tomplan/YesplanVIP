@@ -38,7 +38,6 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
     
   func doSomething(request: TasksTab.Something.Request)
   {
-    print("TasksInteractor doSomething")
     worker = TasksWorker()
     
     yesplan.getAll(fetchedTasks, query: "task:team:1203 - task:status:done")
@@ -55,7 +54,6 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
         let response = TasksTab.Something.Response(
             tasks: self.tasksArray
         )
-//            print("response: ", response)
         self.presenter?.presentSomething(response: response)
     }
   }

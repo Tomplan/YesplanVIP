@@ -41,8 +41,6 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   
   private func setup()
   {
-    print("TasksViewController setup")
-
     let viewController = self
     let interactor = TasksInteractor()
     let presenter = TasksPresenter()
@@ -70,15 +68,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   // MARK: View lifecycle
     override func loadView() { view = v }
 
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
-    print("TasksViewController viewDidLoad")
 
-    doSomething()
-    
-    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    v.collectionView.dataSource = self
+        doSomething()
+        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        v.collectionView.dataSource = self
   }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -94,26 +89,20 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   //@IBOutlet weak var nameTextField: UITextField!
     
     @objc private func refresh() {
-        print("refresh")
+        
         doSomething()
     }
     
-  func doSomething()
-  {
-    print("TasksViewController doSomething")
+  func doSomething() {
 
     let request = TasksTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: TasksTab.Something.ViewModel)
-  {
-    print("TasksViewController displaySomething")
-
+  func displaySomething(viewModel: TasksTab.Something.ViewModel) {
+    
     displayedTasks = viewModel.displayedTasks
-     self.v.collectionView.reloadData()
-    print("TasksViewController reloadData()", self.v.collectionView)
-
+    self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }
 }

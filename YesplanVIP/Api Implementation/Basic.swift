@@ -54,8 +54,17 @@ class Yesplan: ApiInterface {
         if query.isEmpty {
             urlString = url!.absoluteString
         } else {
-            url?.appendPathComponent(query)
-            urlString = url!.absoluteString
+            let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted
+            
+//            if let escapedString = "www.google.com?type=c++".addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) {
+//                print(escapedString)
+//            }
+            print("url: ", urlString)
+            urlString.append(query.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!)
+            print("1: ", urlString)
+//            urlString = url!.absoluteString
+//            print("2: ", urlString)
+
         }
         
         return ws.get(urlString, params: params.merged(with: paramsApiKey))

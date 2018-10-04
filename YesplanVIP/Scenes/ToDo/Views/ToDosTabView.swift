@@ -20,17 +20,13 @@ class ToDosTabView: UIView {
     lazy var collectionView : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let cellHeight: CGFloat = 80
         let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
-        
         flowLayout.itemSize = size
-        
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 40)
-        //        collectionView.backgroundColor = .red
         return collectionView
     }()
     
@@ -44,15 +40,11 @@ class ToDosTabView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
         
-        //        collectionView.backgroundColor = .yellow
         sv(collectionView)
         collectionView.fillContainer()
-        //
         collectionView.addSubview(refreshControl)
         collectionView.addSubview(spinner)
-        //        collectionView.backgroundColor = .red
         collectionView.register(ToDosTabViewCell.self, forCellWithReuseIdentifier: "ToDosTabViewCell")
         collectionView.register(ToDosTabViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "ToDosTabViewHeader")
     }
-    
 }

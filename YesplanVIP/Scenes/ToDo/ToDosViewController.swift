@@ -70,27 +70,14 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     // MARK: View lifecycle
     override func loadView() { view = v }
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        print("TasksViewController viewDidLoad")
         
         doSomething()
-        
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         v.collectionView.dataSource = self
     }
-    
-    //    override func viewWillAppear(_ animated: Bool) {
-    //            super.viewWillAppear(animated)
-    //            doSomething()
-    //
-    //            v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    //            v.collectionView.dataSource = self
-    //            print("v.collectionView.dataSource: ", v.collectionView.dataSource)
-    //        }
-    // MARK: Do something
-    
+ 
     //@IBOutlet weak var nameTextField: UITextField!
     
     @objc private func refresh() {
@@ -98,20 +85,16 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         doSomething()
     }
     
-    func doSomething()
-    {
-        print("TasksViewController doSomething")
+    func doSomething() {
         
         let request = ToDosTab.Something.Request()
         interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: ToDosTab.Something.ViewModel)
-    {
+    func displaySomething(viewModel: ToDosTab.Something.ViewModel) {
         
         displayedToDos = viewModel.displayedToDos
         self.v.collectionView.reloadData()
-        
         self.v.refreshControl.endRefreshing()
     }
 }

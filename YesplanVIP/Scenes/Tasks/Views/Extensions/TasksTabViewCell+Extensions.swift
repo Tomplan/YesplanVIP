@@ -16,7 +16,6 @@ import Kingfisher
 extension TasksTabViewCell {
     
     func populate(with task: Task) {
-        print("populate")
         
         if let start = task.start {
             lblStart.text = "start: \(String(describing: start.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"}

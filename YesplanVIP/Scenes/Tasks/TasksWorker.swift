@@ -33,32 +33,9 @@ class TasksWorker
     
     func groupTasksByDue(tasks: Tasks) -> [String : [Task]]
     {
-        //        First: group all tasks where due = "no deadline"
-//        var tasksSortedWithoutDue = [Task]()
-//        var tasksSortedWithDue = [Task]()
-//
-//        var taskDictNoDue = [String : [Task]]()
-//        var taskDictDue = [String : [Task]]()
         var taskDict = [String : [Task]]()
-//
-//        for task in tasks.data where task.due == "no deadline" {
-//            tasksSortedWithoutDue.append(task)
-//        }
-////        print("tasksSortedWithoutDue: ", tasksSortedWithoutDue )
-//        taskDictNoDue["no deadline"] = tasksSortedWithoutDue
-//
-//        for task in tasks.data where task.due != "no deadline" {
-//            tasksSortedWithDue.append(task)
-//        }
-//
-//        print("tasksSortedWithDue: ", tasksSortedWithDue)
-//        taskDictDue = Dictionary(grouping: tasksSortedWithDue, by: { $0.due.convertDateString(dateFormat: "yyyy-MM-dd")!})
-//
-//        taskDict = taskDictNoDue.merged(with: taskDictDue)
-//        taskDict = Dictionary(grouping: tasks.data, by: { $0.due})
-//        for task in taskDict where task.key != "no deadline" {
+
         taskDict = Dictionary(grouping: tasks.data, by: { $0.due.convertDateString(dateFormat: "yyyy-MM-dd")!})
-//        }
         return taskDict
     }
     
@@ -75,7 +52,6 @@ class TasksWorker
     func sortDictByDate(dictTasks: [String:[Task]]) -> [(key: String, value: [Task])] {
         
         let sortedDictByDate = dictTasks.sorted(by:  { $0.0 < $1.0 })
-        print("sortedDictByDate: ", sortedDictByDate)
         return sortedDictByDate
     }
     

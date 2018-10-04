@@ -16,7 +16,6 @@ import Kingfisher
 extension EventsTabViewCell {
     
     func populate(with event: Event) {
-        print("populate")
         if let name = event.name {
             lblName.text = name }
         if let defaultschedulestarttime = event.defaultschedulestarttime {
@@ -25,10 +24,7 @@ extension EventsTabViewCell {
             if locations.count != 0 {
         if let location = locations[0].name {
             lblLocation.text = location } } }
-        
         if let groupName = event.group!.name {
             lblGroupName.text = groupName }
-//        title.text = p.title
-//        photo.kf.setImage(with: p.imageUrl)
     }
 }

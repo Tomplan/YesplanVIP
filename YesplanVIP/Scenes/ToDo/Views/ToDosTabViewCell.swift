@@ -19,14 +19,13 @@ class ToDosTabViewCell: UICollectionViewCell {
     var lblAssignedTo = UILabel()
     
     override init(frame: CGRect) {
-        
         super.init(frame: frame)
+        
         setupComponents()
         setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder)
-        //    { super.init(coder: aDecoder)}
     {
         fatalError("init(coder:) has not been implemented")
     }
@@ -44,10 +43,8 @@ class ToDosTabViewCell: UICollectionViewCell {
         self.lblDeadline.text = "deadline: "
         self.lblStart.text = "start: "
         self.lblAssignedTo.text = nil
-        
-        
-        
     }
+    
     // MARK: Private methods
     private func setupComponents() {
         
@@ -80,7 +77,6 @@ class ToDosTabViewCell: UICollectionViewCell {
         self.lblAssignedTo.numberOfLines = 0
         self.lblAssignedTo.font = UIFont.systemFont(ofSize: 12.0)
         self.lblAssignedTo.textColor = UIColor.orange
-        
     }
     
     private func setupConstraints() {
