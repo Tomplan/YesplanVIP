@@ -39,10 +39,10 @@ class TasksTabViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        self.lblName.text = nil
-        self.lblDeadline.text = "deadline: "
-        self.lblStart.text = "start: "
-        self.lblAssignedTo.text = nil
+        lblName.text = nil
+        lblDeadline.text = "deadline: "
+        lblStart.text = "start: "
+        lblAssignedTo.text = nil
 
         
         
@@ -50,12 +50,12 @@ class TasksTabViewCell: UICollectionViewCell {
     // MARK: Private methods
     private func setupComponents() {
 
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5
-        self.layer.borderWidth = 4
-        self.layer.shadowOffset = CGSize(width: -2, height: 2)
-        self.layer.borderColor = UIColor.black.cgColor
-        self.backgroundColor = UIColor(rgbString: "rgb(224,249,222)")
+        layer.masksToBounds = true
+        layer.cornerRadius = 5
+        layer.borderWidth = 4
+        layer.shadowOffset = CGSize(width: -2, height: 2)
+        layer.borderColor = UIColor.black.cgColor
+        backgroundColor = UIColor(rgbString: "rgb(224,249,222)")
 
         sv(
             lblName
@@ -64,21 +64,21 @@ class TasksTabViewCell: UICollectionViewCell {
             ,lblAssignedTo
         )
         
-        self.lblName.numberOfLines = 0
-        self.lblName.font = UIFont.systemFont(ofSize: 15.0)
-        self.lblName.textColor = UIColor.red
+        lblName.numberOfLines = 0
+        lblName.font = UIFont.systemFont(ofSize: 15.0)
+        lblName.textColor = UIColor.red
         
-        self.lblDeadline.numberOfLines = 0
-        self.lblDeadline.font = UIFont.systemFont(ofSize: 12.0)
-        self.lblDeadline.textColor = UIColor.black
+        lblDeadline.numberOfLines = 0
+        lblDeadline.font = UIFont.systemFont(ofSize: 12.0)
+        lblDeadline.textColor = UIColor.black
 
-        self.lblStart.numberOfLines = 0
-        self.lblStart.font = UIFont.systemFont(ofSize: 12.0)
-        self.lblStart.textColor = UIColor.black
+        lblStart.numberOfLines = 0
+        lblStart.font = UIFont.systemFont(ofSize: 12.0)
+        lblStart.textColor = UIColor.black
 
-        self.lblAssignedTo.numberOfLines = 0
-        self.lblAssignedTo.font = UIFont.systemFont(ofSize: 12.0)
-        self.lblAssignedTo.textColor = UIColor.orange
+        lblAssignedTo.numberOfLines = 0
+        lblAssignedTo.font = UIFont.systemFont(ofSize: 12.0)
+        lblAssignedTo.textColor = UIColor.orange
         
     }
     

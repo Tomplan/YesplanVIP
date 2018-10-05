@@ -39,10 +39,10 @@ class EventsTabViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.lblName.text = nil
-        self.lblDefaultschedulestarttime.text = nil
-        self.lblLocation.text = nil
-        self.lblGroupName.text = nil
+        lblName.text = nil
+        lblDefaultschedulestarttime.text = nil
+        lblLocation.text = nil
+        lblGroupName.text = nil
 
         
         
@@ -50,12 +50,12 @@ class EventsTabViewCell: UICollectionViewCell {
     // MARK: Private methods
     private func setupComponents() {
 
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 5
-        self.layer.borderWidth = 4
-        self.layer.shadowOffset = CGSize(width: -2, height: 2)
-        self.layer.borderColor = UIColor.black.cgColor
-        self.backgroundColor = UIColor.yellow
+        layer.masksToBounds = true
+        layer.cornerRadius = 5
+        layer.borderWidth = 4
+        layer.shadowOffset = CGSize(width: -2, height: 2)
+        layer.borderColor = UIColor.black.cgColor
+        backgroundColor = UIColor.yellow
         
         sv(
             lblHeaderName,
@@ -65,21 +65,21 @@ class EventsTabViewCell: UICollectionViewCell {
             lblGroupName
         )
         
-        self.lblName.numberOfLines = 0
-        self.lblName.font = UIFont.systemFont(ofSize: 15.0)
-        self.lblName.textColor = UIColor.red
+        lblName.numberOfLines = 0
+        lblName.font = UIFont.systemFont(ofSize: 15.0)
+        lblName.textColor = UIColor.red
         
-        self.lblDefaultschedulestarttime.numberOfLines = 0
-        self.lblDefaultschedulestarttime.font = UIFont.systemFont(ofSize: 12.0)
-        self.lblDefaultschedulestarttime.textColor = UIColor.gray
+        lblDefaultschedulestarttime.numberOfLines = 0
+        lblDefaultschedulestarttime.font = UIFont.systemFont(ofSize: 12.0)
+        lblDefaultschedulestarttime.textColor = UIColor.gray
         
-        self.lblLocation.numberOfLines = 0
-        self.lblLocation.font = UIFont.systemFont(ofSize: 12.0)
-        self.lblLocation.textColor = UIColor.lightGray
+        lblLocation.numberOfLines = 0
+        lblLocation.font = UIFont.systemFont(ofSize: 12.0)
+        lblLocation.textColor = UIColor.lightGray
         
-        self.lblGroupName.numberOfLines = 0
-        self.lblGroupName.font = UIFont.systemFont(ofSize: 12.0)
-        self.lblGroupName.textColor = UIColor.lightGray
+        lblGroupName.numberOfLines = 0
+        lblGroupName.font = UIFont.systemFont(ofSize: 12.0)
+        lblGroupName.textColor = UIColor.lightGray
         
     }
     

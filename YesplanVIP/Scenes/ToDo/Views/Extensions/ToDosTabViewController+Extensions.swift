@@ -50,7 +50,7 @@ extension ToDosViewController: UICollectionViewDataSource {
             } else {
                 headerView.ToDosViewHeaderLabel.text = "no deadline"
             }
-            headerView.backgroundColor = UIColor.darkGray  // ... YELLOW background
+            headerView.backgroundColor = UIColor.darkGray 
             return headerView
             
         default:
