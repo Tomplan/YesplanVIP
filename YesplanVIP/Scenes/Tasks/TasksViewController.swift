@@ -70,7 +70,11 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+    
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(addTapped))
+    
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         v.collectionView.dataSource = self
@@ -88,8 +92,22 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   
   //@IBOutlet weak var nameTextField: UITextField!
     
+    
+    @objc func userDefaultsDidChange(){
+        print("userDefaultsDidChange")
+        doSomething()
+    }
+    
+    @objc func addTapped(sender: AnyObject) {
+        if let url = URL(string:UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                _ =  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
     @objc private func refresh() {
-        
+        print("refresh")
         doSomething()
     }
     

@@ -44,8 +44,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-
-
+    
     yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
         .then((worker?.groupEventsByStartdate)!)
         .then((worker?.sortEventsInEachGroupByTime)!)

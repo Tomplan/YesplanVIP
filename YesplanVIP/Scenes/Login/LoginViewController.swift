@@ -157,8 +157,8 @@ private extension LoginViewController {
   {
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text
-    let user = loginView.userTextField.text
-    let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey, user: user)
+//    let user = loginView.userTextField.text
+    let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey)
     interactor?.loginPressed(request: request)
   }
 }
@@ -181,9 +181,9 @@ extension LoginViewController {
         self.defaults.set(autofillApiKey, forKey: "autofillApiKey" )
 
         // Mark: append user to autofill
-        autofillUser.append(loginView.userTextField.text!)
-        autofillUser = Array(Set(autofillUser))
-        self.defaults.set(autofillUser, forKey: "autofillUser" )
+//        autofillUser.append(loginView.userTextField.text!)
+//        autofillUser = Array(Set(autofillUser))
+//        self.defaults.set(autofillUser, forKey: "autofillUser" )
         
         //Mark: switch to MainScreen
         AppDelegate.shared.rootViewController.switchToMainScreen()
@@ -200,7 +200,7 @@ extension LoginViewController {
         // Mark: user has to add new apiKey
 //        loginView.companyURLTextField.text = nil
         loginView.apiKeyTextField.text = nil
-        loginView.userTextField.text = nil
+//        loginView.userTextField.text = nil
 
         
     }

@@ -36,6 +36,32 @@ class SplashViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
             self.activityIndicator.stopAnimating()
             
+            if UserDefaults.standard.bool(forKey: "tasks_team_check") {
+                print("tasks_team exists")
+            } else {
+                UserDefaults.standard.set(true, forKey: "tasks_team_check")
+                UserDefaults.standard.set("*", forKey: "tasks_team")
+                print("default task_team: \(UserDefaults.standard.string(forKey: "tasks_team")!)")
+
+            }
+            
+            if UserDefaults.standard.bool(forKey: "todo_user_check") {
+                print("todo_user exists")
+            } else {
+                UserDefaults.standard.set(true, forKey: "todo_user_check")
+                UserDefaults.standard.set("*", forKey: "todo_user")
+                print("default todo_user: \(UserDefaults.standard.string(forKey: "todo_user")!)")
+
+            }
+            
+            if UserDefaults.standard.bool(forKey: "todo_status_check") {
+                print("todo_status exists")
+            } else {
+                UserDefaults.standard.set(true, forKey: "todo_status_check")
+                UserDefaults.standard.set("new", forKey: "todo_status")
+                print("default todo_status: \(UserDefaults.standard.string(forKey: "todo_status")!)")
+            }
+            
             // Mark: Create autofillCompanyURL and autofillApiKey in Userdefaults if not existing
           
             if UserDefaults.standard.bool(forKey: "autofillCompanyURLCheck") {
@@ -56,14 +82,14 @@ class SplashViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "autofillApiKeyCheck")
             }
             
-            if UserDefaults.standard.bool(forKey: "autofillUserCheck") {
-                UserDefaults.standard.set(true, forKey: "autofillUserCheck")
-                
-            } else {
-                let array: [String] = []
-                UserDefaults.standard.set(array, forKey: "autofillUser")
-                UserDefaults.standard.set(true, forKey: "autofillUserCheck")
-            }
+//            if UserDefaults.standard.bool(forKey: "autofillUserCheck") {
+//                UserDefaults.standard.set(true, forKey: "autofillUserCheck")
+//
+//            } else {
+//                let array: [String] = []
+//                UserDefaults.standard.set(array, forKey: "autofillUser")
+//                UserDefaults.standard.set(true, forKey: "autofillUserCheck")
+//            }
             // Mark: Check if User is Logged In
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {

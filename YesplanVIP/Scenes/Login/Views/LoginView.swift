@@ -50,14 +50,14 @@ public class LoginView: UIView {
         return tf
     }()
     
-    let userTextField: SearchTextField = {
-        let tf = SearchTextField(placeHolder: "user")
-        tf.autocapitalizationType = .none
-        tf.inlineMode = true
-        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillUser") as! [String])
-        tf.theme = SearchTextFieldTheme.darkTheme()
-        return tf
-    }()
+//    let userTextField: SearchTextField = {
+//        let tf = SearchTextField(placeHolder: "user")
+//        tf.autocapitalizationType = .none
+//        tf.inlineMode = true
+//        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillUser") as! [String])
+//        tf.theme = SearchTextFieldTheme.darkTheme()
+//        return tf
+//    }()
     
     let loginButton: UIButton = {
         let button = UIButton(title: "Login", borderColor: .greenBorderColor)
@@ -120,7 +120,7 @@ extension LoginView: ViewConfigurable {
         
         viewsInStack = [companyURLTextField
             ,apiKeyTextField
-            ,userTextField
+//            ,userTextField
             ,loginButton
 //            ,signupButton
         ]

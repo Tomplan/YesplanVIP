@@ -48,7 +48,6 @@ extension ToDosViewController: UICollectionViewDataSource {
             
             if (displayedToDos[indexPath.section].date != "no deadline" && displayedToDos[indexPath.section].date != "SUPER, All done!"
                 ){
-                print("1")
                 headerView.ToDosViewHeaderLabel.text = displayedToDos[indexPath.section].date.convertDateStringShort(dateFormat: "EEEE, dd MMMM yyyy")
             } else {
                 headerView.ToDosViewHeaderLabel.text = "\(displayedToDos[indexPath.section].date)"

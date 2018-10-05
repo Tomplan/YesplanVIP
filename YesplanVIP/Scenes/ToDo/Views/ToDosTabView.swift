@@ -13,6 +13,8 @@ import Stevia
 
 class ToDosTabView: UIView {
     
+    var toDoPrefsAction: (() -> Void)?
+
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
     let spinner = UIActivityIndicatorView(style: .whiteLarge)
@@ -36,6 +38,16 @@ class ToDosTabView: UIView {
         iv.image = UIImage(named: "yesplanNB 1024x1024")
         return iv
     }()
+    
+    let toDoPrefsButton: UIButton = {
+        let button = UIButton(title: "Login", borderColor: .greenBorderColor)
+        button.addTarget(self, action: #selector(handleToDoPrefs), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func handleToDoPrefs() {
+        toDoPrefsAction?()
+    }
     
     convenience init() {
         self.init(frame: CGRect.zero)

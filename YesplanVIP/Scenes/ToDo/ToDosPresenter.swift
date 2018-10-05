@@ -28,7 +28,6 @@ class ToDosPresenter: ToDosPresentationLogic
         var toDos: [ToDosTab.Something.ViewModel.DisplayedToDo] = []
         
         for (key, value) in response.toDos {
-            print(value)
             toDos.append(ToDosTab.Something.ViewModel.DisplayedToDo(date: key, toDos: value))
         }
         var viewModel = ToDosTab.Something.ViewModel(displayedToDos: toDos)

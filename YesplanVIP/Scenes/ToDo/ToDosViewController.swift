@@ -41,8 +41,6 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     private func setup()
     {
-        print("TasksViewController setup")
-        
         let viewController = self
         let interactor = ToDosInteractor()
         let presenter = ToDosPresenter()
@@ -73,14 +71,33 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(addTapped))
+        
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         v.collectionView.dataSource = self
     }
- 
+    
+    @objc func userDefaultsDidChange(){
+        print("userDefaultsDidChange")
+        doSomething()
+    }
+    
+    @objc func addTapped(sender: AnyObject) {
+        if let url = URL(string:UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                _ =  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
     //@IBOutlet weak var nameTextField: UITextField!
     
     @objc private func refresh() {
+        print("refresh")
+
         doSomething()
     }
     

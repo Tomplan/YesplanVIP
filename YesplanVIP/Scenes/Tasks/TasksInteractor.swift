@@ -41,7 +41,7 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   {
     worker = TasksWorker()
     
-    yesplan.getAll(fetchedTasks, query: "task:team:1203 - task:status:done")
+    yesplan.getAll(fetchedTasks, query: "task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:new")
         .then((worker?.groupTasksByDue)!)
         .then((worker?.sortTasksInEachGroupByDue)!)
         .then((worker?.sortDictByDate)!)

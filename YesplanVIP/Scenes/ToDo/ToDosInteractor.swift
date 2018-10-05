@@ -40,7 +40,10 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     {
         worker = ToDosWorker()
         
-        yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "USER")!) - task:status:done")
+        print("\(UserDefaults.standard.string(forKey: "todo_user")!)")
+        print("\(UserDefaults.standard.string(forKey: "todo_status")!)")
+
+        yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)
             .then((worker?.sortDictByDate)!)
