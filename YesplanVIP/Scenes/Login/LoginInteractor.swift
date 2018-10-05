@@ -46,7 +46,8 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
       
         let companyUrl = request.companyURL
         let apiKey = request.apiKey
-        
+        let user = request.user
+
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https";
         urlComponents.host = "\(companyUrl!)";
@@ -69,6 +70,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
 
                     UserDefaults.standard.set(y, forKey: "URL")
                     UserDefaults.standard.set(apiKey, forKey: "KEY")
+                    UserDefaults.standard.set(user, forKey: "USER")
 
                     let response = Login.EnterLogin.Response(success: true, error: nil)
                         self.presenter?.presentSomething(response: response)

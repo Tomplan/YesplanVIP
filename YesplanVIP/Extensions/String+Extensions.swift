@@ -42,6 +42,7 @@ extension String {
             return self
         }
     }
+    
 }
 ///**
 // A String extension that provides percent encoding of URL

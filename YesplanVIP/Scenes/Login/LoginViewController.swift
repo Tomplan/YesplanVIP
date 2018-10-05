@@ -30,6 +30,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     var autofillCompanyURL: [String] = UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String]
 
     var autofillApiKey: [String] = UserDefaults.standard.array(forKey: "autofillApiKey") as! [String]
+    var autofillUser: [String] = UserDefaults.standard.array(forKey: "autofillUser") as! [String]
 
     // view:
     
@@ -126,7 +127,6 @@ extension LoginViewController: ViewConfigurable {
     }
     
     public func setupConstraints() {
-//        print("func LoginViewController.setupConstraints")
         
         if (!didSetupConstraints) {
             
@@ -157,7 +157,8 @@ private extension LoginViewController {
   {
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text
-    let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey)
+    let user = loginView.userTextField.text
+    let request = Login.EnterLogin.Request(companyURL: companyUrl, apiKey: apiKey, user: user)
     interactor?.loginPressed(request: request)
   }
 }
@@ -179,6 +180,11 @@ extension LoginViewController {
         autofillApiKey = Array(Set(autofillApiKey))
         self.defaults.set(autofillApiKey, forKey: "autofillApiKey" )
 
+        // Mark: append user to autofill
+        autofillUser.append(loginView.userTextField.text!)
+        autofillUser = Array(Set(autofillUser))
+        self.defaults.set(autofillUser, forKey: "autofillUser" )
+        
         //Mark: switch to MainScreen
         AppDelegate.shared.rootViewController.switchToMainScreen()
 //        router?.routeToSomewhere()
@@ -194,6 +200,8 @@ extension LoginViewController {
         // Mark: user has to add new apiKey
 //        loginView.companyURLTextField.text = nil
         loginView.apiKeyTextField.text = nil
+        loginView.userTextField.text = nil
+
         
     }
   }

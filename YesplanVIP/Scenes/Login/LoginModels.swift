@@ -23,6 +23,7 @@ enum Login
     {
         var companyURL: String?
         var apiKey: String?
+        var user: String?
     }
     struct Response
     {

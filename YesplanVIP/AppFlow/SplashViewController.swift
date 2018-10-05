@@ -56,6 +56,14 @@ class SplashViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "autofillApiKeyCheck")
             }
             
+            if UserDefaults.standard.bool(forKey: "autofillUserCheck") {
+                UserDefaults.standard.set(true, forKey: "autofillUserCheck")
+                
+            } else {
+                let array: [String] = []
+                UserDefaults.standard.set(array, forKey: "autofillUser")
+                UserDefaults.standard.set(true, forKey: "autofillUserCheck")
+            }
             // Mark: Check if User is Logged In
             
             if UserDefaults.standard.bool(forKey: "LOGGED_IN") {

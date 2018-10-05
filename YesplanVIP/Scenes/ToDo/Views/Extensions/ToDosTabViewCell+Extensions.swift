@@ -23,10 +23,14 @@ extension ToDosTabViewCell {
         if let name = task.name {
             lblName.text = name }
         
-        if task.due != "no deadline" {
+        if (task.due != "no deadline" &&
+            task.due != "Keep up the good work!"
+            ){
             lblDeadline.text = "deadline: \(String(describing: task.due.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
         } else {
-            lblDeadline.text = "no deadline"
+            lblDeadline.text = task.due
+            lblDeadline.textAlignment = .center
+            lblName.textAlignment = .center
         }
         
         if let assignedTo = task.assignedto {

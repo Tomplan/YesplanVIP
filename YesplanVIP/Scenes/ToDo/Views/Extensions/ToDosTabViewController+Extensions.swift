@@ -45,10 +45,13 @@ extension ToDosViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"ToDosTabViewHeader", for: indexPath) as! ToDosTabViewHeader
-            if displayedToDos[indexPath.section].date != "no deadline" {
+            
+            if (displayedToDos[indexPath.section].date != "no deadline" && displayedToDos[indexPath.section].date != "SUPER, All done!"
+                ){
+                print("1")
                 headerView.ToDosViewHeaderLabel.text = displayedToDos[indexPath.section].date.convertDateStringShort(dateFormat: "EEEE, dd MMMM yyyy")
             } else {
-                headerView.ToDosViewHeaderLabel.text = "no deadline"
+                headerView.ToDosViewHeaderLabel.text = "\(displayedToDos[indexPath.section].date)"
             }
             headerView.backgroundColor = UIColor.darkGray 
             return headerView

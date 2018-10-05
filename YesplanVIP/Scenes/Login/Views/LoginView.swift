@@ -50,17 +50,26 @@ public class LoginView: UIView {
         return tf
     }()
     
+    let userTextField: SearchTextField = {
+        let tf = SearchTextField(placeHolder: "user")
+        tf.autocapitalizationType = .none
+        tf.inlineMode = true
+        tf.filterStrings(UserDefaults.standard.array(forKey: "autofillUser") as! [String])
+        tf.theme = SearchTextFieldTheme.darkTheme()
+        return tf
+    }()
+    
     let loginButton: UIButton = {
         let button = UIButton(title: "Login", borderColor: .greenBorderColor)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
-    let signupButton: UIButton = {
-        let button = UIButton(title: "Sign Up", borderColor: .redBorderColor)
-        button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
-        return button
-    }()
+//    let signupButton: UIButton = {
+//        let button = UIButton(title: "Sign Up", borderColor: .redBorderColor)
+//        button.addTarget(self, action: #selector(handleSignup), for: .touchUpInside)
+//        return button
+//    }()
     
     @objc func handleLogin() {
         loginAction?()
@@ -111,8 +120,9 @@ extension LoginView: ViewConfigurable {
         
         viewsInStack = [companyURLTextField
             ,apiKeyTextField
+            ,userTextField
             ,loginButton
-            ,signupButton
+//            ,signupButton
         ]
         stackView = createStackView(views: viewsInStack)
         

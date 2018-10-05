@@ -40,7 +40,7 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     {
         worker = ToDosWorker()
         
-        yesplan.getAll(fetchedToDos, query: "task:assignedto:pascal - task:status:done")
+        yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "USER")!) - task:status:done")
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)
             .then((worker?.sortDictByDate)!)
