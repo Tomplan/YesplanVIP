@@ -15,7 +15,6 @@ extension EventsTabViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        print("displayedEvents[section].event.count: ", displayedEvents[section].events.count)
         return displayedEvents[section].date
     }
 
@@ -64,7 +63,6 @@ extension EventsTabViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind{
         case UICollectionView.elementKindSectionHeader:
-            print("elementKindSectionHeader")
 
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"EventsTabViewHeader", for: indexPath) as! EventsTabViewHeader
            
