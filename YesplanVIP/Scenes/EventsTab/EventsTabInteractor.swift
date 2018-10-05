@@ -35,6 +35,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     var eventsArray: [(key: String, value: [Event])] = [(key: String, value: [Event])]()
     var statusesArray: [Status] = [Status]()
     var profilesArray: [Profile] = [Profile]()
+    var error: String?
     
     var yesplan: Yesplan = Yesplan()
     
@@ -63,15 +64,27 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
             self.profilesArray = result.data
         }
         
-        .onError((worker?.showErrorPopup)!)
+        .onError { e in
+            // An error occured :/
+            print(e)
+            self.error = "\(e)"
+            let response = EventsTab.Something.Response(
+                events: self.eventsArray,
+                statuses: self.statusesArray,
+                profiles: self.profilesArray,
+                error: self.error
+            )
+            self.presenter?.presentEvents(response: response)
+
+        }
 
         .finally {
      
         let response = EventsTab.Something.Response(
             events: self.eventsArray,
             statuses: self.statusesArray,
-            profiles: self.profilesArray
-            
+            profiles: self.profilesArray,
+            error: self.error
         )
         self.presenter?.presentEvents(response: response)
     }

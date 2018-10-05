@@ -28,6 +28,8 @@ enum EventsTab
         var events: [(key: String, value: [Event])]
         var statuses: [Status]
         var profiles: [Profile]
+        var error: String?
+
     }
     
     struct ViewModel

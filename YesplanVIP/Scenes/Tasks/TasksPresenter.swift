@@ -27,10 +27,21 @@ class TasksPresenter: TasksPresentationLogic
   {
     var tasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
     
+    if response.error != nil { let viewModel = TasksTab.Something.ViewModel(
+        displayedTasks: tasks,
+        error: response.error!
+        )
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+    else {
     for (key, value) in response.tasks {
         tasks.append(TasksTab.Something.ViewModel.DisplayedTask(date: key, tasks: value))
     }
-    let viewModel = TasksTab.Something.ViewModel(displayedTasks: tasks)
+    let viewModel = TasksTab.Something.ViewModel(
+        displayedTasks: tasks,
+        error: nil
+        )
     viewController?.displaySomething(viewModel: viewModel)
+    }
   }
 }

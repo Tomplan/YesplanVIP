@@ -112,6 +112,18 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
     displayedStatuses = viewModel.displayedStatuses
+    
+    if viewModel.error != nil {
+    let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
+    
+        alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
+            self.doSomething()
+        }))
+        
+    self.present(alert, animated: true)
+
+    }
+    
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }
