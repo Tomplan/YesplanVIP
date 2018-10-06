@@ -50,21 +50,13 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
         .then { result in
             self.tasksArray = result
         }
-//        .then(yesplan.getAll(fetchedStatuses))
-//        .then { result in
-//            for status in result.data {
-//                print("task.status: ", status)
-//            }
-//            self.statusesArray = result.data
-//        }
-        
+
         .onError { e in
             // An error occured :/
             print(e)
             self.error = "\(e)"
             let response = TasksTab.Something.Response(
                 tasks: self.tasksArray
-//                ,statuses: self.statusesArray
                 ,error: self.error
             )
             self.presenter?.presentSomething(response: response)

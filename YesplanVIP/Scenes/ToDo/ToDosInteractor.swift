@@ -39,9 +39,6 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     func doSomething(request: ToDosTab.Something.Request)
     {
         worker = ToDosWorker()
-        
-        print("\(UserDefaults.standard.string(forKey: "todo_user")!)")
-        print("\(UserDefaults.standard.string(forKey: "todo_status")!)")
 
         yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
             .then((worker?.groupToDosByDue)!)

@@ -88,7 +88,6 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     @objc func userDefaultsDidChange(){
-        print("userDefaultsDidChange")
         doSomething()
     }
     
@@ -103,8 +102,6 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     //@IBOutlet weak var nameTextField: UITextField!
     
     @objc private func refresh() {
-        print("refresh")
-
         doSomething()
     }
     

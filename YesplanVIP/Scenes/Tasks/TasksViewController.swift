@@ -96,7 +96,6 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     
     @objc func userDefaultsDidChange(){
-        print("userDefaultsDidChange")
         doSomething()
     }
     
@@ -109,7 +108,6 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     @objc private func refresh() {
-        print("refresh")
         doSomething()
     }
     

@@ -31,7 +31,6 @@ class EventsTabPresenter: EventsTabPresentationLogic
         dateFormatter.dateFormat = "EEEE, dd MMMM yyyy"
         let dateString = dateFormatter.string(from: date)
         dateFormatter.locale = tempLocale // reset the locale
-        //                    print("EXACT_DATE : \(dateString)")
         return dateString
         
     }
