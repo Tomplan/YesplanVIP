@@ -16,7 +16,6 @@
 		3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24BAEB215613AB00E28966 /* String+Extensions.swift */; };
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */; };
 		3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */; };
-		3C40AEC5212D82460077DDC5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AEC4212D82460077DDC5 /* Photo.swift */; };
 		3C40AED8212D8C090077DDC5 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AED7212D8C090077DDC5 /* Events.swift */; };
 		3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AEDB212D8C1F0077DDC5 /* Pagination.swift */; };
 		3C40AEE0212D8C2F0077DDC5 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AEDF212D8C2F0077DDC5 /* Event.swift */; };
@@ -67,6 +66,14 @@
 		3CBE94A3212D75C700CE518C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE94A2212D75C700CE518C /* Api.swift */; };
 		3CC3774321688D870020236D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774221688D870020236D /* AppConfig.swift */; };
 		3CC3774521688E720020236D /* Notifications+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774421688E720020236D /* Notifications+Util.swift */; };
+		3CC377472168BD480020236D /* TeamplannerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377462168BD480020236D /* TeamplannerTabView.swift */; };
+		3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377492168BDB90020236D /* TeamplannerTabViewCell.swift */; };
+		3CC3774C2168BDF80020236D /* TeamplannerTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774B2168BDF80020236D /* TeamplannerTabViewHeader.swift */; };
+		3CC3774E2168C2BE0020236D /* Resourcebooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774D2168C2BE0020236D /* Resourcebooking.swift */; };
+		3CC377502168CB010020236D /* Resourcebookings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774F2168CB010020236D /* Resourcebookings.swift */; };
+		3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377512168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift */; };
+		3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377542168D0450020236D /* TeamplannerTabViewController+Extensions.swift */; };
+		3CC37757216946810020236D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC37756216946810020236D /* Resource.swift */; };
 		3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */; };
 		3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */; };
 		3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59293212AC57B005BBF71 /* LogoutWorker.swift */; };
@@ -144,7 +151,6 @@
 		3C24BAEB215613AB00E28966 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVwController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		3C40AEC4212D82460077DDC5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3C40AED7212D8C090077DDC5 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		3C40AEDB212D8C1F0077DDC5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		3C40AEDF212D8C2F0077DDC5 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -193,6 +199,14 @@
 		3CBE94A2212D75C700CE518C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		3CC3774221688D870020236D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		3CC3774421688E720020236D /* Notifications+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications+Util.swift"; sourceTree = "<group>"; };
+		3CC377462168BD480020236D /* TeamplannerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerTabView.swift; sourceTree = "<group>"; };
+		3CC377492168BDB90020236D /* TeamplannerTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerTabViewCell.swift; sourceTree = "<group>"; };
+		3CC3774B2168BDF80020236D /* TeamplannerTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamplannerTabViewHeader.swift; sourceTree = "<group>"; };
+		3CC3774D2168C2BE0020236D /* Resourcebooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourcebooking.swift; sourceTree = "<group>"; };
+		3CC3774F2168CB010020236D /* Resourcebookings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourcebookings.swift; sourceTree = "<group>"; };
+		3CC377512168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamplannerTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		3CC377542168D0450020236D /* TeamplannerTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamplannerTabViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3CC37756216946810020236D /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrowParsable+Extension.swift"; sourceTree = "<group>"; };
 		3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPresenter.swift; sourceTree = "<group>"; };
 		3CD59293212AC57B005BBF71 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
@@ -322,7 +336,6 @@
 		3C40AEC8212D825B0077DDC5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3C40AEC4212D82460077DDC5 /* Photo.swift */,
 				3C40AF34212D95690077DDC5 /* Multiples */,
 				3C40AF35212D95760077DDC5 /* Singles */,
 			);
@@ -375,6 +388,7 @@
 				3CF142E2212DE257001FC532 /* Groups.swift */,
 				3C230AA721558BA5004477A3 /* Statuses.swift */,
 				3C862BF72157C2F700428BF9 /* Profiles.swift */,
+				3CC3774F2168CB010020236D /* Resourcebookings.swift */,
 			);
 			path = Multiples;
 			sourceTree = "<group>";
@@ -389,9 +403,11 @@
 				3C40AF13212D917B0077DDC5 /* User.swift */,
 				3C40AF30212D92610077DDC5 /* Usergroup.swift */,
 				3C40AF36212DAE8E0077DDC5 /* Base.swift */,
+				3CC37756216946810020236D /* Resource.swift */,
 				3CF142DE212DDFF9001FC532 /* Status.swift */,
 				3C862BF52157C1DB00428BF9 /* Profile.swift */,
 				3CD714F32163C26800CC370A /* Task.swift */,
+				3CC3774D2168C2BE0020236D /* Resourcebooking.swift */,
 			);
 			path = Singles;
 			sourceTree = "<group>";
@@ -463,6 +479,26 @@
 				3CD7DBAB21332379001C1B6E /* RestResource.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		3CC377482168BD520020236D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CC377462168BD480020236D /* TeamplannerTabView.swift */,
+				3CC377492168BDB90020236D /* TeamplannerTabViewCell.swift */,
+				3CC3774B2168BDF80020236D /* TeamplannerTabViewHeader.swift */,
+				3CC377532168D0130020236D /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CC377532168D0130020236D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3CC377512168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift */,
+				3CC377542168D0450020236D /* TeamplannerTabViewController+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3CD592AA212AC6D2005BBF71 /* Logout */ = {
@@ -553,6 +589,7 @@
 		3CE710872121A76B00EBF6A5 /* Teamplanner */ = {
 			isa = PBXGroup;
 			children = (
+				3CC377482168BD520020236D /* Views */,
 				3CE7106F2121A76400EBF6A5 /* TeamplannerPresenter.swift */,
 				3CE710702121A76400EBF6A5 /* TeamplannerWorker.swift */,
 				3CE710712121A76400EBF6A5 /* TeamplannerRouter.swift */,
@@ -849,14 +886,16 @@
 				3CE710FE2121A84400EBF6A5 /* HelpViewController.swift in Sources */,
 				3CE9D1D2212382B100BFA730 /* UIStackView+Extension.swift in Sources */,
 				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
+				3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */,
 				3C7337A92150427C0045F9E1 /* EventsTabViewController+Extensions.swift in Sources */,
+				3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */,
 				3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */,
 				3C40AEF8212D8E550077DDC5 /* EventsTabInteractor.swift in Sources */,
-				3C40AEC5212D82460077DDC5 /* Photo.swift in Sources */,
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3CC3774321688D870020236D /* AppConfig.swift in Sources */,
 				3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */,
 				3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
+				3CC377502168CB010020236D /* Resourcebookings.swift in Sources */,
 				3CD714F82164038A00CC370A /* TasksTabViewController+Extensions.swift in Sources */,
 				3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */,
 				3CE710912121A78800EBF6A5 /* TasksWorker.swift in Sources */,
@@ -868,6 +907,7 @@
 				3C40AF1D212D91F30077DDC5 /* UserTabPresenter.swift in Sources */,
 				3C40AF37212DAE8E0077DDC5 /* Base.swift in Sources */,
 				3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */,
+				3CC37757216946810020236D /* Resource.swift in Sources */,
 				3CD714F62163E8DE00CC370A /* Tasks.swift in Sources */,
 				3CD592A7212AC57B005BBF71 /* LogoutInteractor.swift in Sources */,
 				3CE710C92121A7E300EBF6A5 /* ToDosModels.swift in Sources */,
@@ -896,6 +936,7 @@
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
+				3CC3774E2168C2BE0020236D /* Resourcebooking.swift in Sources */,
 				3CE9D1DF2123834100BFA730 /* UIButton+Extension.swift in Sources */,
 				3CE9D1D72123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
@@ -923,6 +964,7 @@
 				3CE9D1DB2123832900BFA730 /* UITextField+Extension.swift in Sources */,
 				3CE710812121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
 				3CE9D1C821237C1800BFA730 /* LoginInteractor.swift in Sources */,
+				3CC3774C2168BDF80020236D /* TeamplannerTabViewHeader.swift in Sources */,
 				3CE710942121A78800EBF6A5 /* TasksRouter.swift in Sources */,
 				3C40AF14212D917B0077DDC5 /* User.swift in Sources */,
 				3CD5929E212AC57B005BBF71 /* LogoutRouter.swift in Sources */,
@@ -937,6 +979,7 @@
 				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,
 				3CE9D1BF21237C1800BFA730 /* LoginRouter.swift in Sources */,
 				3C40AF20212D91F30077DDC5 /* UserTabWorker.swift in Sources */,
+				3CC377472168BD480020236D /* TeamplannerTabView.swift in Sources */,
 				3C40AF02212D8EB90077DDC5 /* EventsTabViewCell.swift in Sources */,
 				3CE711062121AD7100EBF6A5 /* Dictionary+Extension.swift in Sources */,
 				3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */,
@@ -948,6 +991,7 @@
 				3C40AF26212D91F30077DDC5 /* UserTabModels.swift in Sources */,
 				3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
 				3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */,
+				3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */,
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 			);

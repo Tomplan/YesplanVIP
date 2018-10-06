@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct Profile: Codable {
+struct Profile {
     
     var url: String = ""
     var _type: String = ""

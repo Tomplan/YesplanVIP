@@ -27,9 +27,3 @@ extension Statuses: RestResource {
     static func restName() -> String { return "api/statuses/" }
     func restId() -> String { return "" }
 }
-
-//extension Events {
-//    static func fetchEvents() -> Promise<Events> {
-//        return api.fetchEvents()
-//    }
-//}

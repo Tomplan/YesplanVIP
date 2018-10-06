@@ -12,20 +12,47 @@
 
 import UIKit
 
-protocol TeamplannerPresentationLogic
+protocol TeamplannerTabPresentationLogic
 {
-  func presentSomething(response: Teamplanner.Something.Response)
+  func presentSomething(response: TeamplannerTab.Something.Response)
 }
 
-class TeamplannerPresenter: TeamplannerPresentationLogic
+class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 {
-  weak var viewController: TeamplannerDisplayLogic?
+  weak var viewController: TeamplannerTabDisplayLogic?
   
   // MARK: Do something
   
-  func presentSomething(response: Teamplanner.Something.Response)
+  func presentSomething(response: TeamplannerTab.Something.Response)
   {
-    let viewModel = Teamplanner.Something.ViewModel()
+    var resourcebookingDispls: [TeamplannerTab.Something.ViewModel.Displ] = []
+    var resourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
+    
+    for resourcebooking in response.resourcebookings {
+        switch resourcebooking {
+        case .instantiableResourceUse(let x):
+            let y = TeamplannerTab.Something.ViewModel.Displ(
+                date: x.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
+                ,name: (x.resource?.name!)!
+                ,Start: x.start!
+                ,End: x.end!
+            )
+            resourcebookingDispls.append(y)
+        case .instantiableResourceUseGroup( _):
+            print("nikske")
+//            resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: x.actualstart!, resourcebookings: [resourcebooking]))
+        }
+    }
+        
+//        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: stringToEventsDate(myDateString: resourcebooking), events: value))
+    let dictResourcebookings = Dictionary(grouping: resourcebookingDispls, by: { $0.date })
+
+    for (key, value) in dictResourcebookings {
+        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
+    }
+    let viewModel = TeamplannerTab.Something.ViewModel(
+        displayedResourcebookings: resourcebookings
+    )
     viewController?.displaySomething(viewModel: viewModel)
   }
 }

@@ -12,30 +12,57 @@
 
 import UIKit
 
-protocol TeamplannerBusinessLogic
+protocol TeamplannerTabBusinessLogic
 {
-  func doSomething(request: Teamplanner.Something.Request)
+  func doSomething(request: TeamplannerTab.Something.Request)
 }
 
-protocol TeamplannerDataStore
+protocol TeamplannerTabDataStore
 {
   //var name: String { get set }
 }
 
-class TeamplannerInteractor: TeamplannerBusinessLogic, TeamplannerDataStore
+class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataStore
 {
-  var presenter: TeamplannerPresentationLogic?
-  var worker: TeamplannerWorker?
+  var presenter: TeamplannerTabPresentationLogic?
+  var worker: TeamplannerTabWorker?
+    var fetchedResourcebookings: Resourcebookings = Resourcebookings()
+    var fetchedGroups: Groups = Groups()
+
+    var resourcebookingsArray: [Resourcebooking] = [Resourcebooking]()
+    var yesplan: Yesplan = Yesplan()
+
   //var name: String = ""
   
   // MARK: Do something
   
-  func doSomething(request: Teamplanner.Something.Request)
+  func doSomething(request: TeamplannerTab.Something.Request)
   {
-    worker = TeamplannerWorker()
-    worker?.doSomeWork()
+    worker = TeamplannerTabWorker()
+//    worker?.doSomeWork()
     
-    let response = Teamplanner.Something.Response()
-    presenter?.presentSomething(response: response)
+    yesplan.getAll(fetchedResourcebookings, query: "resourceuse:date:#thisweek ") // resourceuse:team:1203
+        .then { result in
+            for resourcebooking in result.data {
+                switch resourcebooking {
+                case .instantiableResourceUse(let x):
+                    if x.resource?.type == "Human" {
+                        self.resourcebookingsArray.append(resourcebooking)
+                    }
+                case .instantiableResourceUseGroup(let x):
+                    if x.resource?.type == "Human" {
+                        self.resourcebookingsArray.append(resourcebooking)
+                    }
+                }
+            }
+        }
+        .finally {
+            
+            let response = TeamplannerTab.Something.Response(
+                resourcebookings: self.resourcebookingsArray
+            )
+            self.presenter?.presentSomething(response: response)
+    }
   }
 }
+

@@ -27,9 +27,3 @@ extension Events: RestResource {
     static func restName() -> String { return "api/events/" }
     func restId() -> String { return "" }
 }
-
-//extension Events {
-//    static func fetchEvents() -> Promise<Events> {
-//        return api.fetchEvents()
-//    }
-//}

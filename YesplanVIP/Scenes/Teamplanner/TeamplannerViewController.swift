@@ -12,16 +12,17 @@
 
 import UIKit
 
-protocol TeamplannerDisplayLogic: class
+protocol TeamplannerTabDisplayLogic: class
 {
-  func displaySomething(viewModel: Teamplanner.Something.ViewModel)
+  func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
 }
 
-class TeamplannerViewController: UIViewController, TeamplannerDisplayLogic
+class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
 {
-  var interactor: TeamplannerBusinessLogic?
-  var router: (NSObjectProtocol & TeamplannerRoutingLogic & TeamplannerDataPassing)?
-
+  var interactor: TeamplannerTabBusinessLogic?
+  var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
+    var v = TeamplannerTabView()
+var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -41,9 +42,9 @@ class TeamplannerViewController: UIViewController, TeamplannerDisplayLogic
   private func setup()
   {
     let viewController = self
-    let interactor = TeamplannerInteractor()
-    let presenter = TeamplannerPresenter()
-    let router = TeamplannerRouter()
+    let interactor = TeamplannerTabInteractor()
+    let presenter = TeamplannerTabPresenter()
+    let router = TeamplannerTabRouter()
     viewController.interactor = interactor
     viewController.router = router
     interactor.presenter = presenter
@@ -54,38 +55,49 @@ class TeamplannerViewController: UIViewController, TeamplannerDisplayLogic
   
   // MARK: Routing
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//  {
+//    if let scene = segue.identifier {
+//      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+//      if let router = router, router.responds(to: selector) {
+//        router.perform(selector, with: segue)
+//      }
+//    }
+//  }
   
   // MARK: View lifecycle
-  
+    override func loadView() { view = v }
+
   override func viewDidLoad()
   {
     super.viewDidLoad()
     view.backgroundColor = UIColor.red
 
     doSomething()
+    
+    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    v.collectionView.dataSource = self
   }
   
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
-  
+    @objc private func refresh() {
+        
+        doSomething()
+    }
+    
   func doSomething()
   {
-    let request = Teamplanner.Something.Request()
+    let request = TeamplannerTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: Teamplanner.Something.ViewModel)
+  func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    displayedResourcebookings = viewModel.displayedResourcebookings
+//    dump(displayedResourcebookings)
+    self.v.collectionView.reloadData()
+    self.v.refreshControl.endRefreshing()
   }
 }

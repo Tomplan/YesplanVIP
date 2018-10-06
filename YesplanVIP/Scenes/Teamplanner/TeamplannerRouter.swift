@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol TeamplannerRoutingLogic
+@objc protocol TeamplannerTabRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol TeamplannerDataPassing
+protocol TeamplannerTabDataPassing
 {
-  var dataStore: TeamplannerDataStore? { get }
+  var dataStore: TeamplannerTabDataStore? { get }
 }
 
-class TeamplannerRouter: NSObject, TeamplannerRoutingLogic, TeamplannerDataPassing
+class TeamplannerTabRouter: NSObject, TeamplannerTabRoutingLogic, TeamplannerTabDataPassing
 {
-  weak var viewController: TeamplannerViewController?
-  var dataStore: TeamplannerDataStore?
+  weak var viewController: TeamplannerTabViewController?
+  var dataStore: TeamplannerTabDataStore?
   
   // MARK: Routing
   
@@ -46,14 +46,14 @@ class TeamplannerRouter: NSObject, TeamplannerRoutingLogic, TeamplannerDataPassi
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: TeamplannerViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: TeamplannerTabViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: TeamplannerDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: TeamplannerTabDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

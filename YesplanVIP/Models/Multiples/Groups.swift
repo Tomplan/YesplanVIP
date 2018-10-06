@@ -27,8 +27,3 @@ extension Groups: RestResource {
     static func restName() -> String { return "api/groups/" }
     func restId() -> String { return "" }
 }
-//extension Groups {
-//    static func fetchGroups() -> Promise<Groups> {
-//        return api.fetchGroups()
-//    }
-//}

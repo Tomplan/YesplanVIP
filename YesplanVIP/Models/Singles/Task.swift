@@ -9,7 +9,7 @@ import Foundation
 import Arrow
 import then
 
-var task: [String : Any] = [:]
+//var task: [String : Any] = [:]
 
 struct Task {
     
@@ -34,9 +34,6 @@ struct Task {
 
 
 extension Task: ArrowParsable {
-    
-    
-    
     public mutating func deserialize(_ json: JSON) {
         
         url <-- json["url"]

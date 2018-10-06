@@ -12,9 +12,26 @@
 
 import UIKit
 
-class TeamplannerWorker
+class TeamplannerTabWorker
 {
-  func doSomeWork()
-  {
-  }
+    var yesplan: Yesplan = Yesplan()
+    var fetchedResourcebookings: [String:Resourcebooking] = [:]
+    
+//    func groupResourecbookingsByStartdate(resourcebookings: Resourcebookings) -> [String:[Resourcebooking]] {
+//        for resourcebooking in resourcebookings.data {
+//            switch resourcebooking {
+//            case .instantiableResourceUse(let x):
+//                if x.resource?.type == "Human" {
+//                    fetchedResourcebookings[x.start!] = resourcebooking
+//                }
+//            case .instantiableResourceUseGroup(let _):
+//                print("neeije")
+////                if x.resource?.type == "Human" {
+//////                    fetchedResourcebookings[x.start!] = resourcebooking
+//////                }
+//            }
+//        }
+////        let dictResourcebookings = Dictionary(grouping: fetchedResourcebookings, by: { $0.key })
+////        return dictResourcebookings
+//    }
 }

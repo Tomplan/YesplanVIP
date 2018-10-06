@@ -12,17 +12,17 @@ import Arrow
 import then
 
 enum Children {
+
     case event(Event)
     case group(Group)
 
     init(children: JSON) {
-//        print("init")
         var value = Group()
         value.deserialize(children)
-        print(value)
+//        print(value)
         if value._type == "group" {
             self = .group(value)
-            
+
         } else {
             var e = Event()
             e.deserialize(children)

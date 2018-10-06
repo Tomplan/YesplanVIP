@@ -44,7 +44,6 @@ struct Event {
 extension Event: ArrowParsable {
     
     public mutating func deserialize(_ json: JSON) {
-//        print("Event")
 
         _type <-- json["_type"]
         
@@ -80,9 +79,3 @@ extension Event: RestResource {
     static func restName() -> String { return "api/event/" }
     func restId() -> String { return "\(id)" }
 }
-
-//extension Event {
-//     func fetchEvent(id: String) -> Promise<Event> {
-//        return api.fetchEvent(id: id)
-//    }
-//}
