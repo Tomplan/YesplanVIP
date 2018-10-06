@@ -26,20 +26,26 @@ class TasksPresenter: TasksPresentationLogic
   func presentSomething(response: TasksTab.Something.Response)
   {
     var tasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
+    var statusesDict: [String:String] = [:]
     
     if response.error != nil { let viewModel = TasksTab.Something.ViewModel(
-        displayedTasks: tasks,
-        error: response.error!
+        displayedTasks: tasks
+        ,displayedStatuses: statusesDict
+        ,error: response.error!
         )
         viewController?.displaySomething(viewModel: viewModel)
     }
     else {
-    for (key, value) in response.tasks {
-        tasks.append(TasksTab.Something.ViewModel.DisplayedTask(date: key, tasks: value))
-    }
+        for (key, value) in response.tasks {
+            tasks.append(TasksTab.Something.ViewModel.DisplayedTask(date: key, tasks: value))
+        }
+
+        statusesDict = ["New": "rgb(255,200,200)", "Started": "rgb(255,230,200)", "Done": "rgb(230,255,200)", "On hold": "rgb(100,100,200)", "Obsolete": "rgb(165,100,200)"]
+        
     let viewModel = TasksTab.Something.ViewModel(
-        displayedTasks: tasks,
-        error: nil
+        displayedTasks: tasks
+        ,displayedStatuses: statusesDict
+        ,error: nil
         )
     viewController?.displaySomething(viewModel: viewModel)
     }

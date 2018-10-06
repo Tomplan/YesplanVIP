@@ -32,7 +32,9 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
     var yesplan: Yesplan = Yesplan()
     var fetchedTasks: Tasks = Tasks()
     var error: String?
-    
+//    var fetchedStatuses: Statuses = Statuses()
+//    var statusesArray: [Status] = [Status]()
+
     var tasksArray: [(key: String, value: [Task])] = [(key: String, value: [Task])]()
   // MARK: Do something
    
@@ -41,28 +43,38 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   {
     worker = TasksWorker()
     
-    yesplan.getAll(fetchedTasks, query: "task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:new")
+    yesplan.getAll(fetchedTasks, query: "task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
         .then((worker?.groupTasksByDue)!)
         .then((worker?.sortTasksInEachGroupByDue)!)
         .then((worker?.sortDictByDate)!)
         .then { result in
             self.tasksArray = result
         }
+//        .then(yesplan.getAll(fetchedStatuses))
+//        .then { result in
+//            for status in result.data {
+//                print("task.status: ", status)
+//            }
+//            self.statusesArray = result.data
+//        }
+        
         .onError { e in
             // An error occured :/
             print(e)
             self.error = "\(e)"
             let response = TasksTab.Something.Response(
-                tasks: self.tasksArray,
-                error: self.error
+                tasks: self.tasksArray
+//                ,statuses: self.statusesArray
+                ,error: self.error
             )
             self.presenter?.presentSomething(response: response)
         }
         .finally {
             
         let response = TasksTab.Something.Response(
-            tasks: self.tasksArray,
-            error: nil
+            tasks: self.tasksArray
+//            ,statuses: self.statusesArray
+            ,error: nil
         )
         self.presenter?.presentSomething(response: response)
     }

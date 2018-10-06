@@ -33,6 +33,8 @@ enum ToDosTab
             }
             
             var displayedToDos: [DisplayedToDo]
+            var displayedStatuses: [String:String]
+
         }
     }
 }

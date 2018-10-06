@@ -23,6 +23,8 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   var router: (NSObjectProtocol & TasksRoutingLogic & TasksDataPassing)?
     var v = TasksTabView()
     var displayedTasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
+    var displayedStatuses: [String:String] = [:]
+
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -120,6 +122,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   func displaySomething(viewModel: TasksTab.Something.ViewModel) {
     
     displayedTasks = viewModel.displayedTasks
+    displayedStatuses = viewModel.displayedStatuses
     
     if viewModel.error != nil {
         let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)

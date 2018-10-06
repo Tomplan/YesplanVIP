@@ -34,7 +34,18 @@ extension TasksViewController: UICollectionViewDataSource {
                 let task = displayedTasks[indexPath.section].tasks[indexPath.item]
                 cell.populate(with: task)
                 
-            }
+            let taskStatusName = displayedTasks[indexPath.section].tasks[indexPath.item].status
+
+                    if let taskStatusColor = displayedStatuses[taskStatusName]
+                    {
+                        if let backgroundColor = UIColor(rgbString: taskStatusColor) {
+                            cell.backgroundColor = backgroundColor
+                        } else {
+                            print("invalid color specification")
+                        }
+                    }
+                }
+            
             return cell
         }
         return UICollectionViewCell()

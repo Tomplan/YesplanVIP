@@ -34,6 +34,16 @@ extension ToDosViewController: UICollectionViewDataSource {
                 let task = displayedToDos[indexPath.section].toDos[indexPath.item]
                 cell.populate(with: task)
                 
+                let toDoStatusName = displayedToDos[indexPath.section].toDos[indexPath.item].status
+                
+                if let toDoStatusColor = displayedStatuses[toDoStatusName]
+                {
+                    if let backgroundColor = UIColor(rgbString: toDoStatusColor) {
+                        cell.backgroundColor = backgroundColor
+                    } else {
+                        print("invalid color specification")
+                    }
+                }
             }
             return cell
         }

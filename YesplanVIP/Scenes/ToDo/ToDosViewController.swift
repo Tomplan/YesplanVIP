@@ -23,6 +23,8 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     var router: (NSObjectProtocol & ToDosRoutingLogic & ToDosDataPassing)?
     var v = ToDosTabView()
     var displayedToDos: [ToDosTab.Something.ViewModel.DisplayedToDo] = []
+    var displayedStatuses: [String:String] = [:]
+
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -115,6 +117,8 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     func displaySomething(viewModel: ToDosTab.Something.ViewModel) {
         
         displayedToDos = viewModel.displayedToDos
+        displayedStatuses = viewModel.displayedStatuses
+
         self.v.collectionView.reloadData()
         self.v.refreshControl.endRefreshing()
     }

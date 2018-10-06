@@ -50,6 +50,34 @@
 		</dict>
 		<dict>
 			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Status</string>
+			<key>Key</key>
+			<string>task_status</string>
+			<key>Titles</key>
+			<array>
+				<string>*</string>
+				<string>new</string>
+				<string>started</string>
+				<string>done</string>
+				<string>on hold</string>
+				<string>obsolete</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>*</string>
+				<string>new</string>
+				<string>started</string>
+				<string>done</string>
+				<string>on hold</string>
+				<string>obsolete</string>
+			</array>
+			<key>DefaultValue</key>
+			<string>*</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>ToDo</string>
@@ -66,11 +94,29 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
+			<string>PSMultiValueSpecifier</string>
 			<key>Title</key>
 			<string>Status</string>
 			<key>Key</key>
 			<string>todo_status</string>
+			<key>Titles</key>
+			<array>
+				<string>*</string>
+				<string>new</string>
+				<string>started</string>
+				<string>done</string>
+				<string>on hold</string>
+				<string>obsolete</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>*</string>
+				<string>new</string>
+				<string>started</string>
+				<string>done</string>
+				<string>on hold</string>
+				<string>obsolete</string>
+			</array>
 			<key>DefaultValue</key>
 			<string>*</string>
 		</dict>

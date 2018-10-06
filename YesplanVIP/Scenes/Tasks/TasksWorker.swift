@@ -11,9 +11,12 @@
 //
 
 import UIKit
+import then
 
 class TasksWorker
 {
+    var yesplan: Yesplan = Yesplan()
+
     func stringToDateShort(myDateString: String) -> String {
         if myDateString != "no deadline" {
         let dateFormatter = DateFormatter()

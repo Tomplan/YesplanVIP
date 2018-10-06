@@ -26,11 +26,18 @@ class ToDosPresenter: ToDosPresentationLogic
     func presentSomething(response: ToDosTab.Something.Response)
     {
         var toDos: [ToDosTab.Something.ViewModel.DisplayedToDo] = []
-        
+        var statusesDict: [String:String] = [:]
+
         for (key, value) in response.toDos {
             toDos.append(ToDosTab.Something.ViewModel.DisplayedToDo(date: key, toDos: value))
         }
-        var viewModel = ToDosTab.Something.ViewModel(displayedToDos: toDos)
+        
+        statusesDict = ["New": "rgb(255,200,200)", "Started": "rgb(255,230,200)", "Done": "rgb(230,255,200)", "On hold": "rgb(100,100,200)", "Obsolete": "rgb(165,100,200)"]
+        
+        var viewModel = ToDosTab.Something.ViewModel(
+            displayedToDos: toDos
+            ,displayedStatuses: statusesDict
+        )
 //        viewController?.displaySomething(viewModel: viewModel)
         
         if viewModel.displayedToDos.isEmpty {
@@ -52,7 +59,10 @@ class ToDosPresenter: ToDosPresentationLogic
                 , assignedto: Optional("")
                 , duration: Optional("")
                 )]))
-            viewModel = ToDosTab.Something.ViewModel(displayedToDos: toDos)
+            viewModel = ToDosTab.Something.ViewModel(
+                displayedToDos: toDos
+                ,displayedStatuses: statusesDict
+            )
         }
         
         viewController?.displaySomething(viewModel: viewModel)
