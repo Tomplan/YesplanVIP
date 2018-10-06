@@ -80,6 +80,11 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         v.collectionView.dataSource = self
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func userDefaultsDidChange(){
         print("userDefaultsDidChange")
         doSomething()

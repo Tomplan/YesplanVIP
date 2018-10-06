@@ -30,7 +30,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     var autofillCompanyURL: [String] = UserDefaults.standard.array(forKey: "autofillCompanyURL") as! [String]
 
     var autofillApiKey: [String] = UserDefaults.standard.array(forKey: "autofillApiKey") as! [String]
-    var autofillUser: [String] = UserDefaults.standard.array(forKey: "autofillUser") as! [String]
+//    var autofillUser: [String] = UserDefaults.standard.array(forKey: "autofillUser") as! [String]
 
     // view:
     
