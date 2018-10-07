@@ -83,6 +83,8 @@
 		3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC37768216A124B0020236D /* InstantiableResourceUse.swift */; };
 		3CC3776B216A12A50020236D /* InstantiableResourceUseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */; };
 		3CC3776D216A20F30020236D /* ResourceSetUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3776C216A20F30020236D /* ResourceSetUse.swift */; };
+		3CC3776F216A2DC80020236D /* FreeFormResourceUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3776E216A2DC80020236D /* FreeFormResourceUse.swift */; };
+		3CC37771216A2FB90020236D /* BulkResourceUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC37770216A2FB90020236D /* BulkResourceUse.swift */; };
 		3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */; };
 		3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */; };
 		3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59293212AC57B005BBF71 /* LogoutWorker.swift */; };
@@ -225,6 +227,8 @@
 		3CC37768216A124B0020236D /* InstantiableResourceUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiableResourceUse.swift; sourceTree = "<group>"; };
 		3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiableResourceUseGroup.swift; sourceTree = "<group>"; };
 		3CC3776C216A20F30020236D /* ResourceSetUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSetUse.swift; sourceTree = "<group>"; };
+		3CC3776E216A2DC80020236D /* FreeFormResourceUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeFormResourceUse.swift; sourceTree = "<group>"; };
+		3CC37770216A2FB90020236D /* BulkResourceUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkResourceUse.swift; sourceTree = "<group>"; };
 		3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrowParsable+Extension.swift"; sourceTree = "<group>"; };
 		3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPresenter.swift; sourceTree = "<group>"; };
 		3CD59293212AC57B005BBF71 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
@@ -540,6 +544,8 @@
 				3CC37768216A124B0020236D /* InstantiableResourceUse.swift */,
 				3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */,
 				3CC3776C216A20F30020236D /* ResourceSetUse.swift */,
+				3CC3776E216A2DC80020236D /* FreeFormResourceUse.swift */,
+				3CC37770216A2FB90020236D /* BulkResourceUse.swift */,
 			);
 			path = Resourcebooking;
 			sourceTree = "<group>";
@@ -919,6 +925,7 @@
 			files = (
 				3CF2CA70215F588A00636180 /* TasksTabViewCell+Extensions.swift in Sources */,
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
+				3CC37771216A2FB90020236D /* BulkResourceUse.swift in Sources */,
 				3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */,
 				3C40AED8212D8C090077DDC5 /* Events.swift in Sources */,
 				3CC3776D216A20F30020236D /* ResourceSetUse.swift in Sources */,
@@ -1030,6 +1037,7 @@
 				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,
 				3CE9D1BF21237C1800BFA730 /* LoginRouter.swift in Sources */,
 				3C40AF20212D91F30077DDC5 /* UserTabWorker.swift in Sources */,
+				3CC3776F216A2DC80020236D /* FreeFormResourceUse.swift in Sources */,
 				3CC377472168BD480020236D /* TeamplannerTabView.swift in Sources */,
 				3C40AF02212D8EB90077DDC5 /* EventsTabViewCell.swift in Sources */,
 				3CE711062121AD7100EBF6A5 /* Dictionary+Extension.swift in Sources */,

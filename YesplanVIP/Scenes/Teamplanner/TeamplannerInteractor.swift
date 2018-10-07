@@ -45,6 +45,7 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
         .then { result in
             for resourcebooking in result.data {
                 switch resourcebooking {
+                    
                 case .instantiableResourceUse(let instantiableResourceUse):
                     if let resource = instantiableResourceUse.resource {
                         switch resource {
@@ -97,6 +98,56 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
                     }
                 case .resourceSetUse(let resourceSetUse):
                     if let resource = resourceSetUse.resource {
+                        switch resource {
+                        case .bulkResource(let y):
+                            print("bulk")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        case .instantiableResource(let y):
+                            print("instantiableResource")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        case .adHocResource(let y):
+                            print("adHocResource")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        case .resourceSet(let y):
+                            print("resourceSet")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        }
+                    }
+                case .freeFormResourceUse(let freeFormResourceUse):
+                    if let resource = freeFormResourceUse.resource {
+                        switch resource {
+                        case .bulkResource(let y):
+                            print("bulk")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        case .instantiableResource(let y):
+                            print("instantiableResource")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        case .adHocResource(let y):
+                            print("adHocResource")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        case .resourceSet(let y):
+                            print("resourceSet")
+                            if y.type == "Human" {
+                                self.resourcebookingsArray.append(resourcebooking)
+                            }
+                        }
+                    }
+                case .bulkResourceUse(let bulkResourceUse):
+                    if let resource = bulkResourceUse.resource {
                         switch resource {
                         case .bulkResource(let y):
                             print("bulk")
