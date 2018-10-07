@@ -26,7 +26,7 @@ struct BulkResource: ArrowParsable {
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type: String?
+    var _type: String = ""
     var active: Bool = true
     var date: String?
     var productcode: String?

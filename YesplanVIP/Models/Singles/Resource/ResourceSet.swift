@@ -24,7 +24,7 @@ struct ResourceSet: ArrowParsable {
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type: String?
+    var _type: String = ""
     var amount: Int?
     var resources: [Base] = []
     

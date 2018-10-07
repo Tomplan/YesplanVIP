@@ -80,6 +80,9 @@
 		3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3775F2169E8BE0020236D /* InstantiableResource.swift */; };
 		3CC377622169E94E0020236D /* Resourceinstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377612169E94E0020236D /* Resourceinstance.swift */; };
 		3CC377662169F0090020236D /* ResourceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377652169F0090020236D /* ResourceSet.swift */; };
+		3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC37768216A124B0020236D /* InstantiableResourceUse.swift */; };
+		3CC3776B216A12A50020236D /* InstantiableResourceUseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */; };
+		3CC3776D216A20F30020236D /* ResourceSetUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3776C216A20F30020236D /* ResourceSetUse.swift */; };
 		3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */; };
 		3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */; };
 		3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59293212AC57B005BBF71 /* LogoutWorker.swift */; };
@@ -219,6 +222,9 @@
 		3CC3775F2169E8BE0020236D /* InstantiableResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiableResource.swift; sourceTree = "<group>"; };
 		3CC377612169E94E0020236D /* Resourceinstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourceinstance.swift; sourceTree = "<group>"; };
 		3CC377652169F0090020236D /* ResourceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSet.swift; sourceTree = "<group>"; };
+		3CC37768216A124B0020236D /* InstantiableResourceUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiableResourceUse.swift; sourceTree = "<group>"; };
+		3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiableResourceUseGroup.swift; sourceTree = "<group>"; };
+		3CC3776C216A20F30020236D /* ResourceSetUse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSetUse.swift; sourceTree = "<group>"; };
 		3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrowParsable+Extension.swift"; sourceTree = "<group>"; };
 		3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPresenter.swift; sourceTree = "<group>"; };
 		3CD59293212AC57B005BBF71 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
@@ -418,7 +424,7 @@
 				3CF142DE212DDFF9001FC532 /* Status.swift */,
 				3C862BF52157C1DB00428BF9 /* Profile.swift */,
 				3CD714F32163C26800CC370A /* Task.swift */,
-				3CC3774D2168C2BE0020236D /* Resourcebooking.swift */,
+				3CC37767216A122A0020236D /* Resourcebooking */,
 				3CC3775A2169E5EC0020236D /* Resource */,
 			);
 			path = Singles;
@@ -525,6 +531,17 @@
 				3CC377582169E59C0020236D /* Costmodel.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		3CC37767216A122A0020236D /* Resourcebooking */ = {
+			isa = PBXGroup;
+			children = (
+				3CC3774D2168C2BE0020236D /* Resourcebooking.swift */,
+				3CC37768216A124B0020236D /* InstantiableResourceUse.swift */,
+				3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */,
+				3CC3776C216A20F30020236D /* ResourceSetUse.swift */,
+			);
+			path = Resourcebooking;
 			sourceTree = "<group>";
 		};
 		3CD592AA212AC6D2005BBF71 /* Logout */ = {
@@ -904,6 +921,7 @@
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
 				3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */,
 				3C40AED8212D8C090077DDC5 /* Events.swift in Sources */,
+				3CC3776D216A20F30020236D /* ResourceSetUse.swift in Sources */,
 				3CE710AA2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
 				3C40AEFD212D8E920077DDC5 /* EventsTabView.swift in Sources */,
 				3CC377622169E94E0020236D /* Resourceinstance.swift in Sources */,
@@ -981,6 +999,7 @@
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
 				3C230AA821558BA5004477A3 /* Statuses.swift in Sources */,
+				3CC3776B216A12A50020236D /* InstantiableResourceUseGroup.swift in Sources */,
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 				3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */,
 				3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */,
@@ -1025,6 +1044,7 @@
 				3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */,
 				3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */,
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
+				3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

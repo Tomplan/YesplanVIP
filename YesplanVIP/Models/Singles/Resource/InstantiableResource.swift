@@ -26,7 +26,7 @@ struct InstantiableResource: ArrowParsable {
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type: String?
+    var _type: String = ""
     var resourceinstances: [Resourceinstance] = []
     
     init() { guard self._type == "resource" else {

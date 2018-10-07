@@ -30,7 +30,7 @@ class Yesplan: ApiInterface {
             ws = WS(UserDefaults.standard.string(forKey: "URL")!)
         }
         // This will print network requests & responses to the console.
-        ws.logLevels = .info
+//        ws.logLevels = .info
     }
     
     func oneURL<T:ArrowParsable & RestResource>(_ r: T, id: String) -> String {

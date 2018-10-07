@@ -23,7 +23,7 @@ struct AdHocResource: ArrowParsable {
     var defaultrole: String?
     var amount: Int?
     var type: String = ""
-    var _type: String?
+    var _type: String = ""
     var active: Bool = true
     var date: String?
     var productcode: String?

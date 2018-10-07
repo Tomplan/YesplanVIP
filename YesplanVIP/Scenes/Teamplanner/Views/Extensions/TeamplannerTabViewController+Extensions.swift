@@ -11,12 +11,10 @@ import UIKit
 extension TeamplannerTabViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("displayedResourcebookings.count: ", displayedResourcebookings.count)
         return displayedResourcebookings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        print("displayedResourcebookings[section].date: ", displayedResourcebookings[section].date)
         return displayedResourcebookings[section].date
     }
     
@@ -32,7 +30,6 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamplannerTabViewCell", for: indexPath) as? TeamplannerTabViewCell {
             if displayedResourcebookings.count != 0 {
                 let resourcebooking = displayedResourcebookings[indexPath.section].resourcebookings[indexPath.item]
-                print("oiuoiu: ", resourcebooking)
                 cell.populate(with: resourcebooking)
                 
                 

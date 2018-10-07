@@ -16,7 +16,6 @@ import Kingfisher
 extension TeamplannerTabViewCell {
     
     func populate(with resourcebooking: TeamplannerTab.Something.ViewModel.Displ) {
-        print("r: ", resourcebooking.name)
         let name = resourcebooking.name
         lblName.text = name
         let start = resourcebooking.Start
