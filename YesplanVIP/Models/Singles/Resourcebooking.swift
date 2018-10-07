@@ -44,7 +44,7 @@ struct InstantiableResourceUse: ArrowParsable {
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type = "resourcebookinggroup"
+    var _type = "resourcebooking"
     var number: Int = 0
     var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
     var start: String? // added by tom!!! // timestamp
@@ -68,7 +68,16 @@ struct InstantiableResourceUse: ArrowParsable {
         owningteam <-- json["owningteam"]
         owninggroup <-- json["owninggroup"]
         number <-- json["number"]
-        resource <-- json["resource"]
+//        resource <-- json["resource"]
+        print("resresresresresresresresresresresresresres")
+//        let booking = try Resource(resource: json["resource"]!)
+        do {
+            resource = try Resource(resource: json["resource"]!)!
+//            print("booking: ", booking!)
+//            resource = booking!
+        } catch {
+            print(error)
+        }
         start <-- json["start"]
         end <-- json["end"]
         actualstart <-- json["actualstart"]
@@ -106,7 +115,7 @@ struct InstantiableResourceUseGroup: ArrowParsable {
 }
 
 
-extension Resourcebooking: RestResource {
-    static func restName() -> String { return "api/resourcebooking/" }
-    func restId() -> String { return "" }
-}
+//extension Resourcebooking: RestResource {
+//    static func restName() -> String { return "api/resourcebooking/" }
+//    func restId() -> String { return "" }
+//}

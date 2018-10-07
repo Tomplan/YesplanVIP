@@ -27,13 +27,36 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
   {
     var resourcebookingDispls: [TeamplannerTab.Something.ViewModel.Displ] = []
     var resourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
+    var name = ""
     
     for resourcebooking in response.resourcebookings {
         switch resourcebooking {
         case .instantiableResourceUse(let x):
+            switch x.resource! {
+            case .bulkResource(let y):
+                print("bulk")
+                if y.type == "Human" {
+                    name = y.name
+                }
+            case .instantiableResource(let y):
+                print("instantiableResource")
+                if y.type == "Human" {
+                    name = y.name
+                }
+            case .adHocResource(let y):
+                print("adHocResource")
+                if y.type == "Human" {
+                    name = y.name
+                }
+            case .resourceSet(let y):
+                print("resourceSet")
+                if y.type == "Human" {
+                    name = y.name
+                }
+            }
             let y = TeamplannerTab.Something.ViewModel.Displ(
                 date: x.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
-                ,name: (x.resource?.name!)!
+                ,name: name // (x.resource?.name!)!
                 ,Start: x.start!
                 ,End: x.end!
             )

@@ -74,6 +74,12 @@
 		3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377512168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift */; };
 		3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377542168D0450020236D /* TeamplannerTabViewController+Extensions.swift */; };
 		3CC37757216946810020236D /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC37756216946810020236D /* Resource.swift */; };
+		3CC377592169E59C0020236D /* Costmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377582169E59C0020236D /* Costmodel.swift */; };
+		3CC3775C2169E6270020236D /* BulkResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3775B2169E6270020236D /* BulkResource.swift */; };
+		3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3775D2169E8290020236D /* AdHocResource.swift */; };
+		3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3775F2169E8BE0020236D /* InstantiableResource.swift */; };
+		3CC377622169E94E0020236D /* Resourceinstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377612169E94E0020236D /* Resourceinstance.swift */; };
+		3CC377662169F0090020236D /* ResourceSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC377652169F0090020236D /* ResourceSet.swift */; };
 		3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */; };
 		3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */; };
 		3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD59293212AC57B005BBF71 /* LogoutWorker.swift */; };
@@ -207,6 +213,12 @@
 		3CC377512168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamplannerTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		3CC377542168D0450020236D /* TeamplannerTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamplannerTabViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3CC37756216946810020236D /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		3CC377582169E59C0020236D /* Costmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Costmodel.swift; sourceTree = "<group>"; };
+		3CC3775B2169E6270020236D /* BulkResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkResource.swift; sourceTree = "<group>"; };
+		3CC3775D2169E8290020236D /* AdHocResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdHocResource.swift; sourceTree = "<group>"; };
+		3CC3775F2169E8BE0020236D /* InstantiableResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantiableResource.swift; sourceTree = "<group>"; };
+		3CC377612169E94E0020236D /* Resourceinstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourceinstance.swift; sourceTree = "<group>"; };
+		3CC377652169F0090020236D /* ResourceSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSet.swift; sourceTree = "<group>"; };
 		3CC425B22132140200DCD981 /* ArrowParsable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrowParsable+Extension.swift"; sourceTree = "<group>"; };
 		3CD59292212AC57B005BBF71 /* LogoutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutPresenter.swift; sourceTree = "<group>"; };
 		3CD59293212AC57B005BBF71 /* LogoutWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutWorker.swift; sourceTree = "<group>"; };
@@ -403,11 +415,11 @@
 				3C40AF13212D917B0077DDC5 /* User.swift */,
 				3C40AF30212D92610077DDC5 /* Usergroup.swift */,
 				3C40AF36212DAE8E0077DDC5 /* Base.swift */,
-				3CC37756216946810020236D /* Resource.swift */,
 				3CF142DE212DDFF9001FC532 /* Status.swift */,
 				3C862BF52157C1DB00428BF9 /* Profile.swift */,
 				3CD714F32163C26800CC370A /* Task.swift */,
 				3CC3774D2168C2BE0020236D /* Resourcebooking.swift */,
+				3CC3775A2169E5EC0020236D /* Resource */,
 			);
 			path = Singles;
 			sourceTree = "<group>";
@@ -499,6 +511,20 @@
 				3CC377542168D0450020236D /* TeamplannerTabViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3CC3775A2169E5EC0020236D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3CC37756216946810020236D /* Resource.swift */,
+				3CC3775B2169E6270020236D /* BulkResource.swift */,
+				3CC3775D2169E8290020236D /* AdHocResource.swift */,
+				3CC3775F2169E8BE0020236D /* InstantiableResource.swift */,
+				3CC377652169F0090020236D /* ResourceSet.swift */,
+				3CC377612169E94E0020236D /* Resourceinstance.swift */,
+				3CC377582169E59C0020236D /* Costmodel.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		3CD592AA212AC6D2005BBF71 /* Logout */ = {
@@ -880,6 +906,7 @@
 				3C40AED8212D8C090077DDC5 /* Events.swift in Sources */,
 				3CE710AA2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
 				3C40AEFD212D8E920077DDC5 /* EventsTabView.swift in Sources */,
+				3CC377622169E94E0020236D /* Resourceinstance.swift in Sources */,
 				3C40AF06212D8EE50077DDC5 /* EventsTabViewHeader.swift in Sources */,
 				3CE710272121827900EBF6A5 /* YesplanVIP.xcdatamodeld in Sources */,
 				3CD714F42163C26800CC370A /* Task.swift in Sources */,
@@ -887,12 +914,14 @@
 				3CE9D1D2212382B100BFA730 /* UIStackView+Extension.swift in Sources */,
 				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
 				3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */,
+				3CC377662169F0090020236D /* ResourceSet.swift in Sources */,
 				3C7337A92150427C0045F9E1 /* EventsTabViewController+Extensions.swift in Sources */,
 				3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */,
 				3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */,
 				3C40AEF8212D8E550077DDC5 /* EventsTabInteractor.swift in Sources */,
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3CC3774321688D870020236D /* AppConfig.swift in Sources */,
+				3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */,
 				3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */,
 				3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
 				3CC377502168CB010020236D /* Resourcebookings.swift in Sources */,
@@ -921,6 +950,7 @@
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
 				3C40AEE0212D8C2F0077DDC5 /* Event.swift in Sources */,
 				3CB468C121479A330088A8B8 /* LoginView.swift in Sources */,
+				3CC3775C2169E6270020236D /* BulkResource.swift in Sources */,
 				3C18E52F215B97C0009523AC /* TasksTabViewHeader.swift in Sources */,
 				3CE711012121A84400EBF6A5 /* HelpInteractor.swift in Sources */,
 				3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */,
@@ -933,6 +963,7 @@
 				3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */,
 				3CE710972121A78800EBF6A5 /* TasksModels.swift in Sources */,
 				3C570A492165533300154B93 /* ToDosTabViewCell.swift in Sources */,
+				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
@@ -976,6 +1007,7 @@
 				3CBE94A3212D75C700CE518C /* Api.swift in Sources */,
 				3C570A4D2165587500154B93 /* ToDosTabViewController+Extensions.swift in Sources */,
 				3CE710C02121A7E300EBF6A5 /* ToDosPresenter.swift in Sources */,
+				3CC377592169E59C0020236D /* Costmodel.swift in Sources */,
 				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,
 				3CE9D1BF21237C1800BFA730 /* LoginRouter.swift in Sources */,
 				3C40AF20212D91F30077DDC5 /* UserTabWorker.swift in Sources */,

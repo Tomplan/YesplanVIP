@@ -21,7 +21,7 @@ extension TeamplannerTabViewCell {
         lblName.text = name
         let start = resourcebooking.Start
         let end = resourcebooking.End
-        lblStart.text = "\(start.convertDateString(dateFormat: "HH:mm")!) - \(end.convertDateString(dateFormat: "HH:mm")!)"
+        lblStart.text = "\(start.convertDateString(dateFormat: "HH:mm")!) - \(end.convertDateString(dateFormat: "HH:mm")!   )"
         
 //        if let defaultschedulestarttime = event.defaultschedulestarttime {
 //            lblDefaultschedulestarttime.text = defaultschedulestarttime}

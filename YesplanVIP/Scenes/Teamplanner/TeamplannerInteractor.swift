@@ -41,18 +41,52 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
     worker = TeamplannerTabWorker()
 //    worker?.doSomeWork()
     
-    yesplan.getAll(fetchedResourcebookings, query: "resourceuse:date:#thisweek ") // resourceuse:team:1203
+    yesplan.getAll(fetchedResourcebookings, query: "resourceuse:date:#today  + resourceuse:date:#next10days resourceuse:name:marc") // resourceuse:team:1203
         .then { result in
             for resourcebooking in result.data {
                 switch resourcebooking {
                 case .instantiableResourceUse(let x):
-                    if x.resource?.type == "Human" {
-                        self.resourcebookingsArray.append(resourcebooking)
+                    print(x)
+                    switch x.resource! {
+                    case .bulkResource(let y):
+                        print("bulk")
+                        if y.type == "Human" {
+                            self.resourcebookingsArray.append(resourcebooking)
+                        }
+                    case .instantiableResource(let y):
+                        print("instantiableResource")
+                        if y.type == "Human" {
+                            self.resourcebookingsArray.append(resourcebooking)
+                        }
+                    case .adHocResource(let y):
+                        print("adHocResource")
+                        if y.type == "Human" {
+                            self.resourcebookingsArray.append(resourcebooking)
+                        }
+                    case .resourceSet(let y):
+                        print("resourceSet")
+                        if y.type == "Human" {
+                            self.resourcebookingsArray.append(resourcebooking)
+                        }
                     }
+//                    if x.resource?.type == "Human" {
+//                        self.resourcebookingsArray.append(resourcebooking)
+//                    }
                 case .instantiableResourceUseGroup(let x):
-                    if x.resource?.type == "Human" {
-                        self.resourcebookingsArray.append(resourcebooking)
-                    }
+                    print(x)
+//                    switch x.resource {
+//                    case .bulkResource(let x):
+//                        print("bulk")
+//                    case .instantiableResource(let x):
+//                        print("bulk")
+//                    case .adHocResource(let x):
+//                        print("bulk")
+//                    case .resourceSet(let x):
+//                        print("bulk")
+//                    }
+//                    if x.resource?.type == "Human" {
+//                        self.resourcebookingsArray.append(resourcebooking)
+//                    }
                 }
             }
         }
