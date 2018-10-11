@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct Statuses {
+struct Statuses: AutoCodable {
     var pagination = Pagination()
     var data = [Status]()
 }

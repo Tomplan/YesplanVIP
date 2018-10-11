@@ -10,7 +10,8 @@ import Foundation
 import Arrow
 import then
 
-enum Resource {
+enum Resource: AutoCodable {
+    
     case bulkResource(BulkResource)
     case adHocResource(AdHocResource)
     case instantiableResource(InstantiableResource)
@@ -43,4 +44,9 @@ enum Resource {
         }
         throw Failure.NotImplemented
     }
+}
+
+extension Resource: RestResource {
+    static func restName() -> String { return "api/resources/resource" }
+    func restId() -> String { return "" }
 }

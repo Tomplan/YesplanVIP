@@ -25,164 +25,166 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
   
   func presentSomething(response: TeamplannerTab.Something.Response)
   {
-    var resourcebookingDispls: [TeamplannerTab.Something.ViewModel.Displ] = []
-    var resourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
-    var name = ""
-    
-    for resourcebooking in response.resourcebookings {
-        switch resourcebooking {
-        case .instantiableResourceUse(let instantiableResourceUse):
-            if let resource = instantiableResourceUse.resource {
-                switch resource {
-                case .bulkResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .instantiableResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .adHocResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .resourceSet(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                }
-                let y = TeamplannerTab.Something.ViewModel.Displ(
-                    date: instantiableResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
-                    ,name: name // (x.resource?.name!)!
-                    ,Start: instantiableResourceUse.start!
-                    ,End: instantiableResourceUse.end!
-                )
-                resourcebookingDispls.append(y)
-            }
-        case .instantiableResourceUseGroup(let instantiableResourceUseGroup):
-            if let resource = instantiableResourceUseGroup.resource {
-                switch resource {
-                case .bulkResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .instantiableResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .adHocResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .resourceSet(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                }
-                let y = TeamplannerTab.Something.ViewModel.Displ(
-                    date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
-                    ,name: name // (x.resource?.name!)!
-                    ,Start: "no date" // instantiableResourceUseGroup.start!
-                    ,End: "no end" // instantiableResourceUseGroup.end!
-                )
-                    resourcebookingDispls.append(y)
-            }
-        case .resourceSetUse(let resourceSetUse):
-            if let resource = resourceSetUse.resource {
-                switch resource {
-                case .bulkResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .instantiableResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .adHocResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .resourceSet(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                }
-                let y = TeamplannerTab.Something.ViewModel.Displ(
-                    date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
-                    ,name: name // (x.resource?.name!)!
-                    ,Start: "no date" // instantiableResourceUseGroup.start!
-                    ,End: "no end" // instantiableResourceUseGroup.end!
-                )
-                resourcebookingDispls.append(y)
-            }
-        case .freeFormResourceUse(let freeFormResourceUse):
-        if let resource = freeFormResourceUse.resource {
-            switch resource {
-            case .bulkResource(let y):
-                if y.type == "Human" {
-                    name = y.name
-                }
-            case .instantiableResource(let y):
-                if y.type == "Human" {
-                    name = y.name
-                }
-            case .adHocResource(let y):
-                if y.type == "Human" {
-                    name = y.name
-                }
-            case .resourceSet(let y):
-                if y.type == "Human" {
-                    name = y.name
-                }
-            }
-            let y = TeamplannerTab.Something.ViewModel.Displ(
-                date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
-                ,name: name // (x.resource?.name!)!
-                ,Start: "no date" // instantiableResourceUseGroup.start!
-                ,End: "no end" // instantiableResourceUseGroup.end!
-            )
-            resourcebookingDispls.append(y)
-        }
-        case .bulkResourceUse(let bulkResourceUse):
-            if let resource = bulkResourceUse.resource {
-                switch resource {
-                case .bulkResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .instantiableResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .adHocResource(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                case .resourceSet(let y):
-                    if y.type == "Human" {
-                        name = y.name
-                    }
-                }
-                let y = TeamplannerTab.Something.ViewModel.Displ(
-                    date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
-                    ,name: name // (x.resource?.name!)!
-                    ,Start: "no date" // instantiableResourceUseGroup.start!
-                    ,End: "no end" // instantiableResourceUseGroup.end!
-                )
-                resourcebookingDispls.append(y)
-            }
-        }
     }
-        
-//        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: stringToEventsDate(myDateString: resourcebooking), events: value))
-    let dictResourcebookings = Dictionary(grouping: resourcebookingDispls, by: { $0.date })
-
-    for (key, value) in dictResourcebookings {
-        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
-    }
-    let viewModel = TeamplannerTab.Something.ViewModel(
-        displayedResourcebookings: resourcebookings
-    )
-    viewController?.displaySomething(viewModel: viewModel)
-  }
 }
+//    var resourcebookingDispls: [TeamplannerTab.Something.ViewModel.Displ] = []
+//    var resourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
+//    var name = ""
+//
+//    for resourcebooking in response.resourcebookings {
+//        switch resourcebooking {
+//        case .instantiableResourceUse(let instantiableResourceUse):
+//            if let resource = instantiableResourceUse.resource {
+//                switch resource {
+//                case .bulkResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .instantiableResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .adHocResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .resourceSet(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                }
+//                let y = TeamplannerTab.Something.ViewModel.Displ(
+//                    date: instantiableResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
+//                    ,name: name // (x.resource?.name!)!
+//                    ,Start: instantiableResourceUse.start!
+//                    ,End: instantiableResourceUse.end!
+//                )
+//                resourcebookingDispls.append(y)
+//            }
+//        case .instantiableResourceUseGroup(let instantiableResourceUseGroup):
+//            if let resource = instantiableResourceUseGroup.resource {
+//                switch resource {
+//                case .bulkResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .instantiableResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .adHocResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .resourceSet(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                }
+//                let y = TeamplannerTab.Something.ViewModel.Displ(
+//                    date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
+//                    ,name: name // (x.resource?.name!)!
+//                    ,Start: "no date" // instantiableResourceUseGroup.start!
+//                    ,End: "no end" // instantiableResourceUseGroup.end!
+//                )
+//                    resourcebookingDispls.append(y)
+//            }
+//        case .resourceSetUse(let resourceSetUse):
+//            if let resource = resourceSetUse.resource {
+//                switch resource {
+//                case .bulkResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .instantiableResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .adHocResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .resourceSet(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                }
+//                let y = TeamplannerTab.Something.ViewModel.Displ(
+//                    date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
+//                    ,name: name // (x.resource?.name!)!
+//                    ,Start: "no date" // instantiableResourceUseGroup.start!
+//                    ,End: "no end" // instantiableResourceUseGroup.end!
+//                )
+//                resourcebookingDispls.append(y)
+//            }
+//        case .freeFormResourceUse(let freeFormResourceUse):
+//        if let resource = freeFormResourceUse.resource {
+//            switch resource {
+//            case .bulkResource(let y):
+//                if y.type == "Human" {
+//                    name = y.name
+//                }
+//            case .instantiableResource(let y):
+//                if y.type == "Human" {
+//                    name = y.name
+//                }
+//            case .adHocResource(let y):
+//                if y.type == "Human" {
+//                    name = y.name
+//                }
+//            case .resourceSet(let y):
+//                if y.type == "Human" {
+//                    name = y.name
+//                }
+//            }
+//            let y = TeamplannerTab.Something.ViewModel.Displ(
+//                date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
+//                ,name: name // (x.resource?.name!)!
+//                ,Start: "no date" // instantiableResourceUseGroup.start!
+//                ,End: "no end" // instantiableResourceUseGroup.end!
+//            )
+//            resourcebookingDispls.append(y)
+//        }
+//        case .bulkResourceUse(let bulkResourceUse):
+//            if let resource = bulkResourceUse.resource {
+//                switch resource {
+//                case .bulkResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .instantiableResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .adHocResource(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                case .resourceSet(let y):
+//                    if y.type == "Human" {
+//                        name = y.name
+//                    }
+//                }
+//                let y = TeamplannerTab.Something.ViewModel.Displ(
+//                    date: "no date" // instantiableResourceUseGroup.start!.convertDateString(dateFormat: "yyyy-MM-dd")!
+//                    ,name: name // (x.resource?.name!)!
+//                    ,Start: "no date" // instantiableResourceUseGroup.start!
+//                    ,End: "no end" // instantiableResourceUseGroup.end!
+//                )
+//                resourcebookingDispls.append(y)
+//            }
+//        }
+//    }
+//
+////        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: stringToEventsDate(myDateString: resourcebooking), events: value))
+//    let dictResourcebookings = Dictionary(grouping: resourcebookingDispls, by: { $0.date })
+//
+//    for (key, value) in dictResourcebookings {
+//        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
+//    }
+//    let viewModel = TeamplannerTab.Something.ViewModel(
+//        displayedResourcebookings: resourcebookings
+//    )
+//    viewController?.displaySomething(viewModel: viewModel)
+//  }
+//}

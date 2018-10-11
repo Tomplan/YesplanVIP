@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct User {
+struct User: AutoCodable {
     
     var url: String = ""
     var id: String = ""

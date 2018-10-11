@@ -1,4 +1,4 @@
 framework module then {
-    header "then-Swift.h"
-    requires objc
+  header "then-Swift.h"
+  requires objc
 }

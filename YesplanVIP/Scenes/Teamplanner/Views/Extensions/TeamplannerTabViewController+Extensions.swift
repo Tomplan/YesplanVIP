@@ -11,29 +11,30 @@ import UIKit
 extension TeamplannerTabViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return displayedResourcebookings.count
+        return 10 //displayedResourcebookings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        return displayedResourcebookings[section].date
+        return "08-10-2018" // displayedResourcebookings[section].date
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if displayedResourcebookings[section].resourcebookings.count != 0 {
-            return displayedResourcebookings[section].resourcebookings.count
-        } else {
-            return 0
-        }
+//        if displayedResourcebookings[section].resourcebookings.count != 0 {
+//            return displayedResourcebookings[section].resourcebookings.count
+//        } else {
+            return 5
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamplannerTabViewCell", for: indexPath) as? TeamplannerTabViewCell {
-            if displayedResourcebookings.count != 0 {
-                let resourcebooking = displayedResourcebookings[indexPath.section].resourcebookings[indexPath.item]
-                cell.populate(with: resourcebooking)
-                
-                
-            }
+//            if displayedResourcebookings.count != 0 {
+//                let resourcebooking = displayedResourcebookings[indexPath.section].resourcebookings[indexPath.item]
+//                cell.populate(with: resourcebooking)
+//
+//
+//            }
+            cell.lblName.text = "name"
             return cell
         }
         return UICollectionViewCell()
@@ -45,7 +46,7 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"TeamplannerTabViewHeader", for: indexPath) as! TeamplannerTabViewHeader
             
-            headerView.TeamplannerTabViewHeaderLabel.text = displayedResourcebookings[indexPath.section].date
+//            headerView.TeamplannerTabViewHeaderLabel.text = displayedResourcebookings[indexPath.section].date
             
             headerView.backgroundColor = UIColor.darkGray
             return headerView

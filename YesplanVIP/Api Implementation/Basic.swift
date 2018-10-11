@@ -24,29 +24,40 @@ class Yesplan: ApiInterface {
     var key:String? = UserDefaults.standard.string(forKey: "KEY")
     
     init() {
+        
         let defaults = UserDefaults.standard
         let urlExists = defaults.contains(key: "URL")
         if urlExists == true {
             ws = WS(UserDefaults.standard.string(forKey: "URL")!)
+//            ws.defaultCollectionParsingKeyPath = UserDefaults.standard.string(forKey: "URL")!
         }
         // This will print network requests & responses to the console.
 //        ws.logLevels = .info
     }
     
     func oneURL<T:ArrowParsable & RestResource>(_ r: T, id: String) -> String {
+//        func oneURL<T:Codable & RestResource>(_ r: T, id: String) -> String {
+
         return "/\(T.restName())/\(id)"
     }
     
     func allURL<T:ArrowParsable & RestResource>(_ r: T) -> String {
+//        func allURL<T:Codable & RestResource>(_ r: T) -> String {
+
         return "/\(T.restName())"
     }
     
     func getOne<T:ArrowParsable & RestResource>(_ restResource:T, id: String, params:[String:Any] = [String:Any]()) -> Promise<T> {
+//        func getOne<T:Codable & RestResource>(_ restResource:T, id: String, params:[String:Any] = [String:Any]()) -> Promise<T> {
+
         return ws.get(oneURL(restResource, id: id), params: params)
+//            return ws.get(oneURL(restResource, id: id), params: params)
+
     }
     
     func getAll<T:ArrowParsable & RestResource>(_ restResource:T, query: String = String() , params:[String:Any] = [String:Any]()) -> Promise<T> {
-        
+//    func getAll<T:Codable & RestResource>(_ restResource:T, query: String = String() , params:[String:Any] = [String:Any]()) -> Promise<T> {
+
         let paramsApiKey: [String:Any] = ["api_key":"\(key!)"]
         var urlString = "\(allURL(restResource))"
         let url = URL(string: urlString)
@@ -70,6 +81,8 @@ class Yesplan: ApiInterface {
     }
     
     func getMore<T:ArrowParsable & RestResource>(_ restResource:T, paginationNext:String) -> Promise<T> {
+//    func getMore<T:Codable & RestResource>(_ restResource:T, paginationNext:String) -> Promise<T> {
+
         var compQueryDict = [String:Any]()
 
         if let url = URL(string: paginationNext) {
@@ -86,4 +99,29 @@ class Yesplan: ApiInterface {
         return getAll(T(), params: compQueryDict)
         }
     
+//    func getResourcesQuerySchedules<T:RestResource>(_ restResource:T, query: String = String() , params:[String:Any] = [String:Any]()) -> Promise<T> {
+//        print("getResourcesQuerySchedules")
+//        let paramsApiKey: [String:Any] = ["api_key":"\(key!)"]
+//        var urlString = "/resources/resource"
+//        let url = URL(string: urlString)
+//        
+//        if query.isEmpty {
+//            urlString = url!.absoluteString
+//        } else {
+//            let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted
+//            
+//            //            if let escapedString = "www.google.com?type=c++".addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) {
+//            //                print(escapedString)
+//            //            }
+//            urlString.append(query.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!)
+//            urlString.append("/schedules")
+//            print("urlString: ", urlString)
+//            //            urlString = url!.absoluteString
+//            //            print("2: ", urlString)
+//            
+//        }
+//        return ws.get(urlString, params: params.merged(with: paramsApiKey))
+//    }
+//    
 }
+

@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct Pagination {
+struct Pagination: AutoCodable {
     var next: String? = ""
     var expires: String? = ""
 }

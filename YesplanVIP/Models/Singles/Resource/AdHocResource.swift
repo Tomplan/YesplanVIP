@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct AdHocResource: ArrowParsable {
+struct AdHocResource: ArrowParsable, AutoCodable {
     var url: URL = URL(string: "http://")!
     var id: String = ""
     var resourcetype: String?

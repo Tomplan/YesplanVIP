@@ -22,7 +22,7 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   var interactor: TeamplannerTabBusinessLogic?
   var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
     var v = TeamplannerTabView()
-var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
+//var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -95,7 +95,7 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
-    displayedResourcebookings = viewModel.displayedResourcebookings
+//    displayedResourcebookings = viewModel.displayedResourcebookings
 //    dump(displayedResourcebookings)
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()

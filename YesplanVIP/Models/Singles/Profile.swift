@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct Profile {
+struct Profile: AutoCodable {
     
     var url: String = ""
     var _type: String = ""

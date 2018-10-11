@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct Groups {
+struct Groups: AutoCodable {
     var pagination = Pagination()
     var data = [Group]()
 }

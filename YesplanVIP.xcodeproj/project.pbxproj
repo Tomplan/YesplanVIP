@@ -12,7 +12,14 @@
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
 		3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52C215B9751009523AC /* TasksTabViewCell.swift */; };
 		3C18E52F215B97C0009523AC /* TasksTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52E215B97C0009523AC /* TasksTabViewHeader.swift */; };
+		3C1F1877216BDDE000FD6457 /* AutoCodable.swifttemplate in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */; };
 		3C230AA821558BA5004477A3 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C230AA721558BA5004477A3 /* Statuses.swift */; };
+		3C24777B216A95E30010EAFA /* ResourceSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24777A216A95E30010EAFA /* ResourceSchedules.swift */; };
+		3C24777D216A96DF0010EAFA /* ResourceSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24777C216A96DF0010EAFA /* ResourceSchedule.swift */; };
+		3C247780216A99210010EAFA /* Shift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24777F216A99210010EAFA /* Shift.swift */; };
+		3C247782216A996C0010EAFA /* ScheduleBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C247781216A996C0010EAFA /* ScheduleBreak.swift */; };
+		3C247784216A99AA0010EAFA /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C247783216A99AA0010EAFA /* Schedule.swift */; };
+		3C247786216A9DCB0010EAFA /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C247785216A9DCB0010EAFA /* Lock.swift */; };
 		3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24BAEB215613AB00E28966 /* String+Extensions.swift */; };
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */; };
 		3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */; };
@@ -55,7 +62,18 @@
 		3C7337B521504F310045F9E1 /* ws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949A212D755500CE518C /* ws.framework */; };
 		3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF52157C1DB00428BF9 /* Profile.swift */; };
 		3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF72157C2F700428BF9 /* Profiles.swift */; };
+		3C87F345216D449C008120FA /* AutoCodable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F344216D449C008120FA /* AutoCodable.generated.swift */; };
+		3C87F347216E1EE2008120FA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F346216E1EE2008120FA /* Result.swift */; };
+		3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */; };
+		3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F34B216E1F98008120FA /* Endpoint.swift */; };
+		3C87F350216E2423008120FA /* Yp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F34F216E2423008120FA /* Yp.swift */; };
+		3C87F352216E2865008120FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F351216E2865008120FA /* APIError.swift */; };
+		3C87F354216E2887008120FA /* APIClient+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F353216E2887008120FA /* APIClient+Protocol.swift */; };
+		3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */; };
+		3C87F358216E3FB4008120FA /* YpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F357216E3FB4008120FA /* YpClient.swift */; };
 		3C9A5B6A2167E2CD00A5D35B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5B692167E2CD00A5D35B /* Settings.bundle */; };
+		3CAC329E216BEEB900646372 /* Basic.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC329D216BEEB900646372 /* Basic.stencil */; };
+		3CAC32A4216BFB2C00646372 /* AutoCodable.swifttemplate in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */; };
 		3CB468C121479A330088A8B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB468C021479A330088A8B8 /* LoginView.swift */; };
 		3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */; };
 		3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E692140794800B6E458 /* MainTabBarRouter.swift */; };
@@ -151,6 +169,18 @@
 		3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		3CAC32A7216BFF1200646372 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "$PODS_ROOT/Sourcery/bin/sourcery --sources {source} --templates {templates} --output {output}\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		17917393575B47EDCD19EE33 /* Pods_YesplanVIPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
@@ -158,7 +188,14 @@
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3C18E52C215B9751009523AC /* TasksTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewCell.swift; sourceTree = "<group>"; };
 		3C18E52E215B97C0009523AC /* TasksTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewHeader.swift; sourceTree = "<group>"; };
+		3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoCodable.swifttemplate; sourceTree = "<group>"; };
 		3C230AA721558BA5004477A3 /* Statuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
+		3C24777A216A95E30010EAFA /* ResourceSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSchedules.swift; sourceTree = "<group>"; };
+		3C24777C216A96DF0010EAFA /* ResourceSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSchedule.swift; sourceTree = "<group>"; };
+		3C24777F216A99210010EAFA /* Shift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shift.swift; sourceTree = "<group>"; };
+		3C247781216A996C0010EAFA /* ScheduleBreak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleBreak.swift; sourceTree = "<group>"; };
+		3C247783216A99AA0010EAFA /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		3C247785216A9DCB0010EAFA /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		3C24BAEB215613AB00E28966 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVwController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
@@ -195,7 +232,17 @@
 		3C7337A82150427C0045F9E1 /* EventsTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3C862BF52157C1DB00428BF9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3C862BF72157C2F700428BF9 /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
+		3C87F344216D449C008120FA /* AutoCodable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCodable.generated.swift; sourceTree = "<group>"; };
+		3C87F346216E1EE2008120FA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Protocol.swift"; sourceTree = "<group>"; };
+		3C87F34B216E1F98008120FA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3C87F34F216E2423008120FA /* Yp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yp.swift; sourceTree = "<group>"; };
+		3C87F351216E2865008120FA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3C87F353216E2887008120FA /* APIClient+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Protocol.swift"; sourceTree = "<group>"; };
+		3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Extensions.swift"; sourceTree = "<group>"; };
+		3C87F357216E3FB4008120FA /* YpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YpClient.swift; sourceTree = "<group>"; };
 		3C9A5B692167E2CD00A5D35B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		3CAC329D216BEEB900646372 /* Basic.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Basic.stencil; sourceTree = "<group>"; };
 		3CB468C021479A330088A8B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		3CB59E692140794800B6E458 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
@@ -342,6 +389,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C1F1872216BD03900FD6457 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				3CAC329D216BEEB900646372 /* Basic.stencil */,
+				3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		3C1F1875216BDC8200FD6457 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				3C87F344216D449C008120FA /* AutoCodable.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		3C24777E216A99050010EAFA /* ResourceSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				3C24777C216A96DF0010EAFA /* ResourceSchedule.swift */,
+				3C24777F216A99210010EAFA /* Shift.swift */,
+				3C247781216A996C0010EAFA /* ScheduleBreak.swift */,
+				3C247783216A99AA0010EAFA /* Schedule.swift */,
+				3C247785216A9DCB0010EAFA /* Lock.swift */,
+			);
+			path = ResourceSchedules;
+			sourceTree = "<group>";
+		};
 		3C2D8FE121270C8000BDEA18 /* AppFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +487,7 @@
 				3C230AA721558BA5004477A3 /* Statuses.swift */,
 				3C862BF72157C2F700428BF9 /* Profiles.swift */,
 				3CC3774F2168CB010020236D /* Resourcebookings.swift */,
+				3C24777A216A95E30010EAFA /* ResourceSchedules.swift */,
 			);
 			path = Multiples;
 			sourceTree = "<group>";
@@ -430,6 +507,8 @@
 				3CD714F32163C26800CC370A /* Task.swift */,
 				3CC37767216A122A0020236D /* Resourcebooking */,
 				3CC3775A2169E5EC0020236D /* Resource */,
+				3C24777E216A99050010EAFA /* ResourceSchedules */,
+				3C87F348216E1EEE008120FA /* URL */,
 			);
 			path = Singles;
 			sourceTree = "<group>";
@@ -470,6 +549,21 @@
 				3C570A4C2165587500154B93 /* ToDosTabViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3C87F348216E1EEE008120FA /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				3C87F346216E1EE2008120FA /* Result.swift */,
+				3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */,
+				3C87F34B216E1F98008120FA /* Endpoint.swift */,
+				3C87F34F216E2423008120FA /* Yp.swift */,
+				3C87F351216E2865008120FA /* APIError.swift */,
+				3C87F353216E2887008120FA /* APIClient+Protocol.swift */,
+				3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */,
+				3C87F357216E3FB4008120FA /* YpClient.swift */,
+			);
+			path = URL;
 			sourceTree = "<group>";
 		};
 		3CB59E64213FC4DE00B6E458 /* Extensions */ = {
@@ -594,9 +688,11 @@
 				3CE710282121827A00EBF6A5 /* Assets.xcassets */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
-				3CE9D1D5212382B700BFA730 /* Extensions */,
 				3C40AEC8212D825B0077DDC5 /* Models */,
+				3CE9D1D5212382B700BFA730 /* Extensions */,
+				3C1F1875216BDC8200FD6457 /* Generated */,
 				3C9A5B692167E2CD00A5D35B /* Settings.bundle */,
+				3C1F1872216BD03900FD6457 /* Templates */,
 			);
 			path = YesplanVIP;
 			sourceTree = "<group>";
@@ -784,9 +880,10 @@
 				3CE710192121827900EBF6A5 /* Resources */,
 				E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */,
 				565C71D73C785F6F43099377 /* [CP] Copy Pods Resources */,
-				3C41E928212D742700C2E242 /* ShellScript */,
+				3C41E928212D742700C2E242 /* Carthage */,
 			);
 			buildRules = (
+				3CAC32A7216BFF1200646372 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -837,13 +934,15 @@
 				3CE710292121827A00EBF6A5 /* Assets.xcassets in Resources */,
 				3C9A5B6A2167E2CD00A5D35B /* Settings.bundle in Resources */,
 				3C6AC8A0212703050010DFA5 /* LaunchScreen.storyboard in Resources */,
+				3CAC329E216BEEB900646372 /* Basic.stencil in Resources */,
+				3C1F1877216BDDE000FD6457 /* AutoCodable.swifttemplate in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C41E928212D742700C2E242 /* ShellScript */ = {
+		3C41E928212D742700C2E242 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -857,6 +956,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ws.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
 			);
+			name = Carthage;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -923,6 +1023,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CAC32A4216BFB2C00646372 /* AutoCodable.swifttemplate in Sources */,
 				3CF2CA70215F588A00636180 /* TasksTabViewCell+Extensions.swift in Sources */,
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
 				3CC37771216A2FB90020236D /* BulkResourceUse.swift in Sources */,
@@ -937,6 +1038,7 @@
 				3CD714F42163C26800CC370A /* Task.swift in Sources */,
 				3CE710FE2121A84400EBF6A5 /* HelpViewController.swift in Sources */,
 				3CE9D1D2212382B100BFA730 /* UIStackView+Extension.swift in Sources */,
+				3C87F358216E3FB4008120FA /* YpClient.swift in Sources */,
 				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
 				3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */,
 				3CC377662169F0090020236D /* ResourceSet.swift in Sources */,
@@ -944,6 +1046,7 @@
 				3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */,
 				3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */,
 				3C40AEF8212D8E550077DDC5 /* EventsTabInteractor.swift in Sources */,
+				3C24777D216A96DF0010EAFA /* ResourceSchedule.swift in Sources */,
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3CC3774321688D870020236D /* AppConfig.swift in Sources */,
 				3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */,
@@ -967,12 +1070,14 @@
 				3CE710C92121A7E300EBF6A5 /* ToDosModels.swift in Sources */,
 				3CD592A1212AC57B005BBF71 /* LogoutModels.swift in Sources */,
 				3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */,
+				3C87F347216E1EE2008120FA /* Result.swift in Sources */,
 				3CF142EB212DE32A001FC532 /* Children.swift in Sources */,
 				3CF142DF212DDFF9001FC532 /* Status.swift in Sources */,
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */,
 				3C40AF23212D91F30077DDC5 /* UserTabRouter.swift in Sources */,
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
+				3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */,
 				3C40AEE0212D8C2F0077DDC5 /* Event.swift in Sources */,
 				3CB468C121479A330088A8B8 /* LoginView.swift in Sources */,
 				3CC3775C2169E6270020236D /* BulkResource.swift in Sources */,
@@ -983,6 +1088,7 @@
 				3CE710C62121A7E300EBF6A5 /* ToDosRouter.swift in Sources */,
 				3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */,
 				3CE9D1E32123835600BFA730 /* UIColor+Extension.swift in Sources */,
+				3C87F354216E2887008120FA /* APIClient+Protocol.swift in Sources */,
 				3CE710C32121A7E300EBF6A5 /* ToDosWorker.swift in Sources */,
 				3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */,
 				3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */,
@@ -991,7 +1097,10 @@
 				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
+				3C87F350216E2423008120FA /* Yp.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
+				3C247786216A9DCB0010EAFA /* Lock.swift in Sources */,
+				3C247784216A99AA0010EAFA /* Schedule.swift in Sources */,
 				3CC3774E2168C2BE0020236D /* Resourcebooking.swift in Sources */,
 				3CE9D1DF2123834100BFA730 /* UIButton+Extension.swift in Sources */,
 				3CE9D1D72123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
@@ -1004,12 +1113,14 @@
 				3CE710782121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
 				3C40AEF5212D8E550077DDC5 /* EventsTabViewController.swift in Sources */,
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
+				3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
 				3C230AA821558BA5004477A3 /* Statuses.swift in Sources */,
 				3CC3776B216A12A50020236D /* InstantiableResourceUseGroup.swift in Sources */,
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 				3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */,
 				3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */,
+				3C87F345216D449C008120FA /* AutoCodable.generated.swift in Sources */,
 				3CB59E72214079AD00B6E458 /* MainTabBarModels.swift in Sources */,
 				3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */,
 				3CF8F617215A4B340016EDC7 /* TasksTabView.swift in Sources */,
@@ -1017,6 +1128,7 @@
 				3CE710A72121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
 				3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
 				3CE710842121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */,
+				3C24777B216A95E30010EAFA /* ResourceSchedules.swift in Sources */,
 				3CE710CC2121A7E300EBF6A5 /* ToDosViewController.swift in Sources */,
 				3CE9D1DB2123832900BFA730 /* UITextField+Extension.swift in Sources */,
 				3CE710812121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
@@ -1039,17 +1151,21 @@
 				3C40AF20212D91F30077DDC5 /* UserTabWorker.swift in Sources */,
 				3CC3776F216A2DC80020236D /* FreeFormResourceUse.swift in Sources */,
 				3CC377472168BD480020236D /* TeamplannerTabView.swift in Sources */,
+				3C87F352216E2865008120FA /* APIError.swift in Sources */,
 				3C40AF02212D8EB90077DDC5 /* EventsTabViewCell.swift in Sources */,
 				3CE711062121AD7100EBF6A5 /* Dictionary+Extension.swift in Sources */,
 				3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */,
+				3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */,
 				3CF142EF212E0422001FC532 /* ApiError.swift in Sources */,
 				3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
 				3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
+				3C247780216A99210010EAFA /* Shift.swift in Sources */,
 				3C41E924212D723E00C2E242 /* Basic.swift in Sources */,
 				3C40AEEC212D8E550077DDC5 /* EventsTabWorker.swift in Sources */,
 				3C40AF26212D91F30077DDC5 /* UserTabModels.swift in Sources */,
 				3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,
 				3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */,
+				3C247782216A996C0010EAFA /* ScheduleBreak.swift in Sources */,
 				3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */,
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
 				3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */,
@@ -1180,6 +1296,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1199,6 +1316,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1210,6 +1328,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1229,6 +1348,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

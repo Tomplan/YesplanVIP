@@ -11,7 +11,7 @@ import Foundation
 import Arrow
 //import then
 
-struct Status {
+struct Status: AutoCodable {
     
     var url: String?
     var _type = "status"

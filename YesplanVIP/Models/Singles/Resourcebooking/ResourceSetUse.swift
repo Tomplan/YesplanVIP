@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct ResourceSetUse: ArrowParsable {
+struct ResourceSetUse: ArrowParsable, AutoCodable {
     
     var url = URL(string: "http://")!
     var id: String = ""

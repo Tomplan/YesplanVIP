@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct FreeFormResourceUse: ArrowParsable {
+struct FreeFormResourceUse: ArrowParsable, AutoCodable {
     
     var url = URL(string: "http://")!
     var id: String = ""

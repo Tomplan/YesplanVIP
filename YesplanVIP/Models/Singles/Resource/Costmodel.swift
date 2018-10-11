@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct Costmodel: ArrowParsable {
+struct Costmodel: ArrowParsable, AutoCodable {
     var name: String?
     
     mutating func deserialize(_ json: JSON) {

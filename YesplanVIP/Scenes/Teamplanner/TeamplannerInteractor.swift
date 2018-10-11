@@ -26,10 +26,10 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 {
   var presenter: TeamplannerTabPresentationLogic?
   var worker: TeamplannerTabWorker?
-    var fetchedResourcebookings: Resourcebookings = Resourcebookings()
-    var fetchedGroups: Groups = Groups()
-
-    var resourcebookingsArray: [Resourcebooking] = [Resourcebooking]()
+//    var fetchedResourcebookings: Resourcebookings = Resourcebookings()
+//    var fetchedGroups: Groups = Groups()
+//
+//    var resourcebookingsArray: [Resourcebooking] = [Resourcebooking]()
     var yesplan: Yesplan = Yesplan()
 
   //var name: String = ""
@@ -39,149 +39,163 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
   func doSomething(request: TeamplannerTab.Something.Request)
   {
     worker = TeamplannerTabWorker()
-//    worker?.doSomeWork()
-    
-    yesplan.getAll(fetchedResourcebookings, query: "resourceuse:date:#today") // resourceuse:team:1203
-        .then { result in
-            for resourcebooking in result.data {
-                switch resourcebooking {
-                    
-                case .instantiableResourceUse(let instantiableResourceUse):
-                    if let resource = instantiableResourceUse.resource {
-                        switch resource {
-                        case .bulkResource(let y):
-                            print("bulk")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .instantiableResource(let y):
-                            print("instantiableResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .adHocResource(let y):
-                            print("adHocResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .resourceSet(let y):
-                            print("resourceSet")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        }
-                    }
-                case .instantiableResourceUseGroup(let instantiableResourceUseGroup):
-                    if let resource = instantiableResourceUseGroup.resource {
-                        switch resource {
-                        case .bulkResource(let y):
-                            print("bulk")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .instantiableResource(let y):
-                            print("instantiableResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .adHocResource(let y):
-                            print("adHocResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .resourceSet(let y):
-                            print("resourceSet")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        }
-                    }
-                case .resourceSetUse(let resourceSetUse):
-                    if let resource = resourceSetUse.resource {
-                        switch resource {
-                        case .bulkResource(let y):
-                            print("bulk")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .instantiableResource(let y):
-                            print("instantiableResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .adHocResource(let y):
-                            print("adHocResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .resourceSet(let y):
-                            print("resourceSet")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        }
-                    }
-                case .freeFormResourceUse(let freeFormResourceUse):
-                    if let resource = freeFormResourceUse.resource {
-                        switch resource {
-                        case .bulkResource(let y):
-                            print("bulk")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .instantiableResource(let y):
-                            print("instantiableResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .adHocResource(let y):
-                            print("adHocResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .resourceSet(let y):
-                            print("resourceSet")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        }
-                    }
-                case .bulkResourceUse(let bulkResourceUse):
-                    if let resource = bulkResourceUse.resource {
-                        switch resource {
-                        case .bulkResource(let y):
-                            print("bulk")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .instantiableResource(let y):
-                            print("instantiableResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .adHocResource(let y):
-                            print("adHocResource")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        case .resourceSet(let y):
-                            print("resourceSet")
-                            if y.type == "Human" {
-                                self.resourcebookingsArray.append(resourcebooking)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-            
-        .finally {
-            
-            let response = TeamplannerTab.Something.Response(
-                resourcebookings: self.resourcebookingsArray
-            )
-            self.presenter?.presentSomething(response: response)
+
+//    yesplan.getAll(ResourcesSchedules).then { result in
+//        print(result)
+//    }
+//    yesplan.getResourcesQuerySchedules(Resource).then { result in
+//        print(result)
+//    }
     }
-  }
 }
+
+
+
+
+
+//    worker?.doSomeWork()
+//
+//    yesplan.getAll(fetchedResourcebookings, query: "resourceuse:date:#today") // resourceuse:team:1203
+//        .then { result in
+//            for resourcebooking in result.data {
+//                switch resourcebooking {
+//
+//                case .instantiableResourceUse(let instantiableResourceUse):
+//                    if let resource = instantiableResourceUse.resource {
+//                        switch resource {
+//                        case .bulkResource(let y):
+//                            print("bulk")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .instantiableResource(let y):
+//                            print("instantiableResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .adHocResource(let y):
+//                            print("adHocResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .resourceSet(let y):
+//                            print("resourceSet")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        }
+//                    }
+//                case .instantiableResourceUseGroup(let instantiableResourceUseGroup):
+//                    if let resource = instantiableResourceUseGroup.resource {
+//                        switch resource {
+//                        case .bulkResource(let y):
+//                            print("bulk")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .instantiableResource(let y):
+//                            print("instantiableResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .adHocResource(let y):
+//                            print("adHocResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .resourceSet(let y):
+//                            print("resourceSet")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        }
+//                    }
+//                case .resourceSetUse(let resourceSetUse):
+//                    if let resource = resourceSetUse.resource {
+//                        switch resource {
+//                        case .bulkResource(let y):
+//                            print("bulk")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .instantiableResource(let y):
+//                            print("instantiableResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .adHocResource(let y):
+//                            print("adHocResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .resourceSet(let y):
+//                            print("resourceSet")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        }
+//                    }
+//                case .freeFormResourceUse(let freeFormResourceUse):
+//                    if let resource = freeFormResourceUse.resource {
+//                        switch resource {
+//                        case .bulkResource(let y):
+//                            print("bulk")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .instantiableResource(let y):
+//                            print("instantiableResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .adHocResource(let y):
+//                            print("adHocResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .resourceSet(let y):
+//                            print("resourceSet")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        }
+//                    }
+//                case .bulkResourceUse(let bulkResourceUse):
+//                    if let resource = bulkResourceUse.resource {
+//                        switch resource {
+//                        case .bulkResource(let y):
+//                            print("bulk")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .instantiableResource(let y):
+//                            print("instantiableResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .adHocResource(let y):
+//                            print("adHocResource")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        case .resourceSet(let y):
+//                            print("resourceSet")
+//                            if y.type == "Human" {
+//                                self.resourcebookingsArray.append(resourcebooking)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//        .finally {
+//
+//            let response = TeamplannerTab.Something.Response(
+//                resourcebookings: self.resourcebookingsArray
+//            )
+//            self.presenter?.presentSomething(response: response)
+//    }
+//  }
+//}
 

@@ -25,6 +25,8 @@ protocol EventsTabDataStore
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
+    private var client = YpClient()
+
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
     
@@ -45,6 +47,28 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   {
     worker = EventsTabWorker()
     
+//    client.getGroups(from: Yp.groups) { result in
+//        switch result {
+//        case .success(let items):
+//            print(items)
+////            guard let data = events
+//            for item in items.data {
+//                if let name = item.name {
+//                print(name)
+//                }
+////                for location in item.locations {
+////                    if let name = location.name {
+////                        print(name)
+////
+////                    }
+////                }
+//            }
+//        case .failure(let error):
+//            print("error: \(error)")
+//        }
+//        }
+    
+    
     yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
         .then((worker?.groupEventsByStartdate)!)
         .then((worker?.sortEventsInEachGroupByTime)!)
@@ -62,8 +86,14 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
         .then { result in
             self.profilesArray = result.data
         }
-        
         .onError { e in
+            if let wsError = e as? WSError {
+                print(wsError.status)
+                print(wsError.status.rawValue) // RawValue for Int status
+                print(wsError.localizedDescription) // RawValue for Int status
+
+            }
+//        .onError { e in
             // An error occured :/
             print(e)
             self.error = "\(e)"

@@ -6,6 +6,7 @@ target 'YesplanVIP' do
   use_frameworks!
 
   # Pods for YesplanVIP
+pod 'Sourcery'
 # pod 'SwiftyJSON', '~> 4.0'
 # pod 'Alamofire', '~> 4.7'
 # pod "PromiseKit", "~> 6.0"

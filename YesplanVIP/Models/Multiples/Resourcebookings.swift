@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct Resourcebookings {
+struct Resourcebookings: AutoCodable {
     var pagination = Pagination()
     var data: [Resourcebooking] = [Resourcebooking]()
 }

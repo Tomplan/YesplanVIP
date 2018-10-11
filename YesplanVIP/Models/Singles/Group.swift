@@ -10,8 +10,8 @@ import Foundation
 import Arrow
 import then
 
-struct Group {
-    var url: String = ""
+struct Group: AutoCodable {
+    var url = URL(string: "http://")!
     var id: String = ""
     var owner: User?
     var owningteam: Usergroup?
@@ -24,12 +24,12 @@ struct Group {
     var enddate: String? // date Date on which the end of the event appears in the calendar.
     var profile: Base? // NOT Profile_Id, color not transferred by Yesplan in Group_Id
     var status: Base? // Not Status_Id, backgroundcolor,...
-    var locations: [Base] = []
+    var locations: [Base]? // optional added by TOM, important for Children
     var production: Base?             // null or Event_Id or Group_Id
     var isproduction: Bool = false
     var attributes: Pagination? // optional added by TOM
     var _type = "group"
-    var profiles: [Base] = [] // NOT Profile_Id, color not transferred by Yesplan in Group_Id
+    var profiles: [Base]? // NOT Profile_Id, color not transferred by Yesplan in Group_Id
     var statuses: [Base]? // optional added by TOM
     var children: [Children] = []
 }
@@ -75,35 +75,3 @@ extension Group: RestResource {
     static func restName() -> String { return "api/group/" }
     func restId() -> String { return "\(id)" }
 }
-//extension Group {
-//    func fetchGroup(id: String) -> Promise<Group> {
-//        return api.fetchGroup(id: id)
-//    }
-//}
-//
-//extension Group {
-//    init?(data: Data) {
-//        guard let me = try? JSONDecoder().decode(Group.self, from: data) else { return nil }
-//        self = me
-//    }
-//    
-//    init?(_ json: String, using encoding: String.Encoding = .utf8) {
-//        guard let data = json.data(using: encoding) else { return nil }
-//        self.init(data: data)
-//    }
-//    
-//    init?(url: String) {
-//        guard let url = URL(string: url) else { return nil }
-//        guard let data = try? Data(contentsOf: url) else { return nil }
-//        self.init(data: data)
-//    }
-//    
-//    var jsonData: Data? {
-//        return try? JSONEncoder().encode(self)
-//    }
-//    
-//    var json: String? {
-//        guard let data = self.jsonData else { return nil }
-//        return String(data: data, encoding: .utf8)
-//    }
-//}

@@ -11,7 +11,7 @@ import Foundation
 import Arrow
 import then
 
-enum Children {
+enum Children: AutoCodable {
 
     case event(Event)
     case group(Group)

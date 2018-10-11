@@ -14,8 +14,8 @@ import UIKit
 
 class TeamplannerTabWorker
 {
-    var yesplan: Yesplan = Yesplan()
-    var fetchedResourcebookings: [String:Resourcebooking] = [:]
+//    var yesplan: Yesplan = Yesplan()
+//    var fetchedResourcebookings: [String:Resourcebooking] = [:]
     
 //    func groupResourecbookingsByStartdate(resourcebookings: Resourcebookings) -> [String:[Resourcebooking]] {
 //        for resourcebooking in resourcebookings.data {

@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct Profiles {
+struct Profiles: AutoCodable {
     var pagination = Pagination()
     var data = [Profile]()
 }

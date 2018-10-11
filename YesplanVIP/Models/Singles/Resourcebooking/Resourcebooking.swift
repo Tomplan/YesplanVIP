@@ -10,24 +10,29 @@ import Foundation
 import Arrow
 import then
 
-enum Failure : Error {
+enum Failure: Error, AutoCodable {
     case NotImplemented
+    case NoResourceBooking
+    case NoResourceBookingGroup
+
 }
 
-enum Resourcebooking {
+enum Resourcebooking: AutoCodable {
 
     case instantiableResourceUse(InstantiableResourceUse)
     case instantiableResourceUseGroup(InstantiableResourceUseGroup)
     case resourceSetUse(ResourceSetUse)
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
-
-
-//    case null
     
     init?(resourcebooking: JSON) throws {
         
         var a = InstantiableResourceUse()
+        a.deserialize(resourcebooking)
+        if a._type == "resourcebooking" {
+            self = .instantiableResourceUse(a)
+            return
+        }
         a.deserialize(resourcebooking)
         if a._type == "resourcebooking" {
             self = .instantiableResourceUse(a)
@@ -57,7 +62,7 @@ enum Resourcebooking {
             self = .bulkResourceUse(e)
             return
         }
-         throw Failure.NotImplemented
+        throw Failure.NotImplemented
     }
 }
 

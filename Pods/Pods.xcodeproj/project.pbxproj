@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EE919283826789C472B8959A89B6403 /* SearchTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 002DB6BF8930127B4265D23EDCFEA6D2 /* SearchTextField-dummy.m */; };
+		0EE919283826789C472B8959A89B6403 /* SearchTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1447C32863312D6D71347B3545441C0 /* SearchTextField-dummy.m */; };
 		164A01732AE7AC825626A06C104B0CE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		180CED541DCBFD39541986EC4B8F1955 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		1CA0B780D26EC1E50CFF2113DE4B5010 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06B0D6CF064384FE717B99F4348573 /* ViewConfigurable.swift */; };
-		2023956CD40A0BB1C03C7AB0E2920005 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596F6EDB3F16336B335DC61AFEC192A8 /* SearchTextField.swift */; };
+		1CA0B780D26EC1E50CFF2113DE4B5010 /* ViewConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAB5CE6302DA05BE4FEECC6DB92D88 /* ViewConfigurable.swift */; };
+		2023956CD40A0BB1C03C7AB0E2920005 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A22AF6EABCB41F4C1D740B164365 /* SearchTextField.swift */; };
 		50B01189F373B07731AC863CF6ED5C77 /* Pods-YesplanVIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1DF1160FF94E1CA6D81AB1EF64ED825 /* Pods-YesplanVIP-dummy.m */; };
-		65563B9732339EB2479EF7F378CAFF98 /* SearchTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E7B9E28A9A7BB00F78C15BBE9E88213 /* SearchTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65563B9732339EB2479EF7F378CAFF98 /* SearchTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9583C6E390EB7C3B0C32693FB71A60C6 /* SearchTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D54B1D441C44579A36ED0E8BE450947 /* Pods-YesplanVIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B7E19B0B26B57DE045ED3478312C2CC /* Pods-YesplanVIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB8CBE5DE889DBA10C0347D0B193DB3C /* Squeaky-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98872E8D267ECEEFCF6D67E05F91BE2B /* Squeaky-dummy.m */; };
-		CCA3250B25C04B9D0B5680B057083E9B /* Squeaky-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A70E6EC295C97F9F7E16AB898355847 /* Squeaky-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB8CBE5DE889DBA10C0347D0B193DB3C /* Squeaky-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49691171FD72EABBB45E7D5632562468 /* Squeaky-dummy.m */; };
+		CCA3250B25C04B9D0B5680B057083E9B /* Squeaky-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 531DDD233E4A538C615A86B77022C9CF /* Squeaky-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA2A668AAE790A9762F6D8393A9DB297 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,35 +38,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		002DB6BF8930127B4265D23EDCFEA6D2 /* SearchTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SearchTextField-dummy.m"; sourceTree = "<group>"; };
 		003053C99382BE120F097DE86FDE3E93 /* Pods-YesplanVIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YesplanVIP.modulemap"; sourceTree = "<group>"; };
-		0A70E6EC295C97F9F7E16AB898355847 /* Squeaky-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Squeaky-umbrella.h"; sourceTree = "<group>"; };
 		1B7E19B0B26B57DE045ED3478312C2CC /* Pods-YesplanVIP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YesplanVIP-umbrella.h"; sourceTree = "<group>"; };
 		1ED82DB5AB32BF04879D265681C24D21 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		304FDE9271989850314932AB631A230C /* Pods-YesplanVIP-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YesplanVIP-frameworks.sh"; sourceTree = "<group>"; };
 		3C7E8E03B33144AFF78E66FE8FDB922B /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
-		3E7B9E28A9A7BB00F78C15BBE9E88213 /* SearchTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-umbrella.h"; sourceTree = "<group>"; };
-		4B5A7AB125DFC156A32A14BFDA63D50A /* Squeaky-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Squeaky-prefix.pch"; sourceTree = "<group>"; };
+		49691171FD72EABBB45E7D5632562468 /* Squeaky-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Squeaky-dummy.m"; sourceTree = "<group>"; };
+		4B4A1504E1B9D7825CE8DCF8F7701012 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E53E911B8830F855510BE271FE37E62 /* Pods-YesplanVIP-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YesplanVIP-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5052A21A39714283C88079F0D2639E1C /* Pods-YesplanVIP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-acknowledgements.plist"; sourceTree = "<group>"; };
-		57FDACD652E0B7965ECF555D7175457A /* Squeaky.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Squeaky.modulemap; sourceTree = "<group>"; };
-		596F6EDB3F16336B335DC61AFEC192A8 /* SearchTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchTextField.swift; path = SearchTextField/Classes/SearchTextField.swift; sourceTree = "<group>"; };
+		531DDD233E4A538C615A86B77022C9CF /* Squeaky-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Squeaky-umbrella.h"; sourceTree = "<group>"; };
+		59268DBE701AE3151AF8DBC612E35456 /* Squeaky-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Squeaky-prefix.pch"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6795C5418EA8B4ACE9E0CEC25ADCBE81 /* Squeaky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Squeaky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		726B7CE619E58B666D183B4172E3710A /* SearchTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SearchTextField.xcconfig; sourceTree = "<group>"; };
-		7B06B0D6CF064384FE717B99F4348573 /* ViewConfigurable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewConfigurable.swift; path = Source/ViewConfigurable.swift; sourceTree = "<group>"; };
-		860504F7AE4DFCD1347D5D216A05A043 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86124188C84C14A8485686A8CE111F54 /* SearchTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-prefix.pch"; sourceTree = "<group>"; };
+		6A77CC96C93AEEA9A77CB6A2BAB1C922 /* SearchTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-prefix.pch"; sourceTree = "<group>"; };
+		83EAB5CE6302DA05BE4FEECC6DB92D88 /* ViewConfigurable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewConfigurable.swift; path = Source/ViewConfigurable.swift; sourceTree = "<group>"; };
 		86B98FB5D8B3310DBB0404DCCB5B6164 /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		98872E8D267ECEEFCF6D67E05F91BE2B /* Squeaky-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Squeaky-dummy.m"; sourceTree = "<group>"; };
+		9583C6E390EB7C3B0C32693FB71A60C6 /* SearchTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SearchTextField-umbrella.h"; sourceTree = "<group>"; };
 		9C1BA0D8FD2542234EEA5FE6953AC76C /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		A0B0815013D5CEAF6551C6A30201E726 /* Pods-YesplanVIP-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YesplanVIP-resources.sh"; sourceTree = "<group>"; };
-		B04633BF6DB631E5043DBB73FBC71DCF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7CDC2CBCB227F4C6EB4DA7EA1264E5C /* Squeaky.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Squeaky.xcconfig; sourceTree = "<group>"; };
 		B6353EA8A11944126BFEC7BC1BD009DD /* SearchTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SearchTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCBA538A00A3ED683FC6B2F6C3A70BE8 /* Squeaky.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Squeaky.xcconfig; sourceTree = "<group>"; };
+		BC79A22AF6EABCB41F4C1D740B164365 /* SearchTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchTextField.swift; path = SearchTextField/Classes/SearchTextField.swift; sourceTree = "<group>"; };
+		C1447C32863312D6D71347B3545441C0 /* SearchTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SearchTextField-dummy.m"; sourceTree = "<group>"; };
+		C87D185DF99206B873D0E9BA01137B4B /* Squeaky.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Squeaky.modulemap; sourceTree = "<group>"; };
+		CC43B208D08B22F319BAA11E4A21F79B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2CD7C166CB4966D4ABA0FEB2DCA7546 /* SearchTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SearchTextField.modulemap; sourceTree = "<group>"; };
+		D4CA2205EA9F4736189DD1B492701EA0 /* SearchTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SearchTextField.xcconfig; sourceTree = "<group>"; };
 		E1DF1160FF94E1CA6D81AB1EF64ED825 /* Pods-YesplanVIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YesplanVIP-dummy.m"; sourceTree = "<group>"; };
-		F27BB03D97B8A3BB4C65C7D68CAC1B8F /* SearchTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SearchTextField.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,21 +97,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05046D0242D46BA8976026A82A0816AA /* Squeaky */ = {
+			isa = PBXGroup;
+			children = (
+				83EAB5CE6302DA05BE4FEECC6DB92D88 /* ViewConfigurable.swift */,
+				8077CEF171F6D6710E44250983C77147 /* Support Files */,
+			);
+			path = Squeaky;
+			sourceTree = "<group>";
+		};
 		36242EA09BF630964F2EFDCBAAF37584 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				41423FF5A60314B947DD0894F2A42F58 /* Pods-YesplanVIP */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		36AD7EB2D74263CC391362587A048058 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C49FB0C6C882EEE1706D4ED67EE32EBC /* SearchTextField */,
-				CF56F196913A6468D83084D4A40E6BCE /* Squeaky */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		41423FF5A60314B947DD0894F2A42F58 /* Pods-YesplanVIP */ = {
@@ -132,20 +132,6 @@
 			path = "Target Support Files/Pods-YesplanVIP";
 			sourceTree = "<group>";
 		};
-		484B8CD824581F49BE7FC38EE9E1FB59 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B04633BF6DB631E5043DBB73FBC71DCF /* Info.plist */,
-				F27BB03D97B8A3BB4C65C7D68CAC1B8F /* SearchTextField.modulemap */,
-				726B7CE619E58B666D183B4172E3710A /* SearchTextField.xcconfig */,
-				002DB6BF8930127B4265D23EDCFEA6D2 /* SearchTextField-dummy.m */,
-				86124188C84C14A8485686A8CE111F54 /* SearchTextField-prefix.pch */,
-				3E7B9E28A9A7BB00F78C15BBE9E88213 /* SearchTextField-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SearchTextField";
-			sourceTree = "<group>";
-		};
 		698D88D4CFBA8C5CB7BC3B9E6590BA6F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,10 +147,54 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				36AD7EB2D74263CC391362587A048058 /* Pods */,
+				CC4B28AC7B54EE4E6A7B39958A4D2FA2 /* Pods */,
 				698D88D4CFBA8C5CB7BC3B9E6590BA6F /* Products */,
 				36242EA09BF630964F2EFDCBAAF37584 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8077CEF171F6D6710E44250983C77147 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC43B208D08B22F319BAA11E4A21F79B /* Info.plist */,
+				C87D185DF99206B873D0E9BA01137B4B /* Squeaky.modulemap */,
+				A7CDC2CBCB227F4C6EB4DA7EA1264E5C /* Squeaky.xcconfig */,
+				49691171FD72EABBB45E7D5632562468 /* Squeaky-dummy.m */,
+				59268DBE701AE3151AF8DBC612E35456 /* Squeaky-prefix.pch */,
+				531DDD233E4A538C615A86B77022C9CF /* Squeaky-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Squeaky";
+			sourceTree = "<group>";
+		};
+		827BEF52038129AD8971D9E1B6C85FBC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B4A1504E1B9D7825CE8DCF8F7701012 /* Info.plist */,
+				D2CD7C166CB4966D4ABA0FEB2DCA7546 /* SearchTextField.modulemap */,
+				D4CA2205EA9F4736189DD1B492701EA0 /* SearchTextField.xcconfig */,
+				C1447C32863312D6D71347B3545441C0 /* SearchTextField-dummy.m */,
+				6A77CC96C93AEEA9A77CB6A2BAB1C922 /* SearchTextField-prefix.pch */,
+				9583C6E390EB7C3B0C32693FB71A60C6 /* SearchTextField-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SearchTextField";
+			sourceTree = "<group>";
+		};
+		9B55EC38FFF3E128EA23BC04BCCC4944 /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		ABA9E8A5F9BE940EE612E30F9DAB4E40 /* SearchTextField */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A22AF6EABCB41F4C1D740B164365 /* SearchTextField.swift */,
+				827BEF52038129AD8971D9E1B6C85FBC /* Support Files */,
+			);
+			path = SearchTextField;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -175,22 +205,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C49FB0C6C882EEE1706D4ED67EE32EBC /* SearchTextField */ = {
+		CC4B28AC7B54EE4E6A7B39958A4D2FA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				596F6EDB3F16336B335DC61AFEC192A8 /* SearchTextField.swift */,
-				484B8CD824581F49BE7FC38EE9E1FB59 /* Support Files */,
+				ABA9E8A5F9BE940EE612E30F9DAB4E40 /* SearchTextField */,
+				9B55EC38FFF3E128EA23BC04BCCC4944 /* Sourcery */,
+				05046D0242D46BA8976026A82A0816AA /* Squeaky */,
 			);
-			path = SearchTextField;
-			sourceTree = "<group>";
-		};
-		CF56F196913A6468D83084D4A40E6BCE /* Squeaky */ = {
-			isa = PBXGroup;
-			children = (
-				7B06B0D6CF064384FE717B99F4348573 /* ViewConfigurable.swift */,
-				F4EBA771F10F6C95280B8E84E40E89AC /* Support Files */,
-			);
-			path = Squeaky;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -199,20 +221,6 @@
 				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		F4EBA771F10F6C95280B8E84E40E89AC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				860504F7AE4DFCD1347D5D216A05A043 /* Info.plist */,
-				57FDACD652E0B7965ECF555D7175457A /* Squeaky.modulemap */,
-				CCBA538A00A3ED683FC6B2F6C3A70BE8 /* Squeaky.xcconfig */,
-				98872E8D267ECEEFCF6D67E05F91BE2B /* Squeaky-dummy.m */,
-				4B5A7AB125DFC156A32A14BFDA63D50A /* Squeaky-prefix.pch */,
-				0A70E6EC295C97F9F7E16AB898355847 /* Squeaky-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Squeaky";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,7 +479,7 @@
 		};
 		46086C79B537B1C0003624CBC70EFA3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 726B7CE619E58B666D183B4172E3710A /* SearchTextField.xcconfig */;
+			baseConfigurationReference = D4CA2205EA9F4736189DD1B492701EA0 /* SearchTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -537,7 +545,7 @@
 		};
 		80BA8B89300BFB118AFD9DA1C78A0F8B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCBA538A00A3ED683FC6B2F6C3A70BE8 /* Squeaky.xcconfig */;
+			baseConfigurationReference = A7CDC2CBCB227F4C6EB4DA7EA1264E5C /* Squeaky.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -627,7 +635,7 @@
 		};
 		E5472C6C53C3F7CCA3033A794AC12AD4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 726B7CE619E58B666D183B4172E3710A /* SearchTextField.xcconfig */;
+			baseConfigurationReference = D4CA2205EA9F4736189DD1B492701EA0 /* SearchTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -659,7 +667,7 @@
 		};
 		F12D6F5DFB63856BA5F9ADF05FB9CDE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCBA538A00A3ED683FC6B2F6C3A70BE8 /* Squeaky.xcconfig */;
+			baseConfigurationReference = A7CDC2CBCB227F4C6EB4DA7EA1264E5C /* Squeaky.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

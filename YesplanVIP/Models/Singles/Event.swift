@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct Event {
+struct Event: AutoCodable {
     
     var url = URL(string: "http://")!
     var id: String = ""
@@ -25,7 +25,7 @@ struct Event {
     var enddate: String? // date Date on which the end of the event appears in the calendar.
     var profile: Base? // NOT Profile_Id, color is not transferred by Yesplan in Event_Id !?!
     var status: Base? // NOT Status_Id, backgroundcolor,textcolor and statustype are not transferred by Yesplan in Event_Id !?!
-    var locations: [Base]? // NOT Location_Id
+    var locations: [Base]? // NOT Location_Id // optional added by TOM, important for Children!!!!
     var production: Base? // null or Event_Id or Group_Id
     var isproduction: Bool = false
     var attributes: Pagination?

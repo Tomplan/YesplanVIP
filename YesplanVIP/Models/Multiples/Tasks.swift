@@ -10,7 +10,7 @@ import Foundation
 import Arrow
 import then
 
-struct Tasks {
+struct Tasks: AutoCodable {
     var pagination = Pagination()
     var data = [Task]()
 }

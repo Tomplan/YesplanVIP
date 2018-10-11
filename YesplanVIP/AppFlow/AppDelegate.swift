@@ -4,10 +4,11 @@
 ////
 ////  Created by Techcc - FOH - Video on 13/08/18.
 ////  Copyright © 2018 Yesplan. All rights reserved.
-////
+//// cd ~/Library/Mobile\ Documents/com~apple~CloudDocs
 //// dewerft.yesplan.be
 //// C857C01360BB5777DABE5B7EE6594CD1
-//
+//// Sourcery.app/Contents/MacOS/Sourcery --sources Test.swift --templates Templates/AutoCodable.swifttemplate --output ./Generated --disableCache --verbose
+
 import UIKit
 
 @UIApplicationMain

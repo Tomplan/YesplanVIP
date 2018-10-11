@@ -11,7 +11,7 @@ import then
 
 //var task: [String : Any] = [:]
 
-struct Task {
+struct Task: AutoCodable {
     
     var url: URL = URL(string: "http://")!
     var id: String = ""
