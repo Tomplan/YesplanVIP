@@ -16,20 +16,20 @@ enum Children: AutoCodable {
     case event(Event)
     case group(Group)
 
-    init(children: JSON) {
-        var value = Group()
-        value.deserialize(children)
-//        print(value)
-        if value._type == "group" {
-            self = .group(value)
-
-        } else {
-            var e = Event()
-            e.deserialize(children)
-            self = .event(e)
-
-        }
-    }
+//    init(children: JSON) {
+//        var value = Group()
+//        value.deserialize(children)
+////        print(value)
+//        if value._type == "group" {
+//            self = .group(value)
+//
+//        } else {
+//            var e = Event()
+//            e.deserialize(children)
+//            self = .event(e)
+//
+//        }
+//    }
     
 //    init(encode: Children) {
 //            switch encode {

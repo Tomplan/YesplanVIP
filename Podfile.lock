@@ -1,9 +1,21 @@
 PODS:
+  - PromisedFuture (1.0.1)
+  - PromiseKit (6.5.1):
+    - PromiseKit/CorePromise (= 6.5.1)
+    - PromiseKit/Foundation (= 6.5.1)
+    - PromiseKit/UIKit (= 6.5.1)
+  - PromiseKit/CorePromise (6.5.1)
+  - PromiseKit/Foundation (6.5.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.5.1):
+    - PromiseKit/CorePromise
   - SearchTextField (1.2.2)
   - Sourcery (0.15.0)
   - Squeaky (1.3.2)
 
 DEPENDENCIES:
+  - PromisedFuture
+  - PromiseKit
   - SearchTextField
   - Sourcery
   - Squeaky (from `https://github.com/ajself/squeaky-clean.git`)
@@ -18,10 +30,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ajself/squeaky-clean.git
 
 SPEC CHECKSUMS:
+  PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
+  PromiseKit: 162f56c89aae9989ffc14476a5f821af17c3f4ba
   SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
   Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
   Squeaky: daae1f5bf919b1940bbfb2591c6a1cce42d0b505
 
-PODFILE CHECKSUM: 7aeb0e7516ef6bfbad74874998f82b8729cca91c
+PODFILE CHECKSUM: 31eecae8de0a8ca4edf69e3973c46bd116847485
 
 COCOAPODS: 1.4.0

@@ -9,43 +9,20 @@
 import Foundation
 import Arrow
 
-struct FreeFormResourceUse: ArrowParsable, AutoCodable {
+struct FreeFormResourceUse: Codable {
     
-    var url = URL(string: "http://")!
-    var id: String = ""
+    var url: String // = URL(string: "http://")!
+    var id: String // = ""
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
     var _type = "resourcebooking"
-    var number: Int = 0
-    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
-    var start: String? // added by tom!!! // timestamp
-    var end: String? // added by tom!!! // timestamp
-    var actualstart: String? // timestamp
-    var actualend: String? // timestamp
-    var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
+//    var number: Int = 0
+//    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
+//    var start: String? // added by tom!!! // timestamp
+//    var end: String? // added by tom!!! // timestamp
+//    var actualstart: String? // timestamp
+//    var actualend: String? // timestamp
+//    var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     
-    init() { guard self._type == "resourcebooking" else {
-        return } }
-    
-    mutating func deserialize(_ json: JSON) {
-        _type <-- json["_type"]
-        
-        url <-- json["url"]
-        id <-- json["id"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        number <-- json["number"]
-        do {
-            resource = try Resource(resource: json["resource"]!)!
-        } catch {
-            print(error)
-        }
-        start <-- json["start"]
-        end <-- json["end"]
-        actualstart <-- json["actualstart"]
-        actualend <-- json["actualend"]
-        event <-- json["event"]
-    }
 }

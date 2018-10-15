@@ -9,10 +9,10 @@
 import Foundation
 import Arrow
 
-struct InstantiableResourceUse: ArrowParsable, AutoCodable {
+struct InstantiableResourceUse: Codable {
     
-    var url = URL(string: "http://")!
-    var id: String = ""
+    var url: String // = URL(string: "http://")!
+    var id: String // = ""
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
@@ -28,29 +28,29 @@ struct InstantiableResourceUse: ArrowParsable, AutoCodable {
     var resourceinstance: Base? // NOT Resourceinstance_Id
     
     
-    init() { guard self._type == "resourcebooking" else {
-        return } }
-    
-    mutating func deserialize(_ json: JSON) {
-        _type <-- json["_type"]
-        
-        url <-- json["url"]
-        id <-- json["id"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        number <-- json["number"]
-        do {
-            resource = try Resource(resource: json["resource"]!)!
-        } catch {
-            print(error)
-        }
-        start <-- json["start"]
-        end <-- json["end"]
-        actualstart <-- json["actualstart"]
-        actualend <-- json["actualend"]
-        event <-- json["event"]
-        role <-- json["role"]
-        resourceinstance <-- json["resourceinstance"]
-    }
+//    init() { guard self._type == "resourcebooking" else {
+//        return } }
+//
+//    mutating func deserialize(_ json: JSON) {
+//        _type <-- json["_type"]
+//
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        owner <-- json["owner"]
+//        owningteam <-- json["owningteam"]
+//        owninggroup <-- json["owninggroup"]
+//        number <-- json["number"]
+//        do {
+//            resource = try Resource(resource: json["resource"]!)!
+//        } catch {
+//            print(error)
+//        }
+//        start <-- json["start"]
+//        end <-- json["end"]
+//        actualstart <-- json["actualstart"]
+//        actualend <-- json["actualend"]
+//        event <-- json["event"]
+//        role <-- json["role"]
+//        resourceinstance <-- json["resourceinstance"]
+//    }
 }

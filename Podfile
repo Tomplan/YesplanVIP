@@ -18,6 +18,8 @@ pod 'SearchTextField'
 pod 'Squeaky', git: 'https://github.com/ajself/squeaky-clean.git'
 #pod 'Cartography'
 #pod 'PureLayout'
+pod 'PromisedFuture'
+pod 'PromiseKit'
 
 #  target 'YesplanVIPTests' do
 #    inherit! :search_paths

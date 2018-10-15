@@ -10,23 +10,23 @@ import Foundation
 import Arrow
 import then
 
-struct Usergroup: AutoCodable {
+struct Usergroup: Codable {
     
-    var url: String = ""
-    var id: String = ""
+    var url: String
+    var id: String
     var name: String?
 }
 
-extension Usergroup : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        url <-- json["url"]
-        id <-- json["id"]
-        name <-- json["name"]
-    }
-}
-
-extension Usergroup: RestResource {
-    static func restName() -> String { return "api/usergroup/" }
-    func restId() -> String { return "\(id)" }
-}
+//extension Usergroup : ArrowParsable {
+//    
+//    public mutating func deserialize(_ json: JSON) {
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        name <-- json["name"]
+//    }
+//}
+//
+//extension Usergroup: RestResource {
+//    static func restName() -> String { return "api/usergroup/" }
+//    func restId() -> String { return "\(id)" }
+//}

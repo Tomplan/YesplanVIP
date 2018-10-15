@@ -11,11 +11,64 @@
 //
 
 import UIKit
-import then
+//import then
+import PromiseKit
 
 class EventsTabWorker {
     
     var yesplan: Yesplan = Yesplan()
+    var events: Events = Events()
+    
+    
+
+    
+     func makePromiseChain() {
+        firstly {
+            getItems(.events, t: Events)
+//            }.then { avatarStringUrl in
+//                URLSession.shared.dataTask(.promise, with: URL(string: avatarStringUrl)!)
+//            }.compactMap { data, urlResponse in
+////                UIImage(data: data)
+//                print("data: ", data)
+            
+            }.done { items in
+//                self.imageView.image = image
+                for item in items.data {
+                    switch item {
+                    case  .instantiableResourceUse(let x):
+                        print("id: ", x.id)
+                    case  .instantiableResourceUseGroup(let x):
+                        print("id: ", x.id)
+                    case  .resourceSetUse(let x):
+                        print("id: ", x.id)
+                    case  .freeFormResourceUse(let x):
+                        print("id: ", x.id)
+                    case  .bulkResourceUse(let x):
+                        print("id: ", x.id)
+                    }
+                }
+            }.catch { error in
+                print(error)
+        }
+    }
+    
+    func getItems<T:Decodable>(_ router: APIRouter, t: T) -> Promise<T> {
+        return Promise { seal in
+            guard let url = URL(string: "https://dewerft.yesplan.be\(router.object)?api_key=C857C01360BB5777DABE5B7EE6594CD1") else { return }
+            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+                guard let data = data, error == nil else { return }
+                do {
+                    let decoder = JSONDecoder()
+                    let json = try decoder.decode(T.self, from: data)
+
+//                    print("json: ", json)
+                    seal.fulfill(json)
+                } catch let error {
+                    seal.reject(error)
+                }
+            }).resume()
+        }
+    }
     
     func printFetchedEvents(events: Events) -> Events {
         
@@ -56,50 +109,50 @@ class EventsTabWorker {
         return sortedDictByDate
     }
     
-    func getDates() -> Promise<String> {
-        
-        let now = Date()
-        let formatter = DateFormatter()
-        formatter.timeZone = TimeZone.current
-        formatter.dateFormat = "weekday, dd-MM-yyyy"
-        let selectedDateString = formatter.string(from: now)
-        let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: now)
-        let selectedEndDateString = formatter.string(from:selectedEndDate!)
-        let dates: String = "\(selectedDateString) TO \(selectedEndDateString)"
-        
-        return Promise(dates)
-    }
-    
-    func getProfiles() -> Promise<[String:String]> {
-        
-        var profileDict: [String:String] = [:]
-        let profiles: Profiles = Profiles()
-        yesplan.getAll(profiles).then { profiles in
-            for i in 0 ..< profiles.data.count {
-                profileDict[profiles.data[i].id] = profiles.data[i].color
-            }
-        }
-        return Promise(profileDict)
-    }
+//    func getDates() -> Promise<String> {
+//
+//        let now = Date()
+//        let formatter = DateFormatter()
+//        formatter.timeZone = TimeZone.current
+//        formatter.dateFormat = "weekday, dd-MM-yyyy"
+//        let selectedDateString = formatter.string(from: now)
+//        let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: now)
+//        let selectedEndDateString = formatter.string(from:selectedEndDate!)
+//        let dates: String = "\(selectedDateString) TO \(selectedEndDateString)"
+//
+//        return Promise(dates)
+//    }
+//
+//    func getProfiles() -> Promise<[String:String]> {
+//
+//        var profileDict: [String:String] = [:]
+//        let profiles: Profiles = Profiles()
+//        yesplan.getAll(profiles).then { profiles in
+//            for i in 0 ..< profiles.data.count {
+//                profileDict[profiles.data[i].id] = profiles.data[i].color
+//            }
+//        }
+//        return Promise(profileDict)
+//    }
     
     func printProfiles(profiles: Profiles) {
         print("profiles: \(profiles)")
     }
 
-    func getStatuses() -> Promise<[String:String]> {
-        
-        var statusDict: [String:String] = [:]
-        let statuses: Statuses = Statuses()
-        yesplan.getAll(statuses).then { statuses in
-            for i in 0 ..< statuses.data.count {
-                if let statusName = statuses.data[i].name,
-                    let statusBackgroundcolor = statuses.data[i].backgroundcolor {
-                    statusDict[statusName] = statusBackgroundcolor
-                    }
-                }
-            }
-        return Promise(statusDict)
-    }
+//    func getStatuses() -> Promise<[String:String]> {
+//
+//        var statusDict: [String:String] = [:]
+//        let statuses: Statuses = Statuses()
+//        yesplan.getAll(statuses).then { statuses in
+//            for i in 0 ..< statuses.data.count {
+//                if let statusName = statuses.data[i].name,
+//                    let statusBackgroundcolor = statuses.data[i].backgroundcolor {
+//                    statusDict[statusName] = statusBackgroundcolor
+//                    }
+//                }
+//            }
+//        return Promise(statusDict)
+//    }
     
     func printStatuses(statuses: Statuses) {
         print("statuses: \(statuses)") 

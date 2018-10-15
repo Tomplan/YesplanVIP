@@ -14,7 +14,7 @@ protocol AutoDecodable: Decodable {}
 protocol AutoEncodable: Encodable {}
 protocol AutoCodable: AutoDecodable, AutoEncodable {}
 
-struct Events: AutoCodable {
+struct Events: Codable {
     
     var pagination = Pagination()
     var data = [Event]()

@@ -25,7 +25,7 @@ protocol EventsTabDataStore
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
-    private var client = YpClient()
+//    private var client = YpClient()
 
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
@@ -46,7 +46,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-    
+    worker?.makePromiseChain()
 //    client.getGroups(from: Yp.groups) { result in
 //        switch result {
 //        case .success(let items):

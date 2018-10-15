@@ -10,9 +10,9 @@ import Foundation
 import Arrow
 import then
 
-struct Base: AutoCodable {
+struct Base: Codable {
     
-    var url: String = ""
+    var url: String 
     var id: String?
     var name: String?
     var _type: String?
@@ -26,12 +26,12 @@ struct Base: AutoCodable {
 //    }
 }
 
-extension Base : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        url <-- json["url"]
-        id <-- json["id"]
-        name <-- json["name"]
-        _type <-- json["_type"]
-    }
-}
+//extension Base : ArrowParsable {
+//    
+//    public mutating func deserialize(_ json: JSON) {
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        name <-- json["name"]
+//        _type <-- json["_type"]
+//    }
+//}

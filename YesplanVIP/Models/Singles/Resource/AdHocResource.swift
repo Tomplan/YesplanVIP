@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct AdHocResource: ArrowParsable, AutoCodable {
+struct AdHocResource: AutoCodable {
     var url: URL = URL(string: "http://")!
     var id: String = ""
     var resourcetype: String?
@@ -29,28 +29,28 @@ struct AdHocResource: ArrowParsable, AutoCodable {
     var productcode: String?
     var serialnumber: String?
     
-    init() { guard self._type == "adhocresource" else {
-        return } }
-    
-    mutating func deserialize(_ json: JSON) {
-        
-        url <-- json["url"]
-        id <-- json["id"]
-        resourcetype <-- json["resourcetype"]
-        name <-- json["name"]
-        group <-- json["group"]
-        roles <-- json["roles"]
-        description <-- json["description"]
-        external <-- json["external"]
-        rented <-- json["rented"]
-        costmodels <-- json["costmodels"]
-        defaultrole <-- json["defaultrole"]
-        amount <-- json["amount"]
-        type <-- json["type"]
-        _type <-- json["_type"]
-        active <-- json["active"]
-        date <-- json["date"]
-        productcode <-- json["productcode"]
-        serialnumber <-- json["serialnumber"]
-    }
+//    init() { guard self._type == "adhocresource" else {
+//        return } }
+//    
+//    mutating func deserialize(_ json: JSON) {
+//        
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        resourcetype <-- json["resourcetype"]
+//        name <-- json["name"]
+//        group <-- json["group"]
+//        roles <-- json["roles"]
+//        description <-- json["description"]
+//        external <-- json["external"]
+//        rented <-- json["rented"]
+//        costmodels <-- json["costmodels"]
+//        defaultrole <-- json["defaultrole"]
+//        amount <-- json["amount"]
+//        type <-- json["type"]
+//        _type <-- json["_type"]
+//        active <-- json["active"]
+//        date <-- json["date"]
+//        productcode <-- json["productcode"]
+//        serialnumber <-- json["serialnumber"]
+//    }
 }
