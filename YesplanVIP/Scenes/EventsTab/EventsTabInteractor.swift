@@ -46,7 +46,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-    worker?.makePromiseChain()
+//    worker?.makePromiseChain()
 //    client.getGroups(from: Yp.groups) { result in
 //        switch result {
 //        case .success(let items):
@@ -69,57 +69,57 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 //        }
     
     
-//    yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
-//        .then((worker?.groupEventsByStartdate)!)
-//        .then((worker?.sortEventsInEachGroupByTime)!)
-//        .then((worker?.sortDictByDate)!)
-//        .then { result in
-//            self.eventsArray = result
-//        }
-//    
-//        .then(yesplan.getAll(fetchedStatuses))
-//        .then { result in
-//            self.statusesArray = result.data
-//        }
-//        
-//        .then(yesplan.getAll(fetchedProfiles))
-//        .then { result in
-//            self.profilesArray = result.data
-//        }
-//        .onError { e in
-//            if let wsError = e as? WSError {
-//                print(wsError.status)
-//                print(wsError.status.rawValue) // RawValue for Int status
-//                print(wsError.localizedDescription) // RawValue for Int status
-//
-//            }
-////        .onError { e in
-//            // An error occured :/
-//            print(e)
-//            self.error = "\(e)"
-//            let response = EventsTab.Something.Response(
-//                events: self.eventsArray,
-//                statuses: self.statusesArray,
-//                profiles: self.profilesArray,
-//                error: self.error
-//            )
-//            self.presenter?.presentEvents(response: response)
-//
-//        }
-//
-//        .finally {
-//     
-//        let response = EventsTab.Something.Response(
-//            events: self.eventsArray,
-//            statuses: self.statusesArray,
-//            profiles: self.profilesArray,
-//            error: self.error
-//        )
-//        self.presenter?.presentEvents(response: response)
-//    }
+    yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
+        .then((worker?.groupEventsByStartdate)!)
+        .then((worker?.sortEventsInEachGroupByTime)!)
+        .then((worker?.sortDictByDate)!)
+        .then { result in
+            self.eventsArray = result
+        }
+    
+        .then(yesplan.getAll(fetchedStatuses))
+        .then { result in
+            self.statusesArray = result.data
+        }
+        
+        .then(yesplan.getAll(fetchedProfiles))
+        .then { result in
+            self.profilesArray = result.data
+        }
+        .onError { e in
+            if let wsError = e as? WSError {
+                print(wsError.status)
+                print(wsError.status.rawValue) // RawValue for Int status
+                print(wsError.localizedDescription) // RawValue for Int status
 
-//                print("pagination: ", s.fetchedEvents.pagination )
-//                s.yesplan.getMore(s.fetchedEvents, paginationNext: s.fetchedEvents.pagination.next!).then { more in
+            }
+//        .onError { e in
+            // An error occured :/
+            print(e)
+            self.error = "\(e)"
+            let response = EventsTab.Something.Response(
+                events: self.eventsArray,
+                statuses: self.statusesArray,
+                profiles: self.profilesArray,
+                error: self.error
+            )
+            self.presenter?.presentEvents(response: response)
+
+        }
+
+        .finally {
+     
+        let response = EventsTab.Something.Response(
+            events: self.eventsArray,
+            statuses: self.statusesArray,
+            profiles: self.profilesArray,
+            error: self.error
+        )
+        self.presenter?.presentEvents(response: response)
+    }
+
+//                print("pagination: ", self.fetchedEvents.pagination )
+//                self.yesplan.getMore(self.fetchedEvents, paginationNext: self.fetchedEvents.pagination.next!).then { more in
 //                    print("more", more.pagination)
 //                }
   }

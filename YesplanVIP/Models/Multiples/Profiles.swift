@@ -14,14 +14,14 @@ struct Profiles: Codable {
     var pagination = Pagination()
     var data = [Profile]()
 }
-//
-//extension Profiles : ArrowParsable {
-//    
-//    public mutating func deserialize(_ json: JSON) {
-//        pagination <-- json["pagination"]
-//        data <-- json["data"]
-//    }
-//}
+
+extension Profiles : ArrowParsable {
+    
+    public mutating func deserialize(_ json: JSON) {
+        pagination <-- json["pagination"]
+        data <-- json["data"]
+    }
+}
 
 extension Profiles: RestResource {
     static func restName() -> String { return "api/profiles/" }

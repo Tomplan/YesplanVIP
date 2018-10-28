@@ -20,19 +20,19 @@ struct Status: AutoCodable {
     var textcolor: String = ""
     var statustypes: [String]? = [""]
 }
-//
-//extension Status : ArrowParsable {
-//    
-//    public mutating func deserialize(_ json: JSON) {
-//        url <-- json["url"]
-//        _type <-- json["_type"]
-//        name <-- json["name"]
-//        backgroundcolor <-- json["backgroundcolor"]
-//        textcolor <-- json["textcolor"]
-//        statustypes <-- json["statustypes"]
-//
-//    }
-//}
+
+extension Status : ArrowParsable {
+    
+    public mutating func deserialize(_ json: JSON) {
+        url <-- json["url"]
+        _type <-- json["_type"]
+        name <-- json["name"]
+        backgroundcolor <-- json["backgroundcolor"]
+        textcolor <-- json["textcolor"]
+        statustypes <-- json["statustypes"]
+
+    }
+}
 
 extension Status: RestResource {
     static func restName() -> String { return "api/status/" }

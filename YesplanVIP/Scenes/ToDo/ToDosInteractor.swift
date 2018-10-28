@@ -40,21 +40,21 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     {
         worker = ToDosWorker()
 
-//        yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
-//            .then((worker?.groupToDosByDue)!)
-//            .then((worker?.sortToDosInEachGroupByDue)!)
-//            .then((worker?.sortDictByDate)!)
-//            .then { result in
-//                self.toDosArray = result
-//            }
-//            .onError((worker?.showErrorPopup)!)
-//            
-//            .finally {
-//                
-//                let response = ToDosTab.Something.Response(
-//                    toDos: self.toDosArray
-//                )
-//                self.presenter?.presentSomething(response: response)
-//        }
+        yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
+            .then((worker?.groupToDosByDue)!)
+            .then((worker?.sortToDosInEachGroupByDue)!)
+            .then((worker?.sortDictByDate)!)
+            .then { result in
+                self.toDosArray = result
+            }
+            .onError((worker?.showErrorPopup)!)
+            
+            .finally {
+                
+                let response = ToDosTab.Something.Response(
+                    toDos: self.toDosArray
+                )
+                self.presenter?.presentSomething(response: response)
+        }
     }
 }

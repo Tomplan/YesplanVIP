@@ -41,37 +41,37 @@ struct Event: Codable {
 
 }
 
-//extension Event: ArrowParsable {
-//    
-//    public mutating func deserialize(_ json: JSON) {
-//
-//        _type <-- json["_type"]
-//
-//        id <-- json["id"]
-//        url <-- json["url"]
-//        owner <-- json["owner"]
-//        owningteam <-- json["owningteam"]
-//        owninggroup <-- json["owninggroup"]
-//        name <-- json["name"]
-//        group <-- json["group"]
-//        starttime <-- json["starttime"]
-//        endtime <-- json["endtime"]
-//        startdate <-- json["startdate"]
-//        enddate <-- json["enddate"]
-//        profile <-- json["profile"]
-//        status <-- json["status"]
-//        locations <-- json["locations"]
-//        production <-- json["production"]
-//        isproduction <-- json["isproduction"]
-//        attributes <-- json["attributes"]
-//        defaultscheduledescription <-- json["defaultscheduledescription"]
-//        defaultschedulestarttime <-- json["defaultschedulestarttime"]
-//        defaultscheduleendtime <-- json["defaultscheduleendtime"]
-//        defaultschedulestart <-- json["defaultschedulestart"]
-//        defaultscheduleend <-- json["defaultscheduleend"]
-//        
-//    }
-//}
+extension Event: ArrowParsable {
+    
+    public mutating func deserialize(_ json: JSON) {
+
+        _type <-- json["_type"]
+
+        id <-- json["id"]
+        url <-- json["url"]
+        owner <-- json["owner"]
+        owningteam <-- json["owningteam"]
+        owninggroup <-- json["owninggroup"]
+        name <-- json["name"]
+        group <-- json["group"]
+        starttime <-- json["starttime"]
+        endtime <-- json["endtime"]
+        startdate <-- json["startdate"]
+        enddate <-- json["enddate"]
+        profile <-- json["profile"]
+        status <-- json["status"]
+        locations <-- json["locations"]
+        production <-- json["production"]
+        isproduction <-- json["isproduction"]
+        attributes <-- json["attributes"]
+        defaultscheduledescription <-- json["defaultscheduledescription"]
+        defaultschedulestarttime <-- json["defaultschedulestarttime"]
+        defaultscheduleendtime <-- json["defaultscheduleendtime"]
+        defaultschedulestart <-- json["defaultschedulestart"]
+        defaultscheduleend <-- json["defaultscheduleend"]
+        
+    }
+}
 
 
 extension Event: RestResource {

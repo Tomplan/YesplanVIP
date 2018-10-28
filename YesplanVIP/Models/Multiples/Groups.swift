@@ -14,14 +14,14 @@ struct Groups: Codable {
     var pagination = Pagination()
     var data = [Group]()
 }
-//
-//extension Groups : ArrowParsable {
-//    
-//    public mutating func deserialize(_ json: JSON) {
-//        pagination <-- json["pagination"]
-//        data <-- json["data"]
-//    }
-//}
+
+extension Groups : ArrowParsable {
+    
+    public mutating func deserialize(_ json: JSON) {
+        pagination <-- json["pagination"]
+        data <-- json["data"]
+    }
+}
 
 extension Groups: RestResource {
     static func restName() -> String { return "api/groups/" }

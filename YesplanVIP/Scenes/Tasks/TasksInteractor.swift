@@ -43,33 +43,33 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   {
     worker = TasksWorker()
     
-//    yesplan.getAll(fetchedTasks, query: "task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
-//        .then((worker?.groupTasksByDue)!)
-//        .then((worker?.sortTasksInEachGroupByDue)!)
-//        .then((worker?.sortDictByDate)!)
-//        .then { result in
-//            print(result)
-//            self.tasksArray = result
-//        }
-//
-//        .onError { e in
-//            // An error occured :/
-//            print(e)
-//            self.error = "\(e)"
-//            let response = TasksTab.Something.Response(
-//                tasks: self.tasksArray
-//                ,error: self.error
-//            )
-//            self.presenter?.presentSomething(response: response)
-//        }
-//        .finally {
-//
-//        let response = TasksTab.Something.Response(
-//            tasks: self.tasksArray
-////            ,statuses: self.statusesArray
-//            ,error: nil
-//        )
-//        self.presenter?.presentSomething(response: response)
-//    }
+    yesplan.getAll(fetchedTasks, query: "task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
+        .then((worker?.groupTasksByDue)!)
+        .then((worker?.sortTasksInEachGroupByDue)!)
+        .then((worker?.sortDictByDate)!)
+        .then { result in
+            print(result)
+            self.tasksArray = result
+        }
+
+        .onError { e in
+            // An error occured :/
+            print(e)
+            self.error = "\(e)"
+            let response = TasksTab.Something.Response(
+                tasks: self.tasksArray
+                ,error: self.error
+            )
+            self.presenter?.presentSomething(response: response)
+        }
+        .finally {
+
+        let response = TasksTab.Something.Response(
+            tasks: self.tasksArray
+//            ,statuses: self.statusesArray
+            ,error: nil
+        )
+        self.presenter?.presentSomething(response: response)
+    }
   }
 }

@@ -19,67 +19,67 @@ class EventsTabWorker {
     var yesplan: Yesplan = Yesplan()
     var events: Events = Events()
     
-     func makePromiseChain() {
-        firstly {
-            getItems(Resourcebookings())
-//            }.then { items in
-//                print("items: ", items)
-////                URLSession.shared.dataTask(.promise, with: URL(string: avatarStringUrl)!)
-////            }.compactMap { data, urlResponse in
-//////                UIImage(data: data)
-////                print("data: ", data)
-//            
-            }.done { items in
-//                self.imageView.image = image
-                print("pagination: ", items.pagination)
-                
-                for item in items.data {
-//                    print("item", item)
-                
-//                    dump(item.profiles)
-                    switch item {
-                    case  .instantiableResourceUse(let x):
-                        print("type: instantiableResourceUse")
-                        print("type: ", x._type)
-                        print("url: ", x.url)
-                    case  .instantiableResourceUseGroup(let x):
-                        print("type: instantiableResourceUseGroup")
-                        print("type: ", x._type)
-                        print("url: ", x.url)
-                    case  .resourceSetUse(let x):
-                        print("type: resourceSetUse")
-                        print("type: ", x._type)
-                        print("url: ", x.url)
-                    case  .freeFormResourceUse(let x):
-                        print("type: freeFormResourceUse")
-                        print("type: ", x._type)
-                        print("url: ", x.url)
-                    case  .bulkResourceUse(let x):
-                        print("type: bulkResourceUse")
-                        print("type: ", x._type)
-                        print("url: ", x.url)
-                    }
-                }
-            }.catch { error in
-                print(error)
-        }
-    }
-    
-    func getItems<T:Decodable>(_ t: T) -> Promise<T> {
-        return Promise<T> { seal in
-            guard let url = URL(string: "https://dewerft.yesplan.be/api/resourcebookings?api_key=C857C01360BB5777DABE5B7EE6594CD1") else { return }
-            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-                guard let data = data, error == nil else { return }
-                do {
-                    let decoder = JSONDecoder()
-                    let json = try decoder.decode(T.self, from: data)
-                    seal.fulfill(json)
-                } catch let error {
-                    seal.reject(error)
-                }
-            }).resume()
-        }
-    }
+//     func makePromiseChain() {
+//        firstly {
+//            getItems(Resourcebookings())
+////            }.then { items in
+////                print("items: ", items)
+//////                URLSession.shared.dataTask(.promise, with: URL(string: avatarStringUrl)!)
+//////            }.compactMap { data, urlResponse in
+////////                UIImage(data: data)
+//////                print("data: ", data)
+////
+//            }.done { items in
+////                self.imageView.image = image
+//                print("pagination: ", items.pagination)
+//
+//                for item in items.data {
+////                    print("item", item)
+//
+////                    dump(item.profiles)
+//                    switch item {
+//                    case  .instantiableResourceUse(let x):
+//                        print("type: instantiableResourceUse")
+//                        print("type: ", x._type)
+//                        print("url: ", x.url)
+//                    case  .instantiableResourceUseGroup(let x):
+//                        print("type: instantiableResourceUseGroup")
+//                        print("type: ", x._type)
+//                        print("url: ", x.url)
+//                    case  .resourceSetUse(let x):
+//                        print("type: resourceSetUse")
+//                        print("type: ", x._type)
+//                        print("url: ", x.url)
+//                    case  .freeFormResourceUse(let x):
+//                        print("type: freeFormResourceUse")
+//                        print("type: ", x._type)
+//                        print("url: ", x.url)
+//                    case  .bulkResourceUse(let x):
+//                        print("type: bulkResourceUse")
+//                        print("type: ", x._type)
+//                        print("url: ", x.url)
+//                    }
+//                }
+//            }.catch { error in
+//                print(error)
+//        }
+//    }
+//
+//    func getItems<T:Decodable>(_ t: T) -> Promise<T> {
+//        return Promise<T> { seal in
+//            guard let url = URL(string: "https://dewerft.yesplan.be/api/resourcebookings?api_key=C857C01360BB5777DABE5B7EE6594CD1") else { return }
+//            URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+//                guard let data = data, error == nil else { return }
+//                do {
+//                    let decoder = JSONDecoder()
+//                    let json = try decoder.decode(T.self, from: data)
+//                    seal.fulfill(json)
+//                } catch let error {
+//                    seal.reject(error)
+//                }
+//            }).resume()
+//        }
+//    }
     
     func printFetchedEvents(events: Events) -> Events {
         

@@ -17,16 +17,16 @@ struct User: Codable {
     var name: String?
     var email: String?
 }
-//
-//extension User : ArrowParsable {
-//    
-//    public mutating func deserialize(_ json: JSON) {
-//        url <-- json["url"]
-//        id <-- json["id"]
-//        name <-- json["name"]
-//        email <-- json["email"]
-//    }
-//}
+
+extension User : ArrowParsable {
+    
+    public mutating func deserialize(_ json: JSON) {
+        url <-- json["url"]
+        id <-- json["id"]
+        name <-- json["name"]
+        email <-- json["email"]
+    }
+}
 
 extension User: RestResource {
     static func restName() -> String { return "api/user/" }
