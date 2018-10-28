@@ -11,36 +11,43 @@ import Foundation
 import Arrow
 import then
 
-enum Children: AutoCodable {
+enum Children {
 
     case event(Event)
     case group(Group)
+}
 
-//    init(children: JSON) {
-//        var value = Group()
-//        value.deserialize(children)
-////        print(value)
-//        if value._type == "group" {
-//            self = .group(value)
-//
-//        } else {
-//            var e = Event()
-//            e.deserialize(children)
-//            self = .event(e)
-//
-//        }
-//    }
+
+extension Children {
     
-//    init(encode: Children) {
-//            switch encode {
-//            case .event(let event):
-//                print(event.url)
-//            case .group(let group):
-//                print("switch group")
-//                print(group.url)
-//        }
-//    }
+    private enum CodingKeys: String, CodingKey {
+        case event
+        case group
+    }
+}
 
+extension Children: Encodable {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .event(let child): try container.encode(child)
+        case .group(let child): try container.encode(child)
+        }
+    }
+}
+
+extension Children: Decodable {
+    init(from decoder: Decoder) throws {
+        
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(Event.self) {
+            self = .event(x)
+        } else if let x = try? container.decode(Group.self) {
+            self = .group(x)
+        } else {
+            throw Failure.NotImplemented
+        }
+    }
 }
 
 

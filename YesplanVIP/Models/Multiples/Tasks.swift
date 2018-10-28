@@ -10,18 +10,18 @@ import Foundation
 import Arrow
 import then
 
-struct Tasks: AutoCodable {
+struct Tasks: Codable {
     var pagination = Pagination()
     var data = [Task]()
 }
 
-extension Tasks : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        pagination <-- json["pagination"]
-        data <-- json["data"]
-    }
-}
+//extension Tasks : ArrowParsable {
+//    
+//    public mutating func deserialize(_ json: JSON) {
+//        pagination <-- json["pagination"]
+//        data <-- json["data"]
+//    }
+//}
 
 extension Tasks: RestResource {
     static func restName() -> String { return "api/tasks/" }

@@ -11,26 +11,28 @@ import Arrow
 
 struct InstantiableResourceUse: Codable {
     
-    var url: String // = URL(string: "http://")!
+    var url: String // = ""
     var id: String // = ""
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type = "resourcebooking"
-    var number: Int = 0
-    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
+    let _type = "resourcebooking"
+    var number: Int? // = 0
+//    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
     var start: String? // added by tom!!! // timestamp
     var end: String? // added by tom!!! // timestamp
     var actualstart: String? // timestamp
     var actualend: String? // timestamp
     var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     var role: String?
-    var resourceinstance: Base? // NOT Resourceinstance_Id
+    var resourceinstance: Base // NOT Resourceinstance_Id
     
     
 //    init() { guard self._type == "resourcebooking" else {
 //        return } }
+}
 //
+//extension InstantiableResourceUse: ArrowParsable {
 //    mutating func deserialize(_ json: JSON) {
 //        _type <-- json["_type"]
 //
@@ -40,11 +42,12 @@ struct InstantiableResourceUse: Codable {
 //        owningteam <-- json["owningteam"]
 //        owninggroup <-- json["owninggroup"]
 //        number <-- json["number"]
-//        do {
-//            resource = try Resource(resource: json["resource"]!)!
-//        } catch {
-//            print(error)
-//        }
+//        resource <-- json["resource"]
+////        do {
+////            resource = try Resource(resource: json["resource"]!)!
+////        } catch {
+////            print(error)
+////        }
 //        start <-- json["start"]
 //        end <-- json["end"]
 //        actualstart <-- json["actualstart"]
@@ -53,4 +56,4 @@ struct InstantiableResourceUse: Codable {
 //        role <-- json["role"]
 //        resourceinstance <-- json["resourceinstance"]
 //    }
-}
+//}

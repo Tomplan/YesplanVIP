@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct AdHocResource: AutoCodable {
+struct AdHocResource: Codable {
     var url: URL = URL(string: "http://")!
     var id: String = ""
     var resourcetype: String?
@@ -29,11 +29,12 @@ struct AdHocResource: AutoCodable {
     var productcode: String?
     var serialnumber: String?
     
-//    init() { guard self._type == "adhocresource" else {
-//        return } }
-//    
+    init() { guard self._type == "adhocresource" else {
+        return } }
+}
+//
+//extension AdHocResource: ArrowParsable {
 //    mutating func deserialize(_ json: JSON) {
-//        
 //        url <-- json["url"]
 //        id <-- json["id"]
 //        resourcetype <-- json["resourcetype"]
@@ -53,4 +54,4 @@ struct AdHocResource: AutoCodable {
 //        productcode <-- json["productcode"]
 //        serialnumber <-- json["serialnumber"]
 //    }
-}
+//}

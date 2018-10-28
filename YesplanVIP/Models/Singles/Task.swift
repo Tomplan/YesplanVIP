@@ -32,28 +32,28 @@ struct Task: AutoCodable {
 
 }
 
-
-extension Task: ArrowParsable {
-    public mutating func deserialize(_ json: JSON) {
-        
-        url <-- json["url"]
-        id <-- json["id"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        status <-- json["status"]
-        name <-- json["name"]
-        team <-- json["team"]
-        cost <-- json["cost"]
-        due <-- json["due"]
-        start <-- json["start"]
-        description <-- json["description"]
-        event <-- json["event"]
-        assignedby <-- json["assignedby"]
-        assignedto <-- json["assignedto"]
-        duration <-- json["duration"]
-    }
-}
+//
+//extension Task: ArrowParsable {
+//    public mutating func deserialize(_ json: JSON) {
+//        
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        owner <-- json["owner"]
+//        owningteam <-- json["owningteam"]
+//        owninggroup <-- json["owninggroup"]
+//        status <-- json["status"]
+//        name <-- json["name"]
+//        team <-- json["team"]
+//        cost <-- json["cost"]
+//        due <-- json["due"]
+//        start <-- json["start"]
+//        description <-- json["description"]
+//        event <-- json["event"]
+//        assignedby <-- json["assignedby"]
+//        assignedto <-- json["assignedto"]
+//        duration <-- json["duration"]
+//    }
+//}
 
 extension Task: RestResource {
     static func restName() -> String { return "api/task/" }

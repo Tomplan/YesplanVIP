@@ -12,7 +12,7 @@ import then
 
 struct Base: Codable {
     
-    var url: String 
+    var url: String = ""
     var id: String?
     var name: String?
     var _type: String?
@@ -25,7 +25,7 @@ struct Base: Codable {
 ////        self = .event(b)
 //    }
 }
-
+//
 //extension Base : ArrowParsable {
 //    
 //    public mutating func deserialize(_ json: JSON) {
@@ -35,3 +35,11 @@ struct Base: Codable {
 //        _type <-- json["_type"]
 //    }
 //}
+
+struct Base2: Codable {
+    
+    var url: String?
+    var id: String?
+    var name: String?
+    var _type: String?
+}

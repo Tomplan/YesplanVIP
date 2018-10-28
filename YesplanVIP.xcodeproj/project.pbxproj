@@ -10,9 +10,9 @@
 		3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */; };
 		3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */; };
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
+		3C0E97E2217CF7D3008895DD /* URLSesssion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */; };
 		3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52C215B9751009523AC /* TasksTabViewCell.swift */; };
 		3C18E52F215B97C0009523AC /* TasksTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52E215B97C0009523AC /* TasksTabViewHeader.swift */; };
-		3C1F1877216BDDE000FD6457 /* AutoCodable.swifttemplate in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */; };
 		3C230AA821558BA5004477A3 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C230AA721558BA5004477A3 /* Statuses.swift */; };
 		3C24777B216A95E30010EAFA /* ResourceSchedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24777A216A95E30010EAFA /* ResourceSchedules.swift */; };
 		3C24777D216A96DF0010EAFA /* ResourceSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24777C216A96DF0010EAFA /* ResourceSchedule.swift */; };
@@ -63,10 +63,20 @@
 		3C7337B321504F310045F9E1 /* Arrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949E212D756A00CE518C /* Arrow.framework */; };
 		3C7337B421504F310045F9E1 /* then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949C212D756000CE518C /* then.framework */; };
 		3C7337B521504F310045F9E1 /* ws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949A212D755500CE518C /* ws.framework */; };
+		3C7B4EFC2179E9AA000D7FDB /* ResourcebookingChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFB2179E9AA000D7FDB /* ResourcebookingChildren.swift */; };
+		3C7B4EFE217A0648000D7FDB /* BulkResourceUseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFD217A0648000D7FDB /* BulkResourceUseResource.swift */; };
+		3C7B4F00217A0686000D7FDB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFF217A0686000D7FDB /* Location.swift */; };
+		3C7B4F02217A0754000D7FDB /* Resourceplaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F01217A0754000D7FDB /* Resourceplaceholder.swift */; };
+		3C7B4F04217A20C0000D7FDB /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F03217A20C0000D7FDB /* Formula.swift */; };
+		3C7B4F06217A210E000D7FDB /* DayPartSetPricingFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F05217A210E000D7FDB /* DayPartSetPricingFormula.swift */; };
+		3C7B4F08217A2143000D7FDB /* DayPartPricingFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F07217A2143000D7FDB /* DayPartPricingFormula.swift */; };
+		3C7B4F0A217A2194000D7FDB /* UnitPricingFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F09217A2194000D7FDB /* UnitPricingFormula.swift */; };
+		3C7B4F0C217A21D1000D7FDB /* FixedPricingFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F0B217A21D1000D7FDB /* FixedPricingFormula.swift */; };
+		3C7B4F0E217A220D000D7FDB /* DiscountFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F0D217A220D000D7FDB /* DiscountFormula.swift */; };
+		3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F0F217A2642000D7FDB /* Failure.swift */; };
+		3C7B4F12217A4155000D7FDB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F11217A4155000D7FDB /* Result.swift */; };
 		3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF52157C1DB00428BF9 /* Profile.swift */; };
 		3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF72157C2F700428BF9 /* Profiles.swift */; };
-		3C87F345216D449C008120FA /* AutoCodable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F344216D449C008120FA /* AutoCodable.generated.swift */; };
-		3C87F347216E1EE2008120FA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F346216E1EE2008120FA /* Result.swift */; };
 		3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */; };
 		3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F34B216E1F98008120FA /* Endpoint.swift */; };
 		3C87F350216E2423008120FA /* Yp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F34F216E2423008120FA /* Yp.swift */; };
@@ -75,8 +85,6 @@
 		3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */; };
 		3C87F358216E3FB4008120FA /* YpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F357216E3FB4008120FA /* YpClient.swift */; };
 		3C9A5B6A2167E2CD00A5D35B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5B692167E2CD00A5D35B /* Settings.bundle */; };
-		3CAC329E216BEEB900646372 /* Basic.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 3CAC329D216BEEB900646372 /* Basic.stencil */; };
-		3CAC32A4216BFB2C00646372 /* AutoCodable.swifttemplate in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */; };
 		3CB468C121479A330088A8B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB468C021479A330088A8B8 /* LoginView.swift */; };
 		3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */; };
 		3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E692140794800B6E458 /* MainTabBarRouter.swift */; };
@@ -84,6 +92,8 @@
 		3CB59E72214079AD00B6E458 /* MainTabBarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E71214079AD00B6E458 /* MainTabBarModels.swift */; };
 		3CB59E77214079D300B6E458 /* MainTabBarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E76214079D300B6E458 /* MainTabBarWorker.swift */; };
 		3CB59E7B214079E000B6E458 /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E7A214079E000B6E458 /* MainTabBarPresenter.swift */; };
+		3CBBF9D52175E7AE000FE808 /* AutoCodable.swifttemplate in Resources */ = {isa = PBXBuildFile; fileRef = 3CBBF9D42175E7AE000FE808 /* AutoCodable.swifttemplate */; };
+		3CBBF9D721766F01000FE808 /* ResourcebookingSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBBF9D621766F01000FE808 /* ResourcebookingSchedule.swift */; };
 		3CBE94A3212D75C700CE518C /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBE94A2212D75C700CE518C /* Api.swift */; };
 		3CC3774321688D870020236D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774221688D870020236D /* AppConfig.swift */; };
 		3CC3774521688E720020236D /* Notifications+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC3774421688E720020236D /* Notifications+Util.swift */; };
@@ -189,9 +199,9 @@
 		3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSesssion+Extensions.swift"; sourceTree = "<group>"; };
 		3C18E52C215B9751009523AC /* TasksTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewCell.swift; sourceTree = "<group>"; };
 		3C18E52E215B97C0009523AC /* TasksTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewHeader.swift; sourceTree = "<group>"; };
-		3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoCodable.swifttemplate; sourceTree = "<group>"; };
 		3C230AA721558BA5004477A3 /* Statuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
 		3C24777A216A95E30010EAFA /* ResourceSchedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSchedules.swift; sourceTree = "<group>"; };
 		3C24777C216A96DF0010EAFA /* ResourceSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSchedule.swift; sourceTree = "<group>"; };
@@ -236,10 +246,20 @@
 		3C6AC89F212703040010DFA5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C70E1802154EAC1009F640D /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		3C7337A82150427C0045F9E1 /* EventsTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3C7B4EFB2179E9AA000D7FDB /* ResourcebookingChildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcebookingChildren.swift; sourceTree = "<group>"; };
+		3C7B4EFD217A0648000D7FDB /* BulkResourceUseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkResourceUseResource.swift; sourceTree = "<group>"; };
+		3C7B4EFF217A0686000D7FDB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		3C7B4F01217A0754000D7FDB /* Resourceplaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourceplaceholder.swift; sourceTree = "<group>"; };
+		3C7B4F03217A20C0000D7FDB /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		3C7B4F05217A210E000D7FDB /* DayPartSetPricingFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPartSetPricingFormula.swift; sourceTree = "<group>"; };
+		3C7B4F07217A2143000D7FDB /* DayPartPricingFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPartPricingFormula.swift; sourceTree = "<group>"; };
+		3C7B4F09217A2194000D7FDB /* UnitPricingFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPricingFormula.swift; sourceTree = "<group>"; };
+		3C7B4F0B217A21D1000D7FDB /* FixedPricingFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedPricingFormula.swift; sourceTree = "<group>"; };
+		3C7B4F0D217A220D000D7FDB /* DiscountFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountFormula.swift; sourceTree = "<group>"; };
+		3C7B4F0F217A2642000D7FDB /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		3C7B4F11217A4155000D7FDB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3C862BF52157C1DB00428BF9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3C862BF72157C2F700428BF9 /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
-		3C87F344216D449C008120FA /* AutoCodable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCodable.generated.swift; sourceTree = "<group>"; };
-		3C87F346216E1EE2008120FA /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Protocol.swift"; sourceTree = "<group>"; };
 		3C87F34B216E1F98008120FA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		3C87F34F216E2423008120FA /* Yp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yp.swift; sourceTree = "<group>"; };
@@ -248,7 +268,6 @@
 		3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Extensions.swift"; sourceTree = "<group>"; };
 		3C87F357216E3FB4008120FA /* YpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YpClient.swift; sourceTree = "<group>"; };
 		3C9A5B692167E2CD00A5D35B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		3CAC329D216BEEB900646372 /* Basic.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Basic.stencil; sourceTree = "<group>"; };
 		3CB468C021479A330088A8B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		3CB59E692140794800B6E458 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
@@ -256,6 +275,8 @@
 		3CB59E71214079AD00B6E458 /* MainTabBarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarModels.swift; sourceTree = "<group>"; };
 		3CB59E76214079D300B6E458 /* MainTabBarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarWorker.swift; sourceTree = "<group>"; };
 		3CB59E7A214079E000B6E458 /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPresenter.swift; sourceTree = "<group>"; };
+		3CBBF9D42175E7AE000FE808 /* AutoCodable.swifttemplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoCodable.swifttemplate; sourceTree = "<group>"; };
+		3CBBF9D621766F01000FE808 /* ResourcebookingSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcebookingSchedule.swift; sourceTree = "<group>"; };
 		3CBE949A212D755500CE518C /* ws.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ws.framework; path = Carthage/Build/iOS/ws.framework; sourceTree = "<group>"; };
 		3CBE949C212D756000CE518C /* then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = then.framework; path = Carthage/Build/iOS/then.framework; sourceTree = "<group>"; };
 		3CBE949E212D756A00CE518C /* Arrow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arrow.framework; path = Carthage/Build/iOS/Arrow.framework; sourceTree = "<group>"; };
@@ -395,23 +416,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3C1F1872216BD03900FD6457 /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				3CAC329D216BEEB900646372 /* Basic.stencil */,
-				3C1F1876216BDDE000FD6457 /* AutoCodable.swifttemplate */,
-			);
-			path = Templates;
-			sourceTree = "<group>";
-		};
-		3C1F1875216BDC8200FD6457 /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				3C87F344216D449C008120FA /* AutoCodable.generated.swift */,
-			);
-			path = Generated;
-			sourceTree = "<group>";
-		};
 		3C24777E216A99050010EAFA /* ResourceSchedules */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,16 +505,27 @@
 		3C40AF35212D95760077DDC5 /* Singles */ = {
 			isa = PBXGroup;
 			children = (
-				3C40AEDB212D8C1F0077DDC5 /* Pagination.swift */,
-				3C40AEDF212D8C2F0077DDC5 /* Event.swift */,
-				3CF142E6212DE2AE001FC532 /* Group.swift */,
+				3C40AF36212DAE8E0077DDC5 /* Base.swift */,
 				3CF142EA212DE32A001FC532 /* Children.swift */,
+				3CC377582169E59C0020236D /* Costmodel.swift */,
+				3C7B4F0D217A220D000D7FDB /* DiscountFormula.swift */,
+				3C7B4F0F217A2642000D7FDB /* Failure.swift */,
+				3C7B4F03217A20C0000D7FDB /* Formula.swift */,
+				3C7B4F05217A210E000D7FDB /* DayPartSetPricingFormula.swift */,
+				3C7B4F07217A2143000D7FDB /* DayPartPricingFormula.swift */,
+				3C40AEDF212D8C2F0077DDC5 /* Event.swift */,
+				3C7B4F0B217A21D1000D7FDB /* FixedPricingFormula.swift */,
+				3CF142E6212DE2AE001FC532 /* Group.swift */,
+				3C7B4EFF217A0686000D7FDB /* Location.swift */,
+				3C40AEDB212D8C1F0077DDC5 /* Pagination.swift */,
+				3C862BF52157C1DB00428BF9 /* Profile.swift */,
+				3C7B4F01217A0754000D7FDB /* Resourceplaceholder.swift */,
+				3C7B4F11217A4155000D7FDB /* Result.swift */,
+				3CF142DE212DDFF9001FC532 /* Status.swift */,
+				3CD714F32163C26800CC370A /* Task.swift */,
+				3C7B4F09217A2194000D7FDB /* UnitPricingFormula.swift */,
 				3C40AF13212D917B0077DDC5 /* User.swift */,
 				3C40AF30212D92610077DDC5 /* Usergroup.swift */,
-				3C40AF36212DAE8E0077DDC5 /* Base.swift */,
-				3CF142DE212DDFF9001FC532 /* Status.swift */,
-				3C862BF52157C1DB00428BF9 /* Profile.swift */,
-				3CD714F32163C26800CC370A /* Task.swift */,
 				3CC37767216A122A0020236D /* Resourcebooking */,
 				3CC3775A2169E5EC0020236D /* Resource */,
 				3C24777E216A99050010EAFA /* ResourceSchedules */,
@@ -560,7 +575,6 @@
 		3C87F348216E1EEE008120FA /* URL */ = {
 			isa = PBXGroup;
 			children = (
-				3C87F346216E1EE2008120FA /* Result.swift */,
 				3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */,
 				3C87F34B216E1F98008120FA /* Endpoint.swift */,
 				3C87F34F216E2423008120FA /* Yp.swift */,
@@ -569,6 +583,7 @@
 				3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */,
 				3C2D1A22217126E400F081A1 /* APIRouter.swift */,
 				3C87F357216E3FB4008120FA /* YpClient.swift */,
+				3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */,
 			);
 			path = URL;
 			sourceTree = "<group>";
@@ -633,7 +648,6 @@
 				3CC3775F2169E8BE0020236D /* InstantiableResource.swift */,
 				3CC377652169F0090020236D /* ResourceSet.swift */,
 				3CC377612169E94E0020236D /* Resourceinstance.swift */,
-				3CC377582169E59C0020236D /* Costmodel.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -642,11 +656,14 @@
 			isa = PBXGroup;
 			children = (
 				3CC3774D2168C2BE0020236D /* Resourcebooking.swift */,
+				3C7B4EFB2179E9AA000D7FDB /* ResourcebookingChildren.swift */,
 				3CC37768216A124B0020236D /* InstantiableResourceUse.swift */,
 				3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */,
 				3CC3776C216A20F30020236D /* ResourceSetUse.swift */,
 				3CC3776E216A2DC80020236D /* FreeFormResourceUse.swift */,
 				3CC37770216A2FB90020236D /* BulkResourceUse.swift */,
+				3CBBF9D621766F01000FE808 /* ResourcebookingSchedule.swift */,
+				3C7B4EFD217A0648000D7FDB /* BulkResourceUseResource.swift */,
 			);
 			path = Resourcebooking;
 			sourceTree = "<group>";
@@ -687,6 +704,8 @@
 		3CE7101D2121827900EBF6A5 /* YesplanVIP */ = {
 			isa = PBXGroup;
 			children = (
+				3CEDBED42175DB8E009B541F /* Templates */,
+				3CEDBED32175DB84009B541F /* Generated */,
 				3C2D8FE121270C8000BDEA18 /* AppFlow */,
 				3CBE94A6212D75FB00CE518C /* Api */,
 				3C41E927212D724A00C2E242 /* Api Implementation */,
@@ -697,9 +716,7 @@
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
 				3C40AEC8212D825B0077DDC5 /* Models */,
 				3CE9D1D5212382B700BFA730 /* Extensions */,
-				3C1F1875216BDC8200FD6457 /* Generated */,
 				3C9A5B692167E2CD00A5D35B /* Settings.bundle */,
-				3C1F1872216BD03900FD6457 /* Templates */,
 				3C2D1A262173E43000F081A1 /* test.swift */,
 				3C5F42FD2175043D00A90967 /* Codable+Helpers.swift */,
 			);
@@ -847,6 +864,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3CEDBED32175DB84009B541F /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		3CEDBED42175DB8E009B541F /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				3CBBF9D42175E7AE000FE808 /* AutoCodable.swifttemplate */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 		3CF2CA71215F589000636180 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,8 +975,7 @@
 				3CE710292121827A00EBF6A5 /* Assets.xcassets in Resources */,
 				3C9A5B6A2167E2CD00A5D35B /* Settings.bundle in Resources */,
 				3C6AC8A0212703050010DFA5 /* LaunchScreen.storyboard in Resources */,
-				3CAC329E216BEEB900646372 /* Basic.stencil in Resources */,
-				3C1F1877216BDDE000FD6457 /* AutoCodable.swifttemplate in Resources */,
+				3CBBF9D52175E7AE000FE808 /* AutoCodable.swifttemplate in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,7 +1067,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CAC32A4216BFB2C00646372 /* AutoCodable.swifttemplate in Sources */,
 				3CF2CA70215F588A00636180 /* TasksTabViewCell+Extensions.swift in Sources */,
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
 				3CC37771216A2FB90020236D /* BulkResourceUse.swift in Sources */,
@@ -1064,6 +1094,7 @@
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3C2D1A23217126E400F081A1 /* APIRouter.swift in Sources */,
 				3CC3774321688D870020236D /* AppConfig.swift in Sources */,
+				3C7B4F0A217A2194000D7FDB /* UnitPricingFormula.swift in Sources */,
 				3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */,
 				3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */,
 				3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
@@ -1081,15 +1112,18 @@
 				3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */,
 				3CC37757216946810020236D /* Resource.swift in Sources */,
 				3CD714F62163E8DE00CC370A /* Tasks.swift in Sources */,
+				3C7B4EFC2179E9AA000D7FDB /* ResourcebookingChildren.swift in Sources */,
 				3CD592A7212AC57B005BBF71 /* LogoutInteractor.swift in Sources */,
 				3CE710C92121A7E300EBF6A5 /* ToDosModels.swift in Sources */,
+				3C0E97E2217CF7D3008895DD /* URLSesssion+Extensions.swift in Sources */,
 				3CD592A1212AC57B005BBF71 /* LogoutModels.swift in Sources */,
 				3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */,
-				3C87F347216E1EE2008120FA /* Result.swift in Sources */,
 				3CF142EB212DE32A001FC532 /* Children.swift in Sources */,
 				3CF142DF212DDFF9001FC532 /* Status.swift in Sources */,
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */,
+				3C7B4F06217A210E000D7FDB /* DayPartSetPricingFormula.swift in Sources */,
+				3C7B4F02217A0754000D7FDB /* Resourceplaceholder.swift in Sources */,
 				3C40AF23212D91F30077DDC5 /* UserTabRouter.swift in Sources */,
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
 				3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */,
@@ -1106,11 +1140,14 @@
 				3C87F354216E2887008120FA /* APIClient+Protocol.swift in Sources */,
 				3CE710C32121A7E300EBF6A5 /* ToDosWorker.swift in Sources */,
 				3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */,
+				3C7B4F0E217A220D000D7FDB /* DiscountFormula.swift in Sources */,
+				3C7B4EFE217A0648000D7FDB /* BulkResourceUseResource.swift in Sources */,
 				3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */,
 				3CE710972121A78800EBF6A5 /* TasksModels.swift in Sources */,
 				3C570A492165533300154B93 /* ToDosTabViewCell.swift in Sources */,
 				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
+				3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
 				3C87F350216E2423008120FA /* Yp.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
@@ -1125,9 +1162,12 @@
 				3CE710CF2121A7E300EBF6A5 /* ToDosInteractor.swift in Sources */,
 				3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */,
 				3CD592A4212AC57B005BBF71 /* LogoutViewController.swift in Sources */,
+				3C7B4F00217A0686000D7FDB /* Location.swift in Sources */,
+				3C7B4F08217A2143000D7FDB /* DayPartPricingFormula.swift in Sources */,
 				3CE710782121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
 				3C40AEF5212D8E550077DDC5 /* EventsTabViewController.swift in Sources */,
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
+				3CBBF9D721766F01000FE808 /* ResourcebookingSchedule.swift in Sources */,
 				3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
 				3C230AA821558BA5004477A3 /* Statuses.swift in Sources */,
@@ -1135,10 +1175,11 @@
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 				3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */,
 				3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */,
-				3C87F345216D449C008120FA /* AutoCodable.generated.swift in Sources */,
 				3CB59E72214079AD00B6E458 /* MainTabBarModels.swift in Sources */,
 				3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */,
 				3CF8F617215A4B340016EDC7 /* TasksTabView.swift in Sources */,
+				3C7B4F04217A20C0000D7FDB /* Formula.swift in Sources */,
+				3C7B4F0C217A21D1000D7FDB /* FixedPricingFormula.swift in Sources */,
 				3CE9D1C521237C1800BFA730 /* LoginViewController.swift in Sources */,
 				3CE710A72121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
 				3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
@@ -1177,6 +1218,7 @@
 				3C5F42FE2175043D00A90967 /* Codable+Helpers.swift in Sources */,
 				3C247780216A99210010EAFA /* Shift.swift in Sources */,
 				3C41E924212D723E00C2E242 /* Basic.swift in Sources */,
+				3C7B4F12217A4155000D7FDB /* Result.swift in Sources */,
 				3C40AEEC212D8E550077DDC5 /* EventsTabWorker.swift in Sources */,
 				3C40AF26212D91F30077DDC5 /* UserTabModels.swift in Sources */,
 				3CE7107E2121A76400EBF6A5 /* TeamplannerModels.swift in Sources */,

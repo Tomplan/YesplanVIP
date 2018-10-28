@@ -9,7 +9,7 @@
 import Foundation
 import Arrow
 
-struct Profile: AutoCodable {
+struct Profile: Codable {
     
     var url: String = ""
     var _type: String = ""
@@ -17,18 +17,18 @@ struct Profile: AutoCodable {
     var name: String = ""
     var color: String = ""
 }
-
-extension Profile : ArrowParsable {
-
-    public mutating func deserialize(_ json: JSON) {
-        
-        url <-- json["url"]
-        _type <-- json["_type"]
-        id <-- json["id"]
-        name <-- json["name"]
-        color <-- json["color"]
-    }
-}
+//
+//extension Profile : ArrowParsable {
+//
+//    public mutating func deserialize(_ json: JSON) {
+//        
+//        url <-- json["url"]
+//        _type <-- json["_type"]
+//        id <-- json["id"]
+//        name <-- json["name"]
+//        color <-- json["color"]
+//    }
+//}
 
     extension Profile: RestResource {
         static func restName() -> String { return "api/profile/" }

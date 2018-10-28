@@ -10,8 +10,8 @@ import Foundation
 import Arrow
 import then
 
-struct Group: AutoCodable {
-    var url = URL(string: "http://")!
+struct Group: Codable {
+    var url: String = "" // = URL(string: "http://")!
     var id: String = ""
     var owner: User?
     var owningteam: Usergroup?
@@ -29,49 +29,53 @@ struct Group: AutoCodable {
     var isproduction: Bool = false
     var attributes: Pagination? // optional added by TOM
     var _type = "group"
-    var profiles: [Base]? // NOT Profile_Id, color not transferred by Yesplan in Group_Id
+    var profiles: [Base2]? // NOT Profile_Id, color not transferred by Yesplan in Group_Id
     var statuses: [Base]? // optional added by TOM
     var children: [Children] = []
-}
-
-extension Group : ArrowParsable {
     
-    public mutating func deserialize(_ json: JSON) {
- 
-        _type <-- json["_type"]
+//    init() { guard self._type == "event" else { return } }
 
-//        guard let case _type == "group" else { return nil }
-        
-        id <-- json["id"]
-        url <-- json["url"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        name <-- json["name"]
-        group <-- json["group"]
-        starttime <-- json["starttime"]
-        endtime <-- json["endtime"]
-        startdate <-- json["startdate"]
-        enddate <-- json["enddate"]
-        profile <-- json["profile"]
-        status <-- json["status"]
-        locations <-- json["locations"]
-        production <-- json["production"]
-        isproduction <-- json["isproduction"]
-        attributes <-- json["attributes"]
-        profiles <-- json["profiles"]
-        statuses <-- json["statuses"]
-        children = [Children]()
-        if let items = json["children"]?.collection {
-            for item in items {
-                let child = Children(children: item)
-                children.append(child)
-            }
-        }
-    }
 }
 
-extension Group: RestResource {
-    static func restName() -> String { return "api/group/" }
-    func restId() -> String { return "\(id)" }
-}
+//extension Group : ArrowParsable {
+//
+//    public mutating func deserialize(_ json: JSON) {
+//
+//        _type <-- json["_type"]
+//
+////        guard let case _type == "group" else { return nil }
+//
+//        id <-- json["id"]
+//        url <-- json["url"]
+//        owner <-- json["owner"]
+//        owningteam <-- json["owningteam"]
+//        owninggroup <-- json["owninggroup"]
+//        name <-- json["name"]
+//        group <-- json["group"]
+//        starttime <-- json["starttime"]
+//        endtime <-- json["endtime"]
+//        startdate <-- json["startdate"]
+//        enddate <-- json["enddate"]
+//        profile <-- json["profile"]
+//        status <-- json["status"]
+//        locations <-- json["locations"]
+//        production <-- json["production"]
+//        isproduction <-- json["isproduction"]
+//        attributes <-- json["attributes"]
+//        profiles <-- json["profiles"]
+//        statuses <-- json["statuses"]
+//        children = [Children]()
+//        if let items = json["children"]?.collection {
+//            for item in items {
+//                print("item: ", item)
+////                let child = Children(children: item)
+////                children.append(item)
+//            }
+//        }
+//    }
+//}
+//
+//extension Group: RestResource {
+//    static func restName() -> String { return "api/group/" }
+//    func restId() -> String { return "\(id)" }
+//}

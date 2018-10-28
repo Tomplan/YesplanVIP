@@ -9,11 +9,17 @@
 import Foundation
 import Arrow
 
-struct Costmodel: ArrowParsable, AutoCodable {
-    var name: String?
-    
-    mutating func deserialize(_ json: JSON) {
-        
-        name <-- json["name"]
-    }
+struct Costmodel: Codable {
+    let name: String?
+    let cost: String //  heck
+    let costformula: Formula
+    let price: String
+    let priceformula: Formula
+    let account: String?
+    let invoice: Bool
+    let durationdiscount: Discount_Formula
+    let volumediscount: Discount_Formula
+    let purchaseprice: Double
+    let vat: Double
+    let profiles: [JSONAny]
 }

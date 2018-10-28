@@ -40,13 +40,12 @@ struct Event: Codable {
     init() { guard self._type == "event" else { return } }
 
 }
-//
+
 //extension Event: ArrowParsable {
 //    
 //    public mutating func deserialize(_ json: JSON) {
 //
 //        _type <-- json["_type"]
-//        
 //
 //        id <-- json["id"]
 //        url <-- json["url"]
@@ -73,9 +72,9 @@ struct Event: Codable {
 //        
 //    }
 //}
-//
-//
-//extension Event: RestResource {
-//    static func restName() -> String { return "api/event/" }
-//    func restId() -> String { return "\(id)" }
-//}
+
+
+extension Event: RestResource {
+    static func restName() -> String { return "api/event/" }
+    func restId() -> String { return "\(id)" }
+}

@@ -20,14 +20,14 @@ struct Events: Codable {
     var data = [Event]()
 }
 
-
-extension Events : ArrowParsable {
-
-    public mutating func deserialize(_ json: JSON) {
-        pagination <-- json["pagination"]
-        data <-- json["data"]
-    }
-}
+//
+//extension Events : ArrowParsable {
+//
+//    public mutating func deserialize(_ json: JSON) {
+//        pagination <-- json["pagination"]
+//        data <-- json["data"]
+//    }
+//}
 
 extension Events: RestResource {
     static func restName() -> String { return "api/events/" }
