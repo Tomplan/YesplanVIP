@@ -3,6 +3,6 @@ github "Alamofire/Alamofire" "alamofire5"
 #github "freshOS/Stevia"
 #github "freshOS/then"
 #github "freshOS/Arrow"
-#github "PureLayout/PureLayout"
+github "PureLayout/PureLayout"
 #github "onevcat/Kingfisher"
 
