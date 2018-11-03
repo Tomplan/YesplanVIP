@@ -85,6 +85,8 @@
 		3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */; };
 		3C87F358216E3FB4008120FA /* YpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F357216E3FB4008120FA /* YpClient.swift */; };
 		3C9A5B6A2167E2CD00A5D35B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5B692167E2CD00A5D35B /* Settings.bundle */; };
+		3CA2131D218E267100F74EED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA2131C218E267100F74EED /* Constants.swift */; };
+		3CA2131F218E274A00F74EED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA2131E218E274A00F74EED /* APIClient.swift */; };
 		3CB468C121479A330088A8B8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB468C021479A330088A8B8 /* LoginView.swift */; };
 		3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */; };
 		3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB59E692140794800B6E458 /* MainTabBarRouter.swift */; };
@@ -268,6 +270,8 @@
 		3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Extensions.swift"; sourceTree = "<group>"; };
 		3C87F357216E3FB4008120FA /* YpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YpClient.swift; sourceTree = "<group>"; };
 		3C9A5B692167E2CD00A5D35B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		3CA2131C218E267100F74EED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3CA2131E218E274A00F74EED /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3CB468C021479A330088A8B8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3CB59E60213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventsTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		3CB59E692140794800B6E458 /* MainTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRouter.swift; sourceTree = "<group>"; };
@@ -582,8 +586,10 @@
 				3C87F353216E2887008120FA /* APIClient+Protocol.swift */,
 				3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */,
 				3C2D1A22217126E400F081A1 /* APIRouter.swift */,
+				3CA2131E218E274A00F74EED /* APIClient.swift */,
 				3C87F357216E3FB4008120FA /* YpClient.swift */,
 				3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */,
+				3CA2131C218E267100F74EED /* Constants.swift */,
 			);
 			path = URL;
 			sourceTree = "<group>";
@@ -1180,6 +1186,7 @@
 				3CF8F617215A4B340016EDC7 /* TasksTabView.swift in Sources */,
 				3C7B4F04217A20C0000D7FDB /* Formula.swift in Sources */,
 				3C7B4F0C217A21D1000D7FDB /* FixedPricingFormula.swift in Sources */,
+				3CA2131F218E274A00F74EED /* APIClient.swift in Sources */,
 				3CE9D1C521237C1800BFA730 /* LoginViewController.swift in Sources */,
 				3CE710A72121A7A900EBF6A5 /* ContactsPresenter.swift in Sources */,
 				3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
@@ -1228,6 +1235,7 @@
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
 				3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
+				3CA2131D218E267100F74EED /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

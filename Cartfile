@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire"
+github "Alamofire/Alamofire" "alamofire5"
 github "freshOS/ws"
 github "freshOS/Stevia"
 github "freshOS/then"

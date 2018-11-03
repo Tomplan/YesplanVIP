@@ -6,7 +6,7 @@
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
 //struct FailableDecodable<T: Swift.Decodable>: Swift.Decodable {
 //    let value: T?

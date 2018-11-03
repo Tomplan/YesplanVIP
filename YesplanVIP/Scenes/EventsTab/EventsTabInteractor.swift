@@ -11,8 +11,9 @@
 //
 
 import UIKit
-import ws
-import then
+//import ws
+//import then
+import PromiseKit
 
 protocol EventsTabBusinessLogic
 {
@@ -39,13 +40,51 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     var profilesArray: [Profile] = [Profile]()
     var error: String?
     
-    var yesplan: Yesplan = Yesplan()
+//    var yesplan: Yesplan = Yesplan()
     
   // MARK: Do something
 
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
+//    var obj = Events()
+//    var url = URL(string: "https://dewerft.yesplan.be/api/events?api_key=C857C01360BB5777DABE5B7EE6594CD1")
+//    print("url: ", url)
+    
+    APIClient.events()
+        .execute(onSuccess: { article in
+            print(article)
+        }, onFailure: {error in
+            print(error)
+        })
+    //    firstly {
+//        URLSession.shared.dataTask(.promise, with: try makeUrlRequest()).validate()
+//        // ^^ we provide `.validate()` so that eg. 404s get converted to errors
+//        }.map {
+//            try JSONDecoder().decode(Events.self, from: $0.data)
+//        }.done { foo in
+//            //…
+//            print("foo: ", foo)
+//        }.catch { error in
+//            //…
+//            print("error: ", error)
+//
+//    }
+//
+//    func makeUrlRequest() throws -> URLRequest {
+//        var rq = URLRequest(url: url!)
+//        rq.httpMethod = "GET"
+//        rq.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        rq.addValue("application/json", forHTTPHeaderField: "Accept")
+////        rq.httpBody = try JSONEncoder().encode(obj)
+//        print("rq: ", rq)
+////        print("rq.httpBody: ", rq.httpBody)
+//
+//        return rq
+//    }
+    
+    
+    
 //    worker?.makePromiseChain()
 //    client.getGroups(from: Yp.groups) { result in
 //        switch result {
@@ -68,59 +107,111 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 //        }
 //        }
     
+//    yesplan.getEvents()
+//        .then { result in
+//            print("result: ", result)
+//    }
     
-    yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
-        .then((worker?.groupEventsByStartdate)!)
-        .then((worker?.sortEventsInEachGroupByTime)!)
-        .then((worker?.sortDictByDate)!)
-        .then { result in
-            self.eventsArray = result
-        }
-    
-        .then(yesplan.getAll(fetchedStatuses))
-        .then { result in
-            self.statusesArray = result.data
-        }
-        
-        .then(yesplan.getAll(fetchedProfiles))
-        .then { result in
-            self.profilesArray = result.data
-        }
-        .onError { e in
-            if let wsError = e as? WSError {
-                print(wsError.status)
-                print(wsError.status.rawValue) // RawValue for Int status
-                print(wsError.localizedDescription) // RawValue for Int status
+//    yesplan.getAllRequest(t: fetchedEvents)
+//        .then { result in
+//            print("yepyep: ", result)
+////            let events = try? JSONDecoder().decode(Events.self, from: result)
+////            print(events?.data)
+//
+////            if let jsonData = result.data(using: .utf8)
+////            {
+////                let photoObject = try? JSONDecoder().decode(Events.self, from: jsonData)
+////
+////            }
+//    }
+//        func getEvents() -> Promise<Events> {
+////            return Promise { fulfill, reject in
+////                print("okojoj")
+//            let paramsApiKey: [String:Any] = ["api_key":"\(String(describing: UserDefaults.standard.string(forKey: "Key")))"]
+//                print("paramsApiKey", paramsApiKey)
+//                let urlString = "https://dewerft.yesplan.be/api/events?api_key=\(String(describing: UserDefaults.standard.string(forKey: "Key"))))"
+//                print("urlString", urlString)
+//                let url = URL(string: urlString)
+//                print("url", url!)
+////                guard let unwrappedUrl = url else { return }
+////                print("unwrappedUrl", unwrappedUrl)
+//            let request = URLRequest(url: url!)
+//                print("request", request)
+    //            let session = URLSession.shared
+    //            print("session", session)
+    //            let dataPromise = session.dataTask(with: request)
+    //            print("dataPromise: ", dataPromise)
+    ////            _ = dataPromise.asDictionary().then { }
+//                firstly {
+//                    URLSession.shared.dataTask(.promise, with: request)
+//                    }.compactMap { data, _ in
+////                        try JSONSerialization.jsonObject(with: data) as? [String: Any]
+//                        print("data: ", data)
+//                        return Promise(data)
+//
+////                    }.then { json in
+////                        //…
+////                        print("json: ", json)
+////                }
+//    //
+//            }
+//            return Promise(data)
+//        }
 
-            }
+    
+    
+//    yesplan.getAll(fetchedEvents, query: "event:date:#today + event:date:#next13days")
+//        .then((worker?.groupEventsByStartdate)!)
+//        .then((worker?.sortEventsInEachGroupByTime)!)
+//        .then((worker?.sortDictByDate)!)
+//        .then { result in
+//            self.eventsArray = result
+//        }
+//
+//        .then(yesplan.getAll(fetchedStatuses))
+//        .then { result in
+//            self.statusesArray = result.data
+//        }
+//
+//        .then(yesplan.getAll(fetchedProfiles))
+//        .then { result in
+//            self.profilesArray = result.data
+//        }
 //        .onError { e in
-            // An error occured :/
-            print(e)
-            self.error = "\(e)"
-            let response = EventsTab.Something.Response(
-                events: self.eventsArray,
-                statuses: self.statusesArray,
-                profiles: self.profilesArray,
-                error: self.error
-            )
-            self.presenter?.presentEvents(response: response)
-
-        }
-
-        .finally {
-     
-        let response = EventsTab.Something.Response(
-            events: self.eventsArray,
-            statuses: self.statusesArray,
-            profiles: self.profilesArray,
-            error: self.error
-        )
-        self.presenter?.presentEvents(response: response)
-    }
-
-//                print("pagination: ", self.fetchedEvents.pagination )
-//                self.yesplan.getMore(self.fetchedEvents, paginationNext: self.fetchedEvents.pagination.next!).then { more in
-//                    print("more", more.pagination)
+//            if let wsError = e as? WSError {
+//                print(wsError.status)
+//                print(wsError.status.rawValue) // RawValue for Int status
+//                print(wsError.localizedDescription) // RawValue for Int status
+//
+//            }
+////        .onError { e in
+//            // An error occured :/
+//            print(e)
+//            self.error = "\(e)"
+//            let response = EventsTab.Something.Response(
+//                events: self.eventsArray,
+//                statuses: self.statusesArray,
+//                profiles: self.profilesArray,
+//                error: self.error
+//            )
+//            self.presenter?.presentEvents(response: response)
+//
+//        }
+//
+//        .finally {
+//
+//        let response = EventsTab.Something.Response(
+//            events: self.eventsArray,
+//            statuses: self.statusesArray,
+//            profiles: self.profilesArray,
+//            error: self.error
+//        )
+//        self.presenter?.presentEvents(response: response)
+//    }
+//
+////                print("pagination: ", self.fetchedEvents.pagination )
+////                self.yesplan.getMore(self.fetchedEvents, paginationNext: self.fetchedEvents.pagination.next!).then { more in
+////                    print("more", more.pagination)
 //                }
   }
 }

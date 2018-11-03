@@ -23,7 +23,7 @@ class LoginWorker
         
         
         
-    Alamofire.request(urlString!)
+    AF.request(urlString!)
         .responseJSON { response in
 
             switch response.result {
@@ -62,6 +62,11 @@ class LoginWorker
                         case .responseSerializationFailed( _):
                             resolve((false, "AFError: \(error.localizedDescription)"))
 
+                        case .explicitlyCancelled:
+                            resolve((false, "AFError: \(error.localizedDescription)"))
+
+                        case .certificatePinningFailed:
+                            resolve((false, "AFError: \(error.localizedDescription)"))
                         }
                         
                     } else if let error = error as? URLError {

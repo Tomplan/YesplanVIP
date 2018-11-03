@@ -11,6 +11,7 @@ import Alamofire
 import Arrow
 import Foundation
 import then
+//import PromiseKit
 
 // This is our JSON Api Code
 // Yes! This is all that's needed to get nice Swift models from a JSON api!!!!
@@ -79,6 +80,45 @@ class Yesplan: ApiInterface {
         return ws.get(urlString, params: params.merged(with: paramsApiKey))
 
     }
+    
+//    func getAllRequest<T: Codable & RestResource>(t: T) -> Promise<JSON> {
+//        let paramsApiKey: [String:Any] = ["api_key":"\(key!)"]
+//        let path = "/\(T.restName())"
+//        let request = ws.getRequest(path, params: paramsApiKey)
+////        let ikke = request.fetch()
+////        let request =
+//
+//        return request.fetch()
+//    }
+    
+//    func getEvents() -> Promise<Events> {
+//        return Promise { fulfill, reject in
+//            print("okojoj")
+//            let paramsApiKey: [String:Any] = ["api_key":"\(self.key!)"]
+//            print("paramsApiKey", paramsApiKey)
+//            let urlString = "https://dewerft.yesplan.be/api/events?api_key=\(self.key!)"
+//            print("urlString", urlString)
+//            let url = URL(string: urlString)
+//            print("url", url)
+//            guard let unwrappedUrl = url else { return }
+//            print("unwrappedUrl", unwrappedUrl)
+//            let request = URLRequest(url: unwrappedUrl)
+//            print("request", request)
+//            let session = URLSession.shared
+//            print("session", session)
+//            let dataPromise = session.dataTask(with: request)
+//            print("dataPromise: ", dataPromise)
+////            _ = dataPromise.asDictionary().then { }
+//            firstly {
+//                URLSession.shared.dataTask(.promise, with: rq)
+//                }.compactMap { data, _ in
+//                    try JSONSerialization.jsonObject(with: data) as? [String: Any]
+//                }.then { json in
+//                    //…
+//            }
+//
+//        }
+//    }
     
     func getMore<T:ArrowParsable & RestResource>(_ restResource:T, paginationNext:String) -> Promise<T> {
 //    func getMore<T:Codable & RestResource>(_ restResource:T, paginationNext:String) -> Promise<T> {

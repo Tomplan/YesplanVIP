@@ -48,7 +48,7 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
         .then((worker?.sortTasksInEachGroupByDue)!)
         .then((worker?.sortDictByDate)!)
         .then { result in
-            print(result)
+//            print(result)
             self.tasksArray = result
         }
 

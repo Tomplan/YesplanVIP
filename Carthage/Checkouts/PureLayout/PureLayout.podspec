@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = 'PureLayout'
-  s.version               = '3.1.2'
+  s.version               = '3.1.4'
   s.homepage              = "https://github.com/#{s.name}/#{s.name}"
   s.license               = { type: 'MIT', file: 'LICENSE' }
   s.author                = 'Tyler Fox'
@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
   s.source                = { git: "#{s.homepage}.git", tag: "v#{s.version}" }
   s.source_files          = "#{s.name}/#{s.name}"
-  s.requires_arc          = true
   s.summary               = 'The ultimate API for iOS & OS X Auto Layout — impressively simple, immensely powerful. Objective-C and Swift compatible.'
   s.description  = <<-DESC
     # PureLayout
