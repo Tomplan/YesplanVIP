@@ -47,7 +47,3 @@ extension Resource: Decodable {
         }
     }
 }
-extension Resource: RestResource {
-    static func restName() -> String { return "api/resources/resource" }
-    func restId() -> String { return "" }
-}

@@ -38,53 +38,75 @@ extension Resourcebooking: Encodable {
 extension Resourcebooking: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        let containers = try decoder.container(keyedBy: CodingKeys.self)
-        let type = try containers.decode(String.self, forKey: ._type)
-        
-    switch type {
-        case "resourcebooking":
-                if let x = try? container.decode(ResourceSetUse.self)
-                {
-//                    print("ResourceSetUse")
-                    self = .resourceSetUse(x)
-                    return
-                }
-            else {
-            if let x = try? container.decode(InstantiableResourceUse.self) {
-//                print("InstantiableResourceUse")
-                self = .instantiableResourceUse(x)
-                return
-            }
-            else {
-                if let x = try? container.decode(BulkResourceUse.self) {
-//                    print("BulkResourceUse")
-                    self = .bulkResourceUse(x)
-                    return
-                }
-            else {
-                if let x = try? container.decode(FreeFormResourceUse.self) {
-//                    print("FreeFormResourceUse")
-                    self = .freeFormResourceUse(x)
-                    return
-                }
-            else {
-                    throw Failure.NotImplemented
-                    }
-                }
-            }
-        }
-        case "resourcebookinggroup":
-//            print("resourcebookinggroup")
-            if let x = try? container.decode(InstantiableResourceUseGroup.self) {
-                self = .instantiableResourceUseGroup(x)
-        }
-            throw Failure.NotImplemented
-
-        default:
+        if let x = try? container.decode(InstantiableResourceUse.self) {
+            self = .instantiableResourceUse(x)
+        } else if let x = try? container.decode(InstantiableResourceUseGroup.self) {
+            self = .instantiableResourceUseGroup(x)
+        } else if let x = try? container.decode(ResourceSetUse.self) {
+            self = .resourceSetUse(x)
+        } else if let x = try? container.decode(FreeFormResourceUse.self) {
+            self = .freeFormResourceUse(x)
+        } else if let x = try? container.decode(BulkResourceUse.self) {
+            self = .bulkResourceUse(x)
+        } else {
             throw Failure.NotImplemented
         }
     }
 }
+
+//extension Resourcebooking: Decodable {
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.singleValueContainer()
+//        let containers = try decoder.container(keyedBy: CodingKeys.self)
+//        let type = try containers.decode(String.self, forKey: ._type)
+//
+//
+//
+////    switch type {
+////        case "resourcebooking":
+//////            print("resourcebooking")
+////                if let x = try? container.decode(ResourceSetUse.self)
+////                {
+////                    print("ResourceSetUse")
+////                    self = .resourceSetUse(x)
+////                    return
+////                }
+////            else {
+////            if let x = try? container.decode(InstantiableResourceUse.self) {
+////                print("InstantiableResourceUse")
+////                self = .instantiableResourceUse(x)
+////                return
+////            }
+////            else {
+////                if let x = try? container.decode(BulkResourceUse.self) {
+////                    print("BulkResourceUse")
+////                    self = .bulkResourceUse(x)
+////                    return
+////                }
+////            else {
+////                if let x = try? container.decode(FreeFormResourceUse.self) {
+////                    print("FreeFormResourceUse")
+////                    self = .freeFormResourceUse(x)
+////                    return
+////                }
+////            else {
+////                    throw Failure.NotImplemented
+////                    }
+////                }
+////            }
+////        }
+////        case "resourcebookinggroup":
+////            print("resourcebookinggroup")
+////            if let x = try? container.decode(InstantiableResourceUseGroup.self) {
+////                self = .instantiableResourceUseGroup(x)
+////        }
+////            throw Failure.NotImplemented
+////
+////        default:
+////            throw Failure.NotImplemented
+////        }
+//    }
+//}
 
 //
 //switch item {

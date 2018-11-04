@@ -40,12 +40,19 @@ class APIClient {
         return performRequest(route: APIRouter.profiles(path: path))
     }
     
-    static func statuses(_ path: String) -> Future<Statuses> {
-        return performRequest(route: APIRouter.statuses(path: path))
-    }
-    
     static func resourcebookings(_ path: String) -> Future<Resourcebookings> {
         return performRequest(route: APIRouter.resourcebookings(path: path))
+    }
+    
+    static func resources(_ path: String) -> Future<Resources> {
+        return performRequest(route: APIRouter.resources(path: path))
+    }
+    
+    static func resourcesSchedulesFromTo(_ path: String) -> Future<ResourceSchedulesFromTo> {
+        return performRequest(route: APIRouter.resourcesSchedulesFromTo(path: path))
+    }
+    static func statuses(_ path: String) -> Future<Statuses> {
+        return performRequest(route: APIRouter.statuses(path: path))
     }
     
 //    static func login(email: String, password: String) -> Future<User> {

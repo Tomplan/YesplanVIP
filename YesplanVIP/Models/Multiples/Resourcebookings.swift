@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Arrow
-import then
+//import Arrow
+//import then
 
 struct Resourcebookings: Codable {
     var pagination = Pagination()
@@ -59,7 +59,7 @@ struct Resourcebookings: Codable {
 //    }
 //}
 
-extension Resourcebookings: RestResource {
-    static func restName() -> String { return "api/resourcebookings/" }
-    func restId() -> String { return "" }
-}
+//extension Resourcebookings: RestResource {
+//    static func restName() -> String { return "api/resourcebookings/" }
+//    func restId() -> String { return "" }
+//}

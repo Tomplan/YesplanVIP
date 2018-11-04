@@ -12,22 +12,22 @@ import Arrow
 struct InstantiableResource: Codable {
     var url: URL = URL(string: "http://")!
     var id: String = ""
-    var resourcetype: String?
+//    var resourcetype: String?
     var name: String = ""
-    var group: String?
-    var roles: [String]?
-    var description: String?
-    var external: Bool = false
-    var rented: Bool = false
-    var costmodels: [Costmodel]?
-    var defaultrole: String?
-    var amount: Int?
+//    var group: String?
+//    var roles: [String]?
+//    var description: String?
+//    var external: Bool = false
+//    var rented: Bool = false
+//    var costmodels: [Costmodel]?
+//    var defaultrole: String?
+//    var amount: Int?
     var type: String = ""
-    var owner: User?
-    var owningteam: Usergroup?
-    var owninggroup: Usergroup?
-    var _type: String = ""
-    var resourceinstances: [Resourceinstance] = []
+//    var owner: User?
+//    var owningteam: Usergroup?
+//    var owninggroup: Usergroup?
+//    var _type: String = ""
+//    var resourceinstances: [Resourceinstance] = []
     
 //    init() { guard self._type == "instantiableResource" else {
 //        return } }

@@ -11,12 +11,48 @@
 //
 
 import UIKit
+import PromisedFuture
 
 class TeamplannerTabWorker
 {
-//    var yesplan: Yesplan = Yesplan()
 //    var fetchedResourcebookings: [String:Resourcebooking] = [:]
     
+    func getResourcebookings(_ path: String) -> Future<Resourcebookings> {
+        return Future(operation: { completion in
+            APIClient.resourcebookings("\(path)")
+                .map({$0})
+                .execute(onSuccess: { items in
+                    completion(.success(items))
+                }, onFailure: { error in
+                    completion(.failure(error))
+                })
+        })
+    }
+    
+    func getResources(_ path: String) -> Future<Resources> {
+        return Future(operation: { completion in
+            APIClient.resources("\(path)")
+                .map({$0})
+                .execute(onSuccess: { items in
+                    completion(.success(items))
+                }, onFailure: { error in
+                    completion(.failure(error))
+                })
+        })
+    }
+    
+    func getResourceSchedules(_ path: String) -> Future<ResourceSchedulesFromTo> {
+        return Future(operation: { completion in
+            APIClient.resourcesSchedulesFromTo("\(path)")
+                .map({$0})
+                .execute(onSuccess: { items in
+                    completion(.success(items))
+                }, onFailure: { error in
+                    completion(.failure(error))
+                })
+        })
+    }
+}
 //    func groupResourecbookingsByStartdate(resourcebookings: Resourcebookings) -> [String:[Resourcebooking]] {
 //        for resourcebooking in resourcebookings.data {
 //            switch resourcebooking {
@@ -34,4 +70,4 @@ class TeamplannerTabWorker
 ////        let dictResourcebookings = Dictionary(grouping: fetchedResourcebookings, by: { $0.key })
 ////        return dictResourcebookings
 //    }
-}
+//}

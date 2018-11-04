@@ -7,26 +7,26 @@
 //
 
 import Foundation
-import Arrow
+//import Arrow
 
 struct ResourceSet: Codable {
     var url: URL = URL(string: "http://")!
     var id: String = ""
-    var resourcetype: String?
+//    var resourcetype: String?
     var name: String = ""
-    var group: String?
-    var roles: [String]?
-    var description: String?
-    var external: Bool = false
-    var rented: Bool = false
-    var costmodels: [Costmodel]?
+//    var group: String?
+//    var roles: [String]?
+//    var description: String?
+//    var external: Bool = false
+//    var rented: Bool = false
+//    var costmodels: [Costmodel]?
     var type: String = ""
-    var owner: User?
-    var owningteam: Usergroup?
-    var owninggroup: Usergroup?
+//    var owner: User?
+//    var owningteam: Usergroup?
+//    var owninggroup: Usergroup?
     var _type: String = ""
-    var amount: Int?
-    var resources: [Base] = []
+//    var amount: Int?
+//    var resources: [Base] = []
     
     init() { guard self._type == "resource" else {
         return } }

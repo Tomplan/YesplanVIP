@@ -6,8 +6,8 @@
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 import Foundation
-import Arrow
-import then
+//import Arrow
+//import then
 
 //var task: [String : Any] = [:]
 
@@ -32,30 +32,30 @@ struct Task: Codable {
 
 }
 
-
-extension Task: ArrowParsable {
-    public mutating func deserialize(_ json: JSON) {
-        
-        url <-- json["url"]
-        id <-- json["id"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        status <-- json["status"]
-        name <-- json["name"]
-        team <-- json["team"]
-        cost <-- json["cost"]
-        due <-- json["due"]
-        start <-- json["start"]
-        description <-- json["description"]
-        event <-- json["event"]
-        assignedby <-- json["assignedby"]
-        assignedto <-- json["assignedto"]
-        duration <-- json["duration"]
-    }
-}
-
-extension Task: RestResource {
-    static func restName() -> String { return "api/task/" }
-    func restId() -> String { return "\(id)" }
-}
+//
+//extension Task: ArrowParsable {
+//    public mutating func deserialize(_ json: JSON) {
+//
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        owner <-- json["owner"]
+//        owningteam <-- json["owningteam"]
+//        owninggroup <-- json["owninggroup"]
+//        status <-- json["status"]
+//        name <-- json["name"]
+//        team <-- json["team"]
+//        cost <-- json["cost"]
+//        due <-- json["due"]
+//        start <-- json["start"]
+//        description <-- json["description"]
+//        event <-- json["event"]
+//        assignedby <-- json["assignedby"]
+//        assignedto <-- json["assignedto"]
+//        duration <-- json["duration"]
+//    }
+//}
+//
+//extension Task: RestResource {
+//    static func restName() -> String { return "api/task/" }
+//    func restId() -> String { return "\(id)" }
+//}

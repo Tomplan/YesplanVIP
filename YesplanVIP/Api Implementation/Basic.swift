@@ -68,9 +68,6 @@
 //        } else {
 //            let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[] ").inverted
 //            
-////            if let escapedString = "www.google.com?type=c++".addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) {
-////                print(escapedString)
-////            }
 //            urlString.append(query.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!)
 ////            urlString = url!.absoluteString
 ////            print("2: ", urlString)

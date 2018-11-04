@@ -19,9 +19,6 @@ extension ResourcebookingChildren {
     
     private enum CodingKeys: String, CodingKey {
         case _type
-//        case children
-//        case url
-//        case actualnumber
     }
 }
 

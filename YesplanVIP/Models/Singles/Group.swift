@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Arrow
-import then
+//import Arrow
+//import then
 
 struct Group: Codable {
     var url: String = "" // = URL(string: "http://")!
@@ -36,46 +36,46 @@ struct Group: Codable {
 //    init() { guard self._type == "event" else { return } }
 
 }
-
-extension Group : ArrowParsable {
-
-    public mutating func deserialize(_ json: JSON) {
-
-        _type <-- json["_type"]
-
-//        guard let case _type == "group" else { return nil }
-
-        id <-- json["id"]
-        url <-- json["url"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        name <-- json["name"]
-        group <-- json["group"]
-        starttime <-- json["starttime"]
-        endtime <-- json["endtime"]
-        startdate <-- json["startdate"]
-        enddate <-- json["enddate"]
-        profile <-- json["profile"]
-        status <-- json["status"]
-        locations <-- json["locations"]
-        production <-- json["production"]
-        isproduction <-- json["isproduction"]
-        attributes <-- json["attributes"]
-        profiles <-- json["profiles"]
-        statuses <-- json["statuses"]
-        children = [Children]()
-        if let items = json["children"]?.collection {
-            for item in items {
-                print("item: ", item)
-//                let child = Children(children: item)
-//                children.append(item)
-            }
-        }
-    }
-}
-
-extension Group: RestResource {
-    static func restName() -> String { return "api/group/" }
-    func restId() -> String { return "\(id)" }
-}
+//
+//extension Group : ArrowParsable {
+//
+//    public mutating func deserialize(_ json: JSON) {
+//
+//        _type <-- json["_type"]
+//
+////        guard let case _type == "group" else { return nil }
+//
+//        id <-- json["id"]
+//        url <-- json["url"]
+//        owner <-- json["owner"]
+//        owningteam <-- json["owningteam"]
+//        owninggroup <-- json["owninggroup"]
+//        name <-- json["name"]
+//        group <-- json["group"]
+//        starttime <-- json["starttime"]
+//        endtime <-- json["endtime"]
+//        startdate <-- json["startdate"]
+//        enddate <-- json["enddate"]
+//        profile <-- json["profile"]
+//        status <-- json["status"]
+//        locations <-- json["locations"]
+//        production <-- json["production"]
+//        isproduction <-- json["isproduction"]
+//        attributes <-- json["attributes"]
+//        profiles <-- json["profiles"]
+//        statuses <-- json["statuses"]
+//        children = [Children]()
+//        if let items = json["children"]?.collection {
+//            for item in items {
+//                print("item: ", item)
+////                let child = Children(children: item)
+////                children.append(item)
+//            }
+//        }
+//    }
+//}
+//
+//extension Group: RestResource {
+//    static func restName() -> String { return "api/group/" }
+//    func restId() -> String { return "\(id)" }
+//}

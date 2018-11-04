@@ -8,10 +8,10 @@
 
 
 import Foundation
-import Arrow
+//import Arrow
 //import then
 
-struct Status: AutoCodable {
+struct Status: Codable {
     
     var url: String?
     var _type = "status"
@@ -20,24 +20,24 @@ struct Status: AutoCodable {
     var textcolor: String = ""
     var statustypes: [String]? = [""]
 }
-
-extension Status : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        url <-- json["url"]
-        _type <-- json["_type"]
-        name <-- json["name"]
-        backgroundcolor <-- json["backgroundcolor"]
-        textcolor <-- json["textcolor"]
-        statustypes <-- json["statustypes"]
-
-    }
-}
-
-extension Status: RestResource {
-    static func restName() -> String { return "api/status/" }
-    func restId() -> String { return "\(name!)" }
-}
+//
+//extension Status : ArrowParsable {
+//    
+//    public mutating func deserialize(_ json: JSON) {
+//        url <-- json["url"]
+//        _type <-- json["_type"]
+//        name <-- json["name"]
+//        backgroundcolor <-- json["backgroundcolor"]
+//        textcolor <-- json["textcolor"]
+//        statustypes <-- json["statustypes"]
+//
+//    }
+//}
+//
+//extension Status: RestResource {
+//    static func restName() -> String { return "api/status/" }
+//    func restId() -> String { return "\(name!)" }
+//}
 
 //extension Status {
 //    func fetchStatus(id: String) -> Promise<Status> {

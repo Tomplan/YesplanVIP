@@ -7,17 +7,17 @@
 //
 
 import Foundation
-import Arrow
+//import Arrow
 
 struct Pagination: Codable {
     var next: String? = ""
     var expires: String? = ""
 }
-
-extension Pagination : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        next <-- json["next"]
-        expires <-- json["expires"]
-    }
-}
+//
+//extension Pagination : ArrowParsable {
+//
+//    public mutating func deserialize(_ json: JSON) {
+//        next <-- json["next"]
+//        expires <-- json["expires"]
+//    }
+//}

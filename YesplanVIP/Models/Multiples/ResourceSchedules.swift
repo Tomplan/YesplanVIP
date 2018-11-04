@@ -6,13 +6,13 @@
 ////  Copyright © 2018 Yesplan. All rights reserved.
 ////
 //
-//import Foundation
+import Foundation
 //import Arrow
 //
-//struct ResourcesSchedules: AutoCodable {
-//    var pagination = Pagination()
-//    var data = [ResourceSchedule]()
-//}
+struct ResourceSchedulesFromTo: Codable {
+    var pagination = Pagination()
+    var data = [ResourceScheduleFromTo]()
+}
 //
 //extension ResourcesSchedules: ArrowParsable {
 //    

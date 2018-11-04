@@ -6,19 +6,19 @@
 ////  Copyright © 2018 Yesplan. All rights reserved.
 ////
 //
-//import Foundation
+import Foundation
 //import Arrow
 //
 //
-//struct Shift: AutoCodable {
-//    var scheduletype: String = ""
-//    var start: String = "" // (timestamp)
-//    var end: String = "" // (timestamp)
-//    var duration: String = "" // (duration)
-//    var actualstart: String? //    null | string (timestamp)
-//    var actualend: String? //    null | string (timestamp)
-//    var actualstatus: String?
-//}
+struct Shift: Codable {
+    var scheduletype: String = ""
+    var start: String = "" // (timestamp)
+    var end: String = "" // (timestamp)
+    var duration: String = "" // (duration)
+    var actualstart: String? //    null | string (timestamp)
+    var actualend: String? //    null | string (timestamp)
+    var actualstatus: String?
+}
 //
 //extension Shift: ArrowParsable {
 //    public mutating func deserialize(_ json: JSON) {

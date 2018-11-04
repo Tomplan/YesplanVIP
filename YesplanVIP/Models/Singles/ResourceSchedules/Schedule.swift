@@ -6,18 +6,18 @@
 ////  Copyright © 2018 Yesplan. All rights reserved.
 ////
 //
-//import Foundation
+import Foundation
 //import Arrow
 //
 //
-//struct Schedule: Codable {
-//    var scheduletype: String
-//    var resourcebooking: Base
-//    var start: String // (timestamp)
-//    var end: String  // (timestamp)
-//    var actualstart: String? //    null | string (timestamp)
-//    var actualend: String? //    null | string (timestamp)
-//}
+struct Schedule: Codable {
+    var scheduletype: String
+    var resourcebooking: Base
+    var start: String // (timestamp)
+    var end: String  // (timestamp)
+    var actualstart: String? //    null | string (timestamp)
+    var actualend: String? //    null | string (timestamp)
+}
 //
 ////extension Schedule: ArrowParsable {
 ////    public mutating func deserialize(_ json: JSON) {

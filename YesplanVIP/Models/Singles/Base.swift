@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Arrow
-import then
+//import Arrow
+//import then
 
 struct Base: Codable {
     
@@ -25,17 +25,17 @@ struct Base: Codable {
 ////        self = .event(b)
 //    }
 }
-
-extension Base : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        url <-- json["url"]
-        id <-- json["id"]
-        name <-- json["name"]
-        _type <-- json["_type"]
-    }
-}
-
+//
+//extension Base : ArrowParsable {
+//    
+//    public mutating func deserialize(_ json: JSON) {
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        name <-- json["name"]
+//        _type <-- json["_type"]
+//    }
+//}
+//
 struct Base2: Codable {
     
     var url: String?

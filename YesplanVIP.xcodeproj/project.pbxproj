@@ -181,6 +181,16 @@
 		3CF142EF212E0422001FC532 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF142EE212E0422001FC532 /* ApiError.swift */; };
 		3CF2CA70215F588A00636180 /* TasksTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF2CA6F215F588A00636180 /* TasksTabViewCell+Extensions.swift */; };
 		3CF8F617215A4B340016EDC7 /* TasksTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF8F616215A4B340016EDC7 /* TasksTabView.swift */; };
+		3CFF85BF218F681100DED3FB /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85BE218F681100DED3FB /* Resources.swift */; };
+		3CFF85C1218F783400DED3FB /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85C0218F783400DED3FB /* Schedules.swift */; };
+		3CFF85C3218F8F0400DED3FB /* Counters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85C2218F8F0400DED3FB /* Counters.swift */; };
+		3CFF85C5218F8F4400DED3FB /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85C4218F8F4400DED3FB /* Cell.swift */; };
+		3CFF85C7218F8FDB00DED3FB /* Irregularhours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85C6218F8FDB00DED3FB /* Irregularhours.swift */; };
+		3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85C8218F900600DED3FB /* Overtimebonuspercentages.swift */; };
+		3CFF85CB218F904F00DED3FB /* OverworkTimePerPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CA218F904F00DED3FB /* OverworkTimePerPercentage.swift */; };
+		3CFF85CD218F90D900DED3FB /* Holidaytime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CC218F90D900DED3FB /* Holidaytime.swift */; };
+		3CFF85CF218F914D00DED3FB /* Overwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CE218F914D00DED3FB /* Overwork.swift */; };
+		3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */; };
 		3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */; };
 /* End PBXBuildFile section */
 
@@ -378,6 +388,16 @@
 		3CF8F616215A4B340016EDC7 /* TasksTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabView.swift; sourceTree = "<group>"; };
 		3CFAD96C213BF0B7003BAC1C /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		3CFAD96E213BF0CD003BAC1C /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		3CFF85BE218F681100DED3FB /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		3CFF85C0218F783400DED3FB /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
+		3CFF85C2218F8F0400DED3FB /* Counters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counters.swift; sourceTree = "<group>"; };
+		3CFF85C4218F8F4400DED3FB /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		3CFF85C6218F8FDB00DED3FB /* Irregularhours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Irregularhours.swift; sourceTree = "<group>"; };
+		3CFF85C8218F900600DED3FB /* Overtimebonuspercentages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overtimebonuspercentages.swift; sourceTree = "<group>"; };
+		3CFF85CA218F904F00DED3FB /* OverworkTimePerPercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverworkTimePerPercentage.swift; sourceTree = "<group>"; };
+		3CFF85CC218F90D900DED3FB /* Holidaytime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidaytime.swift; sourceTree = "<group>"; };
+		3CFF85CE218F914D00DED3FB /* Overwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overwork.swift; sourceTree = "<group>"; };
+		3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyFiveweekcounters.swift; sourceTree = "<group>"; };
 		6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
 		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,10 +444,19 @@
 			isa = PBXGroup;
 			children = (
 				3C24777C216A96DF0010EAFA /* ResourceSchedule.swift */,
+				3CFF85C0218F783400DED3FB /* Schedules.swift */,
 				3C24777F216A99210010EAFA /* Shift.swift */,
 				3C247781216A996C0010EAFA /* ScheduleBreak.swift */,
 				3C247783216A99AA0010EAFA /* Schedule.swift */,
 				3C247785216A9DCB0010EAFA /* Lock.swift */,
+				3CFF85C2218F8F0400DED3FB /* Counters.swift */,
+				3CFF85C6218F8FDB00DED3FB /* Irregularhours.swift */,
+				3CFF85C4218F8F4400DED3FB /* Cell.swift */,
+				3CFF85C8218F900600DED3FB /* Overtimebonuspercentages.swift */,
+				3CFF85CA218F904F00DED3FB /* OverworkTimePerPercentage.swift */,
+				3CFF85CC218F90D900DED3FB /* Holidaytime.swift */,
+				3CFF85CE218F914D00DED3FB /* Overwork.swift */,
+				3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */,
 			);
 			path = ResourceSchedules;
 			sourceTree = "<group>";
@@ -501,6 +530,7 @@
 				3C230AA721558BA5004477A3 /* Statuses.swift */,
 				3C862BF72157C2F700428BF9 /* Profiles.swift */,
 				3CC3774F2168CB010020236D /* Resourcebookings.swift */,
+				3CFF85BE218F681100DED3FB /* Resources.swift */,
 				3C24777A216A95E30010EAFA /* ResourceSchedules.swift */,
 			);
 			path = Multiples;
@@ -1107,6 +1137,7 @@
 				3CC377502168CB010020236D /* Resourcebookings.swift in Sources */,
 				3CD714F82164038A00CC370A /* TasksTabViewController+Extensions.swift in Sources */,
 				3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */,
+				3CFF85C3218F8F0400DED3FB /* Counters.swift in Sources */,
 				3CE710912121A78800EBF6A5 /* TasksWorker.swift in Sources */,
 				3CB59E77214079D300B6E458 /* MainTabBarWorker.swift in Sources */,
 				3CE710F22121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
@@ -1114,6 +1145,7 @@
 				3C570A502165589100154B93 /* ToDosTabViewCell+Extensions.swift in Sources */,
 				3CE9D1C221237C1800BFA730 /* LoginModels.swift in Sources */,
 				3C40AF1D212D91F30077DDC5 /* UserTabPresenter.swift in Sources */,
+				3CFF85BF218F681100DED3FB /* Resources.swift in Sources */,
 				3C40AF37212DAE8E0077DDC5 /* Base.swift in Sources */,
 				3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */,
 				3CC37757216946810020236D /* Resource.swift in Sources */,
@@ -1150,6 +1182,8 @@
 				3C7B4EFE217A0648000D7FDB /* BulkResourceUseResource.swift in Sources */,
 				3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */,
 				3CE710972121A78800EBF6A5 /* TasksModels.swift in Sources */,
+				3CFF85CB218F904F00DED3FB /* OverworkTimePerPercentage.swift in Sources */,
+				3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */,
 				3C570A492165533300154B93 /* ToDosTabViewCell.swift in Sources */,
 				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
@@ -1162,6 +1196,7 @@
 				3CC3774E2168C2BE0020236D /* Resourcebooking.swift in Sources */,
 				3CE9D1DF2123834100BFA730 /* UIButton+Extension.swift in Sources */,
 				3CE9D1D72123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
+				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
 				3CB59E7B214079E000B6E458 /* MainTabBarPresenter.swift in Sources */,
 				3CE7109D2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
@@ -1171,6 +1206,7 @@
 				3C7B4F00217A0686000D7FDB /* Location.swift in Sources */,
 				3C7B4F08217A2143000D7FDB /* DayPartPricingFormula.swift in Sources */,
 				3CE710782121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
+				3CFF85C1218F783400DED3FB /* Schedules.swift in Sources */,
 				3C40AEF5212D8E550077DDC5 /* EventsTabViewController.swift in Sources */,
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
 				3CBBF9D721766F01000FE808 /* ResourcebookingSchedule.swift in Sources */,
@@ -1180,6 +1216,7 @@
 				3CC3776B216A12A50020236D /* InstantiableResourceUseGroup.swift in Sources */,
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
 				3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */,
+				3CFF85C5218F8F4400DED3FB /* Cell.swift in Sources */,
 				3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */,
 				3CB59E72214079AD00B6E458 /* MainTabBarModels.swift in Sources */,
 				3CC425B32132140200DCD981 /* ArrowParsable+Extension.swift in Sources */,
@@ -1195,6 +1232,7 @@
 				3CE710CC2121A7E300EBF6A5 /* ToDosViewController.swift in Sources */,
 				3CE9D1DB2123832900BFA730 /* UITextField+Extension.swift in Sources */,
 				3CE710812121A76400EBF6A5 /* TeamplannerViewController.swift in Sources */,
+				3CFF85CF218F914D00DED3FB /* Overwork.swift in Sources */,
 				3CE9D1C821237C1800BFA730 /* LoginInteractor.swift in Sources */,
 				3CC3774C2168BDF80020236D /* TeamplannerTabViewHeader.swift in Sources */,
 				3CE710942121A78800EBF6A5 /* TasksRouter.swift in Sources */,
@@ -1216,6 +1254,7 @@
 				3CC377472168BD480020236D /* TeamplannerTabView.swift in Sources */,
 				3C87F352216E2865008120FA /* APIError.swift in Sources */,
 				3C40AF02212D8EB90077DDC5 /* EventsTabViewCell.swift in Sources */,
+				3CFF85CD218F90D900DED3FB /* Holidaytime.swift in Sources */,
 				3CE711062121AD7100EBF6A5 /* Dictionary+Extension.swift in Sources */,
 				3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */,
 				3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */,
@@ -1234,6 +1273,7 @@
 				3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */,
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
 				3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */,
+				3CFF85C7218F8FDB00DED3FB /* Irregularhours.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 				3CA2131D218E267100F74EED /* Constants.swift in Sources */,
 			);

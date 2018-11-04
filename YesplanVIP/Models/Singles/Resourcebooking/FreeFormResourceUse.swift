@@ -13,16 +13,16 @@ struct FreeFormResourceUse: Codable {
     
     var url: String
     var id: String
-//    var owner: User?
-//    var owningteam: Usergroup?
-//    var owninggroup: Usergroup?
+    var owner: User?
+    var owningteam: Usergroup?
+    var owninggroup: Usergroup?
     var _type = "resourcebooking"
-//    var number: Int = 0
-//    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
-//    var start: String? // added by tom!!! // timestamp
-//    var end: String? // added by tom!!! // timestamp
-//    var actualstart: String? // timestamp
-//    var actualend: String? // timestamp
+    var number: Int = 0
+    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
+    var start: String? // added by tom!!! // timestamp
+    var end: String? // added by tom!!! // timestamp
+    var actualstart: String? // timestamp
+    var actualend: String? // timestamp
     var event: ResourcebookingSchedule // tom // NOT Event_Id, Event_Id or Schedule
 }
 //

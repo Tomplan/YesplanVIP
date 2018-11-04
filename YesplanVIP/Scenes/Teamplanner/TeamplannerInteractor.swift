@@ -26,11 +26,8 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 {
   var presenter: TeamplannerTabPresentationLogic?
   var worker: TeamplannerTabWorker?
-//    var fetchedResourcebookings: Resourcebookings = Resourcebookings()
-//    var fetchedGroups: Groups = Groups()
-//
-//    var resourcebookingsArray: [Resourcebooking] = [Resourcebooking]()
-//    var yesplan: Yesplan = Yesplan()
+
+    var resourcebookingsArray: [Resourcebooking] = [Resourcebooking]()
 
   //var name: String = ""
   
@@ -39,14 +36,62 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
   func doSomething(request: TeamplannerTab.Something.Request)
   {
     worker = TeamplannerTabWorker()
-
-//    yesplan.getAll(ResourcesSchedules).then { result in
-//        print(result)
-//    }
-//    yesplan.getResourcesQuerySchedules(Resource).then { result in
-//        print(result)
-//    }
+    
+    worker?.getResourceSchedules("resource:type:human")
+        .map({$0.data})
+        .execute(onSuccess: { items in
+            print(items)
+//            for item in items {
+//                worker?.getResourceSchedules(item)
+//            }
+        }, onFailure: { error in
+            print(error)
+        })
     }
+    
+//    worker?.getResourcebookings("resourceuse:date:#today")
+//        // resourceuse:resourcespecies:adhoc
+//        // resourceuse:date:#today
+//        .execute(onSuccess: { items in
+////            print(items)
+////            self.worker?.getResourcebookings("resourceuse:resourcespecies:adhoc")
+////                .execute(onSuccess: { items in
+////                    print(items)
+////                })
+//            for item in items.data {
+//                switch item {
+//                case .bulkResourceUse(let x):
+//                    print("bulkResourceUse")
+//                    if let resource = x.resource {
+//                        print("resource: ", resource)
+//                    }
+//                case .freeFormResourceUse(let x):
+//                    print("freeFormResourceUse")
+//                    if let resource = x.resource {
+//                    print("resource: ", resource)
+//                    }
+//                case .instantiableResourceUse(let x):
+//                    print("instantiableResourceUse")
+//                    if let resource = x.resource {
+//                        print("resource: ", resource)
+//                    }
+//                case .instantiableResourceUseGroup(let x):
+//                    print("instantiableResourceUseGroup")
+//                    if let resource = x.resource {
+//                        print("resource: ", resource)
+//                    }
+//                case .resourceSetUse(let x):
+//                    print("resourceSetUse")
+//                    if let resource = x.resource {
+//                        print("resource: ", resource)
+//                    }
+////            self.statusesArray = items.data
+//                }
+//            }
+//        }, onFailure: { error in
+//            print(error) }
+//    )
+//    }
 }
 
 

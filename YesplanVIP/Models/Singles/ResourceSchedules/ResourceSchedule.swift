@@ -9,10 +9,18 @@
 //import Foundation
 //import Arrow
 //
-//struct ResourceSchedule: AutoCodable {
-////    var resource: Resource?
-//    var schedules: Schedules? 
-//}
+struct ResourceScheduleFromTo: Codable {
+//    let resource: Resource?
+    let schedules: [Schedules]?
+    let instancenumber: Int?
+//    let resourceinstance: Resourceinstance
+    let counters: [Counters]?
+    let irregularhours: [Irregularhours]?
+    let overtimebonuspercentages: [Overtimebonuspercentages]?
+    let holidaytime: [HolidayTime]?
+    let overwork: [Overwork]?
+    let twentyFiveweekcounters: [TwentyFiveweekcounters]?
+}
 //
 //
 //extension ResourceSchedule: ArrowParsable {

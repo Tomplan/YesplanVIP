@@ -15,15 +15,15 @@ struct Tasks: Codable {
     var data = [Task]()
 }
 
-extension Tasks : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        pagination <-- json["pagination"]
-        data <-- json["data"]
-    }
-}
-
-extension Tasks: RestResource {
-    static func restName() -> String { return "api/tasks/" }
-    func restId() -> String { return "" }
-}
+//extension Tasks : ArrowParsable {
+//    
+//    public mutating func deserialize(_ json: JSON) {
+//        pagination <-- json["pagination"]
+//        data <-- json["data"]
+//    }
+//}
+//
+//extension Tasks: RestResource {
+//    static func restName() -> String { return "api/tasks/" }
+//    func restId() -> String { return "" }
+//}

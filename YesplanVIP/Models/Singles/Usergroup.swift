@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Arrow
-import then
+//import Arrow
+//import then
 
 struct Usergroup: Codable {
     
@@ -16,17 +16,17 @@ struct Usergroup: Codable {
     var id: String = ""
     var name: String?
 }
-
-extension Usergroup : ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-        url <-- json["url"]
-        id <-- json["id"]
-        name <-- json["name"]
-    }
-}
-
-extension Usergroup: RestResource {
-    static func restName() -> String { return "api/usergroup/" }
-    func restId() -> String { return "\(id)" }
-}
+//
+//extension Usergroup : ArrowParsable {
+//
+//    public mutating func deserialize(_ json: JSON) {
+//        url <-- json["url"]
+//        id <-- json["id"]
+//        name <-- json["name"]
+//    }
+//}
+//
+//extension Usergroup: RestResource {
+//    static func restName() -> String { return "api/usergroup/" }
+//    func restId() -> String { return "\(id)" }
+//}
