@@ -19,12 +19,12 @@ protocol MainTabBarBusinessLogic
 
 protocol MainTabBarDataStore
 {
-  var basic: Yesplan { get set }
+//  var basic: Yesplan { get set }
 }
 
 class MainTabBarInteractor: MainTabBarBusinessLogic, MainTabBarDataStore
 {
-    var basic = Yesplan()
+//    var basic = Yesplan()
     
   var presenter: MainTabBarPresentationLogic?
   var worker: MainTabBarWorker?

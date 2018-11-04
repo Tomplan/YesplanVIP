@@ -11,9 +11,9 @@ import then
 
 //var task: [String : Any] = [:]
 
-struct Task: AutoCodable {
+struct Task: Codable {
     
-    var url: URL = URL(string: "http://")!
+    var url: URL = URL(string: "https://")!
     var id: String = ""
     var owner: User?
     var owningteam: Usergroup?
@@ -22,10 +22,10 @@ struct Task: AutoCodable {
     var name: String?
     var team: String = ""
     var cost: Int = 0
-    var due: String = "no deadline" //timestamp
+    var due: String? // = "no deadline" //timestamp
     var start: String? //timestamp
     var description: String?
-    var event: Base?    //
+    var event: Base2?    //
     var assignedby: String?
     var assignedto: String?
     var duration: String?

@@ -13,6 +13,8 @@ class APIClient {
     @discardableResult
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Future<T> {
         return Future(operation: { completion in
+            let url = route
+            print("url: ", url)
             AF.request(route).responseJSONDecodable(decoder: decoder, completionHandler: { (response: DataResponse<T>) in
                 switch response.result {
                 case .success(let value):
@@ -24,8 +26,20 @@ class APIClient {
         })
     }
     
-    static func events() -> Future<Events> {
-        return performRequest(route: APIRouter.events)
+    static func events(_ path: String) -> Future<Events> {
+        return performRequest(route: APIRouter.events(path: path))
+    }
+    
+    static func groups(_ path: String) -> Future<Groups> {
+        return performRequest(route: APIRouter.groups(path: path))
+    }
+    
+    static func tasks(_ path: String) -> Future<Tasks> {
+        return performRequest(route: APIRouter.tasks(path: path))
+    }
+    
+    static func resourcebookings(_ path: String) -> Future<Resourcebookings> {
+        return performRequest(route: APIRouter.resourcebookings(path: path))
     }
     
 //    static func login(email: String, password: String) -> Future<User> {

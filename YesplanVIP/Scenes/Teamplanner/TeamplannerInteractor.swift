@@ -30,7 +30,7 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 //    var fetchedGroups: Groups = Groups()
 //
 //    var resourcebookingsArray: [Resourcebooking] = [Resourcebooking]()
-    var yesplan: Yesplan = Yesplan()
+//    var yesplan: Yesplan = Yesplan()
 
   //var name: String = ""
   

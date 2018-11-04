@@ -16,7 +16,7 @@ import PromiseKit
 
 class EventsTabWorker {
     
-    var yesplan: Yesplan = Yesplan()
+//    var yesplan: Yesplan = Yesplan()
     var events: Events = Events()
     
 //     func makePromiseChain() {

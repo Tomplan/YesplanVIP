@@ -15,7 +15,7 @@ import then
 
 class TasksWorker
 {
-    var yesplan: Yesplan = Yesplan()
+//    var yesplan: Yesplan = Yesplan()
 
     func stringToDateShort(myDateString: String) -> String {
         if myDateString != "no deadline" {
@@ -38,7 +38,7 @@ class TasksWorker
     {
         var taskDict = [String : [Task]]()
 
-        taskDict = Dictionary(grouping: tasks.data, by: { $0.due.convertDateString(dateFormat: "yyyy-MM-dd")!})
+        taskDict = Dictionary(grouping: tasks.data, by: { $0.due?.convertDateString(dateFormat: "yyyy-MM-dd")! ?? "no deadline"})
         return taskDict
     }
     
@@ -46,7 +46,7 @@ class TasksWorker
     {
         var tasks: [String:[Task]] = [String:[Task]]()
         for (key, value) in taskDict {
-            let valueSorted = value.sorted(by: { $0.due < $1.due } )
+            let valueSorted = value.sorted(by: { $0.due! < $1.due! } )
             tasks[key] = valueSorted
             
         }

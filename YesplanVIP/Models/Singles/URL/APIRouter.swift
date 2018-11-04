@@ -13,10 +13,11 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {
 
-    case events
-    case groups
-    case tasks
-
+    case events(path: String)
+    case groups(path: String)
+    case tasks(path: String)
+    case resourcebookings(path: String)
+    
 //     var object: Any {
 //        switch self {
 //        case .events: return Events()
@@ -34,6 +35,7 @@ enum APIRouter: URLRequestConvertible {
             case .events
                 ,.groups
                 ,.tasks
+                ,.resourcebookings
                 :return .get
 //        case .login:
 //            return .post
@@ -44,10 +46,13 @@ enum APIRouter: URLRequestConvertible {
 
     // MARK: - Path
     private var path: String {
+        
         switch self {
-        case .events: return "/events"
-        case .groups: return "/groups"
-        case .tasks: return "/tasks"
+        case .events(let path): return "/api/events/\(path)"
+        case .groups(let path): return "/api/groups/\(path)"
+        case .tasks(let path): return "/api/tasks/\(path)"
+        case .resourcebookings(let path): return "/api/resourcebookings/\(path)"
+
 //
 ////        case .login:
 ////            return "/login"
@@ -65,7 +70,8 @@ enum APIRouter: URLRequestConvertible {
             case .events
                 ,.groups
                 ,.tasks
-            :return nil
+                ,.resourcebookings
+                :return nil
 //        case .login(let email, let password):
 //            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
 //        case .articles, .article:
@@ -75,9 +81,19 @@ enum APIRouter: URLRequestConvertible {
 
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        let url = try UserDefaults.standard.string(forKey: "URL")!.asURL()
 
-        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,?%#[] ").inverted
+        let pathPercentEncoded = path.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!
+        
+        let urlComponents = NSURLComponents()
+        urlComponents.scheme = "https";
+        urlComponents.host = "\(UserDefaults.standard.string(forKey: "URL")!)";
+        urlComponents.percentEncodedPath = "\(pathPercentEncoded)";
+        urlComponents.query = "api_key=\(UserDefaults.standard.string(forKey: "KEY")!)"
+        
+        let url = try urlComponents.url!.asURL()
+        print("url: ", url)
+        var urlRequest = URLRequest(url: url)
 
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
@@ -89,12 +105,12 @@ enum APIRouter: URLRequestConvertible {
         // Parameters
         if let parameters = parameters {
             do {
+                print("parameters: ", parameters)
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-
         return urlRequest
     }
 }

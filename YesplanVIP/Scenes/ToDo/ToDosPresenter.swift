@@ -54,7 +54,7 @@ class ToDosPresenter: ToDosPresentationLogic
                 , due: "Keep up the good work!"
                 , start: nil
                 , description: nil
-                , event: Optional(YesplanVIP.Base(url: "", id: nil, name: Optional(""), _type: nil))
+                , event: Optional(YesplanVIP.Base2(url: "", id: nil, name: Optional(""), _type: nil))
                 , assignedby: Optional("")
                 , assignedto: Optional("")
                 , duration: Optional("")

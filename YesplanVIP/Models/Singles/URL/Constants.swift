@@ -8,14 +8,15 @@
 
 import Foundation
 
-struct K {
+struct Constants {
     struct ProductionServer {
-        static let baseURL = "http://dewerft.yesplan.be/api"
+        static let baseURL = "https://dewerft.yesplan.be/api"
     }
     
     struct APIParameterKey {
         static let password = "password"
         static let email = "email"
+        static let key = "api_key"
     }
 }
 

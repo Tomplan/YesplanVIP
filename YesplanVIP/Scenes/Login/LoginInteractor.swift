@@ -68,7 +68,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
                 if let x = try? urlComponents.url!.asURL() {
                     let y = (String(describing: x))
 
-                    UserDefaults.standard.set(y, forKey: "URL")
+                    UserDefaults.standard.set(companyUrl, forKey: "URL")
                     UserDefaults.standard.set(apiKey, forKey: "KEY")
 //                    UserDefaults.standard.set(user, forKey: "todo_user_preference")
 

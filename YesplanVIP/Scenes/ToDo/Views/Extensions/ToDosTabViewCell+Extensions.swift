@@ -31,7 +31,7 @@ extension ToDosTabViewCell {
             lblName.textAlignment = .center
             lblStart.text = ""
         } else {
-            lblDeadline.text = "deadline: \(String(describing: task.due.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
+            lblDeadline.text = "deadline: \(String(describing: task.due?.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
         }
         
         if let assignedTo = task.assignedto {

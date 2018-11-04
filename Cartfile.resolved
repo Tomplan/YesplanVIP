@@ -1,2 +1,5 @@
 github "Alamofire/Alamofire" "a8a2827f5c14c9168a0373e948e963d36edfdbc5"
 github "PureLayout/PureLayout" "v3.1.4"
+github "freshOS/ws" "1.1.1"
+github "s4cha/Arrow" "4.2.0"
+github "s4cha/then" "4.2.0"

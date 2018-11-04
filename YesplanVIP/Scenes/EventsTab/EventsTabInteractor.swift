@@ -47,65 +47,35 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-//    var obj = Events()
-//    var url = URL(string: "https://dewerft.yesplan.be/api/events?api_key=C857C01360BB5777DABE5B7EE6594CD1")
-//    print("url: ", url)
+
+//    APIClient.events("event:date:#today + event:date:#next13days")
+//        .execute(onSuccess: { items in
+//            print(items.pagination)
+//        }, onFailure: {error in
+//            print(error)
+//        })
     
-    APIClient.events()
-        .execute(onSuccess: { article in
-            print(article)
-        }, onFailure: {error in
-            print(error)
-        })
-    //    firstly {
-//        URLSession.shared.dataTask(.promise, with: try makeUrlRequest()).validate()
-//        // ^^ we provide `.validate()` so that eg. 404s get converted to errors
-//        }.map {
-//            try JSONDecoder().decode(Events.self, from: $0.data)
-//        }.done { foo in
-//            //…
-//            print("foo: ", foo)
-//        }.catch { error in
-//            //…
-//            print("error: ", error)
-//
-//    }
-//
-//    func makeUrlRequest() throws -> URLRequest {
-//        var rq = URLRequest(url: url!)
-//        rq.httpMethod = "GET"
-//        rq.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        rq.addValue("application/json", forHTTPHeaderField: "Accept")
-////        rq.httpBody = try JSONEncoder().encode(obj)
-//        print("rq: ", rq)
-////        print("rq.httpBody: ", rq.httpBody)
-//
-//        return rq
-//    }
+
+//    APIClient.groups("")
+//        .execute(onSuccess: { items in
+//            print(items.data)
+//        }, onFailure: {error in
+//            print(error)
+//        })
     
+//    APIClient.tasks("")
+//        .execute(onSuccess: { items in
+//            print(items.data)
+//        }, onFailure: {error in
+//            print(error)
+//        })
     
-    
-//    worker?.makePromiseChain()
-//    client.getGroups(from: Yp.groups) { result in
-//        switch result {
-//        case .success(let items):
-//            print(items)
-////            guard let data = events
-//            for item in items.data {
-//                if let name = item.name {
-//                print(name)
-//                }
-////                for location in item.locations {
-////                    if let name = location.name {
-////                        print(name)
-////
-////                    }
-////                }
-//            }
-//        case .failure(let error):
-//            print("error: \(error)")
-//        }
-//        }
+//        APIClient.resourcebookings("")
+//            .execute(onSuccess: { items in
+//                print(items.data)
+//            }, onFailure: {error in
+//                print(error)
+//            })
     
 //    yesplan.getEvents()
 //        .then { result in

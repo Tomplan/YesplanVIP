@@ -24,7 +24,7 @@ extension TasksTabViewCell {
              lblName.text = name }
         
         if task.due != "no deadline" {
-            lblDeadline.text = "deadline: \(String(describing: task.due.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
+            lblDeadline.text = "deadline: \(String(describing: task.due?.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
         } else {
             lblDeadline.text = "no deadline"
         }
