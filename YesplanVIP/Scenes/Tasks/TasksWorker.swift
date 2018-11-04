@@ -11,12 +11,22 @@
 //
 
 import UIKit
-import then
+import PromisedFuture
 
 class TasksWorker
 {
-//    var yesplan: Yesplan = Yesplan()
-
+    func getTasks(_ path: String) -> Future<Tasks> {
+        return Future(operation: { completion in
+            APIClient.tasks("\(path)")
+                .map({$0})
+                .execute(onSuccess: { items in
+                    completion(.success(items))
+                }, onFailure: { error in
+                    completion(.failure(error))
+                })
+        })
+    }
+    
     func stringToDateShort(myDateString: String) -> String {
         if myDateString != "no deadline" {
         let dateFormatter = DateFormatter()
@@ -34,28 +44,29 @@ class TasksWorker
         }
     }
     
-    func groupTasksByDue(tasks: Tasks) -> [String : [Task]]
+    func groupTasksByDue(tasks: Tasks) -> Future<[String : [Task]]>
     {
         var taskDict = [String : [Task]]()
 
         taskDict = Dictionary(grouping: tasks.data, by: { $0.due?.convertDateString(dateFormat: "yyyy-MM-dd")! ?? "no deadline"})
-        return taskDict
+        return Future(value: taskDict)
     }
     
-    func sortTasksInEachGroupByDue(taskDict: [String : [Task]]) -> [String : [Task]]
+    func sortTasksInEachGroupByDue(taskDict: [String : [Task]]) -> Future<[String : [Task]]>
     {
         var tasks: [String:[Task]] = [String:[Task]]()
         for (key, value) in taskDict {
-            let valueSorted = value.sorted(by: { $0.due! < $1.due! } )
+            let valueSorted = value.sorted(by: { $0.due ?? "no deadline" < $1.due ?? "no deadline" } )
             tasks[key] = valueSorted
             
         }
-        return tasks
+        return Future(value: tasks)
     }
-    func sortDictByDate(dictTasks: [String:[Task]]) -> [(key: String, value: [Task])] {
+    
+    func sortDictByDate(dictTasks: [String:[Task]]) -> Future<[(key: String, value: [Task])]> {
         
         let sortedDictByDate = dictTasks.sorted(by:  { $0.0 < $1.0 })
-        return sortedDictByDate
+        return Future(value: sortedDictByDate)
     }
     
     func showErrorPopup(e:Error) { print("An error occured \(e)") }

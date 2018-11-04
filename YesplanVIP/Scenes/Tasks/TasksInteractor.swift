@@ -11,8 +11,7 @@
 //
 
 import UIKit
-import ws
-import then
+import PromiseKit
 
 protocol TasksBusinessLogic
 {
@@ -29,11 +28,8 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   var presenter: TasksPresentationLogic?
   var worker: TasksWorker?
     
-//    var yesplan: Yesplan = Yesplan()
-    var fetchedTasks: Tasks = Tasks()
+//    var fetchedTasks: Tasks = Tasks()
     var error: String?
-//    var fetchedStatuses: Statuses = Statuses()
-//    var statusesArray: [Status] = [Status]()
 
     var tasksArray: [(key: String, value: [Task])] = [(key: String, value: [Task])]()
   // MARK: Do something
@@ -43,33 +39,25 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   {
     worker = TasksWorker()
     
-//    yesplan.getAll(fetchedTasks, query: "task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
-//        .then((worker?.groupTasksByDue)!)
-//        .then((worker?.sortTasksInEachGroupByDue)!)
-//        .then((worker?.sortDictByDate)!)
-//        .then { result in
-////            print(result)
-//            self.tasksArray = result
-//        }
-//
-//        .onError { e in
-//            // An error occured :/
-//            print(e)
-//            self.error = "\(e)"
-//            let response = TasksTab.Something.Response(
-//                tasks: self.tasksArray
-//                ,error: self.error
-//            )
-//            self.presenter?.presentSomething(response: response)
-//        }
-//        .finally {
-//
-//        let response = TasksTab.Something.Response(
-//            tasks: self.tasksArray
-////            ,statuses: self.statusesArray
-//            ,error: nil
-//        )
-//        self.presenter?.presentSomething(response: response)
-//    }
+    worker?.getTasks("task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
+        .andThen((worker?.groupTasksByDue)!)
+        .andThen((worker?.sortTasksInEachGroupByDue)!)
+        .andThen((worker?.sortDictByDate)!)
+        .execute(onSuccess: { items in
+            self.tasksArray = items
+            let response = TasksTab.Something.Response(
+                tasks: self.tasksArray
+                ,error: self.error
+                )
+            self.presenter?.presentSomething(response: response)
+        }) { error in
+            print(error)
+            self.error = error.localizedDescription
+            let response = TasksTab.Something.Response(
+                tasks: self.tasksArray
+                ,error: self.error
+            )
+            self.presenter?.presentSomething(response: response)
+    }
   }
 }

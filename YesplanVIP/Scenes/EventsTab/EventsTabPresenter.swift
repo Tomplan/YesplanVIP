@@ -46,7 +46,7 @@ class EventsTabPresenter: EventsTabPresentationLogic
         displayedEvents: events,
         displayedStatuses: statusesDict,
         displayedProfiles: profilesDict,
-        error: response.error!
+        error: response.error
         )
         viewController?.displaySomething(viewModel: viewModel)
     }

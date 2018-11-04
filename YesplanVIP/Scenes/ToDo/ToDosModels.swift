@@ -24,6 +24,7 @@ enum ToDosTab
         struct Response
         {
             var toDos: [(key: String, value: [Task])]
+            var error: String?
         }
         struct ViewModel
         {

@@ -15,16 +15,12 @@ enum APIRouter: URLRequestConvertible {
 
     case events(path: String)
     case groups(path: String)
-    case tasks(path: String)
+    case profiles(path: String)
     case resourcebookings(path: String)
-    
-//     var object: Any {
-//        switch self {
-//        case .events: return Events()
-//        case .groups: return Groups()
-//        case .tasks: return Tasks()
-//        }
-//    }
+    case statuses(path: String)
+    case tasks(path: String)
+
+
 ////    case login(email:String, password:String)
 ////    case articles(userId: Int)
 ////    case article(id: Int)
@@ -34,13 +30,17 @@ enum APIRouter: URLRequestConvertible {
         switch self {
             case .events
                 ,.groups
-                ,.tasks
+                ,.profiles
                 ,.resourcebookings
+                ,.statuses
+                ,.tasks
                 :return .get
+            
 //        case .login:
 //            return .post
 //        case .articles, .article:
 //            return .get
+            
         }
     }
 
@@ -50,6 +50,8 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .events(let path): return "/api/events/\(path)"
         case .groups(let path): return "/api/groups/\(path)"
+        case .profiles(let path): return "/api/profiles/\(path)"
+        case .statuses(let path): return "/api/statuses/\(path)"
         case .tasks(let path): return "/api/tasks/\(path)"
         case .resourcebookings(let path): return "/api/resourcebookings/\(path)"
 
@@ -69,13 +71,17 @@ enum APIRouter: URLRequestConvertible {
         switch self {
             case .events
                 ,.groups
-                ,.tasks
+                ,.profiles
                 ,.resourcebookings
+                ,.statuses
+                ,.tasks
                 :return nil
+            
 //        case .login(let email, let password):
 //            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
 //        case .articles, .article:
 //            return nil
+            
         }
     }
 

@@ -28,9 +28,7 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
 {
     var presenter: ToDosPresentationLogic?
     var worker: ToDosWorker?
-    
-//    var yesplan: Yesplan = Yesplan()
-    var fetchedToDos: Tasks = Tasks()
+    var error: String?
     
     var toDosArray: [(key: String, value: [Task])] = [(key: String, value: [Task])]()
     // MARK: Do something
@@ -40,21 +38,25 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     {
         worker = ToDosWorker()
 
-//        yesplan.getAll(fetchedToDos, query: "task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
-//            .then((worker?.groupToDosByDue)!)
-//            .then((worker?.sortToDosInEachGroupByDue)!)
-//            .then((worker?.sortDictByDate)!)
-//            .then { result in
-//                self.toDosArray = result
-//            }
-//            .onError((worker?.showErrorPopup)!)
-//            
-//            .finally {
-//                
-//                let response = ToDosTab.Something.Response(
-//                    toDos: self.toDosArray
-//                )
-//                self.presenter?.presentSomething(response: response)
-//        }
+        worker?.getTasks("task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
+            .andThen((worker?.groupToDosByDue)!)
+            .andThen((worker?.sortToDosInEachGroupByDue)!)
+            .andThen((worker?.sortDictByDate)!)
+            .execute(onSuccess: { items in
+                self.toDosArray = items
+                let response = ToDosTab.Something.Response(
+                    toDos: self.toDosArray
+                    ,error: self.error
+                )
+                self.presenter?.presentSomething(response: response)
+            }) { error in
+                print(error)
+                self.error = error.localizedDescription
+                let response = ToDosTab.Something.Response(
+                    toDos: self.toDosArray
+                    ,error: self.error
+                )
+                self.presenter?.presentSomething(response: response)
+        }
     }
 }

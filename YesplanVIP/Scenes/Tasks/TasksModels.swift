@@ -24,7 +24,6 @@ enum TasksTab
     struct Response
     {
         var tasks: [(key: String, value: [Task])]
-//        var statuses: [Status]
         var error: String?
     }
     struct ViewModel

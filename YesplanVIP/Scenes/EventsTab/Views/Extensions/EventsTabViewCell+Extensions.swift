@@ -24,7 +24,9 @@ extension EventsTabViewCell {
             if locations.count != 0 {
         if let location = locations[0].name {
             lblLocation.text = location } } }
-        if let groupName = event.group!.name {
-            lblGroupName.text = groupName }
+        if let group = event.group {
+            if let groupName = group.name {
+                lblGroupName.text = groupName }
+            }
     }
 }
