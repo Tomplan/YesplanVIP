@@ -30,7 +30,6 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
     
 //    var fetchedTasks: Tasks = Tasks()
     var error: String?
-
     var tasksArray: [(key: String, value: [Task])] = [(key: String, value: [Task])]()
   // MARK: Do something
    

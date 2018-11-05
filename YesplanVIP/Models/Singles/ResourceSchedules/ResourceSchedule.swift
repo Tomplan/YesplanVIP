@@ -10,16 +10,18 @@
 //import Arrow
 //
 struct ResourceScheduleFromTo: Codable {
-//    let resource: Resource?
+    let resource: Base?
     let schedules: [Schedules]?
     let instancenumber: Int?
-//    let resourceinstance: Resourceinstance
+    let resourceinstance: Resourceinstance?
     let counters: [Counters]?
     let irregularhours: [Irregularhours]?
     let overtimebonuspercentages: [Overtimebonuspercentages]?
     let holidaytime: [HolidayTime]?
     let overwork: [Overwork]?
-    let twentyFiveweekcounters: [TwentyFiveweekcounters]?
+    let twentyFiveweekcounters: [TwentyFiveweekcounters]? // 52week... codingkeys!!!
+    
+    
 }
 //
 //

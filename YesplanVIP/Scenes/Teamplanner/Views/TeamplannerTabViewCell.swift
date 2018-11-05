@@ -55,7 +55,7 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         layer.borderWidth = 4
         layer.shadowOffset = CGSize(width: -2, height: 2)
         layer.borderColor = UIColor.black.cgColor
-        backgroundColor = UIColor.yellow
+        backgroundColor = UIColor.lightGray
         
         sv(
 //            lblHeaderName,
@@ -71,7 +71,7 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         
         lblStart.numberOfLines = 0
         lblStart.font = UIFont.systemFont(ofSize: 12.0)
-        lblStart.textColor = UIColor.gray
+        lblStart.textColor = UIColor.black
 //
 //        lblLocation.numberOfLines = 0
 //        lblLocation.font = UIFont.systemFont(ofSize: 12.0)

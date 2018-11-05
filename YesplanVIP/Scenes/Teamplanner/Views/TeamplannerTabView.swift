@@ -14,6 +14,8 @@ import Stevia
 //class TeamplannerTabView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
 class TeamplannerTabView: UIView {
     
+//    var TeamplannerPrefsAction: (() -> Void)?
+
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
     let spinner = UIActivityIndicatorView(style: .gray)
@@ -45,6 +47,15 @@ class TeamplannerTabView: UIView {
         return iv
     }()
     
+//    let TeamplannerPrefsButton: UIButton = {
+//        let button = UIButton(title: "Login", borderColor: .greenBorderColor)
+//        button.addTarget(self, action: #selector(handleTeamplannerPrefs), for: .touchUpInside)
+//        return button
+//    }()
+//
+//    @objc func handleTeamplannerPrefs() {
+//        TeamplannerPrefsAction?()
+//    }
     convenience init() {
         self.init(frame: CGRect.zero)
         

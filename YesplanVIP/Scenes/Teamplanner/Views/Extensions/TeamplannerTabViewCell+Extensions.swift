@@ -15,12 +15,14 @@ import Kingfisher
 
 extension TeamplannerTabViewCell {
     
-//    func populate(with resourcebooking: TeamplannerTab.Something.ViewModel.Displ) {
-//        let name = resourcebooking.name
+    func populate(with resourcebooking: TeamplannerTab.Something.ViewModel.Displ) {
+//        let name = resourcebooking.
 //        lblName.text = name
-//        let start = resourcebooking.Start
-//        let end = resourcebooking.End
-//        lblStart.text = "\(start.convertDateString(dateFormat: "HH:mm")!) - \(end.convertDateString(dateFormat: "HH:mm")!   )"
+        let start = resourcebooking.start
+        let end = resourcebooking.end
+        let eventName = resourcebooking.eventName
+        let role = resourcebooking.role
+        lblStart.text = "• \(start.convertDateString(dateFormat: "HH:mm")!) - \(end.convertDateString(dateFormat: "HH:mm")!) \(eventName): \(role)"
     
 //        if let defaultschedulestarttime = event.defaultschedulestarttime {
 //            lblDefaultschedulestarttime.text = defaultschedulestarttime}
@@ -30,5 +32,5 @@ extension TeamplannerTabViewCell {
 //                    lblLocation.text = location } } }
 //        if let groupName = event.group!.name {
 //            lblGroupName.text = groupName }
-//    }
+    }
 }

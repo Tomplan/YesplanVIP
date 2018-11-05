@@ -95,6 +95,11 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   //@IBOutlet weak var nameTextField: UITextField!
     
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func userDefaultsDidChange(){
         doSomething()
     }

@@ -23,24 +23,27 @@ enum TeamplannerTab
     }
     struct Response
     {
-//        var resourcebookings: [Resourcebooking]
-
+        var resourcebookings: [Resourcebooking]
+        var error: String?
     }
     struct ViewModel
     {
-//        struct DisplayedResourcebooking {
-//            let date: String
-//            let resourcebookings: [Displ]
-//        }
-//
-//        struct Displ {
-//            let date: String
-//            let name: String
-//            let Start: String
-//            let End: String
-//        }
-//
-//        var displayedResourcebookings: [DisplayedResourcebooking]
+        struct DisplayedResourcebooking: Hashable {
+            let date: String
+            let resourcebookings: [Displ]
+        }
+
+        struct Displ: Hashable {
+            let date: String
+            let start: String
+            let end: String
+            let eventName: String
+            let role: String
+        }
+
+        var displayedResourcebookings: Set<DisplayedResourcebooking>
+        var error: String?
+
     }
   }
 }

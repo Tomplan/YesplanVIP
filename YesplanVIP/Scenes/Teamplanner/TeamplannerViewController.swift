@@ -22,7 +22,7 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   var interactor: TeamplannerTabBusinessLogic?
   var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
     var v = TeamplannerTabView()
-//var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
+var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -72,7 +72,11 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   {
     super.viewDidLoad()
     view.backgroundColor = UIColor.red
-
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+    
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(addTapped))
+   
     doSomething()
     
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -80,10 +84,25 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   }
   
   // MARK: Do something
-  
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func userDefaultsDidChange(){
+        doSomething()
+    }
+    
+    @objc func addTapped(sender: AnyObject) {
+        if let url = URL(string:UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                _ =  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
   //@IBOutlet weak var nameTextField: UITextField!
     @objc private func refresh() {
-        
         doSomething()
     }
     
@@ -95,7 +114,8 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
-//    displayedResourcebookings = viewModel.displayedResourcebookings
+    displayedResourcebookings = Array(viewModel.displayedResourcebookings.sorted(by: { $0.date < $1.date }))
+
 //    dump(displayedResourcebookings)
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()

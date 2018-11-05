@@ -15,7 +15,7 @@ struct InstantiableResourceUseGroup: Codable {
     var _type: String //= ""
     var number: Int // = 0
     var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
-    var children: InstantiableResourceUse // (instantiable resource use group | resource set use | free form resource use | bulk resource use)*
+    var children: [InstantiableResourceUse] // (instantiable resource use)*
     var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     var actualnumber: Int?
 //

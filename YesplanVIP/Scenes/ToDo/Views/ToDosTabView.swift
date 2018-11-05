@@ -13,7 +13,7 @@ import Stevia
 
 class ToDosTabView: UIView {
     
-    var toDoPrefsAction: (() -> Void)?
+//    var toDoPrefsAction: (() -> Void)?
 
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
@@ -39,15 +39,15 @@ class ToDosTabView: UIView {
         return iv
     }()
     
-    let toDoPrefsButton: UIButton = {
-        let button = UIButton(title: "Login", borderColor: .greenBorderColor)
-        button.addTarget(self, action: #selector(handleToDoPrefs), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc func handleToDoPrefs() {
-        toDoPrefsAction?()
-    }
+//    let toDoPrefsButton: UIButton = {
+//        let button = UIButton(title: "Login", borderColor: .greenBorderColor)
+//        button.addTarget(self, action: #selector(handleToDoPrefs), for: .touchUpInside)
+//        return button
+//    }()
+//
+//    @objc func handleToDoPrefs() {
+//        toDoPrefsAction?()
+//    }
     
     convenience init() {
         self.init(frame: CGRect.zero)
