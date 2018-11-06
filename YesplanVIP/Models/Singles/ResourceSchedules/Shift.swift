@@ -6,10 +6,9 @@
 ////  Copyright © 2018 Yesplan. All rights reserved.
 ////
 //
+
 import Foundation
-//import Arrow
-//
-//
+
 struct Shift: Codable {
     var scheduletype: String = ""
     var start: String = "" // (timestamp)
@@ -19,16 +18,4 @@ struct Shift: Codable {
     var actualend: String? //    null | string (timestamp)
     var actualstatus: String?
 }
-//
-//extension Shift: ArrowParsable {
-//    public mutating func deserialize(_ json: JSON) {
-//        
-//        scheduletype <-- json["scheduletype"]
-//        start <-- json["start"]
-//        end <-- json["end"]
-//        duration <-- json["duration"]
-//        actualstart <-- json["actualstart"]
-//        actualend <-- json["actualend"]
-//        actualstatus <-- json["actualstatus"]
-//    }
-//}
+

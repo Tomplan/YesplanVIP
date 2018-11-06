@@ -108,6 +108,7 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
     
   func doSomething()
   {
+    print("doSomething")
     let request = TeamplannerTab.Something.Request()
     interactor?.doSomething(request: request)
   }

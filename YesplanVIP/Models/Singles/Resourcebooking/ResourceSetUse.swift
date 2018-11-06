@@ -19,32 +19,8 @@ struct ResourceSetUse: Codable {
     var _type = "resourcebooking"
     var number: Int // = 0
     var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
-    var children: [Resourcebooking]
+    var children: [ResourcebookingChildren]
     var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     var resourceinstance: Base? // NOT Resourceinstance_Id
     var actualnumber: Int?
 }
-//
-//extension ResourceSetUse: ArrowParsable {
-//    mutating func deserialize(_ json: JSON) {
-//        _type <-- json["_type"]
-//        
-//        url <-- json["url"]
-//        id <-- json["id"]
-//        owner <-- json["owner"]
-//        owningteam <-- json["owningteam"]
-//        owninggroup <-- json["owninggroup"]
-//        number <-- json["number"]
-//        resource <-- json["resource"]
-//        //        do {
-//        //            resource = try Resource(resource: json["resource"]!)!
-//        //        } catch {
-//        //            print(error)
-//        //        }
-//        number <-- json["number"]
-//        event <-- json["event"]
-//        role <-- json["role"]
-//        resourceinstance <-- json["resourceinstance"]
-//        actualnumber <-- json["actualnumber"]
-//    }
-//}

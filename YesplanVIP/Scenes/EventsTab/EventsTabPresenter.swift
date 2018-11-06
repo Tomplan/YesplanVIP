@@ -21,7 +21,7 @@ class EventsTabPresenter: EventsTabPresentationLogic
 {
   weak var viewController: EventsTabDisplayLogic?
 
-    func stringToEventsDate(myDateString: String) -> String {
+    func stringToEventsDate(_ myDateString: String) -> String {
         
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale // save locale temporarily
@@ -52,7 +52,7 @@ class EventsTabPresenter: EventsTabPresentationLogic
     }
     else {
     for (key, value) in response.events {
-        events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: stringToEventsDate(myDateString: key), events: value))
+        events.append(EventsTab.Something.ViewModel.DisplayedEvent(date: stringToEventsDate(key), events: value))
     }
     
     for profile in response.profiles {

@@ -23,7 +23,8 @@ enum TeamplannerTab
     }
     struct Response
     {
-        var resourcebookings: [Resourcebooking]
+//        var resourcebookings: [Resourcebooking]
+        var resourceSchedules: [ResourceScheduleFromTo]
         var error: String?
     }
     struct ViewModel
@@ -35,10 +36,11 @@ enum TeamplannerTab
 
         struct Displ: Hashable {
             let date: String
+            let scheduleType: String
             let start: String
             let end: String
-            let eventName: String
-            let role: String
+//            let eventName: String
+//            let role: String
         }
 
         var displayedResourcebookings: Set<DisplayedResourcebooking>

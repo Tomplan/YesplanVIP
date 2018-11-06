@@ -11,7 +11,7 @@ import Foundation
 
 extension String {
     
-    func convertDateString(dateFormat format  : String ) -> String? {
+    func convertDateString(dateFormat format : String ) -> String? {
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale // save locale temporarily
         dateFormatter.locale = Locale(identifier: "nl_BE") // set locale to reliable US_POSIX
@@ -27,7 +27,7 @@ extension String {
         }
     }
     
-    func convertDateStringShort(dateFormat format  : String ) -> String? {
+    func convertDateStringShort(dateFormat format : String ) -> String? {
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale // save locale temporarily
         dateFormatter.locale = Locale(identifier: "nl_BE") // set locale to reliable US_POSIX

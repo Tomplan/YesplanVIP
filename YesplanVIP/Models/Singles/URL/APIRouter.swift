@@ -16,6 +16,7 @@ enum APIRouter: URLRequestConvertible {
     case events(path: String)
     case groups(path: String)
     case profiles(path: String)
+    case resourcebookingId(id: String)
     case resourcebookings(path: String)
     case resources(path: String)
     case resourcesSchedulesFromTo(path: String)
@@ -33,6 +34,7 @@ enum APIRouter: URLRequestConvertible {
             case .events
                 ,.groups
                 ,.profiles
+                ,.resourcebookingId
                 ,.resourcebookings
                 ,.resources
                 ,.resourcesSchedulesFromTo
@@ -55,6 +57,7 @@ enum APIRouter: URLRequestConvertible {
         case .events(let path): return "/api/events/\(path)"
         case .groups(let path): return "/api/groups/\(path)"
         case .profiles(let path): return "/api/profiles/\(path)"
+        case .resourcebookingId(let id): return "/api/resourcebooking/\(id)"
         case .resourcebookings(let path): return "/api/resourcebookings/\(path)"
         case .resources(let path): return "/api/resources/\(path)"
         case .resourcesSchedulesFromTo(let path): return "/api/resources/\(path)/schedules"
@@ -79,6 +82,7 @@ enum APIRouter: URLRequestConvertible {
                 ,.groups
                 ,.profiles
                 ,.resourcebookings
+                ,.resourcebookingId
                 ,.resources
                 ,.resourcesSchedulesFromTo
                 ,.statuses
@@ -99,13 +103,14 @@ enum APIRouter: URLRequestConvertible {
         case .events
         ,.groups
         ,.profiles
+        ,.resourcebookingId
         ,.resourcebookings
         ,.resources
         ,.statuses
         ,.tasks
             :return [:]
         case .resourcesSchedulesFromTo:
-            return ["from": "2018-11-01", "to" : "2018-11-20"]
+            return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]
             //        case .login(let email, let password):
             //            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
             //        case .articles, .article:
@@ -144,9 +149,10 @@ enum APIRouter: URLRequestConvertible {
 //        }
 //        let queryItemQuery = URLQueryItem(name: "query", value: "swift ios")
 //        urlComponents.query = "api_key=\(UserDefaults.standard.string(forKey: "KEY")!)"
-        
+//        print("urlComponents: ", urlComponents)
+
         let url = try urlComponents.url!.asURL()
-        print("url: ", url)
+//        print("url: ", url)
         var urlRequest = URLRequest(url: url)
 
         // HTTP Method
@@ -159,15 +165,32 @@ enum APIRouter: URLRequestConvertible {
         // Parameters
         if let parameters = parameters {
             do {
-                print("parameters: ", parameters)
+//                print("parameters: ", parameters)
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-                print("urlRequest1: ", urlRequest)
+//                print("urlRequest1: ", urlRequest)
                 
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-        print("urlRequest: ", urlRequest)
+//        print("urlRequest: ", urlRequest)
         return urlRequest
     }
+}
+
+public func  getCurrentShortDate() -> String {
+    let todaysDate = Date()
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    let DateInFormat = dateFormatter.string(from: todaysDate)
+    
+    return DateInFormat
+}
+
+public func currentDatePlus14Days() -> String {
+    let todaysDate = Calendar.current.date(byAdding: .day, value: 14, to: Date())
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd"
+    let DateInFormat = dateFormatter.string(from: todaysDate!)
+    return DateInFormat
 }

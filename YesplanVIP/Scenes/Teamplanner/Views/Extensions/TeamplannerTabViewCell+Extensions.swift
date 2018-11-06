@@ -16,13 +16,13 @@ import Kingfisher
 extension TeamplannerTabViewCell {
     
     func populate(with resourcebooking: TeamplannerTab.Something.ViewModel.Displ) {
-//        let name = resourcebooking.
-//        lblName.text = name
+        let name = resourcebooking.scheduleType
+        lblName.text = name
         let start = resourcebooking.start
         let end = resourcebooking.end
-        let eventName = resourcebooking.eventName
-        let role = resourcebooking.role
-        lblStart.text = "• \(start.convertDateString(dateFormat: "HH:mm")!) - \(end.convertDateString(dateFormat: "HH:mm")!) \(eventName): \(role)"
+//        let eventName = resourcebooking.eventName
+//        let role = resourcebooking.role
+        lblStart.text = "• \(start) - \(end)"
     
 //        if let defaultschedulestarttime = event.defaultschedulestarttime {
 //            lblDefaultschedulestarttime.text = defaultschedulestarttime}

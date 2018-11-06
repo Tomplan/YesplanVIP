@@ -13,6 +13,18 @@ indirect enum ResourcebookingChildren {
     case resourceSetUse(ResourceSetUse)
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
+    
+    var start: String? {
+        switch self {
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let start = child.start { return start } else { return nil } }
+        case .resourceSetUse(let x): for child in x.children {
+            if let start = child.start { return start } else { return nil } }
+        case .freeFormResourceUse(let x): if let start = x.start { return start } else { return nil }
+        case .bulkResourceUse(let x): if let start = x.start { return start } else { return nil }
+        }
+        return nil
+    }
 }
 
 extension ResourcebookingChildren {
@@ -37,56 +49,15 @@ extension ResourcebookingChildren: Encodable {
 extension ResourcebookingChildren: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        let containers = try decoder.container(keyedBy: CodingKeys.self)
-        let type = try containers.decode(String.self, forKey: ._type)
-        
-        switch type {
-        case "resourcebooking":
-            //            if (try containers.decodeIfPresent(String.self, forKey: .children)) != nil
-            //            {
-            if let x = try? container.decode(ResourceSetUse.self)
-            {
-                print("ResourceSetUse")
-                self = .resourceSetUse(x)
-                return
-            }
-            else {
-                if let x = try? container.decode(FreeFormResourceUse.self) {
-                    self = .freeFormResourceUse(x)
-                    return
-                }
-                else {
-                    //            if (try containers.decodeIfPresent(String.self, forKey: .actualnumber)) != nil {
-                    if let x = try? container.decode(BulkResourceUse.self) {
-                        print("BulkResourceUse")
-                        self = .bulkResourceUse(x)
-                        return
-                    }
-                        else {
-                            throw Failure.NotImplemented
-                        }
-                    }
-                }
-        case "resourcebookinggroup":
-            print("resourcebookinggroup")
-            //            if (try containers.decodeIfPresent(String.self, forKey: .children)) != nil {
-            //                if let x = try? container.decode(InstantiableResourceUseGroup.self) {
-            //                    self = .instantiableResourceUseGroup(x)
-            //                    return
-            //                }
-            //                else {
-            //                    throw Failure.NotImplemented
-            //                }
-            //            }
-            //            else {
-            //                throw Failure.NotImplemented
-            //        }
-            //            if let x = try? container.decode(InstantiableResourceUseGroup.self) {
-            //                self = .instantiableResourceUseGroup(x)
-            //        }
-            throw Failure.NotImplemented
-            
-        default:
+        if let x = try? container.decode(InstantiableResourceUseGroup.self) {
+            self = .instantiableResourceUseGroup(x)
+        } else if let x = try? container.decode(ResourceSetUse.self) {
+            self = .resourceSetUse(x)
+        } else if let x = try? container.decode(FreeFormResourceUse.self) {
+            self = .freeFormResourceUse(x)
+        } else if let x = try? container.decode(BulkResourceUse.self) {
+            self = .bulkResourceUse(x)
+        } else {
             throw Failure.NotImplemented
         }
     }

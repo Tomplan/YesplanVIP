@@ -6,6 +6,7 @@
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 import Foundation
+import PromisedFuture
 
 enum Resourcebooking {
     case instantiableResourceUse(InstantiableResourceUse)
@@ -13,6 +14,40 @@ enum Resourcebooking {
     case resourceSetUse(ResourceSetUse)
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
+    
+    var start: String? {
+        switch self {
+        case .bulkResourceUse(let x): if let start = x.start { return start } else { return nil }
+        case .freeFormResourceUse(let x): if let start = x.start { return start } else { return nil }
+        case .instantiableResourceUse(let x): if let start = x.start { return start } else { return nil }
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let start = child.start { return start } else { return nil } }
+        case .resourceSetUse(let x):
+            for child in x.children { if let start = child.start { return start } else { return nil } }
+    }
+        return nil
+    }
+    
+//    var end: String? {
+//        switch self {
+//        case .bulkResourceUse(let x): if let end = x.end { return end } else { return nil }
+//        case .freeFormResourceUse(let x): if let end = x.end { return end } else { return nil }
+//        case .instantiableResourceUse(let x): if let end = x.end { return end } else { return nil }
+//        case .instantiableResourceUseGroup(let x):
+//            for child in x.children { if let end = child.end { return end } else { return nil } }
+//        case .resourceSetUse(let x): for child in x.children { return child.end } }
+//        return nil
+//    }
+    
+//    var eventName: String? {
+//        switch self {
+//        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+//        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
+//        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+//        case .instantiableResourceUseGroup(let x):
+//            for child in x.children { if let eventName = child.event?.name { return eventName } else { return nil } }
+//        case .resourceSetUse(let x): for child in x.children { if let eventName =
+//    }
 }
 
 extension Resourcebooking {
@@ -54,6 +89,11 @@ extension Resourcebooking: Decodable {
     }
 }
 
+extension Resourcebooking {
+    private func analyze() {
+        print("analyze")
+    }
+}
 //extension Resourcebooking: Decodable {
 //    init(from decoder: Decoder) throws {
 //        let container = try decoder.singleValueContainer()

@@ -40,6 +40,9 @@ class APIClient {
         return performRequest(route: APIRouter.profiles(path: path))
     }
     
+    static func resourcebookingId(_ id: String) -> Future<Resourcebooking> {
+        return performRequest(route: APIRouter.resourcebookingId(id: id))
+    }
     static func resourcebookings(_ path: String) -> Future<Resourcebookings> {
         return performRequest(route: APIRouter.resourcebookings(path: path))
     }

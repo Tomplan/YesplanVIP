@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import PromisedFuture
 
 protocol TeamplannerTabPresentationLogic
 {
@@ -19,7 +20,10 @@ protocol TeamplannerTabPresentationLogic
 
 class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 {
+    
+    
   weak var viewController: TeamplannerTabDisplayLogic?
+    var scheduleType = ""
     var date = ""
     var start = ""
     var end = ""
@@ -47,139 +51,164 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 //
 //    }
     
-    func resourcebookingAnalyze(resourcebooking: Resourcebooking) {
-        switch resourcebooking {
-        case .instantiableResourceUse(let instantiableResourceUse):
-            if let x = instantiableResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
-                date = x }
-            if let x = instantiableResourceUse.start {
-                start = x }
-            if let x = instantiableResourceUse.end {
-                end = x }
-            if let x = instantiableResourceUse.event {
-                if let y = x.name {
-                    eventName = y } }
-            if let x = instantiableResourceUse.role {
-                role = x }
-            let y = TeamplannerTab.Something.ViewModel.Displ(
-                date: date
-                ,start: start
-                ,end: end
-                ,eventName: eventName
-                ,role: role
-            )
-//            resourcebookingDispls.append(y)
-            resourcebookingDispls.insert(y)
-//            print(resourcebookingDispls)
-            break
-        case .freeFormResourceUse(let freeFormResourceUse):
-            if let x = freeFormResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
-                date = x }
-            if let x = freeFormResourceUse.start {
-                start = x }
-            if let x = freeFormResourceUse.end {
-                end = x }
-            eventName = freeFormResourceUse.event.name
-            role = ""
-            let y = TeamplannerTab.Something.ViewModel.Displ(
-                date: date
-                ,start: start
-                ,end: end
-                ,eventName: eventName
-                ,role: role
-            )
-//            resourcebookingDispls.append(y)
-            resourcebookingDispls.insert(y)
-//            print(resourcebookingDispls)
-            break
-        case .bulkResourceUse(let bulkResourceUse):
-            if let x = bulkResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
-                date = x }
-            if let x = bulkResourceUse.start {
-                start = x }
-            if let x = bulkResourceUse.end {
-                end = x }
-            if let x = bulkResourceUse.event {
-                if let y = x.name {
-                    eventName = y } }
-            if let x = bulkResourceUse.role {
-                role = x }
-            let y = TeamplannerTab.Something.ViewModel.Displ(
-                date: date
-                ,start: start
-                ,end: end
-                ,eventName: eventName
-                ,role: role
-            )
-//            resourcebookingDispls.append(y)
-            resourcebookingDispls.insert(y)
-//            print(resourcebookingDispls)
-            break
-        case .instantiableResourceUseGroup(let instantiableResourceUseGroup):
-            for instantiableResourceUse in instantiableResourceUseGroup.children {
-                if let x = instantiableResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
-                    date = x }
-                if let x = instantiableResourceUse.start {
-                    start = x }
-                if let x = instantiableResourceUse.end {
-                    end = x }
-                if let x = instantiableResourceUse.event {
-                    if let y = x.name {
-                        eventName = y } }
-                if let x = instantiableResourceUse.role {
-                    role = x }
-                let y = TeamplannerTab.Something.ViewModel.Displ(
-                    date: date
-                    ,start: start
-                    ,end: end
-                    ,eventName: eventName
-                    ,role: role
-                )
-//                resourcebookingDispls.append(y)
-                resourcebookingDispls.insert(y)
-//                print(resourcebookingDispls)
-                break
-            }
-        case .resourceSetUse(let resourceSetUse):
-            for resourcebooking in resourceSetUse.children {
-                resourcebookingAnalyze(resourcebooking: resourcebooking)
-            }
-        }
-    }
+//    func resourcebookingAnalyze(resourcebooking: Resourcebooking) {
+//        switch resourcebooking {
+//        case .instantiableResourceUse(let instantiableResourceUse):
+//            if let x = instantiableResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
+//                date = x }
+//            if let x = instantiableResourceUse.start {
+//                start = x }
+//            if let x = instantiableResourceUse.end {
+//                end = x }
+//            if let x = instantiableResourceUse.event {
+//                if let y = x.name {
+//                    eventName = y } }
+//            if let x = instantiableResourceUse.role {
+//                role = x }
+//            let y = TeamplannerTab.Something.ViewModel.Displ(
+//                date: date
+//                ,start: start
+//                ,end: end
+//                ,eventName: eventName
+//                ,role: role
+//            )
+////            resourcebookingDispls.append(y)
+//            resourcebookingDispls.insert(y)
+////            print(resourcebookingDispls)
+//            break
+//        case .freeFormResourceUse(let freeFormResourceUse):
+//            if let x = freeFormResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
+//                date = x }
+//            if let x = freeFormResourceUse.start {
+//                start = x }
+//            if let x = freeFormResourceUse.end {
+//                end = x }
+//            eventName = freeFormResourceUse.event.name
+//            role = ""
+//            let y = TeamplannerTab.Something.ViewModel.Displ(
+//                date: date
+//                ,start: start
+//                ,end: end
+//                ,eventName: eventName
+//                ,role: role
+//            )
+////            resourcebookingDispls.append(y)
+//            resourcebookingDispls.insert(y)
+////            print(resourcebookingDispls)
+//            break
+//        case .bulkResourceUse(let bulkResourceUse):
+//            if let x = bulkResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
+//                date = x }
+//            if let x = bulkResourceUse.start {
+//                start = x }
+//            if let x = bulkResourceUse.end {
+//                end = x }
+//            if let x = bulkResourceUse.event {
+//                if let y = x.name {
+//                    eventName = y } }
+//            if let x = bulkResourceUse.role {
+//                role = x }
+//            let y = TeamplannerTab.Something.ViewModel.Displ(
+//                date: date
+//                ,start: start
+//                ,end: end
+//                ,eventName: eventName
+//                ,role: role
+//            )
+////            resourcebookingDispls.append(y)
+//            resourcebookingDispls.insert(y)
+////            print(resourcebookingDispls)
+//            break
+//        case .instantiableResourceUseGroup(let instantiableResourceUseGroup):
+//            for instantiableResourceUse in instantiableResourceUseGroup.children {
+//                if let x = instantiableResourceUse.start!.convertDateString(dateFormat: "yyyy-MM-dd") {
+//                    date = x }
+//                if let x = instantiableResourceUse.start {
+//                    start = x }
+//                if let x = instantiableResourceUse.end {
+//                    end = x }
+//                if let x = instantiableResourceUse.event {
+//                    if let y = x.name {
+//                        eventName = y } }
+//                if let x = instantiableResourceUse.role {
+//                    role = x }
+//                let y = TeamplannerTab.Something.ViewModel.Displ(
+//                    date: date
+//                    ,start: start
+//                    ,end: end
+//                    ,eventName: eventName
+//                    ,role: role
+//                )
+////                resourcebookingDispls.append(y)
+//                resourcebookingDispls.insert(y)
+////                print(resourcebookingDispls)
+//                break
+//            }
+//        case .resourceSetUse(let resourceSetUse):
+//            for resourcebooking in resourceSetUse.children {
+//                print("resourceSetUseChild")
+////                resourcebookingAnalyze(resourcebooking: resourcebooking)
+//            }
+//        }
+    
     
   func presentSomething(response: TeamplannerTab.Something.Response)
   {
     resourcebookingDispls = []
     resourcebookings = []
-    
-    for resourcebooking in response.resourcebookings {
-        resourcebookingAnalyze(resourcebooking: resourcebooking)
-    }
 
-//        resourcebookings.append(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: stringToEventsDate(myDateString: resourcebooking), events: value))
-    
+    for resourceSchedule in response.resourceSchedules {
+        if let schedules = resourceSchedule.schedules {
+            for schedule in schedules {
+                let item = TeamplannerTab.Something.ViewModel.Displ(
+                    date: schedule.date
+                    ,scheduleType: schedule.scheduletype
+                    ,start: schedule.start
+                    ,end: schedule.end
+                )
+                resourcebookingDispls.insert(item)
+            }
+        }
+    }
     let dictResourcebookings = Dictionary(grouping: resourcebookingDispls, by: { $0.date })
-//    print(dictResourcebookings)
-    
     var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
-    
     for (key, value) in dictResourcebookings {
         let valueSorted = value.sorted{ $0.start <  $1.start }
         items[key] = valueSorted
     }
-        
     for (key, value) in items {
         resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
     }
+
+//        for (key, value) in dictResourcebookings {
+//            let valueSorted = value.sorted{ $0.start <  $1.start }
+//            items[key] = valueSorted
+//        }
+//
+//        for (key, value) in items {
+//            resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
+//        }
     
-    print(resourcebookings)
-    
-    
-    
-    let viewModel = TeamplannerTab.Something.ViewModel(
-        displayedResourcebookings: resourcebookings
-        , error: error
-    )
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+//        print(resourcebookings)
+        
+        
+        
+        let viewModel = TeamplannerTab.Something.ViewModel(
+            displayedResourcebookings: resourcebookings
+            , error: error
+        )
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+}
+
+func getResourcebookingId(_ id: String) -> Future<Resourcebooking> {
+    return Future(operation: { completion in
+        APIClient.resourcebookingId("\(id)")
+            .map({$0})
+            .execute(onSuccess: { items in
+                completion(.success(items))
+            }, onFailure: { error in
+                completion(.failure(error))
+            })
+    })
 }
