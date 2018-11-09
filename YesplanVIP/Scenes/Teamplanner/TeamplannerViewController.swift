@@ -23,6 +23,7 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
     var v = TeamplannerTabView()
 var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
+    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.DisplayedResourcebooking> = []
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -108,16 +109,37 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
     
   func doSomething()
   {
-    print("doSomething")
     let request = TeamplannerTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
-    displayedResourcebookings = Array(viewModel.displayedResourcebookings.sorted(by: { $0.date < $1.date }))
-
-//    dump(displayedResourcebookings)
+    var setje: Set<TeamplannerTab.Something.ViewModel.Displ> = []
+    for booking in viewModel.toVC {
+//        print("booking: ", booking)
+        setje.insert(booking)
+    }
+//    print(setje)
+    let f = Dictionary(grouping: setje, by: { $0.date })
+    
+    var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
+    for (key, value) in f {
+//        print(key, ": ",  value)
+        let valueSorted = value.sorted{ $0.start <  $1.start }
+        items[key] = valueSorted
+    }
+    /// miljaar da had wa in ver ik dees stoem lentje gevonne had
+    self.resourcebookings = []
+    /// ja da hi veu dus, klowete
+    
+    for (key, value) in items {
+        self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
+    }
+    
+    displayedResourcebookings = Array(self.resourcebookings.sorted(by: { $0.date < $1.date }))
+    
+    print(displayedResourcebookings)
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

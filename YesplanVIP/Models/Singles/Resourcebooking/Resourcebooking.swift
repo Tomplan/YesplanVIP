@@ -15,7 +15,17 @@ enum Resourcebooking {
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
     
-    var start: String? {
+//    func analyze() {
+//        switch self {
+//        case .bulkResourceUse(let x): print("bulk")
+//        case .freeFormResourceUse(let x): print("free")
+//        case .resourceSetUse(let x): print("set")
+//        case .instantiableResourceUse(let x): print("inst")
+//        case .instantiableResourceUseGroup(let x): print("group")
+//        }
+//    }
+    
+    private var start: String? {
         switch self {
         case .bulkResourceUse(let x): if let start = x.start { return start } else { return nil }
         case .freeFormResourceUse(let x): if let start = x.start { return start } else { return nil }
@@ -28,26 +38,48 @@ enum Resourcebooking {
         return nil
     }
     
-//    var end: String? {
-//        switch self {
-//        case .bulkResourceUse(let x): if let end = x.end { return end } else { return nil }
-//        case .freeFormResourceUse(let x): if let end = x.end { return end } else { return nil }
-//        case .instantiableResourceUse(let x): if let end = x.end { return end } else { return nil }
-//        case .instantiableResourceUseGroup(let x):
-//            for child in x.children { if let end = child.end { return end } else { return nil } }
-//        case .resourceSetUse(let x): for child in x.children { return child.end } }
-//        return nil
-//    }
+    var end: String? {
+        switch self {
+        case .bulkResourceUse(let x): if let end = x.end { return end } else { return nil }
+        case .freeFormResourceUse(let x): if let end = x.end { return end } else { return nil }
+        case .instantiableResourceUse(let x): if let end = x.end { return end } else { return nil }
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let end = child.end { return end } else { return nil } }
+        case .resourceSetUse(let x):
+            for child in x.children {
+                if let end = child.end { return end } else { return nil } }
+        }
+        return nil
+        }
     
-//    var eventName: String? {
+    var eventName: String? {
+        switch self {
+        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName 
+        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+        case .instantiableResourceUseGroup(let x):
+            if let eventName = x.event?.name { return eventName } else { return nil }
+        case .resourceSetUse(let x):
+            for child in x.children {
+                if let eventName = child.eventName { return eventName } else { return nil } }
+        }
+        return nil
+    }
+    
+//    var Location: String? {
 //        switch self {
-//        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+//        case .bulkResourceUse(let x): if let location = x.event?.name { return eventName } else { return nil }
 //        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
 //        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
 //        case .instantiableResourceUseGroup(let x):
-//            for child in x.children { if let eventName = child.event?.name { return eventName } else { return nil } }
-//        case .resourceSetUse(let x): for child in x.children { if let eventName =
+//            if let eventName = x.event?.name { return eventName } else { return nil }
+//        case .resourceSetUse(let x):
+//            for child in x.children {
+//                if let end = child.end { return end } else { return nil } }
+//        }
+//        return nil
 //    }
+    
 }
 
 extension Resourcebooking {
@@ -89,85 +121,8 @@ extension Resourcebooking: Decodable {
     }
 }
 
-extension Resourcebooking {
-    private func analyze() {
-        print("analyze")
-    }
-}
-//extension Resourcebooking: Decodable {
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.singleValueContainer()
-//        let containers = try decoder.container(keyedBy: CodingKeys.self)
-//        let type = try containers.decode(String.self, forKey: ._type)
-//
-//
-//
-////    switch type {
-////        case "resourcebooking":
-//////            print("resourcebooking")
-////                if let x = try? container.decode(ResourceSetUse.self)
-////                {
-////                    print("ResourceSetUse")
-////                    self = .resourceSetUse(x)
-////                    return
-////                }
-////            else {
-////            if let x = try? container.decode(InstantiableResourceUse.self) {
-////                print("InstantiableResourceUse")
-////                self = .instantiableResourceUse(x)
-////                return
-////            }
-////            else {
-////                if let x = try? container.decode(BulkResourceUse.self) {
-////                    print("BulkResourceUse")
-////                    self = .bulkResourceUse(x)
-////                    return
-////                }
-////            else {
-////                if let x = try? container.decode(FreeFormResourceUse.self) {
-////                    print("FreeFormResourceUse")
-////                    self = .freeFormResourceUse(x)
-////                    return
-////                }
-////            else {
-////                    throw Failure.NotImplemented
-////                    }
-////                }
-////            }
-////        }
-////        case "resourcebookinggroup":
-////            print("resourcebookinggroup")
-////            if let x = try? container.decode(InstantiableResourceUseGroup.self) {
-////                self = .instantiableResourceUseGroup(x)
-////        }
-////            throw Failure.NotImplemented
-////
-////        default:
-////            throw Failure.NotImplemented
-////        }
+//extension Resourcebooking {
+//    func analyze() {
+//        print("analyze")
 //    }
-//}
-
-//
-//switch item {
-//case  .instantiableResourceUse(let x):
-//    print("type: instantiableResourceUse")
-//    print("type: ", x._type)
-//    print("url: ", x.url)
-//case  .instantiableResourceUseGroup(let x):
-//    print("type: instantiableResourceUseGroup")
-//    print("type: ", x._type)
-//    print("url: ", x.url)
-//case  .resourceSetUse(let x):
-//    print("type: resourceSetUse")
-//    print("type: ", x._type)
-//    print("url: ", x.url)
-//case  .freeFormResourceUse(let x):
-//    print("type: freeFormResourceUse")
-//    print("type: ", x._type)
-//    print("url: ", x.url)
-//case  .bulkResourceUse(let x):
-//    print("type: bulkResourceUse")
-//    print("type: ", x._type)
-//    print("url: ", x.url)
 //}

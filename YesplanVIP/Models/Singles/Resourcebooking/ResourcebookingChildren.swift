@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromisedFuture
 
 indirect enum ResourcebookingChildren {
     case instantiableResourceUseGroup(InstantiableResourceUseGroup)
@@ -22,6 +23,30 @@ indirect enum ResourcebookingChildren {
             if let start = child.start { return start } else { return nil } }
         case .freeFormResourceUse(let x): if let start = x.start { return start } else { return nil }
         case .bulkResourceUse(let x): if let start = x.start { return start } else { return nil }
+        }
+        return nil
+    }
+    
+    var end: String? {
+        switch self {
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let start = child.end { return end } else { return nil } }
+        case .resourceSetUse(let x): for child in x.children {
+            if let end = child.end { return end } else { return nil } }
+        case .freeFormResourceUse(let x): if let end = x.end { return end } else { return nil }
+        case .bulkResourceUse(let x): if let end = x.end { return end } else { return nil }
+        }
+        return nil
+    }
+    
+    var eventName: String? {
+        switch self {
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let eventName = child.event?.name { return eventName } else { return nil } }
+        case .resourceSetUse(let x): for child in x.children {
+            if let eventName = child.eventName { return eventName } else { return nil } }
+        case .freeFormResourceUse(let x): if let eventName = x.event.name { return eventName } else { return nil }
+        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
         }
         return nil
     }

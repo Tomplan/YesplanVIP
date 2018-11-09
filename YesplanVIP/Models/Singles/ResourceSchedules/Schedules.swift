@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import PromisedFuture
 
 enum Schedules {
     case shift(Shift)
     case scheduleBreak(ScheduleBreak)
     case schedule(Schedule)
     case lock(Lock)
+    
     
     var scheduletype: String {
         switch self {
@@ -64,6 +66,27 @@ enum Schedules {
         case .lock(let x):
             return x.end.convertDateString(dateFormat: "HH:mm")!
         }
+    }
+    
+    var eventName: Future<String?> {
+        
+        switch self {
+        case .shift(_):
+            return Future(value: nil)
+        case .scheduleBreak(_):
+            return Future(value: nil)
+        case .schedule(let x):
+            if let id = x.resourcebooking.id {
+                let ikke = x.getResourcebookingId(id)
+                return ikke.map{$0.eventName}
+
+            }
+        case .lock(let x):
+            if let reason = x.reason {
+                return Future(value: reason)
+            }
+        }
+        return Future(value: nil)
     }
 }
 

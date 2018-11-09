@@ -35,30 +35,3 @@ struct BulkResource: Codable {
     init() { guard self._type == "resource" else {
         return } }
 }
-//
-//extension BulkResource: ArrowParsable {
-//    mutating func deserialize(_ json: JSON) {
-//        
-//        url <-- json["url"]
-//        id <-- json["id"]
-//        resourcetype <-- json["resourcetype"]
-//        name <-- json["name"]
-//        group <-- json["group"]
-//        roles <-- json["roles"]
-//        description <-- json["description"]
-//        external <-- json["external"]
-//        rented <-- json["rented"]
-//        costmodels <-- json["costmodels"]
-//        defaultrole <-- json["defaultrole"]
-//        amount <-- json["amount"]
-//        type <-- json["type"]
-//        owner <-- json["owner"]
-//        owningteam <-- json["owningteam"]
-//        owninggroup <-- json["owninggroup"]
-//        _type <-- json["_type"]
-//        active <-- json["active"]
-//        date <-- json["date"]
-//        productcode <-- json["productcode"]
-//        serialnumber <-- json["serialnumber"]
-//    }
-//}

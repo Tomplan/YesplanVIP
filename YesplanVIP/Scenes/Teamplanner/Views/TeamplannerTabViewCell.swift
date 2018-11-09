@@ -15,7 +15,7 @@ class TeamplannerTabViewCell: UICollectionViewCell {
 //    var lblHeaderName = UILabel()
     var lblName = UILabel()
     var lblStart = UILabel()
-//    var lblLocation = UILabel()
+    var lblEventName = UILabel()
 //    var lblGroupName = UILabel()
     
     override init(frame: CGRect) {
@@ -41,7 +41,7 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         
         lblName.text = nil
         lblStart.text = nil
-//        lblLocation.text = nil
+        lblEventName.text = nil
 //        lblGroupName.text = nil
         
         
@@ -61,22 +61,22 @@ class TeamplannerTabViewCell: UICollectionViewCell {
 //            lblHeaderName,
             lblName
             ,lblStart
-//            ,lblLocation
+            ,lblEventName
 //            ,lblGroupName
         )
         
         lblName.numberOfLines = 0
         lblName.font = UIFont.systemFont(ofSize: 15.0)
-        lblName.textColor = UIColor.red
+//        lblName.textColor = UIColor.red
         
         lblStart.numberOfLines = 0
         lblStart.font = UIFont.systemFont(ofSize: 12.0)
         lblStart.textColor = UIColor.black
 //
-//        lblLocation.numberOfLines = 0
-//        lblLocation.font = UIFont.systemFont(ofSize: 12.0)
-//        lblLocation.textColor = UIColor.lightGray
-//
+        lblEventName.numberOfLines = 0
+        lblEventName.font = UIFont.systemFont(ofSize: 12.0)
+        lblEventName.textColor = UIColor.lightGray
+
 //        lblGroupName.numberOfLines = 0
 //        lblGroupName.font = UIFont.systemFont(ofSize: 12.0)
 //        lblGroupName.textColor = UIColor.lightGray
@@ -90,8 +90,8 @@ class TeamplannerTabViewCell: UICollectionViewCell {
             ,|-16-lblName-16-|
             ,0
             ,|-16-lblStart-16-|
-//            ,0
-//            ,|-16-lblLocation-16-|
+            ,0
+            ,|-16-lblEventName-16-|
 //            ,0
 //            ,|-16-lblGroupName-16-|
             

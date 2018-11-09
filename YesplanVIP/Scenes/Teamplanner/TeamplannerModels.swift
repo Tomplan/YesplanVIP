@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import PromisedFuture
 
 enum TeamplannerTab
 {
@@ -35,15 +36,17 @@ enum TeamplannerTab
         }
 
         struct Displ: Hashable {
+            
             let date: String
             let scheduleType: String
             let start: String
             let end: String
-//            let eventName: String
+            let eventName: String?
 //            let role: String
         }
 
-        var displayedResourcebookings: Set<DisplayedResourcebooking>
+//        var displayedResourcebookings: Set<DisplayedResourcebooking>
+        var toVC: Set<Displ>
         var error: String?
 
     }

@@ -53,48 +53,18 @@ class TeamplannerTabWorker
         })
     }
     
-//    func resourceSchedulesFromToAnalyze(_ resourceSchedulesFromTo: ResourceSchedulesFromTo) {
-//        for resourceScheduleFromTo in resourceSchedulesFromTo.data {
-//            if let schedules = resourceScheduleFromTo.schedules {
-//                //                print("schedules")
-//                for schedule in schedules {
-//                    switch schedule {
-//                    case .lock(let x):
-//                        print("lock")
-//                        print(x.start)
-//                        print(x.end)
-//                        print(x.scheduletype)
-//                    case .schedule(let x):
-//                        print("schedule")
-//                        print(x.start)
-//                        print(x.end)
-//                        print(x.scheduletype)
-//                        let resourcebooking = x.resourcebooking
-//                        if let resourcebookingId = resourcebooking.id {
-//                            getResourcebookingId(resourcebookingId)
-//                                .map({$0})
-//                                .execute(onSuccess: { items in
-//                                    print(items)
-//                                }, onFailure: { error in
-//                                    print(error)
-//                                })
-//                        }
-//                    case .scheduleBreak(let x):
-//                        print("break")
-//                        print(x.start)
-//                        print(x.end)
-//                        print(x.scheduletype)
-//                    case .shift(let x):
-//                        print("shift")
-//                        print(x.start)
-//                        print(x.end)
-//                        print(x.scheduletype)
-//                    }
-//                }
-//            }
-//        }
-//    }
-}
+    func getResourcebookingId(_ id: String) -> Future<String> {
+        return Future(operation: { completion in
+            APIClient.resourcebookingId(id)
+                .map({$0})
+                .execute(onSuccess: { item in
+//                    print("item:", item)
+                }, onFailure: { error in
+                    completion(.failure(error))
+                })
+            })
+        }
+
 //    func groupResourecbookingsByStartdate(resourcebookings: Resourcebookings) -> [String:[Resourcebooking]] {
 //        for resourcebooking in resourcebookings.data {
 //            switch resourcebooking {
@@ -112,4 +82,4 @@ class TeamplannerTabWorker
 ////        let dictResourcebookings = Dictionary(grouping: fetchedResourcebookings, by: { $0.key })
 ////        return dictResourcebookings
 //    }
-//}
+}

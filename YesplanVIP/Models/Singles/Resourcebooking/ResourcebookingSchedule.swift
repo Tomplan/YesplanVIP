@@ -9,5 +9,5 @@
 import Foundation
 
 struct ResourcebookingSchedule: Codable {
-    let name: String
+    let name: String?
 }

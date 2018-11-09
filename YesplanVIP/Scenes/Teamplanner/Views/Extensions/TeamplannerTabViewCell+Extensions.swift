@@ -6,6 +6,7 @@
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import Kingfisher
 
@@ -20,10 +21,19 @@ extension TeamplannerTabViewCell {
         lblName.text = name
         let start = resourcebooking.start
         let end = resourcebooking.end
-//        let eventName = resourcebooking.eventName
+        if let eventName = resourcebooking.eventName {
+            lblName.text = "\(eventName)"
+                lblName.textColor = UIColor.blue
+
+            lblStart.text = "• \(start) - \(end)"
+//            lblEventName.text = "     \(eventName)"
+
+        } else {
 //        let role = resourcebooking.role
-        lblStart.text = "• \(start) - \(end)"
-    
+            lblName.text = "\(resourcebooking.scheduleType)"
+                lblName.textColor = UIColor.red
+            lblStart.text = "• \(start) - \(end)"
+        }
 //        if let defaultschedulestarttime = event.defaultschedulestarttime {
 //            lblDefaultschedulestarttime.text = defaultschedulestarttime}
 //        if let locations = event.locations {

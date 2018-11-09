@@ -7,8 +7,7 @@
 //
 
 import Foundation
-//import Arrow
-//import then
+import PromisedFuture
 
 struct Base: Codable {
     
@@ -17,25 +16,19 @@ struct Base: Codable {
     var name: String?
     var _type: String?
     
-//    init() {
-//        print("base")
-//        var b = Event()
-//        //        b.deserialize(JSON(self)!)
-//        //        print(b)
-////        self = .event(b)
-//    }
+    func getResourcebookingId(_ id: String) -> Future<Resourcebooking> {
+                return Future(operation: { completion in
+                    APIClient.resourcebookingId("\(id)")
+                        .map({$0})
+                        .execute(onSuccess: { items in
+                            completion(.success(items))
+                        }, onFailure: { error in
+                            completion(.failure(error))
+                        })
+                })
+            }
 }
-//
-//extension Base : ArrowParsable {
-//    
-//    public mutating func deserialize(_ json: JSON) {
-//        url <-- json["url"]
-//        id <-- json["id"]
-//        name <-- json["name"]
-//        _type <-- json["_type"]
-//    }
-//}
-//
+
 struct Base2: Codable {
     
     var url: String?

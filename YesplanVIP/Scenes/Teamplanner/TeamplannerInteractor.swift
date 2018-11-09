@@ -35,28 +35,18 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
   func doSomething(request: TeamplannerTab.Something.Request)
   {
     var resourceSchedulesArray: [ResourceScheduleFromTo] = []
-    var resourcebookingsArray: [Resourcebooking] = []
+//    var resourcebookingsArray: [Resourcebooking] = []
     var error: String? = ""
     
 //    print("resourcebookingsArray: ", resourcebookingsArray)
     worker = TeamplannerTabWorker()
     
-    worker?.getResourceSchedulesFromTo("resource:name:tom slegers")
+    worker?.getResourceSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
         .map({$0.data})
             .execute(onSuccess: { items in
-//                print(items)
-//                for item in items {
-//                    if let schedules = item.schedules {
-//                    for schedule in schedules {
-//                        print(schedule.scheduletype)
-//                        }
-//                    }
-//resourceSchedulesArray.append(item)
                     resourceSchedulesArray = items
-//                }
                 let response = TeamplannerTab.Something.Response(
                     resourceSchedules: resourceSchedulesArray
-//                    resourcebookings: resourcebookingsArray
                     ,error: error
                     )
                 self.presenter?.presentSomething(response: response)
@@ -64,28 +54,10 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
                             print(error)
                     let response = TeamplannerTab.Something.Response(
                         resourceSchedules: resourceSchedulesArray
-                        //                    resourcebookings: resourcebookingsArray
                         ,error: error.localizedDescription
                     )
                     self.presenter?.presentSomething(response: response)
                 })
-    
-//
-//    worker?.getResourcebookings("resourceuse:name:\(UserDefaults.standard.string(forKey: "todo_user")!) resourceuse:date:#today + resourceuse:date:#next6days") // + resourceuse:date:#next6days
-//        .map({$0.data})
-//        .execute(onSuccess: { items in
-//            for item in items {
-//                resourcebookingsArray.append(item)
-//                }
-//                let response = TeamplannerTab.Something.Response(
-//                    resourcebookings: resourcebookingsArray
-//                    ,error: error
-//                )
-//
-//                self.presenter?.presentSomething(response: response)
-//        }, onFailure: { error in
-//            print(error)
-//        })
     }
 
 }
