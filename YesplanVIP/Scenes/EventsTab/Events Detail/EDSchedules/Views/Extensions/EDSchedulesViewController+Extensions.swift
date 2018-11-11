@@ -34,6 +34,10 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
                 let item = sections[indexPath.section].rows[indexPath.section]
                 cell.populate(with: item, scheduleEntry: item.entries[indexPath.item])
                 
+                
+//                let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId)!
+//                item.configure(cell: cell)
+                
 //                if let redDot = sections[indexPath.section].rows[indexPath.section].defaultstartidx {
 //                    print("redDot: ", redDot)
 //                    for i in 0 ..< sections[indexPath.section].rows[indexPath.section].entries.count {

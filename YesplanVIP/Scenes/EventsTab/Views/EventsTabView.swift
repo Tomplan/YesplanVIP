@@ -28,7 +28,8 @@ class EventsTabView: UIView {
         flowLayout.minimumLineSpacing = 1
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 10)
-       
+//        flowLayout.sectionHeadersPinToVisibleBounds = true
+
         collectionView.backgroundColor = UIColor(r: 176, g: 176, b: 176)
 
 //        let cellHeight: CGFloat = 75

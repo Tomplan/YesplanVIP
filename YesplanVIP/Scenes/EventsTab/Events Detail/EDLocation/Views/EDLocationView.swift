@@ -1,5 +1,5 @@
 //
-//  EventsDetailView.swift
+//  EDLocationView.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -13,7 +13,7 @@ import Stevia
 
 // Get the full documentation at https://github.com/freshOS/Stevia
 
-class EventsDetailView: UIView {
+class EDLocationView: UIView {
     
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
@@ -22,12 +22,6 @@ class EventsDetailView: UIView {
     lazy var collectionView : UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
-        
-        
-        flowLayout.sectionHeadersPinToVisibleBounds = true
-        
-        
-
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
@@ -36,14 +30,14 @@ class EventsDetailView: UIView {
         flowLayout.minimumLineSpacing = 1
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 40)
-        flowLayout.sectionHeadersPinToVisibleBounds = true
-
+        
         collectionView.backgroundColor = UIColor(r: 176, g: 176, b: 176)
         
         //        let cellHeight: CGFloat = 75
         //        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
         //        flowLayout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
         //        flowLayout.itemSize = size
+        
         return collectionView
     }()
     
@@ -61,8 +55,8 @@ class EventsDetailView: UIView {
         collectionView.fillContainer()
         collectionView.addSubview(refreshControl)
         collectionView.addSubview(spinner)
-        collectionView.register(EventsDetailViewCell.self, forCellWithReuseIdentifier: "EventsDetailViewCell")
-        collectionView.register(EventsDetailViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "EventsDetailViewHeader")
+        collectionView.register(EDLocationViewCell.self, forCellWithReuseIdentifier: "EDLocationViewCell")
+        collectionView.register(EDLocationViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "EDLocationViewHeader")
     }
     
 }
