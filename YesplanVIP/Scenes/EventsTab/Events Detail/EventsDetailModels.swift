@@ -28,10 +28,10 @@ enum EventsDetail
     struct ViewModel
     {
         struct EventDetail: Hashable {
-            var name: String
+            var header: String
             var rows = [String()]
         }
-        var events: [EventDetail]
+        var sections: [EventDetail]
     }
   }
 }

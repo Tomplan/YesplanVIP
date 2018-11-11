@@ -1,5 +1,5 @@
 //
-//  EDInfoWorker.swift
+//  EDSchedulesWorker.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -13,11 +13,11 @@
 import UIKit
 import PromisedFuture
 
-class EDInfoWorker
+class EDSchedulesWorker
 {
-    func getEvent(_ id: String) -> Future<Event> {
+    func getEventSchedule(_ id: String) -> Future<EventSchedule> {
         return Future(operation: { completion in
-            APIClient.event("\(id)")
+            APIClient.eventSchedule(id)
                 .map({$0})
                 .execute(onSuccess: { items in
                     completion(.success(items))

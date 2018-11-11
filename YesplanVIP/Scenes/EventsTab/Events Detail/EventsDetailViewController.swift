@@ -22,7 +22,7 @@ class EventsDetailViewController: UIViewController, UICollectionViewDelegateFlow
   var interactor: EventsDetailBusinessLogic?
   var router: (NSObjectProtocol & EventsDetailRoutingLogic & EventsDetailDataPassing)?
     var v = EventsDetailView()
-    var displayedEvents: [EventsDetail.Something.ViewModel.EventDetail] = [EventsDetail.Something.ViewModel.EventDetail(name: String(), rows: [String()])]
+    var displayedEvents: [EventsDetail.Something.ViewModel.EventDetail] = [EventsDetail.Something.ViewModel.EventDetail(header: String(), rows: [String()])]
 
   // MARK: Object lifecycle
   
@@ -92,7 +92,7 @@ class EventsDetailViewController: UIViewController, UICollectionViewDelegateFlow
   
   func displaySomething(viewModel: EventsDetail.Something.ViewModel)
   {
-    displayedEvents = viewModel.events
+    displayedEvents = viewModel.sections
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
     

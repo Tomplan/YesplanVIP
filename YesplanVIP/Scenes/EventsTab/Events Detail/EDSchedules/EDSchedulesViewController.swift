@@ -1,5 +1,5 @@
 //
-//  EDInfoViewController.swift
+//  EDSchedulesViewController.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -12,17 +12,17 @@
 
 import UIKit
 
-protocol EDInfoDisplayLogic: class
+protocol EDSchedulesDisplayLogic: class
 {
-  func displaySomething(viewModel: EDInfo.Something.ViewModel)
+  func displaySomething(viewModel: EDSchedules.Something.ViewModel)
 }
 
-class EDInfoViewController: UIViewController, EDInfoDisplayLogic
+class EDSchedulesViewController: UIViewController, EDSchedulesDisplayLogic
 {
-  var interactor: EDInfoBusinessLogic?
-  var router: (NSObjectProtocol & EDInfoRoutingLogic & EDInfoDataPassing)?
-    var v = EDInfoView()
-    var sections: [EDInfo.Something.ViewModel.Item] = [EDInfo.Something.ViewModel.Item]()
+  var interactor: EDSchedulesBusinessLogic?
+  var router: (NSObjectProtocol & EDSchedulesRoutingLogic & EDSchedulesDataPassing)?
+    var v = EDSchedulesView()
+    var sections: [EDSchedules.Something.ViewModel.Item] = [EDSchedules.Something.ViewModel.Item]()
   // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -42,9 +42,9 @@ class EDInfoViewController: UIViewController, EDInfoDisplayLogic
   private func setup()
   {
     let viewController = self
-    let interactor = EDInfoInteractor()
-    let presenter = EDInfoPresenter()
-    let router = EDInfoRouter()
+    let interactor = EDSchedulesInteractor()
+    let presenter = EDSchedulesPresenter()
+    let router = EDSchedulesRouter()
     viewController.interactor = interactor
     viewController.router = router
     interactor.presenter = presenter
@@ -66,13 +66,11 @@ class EDInfoViewController: UIViewController, EDInfoDisplayLogic
 //  }
   
   // MARK: View lifecycle
-    
     override func loadView() { view = v }
 
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    
     doSomething()
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     v.collectionView.dataSource = self
@@ -89,13 +87,15 @@ class EDInfoViewController: UIViewController, EDInfoDisplayLogic
   
   func doSomething()
   {
-    let request = EDInfo.Something.Request()
+    let request = EDSchedules.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: EDInfo.Something.ViewModel)
+  func displaySomething(viewModel: EDSchedules.Something.ViewModel)
   {
     sections = viewModel.sections
+//    print("sections: ", sections)
+
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
     }

@@ -1,5 +1,5 @@
 //
-//  EDInfoModels.swift
+//  EDSchedulesModels.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum EDInfo
+enum EDSchedules
 {
   // MARK: Use cases
   
@@ -21,15 +21,15 @@ enum EDInfo
     struct Request
     {
     }
-    struct Response
+    struct Response: Codable
     {
-        var event: Event
+        var eventSchedule: EventSchedule
     }
-    struct ViewModel
+    struct ViewModel: Codable
     {
-        struct Item {
+        struct Item: Codable {
             var header: String
-            var rows: [String]
+            var rows: [EventSchedule]
         }
         var sections: [Item]
     }

@@ -24,6 +24,7 @@ enum APIRouter: URLRequestConvertible {
     case tasks(path: String)
     
     case event(id: String)
+    case eventSchedule(id: String)
 
 
 ////    case login(email:String, password:String)
@@ -44,6 +45,7 @@ enum APIRouter: URLRequestConvertible {
                 ,.tasks
                 
                 ,.event
+                ,.eventSchedule
                 :return .get
             
 //        case .login:
@@ -69,6 +71,7 @@ enum APIRouter: URLRequestConvertible {
         case .tasks(let path): return "/api/tasks/\(path)"
 
         case .event(let path): return "/api/event/\(path)"
+        case .eventSchedule(let path): return "/api/event/\(path)/schedule"
 //
 ////        case .login:
 ////            return "/login"
@@ -94,6 +97,7 @@ enum APIRouter: URLRequestConvertible {
                 ,.tasks
                 
                 ,.event
+                ,.eventSchedule
                 :return nil
         
 //        case .login(let email, let password):
@@ -117,6 +121,7 @@ enum APIRouter: URLRequestConvertible {
         ,.tasks
             
         ,.event
+        ,.eventSchedule
         :return [:]
         case .resourcesSchedulesFromTo:
             return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]

@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */; };
 		3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */; };
+		3C059FF0219887CB00F93289 /* EDInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FEF219887CB00F93289 /* EDInfoView.swift */; };
+		3C059FF32198882100F93289 /* EDInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FF22198882100F93289 /* EDInfoViewCell.swift */; };
+		3C059FF52198886C00F93289 /* EDInfoViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FF42198886C00F93289 /* EDInfoViewHeader.swift */; };
+		3C059FF7219888A300F93289 /* EDInfoViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FF6219888A300F93289 /* EDInfoViewCell+Extensions.swift */; };
+		3C059FFA219888F500F93289 /* EDinfoViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FF9219888F500F93289 /* EDinfoViewController+Extensions.swift */; };
+		3C05A0012198979E00F93289 /* EDSchedulesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FFB2198979E00F93289 /* EDSchedulesPresenter.swift */; };
+		3C05A0022198979E00F93289 /* EDSchedulesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FFC2198979E00F93289 /* EDSchedulesWorker.swift */; };
+		3C05A0032198979E00F93289 /* EDSchedulesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FFD2198979E00F93289 /* EDSchedulesRouter.swift */; };
+		3C05A0042198979E00F93289 /* EDSchedulesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FFE2198979E00F93289 /* EDSchedulesModels.swift */; };
+		3C05A0052198979E00F93289 /* EDSchedulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C059FFF2198979E00F93289 /* EDSchedulesViewController.swift */; };
+		3C05A0062198979E00F93289 /* EDSchedulesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0002198979E00F93289 /* EDSchedulesInteractor.swift */; };
+		3C05A0092198983200F93289 /* EDSchedulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0082198983200F93289 /* EDSchedulesView.swift */; };
+		3C05A00C2198988F00F93289 /* EDSchedulesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A00B2198988F00F93289 /* EDSchedulesViewCell.swift */; };
+		3C05A00E219898AF00F93289 /* EDSchedulesViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A00D219898AF00F93289 /* EDSchedulesViewHeader.swift */; };
+		3C05A010219898E700F93289 /* EDSchedulesViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A00F219898E700F93289 /* EDSchedulesViewCell+Extensions.swift */; };
+		3C05A0132198992A00F93289 /* EDSchedulesViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0122198992A00F93289 /* EDSchedulesViewController+Extensions.swift */; };
+		3C05A0152198A3BC00F93289 /* EventSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0142198A3BC00F93289 /* EventSchedule.swift */; };
+		3C05A0172198A42A00F93289 /* ScheduleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0162198A42A00F93289 /* ScheduleEntry.swift */; };
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
 		3C0E97E2217CF7D3008895DD /* URLSesssion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */; };
 		3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52C215B9751009523AC /* TasksTabViewCell.swift */; };
@@ -229,6 +247,24 @@
 		17917393575B47EDCD19EE33 /* Pods_YesplanVIPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		3C059FEF219887CB00F93289 /* EDInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDInfoView.swift; sourceTree = "<group>"; };
+		3C059FF22198882100F93289 /* EDInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDInfoViewCell.swift; sourceTree = "<group>"; };
+		3C059FF42198886C00F93289 /* EDInfoViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDInfoViewHeader.swift; sourceTree = "<group>"; };
+		3C059FF6219888A300F93289 /* EDInfoViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDInfoViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		3C059FF9219888F500F93289 /* EDinfoViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDinfoViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3C059FFB2198979E00F93289 /* EDSchedulesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesPresenter.swift; sourceTree = "<group>"; };
+		3C059FFC2198979E00F93289 /* EDSchedulesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesWorker.swift; sourceTree = "<group>"; };
+		3C059FFD2198979E00F93289 /* EDSchedulesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesRouter.swift; sourceTree = "<group>"; };
+		3C059FFE2198979E00F93289 /* EDSchedulesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesModels.swift; sourceTree = "<group>"; };
+		3C059FFF2198979E00F93289 /* EDSchedulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesViewController.swift; sourceTree = "<group>"; };
+		3C05A0002198979E00F93289 /* EDSchedulesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesInteractor.swift; sourceTree = "<group>"; };
+		3C05A0082198983200F93289 /* EDSchedulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesView.swift; sourceTree = "<group>"; };
+		3C05A00B2198988F00F93289 /* EDSchedulesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesViewCell.swift; sourceTree = "<group>"; };
+		3C05A00D219898AF00F93289 /* EDSchedulesViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDSchedulesViewHeader.swift; sourceTree = "<group>"; };
+		3C05A00F219898E700F93289 /* EDSchedulesViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDSchedulesViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		3C05A0122198992A00F93289 /* EDSchedulesViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDSchedulesViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3C05A0142198A3BC00F93289 /* EventSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSchedule.swift; sourceTree = "<group>"; };
+		3C05A0162198A42A00F93289 /* ScheduleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleEntry.swift; sourceTree = "<group>"; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSesssion+Extensions.swift"; sourceTree = "<group>"; };
 		3C18E52C215B9751009523AC /* TasksTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewCell.swift; sourceTree = "<group>"; };
@@ -478,6 +514,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C059FF1219887D000F93289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C059FEF219887CB00F93289 /* EDInfoView.swift */,
+				3C059FF22198882100F93289 /* EDInfoViewCell.swift */,
+				3C059FF42198886C00F93289 /* EDInfoViewHeader.swift */,
+				3C059FF8219888C600F93289 /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C059FF8219888C600F93289 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C059FF6219888A300F93289 /* EDInfoViewCell+Extensions.swift */,
+				3C059FF9219888F500F93289 /* EDinfoViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3C05A007219897A400F93289 /* EDSchedules */ = {
+			isa = PBXGroup;
+			children = (
+				3C05A00A2198983700F93289 /* Views */,
+				3C059FFB2198979E00F93289 /* EDSchedulesPresenter.swift */,
+				3C059FFC2198979E00F93289 /* EDSchedulesWorker.swift */,
+				3C059FFD2198979E00F93289 /* EDSchedulesRouter.swift */,
+				3C059FFE2198979E00F93289 /* EDSchedulesModels.swift */,
+				3C059FFF2198979E00F93289 /* EDSchedulesViewController.swift */,
+				3C05A0002198979E00F93289 /* EDSchedulesInteractor.swift */,
+			);
+			path = EDSchedules;
+			sourceTree = "<group>";
+		};
+		3C05A00A2198983700F93289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C05A0082198983200F93289 /* EDSchedulesView.swift */,
+				3C05A00B2198988F00F93289 /* EDSchedulesViewCell.swift */,
+				3C05A00D219898AF00F93289 /* EDSchedulesViewHeader.swift */,
+				3C05A0112198990F00F93289 /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C05A0112198990F00F93289 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C05A00F219898E700F93289 /* EDSchedulesViewCell+Extensions.swift */,
+				3C05A0122198992A00F93289 /* EDSchedulesViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3C24777E216A99050010EAFA /* ResourceSchedules */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,7 +676,9 @@
 				3C7B4F03217A20C0000D7FDB /* Formula.swift */,
 				3C7B4F05217A210E000D7FDB /* DayPartSetPricingFormula.swift */,
 				3C7B4F07217A2143000D7FDB /* DayPartPricingFormula.swift */,
+				3C05A0162198A42A00F93289 /* ScheduleEntry.swift */,
 				3C40AEDF212D8C2F0077DDC5 /* Event.swift */,
+				3C05A0142198A3BC00F93289 /* EventSchedule.swift */,
 				3C7B4F0B217A21D1000D7FDB /* FixedPricingFormula.swift */,
 				3CF142E6212DE2AE001FC532 /* Group.swift */,
 				3C7B4EFF217A0686000D7FDB /* Location.swift */,
@@ -656,6 +748,7 @@
 				3C6205A221981242001E8D4B /* EventsDetailViewController.swift */,
 				3C6205A321981242001E8D4B /* EventsDetailInteractor.swift */,
 				3C6205C52198806B001E8D4B /* EDInfo */,
+				3C05A007219897A400F93289 /* EDSchedules */,
 			);
 			path = "Events Detail";
 			sourceTree = "<group>";
@@ -692,6 +785,7 @@
 		3C6205C52198806B001E8D4B /* EDInfo */ = {
 			isa = PBXGroup;
 			children = (
+				3C059FF1219887D000F93289 /* Views */,
 				3C6205B921988060001E8D4B /* EDInfoPresenter.swift */,
 				3C6205BA21988060001E8D4B /* EDInfoWorker.swift */,
 				3C6205BB21988060001E8D4B /* EDInfoRouter.swift */,
@@ -1217,6 +1311,7 @@
 				3CE710FE2121A84400EBF6A5 /* HelpViewController.swift in Sources */,
 				3CE9D1D2212382B100BFA730 /* UIStackView+Extension.swift in Sources */,
 				3C87F358216E3FB4008120FA /* YpClient.swift in Sources */,
+				3C05A0092198983200F93289 /* EDSchedulesView.swift in Sources */,
 				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
 				3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */,
 				3CC377662169F0090020236D /* ResourceSet.swift in Sources */,
@@ -1228,6 +1323,8 @@
 				3C24777D216A96DF0010EAFA /* ResourceSchedule.swift in Sources */,
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3C2D1A23217126E400F081A1 /* APIRouter.swift in Sources */,
+				3C059FFA219888F500F93289 /* EDinfoViewController+Extensions.swift in Sources */,
+				3C059FF0219887CB00F93289 /* EDInfoView.swift in Sources */,
 				3CC3774321688D870020236D /* AppConfig.swift in Sources */,
 				3C7B4F0A217A2194000D7FDB /* UnitPricingFormula.swift in Sources */,
 				3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */,
@@ -1236,19 +1333,23 @@
 				3C6205AE21985C66001E8D4B /* EventsDetailView.swift in Sources */,
 				3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
 				3CC377502168CB010020236D /* Resourcebookings.swift in Sources */,
+				3C05A0022198979E00F93289 /* EDSchedulesWorker.swift in Sources */,
 				3CD714F82164038A00CC370A /* TasksTabViewController+Extensions.swift in Sources */,
 				3CB59E61213FC4D900B6E458 /* EventsTabViewCell+Extensions.swift in Sources */,
 				3CFF85C3218F8F0400DED3FB /* Counters.swift in Sources */,
 				3CE710912121A78800EBF6A5 /* TasksWorker.swift in Sources */,
 				3CB59E77214079D300B6E458 /* MainTabBarWorker.swift in Sources */,
 				3CE710F22121A84400EBF6A5 /* HelpPresenter.swift in Sources */,
+				3C05A0152198A3BC00F93289 /* EventSchedule.swift in Sources */,
 				3CB59E6E2140797D00B6E458 /* MainTabBarInteractor.swift in Sources */,
+				3C05A00E219898AF00F93289 /* EDSchedulesViewHeader.swift in Sources */,
 				3C570A502165589100154B93 /* ToDosTabViewCell+Extensions.swift in Sources */,
 				3CE9D1C221237C1800BFA730 /* LoginModels.swift in Sources */,
 				3C40AF1D212D91F30077DDC5 /* UserTabPresenter.swift in Sources */,
 				3CFF85BF218F681100DED3FB /* Resources.swift in Sources */,
 				3C40AF37212DAE8E0077DDC5 /* Base.swift in Sources */,
 				3CD59298212AC57B005BBF71 /* LogoutPresenter.swift in Sources */,
+				3C059FF32198882100F93289 /* EDInfoViewCell.swift in Sources */,
 				3CC37757216946810020236D /* Resource.swift in Sources */,
 				3CD714F62163E8DE00CC370A /* Tasks.swift in Sources */,
 				3C7B4EFC2179E9AA000D7FDB /* ResourcebookingChildren.swift in Sources */,
@@ -1264,6 +1365,7 @@
 				3C7B4F06217A210E000D7FDB /* DayPartSetPricingFormula.swift in Sources */,
 				3C7B4F02217A0754000D7FDB /* Resourceplaceholder.swift in Sources */,
 				3C6205B821985E10001E8D4B /* EventsDetailViewController+Extensions.swift in Sources */,
+				3C059FF7219888A300F93289 /* EDInfoViewCell+Extensions.swift in Sources */,
 				3C40AF23212D91F30077DDC5 /* UserTabRouter.swift in Sources */,
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
 				3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */,
@@ -1275,8 +1377,11 @@
 				3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */,
 				3CC3774521688E720020236D /* Notifications+Util.swift in Sources */,
 				3CE710C62121A7E300EBF6A5 /* ToDosRouter.swift in Sources */,
+				3C05A0042198979E00F93289 /* EDSchedulesModels.swift in Sources */,
+				3C05A0032198979E00F93289 /* EDSchedulesRouter.swift in Sources */,
 				3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */,
 				3CE9D1E32123835600BFA730 /* UIColor+Extension.swift in Sources */,
+				3C05A0012198979E00F93289 /* EDSchedulesPresenter.swift in Sources */,
 				3C87F354216E2887008120FA /* APIClient+Protocol.swift in Sources */,
 				3CE710C32121A7E300EBF6A5 /* ToDosWorker.swift in Sources */,
 				3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */,
@@ -1296,6 +1401,7 @@
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
 				3C87F350216E2423008120FA /* Yp.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
+				3C05A0172198A42A00F93289 /* ScheduleEntry.swift in Sources */,
 				3C247786216A9DCB0010EAFA /* Lock.swift in Sources */,
 				3C6205A821981242001E8D4B /* EventsDetailViewController.swift in Sources */,
 				3C247784216A99AA0010EAFA /* Schedule.swift in Sources */,
@@ -1320,6 +1426,7 @@
 				3C40AEF5212D8E550077DDC5 /* EventsTabViewController.swift in Sources */,
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
 				3CBBF9D721766F01000FE808 /* ResourcebookingSchedule.swift in Sources */,
+				3C05A00C2198988F00F93289 /* EDSchedulesViewCell.swift in Sources */,
 				3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
 				3C230AA821558BA5004477A3 /* Statuses.swift in Sources */,
@@ -1357,6 +1464,7 @@
 				3CE7107B2121A76400EBF6A5 /* TeamplannerRouter.swift in Sources */,
 				3C6AC89321260EEC0010DFA5 /* SplashViewController.swift in Sources */,
 				3CBE94A3212D75C700CE518C /* Api.swift in Sources */,
+				3C05A0132198992A00F93289 /* EDSchedulesViewController+Extensions.swift in Sources */,
 				3C570A4D2165587500154B93 /* ToDosTabViewController+Extensions.swift in Sources */,
 				3CE710C02121A7E300EBF6A5 /* ToDosPresenter.swift in Sources */,
 				3CC377592169E59C0020236D /* Costmodel.swift in Sources */,
@@ -1365,12 +1473,14 @@
 				3CE9D1BF21237C1800BFA730 /* LoginRouter.swift in Sources */,
 				3C40AF20212D91F30077DDC5 /* UserTabWorker.swift in Sources */,
 				3CC3776F216A2DC80020236D /* FreeFormResourceUse.swift in Sources */,
+				3C059FF52198886C00F93289 /* EDInfoViewHeader.swift in Sources */,
 				3CC377472168BD480020236D /* TeamplannerTabView.swift in Sources */,
 				3C87F352216E2865008120FA /* APIError.swift in Sources */,
 				3C40AF02212D8EB90077DDC5 /* EventsTabViewCell.swift in Sources */,
 				3CFF85CD218F90D900DED3FB /* Holidaytime.swift in Sources */,
 				3C6205902196FC9C001E8D4B /* Reachability.swift in Sources */,
 				3CE711062121AD7100EBF6A5 /* Dictionary+Extension.swift in Sources */,
+				3C05A010219898E700F93289 /* EDSchedulesViewCell+Extensions.swift in Sources */,
 				3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */,
 				3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */,
 				3CF142EF212E0422001FC532 /* ApiError.swift in Sources */,
@@ -1378,6 +1488,7 @@
 				3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
 				3C5F42FE2175043D00A90967 /* Codable+Helpers.swift in Sources */,
 				3C247780216A99210010EAFA /* Shift.swift in Sources */,
+				3C05A0052198979E00F93289 /* EDSchedulesViewController.swift in Sources */,
 				3C41E924212D723E00C2E242 /* Basic.swift in Sources */,
 				3C6205C321988060001E8D4B /* EDInfoViewController.swift in Sources */,
 				3C7B4F12217A4155000D7FDB /* Result.swift in Sources */,
@@ -1389,6 +1500,7 @@
 				3CC377522168CFEE0020236D /* TeamplannerTabViewCell+Extensions.swift in Sources */,
 				3CE9D1BC21237C1800BFA730 /* LoginWorker.swift in Sources */,
 				3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */,
+				3C05A0062198979E00F93289 /* EDSchedulesInteractor.swift in Sources */,
 				3CFF85C7218F8FDB00DED3FB /* Irregularhours.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 				3CA2131D218E267100F74EED /* Constants.swift in Sources */,

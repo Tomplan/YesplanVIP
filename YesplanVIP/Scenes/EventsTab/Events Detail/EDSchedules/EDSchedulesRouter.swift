@@ -1,5 +1,5 @@
 //
-//  EDInfoRouter.swift
+//  EDSchedulesRouter.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol EDInfoRoutingLogic
+@objc protocol EDSchedulesRoutingLogic
 {
-//  func routeToSomewhere(id: String?)
+  //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol EDInfoDataPassing
+protocol EDSchedulesDataPassing
 {
-  var dataStore: EDInfoDataStore? { get }
+  var dataStore: EDSchedulesDataStore? { get }
 }
 
-class EDInfoRouter: NSObject, EDInfoRoutingLogic, EDInfoDataPassing
+class EDSchedulesRouter: NSObject, EDSchedulesRoutingLogic, EDSchedulesDataPassing
 {
-  weak var viewController: EDInfoViewController?
-  var dataStore: EDInfoDataStore?
+  weak var viewController: EDSchedulesViewController?
+  var dataStore: EDSchedulesDataStore?
   
   // MARK: Routing
   
@@ -46,14 +46,14 @@ class EDInfoRouter: NSObject, EDInfoRoutingLogic, EDInfoDataPassing
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: EDInfoViewController, destination: SomewhereViewController)
+  //func navigateToSomewhere(source: EDSchedulesViewController, destination: SomewhereViewController)
   //{
   //  source.show(destination, sender: nil)
   //}
   
   // MARK: Passing data
   
-  //func passDataToSomewhere(source: EDInfoDataStore, destination: inout SomewhereDataStore)
+  //func passDataToSomewhere(source: EDSchedulesDataStore, destination: inout SomewhereDataStore)
   //{
   //  destination.name = source.name
   //}

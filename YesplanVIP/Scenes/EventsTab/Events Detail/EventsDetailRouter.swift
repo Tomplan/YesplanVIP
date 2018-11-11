@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol EventsDetailRoutingLogic
 {
-  func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere(row: String?)
 }
 
 protocol EventsDetailDataPassing
@@ -29,26 +29,53 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
   
   // MARK: Routing
   
-  func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere(row: String?)
   {
     print("routeToSomewhere")
-      let destinationVC = EDInfoViewController()
-      var destinationDS = destinationVC.router!.dataStore!
-      passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-      navigateToSomewhere(source: viewController!, destination: destinationVC)
+    if let row = row {
+        print("row: ", row as Any)
+        switch row {
+        case "Info":
+            print("Info")
+            let x = EDInfoViewController()
+            let destinationVC = x
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToEDInfo(source: dataStore!, destination: &destinationDS)
+            navigateToEDInfo(source: viewController!, destination: destinationVC)
+        case "Schedules":
+            print("Schedules")
+            let x = EDSchedulesViewController()
+            let destinationVC = x
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToEDSchedules(source: dataStore!, destination: &destinationDS)
+            navigateToEDSchedules(source: viewController!, destination: destinationVC)
+        default:
+            return
+        }
+    }
   }
 
   // MARK: Navigation
   
-  func navigateToSomewhere(source: EventsDetailViewController, destination: EDInfoViewController)
-  {
-    source.show(destination, sender: nil)
-  }
-
+    func navigateToEDInfo(source: EventsDetailViewController, destination: EDInfoViewController)
+    {
+        source.show(destination, sender: nil)
+    }
+    
+    func navigateToEDSchedules(source: EventsDetailViewController, destination: EDSchedulesViewController)
+    {
+        source.show(destination, sender: nil)
+    }
+    
 //   MARK: Passing data
-//  
-  func passDataToSomewhere(source: EventsDetailDataStore, destination: inout EDInfoDataStore)
-  {
-//    destination.name = source.name
-  }
+    
+    func passDataToEDInfo(source: EventsDetailDataStore, destination: inout EDInfoDataStore)
+    {
+        destination.id = source.id
+    }
+    
+    func passDataToEDSchedules(source: EventsDetailDataStore, destination: inout EDSchedulesDataStore)
+    {
+        destination.id = source.id
+    }
 }

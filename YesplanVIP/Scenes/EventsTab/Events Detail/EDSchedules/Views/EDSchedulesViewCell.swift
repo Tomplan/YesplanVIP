@@ -1,15 +1,15 @@
 //
-//  TeamplannerTabViewCell.swift
+//  EDSchedulesViewCell.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 6/10/18.
+//  Created by Techcc - FOH - Video on 11/11/18.
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
 import UIKit
 import Stevia
 
-class TeamplannerTabViewCell: UICollectionViewCell {
+class EDSchedulesViewCell: UICollectionViewCell {
     
     // MARK: Properties
     lazy var width: NSLayoutConstraint = {
@@ -17,13 +17,10 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         width.isActive = true
         return width
     }()
-    var lblName = UILabel()
-    var lblStart = UILabel()
-    var lblEventName = UILabel()
-//    var lblGroupName = UILabel()
-    
+    var lblStarttime = UILabel()
+    var lblDescription = UILabel()
+
     override init(frame: CGRect) {
-        
         super.init(frame: frame)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         setupComponents()
@@ -44,10 +41,9 @@ class TeamplannerTabViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        lblName.text = nil
-        lblStart.text = nil
-        lblEventName.text = nil
-//        lblGroupName.text = nil
+        lblStarttime.text = nil
+        lblDescription.text = nil
+
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -66,39 +62,26 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
-            lblName
-            ,lblStart
-            ,lblEventName
-//            ,lblGroupName
+            lblStarttime
+            ,lblDescription
         )
         
-        lblName.numberOfLines = 0
-        lblName.font = UIFont.systemFont(ofSize: 15.0)
-//        lblName.textColor = UIColor.red
+        lblStarttime.numberOfLines = 0
+        lblStarttime.font = UIFont.systemFont(ofSize: 15.0)
+        lblStarttime.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        lblStart.numberOfLines = 0
-        lblStart.font = UIFont.systemFont(ofSize: 12.0)
-//        lblStart.textColor = UIColor.black
-//
-        lblEventName.numberOfLines = 0
-        lblEventName.font = UIFont.systemFont(ofSize: 12.0)
-//        lblEventName.textColor = UIColor.lightGray
-
-//        lblGroupName.numberOfLines = 0
-//        lblGroupName.font = UIFont.systemFont(ofSize: 12.0)
-//        lblGroupName.textColor = UIColor.lightGray
-//
+        lblDescription.numberOfLines = 0
+        lblDescription.font = UIFont.systemFont(ofSize: 12.0)
+        lblDescription.textColor = UIColor(r: 64, g: 64, b: 64)
     }
     
     private func setupConstraints() {
         
         layout(
             4
-            ,|-16-lblName-16-|
+            ,|-16-lblStarttime-16-|
             ,0
-            ,|-16-lblStart-16-|
-            ,0
-            ,|-16-lblEventName-16-|
+            ,|-16-lblDescription-16-|
             ,4
         )
     }

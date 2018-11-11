@@ -25,15 +25,15 @@ class EventsDetailPresenter: EventsDetailPresentationLogic
   
   func presentSomething(response: EventsDetail.Something.Response)
   {
-    let rows = ["Info", "Schedule", "Location", "Team", "Resources", "Tasks", "Contacts"]
+    let rows = ["Info", "Schedules", "Location", "Team", "Resources", "Tasks", "Contacts"]
     // , "Attachments", "Customdata"
     
-    if let name = response.event.name {
+    if let header = response.event.name {
         
-        let viewModel = EventsDetail.Something.ViewModel(events: [EventsDetail.Something.ViewModel.EventDetail(name: name, rows: rows)])
+        let viewModel = EventsDetail.Something.ViewModel(sections: [EventsDetail.Something.ViewModel.EventDetail(header: header, rows: rows)])
         viewController?.displaySomething(viewModel: viewModel)
     } else {
-        let viewModel = EventsDetail.Something.ViewModel(events: [EventsDetail.Something.ViewModel.EventDetail(name: "", rows: rows)])
+        let viewModel = EventsDetail.Something.ViewModel(sections: [EventsDetail.Something.ViewModel.EventDetail(header: "", rows: rows)])
         viewController?.displaySomething(viewModel: viewModel)
     }
   }

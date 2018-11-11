@@ -19,23 +19,30 @@ protocol EDInfoBusinessLogic
 
 protocol EDInfoDataStore
 {
-  //var name: String { get set }
+  var id: String! { get set }
 }
 
 class EDInfoInteractor: EDInfoBusinessLogic, EDInfoDataStore
 {
   var presenter: EDInfoPresentationLogic?
   var worker: EDInfoWorker?
-  //var name: String = ""
-  
+    var id: String!
+
   // MARK: Do something
   
   func doSomething(request: EDInfo.Something.Request)
   {
     worker = EDInfoWorker()
-    worker?.doSomeWork()
+    worker?.getEvent(id)
+        .execute(onSuccess:
+            { event in
+                print(event)
+                let response = EDInfo.Something.Response(event: event)
+                self.presenter?.presentSomething(response: response)
+                
+            }, onFailure: { error in
+                print(error)
+        })
     
-    let response = EDInfo.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    }
 }
