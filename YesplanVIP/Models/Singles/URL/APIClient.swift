@@ -58,6 +58,10 @@ class APIClient {
         return performRequest(route: APIRouter.statuses(path: path))
     }
     
+    static func event(_ id: String) -> Future<Event> {
+        return performRequest(route: APIRouter.event(id: id))
+    }
+    
 //    static func login(email: String, password: String) -> Future<User> {
 //        return performRequest(route: APIRouter.login(email: email, password: password))
 //    }

@@ -45,8 +45,8 @@ enum TeamplannerTab
 //            let role: String
         }
 
-//        var displayedResourcebookings: Set<DisplayedResourcebooking>
-        var toVC: Set<Displ>
+        var displayedResourcebookings: Set<DisplayedResourcebooking>
+//        var toVC: Set<Displ>
         var error: String?
 
     }

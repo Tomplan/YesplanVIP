@@ -20,32 +20,28 @@ protocol EventsTabBusinessLogic
 
 protocol EventsTabDataStore
 {
+//    var event: String? { get set }
+    var eventsDS: [(key: String, value: [Event])]? { get set }
+
 }
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
 {
-//    private var client = YpClient()
-
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
-    
-//    var fetchedEvents: Events = Events()
-//    var fetchedStatuses: Statuses = Statuses()
-//    var fetchedProfiles: Profiles = Profiles()
     
     var eventsArray: [(key: String, value: [Event])] = [(key: String, value: [Event])]()
     var statusesArray: [Status] = [Status]()
     var profilesArray: [Profile] = [Profile]()
     var error: String?
-    
-//    var yesplan: Yesplan = Yesplan()
+    var eventsDS: [(key: String, value: [Event])]?
+//    var event: String?
     
   // MARK: Do something
 
   func doSomething(request: EventsTab.Something.Request) // -> Promise<EventsTab.Something.Response>
   {
     worker = EventsTabWorker()
-
     worker?.getProfiles()
         .execute(onSuccess: { items in
             self.profilesArray = items.data
@@ -65,6 +61,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
         .andThen((worker?.sortEventsInEachGroupByTime)!)
         .andThen((worker?.sortDictByDate)!)
         .execute(onSuccess: { items in
+            self.eventsDS = items
                 self.eventsArray = items
                 let response = EventsTab.Something.Response(
                     events: self.eventsArray,
@@ -74,7 +71,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
                     )
                 self.presenter?.presentEvents(response: response)
             }) { error in
-                print(error)
+//                print(error)
                 self.error = error.localizedDescription
                 let response = EventsTab.Something.Response(
                     events: self.eventsArray,

@@ -17,15 +17,39 @@ extension TasksTabViewCell {
     
     func populate(with task: Task) {
         
+        if task.status == "New" {
+            lblName.textColor = Color(r: 238, g: 0, b: 0)
+        }
+        if task.status == "Started" {
+            lblName.textColor = Color(r: 100, g: 100, b: 0)
+        }
+        if task.status == "Done" {
+            lblName.textColor = Color(r: 10, g: 238, b: 0)
+        }
+        if task.status == "On Hold" {
+            lblName.textColor = Color(r: 100, g: 0, b: 0)
+        }
+        if task.status == "Obsolete" {
+            lblName.textColor = Color(r: 100, g: 0, b: 0)
+        }
+
         if let start = task.start {
             lblStart.text = "start: \(String(describing: start.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"}
         
         if let name = task.name {
              lblName.text = name }
         
-        if task.due != "no deadline" {
-            lblDeadline.text = "deadline: \(String(describing: task.due?.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
-        } else {
+        if task.due == "no deadline" {
+            lblDeadline.text = task.due
+        } else if task.due == "Keep up the good work!" {
+            lblDeadline.text = task.due
+            lblDeadline.textAlignment = .center
+            lblName.textAlignment = .center
+            lblStart.text = ""
+        } else if let due = task.due {
+            lblDeadline.text = "deadline: \(String(describing: due.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
+        }
+        else {
             lblDeadline.text = "no deadline"
         }
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension EventsTabViewController: UICollectionViewDataSource {
+extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate {
    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return displayedEvents.count
@@ -68,12 +68,25 @@ extension EventsTabViewController: UICollectionViewDataSource {
            
             headerView.EventsViewHeaderLabel.text = displayedEvents[indexPath.section].date
                 
-            headerView.backgroundColor = UIColor.darkGray 
+            headerView.backgroundColor = UIColor.darkGray
+            headerView.layer.backgroundColor = UIColor(r: 90, g: 90, b: 90).cgColor
+            headerView.layer.borderColor = UIColor(r: 90, g: 90, b: 90).cgColor
+            headerView.layer.masksToBounds = true
+            headerView.layer.cornerRadius = 5
+            headerView.layer.borderWidth = 4
+            headerView.layer.shadowOffset = CGSize(width: -2, height: 2)
             return headerView
             
         default:
             print("default")
             fatalError("Unexpected element kind")
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//         let model = displayedEvents[indexPath.section].events[indexPath.item]
+//        print("model: ", model)
+        router?.routeToSomewhere(segue: nil)
+//        router.showProduct(for: model.id)
     }
 }

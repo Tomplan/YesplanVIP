@@ -34,16 +34,16 @@ extension TasksViewController: UICollectionViewDataSource {
                 let task = displayedTasks[indexPath.section].tasks[indexPath.item]
                 cell.populate(with: task)
                 
-            let taskStatusName = displayedTasks[indexPath.section].tasks[indexPath.item].status
-
-                    if let taskStatusColor = displayedStatuses[taskStatusName]
-                    {
-                        if let backgroundColor = UIColor(rgbString: taskStatusColor) {
-                            cell.backgroundColor = backgroundColor
-                        } else {
-                            print("invalid color specification")
-                        }
-                    }
+//            let taskStatusName = displayedTasks[indexPath.section].tasks[indexPath.item].status
+//
+//                    if let taskStatusColor = displayedStatuses[taskStatusName]
+//                    {
+//                        if let backgroundColor = UIColor(rgbString: taskStatusColor) {
+//                            cell.backgroundColor = backgroundColor
+//                        } else {
+//                            print("invalid color specification")
+//                        }
+//                    }
                 }
             
             return cell
@@ -61,7 +61,14 @@ extension TasksViewController: UICollectionViewDataSource {
             } else {
             headerView.TasksViewHeaderLabel.text = "no deadline"
             }
-            headerView.backgroundColor = UIColor.darkGray  // ... YELLOW background
+            
+            headerView.backgroundColor = UIColor.darkGray
+            headerView.layer.backgroundColor = UIColor(r: 90, g: 90, b: 90).cgColor
+            headerView.layer.borderColor = UIColor(r: 90, g: 90, b: 90).cgColor
+            headerView.layer.masksToBounds = true
+            headerView.layer.cornerRadius = 5
+            headerView.layer.borderWidth = 4
+            headerView.layer.shadowOffset = CGSize(width: -2, height: 2)
             return headerView
             
         default:

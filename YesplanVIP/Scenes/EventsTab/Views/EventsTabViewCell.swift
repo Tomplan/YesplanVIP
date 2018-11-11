@@ -12,6 +12,11 @@ import Stevia
 class EventsTabViewCell: UICollectionViewCell {
     
     // MARK: Properties
+    lazy var width: NSLayoutConstraint = {
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
     var lblHeaderName = UILabel()
     var lblName = UILabel()
     var lblDefaultschedulestarttime = UILabel()
@@ -19,8 +24,8 @@ class EventsTabViewCell: UICollectionViewCell {
     var lblGroupName = UILabel()
     
     override init(frame: CGRect) {
-
         super.init(frame: frame)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         setupComponents()
         setupConstraints()
     }
@@ -43,10 +48,13 @@ class EventsTabViewCell: UICollectionViewCell {
         lblDefaultschedulestarttime.text = nil
         lblLocation.text = nil
         lblGroupName.text = nil
-
-        
-        
     }
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        width.constant = bounds.size.width
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+    }
+    
     // MARK: Private methods
     private func setupComponents() {
 
@@ -54,8 +62,8 @@ class EventsTabViewCell: UICollectionViewCell {
         layer.cornerRadius = 5
         layer.borderWidth = 4
         layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor.black.cgColor
-        backgroundColor = UIColor.yellow
+        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+        backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
             lblHeaderName,
@@ -94,7 +102,7 @@ class EventsTabViewCell: UICollectionViewCell {
             |-16-lblLocation-16-|,
             0,
             |-16-lblGroupName-16-|
-            
+            ,4
         )
     }
 }

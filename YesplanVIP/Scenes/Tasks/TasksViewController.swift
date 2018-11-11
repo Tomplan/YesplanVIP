@@ -67,44 +67,57 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
 //    }
 //  }
 //
+    
   // MARK: View lifecycle
+    
     override func loadView() { view = v }
 
   override func viewDidLoad() {
+//    print("viewDidLoad")
     super.viewDidLoad()
+    
+    let button = UIButton(type: .system)
+    button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+    button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
+    button.setTitle("", for: .normal)
+    let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
+    let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
+    heightConstraint.isActive = true
+    widthConstraint.isActive = true
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+
+    self.title = "Tasks"
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
     
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(addTapped))
-    
-        doSomething()
-        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        v.collectionView.dataSource = self
+    getTasks()
+    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    v.collectionView.dataSource = self
   }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//            super.viewWillAppear(animated)
-//            doSomething()
-//            
-//            v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//            v.collectionView.dataSource = self
-//            print("v.collectionView.dataSource: ", v.collectionView.dataSource)
-//        }
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-    
+    override func viewWillAppear(_ animated: Bool) {
+//        print("viewWillAppear")
+        super.viewWillAppear(animated)
+        getTasks()
+    }
     
     override func viewWillDisappear(_ animated: Bool) {
+//        print("viewWillDisappear")
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
     
     @objc func userDefaultsDidChange(){
-        doSomething()
+//        print("userDefaultsDidChange")
+        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        getTasks()
+//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//        v.collectionView.dataSource = self
     }
     
     @objc func addTapped(sender: AnyObject) {
+        print("addTapped")
+//        NotificationCenter.default.removeObserver(self)
         if let url = URL(string:UIApplication.openSettingsURLString) {
             if UIApplication.shared.canOpenURL(url) {
                 _ =  UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -113,13 +126,18 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     @objc private func refresh() {
-        doSomething()
+//        print("refresh")
+        getTasks()
+//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//        v.collectionView.dataSource = self
     }
     
-  func doSomething() {
+    // MARK: getTasks()
+
+  func getTasks() {
 
     let request = TasksTab.Something.Request()
-    interactor?.doSomething(request: request)
+    interactor?.getTasks(request: request)
   }
   
   func displaySomething(viewModel: TasksTab.Something.ViewModel) {
@@ -129,16 +147,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     if viewModel.error != nil {
         let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
-        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
-            self.doSomething()
+//            self.getTasks()
         }))
-        
         self.present(alert, animated: true)
-        doSomething()
-
     }
-    
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

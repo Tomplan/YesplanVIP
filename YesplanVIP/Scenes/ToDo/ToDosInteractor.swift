@@ -50,7 +50,6 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
                 )
                 self.presenter?.presentSomething(response: response)
             }) { error in
-                print(error)
                 self.error = error.localizedDescription
                 let response = ToDosTab.Something.Response(
                     toDos: self.toDosArray

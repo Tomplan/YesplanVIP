@@ -12,7 +12,11 @@ import Stevia
 class TeamplannerTabViewCell: UICollectionViewCell {
     
     // MARK: Properties
-//    var lblHeaderName = UILabel()
+    lazy var width: NSLayoutConstraint = {
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
     var lblName = UILabel()
     var lblStart = UILabel()
     var lblEventName = UILabel()
@@ -21,6 +25,7 @@ class TeamplannerTabViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         setupComponents()
         setupConstraints()
     }
@@ -43,10 +48,13 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         lblStart.text = nil
         lblEventName.text = nil
 //        lblGroupName.text = nil
-        
-        
-        
     }
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        width.constant = bounds.size.width
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+    }
+    
     // MARK: Private methods
     private func setupComponents() {
         
@@ -54,11 +62,10 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         layer.cornerRadius = 5
         layer.borderWidth = 4
         layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor.black.cgColor
-        backgroundColor = UIColor.lightGray
+        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+        backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
-//            lblHeaderName,
             lblName
             ,lblStart
             ,lblEventName
@@ -71,11 +78,11 @@ class TeamplannerTabViewCell: UICollectionViewCell {
         
         lblStart.numberOfLines = 0
         lblStart.font = UIFont.systemFont(ofSize: 12.0)
-        lblStart.textColor = UIColor.black
+//        lblStart.textColor = UIColor.black
 //
         lblEventName.numberOfLines = 0
         lblEventName.font = UIFont.systemFont(ofSize: 12.0)
-        lblEventName.textColor = UIColor.lightGray
+//        lblEventName.textColor = UIColor.lightGray
 
 //        lblGroupName.numberOfLines = 0
 //        lblGroupName.font = UIFont.systemFont(ofSize: 12.0)
@@ -94,7 +101,7 @@ class TeamplannerTabViewCell: UICollectionViewCell {
             ,|-16-lblEventName-16-|
 //            ,0
 //            ,|-16-lblGroupName-16-|
-            
+            ,4
         )
     }
 }

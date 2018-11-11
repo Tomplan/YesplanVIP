@@ -14,7 +14,7 @@ import UIKit
 
 @objc protocol EventsTabRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+  func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol EventsTabDataPassing
@@ -29,32 +29,39 @@ class EventsTabRouter: NSObject, EventsTabRoutingLogic, EventsTabDataPassing
   
   // MARK: Routing
   
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
+  func routeToSomewhere(segue: UIStoryboardSegue?)
+  {
+//    print("routeToSomewhere")
+
+      let destinationVC = EventsDetailViewController()
+      var destinationDS = destinationVC.router!.dataStore!
+        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+      navigateToSomewhere(source: viewController!, destination: destinationVC)
+    
+  }
 
   // MARK: Navigation
   
-  //func navigateToSomewhere(source: EventsTabViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
+  func navigateToSomewhere(source: EventsTabViewController, destination: EventsDetailViewController)
+  {
+//    print("navigateToSomewhere")
+    
+    source.show(destination, sender: nil)
+  }
   
   // MARK: Passing data
   
-//  func passDataToSomewhere(source: EventsTabDataStore, destination: inout SomewhereDataStore)
-//  {
-//    destination.name = source.name
-//  }
+  func passDataToSomewhere(source: EventsTabDataStore, destination: inout EventsDetailDataStore)
+  {
+//    print("passDataToSomewhere")
+    
+    let selectedItem = viewController?.v.collectionView.indexPathsForSelectedItems
+    let section = selectedItem![0][0]
+    let item = selectedItem![0][1]
+
+    if let id = source.eventsDS?[section].value[item].id {
+    destination.id = id
+    }
+
+  }
 }

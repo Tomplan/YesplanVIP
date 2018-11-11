@@ -74,10 +74,20 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
     super.viewDidLoad()
     view.backgroundColor = UIColor.red
     
+    let button = UIButton(type: .system)
+    button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+    button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
+    button.setTitle("", for: .normal)
+    let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
+    let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
+    heightConstraint.isActive = true
+    widthConstraint.isActive = true
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+    
+    self.title = "Teamplanner"
+    
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
     
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(addTapped))
-   
     doSomething()
     
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -115,31 +125,31 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
-    var setje: Set<TeamplannerTab.Something.ViewModel.Displ> = []
-    for booking in viewModel.toVC {
-//        print("booking: ", booking)
-        setje.insert(booking)
-    }
+//    var setje: Set<TeamplannerTab.Something.ViewModel.Displ> = []
+//    for booking in viewModel.toVC {
+////        print("booking: ", booking)
+//        setje.insert(booking)
+//    }
 //    print(setje)
-    let f = Dictionary(grouping: setje, by: { $0.date })
-    
-    var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
-    for (key, value) in f {
-//        print(key, ": ",  value)
-        let valueSorted = value.sorted{ $0.start <  $1.start }
-        items[key] = valueSorted
-    }
+//    let f = Dictionary(grouping: setje, by: { $0.date })
+//
+//    var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
+//    for (key, value) in f {
+////        print(key, ": ",  value)
+//        let valueSorted = value.sorted{ $0.start <  $1.start }
+//        items[key] = valueSorted
+//    }
     /// miljaar da had wa in ver ik dees stoem lentje gevonne had
-    self.resourcebookings = []
-    /// ja da hi veu dus, klowete
+//    self.resourcebookings = []
+//    /// ja da hi veu dus, klowete
+//
+//    for (key, value) in items {
+//        self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
+//    }
+    displayedResourcebookings = Array(viewModel.displayedResourcebookings.sorted(by: { $0.date < $1.date }))
+//    displayedResourcebookings = Array(self.resourcebookings.sorted(by: { $0.date < $1.date }))
     
-    for (key, value) in items {
-        self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
-    }
-    
-    displayedResourcebookings = Array(self.resourcebookings.sorted(by: { $0.date < $1.date }))
-    
-    print(displayedResourcebookings)
+//    print(displayedResourcebookings)
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

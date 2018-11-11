@@ -13,9 +13,10 @@ class ToDosTabViewHeader: UICollectionReusableView {
     var ToDosViewHeaderLabel: UILabel
         = {
             var label = UILabel()
-            label.textColor = UIColor.black
+            label.textColor = UIColor.white
             label.textAlignment = .center
-            //        label.font = UIFont(name: "Montserrat", size: 30)
+            label.backgroundColor = UIColor(r: 90, g: 90, b: 90)
+            label.font = UIFont(name: "Helvetica, sans-serif", size: 30)
             return label
     }()
     

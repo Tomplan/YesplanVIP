@@ -17,6 +17,22 @@ extension ToDosTabViewCell {
     
     func populate(with task: Task) {
         
+        if task.status == "New" {
+            lblName.textColor = Color(r: 238, g: 0, b: 0)
+        }
+        if task.status == "Started" {
+            lblName.textColor = Color(r: 100, g: 100, b: 0)
+        }
+        if task.status == "Done" {
+            lblName.textColor = Color(r: 100, g: 100, b: 0)
+        }
+        if task.status == "On Hold" {
+            lblName.textColor = Color(r: 100, g: 100, b: 100)
+        }
+        if task.status == "Obsolete" {
+            lblName.textColor = Color(r: 0, g: 0, b: 238)
+        }
+        
         if let start = task.start {
             lblStart.text = "start: \(String(describing: start.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"}
         
@@ -30,10 +46,12 @@ extension ToDosTabViewCell {
             lblDeadline.textAlignment = .center
             lblName.textAlignment = .center
             lblStart.text = ""
-        } else {
-            lblDeadline.text = "deadline: \(String(describing: task.due?.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
+        } else if let due = task.due {
+                lblDeadline.text = "deadline: \(String(describing: due.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")!))"
+            }
+         else {
+            lblDeadline.text = "no deadline"
         }
-        
         if let assignedTo = task.assignedto {
             lblAssignedTo.text = assignedTo }
     }

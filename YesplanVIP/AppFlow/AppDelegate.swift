@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        api = Yesplan()
-
+//        UIApplication
+//            .sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         //        ShortcutParser.shared.registerShortcuts()
         
         // Create a new window for the window property that

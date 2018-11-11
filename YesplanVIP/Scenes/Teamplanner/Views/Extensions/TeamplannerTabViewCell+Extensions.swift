@@ -17,21 +17,32 @@ import Kingfisher
 extension TeamplannerTabViewCell {
     
     func populate(with resourcebooking: TeamplannerTab.Something.ViewModel.Displ) {
+        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblStart.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        
         let name = resourcebooking.scheduleType
         lblName.text = name
         let start = resourcebooking.start
         let end = resourcebooking.end
         if let eventName = resourcebooking.eventName {
             lblName.text = "\(eventName)"
-                lblName.textColor = UIColor.blue
-
             lblStart.text = "• \(start) - \(end)"
 //            lblEventName.text = "     \(eventName)"
 
         } else {
+            if resourcebooking.scheduleType == "shift" {
+                lblName.textColor = UIColor(r: 158, g: 103, b: 0)
+            }
+            if resourcebooking.scheduleType == "break" {
+                lblName.textColor = UIColor(r: 158, g: 103, b: 0)
+            }
+            if resourcebooking.scheduleType == "unavailability" {
+                lblName.textColor = UIColor(r: 238, g: 0, b: 0)
+            }
+            
 //        let role = resourcebooking.role
             lblName.text = "\(resourcebooking.scheduleType)"
-                lblName.textColor = UIColor.red
             lblStart.text = "• \(start) - \(end)"
         }
 //        if let defaultschedulestarttime = event.defaultschedulestarttime {

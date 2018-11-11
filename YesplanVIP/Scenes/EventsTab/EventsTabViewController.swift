@@ -26,8 +26,8 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     var displayedEvents: [EventsTab.Something.ViewModel.DisplayedEvent] = []
     var displayedStatuses: [String:String] = [:]
     var displayedProfiles: [String:String] = [:]
-    
-  // MARK: Object lifecycle
+
+    // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
@@ -71,59 +71,81 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 //  }
   
   // MARK: View lifecycle
+    
     override func loadView() { view = v }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
+        button.setTitle("", for: .normal)
+        let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
+        let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
+        heightConstraint.isActive = true
+        widthConstraint.isActive = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+        self.title = "Events"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+        
         doSomething()
-
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         v.collectionView.dataSource = self
+        v.collectionView.delegate = self
   }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        doSomething()
-//        
-//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//        v.collectionView.dataSource = self
-//        print("v.collectionView.dataSource: ", v.collectionView.dataSource)
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+        doSomething()
+        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        v.collectionView.dataSource = self
+    }
     
-  // MARK: Do something
-  
-//  @IBOutlet weak var basic: UITextField!
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
     
-    @objc private func refresh() {
-        
+    @objc func userDefaultsDidChange(){
         doSomething()
     }
     
-  func doSomething() {
+    @objc func addTapped(sender: AnyObject) {
+        if let url = URL(string:UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                _ =  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
     
+    @objc private func refresh() {
+        doSomething()
+    }
+    
+    // MARK: Do something
+
+  func doSomething() {
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
   }
   
   func displaySomething(viewModel: EventsTab.Something.ViewModel ) {
-    
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
     displayedStatuses = viewModel.displayedStatuses
     
     if viewModel.error != nil {
     let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
-    
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
             self.doSomething()
         }))
-        
     self.present(alert, animated: true)
-
     }
-    
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

@@ -70,7 +70,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .selected)
         UITabBar.appearance().barTintColor = UIColor.black
-        // UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
         setupTabBar()
         setup()
     }
@@ -88,14 +87,23 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         let VC01 = createNavController(vc: EventsTabViewController(), title: "Events", selected: #imageLiteral(resourceName: "Events Selected.png"), unselected: #imageLiteral(resourceName: "Events Unselected.png"))
         let VC02 = createNavController(vc: TasksViewController(), title: "Tasks", selected: #imageLiteral(resourceName: "Tasks Selected"), unselected: #imageLiteral(resourceName: "Tasks Unselected"))
-        let VC03 = createNavController(vc: ContactsViewController(), title: "Contacts", selected: #imageLiteral(resourceName: "Contacts Selected"), unselected: #imageLiteral(resourceName: "Contacts Unselected"))
+//        let VC03 = createNavController(vc: ContactsViewController(), title: "Contacts", selected: #imageLiteral(resourceName: "Contacts Selected"), unselected: #imageLiteral(resourceName: "Contacts Unselected"))
         let VC04 = createNavController(vc: TeamplannerTabViewController(), title: "Teamplanner", selected: #imageLiteral(resourceName: "Teamplanner Selected"), unselected: #imageLiteral(resourceName: "Teamplanner Unselected"))
         let VC05 = createNavController(vc: ToDosViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: #imageLiteral(resourceName: "To Do Unselected"))
-        let VC06 = createNavController(vc: UserTabViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
-        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
+//        let VC06 = createNavController(vc: UserTabViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
+//        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
         let VC08 = createNavController(vc: LogoutViewController(), title: "Logout", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
 
-        let controllers = [VC01, VC02, VC03, VC04, VC05, VC06, VC07, VC08]
+        let controllers = [
+            VC01
+            , VC02
+//            , VC03
+            , VC04
+            , VC05
+//            , VC06
+//            , VC07
+            , VC08
+        ]
         setViewControllers(controllers, animated: false)
         
         // Mark: Create tabBarItems
@@ -119,7 +127,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             defaults.set(true, forKey: "tabOrderCheck")
             tabOrder = (defaults.object(forKey: "tabOrder") as? [Int])
         } else {
-            tabOrder = [0, 1, 2, 3, 4, 5, 6, 7]
+            tabOrder = [0, 2, 1, 3, 4, 5, 6, 7]
+//            tabOrder = [0, 1, 3, 4, 7]
             defaults.set(tabOrder, forKey: "tabOrder")
             defaults.set(true, forKey: "tabOrderCheck")
         }
@@ -147,7 +156,6 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     func displaySomething(viewModel: MainTabBar.Something.ViewModel)
       {
-    //nameTextField.text = viewModel.name
       }
 }
 
@@ -157,6 +165,16 @@ extension MainTabBarViewController {
 
         let viewController = vc
         let navController = UINavigationController(rootViewController: viewController)
+//        navController.navigationBar.backgroundColor = UIColor.red
+        var navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = UIColor.yellow // color for buttons
+        navigationBarAppearace.barTintColor = UIColor.black // color for background
+        
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(r: 185, g: 185, b: 185)]
+        
+//        navController.navigationBar.barStyle = .black // set in info plist
         navController.tabBarItem.image = unselected
         navController.tabBarItem.selectedImage = selected
         navController.tabBarItem.title = title

@@ -15,7 +15,7 @@ import PromiseKit
 
 protocol TasksBusinessLogic
 {
-  func doSomething(request: TasksTab.Something.Request)
+  func getTasks(request: TasksTab.Something.Request)
 }
 
 protocol TasksDataStore
@@ -28,13 +28,12 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   var presenter: TasksPresentationLogic?
   var worker: TasksWorker?
     
-//    var fetchedTasks: Tasks = Tasks()
     var error: String?
     var tasksArray: [(key: String, value: [Task])] = [(key: String, value: [Task])]()
-  // MARK: Do something
-   
     
-  func doSomething(request: TasksTab.Something.Request)
+  // MARK: Do something
+    
+  func getTasks(request: TasksTab.Something.Request)
   {
     worker = TasksWorker()
     
@@ -50,7 +49,6 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
                 )
             self.presenter?.presentSomething(response: response)
         }) { error in
-            print(error)
             self.error = error.localizedDescription
             let response = TasksTab.Something.Response(
                 tasks: self.tasksArray

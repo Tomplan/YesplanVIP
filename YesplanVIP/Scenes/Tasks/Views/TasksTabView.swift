@@ -19,23 +19,26 @@ class TasksTabView: UIView {
     
     lazy var collectionView : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        let cellHeight: CGFloat = 80
-        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
-        flowLayout.itemSize = size
-        flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 40)
+        
+        flowLayout.scrollDirection = .vertical
+        flowLayout.minimumLineSpacing = 1
+        flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
+        flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 10)
+        
+        collectionView.backgroundColor = UIColor(r: 176, g: 176, b: 176)
+        
         return collectionView
     }()
     
-    let backgroundImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.image = UIImage(named: "yesplanNB 1024x1024")
-        return iv
-    }()
+//    let backgroundImageView: UIImageView = {
+//        let iv = UIImageView()
+//        iv.contentMode = .scaleAspectFill
+//        iv.image = UIImage(named: "yesplanNB 1024x1024")
+//        return iv
+//    }()
     
     convenience init() {
         self.init(frame: CGRect.zero)

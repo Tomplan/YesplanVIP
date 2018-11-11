@@ -34,22 +34,22 @@ extension ToDosViewController: UICollectionViewDataSource {
                 let task = displayedToDos[indexPath.section].toDos[indexPath.item]
                 cell.populate(with: task)
                 
-                let toDoStatusName = displayedToDos[indexPath.section].toDos[indexPath.item].status
-                
-                if let toDoStatusColor = displayedStatuses[toDoStatusName]
-                {
-                    if let backgroundColor = UIColor(rgbString: toDoStatusColor) {
-                        cell.backgroundColor = backgroundColor
-                    } else {
-                        print("invalid color specification")
-                    }
-                }
+//                let toDoStatusName = displayedToDos[indexPath.section].toDos[indexPath.item].status
+//                
+//                if let toDoStatusColor = displayedStatuses[toDoStatusName]
+//                {
+//                    if let backgroundColor = UIColor(rgbString: toDoStatusColor) {
+//                        cell.backgroundColor = backgroundColor
+//                    } else {
+//                        print("invalid color specification")
+//                    }
+//                }
             }
             return cell
         }
         return UICollectionViewCell()
     }
-   
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind{
         case UICollectionView.elementKindSectionHeader:
@@ -62,7 +62,14 @@ extension ToDosViewController: UICollectionViewDataSource {
             } else {
                 headerView.ToDosViewHeaderLabel.text = "\(displayedToDos[indexPath.section].date)"
             }
-            headerView.backgroundColor = UIColor.darkGray 
+            
+            headerView.backgroundColor = UIColor.darkGray
+            headerView.layer.backgroundColor = UIColor(r: 90, g: 90, b: 90).cgColor
+            headerView.layer.borderColor = UIColor(r: 90, g: 90, b: 90).cgColor
+            headerView.layer.masksToBounds = true
+            headerView.layer.cornerRadius = 5
+            headerView.layer.borderWidth = 4
+            headerView.layer.shadowOffset = CGSize(width: -2, height: 2)
             return headerView
             
         default:

@@ -73,9 +73,19 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
+        button.setTitle("", for: .normal)
+        let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
+        let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
+        heightConstraint.isActive = true
+        widthConstraint.isActive = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(addTapped))
+        self.title = "ToDo"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
         
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)

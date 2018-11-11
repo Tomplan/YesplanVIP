@@ -49,7 +49,7 @@ class AppConfig {
         var defaultsToRegister = [String: AnyObject]()
         for var p in preferences {
             if let k = p["Key"] as? String, let v = p["DefaultValue"] {
-                NSLog("%@", "registering \(v) for key \(k)")
+//                NSLog("%@", "registering \(v) for key \(k)")
                 defaultsToRegister[k] = v
             }
         }

@@ -23,177 +23,68 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
     
     
   weak var viewController: TeamplannerTabDisplayLogic?
-    var scheduleType = ""
-    var date = ""
-    var start = ""
-    var end = ""
-    var eventName = ""
-    var role = ""
-    var error: String?
     
-    var resourcebookingDispls: Set<TeamplannerTab.Something.ViewModel.Displ> = []
-    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.Displ> = []
-    var dictResourcebookings: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
+//    var error: String?
+//    var resourcebookingDispls: Set<TeamplannerTab.Something.ViewModel.Displ> = []
+//    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.DisplayedResourcebooking> = []
+//    var dictResourcebookings: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
+    
   // MARK: Do something
-
-//    func insert(_ myschedules: [ResourceScheduleFromTo]) -> Future<Set<TeamplannerTab.Something.ViewModel.Displ>> {
-//        for resourceSchedule in myschedules {
-//
-//        }
-//        return
-//    }
     
   func presentSomething(response: TeamplannerTab.Something.Response)
   {
-    resourcebookingDispls = []
-    resourcebookings = []
-    // first open Array of ResourceSchedulesFromTo
-        for resourceSchedule in response.resourceSchedules {
-            // foreach ResourceSchedulesFromTo, open Array of Schedules
-            if let schedules = resourceSchedule.schedules {
-            for schedule in schedules {
-                schedule.eventName.execute(onSuccess: { result in
-                    var item: TeamplannerTab.Something.ViewModel.Displ = TeamplannerTab.Something.ViewModel.Displ(
-                        date: schedule.date
-                        , scheduleType: schedule.scheduletype
-                        , start: schedule.start
-                        , end: schedule.end
-                        , eventName: self.eventName
+    var error: String?
+    var resourcebookingDispls: Set<TeamplannerTab.Something.ViewModel.Displ> = []
+    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.DisplayedResourcebooking> = []
+    var dictResourcebookings: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
+
+    for resourceSchedule in response.resourceSchedules {
+        if let schedules = resourceSchedule.schedules {
+        for schedule in schedules {
+            schedule.eventName.execute(onSuccess: { result in
+                var item: TeamplannerTab.Something.ViewModel.Displ = TeamplannerTab.Something.ViewModel.Displ(
+                    date: schedule.date
+                    , scheduleType: schedule.scheduletype
+                    , start: schedule.start
+                    , end: schedule.end
+                    , eventName: ""
+                )
+                if let name = result {
+                    item = TeamplannerTab.Something.ViewModel.Displ(
+                    date: schedule.date
+                    , scheduleType: schedule.scheduletype
+                    , start: schedule.start
+                    , end: schedule.end
+                    , eventName: name
                     )
-                    if let name = result {
-                    self.eventName = name
-                         item = TeamplannerTab.Something.ViewModel.Displ(
-                            date: schedule.date
-                            , scheduleType: schedule.scheduletype
-                            , start: schedule.start
-                            , end: schedule.end
-                            , eventName: self.eventName
-                        )
-                    } else {
-                         item = TeamplannerTab.Something.ViewModel.Displ(
-                            date: schedule.date
-                            , scheduleType: schedule.scheduletype
-                            , start: schedule.start
-                            , end: schedule.end
-                            , eventName: nil
-                        )
-                    }
-                    self.resourcebookingDispls.insert(item)
-//                    self.dictResourcebookings = Dictionary(grouping: self.resourcebookingDispls, by: { $0.date })
-//                    var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
-//                                    for (key, value) in self.dictResourcebookings {
-//                                        let valueSorted = value.sorted{ $0.start <  $1.start }
-//                                        items[key] = valueSorted
-//                                    }
-//
-//                                    for (key, value) in items {
-//                                        self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
-//                                    }
-                                    let viewModel = TeamplannerTab.Something.ViewModel(
-//                                        displayedResourcebookings: self.resourcebookingDispls
-                                        toVC: self.resourcebookingDispls
-                                        , error: self.error
-                                    )
-                                    //            print(self.resourcebookings)
-                                    self.viewController?.displaySomething(viewModel: viewModel)
-//                    print(self.resourcebookingDispls)
+                } else {
+                    item = TeamplannerTab.Something.ViewModel.Displ(
+                    date: schedule.date
+                    , scheduleType: schedule.scheduletype
+                    , start: schedule.start
+                    , end: schedule.end
+                    , eventName: nil
+                    )
+                }
+                resourcebookingDispls.insert(item)
+                dictResourcebookings = Dictionary(grouping: resourcebookingDispls, by: { $0.date })
+                var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
+                for (key, value) in dictResourcebookings {
+                    let valueSorted = value.sorted{ $0.start <  $1.start }
+                    items[key] = valueSorted
+                }
+                resourcebookings = []
+                for (key, value) in items {
+                    resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
+                }
+                let viewModel = TeamplannerTab.Something.ViewModel(
+                    displayedResourcebookings: resourcebookings
+                    ,error: error
+                    )
+                self.viewController?.displaySomething(viewModel: viewModel)
                 })
             }
-//                schedule.eventName.execute(completion: { result in
-//                    switch result {
-//                    case .success(let x):
-//                        if let y = x {
-//                        self.eventName = y
-//                        }
-//                    case .failure(let x):
-//                        print(x)
-//                    }
-//                })
-//                let item: TeamplannerTab.Something.ViewModel.Displ = TeamplannerTab.Something.ViewModel.Displ(
-//                    date: schedule.date
-//                    , scheduleType: schedule.scheduletype
-//                    , start: schedule.start
-//                    , end: schedule.end
-//                    , eventName: self.eventName
-//                )
-//                self.resourcebookingDispls.insert(item)
-                
-//    self.dictResourcebookings = Dictionary(grouping: self.resourcebookingDispls, by: { $0.date })
-//    print("1:" , dictResourcebookings)
-    //                var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
-    //                for (key, value) in self.dictResourcebookings {
-    //                    let valueSorted = value.sorted{ $0.start <  $1.start }
-    //                    items[key] = valueSorted
-    //                }
-    //
-    //                for (key, value) in items {
-    //                    self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
-    //                }
-    //                let viewModel = TeamplannerTab.Something.ViewModel(
-    //                    displayedResourcebookings: self.resourcebookings
-    //                    , error: self.error
-    //                )
-    //                //            print(self.resourcebookings)
-    //                self.viewController?.displaySomething(viewModel: viewModel)
-            }}
+        }}
     }
 }
 
-//                schedule.eventName
-//                    .andThen(schedule)
-//                if let name = result {
-//                    print("name")
-//                    item = TeamplannerTab.Something.ViewModel.Displ(
-//                        date: schedule.date
-//                        ,scheduleType: schedule.scheduletype
-//                        ,start: schedule.start
-//                        ,end: schedule.end
-//                        ,eventName: name
-//                    )
-//                    self.resourcebookingDispls.insert(item)
-//
-//                    //                            print("2: ", self.resourcebookingDispls)
-//                } else {
-//                    item = TeamplannerTab.Something.ViewModel.Displ(
-//                        date: schedule.date
-//                        ,scheduleType: schedule.scheduletype
-//                        ,start: schedule.start
-//                        ,end: schedule.end
-//                        ,eventName: nil
-//                    )
-//                    self.resourcebookingDispls.insert(item)
-//                }
-//                print("1: ", self.resourcebookingDispls)
-//                }
-//                , onFailure: {error in
-//                    print("error")
-//                    //                            let item = TeamplannerTab.Something.ViewModel.Displ(
-//                    //                                date: schedule.date
-//                    //                                ,scheduleType: schedule.scheduletype
-//                    //                                ,start: schedule.start
-//                    //                                ,end: schedule.end
-//                    //                                ,eventName: "schedule.eventName"
-//                    //                            )
-//                    //                            self.resourcebookingDispls.insert(item)
-//                })
-//                self.dictResourcebookings = Dictionary(grouping: self.resourcebookingDispls, by: { $0.date })
-//                print(dictResourcebookings)
-//                var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
-//                for (key, value) in self.dictResourcebookings {
-//                    let valueSorted = value.sorted{ $0.start <  $1.start }
-//                    items[key] = valueSorted
-//                }
-//
-//                for (key, value) in items {
-//                    self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
-//                }
-//                let viewModel = TeamplannerTab.Something.ViewModel(
-//                    displayedResourcebookings: self.resourcebookings
-//                    , error: self.error
-//                )
-//                //            print(self.resourcebookings)
-//                self.viewController?.displaySomething(viewModel: viewModel)
-//
-//            })
-
-//    }}
