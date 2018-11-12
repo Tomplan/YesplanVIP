@@ -31,31 +31,32 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
   
   func routeToSomewhere(row: String?)
   {
-    print("routeToSomewhere")
     if let row = row {
-        print("row: ", row as Any)
         switch row {
         case "Info":
-            print("Info")
             let x = EDInfoViewController()
             let destinationVC = x
             var destinationDS = destinationVC.router!.dataStore!
             passDataToEDInfo(source: dataStore!, destination: &destinationDS)
             navigateToEDInfo(source: viewController!, destination: destinationVC)
         case "Schedules":
-            print("Schedules")
             let x = EDSchedulesViewController()
             let destinationVC = x
             var destinationDS = destinationVC.router!.dataStore!
             passDataToEDSchedules(source: dataStore!, destination: &destinationDS)
             navigateToEDSchedules(source: viewController!, destination: destinationVC)
         case "Location":
-            print("Location")
             let x = EDLocationViewController()
             let destinationVC = x
             var destinationDS = destinationVC.router!.dataStore!
             passDataToEDLocation(source: dataStore!, destination: &destinationDS)
             navigateToEDLocation(source: viewController!, destination: destinationVC)
+        case "Team":
+            let x = EDTeamViewController()
+            let destinationVC = x
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToEDTeam(source: dataStore!, destination: &destinationDS)
+            navigateToEDTeam(source: viewController!, destination: destinationVC)
         default:
             return
         }
@@ -79,6 +80,11 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
         source.show(destination, sender: nil)
     }
     
+    func navigateToEDTeam(source: EventsDetailViewController, destination: EDTeamViewController)
+    {
+        source.show(destination, sender: nil)
+    }
+    
 //   MARK: Passing data
     
     func passDataToEDInfo(source: EventsDetailDataStore, destination: inout EDInfoDataStore)
@@ -94,5 +100,12 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
     func passDataToEDLocation(source: EventsDetailDataStore, destination: inout EDLocationDataStore)
     {
         destination.id = source.id
+    }
+    
+    func passDataToEDTeam(source: EventsDetailDataStore, destination: inout EDTeamDataStore)
+    {
+        destination.name = source.name
+        destination.id = source.id
+        print(source.id as Any)
     }
 }

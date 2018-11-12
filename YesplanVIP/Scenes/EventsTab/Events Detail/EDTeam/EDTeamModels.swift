@@ -1,5 +1,5 @@
 //
-//  EDLocationModels.swift
+//  EDTeamModels.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum EDLocation
+enum EDTeam
 {
     // MARK: Use cases
     
@@ -23,13 +23,14 @@ enum EDLocation
         }
         struct Response: Codable
         {
-            var event: Event
+            var name: String
+            var resourcebookings: [Resourcebooking]
         }
         struct ViewModel: Codable
         {
             struct Item: Codable {
                 var header: String
-                var rows: Event?
+                var rows: [Resourcebooking]
             }
             var sections: [Item]
         }

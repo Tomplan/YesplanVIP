@@ -78,6 +78,7 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
     button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
     button.setTitle("", for: .normal)
+    button.tintColor = UIColor.yellow
     let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
     let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
     heightConstraint.isActive = true

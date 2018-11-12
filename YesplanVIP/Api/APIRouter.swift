@@ -25,7 +25,7 @@ enum APIRouter: URLRequestConvertible {
     
     case event(id: String)
     case eventSchedule(id: String)
-
+    case eventResourcebookings(id: String)
 
 ////    case login(email:String, password:String)
 ////    case articles(userId: Int)
@@ -46,13 +46,8 @@ enum APIRouter: URLRequestConvertible {
                 
                 ,.event
                 ,.eventSchedule
+                ,.eventResourcebookings
                 :return .get
-            
-//        case .login:
-//            return .post
-//        case .articles, .article:
-//            return .get
-            
         }
     }
 
@@ -70,15 +65,10 @@ enum APIRouter: URLRequestConvertible {
         case .statuses(let path): return "/api/statuses/\(path)"
         case .tasks(let path): return "/api/tasks/\(path)"
 
-        case .event(let path): return "/api/event/\(path)"
-        case .eventSchedule(let path): return "/api/event/\(path)/schedule"
-//
-////        case .login:
-////            return "/login"
-////        case .articles(let userId):
-////            return "/articles/all.json?userID=\(userId)"
-////        case .article(let id):
-////            return "/article/article.json?id=\(id)"
+        case .event(let id): return "/api/event/\(id)"
+        case .eventSchedule(let id): return "/api/event/\(id)/schedule"
+        case .eventResourcebookings(let id): return "/api/event/\(id)/resourcebookings"
+     
         }
     }
 
@@ -98,6 +88,7 @@ enum APIRouter: URLRequestConvertible {
                 
                 ,.event
                 ,.eventSchedule
+                ,.eventResourcebookings
                 :return nil
         
 //        case .login(let email, let password):
@@ -112,24 +103,20 @@ enum APIRouter: URLRequestConvertible {
     private var query: [String: String] {
         switch self {
         case .events
-        ,.groups
-        ,.profiles
-        ,.resourcebookingId
-        ,.resourcebookings
-        ,.resources
-        ,.statuses
-        ,.tasks
-            
-        ,.event
-        ,.eventSchedule
+            ,.groups
+            ,.profiles
+            ,.resourcebookingId
+            ,.resourcebookings
+            ,.resources
+            ,.statuses
+            ,.tasks
+        
+            ,.event
+            ,.eventSchedule
+            ,.eventResourcebookings
         :return [:]
         case .resourcesSchedulesFromTo:
             return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]
-            //        case .login(let email, let password):
-            //            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
-            //        case .articles, .article:
-            //            return nil
-            
         }
     }
     

@@ -38,8 +38,18 @@
 		3C05A0342198E8F300F93289 /* EDLocationViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0332198E8F300F93289 /* EDLocationViewHeader.swift */; };
 		3C05A0362198E91D00F93289 /* EDLocationViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0352198E91D00F93289 /* EDLocationViewCell+Extensions.swift */; };
 		3C05A0392198E96700F93289 /* EDLocationViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05A0382198E96700F93289 /* EDLocationViewController+Extensions.swift */; };
+		3C08E08721997115007AAF8B /* EDTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08121997115007AAF8B /* EDTeamPresenter.swift */; };
+		3C08E08821997115007AAF8B /* EDTeamWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08221997115007AAF8B /* EDTeamWorker.swift */; };
+		3C08E08921997115007AAF8B /* EDTeamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08321997115007AAF8B /* EDTeamRouter.swift */; };
+		3C08E08A21997115007AAF8B /* EDTeamModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08421997115007AAF8B /* EDTeamModels.swift */; };
+		3C08E08B21997115007AAF8B /* EDTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08521997115007AAF8B /* EDTeamViewController.swift */; };
+		3C08E08C21997115007AAF8B /* EDTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08621997115007AAF8B /* EDTeamInteractor.swift */; };
+		3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08E2199713B007AAF8B /* EDTeamView.swift */; };
+		3C08E09221997160007AAF8B /* EDTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E09121997160007AAF8B /* EDTeamViewCell.swift */; };
+		3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */; };
+		3C08E0962199718B007AAF8B /* EDTeamViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E0952199718B007AAF8B /* EDTeamViewCell+Extensions.swift */; };
+		3C08E099219971A2007AAF8B /* EDTeamViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E098219971A2007AAF8B /* EDTeamViewController+Extensions.swift */; };
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
-		3C0E97E2217CF7D3008895DD /* URLSesssion+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */; };
 		3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52C215B9751009523AC /* TasksTabViewCell.swift */; };
 		3C18E52F215B97C0009523AC /* TasksTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52E215B97C0009523AC /* TasksTabViewHeader.swift */; };
 		3C230AA821558BA5004477A3 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C230AA721558BA5004477A3 /* Statuses.swift */; };
@@ -125,13 +135,7 @@
 		3C7B4F12217A4155000D7FDB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4F11217A4155000D7FDB /* Result.swift */; };
 		3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF52157C1DB00428BF9 /* Profile.swift */; };
 		3C862BF82157C2F700428BF9 /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C862BF72157C2F700428BF9 /* Profiles.swift */; };
-		3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */; };
-		3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F34B216E1F98008120FA /* Endpoint.swift */; };
-		3C87F350216E2423008120FA /* Yp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F34F216E2423008120FA /* Yp.swift */; };
 		3C87F352216E2865008120FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F351216E2865008120FA /* APIError.swift */; };
-		3C87F354216E2887008120FA /* APIClient+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F353216E2887008120FA /* APIClient+Protocol.swift */; };
-		3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */; };
-		3C87F358216E3FB4008120FA /* YpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C87F357216E3FB4008120FA /* YpClient.swift */; };
 		3C9A5B6A2167E2CD00A5D35B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C9A5B692167E2CD00A5D35B /* Settings.bundle */; };
 		3CA2131D218E267100F74EED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA2131C218E267100F74EED /* Constants.swift */; };
 		3CA2131F218E274A00F74EED /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA2131E218E274A00F74EED /* APIClient.swift */; };
@@ -287,8 +291,18 @@
 		3C05A0332198E8F300F93289 /* EDLocationViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDLocationViewHeader.swift; sourceTree = "<group>"; };
 		3C05A0352198E91D00F93289 /* EDLocationViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDLocationViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		3C05A0382198E96700F93289 /* EDLocationViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDLocationViewController+Extensions.swift"; sourceTree = "<group>"; };
+		3C08E08121997115007AAF8B /* EDTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamPresenter.swift; sourceTree = "<group>"; };
+		3C08E08221997115007AAF8B /* EDTeamWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamWorker.swift; sourceTree = "<group>"; };
+		3C08E08321997115007AAF8B /* EDTeamRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamRouter.swift; sourceTree = "<group>"; };
+		3C08E08421997115007AAF8B /* EDTeamModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamModels.swift; sourceTree = "<group>"; };
+		3C08E08521997115007AAF8B /* EDTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewController.swift; sourceTree = "<group>"; };
+		3C08E08621997115007AAF8B /* EDTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamInteractor.swift; sourceTree = "<group>"; };
+		3C08E08E2199713B007AAF8B /* EDTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamView.swift; sourceTree = "<group>"; };
+		3C08E09121997160007AAF8B /* EDTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewCell.swift; sourceTree = "<group>"; };
+		3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewHeader.swift; sourceTree = "<group>"; };
+		3C08E0952199718B007AAF8B /* EDTeamViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDTeamViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		3C08E098219971A2007AAF8B /* EDTeamViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDTeamViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSesssion+Extensions.swift"; sourceTree = "<group>"; };
 		3C18E52C215B9751009523AC /* TasksTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewCell.swift; sourceTree = "<group>"; };
 		3C18E52E215B97C0009523AC /* TasksTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewHeader.swift; sourceTree = "<group>"; };
 		3C230AA721558BA5004477A3 /* Statuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
@@ -368,13 +382,7 @@
 		3C7B4F11217A4155000D7FDB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3C862BF52157C1DB00428BF9 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		3C862BF72157C2F700428BF9 /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
-		3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Protocol.swift"; sourceTree = "<group>"; };
-		3C87F34B216E1F98008120FA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		3C87F34F216E2423008120FA /* Yp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yp.swift; sourceTree = "<group>"; };
 		3C87F351216E2865008120FA /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		3C87F353216E2887008120FA /* APIClient+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Protocol.swift"; sourceTree = "<group>"; };
-		3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+Extensions.swift"; sourceTree = "<group>"; };
-		3C87F357216E3FB4008120FA /* YpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YpClient.swift; sourceTree = "<group>"; };
 		3C9A5B692167E2CD00A5D35B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		3CA2131C218E267100F74EED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3CA2131E218E274A00F74EED /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -624,6 +632,54 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3C08E080219970AC007AAF8B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3C6205AF21985C6B001E8D4B /* Views */,
+				3C62059E21981242001E8D4B /* EventsDetailPresenter.swift */,
+				3C62059F21981242001E8D4B /* EventsDetailWorker.swift */,
+				3C6205A021981242001E8D4B /* EventsDetailRouter.swift */,
+				3C6205A121981242001E8D4B /* EventsDetailModels.swift */,
+				3C6205A221981242001E8D4B /* EventsDetailViewController.swift */,
+				3C6205A321981242001E8D4B /* EventsDetailInteractor.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3C08E08D2199711E007AAF8B /* EDTeam */ = {
+			isa = PBXGroup;
+			children = (
+				3C08E09021997140007AAF8B /* Views */,
+				3C08E08121997115007AAF8B /* EDTeamPresenter.swift */,
+				3C08E08221997115007AAF8B /* EDTeamWorker.swift */,
+				3C08E08321997115007AAF8B /* EDTeamRouter.swift */,
+				3C08E08421997115007AAF8B /* EDTeamModels.swift */,
+				3C08E08521997115007AAF8B /* EDTeamViewController.swift */,
+				3C08E08621997115007AAF8B /* EDTeamInteractor.swift */,
+			);
+			path = EDTeam;
+			sourceTree = "<group>";
+		};
+		3C08E09021997140007AAF8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C08E08E2199713B007AAF8B /* EDTeamView.swift */,
+				3C08E09121997160007AAF8B /* EDTeamViewCell.swift */,
+				3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */,
+				3C08E0972199718E007AAF8B /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C08E0972199718E007AAF8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C08E0952199718B007AAF8B /* EDTeamViewCell+Extensions.swift */,
+				3C08E098219971A2007AAF8B /* EDTeamViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3C24777E216A99050010EAFA /* ResourceSchedules */ = {
 			isa = PBXGroup;
 			children = (
@@ -750,7 +806,6 @@
 				3CC37767216A122A0020236D /* Resourcebooking */,
 				3CC3775A2169E5EC0020236D /* Resource */,
 				3C24777E216A99050010EAFA /* ResourceSchedules */,
-				3C87F348216E1EEE008120FA /* URL */,
 			);
 			path = Singles;
 			sourceTree = "<group>";
@@ -796,16 +851,11 @@
 		3C62059D219811C1001E8D4B /* Events Detail */ = {
 			isa = PBXGroup;
 			children = (
-				3C6205AF21985C6B001E8D4B /* Views */,
-				3C62059E21981242001E8D4B /* EventsDetailPresenter.swift */,
-				3C62059F21981242001E8D4B /* EventsDetailWorker.swift */,
-				3C6205A021981242001E8D4B /* EventsDetailRouter.swift */,
-				3C6205A121981242001E8D4B /* EventsDetailModels.swift */,
-				3C6205A221981242001E8D4B /* EventsDetailViewController.swift */,
-				3C6205A321981242001E8D4B /* EventsDetailInteractor.swift */,
+				3C08E080219970AC007AAF8B /* Main */,
 				3C6205C52198806B001E8D4B /* EDInfo */,
 				3C05A007219897A400F93289 /* EDSchedules */,
 				3C05A02D2198E7EA00F93289 /* EDLocation */,
+				3C08E08D2199711E007AAF8B /* EDTeam */,
 			);
 			path = "Events Detail";
 			sourceTree = "<group>";
@@ -853,24 +903,6 @@
 			path = EDInfo;
 			sourceTree = "<group>";
 		};
-		3C87F348216E1EEE008120FA /* URL */ = {
-			isa = PBXGroup;
-			children = (
-				3C87F349216E1F89008120FA /* Endpoint+Protocol.swift */,
-				3C87F34B216E1F98008120FA /* Endpoint.swift */,
-				3C87F34F216E2423008120FA /* Yp.swift */,
-				3C87F351216E2865008120FA /* APIError.swift */,
-				3C87F353216E2887008120FA /* APIClient+Protocol.swift */,
-				3C87F355216E3EAB008120FA /* APIClient+Extensions.swift */,
-				3C2D1A22217126E400F081A1 /* APIRouter.swift */,
-				3CA2131E218E274A00F74EED /* APIClient.swift */,
-				3C87F357216E3FB4008120FA /* YpClient.swift */,
-				3C0E97E1217CF7D3008895DD /* URLSesssion+Extensions.swift */,
-				3CA2131C218E267100F74EED /* Constants.swift */,
-			);
-			path = URL;
-			sourceTree = "<group>";
-		};
 		3CB59E64213FC4DE00B6E458 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,6 +928,10 @@
 		3CBE94A6212D75FB00CE518C /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				3C87F351216E2865008120FA /* APIError.swift */,
+				3C2D1A22217126E400F081A1 /* APIRouter.swift */,
+				3CA2131E218E274A00F74EED /* APIClient.swift */,
+				3CA2131C218E267100F74EED /* Constants.swift */,
 				3CBE94A2212D75C700CE518C /* Api.swift */,
 				3CD7DBAB21332379001C1B6E /* RestResource.swift */,
 				3C62058F2196FC9C001E8D4B /* Reachability.swift */,
@@ -1354,6 +1390,7 @@
 			files = (
 				3CF2CA70215F588A00636180 /* TasksTabViewCell+Extensions.swift in Sources */,
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
+				3C08E09221997160007AAF8B /* EDTeamViewCell.swift in Sources */,
 				3CC37771216A2FB90020236D /* BulkResourceUse.swift in Sources */,
 				3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */,
 				3C05A02A2198E7E100F93289 /* EDLocationModels.swift in Sources */,
@@ -1368,7 +1405,6 @@
 				3CD714F42163C26800CC370A /* Task.swift in Sources */,
 				3CE710FE2121A84400EBF6A5 /* HelpViewController.swift in Sources */,
 				3CE9D1D2212382B100BFA730 /* UIStackView+Extension.swift in Sources */,
-				3C87F358216E3FB4008120FA /* YpClient.swift in Sources */,
 				3C05A0092198983200F93289 /* EDSchedulesView.swift in Sources */,
 				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
 				3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */,
@@ -1415,8 +1451,8 @@
 				3CD714F62163E8DE00CC370A /* Tasks.swift in Sources */,
 				3C7B4EFC2179E9AA000D7FDB /* ResourcebookingChildren.swift in Sources */,
 				3CD592A7212AC57B005BBF71 /* LogoutInteractor.swift in Sources */,
+				3C08E08821997115007AAF8B /* EDTeamWorker.swift in Sources */,
 				3CE710C92121A7E300EBF6A5 /* ToDosModels.swift in Sources */,
-				3C0E97E2217CF7D3008895DD /* URLSesssion+Extensions.swift in Sources */,
 				3CD592A1212AC57B005BBF71 /* LogoutModels.swift in Sources */,
 				3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */,
 				3C05A0292198E7E100F93289 /* EDLocationRouter.swift in Sources */,
@@ -1432,7 +1468,6 @@
 				3C059FF7219888A300F93289 /* EDInfoViewCell+Extensions.swift in Sources */,
 				3C40AF23212D91F30077DDC5 /* UserTabRouter.swift in Sources */,
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
-				3C87F356216E3EAB008120FA /* APIClient+Extensions.swift in Sources */,
 				3C40AEE0212D8C2F0077DDC5 /* Event.swift in Sources */,
 				3CB468C121479A330088A8B8 /* LoginView.swift in Sources */,
 				3CC3775C2169E6270020236D /* BulkResource.swift in Sources */,
@@ -1447,9 +1482,9 @@
 				3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */,
 				3CE9D1E32123835600BFA730 /* UIColor+Extension.swift in Sources */,
 				3C05A0012198979E00F93289 /* EDSchedulesPresenter.swift in Sources */,
-				3C87F354216E2887008120FA /* APIClient+Protocol.swift in Sources */,
 				3CE710C32121A7E300EBF6A5 /* ToDosWorker.swift in Sources */,
 				3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */,
+				3C08E099219971A2007AAF8B /* EDTeamViewController+Extensions.swift in Sources */,
 				3C7B4F0E217A220D000D7FDB /* DiscountFormula.swift in Sources */,
 				3C05A02B2198E7E100F93289 /* EDLocationViewController.swift in Sources */,
 				3C7B4EFE217A0648000D7FDB /* BulkResourceUseResource.swift in Sources */,
@@ -1465,7 +1500,6 @@
 				3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */,
 				3C6205A921981242001E8D4B /* EventsDetailInteractor.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
-				3C87F350216E2423008120FA /* Yp.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
 				3C05A0172198A42A00F93289 /* ScheduleEntry.swift in Sources */,
 				3C247786216A9DCB0010EAFA /* Lock.swift in Sources */,
@@ -1473,13 +1507,17 @@
 				3C247784216A99AA0010EAFA /* Schedule.swift in Sources */,
 				3C6205B121985CE3001E8D4B /* EventsDetailViewCell.swift in Sources */,
 				3CC3774E2168C2BE0020236D /* Resourcebooking.swift in Sources */,
+				3C08E08C21997115007AAF8B /* EDTeamInteractor.swift in Sources */,
 				3CE9D1DF2123834100BFA730 /* UIButton+Extension.swift in Sources */,
 				3C6205C221988060001E8D4B /* EDInfoModels.swift in Sources */,
 				3C6205A721981242001E8D4B /* EventsDetailModels.swift in Sources */,
 				3CE9D1D72123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
 				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
+				3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */,
+				3C08E0962199718B007AAF8B /* EDTeamViewCell+Extensions.swift in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
 				3CB59E7B214079E000B6E458 /* MainTabBarPresenter.swift in Sources */,
+				3C08E08A21997115007AAF8B /* EDTeamModels.swift in Sources */,
 				3CE7109D2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
 				3CE710CF2121A7E300EBF6A5 /* ToDosInteractor.swift in Sources */,
 				3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */,
@@ -1493,11 +1531,12 @@
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
 				3CBBF9D721766F01000FE808 /* ResourcebookingSchedule.swift in Sources */,
 				3C05A00C2198988F00F93289 /* EDSchedulesViewCell.swift in Sources */,
-				3C87F34C216E1F98008120FA /* Endpoint.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
 				3C230AA821558BA5004477A3 /* Statuses.swift in Sources */,
 				3CC3776B216A12A50020236D /* InstantiableResourceUseGroup.swift in Sources */,
+				3C08E08721997115007AAF8B /* EDTeamPresenter.swift in Sources */,
 				3CE710B32121A7A900EBF6A5 /* ContactsViewController.swift in Sources */,
+				3C08E08921997115007AAF8B /* EDTeamRouter.swift in Sources */,
 				3CB59E6A2140794800B6E458 /* MainTabBarRouter.swift in Sources */,
 				3CFF85C5218F8F4400DED3FB /* Cell.swift in Sources */,
 				3C40AEDC212D8C1F0077DDC5 /* Pagination.swift in Sources */,
@@ -1521,9 +1560,11 @@
 				3CE710942121A78800EBF6A5 /* TasksRouter.swift in Sources */,
 				3C6205C121988060001E8D4B /* EDInfoRouter.swift in Sources */,
 				3C6205A521981242001E8D4B /* EventsDetailWorker.swift in Sources */,
+				3C08E08B21997115007AAF8B /* EDTeamViewController.swift in Sources */,
 				3C40AF14212D917B0077DDC5 /* User.swift in Sources */,
 				3CD5929E212AC57B005BBF71 /* LogoutRouter.swift in Sources */,
 				3CE9D1B921237C1800BFA730 /* LoginPresenter.swift in Sources */,
+				3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */,
 				3CF142E3212DE257001FC532 /* Groups.swift in Sources */,
 				3C6205A421981242001E8D4B /* EventsDetailPresenter.swift in Sources */,
 				3CD7DBAC21332379001C1B6E /* RestResource.swift in Sources */,
@@ -1549,7 +1590,6 @@
 				3CE711062121AD7100EBF6A5 /* Dictionary+Extension.swift in Sources */,
 				3C05A010219898E700F93289 /* EDSchedulesViewCell+Extensions.swift in Sources */,
 				3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */,
-				3C87F34A216E1F89008120FA /* Endpoint+Protocol.swift in Sources */,
 				3CF142EF212E0422001FC532 /* ApiError.swift in Sources */,
 				3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
 				3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */,

@@ -25,19 +25,17 @@ class EDSchedulesPresenter: EDSchedulesPresentationLogic
   
   func presentSomething(response: EDSchedules.Something.Response)
   {
-    print("present: ", response)
     if let name = response.eventSchedule.event.name {
         let name = name
         let rows = response.eventSchedule
-        let sections = EDSchedules.Something.ViewModel(sections: [EDSchedules.Something.ViewModel.Item(header: "Schedules - \(name)", rows: [rows])])
-        let viewModel = sections
-        viewController?.displaySomething(viewModel: viewModel)
-    } else {
-        let rows = response.eventSchedule
-        let sections = EDSchedules.Something.ViewModel(sections: [EDSchedules.Something.ViewModel.Item(header: "Schedules", rows: [rows])])
+        let sections = EDSchedules.Something.ViewModel(sections:
+        [
+            EDSchedules.Something.ViewModel.Item(header: name, rows: nil),
+            EDSchedules.Something.ViewModel.Item(header: "Schedules", rows: rows),
+        ]
+        )
         let viewModel = sections
         viewController?.displaySomething(viewModel: viewModel)
     }
-    
   }
 }

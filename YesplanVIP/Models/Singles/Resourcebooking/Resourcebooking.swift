@@ -15,15 +15,6 @@ enum Resourcebooking {
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
     
-//    func analyze() {
-//        switch self {
-//        case .bulkResourceUse(let x): print("bulk")
-//        case .freeFormResourceUse(let x): print("free")
-//        case .resourceSetUse(let x): print("set")
-//        case .instantiableResourceUse(let x): print("inst")
-//        case .instantiableResourceUseGroup(let x): print("group")
-//        }
-//    }
     
     private var start: String? {
         switch self {
@@ -62,6 +53,19 @@ enum Resourcebooking {
         case .resourceSetUse(let x):
             for child in x.children {
                 if let eventName = child.eventName { return eventName } else { return nil } }
+        }
+        return nil
+    }
+    
+    var type: String? {
+        switch self {
+        case .bulkResourceUse(let x): if let type = x.resource?.type { return type } else { return nil }
+        case .freeFormResourceUse(let x): if let type = x.resource?.type { return type } else { return nil }
+        case .instantiableResourceUse(let x): if let type = x.resource?.type { return type } else { return nil }
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let type = child.resource?.type { return type } else { return nil } }
+        case .resourceSetUse(let x):
+            for child in x.children { if let type = child.type { return type } else { return nil } }
         }
         return nil
     }
@@ -121,8 +125,3 @@ extension Resourcebooking: Decodable {
     }
 }
 
-//extension Resourcebooking {
-//    func analyze() {
-//        print("analyze")
-//    }
-//}

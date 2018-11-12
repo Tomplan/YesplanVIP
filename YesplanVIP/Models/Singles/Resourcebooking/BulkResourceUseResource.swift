@@ -12,6 +12,23 @@ enum BulkResourceUseResource {
     case location(Location)
     case resource(Resource)
     case resourceplaceholder(Resourceplaceholder)
+    
+    var type: String {
+        switch self {
+        case .location(let x): let type = x.type; return type
+        case .resource(let x): let type = x.type; return type
+        case .resourceplaceholder(let x): let type = x.type; return type
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .location(let x): let name = x.name; return name
+        case .resource(let x): let name = x.name; return name
+        case .resourceplaceholder(let x): let name = x.name; return name
+        }
+    }
+    
 }
 
 
@@ -36,21 +53,21 @@ extension BulkResourceUseResource: Decodable {
 //        let type = try containers.decode(String.self, forKey: ._type)
         if let x = try? container.decode(Location.self)
             {
-            print("location")
+//            print("location")
             self = .location(x)
             return
             }
             else {
                 if let x = try? container.decode(Resource.self)
                 {
-                    print("resource")
+//                    print("resource")
                     self = .resource(x)
                     return
                 }
             else {
                 if let x = try? container.decode(Resourceplaceholder.self)
                 {
-                    print("resourceplaceholder")
+//                    print("resourceplaceholder")
                     self = .resourceplaceholder(x)
                     return
                 }

@@ -19,21 +19,40 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if sections[section].rows[section].entries.count != 0 {
-            return sections[section].rows[section].entries.count
-        } else {
-            return 0
+        if let item = sections[section].rows {
+            if item.entries.count == 0 {
+                return 0
+            } else
+            {
+                return item.entries.count
+            }
         }
+            return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EDSchedulesViewCell", for: indexPath) as? EDSchedulesViewCell {
             
+//            if let item = sections[section].rows {
+//                if item.isEmpty {
+//                    return 0
+//                } else
+//                {
+//                    return item[0].entries.count
+//                }
+//            }
 //            cell.lblName.text = "nametext"
             if sections.count != 0 {
-                let item = sections[indexPath.section].rows[indexPath.section]
-                cell.populate(with: item, scheduleEntry: item.entries[indexPath.item])
-                
+                if let item = sections[indexPath.section].rows {
+                    print(item.entries[indexPath.item])
+            cell.populate(with: item, scheduleEntry: item.entries[indexPath.item])
+
+                }
+            }
+        
+//                let item = sections[indexPath.section].rows[indexPath.section]
+//                cell.populate(with: item, scheduleEntry: item.entries[indexPath.item])
+            
                 
 //                let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId)!
 //                item.configure(cell: cell)
@@ -64,7 +83,7 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
 //                        }
 //                    }
 //                }
-            }
+//            }
             return cell
         }
         return UICollectionViewCell()

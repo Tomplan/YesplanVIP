@@ -22,36 +22,13 @@ struct AdHocResource: Codable {
 //    var costmodels: [Costmodel]?
 //    var defaultrole: String?
 //    var amount: Int?
-    var type: String = ""
-    var _type: String = ""
+    var type: String
+    var _type: String
 //    var active: Bool = true
 //    var date: String?
 //    var productcode: String?
 //    var serialnumber: String?
     
-    init() { guard self.type == "adhocresource" else {
-        return } }
+//    init() { guard self.type == "adhocresource" else {
+//        return } }
 }
-//
-//extension AdHocResource: ArrowParsable {
-//    mutating func deserialize(_ json: JSON) {
-//        url <-- json["url"]
-//        id <-- json["id"]
-//        resourcetype <-- json["resourcetype"]
-//        name <-- json["name"]
-//        group <-- json["group"]
-//        roles <-- json["roles"]
-//        description <-- json["description"]
-//        external <-- json["external"]
-//        rented <-- json["rented"]
-//        costmodels <-- json["costmodels"]
-//        defaultrole <-- json["defaultrole"]
-//        amount <-- json["amount"]
-//        type <-- json["type"]
-//        _type <-- json["_type"]
-//        active <-- json["active"]
-//        date <-- json["date"]
-//        productcode <-- json["productcode"]
-//        serialnumber <-- json["serialnumber"]
-//    }
-//}

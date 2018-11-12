@@ -1,5 +1,5 @@
 //
-//  EDLocationViewController+Extensions.swift
+//  EDTeamViewController+Extensions.swift
 //  YesplanVIP
 //
 //  Created by Techcc - FOH - Video on 11/11/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension EDLocationViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension EDTeamViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return  sections.count
@@ -19,22 +19,23 @@ extension EDLocationViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let locations = sections[section].rows?.locations {
-            if locations.count != 0 {
-                return locations.count
-            } else { return 0 }
-        } else { return 0 }
-        }
+//        if let team = sections[section].rows {
+//            if locations.count != 0 {
+//                return locations.count
+//            } else { return 0 }
+//        } else { return 0 }
+        return 10
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EDLocationViewCell", for: indexPath) as? EDLocationViewCell {
-            if sections.count != 0 {
-                if let item = sections[indexPath.section].rows {
-                    if let locations = item.locations {
-                        cell.populate(with: item, location: locations[indexPath.item])
-                    }
-                }
-            }
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EDTeamViewCell", for: indexPath) as? EDTeamViewCell {
+//            if sections.count != 0 {
+//                if let item = sections[indexPath.section].rows {
+//                    if let locations = item.locations {
+//                        cell.populate(with: item, location: locations[indexPath.item])
+//                    }
+//                }
+//            }
             return cell
         }
         return UICollectionViewCell()
@@ -44,9 +45,9 @@ extension EDLocationViewController: UICollectionViewDataSource, UICollectionView
         switch kind{
         case UICollectionView.elementKindSectionHeader:
             
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"EDLocationViewHeader", for: indexPath) as! EDLocationViewHeader
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"EDTeamViewHeader", for: indexPath) as! EDTeamViewHeader
             
-            headerView.EDLocationViewHeaderLabel.text = sections[indexPath.section].header
+            headerView.EDTeamViewHeaderLabel.text = sections[indexPath.section].header
             
             headerView.backgroundColor = UIColor.darkGray
             headerView.layer.backgroundColor = UIColor(r: 90, g: 90, b: 90).cgColor

@@ -1,22 +1,22 @@
+////
+////  Api.swift
+////  YesplanVIP
+////
+////  Created by Techcc - FOH - Video on 22/08/18.
+////  Copyright © 2018 Yesplan. All rights reserved.
+////
 //
-//  Api.swift
-//  YesplanVIP
+////import then
+////import Arrow
 //
-//  Created by Techcc - FOH - Video on 22/08/18.
-//  Copyright © 2018 Yesplan. All rights reserved.
+//// This is our Api interface.
+//// In theory we could use ws directly in controllers but this wouldn't be very clean.
+//// Here we invert the depedency by puting an <ApiInterface> interface between view Controllers
+//// and Networking code.
+//// Thanks to this layer of abstraction, we could even swap api implementation at runtime if we'd like to !
+//// See "Dependency inversion principle" for more details.
 //
-
-//import then
-//import Arrow
-
-// This is our Api interface.
-// In theory we could use ws directly in controllers but this wouldn't be very clean.
-// Here we invert the depedency by puting an <ApiInterface> interface between view Controllers
-// and Networking code.
-// Thanks to this layer of abstraction, we could even swap api implementation at runtime if we'd like to !
-// See "Dependency inversion principle" for more details.
-
-protocol ApiInterface {
-}
-
-var api: ApiInterface!
+//protocol ApiInterface {
+//}
+//
+//var api: ApiInterface!

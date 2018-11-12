@@ -20,9 +20,7 @@ protocol EventsTabBusinessLogic
 
 protocol EventsTabDataStore
 {
-//    var event: String? { get set }
     var eventsDS: [(key: String, value: [Event])]? { get set }
-
 }
 
 class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore

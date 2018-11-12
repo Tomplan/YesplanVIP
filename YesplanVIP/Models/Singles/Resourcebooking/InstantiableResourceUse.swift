@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Arrow
 
 struct InstantiableResourceUse: Codable {
     
@@ -31,29 +30,3 @@ struct InstantiableResourceUse: Codable {
 //    init() { guard self._type == "resourcebooking" else {
 //        return } }
 }
-//
-//extension InstantiableResourceUse: ArrowParsable {
-//    mutating func deserialize(_ json: JSON) {
-//        _type <-- json["_type"]
-//
-//        url <-- json["url"]
-//        id <-- json["id"]
-//        owner <-- json["owner"]
-//        owningteam <-- json["owningteam"]
-//        owninggroup <-- json["owninggroup"]
-//        number <-- json["number"]
-//        resource <-- json["resource"]
-////        do {
-////            resource = try Resource(resource: json["resource"]!)!
-////        } catch {
-////            print(error)
-////        }
-//        start <-- json["start"]
-//        end <-- json["end"]
-//        actualstart <-- json["actualstart"]
-//        actualend <-- json["actualend"]
-//        event <-- json["event"]
-//        role <-- json["role"]
-//        resourceinstance <-- json["resourceinstance"]
-//    }
-//}

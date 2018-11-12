@@ -29,7 +29,7 @@ enum EDSchedules
     {
         struct Item: Codable {
             var header: String
-            var rows: [EventSchedule]
+            var rows: EventSchedule?
         }
         var sections: [Item]
     }

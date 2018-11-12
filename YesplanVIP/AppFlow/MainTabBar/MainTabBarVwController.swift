@@ -166,9 +166,9 @@ extension MainTabBarViewController {
         let viewController = vc
         let navController = UINavigationController(rootViewController: viewController)
 //        navController.navigationBar.backgroundColor = UIColor.red
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
         
-        navigationBarAppearace.tintColor = UIColor.yellow // color for buttons
+        navigationBarAppearace.tintColor = UIColor(r: 158, g: 158, b: 158) // color for buttons, text
         navigationBarAppearace.barTintColor = UIColor.black // color for background
         
         // change navigation item title color

@@ -66,19 +66,7 @@ class APIClient {
         return performRequest(route: APIRouter.eventSchedule(id: id))
     }
     
-//    static func login(email: String, password: String) -> Future<User> {
-//        return performRequest(route: APIRouter.login(email: email, password: password))
-//    }
-//
-//    static func userArticles(userID: Int) -> Future<[Article]> {
-//        let jsonDecoder = JSONDecoder()
-//        jsonDecoder.dateDecodingStrategy = .formatted(.articleDateFormatter)
-//        return performRequest(route: APIRouter.articles(userId: userID), decoder: jsonDecoder)
-//    }
-//
-//    static func getArticle(articleID: Int) -> Future<Article> {
-//        let jsonDecoder = JSONDecoder()
-//        jsonDecoder.dateDecodingStrategy = .formatted(.articleDateFormatter)
-//        return performRequest(route: APIRouter.article(id: articleID), decoder: jsonDecoder)
-//    }
+    static func eventResourcebookings(_ id: String) -> Future<[Resourcebooking]> {
+        return performRequest(route: APIRouter.eventResourcebookings(id: id))
+    }
 }

@@ -16,6 +16,42 @@ enum Resource {
     case adHocResource(AdHocResource)
     case instantiableResource(InstantiableResource)
     case resourceSet(ResourceSet)
+    
+    var url: URL {
+        switch self {
+        case .bulkResource(let x): let url = x.url; return url
+        case .adHocResource(let x): let url = x.url; return url
+        case .instantiableResource(let x): let url = x.url; return url
+        case .resourceSet(let x): let url = x.url; return url
+        }
+    }
+    
+    var id: String {
+        switch self {
+        case .bulkResource(let x): let id = x.id; return id
+        case .adHocResource(let x): let id = x.id; return id
+        case .instantiableResource(let x): let id = x.id; return id
+        case .resourceSet(let x): let id = x.id; return id
+        }
+    }
+    
+    var name: String {
+        switch self {
+        case .bulkResource(let x): let name = x.name; return name
+        case .adHocResource(let x): let name = x.name; return name
+        case .instantiableResource(let x): let name = x.name; return name
+        case .resourceSet(let x): let name = x.name; return name
+        }
+    }
+    
+    var type: String {
+        switch self {
+        case .bulkResource(let x): let type = x.type; return type
+        case .adHocResource(let x): let type = x.type; return type
+        case .instantiableResource(let x): let type = x.type; return type
+        case .resourceSet(let x): let type = x.type; return type
+        }
+    }
 }
 
 extension Resource: Encodable {

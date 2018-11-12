@@ -30,7 +30,7 @@ indirect enum ResourcebookingChildren {
     var end: String? {
         switch self {
         case .instantiableResourceUseGroup(let x):
-            for child in x.children { if let start = child.end { return end } else { return nil } }
+            for child in x.children { if let end = child.end { return end } else { return nil } }
         case .resourceSetUse(let x): for child in x.children {
             if let end = child.end { return end } else { return nil } }
         case .freeFormResourceUse(let x): if let end = x.end { return end } else { return nil }
@@ -47,6 +47,18 @@ indirect enum ResourcebookingChildren {
             if let eventName = child.eventName { return eventName } else { return nil } }
         case .freeFormResourceUse(let x): if let eventName = x.event.name { return eventName } else { return nil }
         case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+        }
+        return nil
+    }
+    
+    var type: String? {
+        switch self {
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { if let type = child.resource?.type { return type } else { return nil } }
+        case .resourceSetUse(let x): for child in x.children {
+            if let type = child.type { return type } else { return nil } }
+        case .freeFormResourceUse(let x): if let type = x.resource?.type { return type } else { return nil }
+        case .bulkResourceUse(let x): if let type = x.resource?.type { return type } else { return nil }
         }
         return nil
     }

@@ -25,19 +25,16 @@ class EDLocationPresenter: EDLocationPresentationLogic
     
     func presentSomething(response: EDLocation.Something.Response)
     {
-//        print("present: ", response)
         if let name = response.event.name {
             let name = name
             let rows = response.event
-            let sections = EDLocation.Something.ViewModel(sections: [EDLocation.Something.ViewModel.Item(header: "Locations - \(name)", rows: [rows])])
-            let viewModel = sections
-            viewController?.displaySomething(viewModel: viewModel)
-        } else {
-            let rows = response.event
-            let sections = EDLocation.Something.ViewModel(sections: [EDLocation.Something.ViewModel.Item(header: "Locations", rows: [rows])])
+            let sections = EDLocation.Something.ViewModel(sections: [
+                EDLocation.Something.ViewModel.Item(header: name, rows: nil)
+                ,EDLocation.Something.ViewModel.Item(header: "Locations", rows: rows)
+                ]
+            )
             let viewModel = sections
             viewController?.displaySomething(viewModel: viewModel)
         }
-        
     }
 }

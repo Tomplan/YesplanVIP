@@ -24,13 +24,13 @@ struct Event: Codable {
     var startdate: String? // date Date on which the start of the event appears in the calendar.
     var enddate: String? // date Date on which the end of the event appears in the calendar.
     var profile: Base? // NOT Profile_Id, color is not transferred by Yesplan in Event_Id !?!
-    var status: Base? // NOT Status_Id, backgroundcolor,textcolor and statustype are not transferred by Yesplan in Event_Id !?!
+    var status: Base? // NOT Status_Id, backgroundcolor, textcolor and statustype are not transferred by Yesplan in Event_Id !?!
     var locations: [Base]? // NOT Location_Id // optional added by TOM, important for Children!!!!
     var production: Base? // null or Event_Id or Group_Id
     var isproduction: Bool = false
     var attributes: Pagination?
     var _type = "event"
-//    //    var labels: [JSONAny]
+    var labels: [String]?
     var defaultscheduledescription: String?
     var defaultschedulestarttime: String? // time
     var defaultscheduleendtime: String?  // time
@@ -39,42 +39,4 @@ struct Event: Codable {
     
     init() { guard self._type == "event" else { return } }
 
-}
-
-extension Event: ArrowParsable {
-    
-    public mutating func deserialize(_ json: JSON) {
-
-        _type <-- json["_type"]
-
-        id <-- json["id"]
-        url <-- json["url"]
-        owner <-- json["owner"]
-        owningteam <-- json["owningteam"]
-        owninggroup <-- json["owninggroup"]
-        name <-- json["name"]
-        group <-- json["group"]
-        starttime <-- json["starttime"]
-        endtime <-- json["endtime"]
-        startdate <-- json["startdate"]
-        enddate <-- json["enddate"]
-        profile <-- json["profile"]
-        status <-- json["status"]
-        locations <-- json["locations"]
-        production <-- json["production"]
-        isproduction <-- json["isproduction"]
-        attributes <-- json["attributes"]
-        defaultscheduledescription <-- json["defaultscheduledescription"]
-        defaultschedulestarttime <-- json["defaultschedulestarttime"]
-        defaultscheduleendtime <-- json["defaultscheduleendtime"]
-        defaultschedulestart <-- json["defaultschedulestart"]
-        defaultscheduleend <-- json["defaultscheduleend"]
-        
-    }
-}
-
-
-extension Event: RestResource {
-    static func restName() -> String { return "api/event/" }
-    func restId() -> String { return "\(id)" }
 }

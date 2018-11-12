@@ -20,14 +20,17 @@ protocol EventsDetailBusinessLogic
 protocol EventsDetailDataStore
 {
     var id: String! { get set }
+    var name: String! { get set }
+
 }
 
 class EventsDetailInteractor: EventsDetailBusinessLogic, EventsDetailDataStore
 {
-  var presenter: EventsDetailPresentationLogic?
-  var worker: EventsDetailWorker?
-  var id: String!
-    
+      var presenter: EventsDetailPresentationLogic?
+      var worker: EventsDetailWorker?
+      var id: String!
+      var name: String!
+
   // MARK: Do something
   
   func doSomething(request: EventsDetail.Something.Request)
@@ -36,9 +39,9 @@ class EventsDetailInteractor: EventsDetailBusinessLogic, EventsDetailDataStore
     worker?.getEvent(id)
     .execute(onSuccess:
         { event in
-        let response = EventsDetail.Something.Response(event: event)
-        self.presenter?.presentSomething(response: response)
-
+            self.name = event.name
+            let response = EventsDetail.Something.Response(event: event)
+            self.presenter?.presentSomething(response: response)
         }, onFailure: { error in
             print(error)
         })

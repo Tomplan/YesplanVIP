@@ -53,8 +53,6 @@ class EventsTabRouter: NSObject, EventsTabRoutingLogic, EventsTabDataPassing
   
   func passDataToSomewhere(source: EventsTabDataStore, destination: inout EventsDetailDataStore)
   {
-//    print("passDataToSomewhere")
-    
     let selectedItem = viewController?.v.collectionView.indexPathsForSelectedItems
     let section = selectedItem![0][0]
     let item = selectedItem![0][1]
