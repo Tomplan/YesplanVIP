@@ -25,8 +25,13 @@ class EDInfoPresenter: EDInfoPresentationLogic
   
   func presentSomething(response: EDInfo.Something.Response)
   {
-    let sections = EDInfo.Something.ViewModel(sections: [EDInfo.Something.ViewModel.Item(header: "name", rows: ["01", "02", "03"])])
+    if let name = response.event.name {
+    let sections = EDInfo.Something.ViewModel(sections: [
+        EDInfo.Something.ViewModel.Item(header: name, rows: [])
+        ,EDInfo.Something.ViewModel.Item(header: "Info", rows: [response.event])
+        ])
     let viewModel = sections
     viewController?.displaySomething(viewModel: viewModel)
+    }
   }
 }

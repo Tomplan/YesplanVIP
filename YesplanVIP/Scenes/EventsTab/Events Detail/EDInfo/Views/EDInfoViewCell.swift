@@ -18,7 +18,12 @@ class EDInfoViewCell: UICollectionViewCell {
         return width
     }()
     var lblName = UILabel()
-    
+    var lblGroup = UILabel()
+    var lblDefaultschedulestart = UILabel()
+    var lblDefaultscheduleend = UILabel()
+    var lblProfileName = UILabel()
+    var lblStatusName = UILabel()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +46,12 @@ class EDInfoViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         lblName.text = nil
+        lblGroup.text = nil
+        lblDefaultschedulestart.text = nil
+        lblDefaultscheduleend.text = nil
+        lblProfileName.text = nil
+        lblStatusName.text = nil
+        
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -60,20 +71,54 @@ class EDInfoViewCell: UICollectionViewCell {
         
         sv(
             lblName
+            ,lblGroup
+            ,lblDefaultschedulestart
+            ,lblDefaultscheduleend
+            ,lblProfileName
+            ,lblStatusName
         )
         
         lblName.numberOfLines = 0
-        lblName.font = UIFont.systemFont(ofSize: 20.0)
+        lblName.font = UIFont.systemFont(ofSize: 15.0)
         lblName.textColor = UIColor(r: 64, g: 64, b: 64)
         
+        lblGroup.numberOfLines = 0
+        lblGroup.font = UIFont.systemFont(ofSize: 15.0)
+        lblGroup.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblDefaultschedulestart.numberOfLines = 0
+        lblDefaultschedulestart.font = UIFont.systemFont(ofSize: 15.0)
+        lblDefaultschedulestart.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblDefaultscheduleend.numberOfLines = 0
+        lblDefaultscheduleend.font = UIFont.systemFont(ofSize: 15.0)
+        lblDefaultscheduleend.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblProfileName.numberOfLines = 0
+        lblProfileName.font = UIFont.systemFont(ofSize: 15.0)
+        lblProfileName.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblStatusName.numberOfLines = 0
+        lblStatusName.font = UIFont.systemFont(ofSize: 15.0)
+        lblStatusName.textColor = UIColor(r: 64, g: 64, b: 64)
     }
     
     private func setupConstraints() {
         
         layout(
-            16
+            4
             ,|-16-lblName-16-|
-            ,16
+            ,0
+            ,|-16-lblGroup-16-|
+            ,0
+            ,|-16-lblDefaultschedulestart-16-|
+            ,0
+            ,|-16-lblDefaultscheduleend-16-|
+            ,0
+            ,|-16-lblProfileName-16-|
+            ,0
+            ,|-16-lblStatusName-16-|
+            ,4
         )
     }
 }

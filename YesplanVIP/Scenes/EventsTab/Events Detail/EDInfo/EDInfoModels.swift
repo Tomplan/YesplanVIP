@@ -29,7 +29,7 @@ enum EDInfo
     {
         struct Item {
             var header: String
-            var rows: [String]
+            var rows: [Event?]
         }
         var sections: [Item]
     }

@@ -33,15 +33,6 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EDSchedulesViewCell", for: indexPath) as? EDSchedulesViewCell {
             
-//            if let item = sections[section].rows {
-//                if item.isEmpty {
-//                    return 0
-//                } else
-//                {
-//                    return item[0].entries.count
-//                }
-//            }
-//            cell.lblName.text = "nametext"
             if sections.count != 0 {
                 if let item = sections[indexPath.section].rows {
                     print(item.entries[indexPath.item])
@@ -49,14 +40,7 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
 
                 }
             }
-        
-//                let item = sections[indexPath.section].rows[indexPath.section]
-//                cell.populate(with: item, scheduleEntry: item.entries[indexPath.item])
-            
-                
-//                let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).reuseId)!
-//                item.configure(cell: cell)
-                
+   
 //                if let redDot = sections[indexPath.section].rows[indexPath.section].defaultstartidx {
 //                    print("redDot: ", redDot)
 //                    for i in 0 ..< sections[indexPath.section].rows[indexPath.section].entries.count {
@@ -84,6 +68,7 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
 //                    }
 //                }
 //            }
+            
             return cell
         }
         return UICollectionViewCell()

@@ -14,8 +14,30 @@ import Foundation
 
 extension EDInfoViewCell {
     
-    func populate(with event: String) {
-        let name = event
-        lblName.text = name
+    func populate(with event: Event) {
+        
+        if let name = event.name {
+            lblName.text = name
+        }
+        
+        if let groupName = event.group?.name {
+                lblGroup.text = groupName
+        }
+        
+        if let defaultschedulestart = event.defaultschedulestart {
+            lblDefaultschedulestart.text = defaultschedulestart.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")
+        }
+        
+        if let defaultscheduleend = event.defaultscheduleend {
+            lblDefaultscheduleend.text = defaultscheduleend.convertDateString(dateFormat: "EEEE, dd MMMM yyyy - HH:mm")
+        }
+        
+        if let profileName = event.profile?.name {
+            lblProfileName.text = profileName
+        }
+        
+        if let statusName = event.status?.name {
+            lblStatusName.text = statusName
+        }
     }
 }

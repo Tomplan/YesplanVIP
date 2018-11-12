@@ -19,19 +19,16 @@ extension EDInfoViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if sections[section].rows.count != 0 {
-            return sections[section].rows.count
-        } else {
-            return 0
-        }
+        return  sections[section].rows.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EDInfoViewCell", for: indexPath) as? EDInfoViewCell {
             
             if sections.count != 0 {
-                let event = sections[indexPath.section].rows[indexPath.item]
+                if let event = sections[indexPath.section].rows[indexPath.item] {
                 cell.populate(with: event)
+                }
             }
             return cell
         }
