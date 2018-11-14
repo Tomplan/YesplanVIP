@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import PromisedFuture
 
 protocol TeamplannerTabBusinessLogic
 {
@@ -26,7 +27,6 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 {
   var presenter: TeamplannerTabPresentationLogic?
   var worker: TeamplannerTabWorker?
-
     
   //var name: String = ""
   
@@ -34,30 +34,100 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
   
   func doSomething(request: TeamplannerTab.Something.Request)
   {
-    var resourceSchedulesArray: [ResourceScheduleFromTo] = []
+//    var resourceSchedulesArray: [ResourceSchedulesFromTo] = []
 //    var resourcebookingsArray: [Resourcebooking] = []
-    var error: String? = ""
+//    var resourcebookingArray: [Resourcebooking] = []
+//    var scheduleArray: [Schedules] = []
+//    let error: String? = ""
     
 //    print("resourcebookingsArray: ", resourcebookingsArray)
     worker = TeamplannerTabWorker()
     
-    worker?.getResourceSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
-        .map({$0.data})
-            .execute(onSuccess: { items in
-                    resourceSchedulesArray = items
-                let response = TeamplannerTab.Something.Response(
-                    resourceSchedules: resourceSchedulesArray
-                    ,error: error
-                    )
-                self.presenter?.presentSomething(response: response)
-                }, onFailure: { error in
-                            print(error)
-                    let response = TeamplannerTab.Something.Response(
-                        resourceSchedules: resourceSchedulesArray
-                        ,error: error.localizedDescription
-                    )
-                    self.presenter?.presentSomething(response: response)
-                })
-    }
+    worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
+//            worker?.getResourcesSchedulesFromTo("resource:team:1203")
 
+//    .andThen(worker?.getNextResourcesSchedulesFromTo(url: ))
+//                .andThen(worker?.getNextResourcesSchedulesFromTo(url: <#T##URL#>))
+        .andThen((worker?.makeSchedulesArray)!)
+//                .andThen(worker?.getNextResourcesSchedulesFromTo)
+        .execute(onSuccess:  { item in
+            let response = TeamplannerTab.Something.Response(
+                stringSchedules: item,
+                error: nil)
+            self.presenter?.presentSomething(response: response)
+//            print(item)
+        }, onFailure: { error in
+            print(error)
+        })
+    
+    }
 }
+//// ***************************
+//            .execute(onSuccess: { resourcesSchedulesFromTo in
+////                print("pagination: ", resourcesSchedulesFromTo.pagination)
+////                print("data: ", resourcesSchedulesFromTo.data)
+//
+//            for resourceSchedulesFromTo in resourcesSchedulesFromTo.data {
+//                if let schedules = resourceSchedulesFromTo.schedules {
+//                    for schedule in schedules {
+//                        switch schedule {
+//                        case .shift(let x):
+//                            scheduleArray.append(schedule)
+//                        case .scheduleBreak(let x):
+//                            scheduleArray.append(schedule)
+//                        case .lock(let x):
+//                            scheduleArray.append(schedule)
+//                        case .schedule(let x):
+//                                if let resourcebookingId = schedule.id {
+//                                    self.worker?.getResourcebookingId(resourcebookingId)
+//                                        .execute(onSuccess: { item in
+//                                            resourcebookingArray.append(item)
+////                                            print("resourcebookingArray: ", resourcebookingArray)
+//                                        }, onFailure: { error in
+//                                            print("error")
+//                                        })
+//
+//                                }
+//                            }
+//                        }
+//                    print("scheduleArray: ", scheduleArray)
+////                        if let resourcebookingId = schedule.id {
+////                            print(resourcebookingId)
+////                        self.worker?.getResourcebookingId(resourcebookingId)
+////                            .execute(onSuccess: { items in
+////                                print(items)
+////                            }, onFailure: { error in
+////                                print("error")
+////                            })
+////                        }
+////                    }
+//                }
+//            }
+//
+////                    if let schedules = resourceScheduleFromTo.schedules {
+////                    for schedule in schedules {
+////                        print(schedules)
+////                        worker?.getResourcebookingId(schedule)
+//
+//
+//
+////                        }
+////                    }
+////                }
+////                    resourceSchedulesArray = items
+////                let response = TeamplannerTab.Something.Response(
+////                    resourceSchedules: resourceSchedulesArray
+////                    ,error: error
+////                    )
+////                self.presenter?.presentSomething(response: response)
+//                }, onFailure: { error in
+//                            print(error)
+////                    let response = TeamplannerTab.Something.Response(
+////                        resourceSchedules: resourceSchedulesArray
+////                        ,error: error.localizedDescription
+////                    )
+////                    self.presenter?.presentSomething(response: response)
+//                })
+//    }
+//
+//}

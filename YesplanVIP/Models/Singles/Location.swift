@@ -16,14 +16,18 @@ struct Location: Codable {
     let group: String?
     let roles: [String]? //
     let description: String?
-    let external: Bool
-    let rented: Bool
+    let external: Bool? // added by Tom
+    let rented: Bool? // added by Tom
     let costmodels: [Costmodel]?
     let defaultrole: String?
     let amount: Int?
     let type: String
     let owningteam: Usergroup?
     let owninggroup: Usergroup?
-    let abbreviation: String
-    let _type = "location"                // “location”
+    let abbreviation: String? // added by Tom
+    let _type: LocationType // “location”
+}
+
+enum LocationType: String, Codable {
+    case location
 }

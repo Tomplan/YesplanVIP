@@ -24,29 +24,32 @@ enum TeamplannerTab
     }
     struct Response
     {
+//        struct Item {
+//            let header: String?
+//            let rows: [Schedules]
+//        }
 //        var resourcebookings: [Resourcebooking]
-        var resourceSchedules: [ResourceScheduleFromTo]
+        var stringSchedules: [String?: [Schedules]]
         var error: String?
     }
     struct ViewModel
     {
-        struct DisplayedResourcebooking: Hashable {
-            let date: String
-            let resourcebookings: [Displ]
+        struct Item: Codable {
+            var header: String?
+            var rows: [Schedules]
         }
+//
+//        struct Displ: Hashable {
+//
+//            let date: String
+//            let scheduleType: String
+//            let start: String
+//            let end: String
+//            let eventName: String?
+//        }
 
-        struct Displ: Hashable {
-            
-            let date: String
-            let scheduleType: String
-            let start: String
-            let end: String
-            let eventName: String?
-//            let role: String
-        }
-
-        var displayedResourcebookings: Set<DisplayedResourcebooking>
-//        var toVC: Set<Displ>
+//        var sections: Set<Item>
+        var sections: [Item]
         var error: String?
 
     }

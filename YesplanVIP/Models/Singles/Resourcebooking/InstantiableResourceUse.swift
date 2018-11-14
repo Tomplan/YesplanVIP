@@ -10,23 +10,24 @@ import Foundation
 
 struct InstantiableResourceUse: Codable {
     
-    var url: String // = ""
-    var id: String // = ""
+    var url: URL
+    var id: String
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    let _type = "resourcebooking"
-    var number: Int? // = 0
-    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
-    var start: String? // added by tom!!! // timestamp
-    var end: String? // added by tom!!! // timestamp
+    let _type: InstantiableResourceUseType
+    var number: Int
+    var resource: ResourceUseResource? // Resource Location_Id or Resource_Id or Placeholder_Id
+    var start: String // added by tom!!! // timestamp
+    var end: String // added by tom!!! // timestamp
     var actualstart: String? // timestamp
     var actualend: String? // timestamp
     var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     var role: String?
-    var resourceinstance: Base // NOT Resourceinstance_Id
+    var resourceinstance: Base? // added by tom!!! // NOT Resourceinstance_Id
     
-    
-//    init() { guard self._type == "resourcebooking" else {
-//        return } }
+}
+
+enum InstantiableResourceUseType: String, Codable {
+    case resourcebooking
 }

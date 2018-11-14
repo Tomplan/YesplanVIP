@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Arrow
-import then
 
 enum Resource {
     
@@ -25,7 +23,7 @@ enum Resource {
         case .resourceSet(let x): let url = x.url; return url
         }
     }
-    
+
     var id: String {
         switch self {
         case .bulkResource(let x): let id = x.id; return id
@@ -34,7 +32,7 @@ enum Resource {
         case .resourceSet(let x): let id = x.id; return id
         }
     }
-    
+
     var name: String {
         switch self {
         case .bulkResource(let x): let name = x.name; return name
@@ -43,13 +41,22 @@ enum Resource {
         case .resourceSet(let x): let name = x.name; return name
         }
     }
-    
+
     var type: String {
         switch self {
         case .bulkResource(let x): let type = x.type; return type
         case .adHocResource(let x): let type = x.type; return type
         case .instantiableResource(let x): let type = x.type; return type
-        case .resourceSet(let x): let type = x.type; return type
+        case .resourceSet(let x): let type = x.resourcetype; return type! // deprecated!!!
+        }
+    }
+
+    var group: String? {
+        switch self {
+        case .bulkResource(let x): if let group = x.group { return group } else { return nil }
+        case .adHocResource(let x): if let group = x.group { return group } else { return nil }
+        case .instantiableResource(let x): if let group = x.group { return group } else { return nil }
+        case .resourceSet(let x): if let group = x.group { return group } else { return nil }
         }
     }
 }
@@ -72,7 +79,8 @@ extension Resource: Decodable {
         let container = try decoder.singleValueContainer()
         if let x = try? container.decode(BulkResource.self) {
             self = .bulkResource(x)
-        } else if let x = try? container.decode(AdHocResource.self) {
+        } else if
+            let x = try? container.decode(AdHocResource.self) {
             self = .adHocResource(x)
         } else if let x = try? container.decode(InstantiableResource.self) {
             self = .instantiableResource(x)

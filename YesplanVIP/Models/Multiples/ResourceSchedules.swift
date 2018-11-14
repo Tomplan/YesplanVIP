@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct ResourceSchedulesFromTo: Codable {
+struct ResourcesSchedulesFromTo: Codable {
     var pagination = Pagination()
-    var data = [ResourceScheduleFromTo]()
+    var data = [ResourceSchedulesFromTo]()
 }

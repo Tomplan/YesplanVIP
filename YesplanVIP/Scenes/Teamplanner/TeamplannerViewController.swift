@@ -22,10 +22,11 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   var interactor: TeamplannerTabBusinessLogic?
   var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
     var v = TeamplannerTabView()
-var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedResourcebooking] = []
-    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.DisplayedResourcebooking> = []
+//var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.Item] = []
+//    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.Item> = []
   // MARK: Object lifecycle
-  
+    var sections = [TeamplannerTab.Something.ViewModel.Item]()
+    
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -147,10 +148,11 @@ var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.DisplayedReso
 //    for (key, value) in items {
 //        self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
 //    }
-    displayedResourcebookings = Array(viewModel.displayedResourcebookings.sorted(by: { $0.date < $1.date }))
+//    displayedResourcebookings = Array(viewModel.sections.sorted(by: { $0.header < $1.header }))
 //    displayedResourcebookings = Array(self.resourcebookings.sorted(by: { $0.date < $1.date }))
     
 //    print(displayedResourcebookings)
+    sections = viewModel.sections
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

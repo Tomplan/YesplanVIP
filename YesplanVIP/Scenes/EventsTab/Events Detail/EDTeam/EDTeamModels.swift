@@ -30,7 +30,7 @@ enum EDTeam
         {
             struct Item: Codable {
                 var header: String
-                var rows: [Resourcebooking]
+                var rows: [Resourcebooking]?
             }
             var sections: [Item]
         }

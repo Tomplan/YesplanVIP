@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import Arrow
 
 struct Resourceinstance: Codable {
-    var _type: String = ""
-    var id: String = ""
-    var url: URL = URL(string: "http://")!
+    var _type: Type
+    var id: String
+    var url: URL
     var resource: Base? // NOT Resource_Id
     var active: Bool?
     var date: String?
@@ -20,15 +19,3 @@ struct Resourceinstance: Codable {
     var serialnumber: String?
 }
 
-//extension Resourceinstance: ArrowParsable {
-//    mutating func deserialize(_ json: JSON) {
-//        _type <-- json["_type"]
-//        id <-- json["id"]
-//        url <-- json["url"]
-//        resource <-- json["resource"]
-//        active <-- json["active"]
-//        date <-- json["date"]
-//        productcode <-- json["productcode"]
-//        serialnumber <-- json["serialnumber"]
-//    }
-//}

@@ -41,10 +41,9 @@ class TeamplannerTabWorker
 //        })
 //    }
     
-    func getResourceSchedulesFromTo(_ path: String) -> Future<ResourceSchedulesFromTo> {
+    func getResourcesSchedulesFromTo(_ path: String) -> Future<ResourcesSchedulesFromTo> {
         return Future(operation: { completion in
             APIClient.resourcesSchedulesFromTo("\(path)")
-                .map({$0})
                 .execute(onSuccess: { items in
                     completion(.success(items))
                 }, onFailure: { error in
@@ -53,18 +52,67 @@ class TeamplannerTabWorker
         })
     }
     
-    func getResourcebookingId(_ id: String) -> Future<String> {
+    func getResourcebookingId(_ id: String) -> Future<Resourcebooking> {
         return Future(operation: { completion in
             APIClient.resourcebookingId(id)
-                .map({$0})
                 .execute(onSuccess: { item in
-//                    print("item:", item)
+                    completion(.success(item))
                 }, onFailure: { error in
                     completion(.failure(error))
                 })
             })
         }
 
+    func makeSchedulesArray(resourcesSchedulesFromTo: ResourcesSchedulesFromTo) -> Future<[String? : [Schedules]]> {
+        var schedulesDict = [String? : [Schedules]]()
+        for resourceSchedulesFromTo in resourcesSchedulesFromTo.data {
+            var schedulesArray = [Schedules]()
+            if let schedules = resourceSchedulesFromTo.schedules {
+                for schedule in schedules {
+                    schedulesArray.append(schedule)
+                }
+                schedulesDict[resourceSchedulesFromTo.resource?.name] = schedulesArray
+            }
+        }
+//        
+//        if let next = resourcesSchedulesFromTo.pagination.next  {
+//            print(next)
+//            if let url = URL(string: next) {
+//                print("absoluteString: ", url.absoluteString)
+//                print("absoluteURL: ", url.absoluteURL)
+//                print("baseURL: ", url.baseURL)
+//                print("path: ", url.path)
+//                print("query: ", url.query)
+//            getNextResourcesSchedulesFromTo(url: url)
+//                .execute(onSuccess: { dfg in
+////                    print(dfg)
+//                    
+//                }, onFailure: { error in
+//                    print(error)
+//                })
+//            }
+//        } else {
+//            return Future(value: schedulesDict)
+//        }
+        return Future(value: schedulesDict)
+    }
+    
+    func getNextResourcesSchedulesFromTo(url: URL) -> Future<ResourcesSchedulesFromTo> {
+        print("getNextResourcesSchedulesFromTo")
+        return Future(operation: { completion in
+            APIClient.nextResourcesSchedulesFromTo(url)
+                //                .map({$0})
+                .execute(onSuccess: { items in
+//                    print("getNextResourcesSchedulesFromToitems: ", items)
+                    completion(.success(items))
+                }, onFailure: { error in
+                    print(error)
+                    completion(.failure(error))
+                })
+        })
+        
+    }
+    
 //    func groupResourecbookingsByStartdate(resourcebookings: Resourcebookings) -> [String:[Resourcebooking]] {
 //        for resourcebooking in resourcebookings.data {
 //            switch resourcebooking {

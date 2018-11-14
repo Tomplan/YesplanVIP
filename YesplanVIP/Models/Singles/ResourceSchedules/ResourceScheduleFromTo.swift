@@ -6,10 +6,9 @@
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
-//import Foundation
-//import Arrow
-//
-struct ResourceScheduleFromTo: Codable {
+import Foundation
+
+struct ResourceSchedulesFromTo: Codable {
     let resource: Base?
     let schedules: [Schedules]?
     let instancenumber: Int?
@@ -21,9 +20,3 @@ struct ResourceScheduleFromTo: Codable {
     let overwork: [Overwork]?
     let twentyFiveweekcounters: [TwentyFiveweekcounters]? // 52week... codingkeys!!!
 }
-
-//extension ResourceSchedule: RestResource {
-//    static func restName() -> String { return "api/resources/resource/" }
-//    func restId() -> String { return "" }
-//}
-

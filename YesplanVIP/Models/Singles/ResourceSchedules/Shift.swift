@@ -10,12 +10,16 @@
 import Foundation
 
 struct Shift: Codable {
-    var scheduletype: String = ""
-    var start: String = "" // (timestamp)
-    var end: String = "" // (timestamp)
-    var duration: String = "" // (duration)
+    var scheduletype: ShiftType
+    var start: String // (timestamp)
+    var end: String // (timestamp)
+    var duration: String // (duration)
     var actualstart: String? //    null | string (timestamp)
     var actualend: String? //    null | string (timestamp)
     var actualstatus: String?
+}
+
+enum ShiftType: String, Codable {
+    case shift
 }
 

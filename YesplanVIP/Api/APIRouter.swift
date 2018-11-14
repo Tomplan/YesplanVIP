@@ -27,6 +27,7 @@ enum APIRouter: URLRequestConvertible {
     case eventSchedule(id: String)
     case eventResourcebookings(id: String)
 
+    case nextResourcesSchedulesFromTo(url: URL)
 ////    case login(email:String, password:String)
 ////    case articles(userId: Int)
 ////    case article(id: Int)
@@ -47,6 +48,8 @@ enum APIRouter: URLRequestConvertible {
                 ,.event
                 ,.eventSchedule
                 ,.eventResourcebookings
+                
+                ,.nextResourcesSchedulesFromTo
                 :return .get
         }
     }
@@ -69,6 +72,10 @@ enum APIRouter: URLRequestConvertible {
         case .eventSchedule(let id): return "/api/event/\(id)/schedule"
         case .eventResourcebookings(let id): return "/api/event/\(id)/resourcebookings"
      
+        case .nextResourcesSchedulesFromTo(let url):
+            print("urlPath: ", url.path)
+            return url.path
+            
         }
     }
 
@@ -89,7 +96,9 @@ enum APIRouter: URLRequestConvertible {
                 ,.event
                 ,.eventSchedule
                 ,.eventResourcebookings
+                ,.nextResourcesSchedulesFromTo
                 :return nil
+            
         
 //        case .login(let email, let password):
 //            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
@@ -99,7 +108,7 @@ enum APIRouter: URLRequestConvertible {
         }
     }
 
-    // MARK: - Parameters
+    // MARK: - Query
     private var query: [String: String] {
         switch self {
         case .events
@@ -114,9 +123,34 @@ enum APIRouter: URLRequestConvertible {
             ,.event
             ,.eventSchedule
             ,.eventResourcebookings
+        
+//            ,.nextResourcesSchedulesFromTo
+            
         :return [:]
         case .resourcesSchedulesFromTo:
+            print("yepyep")
             return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]
+        case .nextResourcesSchedulesFromTo(let url):
+            print("yupyup")
+            var queryDict = [String:String]()
+            let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            print("components: ", components)
+            if let components = components {
+                components.host
+                components.query
+                components.percentEncodedQuery
+                
+                if let queryItems = components.queryItems {
+                    print("queryItems: ", queryItems)
+                    for queryItem in queryItems {
+                        queryDict[queryItem.name] = queryItem.value
+                        print("\(queryItem.name): \(queryItem.value)")
+                    }
+                    print("queryDict: ", queryDict)
+                }
+            }
+
+            return queryDict
         }
     }
     

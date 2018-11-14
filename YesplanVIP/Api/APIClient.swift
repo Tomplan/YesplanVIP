@@ -51,9 +51,10 @@ class APIClient {
         return performRequest(route: APIRouter.resources(path: path))
     }
     
-    static func resourcesSchedulesFromTo(_ path: String) -> Future<ResourceSchedulesFromTo> {
+    static func resourcesSchedulesFromTo(_ path: String) -> Future<ResourcesSchedulesFromTo> {
         return performRequest(route: APIRouter.resourcesSchedulesFromTo(path: path))
     }
+    
     static func statuses(_ path: String) -> Future<Statuses> {
         return performRequest(route: APIRouter.statuses(path: path))
     }
@@ -68,5 +69,10 @@ class APIClient {
     
     static func eventResourcebookings(_ id: String) -> Future<[Resourcebooking]> {
         return performRequest(route: APIRouter.eventResourcebookings(id: id))
+    }
+    
+    
+    static func nextResourcesSchedulesFromTo(_ url: URL) -> Future<ResourcesSchedulesFromTo> {
+        return performRequest(route: APIRouter.nextResourcesSchedulesFromTo(url: url))
     }
 }

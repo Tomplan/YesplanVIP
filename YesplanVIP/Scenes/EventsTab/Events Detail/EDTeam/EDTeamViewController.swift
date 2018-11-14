@@ -93,9 +93,7 @@ class EDTeamViewController: UIViewController, EDTeamDisplayLogic
     
     func displaySomething(viewModel: EDTeam.Something.ViewModel)
     {
-        sections = viewModel.sections
-        //    print("sections: ", sections)
-        
+        sections = viewModel.sections        
         self.v.collectionView.reloadData()
         self.v.refreshControl.endRefreshing()
     }

@@ -16,21 +16,22 @@ struct BulkResource: Codable {
     var group: String?
     var roles: [String]?
     var description: String?
-    var external: Bool
-    var rented: Bool
+    var external: Bool?
+    var rented: Bool?
     var costmodels: [Costmodel]?
     var defaultrole: String?
     var amount: Int?
-    var type: String
+    var type: String // added by Tom !!!!!, really importantes!!!
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type: String
-    var active: Bool = true
+    var _type: BulkResourceType
+    var active: Bool? // added by Tom !!!!!, really importantes!!!
     var date: String?
     var productcode: String?
     var serialnumber: String?
+}
 
-//    init() { guard self._type == "resource" else {
-//        return } }
+enum BulkResourceType: String, Codable {
+    case resource
 }

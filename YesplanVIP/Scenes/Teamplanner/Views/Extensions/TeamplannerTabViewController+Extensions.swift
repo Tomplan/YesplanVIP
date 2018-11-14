@@ -11,16 +11,24 @@ import UIKit
 extension TeamplannerTabViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return displayedResourcebookings.count
+        print("sections.count: ", sections.count)
+        return sections.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        return displayedResourcebookings[section].date
-    }
+//    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+//        if let header = sections[section].header {
+//            print(header)
+//            return header }
+//        else {
+//            print("null")
+//            return "niks"
+//        }
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if displayedResourcebookings[section].resourcebookings.count != 0 {
-            return displayedResourcebookings[section].resourcebookings.count
+//        print(sections[section].rows)
+        if sections[section].rows.count != 0 {
+            return sections[section].rows.count
         } else {
             return 0
         }
@@ -28,9 +36,9 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamplannerTabViewCell", for: indexPath) as? TeamplannerTabViewCell {
-            if displayedResourcebookings.count != 0 {
-                let resourcebooking = displayedResourcebookings[indexPath.section].resourcebookings[indexPath.item]
-                cell.populate(with: resourcebooking)
+            if sections.count != 0 {
+                let item = sections[indexPath.section].rows[indexPath.item]
+                cell.populate(with: item)
             }
             return cell
         }
@@ -43,7 +51,10 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
             
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"TeamplannerTabViewHeader", for: indexPath) as! TeamplannerTabViewHeader
             
-            headerView.TeamplannerTabViewHeaderLabel.text = displayedResourcebookings[indexPath.section].date.convertDateStringShort(dateFormat: "EEEE, dd MMMM yyyy")
+        if let header = sections[indexPath.section].header {
+            headerView.TeamplannerTabViewHeaderLabel.text =
+                header.convertDateStringShort(dateFormat: "EEEE, dd MMMM yyyy")
+            }
             
             headerView.backgroundColor = UIColor.darkGray
             headerView.layer.backgroundColor = UIColor(r: 90, g: 90, b: 90).cgColor

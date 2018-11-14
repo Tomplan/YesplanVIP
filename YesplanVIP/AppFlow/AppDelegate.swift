@@ -8,6 +8,7 @@
 //// cd ~/Library/Mobile\ Documents/com~apple~CloudDocs
 //// dewerft.yesplan.be
 //// C857C01360BB5777DABE5B7EE6594CD1
+//// 190813697-1478707406 id Tom
 //// Sourcery.app/Contents/MacOS/Sourcery --sources Test.swift --templates Templates/AutoCodable.swifttemplate --output ./Generated --disableCache --verbose
 
 import UIKit

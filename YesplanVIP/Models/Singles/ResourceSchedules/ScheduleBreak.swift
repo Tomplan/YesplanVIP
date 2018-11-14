@@ -10,11 +10,15 @@
 import Foundation
 
 struct ScheduleBreak: Codable {
-    var scheduletype: String = ""
-    var start: String = "" // (timestamp)
-    var end: String = "" // (timestamp)
-    var duration: String = "" // (duration)
+    var scheduletype: ScheduleBreakType
+    var start: String // (timestamp)
+    var end: String // (timestamp)
+    var duration: String // (duration)
     var actualstart: String? //    null | string (timestamp)
     var actualend: String? //    null | string (timestamp)
     var actualstatus: String?
+}
+
+enum ScheduleBreakType: String, Codable {
+    case scheduleBreak = "break"
 }

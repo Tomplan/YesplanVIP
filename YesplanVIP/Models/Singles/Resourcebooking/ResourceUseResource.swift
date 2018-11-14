@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum BulkResourceUseResource {
+enum ResourceUseResource {
     case location(Location)
     case resource(Resource)
     case resourceplaceholder(Resourceplaceholder)
@@ -29,10 +29,17 @@ enum BulkResourceUseResource {
         }
     }
     
+    var group: String? {
+        switch self {
+        case .location(let x): if let group = x.group { return group } else { return nil }
+        case .resource(let x): if let group = x.group { return group } else { return nil }
+        case .resourceplaceholder(let x): if let group = x.group { return group } else { return nil }
+        }
+    }
 }
 
 
-extension BulkResourceUseResource: Encodable {
+extension ResourceUseResource: Encodable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
@@ -43,37 +50,17 @@ extension BulkResourceUseResource: Encodable {
     }
 }
 
-extension BulkResourceUseResource: Decodable {
-    //    private enum CodingKeys: String, CodingKey {
-    //        case type
-    //    }
+extension ResourceUseResource: Decodable {
+
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-//        let containers = try decoder.container(keyedBy: CodingKeys.self)
-//        let type = try containers.decode(String.self, forKey: ._type)
         if let x = try? container.decode(Location.self)
-            {
-//            print("location")
-            self = .location(x)
-            return
-            }
-            else {
-                if let x = try? container.decode(Resource.self)
-                {
-//                    print("resource")
-                    self = .resource(x)
-                    return
-                }
-            else {
-                if let x = try? container.decode(Resourceplaceholder.self)
-                {
-//                    print("resourceplaceholder")
-                    self = .resourceplaceholder(x)
-                    return
-                }
-            else {
-                throw Failure.NotImplemented
-                }
+        { self = .location(x); return }
+            else { if let x = try? container.decode(Resource.self)
+        { self = .resource(x); return }
+            else { if let x = try? container.decode(Resourceplaceholder.self)
+        { self = .resourceplaceholder(x); return }
+            else { throw Failure.NotImplemented }
             }
         }
     }

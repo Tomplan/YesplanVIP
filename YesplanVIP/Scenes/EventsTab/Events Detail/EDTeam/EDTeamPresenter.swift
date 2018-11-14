@@ -26,8 +26,9 @@ class EDTeamPresenter: EDTeamPresentationLogic
     func presentSomething(response: EDTeam.Something.Response)
     {
                 print("present: ", response.name)
-//        for resourcebooking in response.resourcebookings where resourcebooking.type == "Human" {
-//            print("*: ", resourcebooking)
+        for resourcebooking in response.resourcebookings {
+//            where resourcebooking.type == "Human" {
+            print("*: ", resourcebooking)
 //            switch resourcebooking {
 //            case .bulkResourceUse(let x): print("bulkResourceUse: ", x)
 //            case .freeFormResourceUse(let x): print("freeFormResourceUse: ", x)
@@ -45,11 +46,14 @@ class EDTeamPresenter: EDTeamPresentationLogic
 //                    }
 //                }
 //            }
-//        }
-            let name = response.name
-            let rows = response.resourcebookings
-            let sections = EDTeam.Something.ViewModel(sections: [EDTeam.Something.ViewModel.Item(header: "Team - \(name)", rows: rows)])
-            let viewModel = sections
-            viewController?.displaySomething(viewModel: viewModel)
+        }
+//            let name = response.name
+//            let rows = response.resourcebookings
+//            let sections = EDTeam.Something.ViewModel(sections: [
+//                EDTeam.Something.ViewModel.Item(header: name, rows: nil)
+//                ,EDTeam.Something.ViewModel.Item(header: "Team", rows: rows)
+//                ])
+//            let viewModel = sections
+//            viewController?.displaySomething(viewModel: viewModel)
     }
 }

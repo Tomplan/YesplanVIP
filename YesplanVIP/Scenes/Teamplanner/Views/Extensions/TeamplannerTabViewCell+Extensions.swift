@@ -16,33 +16,33 @@ import Kingfisher
 
 extension TeamplannerTabViewCell {
     
-    func populate(with resourcebooking: TeamplannerTab.Something.ViewModel.Displ) {
+//    func populate(with item: TeamplannerTab.Something.ViewModel.Item) {
+        func populate(with item: Schedules) {
+
         lblName.textColor = UIColor(r: 64, g: 64, b: 64)
         lblStart.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        
-        let name = resourcebooking.scheduleType
-        lblName.text = name
-        let start = resourcebooking.start
-        let end = resourcebooking.end
-        if let eventName = resourcebooking.eventName {
-            lblName.text = "\(eventName)"
+//        let item =
+//        let name = item.scheduletype
+//            lblName.text = name
+        let start = item.start
+        let end = item.end
+        if let name = item.name {
+            lblName.text = name
             lblStart.text = "• \(start) - \(end)"
-//            lblEventName.text = "     \(eventName)"
+            //        let role = resourcebooking.role
 
         } else {
-            if resourcebooking.scheduleType == "shift" {
+            if item.scheduletype == "shift" {
                 lblName.textColor = UIColor(r: 158, g: 103, b: 0)
             }
-            if resourcebooking.scheduleType == "break" {
+            if item.scheduletype == "break" {
                 lblName.textColor = UIColor(r: 158, g: 103, b: 0)
             }
-            if resourcebooking.scheduleType == "unavailability" {
+            if item.scheduletype == "unavailability" {
                 lblName.textColor = UIColor(r: 238, g: 0, b: 0)
             }
-            
-//        let role = resourcebooking.role
-            lblName.text = "\(resourcebooking.scheduleType)"
+            lblName.text = item.scheduletype
             lblStart.text = "• \(start) - \(end)"
         }
 //        if let defaultschedulestarttime = event.defaultschedulestarttime {

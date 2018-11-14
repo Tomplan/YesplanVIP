@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Arrow
 
 struct ResourceSetUse: Codable {
     
@@ -16,11 +15,15 @@ struct ResourceSetUse: Codable {
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
-    var _type = "resourcebooking"
-    var number: Int // = 0
-    var resource: Resource? // Resource Location_Id or Resource_Id or Placeholder_Id
+    var _type: ResourceSetUseType
+    var number: Int
+    var resource: ResourceUseResource? // Resource Location_Id or Resource_Id or Placeholder_Id
     var children: [ResourcebookingChildren]
     var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     var resourceinstance: Base? // NOT Resourceinstance_Id
     var actualnumber: Int?
+}
+
+enum ResourceSetUseType: String, Codable {
+    case resourcebooking
 }

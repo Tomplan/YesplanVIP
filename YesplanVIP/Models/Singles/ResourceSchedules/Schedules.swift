@@ -15,79 +15,99 @@ enum Schedules {
     case schedule(Schedule)
     case lock(Lock)
     
+    var id: String? {
+        switch self {
+        case .shift(_): return nil
+        case .scheduleBreak(_): return nil
+        case .schedule(let x): if let id = x.resourcebooking.id { return id } else { return nil }
+        case .lock(_): return nil
+        }
+    }
     
     var scheduletype: String {
         switch self {
         case .shift(let x):
-            return x.scheduletype
+            return x.scheduletype.rawValue
         case .scheduleBreak(let x):
-            return x.scheduletype
+            return x.scheduletype.rawValue
         case .schedule(let x):
-            return x.scheduletype
+            return x.scheduletype.rawValue
         case .lock(let x):
-            return x.scheduletype
+            return x.scheduletype.rawValue
         }
     }
     
-    var date: String {
-        switch self {
-        case .shift(let x):
-            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-        case .scheduleBreak(let x):
-            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-        case .schedule(let x):
-            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-        case .lock(let x):
-            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-        }
-    }
+//    var date: String {
+//        switch self {
+//        case .shift(let x):
+//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//        case .scheduleBreak(let x):
+//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//        case .schedule(let x):
+//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//        case .lock(let x):
+//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//        }
+//    }
     
     var start: String {
         switch self {
         case .shift(let x):
-            return x.start.convertDateString(dateFormat: "HH:mm")!
+            return x.start // .convertDateString(dateFormat: "HH:mm")!
         case .scheduleBreak(let x):
-            return x.start.convertDateString(dateFormat: "HH:mm")!
+            return x.start // .convertDateString(dateFormat: "HH:mm")!
         case .schedule(let x):
-            return x.start.convertDateString(dateFormat: "HH:mm")!
+            return x.start // .convertDateString(dateFormat: "HH:mm")!
         case .lock(let x):
-            return x.start.convertDateString(dateFormat: "HH:mm")!
+            return x.start //.convertDateString(dateFormat: "HH:mm")!
         }
     }
     
     var end: String {
         switch self {
         case .shift(let x):
-            return x.end.convertDateString(dateFormat: "HH:mm")!
+            return x.end // .convertDateString(dateFormat: "HH:mm")!
         case .scheduleBreak(let x):
-            return x.end.convertDateString(dateFormat: "HH:mm")!
+            return x.end // .convertDateString(dateFormat: "HH:mm")!
         case .schedule(let x):
-            return x.end.convertDateString(dateFormat: "HH:mm")!
+            return x.end // .convertDateString(dateFormat: "HH:mm")!
         case .lock(let x):
-            return x.end.convertDateString(dateFormat: "HH:mm")!
+            return x.end // .convertDateString(dateFormat: "HH:mm")!
         }
     }
     
-    var eventName: Future<String?> {
-        
+    var name: String? {
         switch self {
         case .shift(_):
-            return Future(value: nil)
+            return nil
         case .scheduleBreak(_):
-            return Future(value: nil)
+            return nil
         case .schedule(let x):
-            if let id = x.resourcebooking.id {
-                let ikke = x.getResourcebookingId(id)
-                return ikke.map{$0.eventName}
-
-            }
-        case .lock(let x):
-            if let reason = x.reason {
-                return Future(value: reason)
-            }
+            return x.resourcebooking.name
+        case .lock(_):
+            return nil
         }
-        return Future(value: nil)
     }
+//    var eventName: Future<String?> {
+//        
+//        switch self {
+//        case .shift(_):
+//            return Future(value: nil)
+//        case .scheduleBreak(_):
+//            return Future(value: nil)
+//        case .schedule(let x):
+//            if let id = x.resourcebooking.id {
+//                let ikke = x.getResourcebookingId(id)
+//              return ikke.map{$0.eventName}
+////                return Future(value: "ertrert")
+//            }
+//        case .lock(let x):
+//            if let reason = x.reason {
+//                return Future(value: reason)
+//            }
+//        }
+//        return Future(value: nil)
+//    }
 }
 
 

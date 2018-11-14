@@ -29,7 +29,7 @@ struct Event: Codable {
     var production: Base? // null or Event_Id or Group_Id
     var isproduction: Bool = false
     var attributes: Pagination?
-    var _type = "event"
+    var _type: EventType
     var labels: [String]?
     var defaultscheduledescription: String?
     var defaultschedulestarttime: String? // time
@@ -37,6 +37,8 @@ struct Event: Codable {
     var defaultschedulestart: String? // timestamp
     var defaultscheduleend: String? // timestamp
     
-    init() { guard self._type == "event" else { return } }
+}
 
+enum EventType: String, Codable {
+    case event
 }
