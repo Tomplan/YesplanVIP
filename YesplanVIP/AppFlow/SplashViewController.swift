@@ -20,8 +20,15 @@ class SplashViewController: UIViewController {
 
         super.viewDidLoad()
         
-//        view.backgroundColor = UIColor.white
-        
+////        view.backgroundColor = UIColor.white
+//            let backgroundImageView: UIImageView = {
+//                let iv = UIImageView()
+//                iv.contentMode = .scaleAspectFill
+////                iv.image = UIImage(named: "yesplanNB 1024x1024")
+//                iv.image = #imageLiteral(resourceName: "yesplanNB 180x180.png")
+//                return iv
+//            }()
+//        view.addSubview(backgroundImageView)
         view.addSubview(activityIndicator)
         
         activityIndicator.frame = view.bounds

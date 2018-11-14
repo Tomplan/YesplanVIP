@@ -45,6 +45,13 @@ class RootViewController: UIViewController {
     func showLoginScreen() {
 
         let new = UINavigationController(rootViewController: LoginViewController())
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = UIColor(r: 158, g: 158, b: 158) // color for buttons, text
+        navigationBarAppearace.barTintColor = UIColor.black // color for background
+        navigationBarAppearace.backgroundColor = UIColor.black
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(r: 185, g: 185, b: 185)]
         
         addChild(new)
         new.view.frame = view.bounds

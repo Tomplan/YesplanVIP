@@ -435,7 +435,7 @@
 		3CD714F72164038A00CC370A /* TasksTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTabViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3CD7DBAB21332379001C1B6E /* RestResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestResource.swift; sourceTree = "<group>"; };
 		3CE7101B2121827900EBF6A5 /* YesplanVIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesplanVIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CE7101E2121827900EBF6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3CE7101E2121827900EBF6A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppFlow/AppDelegate.swift; sourceTree = "<group>"; };
 		3CE710262121827900EBF6A5 /* YesplanVIP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YesplanVIP.xcdatamodel; sourceTree = "<group>"; };
 		3CE710282121827A00EBF6A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CE7102D2121827A00EBF6A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -707,11 +707,11 @@
 			isa = PBXGroup;
 			children = (
 				3C6AC89F212703040010DFA5 /* LaunchScreen.storyboard */,
-				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
 				3CC3774221688D870020236D /* AppConfig.swift */,
 				3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */,
 				3C6AC88521260EEC0010DFA5 /* SplashViewController.swift */,
 				3CB59E75214079B700B6E458 /* MainTabBar */,
+				3CE9D1CB21237C2700BFA730 /* Login */,
 			);
 			path = AppFlow;
 			sourceTree = "<group>";
@@ -813,14 +813,6 @@
 			path = Singles;
 			sourceTree = "<group>";
 		};
-		3C41E927212D724A00C2E242 /* Api Implementation */ = {
-			isa = PBXGroup;
-			children = (
-				3C41E923212D723E00C2E242 /* Basic.swift */,
-			);
-			path = "Api Implementation";
-			sourceTree = "<group>";
-		};
 		3C46D4E4212B61EF00430D20 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -906,6 +898,24 @@
 			path = EDInfo;
 			sourceTree = "<group>";
 		};
+		3CB03CC6219CAB0B006CEBF8 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		3CB03CC7219CB942006CEBF8 /* old */ = {
+			isa = PBXGroup;
+			children = (
+				3C41E923212D723E00C2E242 /* Basic.swift */,
+				3CBE94A2212D75C700CE518C /* Api.swift */,
+				3CD7DBAB21332379001C1B6E /* RestResource.swift */,
+				3C62058F2196FC9C001E8D4B /* Reachability.swift */,
+			);
+			path = old;
+			sourceTree = "<group>";
+		};
 		3CB59E64213FC4DE00B6E458 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,9 +945,7 @@
 				3C2D1A22217126E400F081A1 /* APIRouter.swift */,
 				3CA2131E218E274A00F74EED /* APIClient.swift */,
 				3CA2131C218E267100F74EED /* Constants.swift */,
-				3CBE94A2212D75C700CE518C /* Api.swift */,
-				3CD7DBAB21332379001C1B6E /* RestResource.swift */,
-				3C62058F2196FC9C001E8D4B /* Reachability.swift */,
+				3CB03CC7219CB942006CEBF8 /* old */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -1027,18 +1035,18 @@
 		3CE7101D2121827900EBF6A5 /* YesplanVIP */ = {
 			isa = PBXGroup;
 			children = (
+				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
 				3C6205AA219843D2001E8D4B /*  Main */,
-				3CEDBED42175DB8E009B541F /* Templates */,
-				3CEDBED32175DB84009B541F /* Generated */,
 				3C2D8FE121270C8000BDEA18 /* AppFlow */,
 				3CBE94A6212D75FB00CE518C /* Api */,
-				3C41E927212D724A00C2E242 /* Api Implementation */,
 				3C46D4E4212B61EF00430D20 /* Network */,
 				3CE7106E2121A74600EBF6A5 /* Scenes */,
 				3C40AEC8212D825B0077DDC5 /* Models */,
 				3CE9D1D5212382B700BFA730 /* Extensions */,
+				3CEDBED42175DB8E009B541F /* Templates */,
+				3CB03CC6219CAB0B006CEBF8 /* Generated */,
 				3C9A5B692167E2CD00A5D35B /* Settings.bundle */,
 				3C2D1A262173E43000F081A1 /* test.swift */,
 				3C5F42FD2175043D00A90967 /* Codable+Helpers.swift */,
@@ -1067,7 +1075,6 @@
 		3CE7106E2121A74600EBF6A5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3CE9D1CB21237C2700BFA730 /* Login */,
 				3C40AEFB212D8E5F0077DDC5 /* EventsTab */,
 				3CE710872121A76B00EBF6A5 /* Teamplanner */,
 				3CE710A02121A79200EBF6A5 /* Tasks */,
@@ -1185,13 +1192,6 @@
 				3CC3774421688E720020236D /* Notifications+Util.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		3CEDBED32175DB84009B541F /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		3CEDBED42175DB8E009B541F /* Templates */ = {

@@ -22,6 +22,8 @@ protocol LoginDisplayLogic: AnyObject
 
 class LoginViewController: UIViewController, LoginDisplayLogic
 {
+    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
  
@@ -63,6 +65,10 @@ class LoginViewController: UIViewController, LoginDisplayLogic
 extension LoginViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.frame = view.bounds
+        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
         setupViewConfiguration()
     }
 }
@@ -85,23 +91,6 @@ private extension LoginViewController {
 
   }
 }
-
-
-
-  // MARK: View lifecycle
-  
-//  override func viewDidLoad()
-//  {
-//    super.viewDidLoad()
-//    title = NSLocalizedString("Login", comment: String(describing: LoginViewController.self))
-//    setupView()
-//
-//    }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        navigationController?.navigationBar.isHidden = true
-//    }
 
 extension LoginViewController: ViewConfigurable {
     public func setupViewHierarchy() {
@@ -155,6 +144,11 @@ private extension LoginViewController {
   
   func login()
   {
+    
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+        self.activityIndicator.stopAnimating()
+    }
+        
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text
 //    let user = loginView.userTextField.text

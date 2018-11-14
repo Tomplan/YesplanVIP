@@ -24,13 +24,13 @@ extension TasksTabViewCell {
             lblName.textColor = Color(r: 100, g: 100, b: 0)
         }
         if task.status == "Done" {
-            lblName.textColor = Color(r: 10, g: 238, b: 0)
+            lblName.textColor = Color(r: 100, g: 100, b: 0)
         }
         if task.status == "On Hold" {
-            lblName.textColor = Color(r: 100, g: 0, b: 0)
+            lblName.textColor = Color(r: 100, g: 100, b: 100)
         }
         if task.status == "Obsolete" {
-            lblName.textColor = Color(r: 100, g: 0, b: 0)
+            lblName.textColor = Color(r: 0, g: 0, b: 238)
         }
 
         if let start = task.start {

@@ -91,7 +91,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let VC04 = createNavController(vc: TeamplannerTabViewController(), title: "Teamplanner", selected: #imageLiteral(resourceName: "Teamplanner Selected"), unselected: #imageLiteral(resourceName: "Teamplanner Unselected"))
         let VC05 = createNavController(vc: ToDosViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: #imageLiteral(resourceName: "To Do Unselected"))
 //        let VC06 = createNavController(vc: UserTabViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
-//        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
+        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
         let VC08 = createNavController(vc: LogoutViewController(), title: "Logout", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
 
         let controllers = [
@@ -101,7 +101,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             , VC04
             , VC05
 //            , VC06
-//            , VC07
+            , VC07
             , VC08
         ]
         setViewControllers(controllers, animated: false)
@@ -125,7 +125,8 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
         if defaults.bool(forKey: "tabOrderCheck") {
             defaults.set(true, forKey: "tabOrderCheck")
-            tabOrder = (defaults.object(forKey: "tabOrder") as? [Int])
+            tabOrder = (defaults.object(forKey: "tabOrder") as? [Int]) // back in if more tabs needed!!!
+
         } else {
             tabOrder = [0, 2, 1, 3, 4, 5, 6, 7]
 //            tabOrder = [0, 1, 3, 4, 7]

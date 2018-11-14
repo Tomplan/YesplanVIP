@@ -20,9 +20,11 @@ public class LoginView: UIView {
     var signupAction: (() -> Void)?
     
     // View properties
+    let refreshControl = UIRefreshControl()
+    let spinner = UIActivityIndicatorView(style: .gray)
     let containerView: UIView = {
         let view = UIView.newAutoLayout()
-        view.backgroundColor = .clear
+//        view.backgroundColor = .clear
         return view
     }()
     
@@ -60,7 +62,7 @@ public class LoginView: UIView {
 //    }()
     
     let loginButton: UIButton = {
-        let button = UIButton(title: "Login", borderColor: .greenBorderColor)
+        let button = UIButton(title: "Login", borderColor: UIColor.yellow) // .greenBorderColor)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()

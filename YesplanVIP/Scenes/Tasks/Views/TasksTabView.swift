@@ -24,11 +24,12 @@ class TasksTabView: UIView {
         let screenWidth = screenSize.width
         
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 1
+        flowLayout.minimumLineSpacing = 2
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
+        flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 10)
         
-        collectionView.backgroundColor = UIColor(r: 176, g: 176, b: 176)
+        collectionView.backgroundColor = UIColor.black // UIColor(r: 176, g: 176, b: 176)
         
         return collectionView
     }()

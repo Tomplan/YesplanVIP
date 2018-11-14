@@ -73,7 +73,7 @@ enum APIRouter: URLRequestConvertible {
         case .eventResourcebookings(let id): return "/api/event/\(id)/resourcebookings"
      
         case .nextResourcesSchedulesFromTo(let url):
-            print("urlPath: ", url.path)
+//            print("urlPath: ", url.path)
             return url.path
             
         }
@@ -123,30 +123,19 @@ enum APIRouter: URLRequestConvertible {
             ,.event
             ,.eventSchedule
             ,.eventResourcebookings
-        
-//            ,.nextResourcesSchedulesFromTo
             
         :return [:]
         case .resourcesSchedulesFromTo:
-            print("yepyep")
             return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]
         case .nextResourcesSchedulesFromTo(let url):
-            print("yupyup")
             var queryDict = [String:String]()
             let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
-            print("components: ", components)
             if let components = components {
-                components.host
-                components.query
-                components.percentEncodedQuery
-                
                 if let queryItems = components.queryItems {
-                    print("queryItems: ", queryItems)
                     for queryItem in queryItems {
                         queryDict[queryItem.name] = queryItem.value
-                        print("\(queryItem.name): \(queryItem.value)")
+                        print("\(queryItem.name): \(String(describing: queryItem.value))")
                     }
-                    print("queryDict: ", queryDict)
                 }
             }
 
