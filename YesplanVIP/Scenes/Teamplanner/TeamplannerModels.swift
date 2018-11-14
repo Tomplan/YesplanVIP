@@ -24,10 +24,13 @@ enum TeamplannerTab
     }
     struct Response
     {
-//        struct Item {
-//            let header: String?
-//            let rows: [Schedules]
+//        struct Row: Codable {
+//            let schedules: Schedules?
+//            let resourcebooking: Schedules? // Resourcebooking?
 //        }
+//        var header: String?
+//        var rows: [Row]
+
 //        var resourcebookings: [Resourcebooking]
         var stringSchedules: [String?: [Schedules]]
         var error: String?

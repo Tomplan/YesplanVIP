@@ -20,34 +20,20 @@ protocol TeamplannerTabPresentationLogic
 
 class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 {
-    
-    
   weak var viewController: TeamplannerTabDisplayLogic?
-    
-//    var error: String?
-//    var resourcebookingDispls: Set<TeamplannerTab.Something.ViewModel.Displ> = []
-//    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.DisplayedResourcebooking> = []
-//    var dictResourcebookings: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
     
     var DateAndSchedulesArray = [TeamplannerTab.Something.ViewModel.Section]()
     // MARK: Do something
     
   func presentSomething(response: TeamplannerTab.Something.Response)
   {
-//    var error: String?
-//    var resourcebookingDispls: Set<TeamplannerTab.Something.ViewModel.Displ> = []
-//    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.Item> = []
-//    var dictResourcebookings: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
     for stringSchedule in response.stringSchedules {
-//        print("schedule ***** " , schedule)
         if stringSchedule.value.count == 0 {
-            print("nul")
         } else
         {
             var partrows: [TeamplannerTab.Something.ViewModel.Section.Row] = []
             for i in 0 ..< stringSchedule.value.count {
                 var partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: nil)
-                let partheader = stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
                 let partrowItem = stringSchedule.value[i]
                 switch partrowItem {
                 case .shift(_):
@@ -61,76 +47,29 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
                 }
                 partrows.append(partrow)
             }
-//            print(partrows)
-            
             for i in 0 ..< stringSchedule.value.count {
                 var rows = [TeamplannerTab.Something.ViewModel.Section.Row]()
-                var row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: nil)
                 let header = stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
-                let rowItem = stringSchedule.value[i]
-                switch rowItem {
-                case .shift(_):
-                    row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: rowItem, resourcebooking: nil)
-                case .lock(_):
-                    row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: rowItem, resourcebooking: nil)
-                case .scheduleBreak(_):
-                    row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: rowItem, resourcebooking: nil)
-                case .schedule(_):
-                    row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: rowItem)
-                }
 
                     for i in 0 ..< stringSchedule.value.count where stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")! == header {
-//                        let row = stringSchedule.value[i]
                         let row = partrows[i]
                         rows.append(row)
                     }
-
                 let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
-//                print(item)
                 if DateAndSchedulesArray.contains(where: { $0.header == header }) == false {
                     DateAndSchedulesArray.append(item) }
             }
-            
-            print(DateAndSchedulesArray)
-            
-            
-//            print("sectionsNotGrouped: ", sectionsNotGrouped)
-//            let sectionsGrouped = Dictionary(grouping: DateAndSchedulesArray, by: { $0.header })
-//            print(sectionsGrouped)
-//            let sections = DateAndSchedulesArray.sorted(by: $0.header)
-//                        print(sections
+
             let viewModel = TeamplannerTab.Something.ViewModel(
                     sections: DateAndSchedulesArray
                     ,error: nil
                     )
             self.viewController?.displaySomething(viewModel: viewModel)
-//            var dictionary = [String:Schedules]()
-//            schedule.value.forEach {
-//                dictionary[$0.start.convertDateString(dateFormat: "yyyy-MM-dd")!] = $0
-//            }
-//            dump(dictionary)
-          
-//            for (key, value) in dictionary {
-////                let valueSorted = value.sorted{ $0.start <  $1.start }
-//                items[key] = value
-//            }
-//            print(items)
-//        var rows = [Schedules]()
-//        for i in 0 ..< schedule.value.count {
-//            print("schedule $$ ", schedule.value[i])
-//        let header = schedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
-//
-//        let rows = schedule.value[i]
-//
-////        let item = TeamplannerTab.Something.ViewModel.Item(header: header, rows: rows)
-////        sections.append(item)
-//        }
+            }
         }
     }
-////    print("sections: ", sections)
-//    let viewModel = TeamplannerTab.Something.ViewModel(sections: sections, error: nil)
-//    self.viewController?.displaySomething(viewModel: viewModel)
-
+}
+////    ************************************************** oldway
 //    for resourceSchedule in response.resourceSchedules {
 //        if let schedules = resourceSchedule.schedules {
 //        for schedule in schedules {
@@ -178,6 +117,5 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 //                })
 //            }
 //        }}
-    }
-}
+
 
