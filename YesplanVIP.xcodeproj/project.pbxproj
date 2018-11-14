@@ -63,7 +63,6 @@
 		3C247786216A9DCB0010EAFA /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C247785216A9DCB0010EAFA /* Lock.swift */; };
 		3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C24BAEB215613AB00E28966 /* String+Extensions.swift */; };
 		3C2D1A23217126E400F081A1 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D1A22217126E400F081A1 /* APIRouter.swift */; };
-		3C2D1A272173E43000F081A1 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D1A262173E43000F081A1 /* test.swift */; };
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */; };
 		3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */; };
 		3C40AED8212D8C090077DDC5 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AED7212D8C090077DDC5 /* Events.swift */; };
@@ -93,7 +92,6 @@
 		3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4A2165537900154B93 /* ToDosTabViewHeader.swift */; };
 		3C570A4D2165587500154B93 /* ToDosTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4C2165587500154B93 /* ToDosTabViewController+Extensions.swift */; };
 		3C570A502165589100154B93 /* ToDosTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4F2165589100154B93 /* ToDosTabViewCell+Extensions.swift */; };
-		3C5F42FE2175043D00A90967 /* Codable+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F42FD2175043D00A90967 /* Codable+Helpers.swift */; };
 		3C6205902196FC9C001E8D4B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C62058F2196FC9C001E8D4B /* Reachability.swift */; };
 		3C6205A421981242001E8D4B /* EventsDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C62059E21981242001E8D4B /* EventsDetailPresenter.swift */; };
 		3C6205A521981242001E8D4B /* EventsDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C62059F21981242001E8D4B /* EventsDetailWorker.swift */; };
@@ -317,7 +315,6 @@
 		3C247785216A9DCB0010EAFA /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		3C24BAEB215613AB00E28966 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		3C2D1A22217126E400F081A1 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
-		3C2D1A262173E43000F081A1 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVwController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		3C40AED7212D8C090077DDC5 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -347,7 +344,6 @@
 		3C570A4A2165537900154B93 /* ToDosTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTabViewHeader.swift; sourceTree = "<group>"; };
 		3C570A4C2165587500154B93 /* ToDosTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDosTabViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3C570A4F2165589100154B93 /* ToDosTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDosTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		3C5F42FD2175043D00A90967 /* Codable+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Helpers.swift"; sourceTree = "<group>"; };
 		3C62058F2196FC9C001E8D4B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3C62059E21981242001E8D4B /* EventsDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailPresenter.swift; sourceTree = "<group>"; };
 		3C62059F21981242001E8D4B /* EventsDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDetailWorker.swift; sourceTree = "<group>"; };
@@ -1048,8 +1044,6 @@
 				3CEDBED42175DB8E009B541F /* Templates */,
 				3CB03CC6219CAB0B006CEBF8 /* Generated */,
 				3C9A5B692167E2CD00A5D35B /* Settings.bundle */,
-				3C2D1A262173E43000F081A1 /* test.swift */,
-				3C5F42FD2175043D00A90967 /* Codable+Helpers.swift */,
 			);
 			path = YesplanVIP;
 			sourceTree = "<group>";
@@ -1412,7 +1406,6 @@
 				3CE710FB2121A84400EBF6A5 /* HelpModels.swift in Sources */,
 				3CC3774A2168BDB90020236D /* TeamplannerTabViewCell.swift in Sources */,
 				3C7337A92150427C0045F9E1 /* EventsTabViewController+Extensions.swift in Sources */,
-				3C2D1A272173E43000F081A1 /* test.swift in Sources */,
 				3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */,
 				3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */,
 				3C05A02C2198E7E100F93289 /* EDLocationInteractor.swift in Sources */,
@@ -1596,7 +1589,6 @@
 				3CF142EF212E0422001FC532 /* ApiError.swift in Sources */,
 				3CE710752121A76400EBF6A5 /* TeamplannerPresenter.swift in Sources */,
 				3CE7109A2121A78800EBF6A5 /* TasksViewController.swift in Sources */,
-				3C5F42FE2175043D00A90967 /* Codable+Helpers.swift in Sources */,
 				3C247780216A99210010EAFA /* Shift.swift in Sources */,
 				3C05A0052198979E00F93289 /* EDSchedulesViewController.swift in Sources */,
 				3C41E924212D723E00C2E242 /* Basic.swift in Sources */,
