@@ -16,32 +16,36 @@ enum Resourcebooking {
     case bulkResourceUse(BulkResourceUse)
     
     
-//    var start: String? {
-//        switch self {
-//        case .bulkResourceUse(let x): let start = x.start; return start
-//        case .freeFormResourceUse(let x): let start = x.start; return start
-//        case .instantiableResourceUse(let x): let start = x.start; return start
-//        case .instantiableResourceUseGroup(let x):
-//            for child in x.children { let start = child.start; return start }
-//        case .resourceSetUse(let x):
+    var start: String? {
+        switch self {
+        case .bulkResourceUse(let x): let start = x.start; return start
+        case .freeFormResourceUse(let x): let start = x.start; return start
+        case .instantiableResourceUse(let x): let start = x.start; return start
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { let start = child.start; return start }
+        case .resourceSetUse(let x):
+            print(x)
 //            for child in x.children { if let start = child.start { return start } else { return nil } }
-//    }
-//        return nil
-//    }
+    }
+        return nil
+    }
 
-//    var end: String? {
-//        switch self {
-//        case .bulkResourceUse(let x): let end = x.end; return end
-//        case .freeFormResourceUse(let x): let end = x.end; return end
-//        case .instantiableResourceUse(let x): let end = x.end; return end
-//        case .instantiableResourceUseGroup(let x):
-//            for child in x.children { let end = child.end; return end }
-//        case .resourceSetUse(let x):
+    var end: String? {
+        switch self {
+        case .bulkResourceUse(let x): let end = x.end; return end
+        case .freeFormResourceUse(let x): let end = x.end; return end
+        case .instantiableResourceUse(let x): let end = x.end; return end
+        case .instantiableResourceUseGroup(let x):
+            for child in x.children { let end = child.end; return end }
+        case .resourceSetUse(let x):
+            print(x)
+//            while x.children.count != 0 {
 //            for child in x.children {
 //                if let end = child.end { return end } else { return nil } }
-//        }
-//        return nil
-//        }
+//            }
+        }
+        return nil
+        }
 
 //    var eventName: String? {
 //        switch self {

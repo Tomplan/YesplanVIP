@@ -74,6 +74,13 @@ class TeamplannerTabWorker
                 schedulesDict[resourceSchedulesFromTo.resource?.name] = schedulesArray
             }
         }
+        
+        return Future(value: schedulesDict)
+    }
+        
+        
+        
+        
 //        
 //        if let next = resourcesSchedulesFromTo.pagination.next  {
 //            print(next)
@@ -94,8 +101,8 @@ class TeamplannerTabWorker
 //        } else {
 //            return Future(value: schedulesDict)
 //        }
-        return Future(value: schedulesDict)
-    }
+//        return Future(value: schedulesDict)
+//    }
     
     func getNextResourcesSchedulesFromTo(url: URL) -> Future<ResourcesSchedulesFromTo> {
         print("getNextResourcesSchedulesFromTo")

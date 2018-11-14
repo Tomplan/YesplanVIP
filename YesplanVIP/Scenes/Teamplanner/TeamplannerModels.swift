@@ -34,9 +34,13 @@ enum TeamplannerTab
     }
     struct ViewModel
     {
-        struct Item: Codable {
+        struct Section: Codable {
             var header: String?
-            var rows: [Schedules]
+            struct Row: Codable {
+                let schedules: Schedules?
+                let resourcebooking: Schedules? // Resourcebooking?
+            }
+            let rows: [Row]
         }
 //
 //        struct Displ: Hashable {
@@ -49,7 +53,7 @@ enum TeamplannerTab
 //        }
 
 //        var sections: Set<Item>
-        var sections: [Item]
+        var sections: [Section]
         var error: String?
 
     }

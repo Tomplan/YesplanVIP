@@ -25,7 +25,7 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
 //var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.Item] = []
 //    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.Item> = []
   // MARK: Object lifecycle
-    var sections = [TeamplannerTab.Something.ViewModel.Item]()
+    var sections = [TeamplannerTab.Something.ViewModel.Section]()
     
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {

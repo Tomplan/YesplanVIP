@@ -11,7 +11,7 @@ import UIKit
 extension TeamplannerTabViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        print("sections.count: ", sections.count)
+//        print("sections.count: ", sections.count)
         return sections.count
     }
     
