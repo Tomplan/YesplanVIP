@@ -24,26 +24,34 @@ enum TeamplannerTab
     }
     struct Response
     {
-//        struct Row: Codable {
-//            let schedules: Schedules?
-//            let resourcebooking: Schedules? // Resourcebooking?
-//        }
-//        var header: String?
-//        var rows: [Row]
-
-//        var resourcebookings: [Resourcebooking]
         var stringSchedules: [String?: [Schedules]]
         var error: String?
+        
+//        struct Sections: Codable {
+//            let header: String?
+//            let rows: [Row]
+//
+//            struct Row: Codable {
+//                let schedules: Schedules?
+//                let resourcebooking: Schedules? // Resourcebooking?
+//            }
+//        }
+        
+//        var resourcebookings: [Resourcebooking]
     }
     struct ViewModel
     {
+        var sections: [Section]
+        var error: String?
+        
         struct Section: Codable {
-            var header: String?
+            let header: String?
+            let rows: [Row]
+
             struct Row: Codable {
                 let schedules: Schedules?
                 let resourcebooking: Schedules? // Resourcebooking?
             }
-            let rows: [Row]
         }
 //
 //        struct Displ: Hashable {
@@ -56,9 +64,6 @@ enum TeamplannerTab
 //        }
 
 //        var sections: Set<Item>
-        var sections: [Section]
-        var error: String?
-
     }
   }
 }
