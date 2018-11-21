@@ -44,8 +44,8 @@ extension TeamplannerTabViewCell {
             }
             if let present = item.resourcebooking {
                 if let name = present.name { lblName.text = name }
-                if let start = present.start.convertDateString(dateFormat: "HH:mm") {
-                    if let end = present.end.convertDateString(dateFormat: "HH:mm") {
+                if let start = present.start?.convertDateString(dateFormat: "HH:mm") {
+                    if let end = present.end?.convertDateString(dateFormat: "HH:mm") {
                 lblStart.text = "• \(start) - \(end)"
                     }
                 }

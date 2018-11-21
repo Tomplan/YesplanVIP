@@ -27,46 +27,65 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
     
   func presentSomething(response: TeamplannerTab.Something.Response)
   {
-    for stringSchedule in response.stringSchedules {
-        if stringSchedule.value.count == 0 {
-        } else
-        {
-            var partrows: [TeamplannerTab.Something.ViewModel.Section.Row] = []
-            for i in 0 ..< stringSchedule.value.count {
-                var partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: nil)
-                let partrowItem = stringSchedule.value[i]
-                switch partrowItem {
-                case .shift(_):
-                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: partrowItem, resourcebooking: nil)
-                case .lock(_):
-                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: partrowItem, resourcebooking: nil)
-                case .scheduleBreak(_):
-                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: partrowItem, resourcebooking: nil)
-                case .schedule(_):
-                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: partrowItem)
-                }
-                partrows.append(partrow)
-            }
-            for i in 0 ..< stringSchedule.value.count {
-                var rows = [TeamplannerTab.Something.ViewModel.Section.Row]()
-                let header = stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//    print("response: ", response.sections)
+//    var vmSections: [TeamplannerTab.Something.ViewModel.Section] = []
+//    for section in response.sections {
+//        var rows: [TeamplannerTab.Something.ViewModel.Section.Row] = []
+//        for row in section.rows {
+////            print("row: ", row)
+//            let schedules = row.schedules
+//            let resourcebooking = row.resourcebooking
+//            let vmRow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedules, resourcebooking: resourcebooking)
+//            rows.append(vmRow)
+//        }
+//        let header = section.header
+//        let vmSection = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
+//        vmSections.append(vmSection)
+//     }
+//    let viewModel = TeamplannerTab.Something.ViewModel(sections: vmSections, error: nil)
+//    self.viewController?.displaySomething(viewModel: viewModel)
 
-                    for i in 0 ..< stringSchedule.value.count where stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")! == header {
-                        let row = partrows[i]
-                        rows.append(row)
-                    }
-                let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
-                if DateAndSchedulesArray.contains(where: { $0.header == header }) == false {
-                    DateAndSchedulesArray.append(item) }
-            }
-
-            let viewModel = TeamplannerTab.Something.ViewModel(
-                    sections: DateAndSchedulesArray
-                    ,error: nil
-                    )
-            self.viewController?.displaySomething(viewModel: viewModel)
-            }
-        }
+//    for stringSchedule in response.stringSchedules {
+//        if stringSchedule.value.count == 0 {
+//        } else
+//        {
+//            var partrows: [TeamplannerTab.Something.ViewModel.Section.Row] = []
+//            for i in 0 ..< stringSchedule.value.count {
+//                var partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: nil)
+//                let partrowItem = stringSchedule.value[i]
+//                switch partrowItem {
+//                case .shift(_):
+//                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: partrowItem, resourcebooking: nil)
+//                case .lock(_):
+//                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: partrowItem, resourcebooking: nil)
+//                case .scheduleBreak(_):
+//                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: partrowItem, resourcebooking: nil)
+//                case .schedule(_):
+//                    
+//                    partrow = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: partrowItem)
+//                }
+//                partrows.append(partrow)
+//            }
+//            for i in 0 ..< stringSchedule.value.count {
+//                var rows = [TeamplannerTab.Something.ViewModel.Section.Row]()
+//                let header = stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//
+//                    for i in 0 ..< stringSchedule.value.count where stringSchedule.value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")! == header {
+//                        let row = partrows[i]
+//                        rows.append(row)
+//                    }
+//                let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
+//                if DateAndSchedulesArray.contains(where: { $0.header == header }) == false {
+//                    DateAndSchedulesArray.append(item) }
+//            }
+//
+//            let viewModel = TeamplannerTab.Something.ViewModel(
+//                    sections: DateAndSchedulesArray
+//                    ,error: nil
+//                    )
+//            self.viewController?.displaySomething(viewModel: viewModel)
+//            }
+//        }
     }
 }
 ////    ************************************************** oldway

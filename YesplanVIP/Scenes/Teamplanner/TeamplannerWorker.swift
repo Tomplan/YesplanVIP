@@ -15,32 +15,6 @@ import PromisedFuture
 
 class TeamplannerTabWorker
 {
-//    func getResourcebookings(_ path: String) -> Future<Resourcebookings> {
-//        return Future(operation: { completion in
-//            APIClient.resourcebookings("\(path)")
-//                .map({$0})
-//                .execute(onSuccess: { items in
-//                    completion(.success(items))
-//                }, onFailure: { error in
-//                    completion(.failure(error))
-//                })
-//        })
-//    }
-    
-        
-
-//    func getResources(_ path: String) -> Future<Resources> {
-//        return Future(operation: { completion in
-//            APIClient.resources("\(path)")
-//                .map({$0})
-//                .execute(onSuccess: { items in
-//                    completion(.success(items))
-//                }, onFailure: { error in
-//                    completion(.failure(error))
-//                })
-//        })
-//    }
-    
     func getResourcesSchedulesFromTo(_ path: String) -> Future<ResourcesSchedulesFromTo> {
         return Future(operation: { completion in
             APIClient.resourcesSchedulesFromTo("\(path)")
@@ -50,6 +24,31 @@ class TeamplannerTabWorker
                     completion(.failure(error))
                 })
         })
+    }
+    
+    func getSchedules(_ resourcesSchedulesFromTo: ResourcesSchedulesFromTo) -> Future<[String]?> {
+        var absents: [Schedules] = []
+        var presents: [String] = []
+
+        for resourceSchedulesFromTo in resourcesSchedulesFromTo.data {
+//            print("*: ", resourceSchedulesFromTo)
+            if let schedules = resourceSchedulesFromTo.schedules {
+//                print("*: ", schedules)
+                for schedule in schedules {
+                    switch schedule {
+                    case .shift(_):
+                        absents.append(schedule)
+                    case .scheduleBreak(_):
+                        absents.append(schedule)
+                    case .lock(_):
+                        absents.append(schedule)
+                    case .schedule(let x):
+                        presents.append(x.resourcebooking.id!)
+                    }
+                }
+            }
+        }
+        return Future(value: presents)
     }
     
     func getResourcebookingId(_ id: String) -> Future<Resourcebooking> {
@@ -74,10 +73,91 @@ class TeamplannerTabWorker
                 schedulesDict[resourceSchedulesFromTo.resource?.name] = schedulesArray
             }
         }
-        
+//        print(schedulesDict)
         return Future(value: schedulesDict)
     }
-        
+    
+//    func makeStructs(schedulesDict: [String? : [Schedules]]) -> Future<[TeamplannerTab.Something.Response.Section]> {
+//        var structs = [TeamplannerTab.Something.Response.Section]()
+//        for (_, value) in schedulesDict {
+//            if value.count == 0 {
+//            } else
+//            {
+//                var partrows: [TeamplannerTab.Something.Response.Section.Row] = []
+//                for i in 0 ..< value.count {
+//                    var partrow = TeamplannerTab.Something.Response.Section.Row(schedules: nil, resourcebooking: nil)
+//                    let partrowItem = value[i]
+//                    switch partrowItem {
+//                    case .shift(_):
+//                        partrow = TeamplannerTab.Something.Response.Section.Row(schedules: partrowItem, resourcebooking: nil)
+//                    case .lock(_):
+//                        partrow = TeamplannerTab.Something.Response.Section.Row(schedules: partrowItem, resourcebooking: nil)
+//                    case .scheduleBreak(_):
+//                        partrow = TeamplannerTab.Something.Response.Section.Row(schedules: partrowItem, resourcebooking: nil)
+//                    case .schedule(let x):
+//                        if let id = x.resourcebooking.id {
+//                        getResourcebookingId(id)
+//                            .execute(completion: { result in
+//                                switch result {
+//                                case .success(let y):
+//                                    partrow = TeamplannerTab.Something.Response.Section.Row(schedules: nil, resourcebooking: y)
+//                                    print("partrow: ", partrow)
+//                                    partrows.append(partrow)
+//                                case .failure(let y):
+//                                    print("error: ", y)
+//                                }
+//                            })
+////                              partrow = TeamplannerTab.Something.Response.Section.Row(schedules: nil, resourcebooking: item)
+////                            })
+////                        partrow = TeamplannerTab.Something.Response.Section.Row(schedules: nil, resourcebooking: partrowItem)
+//                        }
+//                    }
+//                    partrows.append(partrow)
+//                }
+//                for i in 0 ..< value.count {
+//                    var rows = [TeamplannerTab.Something.Response.Section.Row]()
+//                    let header = value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
+//                    
+//                    for i in 0 ..< value.count where value[i].start.convertDateString(dateFormat: "yyyy-MM-dd")! == header {
+//                        let row = partrows[i]
+//                        rows.append(row)
+//                    }
+//                    let item = TeamplannerTab.Something.Response.Section(header: header, rows: rows)
+//                    if structs.contains(where: { $0.header == header }) == false {
+//                        structs.append(item) }
+//                }
+//                
+////                let response = TeamplannerTab.Something.Response(
+////                    sections: structs
+////                    ,error: nil
+////                )
+////                let response = TeamplannerTab.Something.Response(
+////                    sections: structs
+////                    ,error: nil
+////                )
+////                self.presenter?.presentSomething(response: response)
+//                
+//            }
+//        }
+//        return Future(value: structs)
+//    }
+//    
+//    func makeSchedulesStructs(resourcesSchedulesFromTo: ResourcesSchedulesFromTo) -> Future<[TeamplannerTab.Something.Response.Section]> {
+//        var sections = [TeamplannerTab.Something.Response.Section]()
+//        for resourceSchedulesFromTo in resourcesSchedulesFromTo.data {
+//            var schedulesArray = [Schedules]()
+//            if let schedules = resourceSchedulesFromTo.schedules {
+//                for schedule in schedules {
+////                    schedulesArray.append(schedule)
+//                    
+//                }
+//                
+////                schedulesDict[resourceSchedulesFromTo.resource?.name] = schedulesArray
+//            }
+//        }
+//        
+//        return Future(value: schedulesDict)
+//    }
         
         
         

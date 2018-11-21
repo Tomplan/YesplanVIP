@@ -47,19 +47,20 @@ enum Resourcebooking {
         return nil
         }
 
-//    var eventName: String? {
-//        switch self {
-//        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
-//        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
-//        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
-//        case .instantiableResourceUseGroup(let x):
-//            if let eventName = x.event?.name { return eventName } else { return nil }
-//        case .resourceSetUse(let x):
+    var name: String? {
+        switch self {
+        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
+        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+        case .instantiableResourceUseGroup(let x):
+            if let eventName = x.event?.name { return eventName } else { return nil }
+        case .resourceSetUse(let x):
+            print(x)
 //            for child in x.children {
 //                if let eventName = child.eventName { return eventName } else { return nil } }
-//        }
-//        return nil
-//    }
+        }
+        return nil
+    }
 
 //    var type: String? {
 //        switch self {
