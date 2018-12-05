@@ -16,6 +16,7 @@ PODS:
 DEPENDENCIES:
   - PromisedFuture
   - PromiseKit
+  - PromiseKit/Foundation (~> 6.0)
   - SearchTextField
   - Sourcery
   - Squeaky (from `https://github.com/ajself/squeaky-clean.git`)
@@ -36,6 +37,6 @@ SPEC CHECKSUMS:
   Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
   Squeaky: daae1f5bf919b1940bbfb2591c6a1cce42d0b505
 
-PODFILE CHECKSUM: 31eecae8de0a8ca4edf69e3973c46bd116847485
+PODFILE CHECKSUM: 4e0ec2c9e53d257d46fda754616c96bccda1adcc
 
 COCOAPODS: 1.4.0

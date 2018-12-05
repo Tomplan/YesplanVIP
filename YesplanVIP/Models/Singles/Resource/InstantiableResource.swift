@@ -21,7 +21,7 @@ struct InstantiableResource: Codable {
     var rented: Bool?
     var costmodels: [Costmodel]?
     var defaultrole: String?
-    var amount: Int?
+    var amount: Amount? // important for resourcebooking!!!
     var type: String
     var owner: User?
     var owningteam: Usergroup?

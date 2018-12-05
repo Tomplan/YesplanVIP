@@ -19,12 +19,11 @@ struct ResourceSet: Codable {
     var external: Bool?
     var rented: Bool?
     var costmodels: [Costmodel]?
-    //    var type: String
     var owner: User?
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
     var _type: ResourceSetType
-    var amount: Int?
+    var amount: Amount
     var resources: [Base]?
 }
 

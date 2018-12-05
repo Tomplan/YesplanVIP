@@ -9,6 +9,9 @@
 import Foundation
 
 struct DayPartSetPricingFormula: Codable {
+    let customcalculationquantity: Double?
+    let customcalculationminimum: Double?
+    let customcalculationunit: String?
     let per: String
-    let dayparts: DayPartPricingFormula
+    let dayparts: [DayPartPricingFormula]
 }

@@ -20,10 +20,10 @@ struct AdHocResource: Codable {
     var rented: Bool?
     var costmodels: [Costmodel]?
     var defaultrole: String?
-    var amount: Int?
+    var amount: Amount? // important for resourcebooking!!!
     var type: String
     var _type: AdHocResourceType
-//    var active: Bool
+    var active: Bool? ////////// !!!!!!!!!!
     var date: String?
     var productcode: String?
     var serialnumber: String?

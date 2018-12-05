@@ -9,6 +9,6 @@
 import Foundation
 
 struct FixedPricingFormula: Codable {
-    let amount: Int
+    let amount: Double
     let includesvat: Bool
 }

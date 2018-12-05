@@ -12,6 +12,7 @@
 
 import UIKit
 import PromisedFuture
+import PromiseKit
 
 protocol TeamplannerTabBusinessLogic
 {
@@ -27,7 +28,10 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 {
   var presenter: TeamplannerTabPresentationLogic?
   var worker: TeamplannerTabWorker?
-    
+//    var resourcebookingArray: [Resourcebooking]? = []
+//    var finalArray: [Resourcebooking]? = []
+    var dict: [[String? : [Schedules]]] = []
+
   //var name: String = ""
   
   // MARK: Do something
@@ -43,25 +47,111 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 //    print("resourcebookingsArray: ", resourcebookingsArray)
     worker = TeamplannerTabWorker()
     
-    worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
-//            worker?.getResourcesSchedulesFromTo("resource:team:1203")
+//    worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
+//        .map { $0.data }
+//        .flatMapValues { item  in return item.schedules.compactMap { $0.id }
+        worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
+            .map { $0.data
+            } .get { fromTos in
+                self.dict = fromTos.compactMap { [$0.resource.name : $0.schedules]}
+            }.flatMapValues { item  in return item.schedules.compactMap { $0.id }
+//            }.tap { result in print("2", result)
+            }.thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)!
+            }.done { result in
+//                print(result)
+                let response = TeamplannerTab.Something.Response(
+                    resourcebookings: result,
+                    schedules: self.dict,
+                    error: nil
+                )
+                ////                            resourcebookings: nil, stringSchedules: items,
+                ////                            error: nil)
+                self.presenter?.presentSomething(response: response)
+                
+            }.catch { error in
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+    }
+                //                print("dict:", self.dict)
+                //                print("array:", self.array)
+        //            worker?.getResourcesSchedulesFromTo("resource:team:1203")
 
 //    .andThen(worker?.getNextResourcesSchedulesFromTo(url: ))
-//                .andThen(worker?.getNextResourcesSchedulesFromTo(url: <#T##URL#>))
-        .andThen((worker?.makeSchedulesArray)!)
-//                .andThen(worker?.getNextResourcesSchedulesFromTo)
-        .execute(onSuccess:  { item in
-            let response = TeamplannerTab.Something.Response(
-                stringSchedules: item,
-                error: nil)
-            self.presenter?.presentSomething(response: response)
-//            print(item)
-        }, onFailure: { error in
-            print(error)
-        })
+//                .andThen(worker?.getNextResourcesSchedulesFromTo(url: ))
+//        .andThen((worker?.makeSchedulesArray)!)
+//        .andThen({ res -> Future<[ResourceSchedulesFromTo]> in
+////            print(res)
+//            return Future(value: res.data)
+//        })
+//        .map ({ scheduleslist -> [String] in
+//            print(scheduleslist.flatMap { item  in return item.schedules.compactMap { $0.id }})
+//            return (scheduleslist.flatMap { item  in return item.schedules.compactMap { $0.id }})
+//        })
+//        .andThen({ schedules -> Future<[[String]]> in
+////            print(schedules)
+//            return Future(value: schedules.compactMap { $0.compactMap { $0.id} })
+//        })
+////                .andThen(worker?.getNextResourcesSchedulesFromTo)
+//        .execute(onSuccess:  { items in
+////            print(items)
+////            for item in items {
+////                for value in item.value {
+////                    switch value {
+////                    case .schedule(let x):
+////                        if let id = x.resourcebooking.id {
+////                            x.getResourcebookingId(id)
+////                                .andThen({ (resourcebooking) -> Future<[Resourcebooking]?> in
+////                                    self.resourcebookingArray?.append(resourcebooking)
+////                                    return Future(value: self.resourcebookingArray)
+////                                })
+////                                .execute(onSuccess: { (array) in
+////                                    let response = TeamplannerTab.Something.Response(
+////                                        resourcebookings: array, stringSchedules: items,
+////                                        error: nil)
+////                                    self.presenter?.presentSomething(response: response)
+////                                })
+////                        }
+////                    default:
+////                        let response = TeamplannerTab.Something.Response(
+////                            resourcebookings: nil, stringSchedules: items,
+////                            error: nil)
+////                        self.presenter?.presentSomething(response: response)
+////                    }
+////                }
+////            }
+////            self.presenter?.presentSomething(response: response)
+//
+//        }, onFailure: { error in
+//            print(error)
+//        })
+
     
-    }
-}
+//    worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
+//        .map({$0.data.forEach({ (res) in
+//            res.schedules?.forEach({ (schedules) in
+//                if let id = schedules.id {
+//                    self.worker?.getResourcebookingId(id)
+//                        .andThen({ (res) -> Future<[Resourcebooking]> in
+//                            self.resourcebookingArray.append(res)
+//                            return Future(value: self.resourcebookingArray)
+//                        })
+//                        .execute(onSuccess: { (array) in
+////                            print(array)
+//                            let response = TeamplannerTab.Something.ResourcebookingsResponse(Resourcebookings: array)
+//                            self.presenter?.presentResourcebookings(response: response)
+//                            self.presenter?.presentSomething(response: <#T##TeamplannerTab.Something.Response#>)
+//                        })
+//
+//
+//                }
+//            })
+//        })})
+//        .execute(onSuccess: { (item) in
+//            print(item)
+//        })
+    
+
 //// ***************************
 //            .execute(onSuccess: { resourcesSchedulesFromTo in
 ////                print("pagination: ", resourcesSchedulesFromTo.pagination)
@@ -130,4 +220,5 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
 //                })
 //    }
 //
-//}
+    }
+}

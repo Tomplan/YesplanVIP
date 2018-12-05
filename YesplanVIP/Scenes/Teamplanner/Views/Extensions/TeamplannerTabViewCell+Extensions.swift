@@ -26,7 +26,7 @@ extension TeamplannerTabViewCell {
 //        let name = item.scheduletype
 //            lblName.text = name
             if let absent = item.schedules {
-                if let name = absent.name { lblName.text = name } else { lblName.text = absent.scheduletype}
+                 lblName.text = absent.scheduletype
                 if let start = absent.start.convertDateString(dateFormat: "HH:mm") {
                     if let end = absent.end.convertDateString(dateFormat: "HH:mm") {
                 lblStart.text = "• \(start) - \(end)"
@@ -42,38 +42,80 @@ extension TeamplannerTabViewCell {
                     lblName.textColor = UIColor(r: 238, g: 0, b: 0)
                 }
             }
+
             if let present = item.resourcebooking {
-                if let name = present.name { lblName.text = name }
-                if let start = present.start.convertDateString(dateFormat: "HH:mm") {
-                    if let end = present.end.convertDateString(dateFormat: "HH:mm") {
-                lblStart.text = "• \(start) - \(end)"
+
+                lblName.text = present.name
+//                print("present: ", present)
+                if let start = present.start?.convertDateString(dateFormat: "HH:mm") {
+                    if let end = present.end?.convertDateString(dateFormat: "HH:mm") {
+                        self.lblStart.text = "• \(start) - \(end)"
                     }
                 }
-
             }
-//            lblStart.text = "• \(start) - \(end)"
-//            //        let role = resourcebooking.role
+////                present.eventName
+////                    .execute { result in
+////                        switch result {
+////                        case .success(let x):
+////                            self.lblName.text = x
+////                            if let start = present.start.convertDateString(dateFormat: "HH:mm") {
+////                                if let end = present.end.convertDateString(dateFormat: "HH:mm") {
+////                                    self.lblStart.text = "• \(start) - \(end)"
+////                                }
+////                            }
+////
+////                        case .failure(let x):
+////                            print(x)
+////
+////                        }
+////                }
+////                if let start = present.start.convertDateString(dateFormat: "HH:mm") {
+////                    if let end = present.end.convertDateString(dateFormat: "HH:mm") {
+////                        lblStart.text = "• \(start) - \(end)"
+////                    }
+////                }
+////
+//            }
 //
-//        } else {
-//            if item.scheduletype == "shift" {
-//                lblName.textColor = UIColor(r: 158, g: 103, b: 0)
-//            }
-//            if item.scheduletype == "break" {
-//                lblName.textColor = UIColor(r: 158, g: 103, b: 0)
-//            }
-//            if item.scheduletype == "unavailability" {
-//                lblName.textColor = UIColor(r: 238, g: 0, b: 0)
-//            }
-//            lblName.text = item.scheduletype
-//            lblStart.text = "• \(start) - \(end)"
+//
+//    }
+//
+//    func populate2(with item: Resourcebooking) {
+//
+//                    if let name = item.name {
+//                        self.lblName.text = name
 //        }
-//        if let defaultschedulestarttime = event.defaultschedulestarttime {
-//            lblDefaultschedulestarttime.text = defaultschedulestarttime}
-//        if let locations = event.locations {
-//            if locations.count != 0 {
-//                if let location = locations[0].name {
-//                    lblLocation.text = location } } }
-//        if let groupName = event.group!.name {
-//            lblGroupName.text = groupName }
-    }
+//                if let start = item.start?.convertDateString(dateFormat: "HH:mm") {
+//                    if let end = item.end?.convertDateString(dateFormat: "HH:mm") {
+//                lblStart.text = "• \(start) - \(end)"
+//                    }
+//                }
+//    }
+//
+////            lblStart.text = "• \(start) - \(end)"
+////            //        let role = resourcebooking.role
+////
+////        } else {
+////            if item.scheduletype == "shift" {
+////                lblName.textColor = UIColor(r: 158, g: 103, b: 0)
+////            }
+////            if item.scheduletype == "break" {
+////                lblName.textColor = UIColor(r: 158, g: 103, b: 0)
+////            }
+////            if item.scheduletype == "unavailability" {
+////                lblName.textColor = UIColor(r: 238, g: 0, b: 0)
+////            }
+////            lblName.text = item.scheduletype
+////            lblStart.text = "• \(start) - \(end)"
+////        }
+////        if let defaultschedulestarttime = event.defaultschedulestarttime {
+////            lblDefaultschedulestarttime.text = defaultschedulestarttime}
+////        if let locations = event.locations {
+////            if locations.count != 0 {
+////                if let location = locations[0].name {
+////                    lblLocation.text = location } } }
+////        if let groupName = event.group!.name {
+////            lblGroupName.text = groupName }
+//
+}
 }

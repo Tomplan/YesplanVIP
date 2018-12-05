@@ -31,17 +31,22 @@ enum TeamplannerTab
 //        var header: String?
 //        var rows: [Row]
 
-//        var resourcebookings: [Resourcebooking]
-        var stringSchedules: [String?: [Schedules]]
+        var resourcebookings: [Resourcebooking]?
+        var schedules: [[String? : [Schedules]]]
         var error: String?
     }
+    
+    struct ResourcebookingsResponse {
+        var Resourcebookings: [Resourcebooking]
+    }
+    
     struct ViewModel
     {
         struct Section: Codable {
             var header: String?
             struct Row: Codable {
                 let schedules: Schedules?
-                let resourcebooking: Schedules? // Resourcebooking?
+                let resourcebooking: Resourcebooking?
             }
             let rows: [Row]
         }

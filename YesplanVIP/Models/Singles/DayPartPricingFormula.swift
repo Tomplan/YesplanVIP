@@ -9,7 +9,7 @@
 import Foundation
 
 struct DayPartPricingFormula: Codable {
-    let amount: Int
+    let amount: Double
     let per: String
     let includesvat: Bool
     let from: String

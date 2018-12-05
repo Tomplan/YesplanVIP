@@ -11,5 +11,5 @@ import Foundation
 struct DiscountFormula: Codable {
     let type: String
     let notation: String
-    let rates: [Int]?
+    let rates: [[Double]]
 }

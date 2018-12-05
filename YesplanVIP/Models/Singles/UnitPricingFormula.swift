@@ -9,7 +9,10 @@
 import Foundation
 
 struct UnitPricingFormula: Codable {
-    let amount: Int
+    let customcalculationquantity: Double?
+    let customcalculationminimum: Double?
+    let customcalculationunit: String?
+    let amount: Double
     let per: String
     let includesvat: Bool
 }

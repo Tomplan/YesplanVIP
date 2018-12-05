@@ -20,7 +20,7 @@ struct Location: Codable {
     let rented: Bool? // added by Tom
     let costmodels: [Costmodel]?
     let defaultrole: String?
-    let amount: Int?
+    let amount: Amount?
     let type: String
     let owningteam: Usergroup?
     let owninggroup: Usergroup?

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Arrow
-import then
+//import Arrow
+//import then
 
 //protocol AutoDecodable: Decodable {}
 //protocol AutoEncodable: Encodable {}

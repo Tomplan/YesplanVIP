@@ -38,7 +38,13 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamplannerTabViewCell", for: indexPath) as? TeamplannerTabViewCell {
             if sections.count != 0 {
                 let item = sections[indexPath.section].rows[indexPath.item]
-                cell.populate(with: item)
+//                if let id = item.resourcebooking?.id {
+//                    item.resourcebooking?.schedule?
+//                        .andThen( { it in cell.populate2(with: it)})
+//                    
+//                }
+                
+                    cell.populate(with: item)
             }
             return cell
         }

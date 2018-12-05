@@ -36,20 +36,20 @@ enum Schedules {
             return x.scheduletype.rawValue
         }
     }
-    
-//    var date: String {
-//        switch self {
-//        case .shift(let x):
-//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-//        case .scheduleBreak(let x):
-//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-//        case .schedule(let x):
-//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-//        case .lock(let x):
-//            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
-//        }
-//    }
-    
+//    
+////    var date: String {
+////        switch self {
+////        case .shift(let x):
+////            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+////        case .scheduleBreak(let x):
+////            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+////        case .schedule(let x):
+////            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+////        case .lock(let x):
+////            return x.start.convertDateString(dateFormat: "yyyy-MM-dd")!
+////        }
+////    }
+//    
     var start: String {
         switch self {
         case .shift(let x):
@@ -62,7 +62,7 @@ enum Schedules {
             return x.start //.convertDateString(dateFormat: "HH:mm")!
         }
     }
-    
+
     var end: String {
         switch self {
         case .shift(let x):
@@ -75,19 +75,23 @@ enum Schedules {
             return x.end // .convertDateString(dateFormat: "HH:mm")!
         }
     }
-    
-    var name: String? {
-        switch self {
-        case .shift(_):
-            return nil
-        case .scheduleBreak(_):
-            return nil
-        case .schedule(let x):
-            return x.resourcebooking.name
-        case .lock(_):
-            return nil
-        }
-    }
+//
+//    var schedule: Future<Resourcebooking>? {
+//        switch self {
+//        case .shift(_):
+//            return nil
+//        case .scheduleBreak(_):
+//            return nil
+//        case .schedule(let x):
+//            if let id = x.resourcebooking.id {
+//             return x.resourcebooking.getResourcebookingId(id)
+//            }
+//        case .lock(_):
+//            return nil
+//        }
+//        return nil
+//    }
+//    
 //    var eventName: Future<String?> {
 //        
 //        switch self {

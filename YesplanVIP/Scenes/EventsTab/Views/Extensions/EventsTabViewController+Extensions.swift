@@ -8,8 +8,12 @@
 
 import UIKit
 
-extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-   
+extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        print("prefetch: \(indexPaths)")
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return displayedEvents.count
     }

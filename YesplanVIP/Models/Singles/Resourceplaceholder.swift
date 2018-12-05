@@ -14,12 +14,12 @@ struct Resourceplaceholder: Codable {
     let resourcetype: String // optional added by TOM
     let name: String // optional added by TOM
     let group: String?
-//    let roles: [String] // optional added by TOM
-//    let description: String?
-//    let external: Bool // optional added by TOM
-//    let rented: Bool // optional added by TOM
-//    let costmodels: [Costmodel] // optional added by TOM
-//    let defaultrole: String? // optional added by TOM
+    let roles: [String] // optional added by TOM
+    let description: String?
+    let external: Bool // optional added by TOM
+    let rented: Bool // optional added by TOM
+    let costmodels: [Costmodel] // optional added by TOM
+    let defaultrole: String? // optional added by TOM
     let amount: String?
     let type: String
     let _type: ResourceplaceholderType

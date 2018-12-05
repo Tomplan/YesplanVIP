@@ -11,7 +11,7 @@
 import Foundation
 import Alamofire
 
-enum APIRouter: URLRequestConvertible {
+enum APIRouter: URLRequestConvertible {    
 
     case events(path: String)
     case groups(path: String)

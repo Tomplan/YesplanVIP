@@ -15,8 +15,11 @@ class EventsTabView: UIView {
 
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
-    let spinner = UIActivityIndicatorView(style: .gray)
-
+//    let spinner = UIActivityIndicatorView(style: .gray)
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageTitle: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     lazy var collectionView : UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -32,7 +35,6 @@ class EventsTabView: UIView {
 //        flowLayout.sectionHeadersPinToVisibleBounds = true
 
         collectionView.backgroundColor = UIColor.black // UIColor(r: 176, g: 176, b: 176)
-
 //        let cellHeight: CGFloat = 75
 //        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
 //        flowLayout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
@@ -54,7 +56,7 @@ class EventsTabView: UIView {
         sv(collectionView)
         collectionView.fillContainer()
         collectionView.addSubview(refreshControl)
-        collectionView.addSubview(spinner)
+//        collectionView.addSubview(spinner)
         collectionView.register(EventsTabViewCell.self, forCellWithReuseIdentifier: "EventsTabViewCell")
         collectionView.register(EventsTabViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "EventsTabViewHeader")
     }

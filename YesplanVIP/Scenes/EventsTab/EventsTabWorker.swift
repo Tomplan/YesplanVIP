@@ -12,41 +12,80 @@
 
 import UIKit
 import PromisedFuture
+import PromiseKit
 
 class EventsTabWorker {
     
-    func getEvents(_ path: String) -> Future<Events> {
-        return Future(operation: { completion in
+//    func getEvents(_ path: String) -> Future<Events> {
+//        return Future(operation: { completion in
+//            APIClient.events("\(path)")
+//                .map({$0})
+//                .execute(onSuccess: { items in
+//                    completion(.success(items))
+//                }, onFailure: { error in
+//                    completion(.failure(error))
+//                })
+//        })
+//    }
+    
+    func getEvents(_ path: String) -> Promise<Events> {
+        return firstly {
             APIClient.events("\(path)")
-                .map({$0})
-                .execute(onSuccess: { items in
-                    completion(.success(items))
-                }, onFailure: { error in
-                    completion(.failure(error))
-                })
-        })
+        }
+            .map({$0})
+            
     }
     
-    func groupEventsByStartdate(events: Events) -> Future<[String:[Event]]> {
+    func groupEventsByStartdate(events: Events) -> Promise<[String:[Event]]> {
         
         let dictEvents = Dictionary(grouping: events.data, by: { $0.startdate! })
-        return Future(value: dictEvents)
+        
+        return Promise { seal in
+            seal.resolve(.fulfilled(dictEvents))
+        }
     }
+    
+    
+//    func groupEventsByStartdate(events: Events) -> Future<[String:[Event]]> {
+//
+//        let dictEvents = Dictionary(grouping: events.data, by: { $0.startdate! })
+//        return Future(value: dictEvents)
+//    }
 
-    func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> Future<[String:[Event]]> {
-
+//    func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> Future<[String:[Event]]> {
+//
+//        var events: [String:[Event]] = [String:[Event]]()
+//        for (key, value) in dictEvents {
+//            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
+//            events[key] = valueSorted
+//        }
+//        return Future(value: events)
+//    }
+    
+    func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> Promise<[String:[Event]]> {
+        
         var events: [String:[Event]] = [String:[Event]]()
         for (key, value) in dictEvents {
             let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
             events[key] = valueSorted
         }
-        return Future(value: events)
+        return Promise { seal in
+            seal.resolve(.fulfilled(events))
+        }
     }
 
-    func sortDictByDate(dictEvents: [String:[Event]]) -> Future<[(key: String, value: [Event])]> {
+//    func sortDictByDate(dictEvents: [String:[Event]]) -> Future<[(key: String, value: [Event])]> {
+//
+//        let sortedDictByDate = dictEvents.sorted(by:  { $0.0 < $1.0 })
+//        return Future(value: sortedDictByDate)
+//    }
+    
+    func sortDictByDate(dictEvents: [String:[Event]]) -> Promise<[(key: String, value: [Event])]> {
 
         let sortedDictByDate = dictEvents.sorted(by:  { $0.0 < $1.0 })
-        return Future(value: sortedDictByDate)
+        return Promise { seal in
+            seal.resolve(.fulfilled(sortedDictByDate))
+        }
     }
 
     func getProfiles() -> Future<Profiles> {

@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol EventsTabDisplayLogic: class
 {
@@ -77,6 +78,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
@@ -92,10 +94,9 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
         
-        doSomething()
-        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        v.collectionView.dataSource = self
-        v.collectionView.delegate = self
+//        doSomething()
+//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+
   }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,6 +104,10 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            v.collectionView.prefetchDataSource = self
+        }
+        v.collectionView.prefetchDataSource = self
         v.collectionView.dataSource = self
     }
     
@@ -129,6 +134,8 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     // MARK: Do something
 
+
+    
   func doSomething() {
     let request = EventsTab.Something.Request()
     interactor?.doSomething(request: request)
@@ -151,4 +158,5 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     self.v.refreshControl.endRefreshing()
   }
 }
+
 

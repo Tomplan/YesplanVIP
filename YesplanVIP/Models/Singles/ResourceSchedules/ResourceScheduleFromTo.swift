@@ -9,8 +9,8 @@
 import Foundation
 
 struct ResourceSchedulesFromTo: Codable {
-    let resource: Base?
-    let schedules: [Schedules]?
+    let resource: Base
+    let schedules: [Schedules]
     let instancenumber: Int?
     let resourceinstance: Resourceinstance?
     let counters: [Counters]?

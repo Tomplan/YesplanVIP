@@ -8,8 +8,25 @@
 
 import Alamofire
 import PromisedFuture
+import PromiseKit
 
 class APIClient {
+    
+    private static func apiGet<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Promise<T> {
+        guard let url =  route.urlRequest else {
+            print("urlerror: ")
+            
+            return Promise(error: APIError.responseUnsuccessful)
+        }
+        print(url)
+        return firstly {
+            URLSession.shared.dataTask(.promise, with: url)
+            }.validate()
+            .map {
+                try JSONDecoder().decode(T.self, from: $0.data)
+            }
+    }
+    
     @discardableResult
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Future<T> {
         return Future(operation: { completion in
@@ -24,9 +41,34 @@ class APIClient {
         })
     }
     
-    static func events(_ path: String) -> Future<Events> {
-        return performRequest(route: APIRouter.events(path: path))
+//    func makeUrlRequest(url: URL) throws -> URLRequest {
+//        var rq = URLRequest(url: url)
+//        rq.httpMethod = "POST"
+//        rq.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        rq.addValue("application/json", forHTTPHeaderField: "Accept")
+//        rq.httpBody = try JSONEncoder().encode(Events)
+//        return rq
+//    }
+    
+//    @discardableResult
+//    private static func promiseRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Promise<T> {
+//        return firstly {
+//            URLSession.shared.dataTask(with: route)
+//            
+//        }
+//    }
+    
+//    static func promiseEvents(_ path: String) -> Promise<Events> {
+//        return promiseRequest(route: APIRouter.events(path: path))
+//    }
+    
+    static func events(_ path: String) -> Promise<Events> {
+        return apiGet(route: APIRouter.events(path: path))
     }
+    
+//    static func events(_ path: String) -> Future<Events> {
+//        return performRequest(route: APIRouter.events(path: path))
+//    }
     
     static func groups(_ path: String) -> Future<Groups> {
         return performRequest(route: APIRouter.groups(path: path))
@@ -40,9 +82,14 @@ class APIClient {
         return performRequest(route: APIRouter.profiles(path: path))
     }
     
-    static func resourcebookingId(_ id: String) -> Future<Resourcebooking> {
-        return performRequest(route: APIRouter.resourcebookingId(id: id))
+//    static func resourcebookingId(_ id: String) -> Future<Resourcebooking> {
+//        return performRequest(route: APIRouter.resourcebookingId(id: id))
+//    }
+    
+    static func resourcebookingId(_ id: String) -> Promise<Resourcebooking> {
+        return apiGet(route: APIRouter.resourcebookingId(id: id))
     }
+    
     static func resourcebookings(_ path: String) -> Future<Resourcebookings> {
         return performRequest(route: APIRouter.resourcebookings(path: path))
     }
@@ -51,8 +98,12 @@ class APIClient {
         return performRequest(route: APIRouter.resources(path: path))
     }
     
-    static func resourcesSchedulesFromTo(_ path: String) -> Future<ResourcesSchedulesFromTo> {
-        return performRequest(route: APIRouter.resourcesSchedulesFromTo(path: path))
+//    static func resourcesSchedulesFromTo(_ path: String) -> Future<ResourcesSchedulesFromTo> {
+//        return performRequest(route: APIRouter.resourcesSchedulesFromTo(path: path))
+//    }
+//
+    static func resourcesSchedulesFromTo(_ path: String) -> Promise<ResourcesSchedulesFromTo> {
+        return apiGet(route: APIRouter.resourcesSchedulesFromTo(path: path))
     }
     
     static func statuses(_ path: String) -> Future<Statuses> {

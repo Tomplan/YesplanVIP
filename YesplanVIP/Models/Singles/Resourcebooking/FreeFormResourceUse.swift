@@ -16,7 +16,7 @@ struct FreeFormResourceUse: Codable {
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
     var _type: FreeFormResourceUseType
-    var number: Int
+    var number: Double
     var resource: ResourceUseResource? // Resource Location_Id or Resource_Id or Placeholder_Id
     var start: String // added by tom!!! // timestamp
     var end: String // added by tom!!! // timestamp
