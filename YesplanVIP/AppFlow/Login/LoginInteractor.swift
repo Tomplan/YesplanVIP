@@ -65,8 +65,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
                 urlComponents.path = ""
                 urlComponents.query = nil
 
-                if let x = try? urlComponents.url!.asURL() {
-                    let y = (String(describing: x))
+                if (try? urlComponents.url!.asURL()) != nil {
 
                     UserDefaults.standard.set(companyUrl, forKey: "URL")
                     UserDefaults.standard.set(apiKey, forKey: "KEY")

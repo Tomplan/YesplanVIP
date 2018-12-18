@@ -58,6 +58,8 @@ class EDTeamView: UIView {
         collectionView.addSubview(spinner)
         collectionView.register(EDTeamViewCell.self, forCellWithReuseIdentifier: "EDTeamViewCell")
         collectionView.register(EDTeamViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "EDTeamViewHeader")
+        collectionView.register(MultiCell.self, forCellWithReuseIdentifier: "MultiCell")
+
     }
     
 }

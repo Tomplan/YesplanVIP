@@ -26,6 +26,11 @@ enum APIRouter: URLRequestConvertible {
     case event(id: String)
     case eventSchedule(id: String)
     case eventResourcebookings(id: String)
+    
+    case locationId(id: String)
+    
+    case resourceId(id: String)
+
 
     case nextResourcesSchedulesFromTo(url: URL)
 ////    case login(email:String, password:String)
@@ -35,22 +40,26 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-            case .events
-                ,.groups
-                ,.profiles
-                ,.resourcebookingId
-                ,.resourcebookings
-                ,.resources
-                ,.resourcesSchedulesFromTo
-                ,.statuses
-                ,.tasks
-                
-                ,.event
-                ,.eventSchedule
-                ,.eventResourcebookings
-                
-                ,.nextResourcesSchedulesFromTo
-                :return .get
+        case .events
+        ,.groups
+        ,.profiles
+        ,.resourcebookingId
+        ,.resourcebookings
+        ,.resources
+        ,.resourcesSchedulesFromTo
+        ,.statuses
+        ,.tasks
+        
+        ,.event
+        ,.eventSchedule
+        ,.eventResourcebookings
+        
+        ,.locationId
+        
+        ,.resourceId
+        
+        ,.nextResourcesSchedulesFromTo
+            :return .get
         }
     }
 
@@ -71,9 +80,12 @@ enum APIRouter: URLRequestConvertible {
         case .event(let id): return "/api/event/\(id)"
         case .eventSchedule(let id): return "/api/event/\(id)/schedule"
         case .eventResourcebookings(let id): return "/api/event/\(id)/resourcebookings"
+            
+        case .locationId(let id): return "/api/location/\(id)"
+            
+        case .resourceId(let id): return "/api/resource/\(id)"
      
         case .nextResourcesSchedulesFromTo(let url):
-//            print("urlPath: ", url.path)
             return url.path
             
         }
@@ -83,21 +95,26 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-            case .events
-                ,.groups
-                ,.profiles
-                ,.resourcebookings
-                ,.resourcebookingId
-                ,.resources
-                ,.resourcesSchedulesFromTo
-                ,.statuses
-                ,.tasks
-                
-                ,.event
-                ,.eventSchedule
-                ,.eventResourcebookings
-                ,.nextResourcesSchedulesFromTo
-                :return nil
+        case .events
+        ,.groups
+        ,.profiles
+        ,.resourcebookings
+        ,.resourcebookingId
+        ,.resources
+        ,.resourcesSchedulesFromTo
+        ,.statuses
+        ,.tasks
+        
+        ,.event
+        ,.eventSchedule
+        ,.eventResourcebookings
+        
+        ,.locationId
+        
+        ,.resourceId
+
+        ,.nextResourcesSchedulesFromTo
+        :return nil
             
         
 //        case .login(let email, let password):
@@ -112,19 +129,24 @@ enum APIRouter: URLRequestConvertible {
     private var query: [String: String] {
         switch self {
         case .events
-            ,.groups
-            ,.profiles
-            ,.resourcebookingId
-            ,.resourcebookings
-            ,.resources
-            ,.statuses
-            ,.tasks
+        ,.groups
+        ,.profiles
+        ,.resourcebookingId
+        ,.resourcebookings
+        ,.resources
+        ,.statuses
+        ,.tasks
         
-            ,.event
-            ,.eventSchedule
-            ,.eventResourcebookings
-            
+        ,.event
+        ,.eventSchedule
+        ,.eventResourcebookings
+        
+        ,.locationId
+        
+        ,.resourceId
+
         :return [:]
+            
         case .resourcesSchedulesFromTo:
             return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]
         case .nextResourcesSchedulesFromTo(let url):
@@ -153,10 +175,7 @@ enum APIRouter: URLRequestConvertible {
         urlComponents.scheme = "https";
         urlComponents.host = "\(UserDefaults.standard.string(forKey: "URL")!)";
         urlComponents.percentEncodedPath = "\(pathPercentEncoded)";
-//        urlComponents.queryItems = ["api_key" : "\(UserDefaults.standard.string(forKey: "KEY")!)", parameters]
-//        let queryItemApiKey = URLQueryItem(name: "api_key", value: "\(UserDefaults.standard.string(forKey: "KEY")!)")
-//        urlComponents.queryItems?.append(queryItemApiKey)
-        
+
         var queryItems: [URLQueryItem] = [URLQueryItem(name: "api_key", value: "\(UserDefaults.standard.string(forKey: "KEY")!)")]
         
         let optionalURLQueryItems = query.map {
@@ -165,18 +184,8 @@ enum APIRouter: URLRequestConvertible {
         queryItems.append(contentsOf: optionalURLQueryItems)
         
         urlComponents.queryItems = queryItems
-//        if let queryItems = query {
-//            for (key, value) in queryItems {
-//                let queryItemQuery = URLQueryItem(name: key, value: value as! String)
-//                urlComponents.queryItems?.append(queryItemQuery)
-//            }
-//        }
-//        let queryItemQuery = URLQueryItem(name: "query", value: "swift ios")
-//        urlComponents.query = "api_key=\(UserDefaults.standard.string(forKey: "KEY")!)"
-//        print("urlComponents: ", urlComponents)
 
         let url = try urlComponents.url!.asURL()
-//        print("url: ", url)
         var urlRequest = URLRequest(url: url)
 
         // HTTP Method
@@ -189,15 +198,11 @@ enum APIRouter: URLRequestConvertible {
         // Parameters
         if let parameters = parameters {
             do {
-//                print("parameters: ", parameters)
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-//                print("urlRequest1: ", urlRequest)
-                
             } catch {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-//        print("urlRequest: ", urlRequest)
         return urlRequest
     }
 }

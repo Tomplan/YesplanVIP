@@ -118,12 +118,20 @@ class APIClient {
         return performRequest(route: APIRouter.eventSchedule(id: id))
     }
     
-    static func eventResourcebookings(_ id: String) -> Future<[Resourcebooking]> {
-        return performRequest(route: APIRouter.eventResourcebookings(id: id))
+    static func eventResourcebookings(_ id: String) -> Promise<[Resourcebooking]> {
+        return apiGet(route: APIRouter.eventResourcebookings(id: id))
     }
     
     
     static func nextResourcesSchedulesFromTo(_ url: URL) -> Future<ResourcesSchedulesFromTo> {
         return performRequest(route: APIRouter.nextResourcesSchedulesFromTo(url: url))
+    }
+    
+    static func resourceId(_ id: String) -> Promise<Resource> {
+        return apiGet(route: APIRouter.resourceId(id: id))
+    }
+    
+    static func locationId(_ id: String) -> Promise<Location> {
+        return apiGet(route: APIRouter.locationId(id: id))
     }
 }

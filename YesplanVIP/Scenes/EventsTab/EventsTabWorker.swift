@@ -37,30 +37,11 @@ class EventsTabWorker {
     }
     
     func groupEventsByStartdate(events: Events) -> Promise<[String:[Event]]> {
-        
         let dictEvents = Dictionary(grouping: events.data, by: { $0.startdate! })
-        
         return Promise { seal in
             seal.resolve(.fulfilled(dictEvents))
         }
     }
-    
-    
-//    func groupEventsByStartdate(events: Events) -> Future<[String:[Event]]> {
-//
-//        let dictEvents = Dictionary(grouping: events.data, by: { $0.startdate! })
-//        return Future(value: dictEvents)
-//    }
-
-//    func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> Future<[String:[Event]]> {
-//
-//        var events: [String:[Event]] = [String:[Event]]()
-//        for (key, value) in dictEvents {
-//            let valueSorted = value.sorted{ $0.defaultschedulestarttime ?? "no starttime" <  $1.defaultschedulestarttime ?? "no endtime" }
-//            events[key] = valueSorted
-//        }
-//        return Future(value: events)
-//    }
     
     func sortEventsInEachGroupByTime(dictEvents: [String:[Event]]) -> Promise<[String:[Event]]> {
         
@@ -74,12 +55,6 @@ class EventsTabWorker {
         }
     }
 
-//    func sortDictByDate(dictEvents: [String:[Event]]) -> Future<[(key: String, value: [Event])]> {
-//
-//        let sortedDictByDate = dictEvents.sorted(by:  { $0.0 < $1.0 })
-//        return Future(value: sortedDictByDate)
-//    }
-    
     func sortDictByDate(dictEvents: [String:[Event]]) -> Promise<[(key: String, value: [Event])]> {
 
         let sortedDictByDate = dictEvents.sorted(by:  { $0.0 < $1.0 })

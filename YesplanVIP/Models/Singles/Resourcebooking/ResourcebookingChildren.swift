@@ -15,17 +15,14 @@ indirect enum ResourcebookingChildren {
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
     
-//    var start: String? {
-//        switch self {
-//        case .instantiableResourceUseGroup(let x):
-//            for child in x.children { let start = child.start; return start }
-//        case .resourceSetUse(let x): for child in x.children {
-//            if let start = child.start { return start } else { return nil } }
-//        case .freeFormResourceUse(let x): let start = x.start; return start
-//        case .bulkResourceUse(let x): let start = x.start; return start
-//        }
-//        return nil
-//    }
+    var id: String {
+        switch self {
+        case .instantiableResourceUseGroup(let x): let id = x.id; return id
+        case .resourceSetUse(let x): let id = x.id; return id
+        case .freeFormResourceUse(let x): let id = x.id; return id
+        case .bulkResourceUse(let x): let id = x.id; return id
+        }
+    }
 //
 //    var end: String? {
 //        switch self {

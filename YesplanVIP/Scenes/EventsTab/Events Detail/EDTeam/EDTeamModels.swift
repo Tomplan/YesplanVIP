@@ -21,18 +21,24 @@ enum EDTeam
         struct Request
         {
         }
-        struct Response: Codable
+        
+        struct Response
         {
-            var name: String
-            var resourcebookings: [Resourcebooking]
+//            var dict: [[String : [String]]]
+//            var resourcebookings: [Resourcebooking]
+            var dictionary: [String? : [Resourcebooking]]
         }
-        struct ViewModel: Codable
+        
+        struct ViewModel
         {
-            struct Item: Codable {
-                var header: String
-                var rows: [Resourcebooking]?
+            struct Section: Codable {
+                let header: String
+                struct Row: Codable {
+                    let resourcebooking: Resourcebooking
+                }
+                let rows: [Row]
             }
-            var sections: [Item]
+            var sections: [Section]
         }
     }
 }

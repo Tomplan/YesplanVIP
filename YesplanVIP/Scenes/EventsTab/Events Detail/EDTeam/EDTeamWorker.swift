@@ -11,19 +11,37 @@
 //
 
 import UIKit
-import PromisedFuture
+import PromiseKit
 
 class EDTeamWorker
 {
-    func getEventResourcebooking(_ id: String) -> Future<[Resourcebooking]> {
-        return Future(operation: { completion in
-            APIClient.eventResourcebookings(id)
-                .map({$0})
-                .execute(onSuccess: { items in
-                    completion(.success(items))
-                }, onFailure: { error in
-                    completion(.failure(error))
-                })
-        })
+    func getEventResourcebookings(_ id: String) -> Promise<[Resourcebooking]> {
+        return firstly {
+            APIClient.eventResourcebookings("\(id)")
+            }
+    }
+    
+    func getResourcebookingId(_ id: String) -> Promise<Resourcebooking>? {
+        return firstly {
+            APIClient.resourcebookingId("\(id)")
+        }
+    }
+    
+//    func getResourcesId(_ ids: [String]) -> [Promise<Resource>?] {
+//        return firstly {
+//            ids.compactMap { getResourceId($0).map{$0} }
+//        }
+//    }
+    
+    func getResourceId(_ id: String) -> Promise<Resource>? {
+        return firstly {
+            APIClient.resourceId("\(id)")
+        }
+    }
+    
+    func getLocationId(_ id: String) -> Promise<Location>? {
+        return firstly {
+            APIClient.locationId("\(id)")
+        }
     }
 }

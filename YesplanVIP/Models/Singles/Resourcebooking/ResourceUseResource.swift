@@ -21,6 +21,14 @@ enum ResourceUseResource {
         }
     }
     
+    var id: String {
+        switch self {
+        case .location(let x): let id = x.id; return id
+        case .resource(let x): let id = x.id; return id
+        case .resourceplaceholder(let x): let id = x.id; return id
+        }
+    }
+    
     var name: String {
         switch self {
         case .location(let x): let name = x.name; return name

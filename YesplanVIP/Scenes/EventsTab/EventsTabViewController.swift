@@ -82,7 +82,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
-        button.setTitle("", for: .normal)
+        button.setTitle("setup", for: .normal)
         button.tintColor = UIColor.yellow
         let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
         let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
@@ -104,11 +104,12 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        if #available(iOS 10.0, *) {
-            v.collectionView.prefetchDataSource = self
-        }
-        v.collectionView.prefetchDataSource = self
+//        if #available(iOS 10.0, *) {
+//            v.collectionView.prefetchDataSource = self
+//        }
+//        v.collectionView.prefetchDataSource = self
         v.collectionView.dataSource = self
+        v.collectionView.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {

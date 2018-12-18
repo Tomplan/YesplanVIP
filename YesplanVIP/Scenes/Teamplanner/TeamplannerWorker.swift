@@ -20,7 +20,6 @@ class TeamplannerTabWorker
         return firstly {
             APIClient.resourcesSchedulesFromTo("\(path)")
             }
-//            .map({$0})
     }
     
     

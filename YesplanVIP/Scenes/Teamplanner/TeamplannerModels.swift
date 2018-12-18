@@ -36,9 +36,9 @@ enum TeamplannerTab
         var error: String?
     }
     
-    struct ResourcebookingsResponse {
-        var Resourcebookings: [Resourcebooking]
-    }
+//    struct ResourcebookingsResponse {
+//        var Resourcebookings: [Resourcebooking]
+//    }
     
     struct ViewModel
     {

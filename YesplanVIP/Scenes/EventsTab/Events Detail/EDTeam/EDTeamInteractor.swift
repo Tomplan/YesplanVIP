@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol EDTeamBusinessLogic
 {
@@ -27,6 +28,8 @@ class EDTeamInteractor: EDTeamBusinessLogic, EDTeamDataStore
 {
     var presenter: EDTeamPresentationLogic?
     var worker: EDTeamWorker?
+    var dict: [[String : [String]]] = []
+    var dict2: [[String : String]] = []
     var id: String!
     var name: String!
 
@@ -35,15 +38,48 @@ class EDTeamInteractor: EDTeamBusinessLogic, EDTeamDataStore
     func doSomething(request: EDTeam.Something.Request)
     {
         worker = EDTeamWorker()
-        worker?.getEventResourcebooking(id)
-            .execute(onSuccess: { resourcebookings in
+        worker?.getEventResourcebookings(id)
+            .get { bookings in
+                self.dict2 = bookings.compactMap { [$0._type : $0.id]}
+            }.mapValues { booking in
+                booking.id
+            }.thenMap { id -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(id)!)!
+//            }.tap { item in print(item)
+            }.done { resourcebookings in
+                for res in resourcebookings {
+                    print("res:", res.resource.name)
+                }
+                let dictResourcebookings = Dictionary(grouping: resourcebookings, by: { $0.resource.group })
+//                print(dictResourcebookings)
                 let response = EDTeam.Something.Response(
-                    name: self.name
-                    ,resourcebookings: resourcebookings
+//                    resourcebookings: resourcebookings
+                    dictionary: dictResourcebookings
                 )
                 self.presenter?.presentSomething(response: response)
-            }, onFailure: { error in
-                print(error)
-            })
+                
+                
+                
+                
+//            .get { bookings in
+//                self.dict = bookings.compactMap {
+//                    [$0.resource.name :  $0.childId] } }
+////            .tap { item in print(item) }
+//            .flatMapValues({ (booking) -> [String] in
+//                booking.childId.compactMap {$0}
+//            })
+////            .tap { item in print(item)}
+//
+//            .thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)! }
+//            .done { items in
+//                let response = EDTeam.Something.Response(
+//                    dict: self.dict,
+//                    resourcebookings: items)
+//                self.presenter?.presentSomething(response: response)
+//
+            }.catch { error in
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                //                self.present(alert, animated: true, completion: nil)
+        }
     }
 }

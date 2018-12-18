@@ -8,12 +8,8 @@
 
 import UIKit
 
-extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDataSourcePrefetching {
-    
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print("prefetch: \(indexPaths)")
-    }
-    
+extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return displayedEvents.count
     }
@@ -89,7 +85,7 @@ extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //         let model = displayedEvents[indexPath.section].events[indexPath.item]
-//        print("model: ", model)
+//        print("indexPath ", indexPath)
         router?.routeToSomewhere(segue: nil)
 //        router.showProduct(for: model.id)
     }

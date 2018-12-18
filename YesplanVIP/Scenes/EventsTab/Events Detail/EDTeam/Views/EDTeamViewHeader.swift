@@ -12,6 +12,8 @@ import UIKit
 
 class EDTeamViewHeader: UICollectionReusableView {
     
+    // MARK: Properties
+
     var EDTeamViewHeaderLabel: UILabel
         = {
             var label = UILabel()
@@ -22,6 +24,8 @@ class EDTeamViewHeader: UICollectionReusableView {
             return label
     }()
     
+    // MARK: Initialize Cell
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(EDTeamViewHeaderLabel)

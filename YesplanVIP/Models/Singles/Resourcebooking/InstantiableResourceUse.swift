@@ -17,7 +17,7 @@ struct InstantiableResourceUse: Codable {
     var owninggroup: Usergroup?
     let _type: InstantiableResourceUseType
     var number: Double
-    var resource: ResourceUseResource? // Resource Location_Id or Resource_Id or Placeholder_Id
+    var resource: ResourceUseResource // Resource Location_Id or Resource_Id or Placeholder_Id
     var start: String // added by tom!!! // timestamp
     var end: String // added by tom!!! // timestamp
     var actualstart: String? // timestamp

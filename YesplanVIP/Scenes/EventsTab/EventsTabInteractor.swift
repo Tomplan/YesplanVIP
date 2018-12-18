@@ -33,7 +33,6 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     var profilesArray: [Profile] = [Profile]()
     var error: String?
     var eventsDS: [(key: String, value: [Event])]?
-//    var event: String?
     
   // MARK: Do something
 
@@ -55,12 +54,8 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     )
     
     worker?.getEvents("event:date:#today + event:date:#next13days")
-//    worker?.getEvents("")
-
         .then((worker?.groupEventsByStartdate)!)
         .then(((worker?.sortEventsInEachGroupByTime)!))
-//        .andThen((worker?.sortEventsInEachGroupByTime)!)
-//        .andThen((worker?.sortDictByDate)!)
         .then((worker?.sortDictByDate)!)
         .done { items in
             self.eventsDS = items

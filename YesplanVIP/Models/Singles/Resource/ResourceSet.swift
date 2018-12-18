@@ -23,7 +23,7 @@ struct ResourceSet: Codable {
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
     var _type: ResourceSetType
-    var amount: Amount
+    var amount: Amount? // added by Tom !!!!
     var resources: [Base]?
 }
 

@@ -13,8 +13,8 @@ struct InstantiableResourceUseGroup: Codable {
     var id: String
     var _type: InstantiableResourceUseGroupType
     var number: Double
-    var resource: ResourceUseResource? // Resource Location_Id or Resource_Id or Placeholder_Id
-    var children: [InstantiableResourceUse] // (instantiable resource use)*
+    var resource: ResourceUseResource // Resource Location_Id or Resource_Id or Placeholder_Id
+    var children: [Resourcebooking] // (instantiable resource use)*
     var event: Base? // tom // NOT Event_Id, Event_Id or Schedule
     var actualnumber: Double?
 }

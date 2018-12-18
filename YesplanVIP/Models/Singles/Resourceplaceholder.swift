@@ -12,7 +12,7 @@ struct Resourceplaceholder: Codable {
     let url: String
     let id: String
     let resourcetype: String // optional added by TOM
-    let name: String // optional added by TOM
+    let name: String // optional added by TOM ???
     let group: String?
     let roles: [String] // optional added by TOM
     let description: String?

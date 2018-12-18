@@ -22,7 +22,7 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 {
   weak var viewController: TeamplannerTabDisplayLogic?
     
-    var DateAndSchedulesArray : [TeamplannerTab.Something.ViewModel.Section] = []
+    var sections : [TeamplannerTab.Something.ViewModel.Section] = []
     // MARK: Do something
     
   func presentSomething(response: TeamplannerTab.Something.Response)
@@ -52,7 +52,7 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
                         guard let id = x.resourcebooking.id else { return }
                             guard let bookings = response.resourcebookings else { return }
 
-                        let booking = bookings.first(where: {$0.id! == id})
+                        let booking = bookings.first(where: {$0.id == id})
 //                        print(booking)
                         row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: booking)
 
@@ -62,12 +62,12 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 //                print(rows)
             if rows.isEmpty == false {
             let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
-            if DateAndSchedulesArray.contains(where: { $0.header == header }) == false {
-                        DateAndSchedulesArray.append(item) }
+            if sections.contains(where: { $0.header == header }) == false {
+                        sections.append(item) }
                 }
             }
             let viewModel = TeamplannerTab.Something.ViewModel(
-                    sections: DateAndSchedulesArray
+                    sections: sections
                     ,error: nil
                     )
             self.viewController?.displaySomething(viewModel: viewModel)

@@ -15,27 +15,44 @@ enum Resourcebooking {
     case freeFormResourceUse(FreeFormResourceUse)
     case bulkResourceUse(BulkResourceUse)
     
-    var id: String? {
+    var resource: ResourceUseResource {
+        switch self {
+        case .bulkResourceUse(let x): let y = x.resource; return y
+        case .freeFormResourceUse(let x): let y = x.resource; return y
+        case .instantiableResourceUse(let x): let y = x.resource; return y
+        case .instantiableResourceUseGroup(let x): let y = x.resource; return y
+        case .resourceSetUse(let x): let y = x.resource; return y
+        }
+    }
+    
+    var _type: String {
+        switch self {
+        case .bulkResourceUse(let x): let type = x._type.rawValue; return type
+        case .freeFormResourceUse(let x): let type = x._type.rawValue; return type
+        case .instantiableResourceUse(let x): let type = x._type.rawValue; return type
+        case .instantiableResourceUseGroup(let x): let type = x._type.rawValue; return type
+        case .resourceSetUse(let x): let type = x._type.rawValue; return type
+        }
+    }
+    
+    var id: String {
         switch self {
         case .bulkResourceUse(let x): let id = x.id; return id
         case .freeFormResourceUse(let x): let id = x.id; return id
         case .instantiableResourceUse(let x): let id = x.id; return id
-        case .instantiableResourceUseGroup(let x):
-            for child in x.children { let id = child.id; return id }
-        case .resourceSetUse(let x):
-            print(x)
-            //            for child in x.children { if let start = child.start { return start } else { return nil } }
+        case .instantiableResourceUseGroup(let x): let id = x.id; return id
+        case .resourceSetUse(let x): let id = x.id; return id
         }
-        return nil
     }
 
     var start: String? {
         switch self {
-        case .bulkResourceUse(let x): let start = x.start; return start
-        case .freeFormResourceUse(let x): let start = x.start; return start
+        case .bulkResourceUse(_): return nil
+        case .freeFormResourceUse(_): return nil
         case .instantiableResourceUse(let x): let start = x.start; return start
         case .instantiableResourceUseGroup(let x):
-            for child in x.children { let start = child.start; return start }
+//            for child in x.children { let start = child.start; return start }
+            print(x)
         case .resourceSetUse(let x):
             print(x)
 //            for child in x.children { if let start = child.start { return start } else { return nil } }
@@ -60,7 +77,7 @@ enum Resourcebooking {
         return nil
         }
 
-    var name: String? {
+    var eventName: String? {
         switch self {
         case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
         case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
@@ -72,23 +89,138 @@ enum Resourcebooking {
 //            for child in x.children {
 //                if let eventName = child { return eventName } else { return nil } }
         }
-        return nil
     }
-//    
-//    var eventName: String? {
+    
+//    var resourceType: String {
 //        switch self {
-//        case .bulkResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
-//        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
-//        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
-//        case .instantiableResourceUseGroup(let x):
-//            if let eventName = x.event?.name { return eventName } else { return nil }
-//        case .resourceSetUse(_):
-//            return nil
-//            //            for child in x.children {
-//            //                if let eventName = child { return eventName } else { return nil } }
+//        case .bulkResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.type
+//        case .none:
+//            return ""
+//            }
+//        case .freeFormResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.type
+//        case .none:
+//            return ""
+//            }
+//        case .instantiableResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.type
+//        case .none:
+//            return ""
+//            }
+//        case .instantiableResourceUseGroup(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.type
+//        case .none:
+//            return ""
+//            }
+//        case .resourceSetUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.type
+//        case .none:
+//            return ""
+//            }
 //        }
-//        return nil
 //    }
+//
+//    var resourceName: String {
+//        switch self {
+//        case .bulkResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.name
+//        case .none:
+//            return ""
+//            }
+//        case .freeFormResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.name
+//        case .none:
+//            return ""
+//            }
+//        case .instantiableResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.name
+//        case .none:
+//            return ""
+//            }
+//        case .instantiableResourceUseGroup(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.name
+//        case .none:
+//            return ""
+//            }
+//        case .resourceSetUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.name
+//        case .none:
+//            return ""
+//            }
+//        }
+//    }
+//
+//    var resourceId: String {
+//        switch self {
+//        case .bulkResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.id
+//        case .none:
+//            return ""
+//            }
+//        case .freeFormResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.id
+//        case .none:
+//            return ""
+//            }
+//        case .instantiableResourceUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.id
+//        case .none:
+//            return ""
+//            }
+//        case .instantiableResourceUseGroup(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.id
+//        case .none:
+//            return ""
+//            }
+//        case .resourceSetUse(let x): let res = x.resource
+//        switch res {
+//        case .some(let x):
+//            return x.id
+//        case .none:
+//            return ""
+//            }
+//        }
+//    }
+    
+    
+    var childId: [String] {
+        switch self {
+        case .bulkResourceUse(_): return []
+        case .freeFormResourceUse(_): return []
+        case .instantiableResourceUse(_): return []
+        case .instantiableResourceUseGroup(let x): let res = x.children.compactMap { $0.id }; return { res }()
+        case .resourceSetUse(let x): let res = x.children.compactMap { $0.id }; return { res }()
+        }
+    }
 //
 ////    var type: String? {
 ////        switch self {
@@ -114,20 +246,20 @@ enum Resourcebooking {
 ////        return nil
 ////    }
 //    
-////    var Location: String? {
-////        switch self {
-////        case .bulkResourceUse(let x): if let location = x.event?.name { return eventName } else { return nil }
-////        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
-////        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
-////        case .instantiableResourceUseGroup(let x):
-////            if let eventName = x.event?.name { return eventName } else { return nil }
-////        case .resourceSetUse(let x):
-////            for child in x.children {
-////                if let end = child.end { return end } else { return nil } }
-////        }
-////        return nil
-////    }
-//    
+//    var Children: String? {
+//        switch self {
+//        case .bulkResourceUse(let x): if let location = x.event?.name { return eventName } else { return nil }
+//        case .freeFormResourceUse(let x): let eventName = x.event.name; return eventName
+//        case .instantiableResourceUse(let x): if let eventName = x.event?.name { return eventName } else { return nil }
+//        case .instantiableResourceUseGroup(let x):
+//            if let eventName = x.event?.name { return eventName } else { return nil }
+//        case .resourceSetUse(let x):
+//            for child in x.children {
+//                if let end = child.end { return end } else { return nil } }
+//        }
+//        return nil
+//    }
+    
 }
 
 extension Resourcebooking {
@@ -164,7 +296,7 @@ extension Resourcebooking: Decodable {
         } else if let x = try? container.decode(BulkResourceUse.self) {
             self = .bulkResourceUse(x)
         } else {
-            print("shit")
+            print("chips")
             throw Failure.NotImplemented
         }
     }
