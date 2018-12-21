@@ -32,18 +32,15 @@ class EDTeamPresenter: EDTeamPresentationLogic
             if let x = dict.key {
             header = x
             }
-            print(header)
-            
-            var resourcebookings: [Resourcebooking] = []
+            var rows: [EDTeam.Something.ViewModel.Section.Row] = []
+
             let x = dict.value
-            
+
             for i in 0 ..< x.count {
                 let resourcebooking = x[i]
-                var rows: [EDTeam.Something.ViewModel.Section.Row] = []
-                            switch resourcebooking {
+                    switch resourcebooking {
                             case .bulkResourceUse(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
-                
                                 rows.append(row)
                             case .freeFormResourceUse(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
@@ -51,81 +48,24 @@ class EDTeamPresenter: EDTeamPresentationLogic
                             case .instantiableResourceUse(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
                                 rows.append(row)
-                            case .instantiableResourceUseGroup(let x):
-//                                for child in x.children {
-//                                    let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: child)
-//                                    rows.append(row)
-//                                }
+                            case .instantiableResourceUseGroup(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
                                 rows.append(row)
-                            case .resourceSetUse(let x):
-//                                for child in x.children {
-//                                    let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: child)
-////                                    let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
-//                                    rows.append(row)
-//                                }
+                            case .resourceSetUse(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
                                 rows.append(row)
 
                             }
-                
-                            let section = EDTeam.Something.ViewModel.Section(
-                                header: header
-                                ,rows: rows
-                            )
-                            //            let section = EDTeam.Something.ViewModel.Section(header: header, rows: rows)
-                            //            if sections.contains(where: { $0.header == header }) == false {
-                            //                sections.append(section) }
-                            sections.append(section)
-                        }
-                        let viewModel = EDTeam.Something.ViewModel(sections: sections)
-//            print("viewModel:", viewModel)
-                        viewController?.displaySomething(viewModel: viewModel)
+            }
+                let section = EDTeam.Something.ViewModel.Section(
+                    header: header
+                    ,rows: rows
+                )
+                sections.append(section)
+            }
+            let viewModel = EDTeam.Something.ViewModel(sections: sections)
+            viewController?.displaySomething(viewModel: viewModel)
 
-        }
-        
-//            for j in 0 ..< response.dictionary.values.count
-//            {
-//
-//            let resourcebooking = response.dictionary.values[j]
-//            var rows: [EDTeam.Something.ViewModel.Section.Row] = []
-//            switch resourcebooking {
-//            case .bulkResourceUse(_):
-//                let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
-//
-//                rows.append(row)
-//            case .freeFormResourceUse(_):
-//                let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
-//                rows.append(row)
-//            case .instantiableResourceUse(_):
-//                let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
-//                rows.append(row)
-//            case .instantiableResourceUseGroup(let x):
-//                for child in x.children {
-//                    let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: child)
-//                    rows.append(row)
-//                }
-//            case .resourceSetUse(let x):
-//                for child in x.children {
-//                    let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: child)
-//                    rows.append(row)
-//                }
-//            }
-//
-//            let section = EDTeam.Something.ViewModel.Section(
-//                header: header
-//                ,rows: rows
-//            )
-//            //            let section = EDTeam.Something.ViewModel.Section(header: header, rows: rows)
-//            //            if sections.contains(where: { $0.header == header }) == false {
-//            //                sections.append(section) }
-//            sections.append(section)
-//        }
-//        let viewModel = EDTeam.Something.ViewModel(sections: sections)
-//        viewController?.d
-        
-        
-        
         
 //        for i in 0 ..< response.resourcebookings.count {
 //            let resourcebooking = response.resourcebookings[i]

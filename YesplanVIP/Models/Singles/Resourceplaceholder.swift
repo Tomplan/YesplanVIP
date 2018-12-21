@@ -16,9 +16,9 @@ struct Resourceplaceholder: Codable {
     let group: String?
     let roles: [String] // optional added by TOM
     let description: String?
-    let external: Bool // optional added by TOM
-    let rented: Bool // optional added by TOM
-    let costmodels: [Costmodel] // optional added by TOM
+    let external: Bool? // optional added by TOM, very mportantes!!!!
+    let rented: Bool? // optional added by TOM, very mportantes!!!!
+    let costmodels: [Costmodel]? // optional added by TOM,  very mportantes!!!!
     let defaultrole: String? // optional added by TOM
     let amount: String?
     let type: String

@@ -116,12 +116,13 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
                     return item
                 case .instantiableResourceUseGroup(let x):
                     print("group:", x.resource.name)
+                    
                     let item = EDTeamViewModel(resourcebooking.resourcebooking)
                     return item
                 case .resourceSetUse(let x):
                     print("set:", x.resource.name)
                    
-                    
+                    let multiheader = MultiHeaderViewModel(x.resource.name)
                     let items = x.children.map { resourcebooking -> CollectionViewViewModelProtocol in
                         switch resourcebooking {
                         case .bulkResourceUse(let x):
@@ -153,8 +154,7 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
                         }
 
                     }
-//                    let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
-                    let section =  CollectionViewSection(items: items)
+                    let section =  CollectionViewSection(header: multiheader, items: items)
                     let k = CollectionViewSource(grid: grid, sections: [section])
                     let l = CollectionViewModel(k)
                     return l
@@ -164,6 +164,7 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
                 }
             }
             let header = HeaderViewModel(section.header)
+            print("h:", header.data)
             let section =  CollectionViewSection(header: header, items: items)
             
             return section

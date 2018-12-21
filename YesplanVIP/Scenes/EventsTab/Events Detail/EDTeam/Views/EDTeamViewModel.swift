@@ -64,8 +64,8 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             name = x.resource.name
             cell.lblName.text = name
             
-//            start = x.start
-//            end = x.end
+            start = (x.children[0].start?.convertDateString(dateFormat: "HH:mm")!)!
+            end = (x.children[0].end?.convertDateString(dateFormat: "HH:mm")!)!
             
             cell.lblTime.text = "\(start) - \(end)"
         case .resourceSetUse(let x):
