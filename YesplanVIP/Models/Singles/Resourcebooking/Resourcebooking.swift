@@ -302,3 +302,39 @@ extension Resourcebooking: Decodable {
     }
 }
 
+extension Resourcebooking {
+    func unfold()  -> CollectionViewViewModelProtocol {
+        let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
+
+        switch self {
+        case .bulkResourceUse(let x):
+            print("bulk:", x.resource.name)
+            let item = EDTeamViewModel(self)
+            return item
+        case .freeFormResourceUse(let x):
+            print("free:", x.resource.name)
+            let item = EDTeamViewModel(self)
+            return item
+        case .instantiableResourceUse(let x):
+            print("nst:", x.resource.name)
+            let item = EDTeamViewModel(self)
+            return item
+        case .instantiableResourceUseGroup(let x):
+            print("group:", x.resource.name)
+            
+            let item = EDTeamViewModel(self)
+            return item
+        case .resourceSetUse(let x):
+            print("set:", x.resource.name)
+            
+            let multiheader = MultiHeaderViewModel(x.resource.name)
+            let items = x.children.map { resourcebooking -> CollectionViewViewModelProtocol in
+                resourcebooking.unfold()
+            }
+            let section =  CollectionViewSection(header: multiheader, items: items)
+            let k = CollectionViewSource(grid: grid, sections: [section])
+            let l = CollectionViewModel(k)
+            return l
+        }
+    }
+}

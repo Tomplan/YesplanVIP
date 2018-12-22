@@ -101,67 +101,69 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
 
         let mysections = sections.compactMap { section -> CollectionViewSection in
             let items = section.rows.compactMap { resourcebooking -> CollectionViewViewModelProtocol in
-                switch resourcebooking.resourcebooking {
-                case .bulkResourceUse(let x):
-                print("bulk:", x.resource.name)
-                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
-                    return item
-                case .freeFormResourceUse(let x):
-                    print("free:", x.resource.name)
-                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
-                    return item
-                case .instantiableResourceUse(let x):
-                    print("nst:", x.resource.name)
-                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
-                    return item
-                case .instantiableResourceUseGroup(let x):
-                    print("group:", x.resource.name)
-                    
-                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
-                    return item
-                case .resourceSetUse(let x):
-                    print("set:", x.resource.name)
-                   
-                    let multiheader = MultiHeaderViewModel(x.resource.name)
-                    let items = x.children.map { resourcebooking -> CollectionViewViewModelProtocol in
-                        switch resourcebooking {
-                        case .bulkResourceUse(let x):
-                            print("bulk2:", x.resource.name)
-                            let item = EDTeamViewModel(resourcebooking)
-                            return item
-                        case .freeFormResourceUse(let x):
-                            print("free2:", x.resource.name)
-                            let item = EDTeamViewModel(resourcebooking)
-                            return item
-                        case .instantiableResourceUse(let x):
-                            print("inst2:", x.resource.name)
-                            let item = EDTeamViewModel(resourcebooking)
-                            return item
-                        case .instantiableResourceUseGroup(let x):
-                            print("group2:", x.resource.name)
-                            let item = EDTeamViewModel(resourcebooking)
-                            return item
-                        case .resourceSetUse(let x):
-                            print("set2:", x.resource.name)
-
-//                            let items = x.children.compactMap { resourcebooking in
-//                            let section =  EDTeamViewModel(items: items)
-//                            let k = CollectionViewSource(grid: grid, sections: [section])
-//                            let l = CollectionViewModel(k)
-//                            return l
-                            let item = EDTeamViewModel(resourcebooking)
-                            return item
-                        }
-
-                    }
-                    let section =  CollectionViewSection(header: multiheader, items: items)
-                    let k = CollectionViewSource(grid: grid, sections: [section])
-                    let l = CollectionViewModel(k)
-                    return l
+                resourcebooking.resourcebooking.unfold()
+//                switch resourcebooking.resourcebooking {
+//                case .bulkResourceUse(let x):
+//                print("bulk:", x.resource.name)
+//                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
+//                    return item
+//                case .freeFormResourceUse(let x):
+//                    print("free:", x.resource.name)
+//                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
+//                    return item
+//                case .instantiableResourceUse(let x):
+//                    print("nst:", x.resource.name)
+//                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
+//                    return item
+//                case .instantiableResourceUseGroup(let x):
+//                    print("group:", x.resource.name)
+//
+//                    let item = EDTeamViewModel(resourcebooking.resourcebooking)
+//                    return item
+//                case .resourceSetUse(let x):
+//                    print("set:", x.resource.name)
+//
+//                    let multiheader = MultiHeaderViewModel(x.resource.name)
+//                    let items = x.children.map { resourcebooking -> CollectionViewViewModelProtocol in
+//                        resourcebooking.unfold()
+//                        switch resourcebooking {
+//                        case .bulkResourceUse(let x):
+//                            print("bulk2:", x.resource.name)
+//                            let item = EDTeamViewModel(resourcebooking)
+//                            return item
+//                        case .freeFormResourceUse(let x):
+//                            print("free2:", x.resource.name)
+//                            let item = EDTeamViewModel(resourcebooking)
+//                            return item
+//                        case .instantiableResourceUse(let x):
+//                            print("inst2:", x.resource.name)
+//                            let item = EDTeamViewModel(resourcebooking)
+//                            return item
+//                        case .instantiableResourceUseGroup(let x):
+//                            print("group2:", x.resource.name)
+//                            let item = EDTeamViewModel(resourcebooking)
+//                            return item
+//                        case .resourceSetUse(let x):
+//                            print("set2:", x.resource.name)
+//
+////                            let items = x.children.compactMap { resourcebooking in
+////                            let section =  EDTeamViewModel(items: items)
+////                            let k = CollectionViewSource(grid: grid, sections: [section])
+////                            let l = CollectionViewModel(k)
+////                            return l
+//                            let item = EDTeamViewModel(resourcebooking)
+//                            return item
+//                        }
+//
+//                    }
+//                    let section =  CollectionViewSection(header: multiheader, items: items)
+//                    let k = CollectionViewSource(grid: grid, sections: [section])
+//                    let l = CollectionViewModel(k)
+//                    return l
 //                    CollectionViewSource(grid: grid, sections: ikke)
                     
 //                    let item = CollectionViewModel(resourcebooking.resourcebooking)
-                }
+//                }
             }
             let header = HeaderViewModel(section.header)
             print("h:", header.data)
