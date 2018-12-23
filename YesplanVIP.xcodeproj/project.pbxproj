@@ -47,8 +47,6 @@
 		3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08E2199713B007AAF8B /* EDTeamView.swift */; };
 		3C08E09221997160007AAF8B /* EDTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E09121997160007AAF8B /* EDTeamViewCell.swift */; };
 		3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */; };
-		3C08E0962199718B007AAF8B /* EDTeamViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E0952199718B007AAF8B /* EDTeamViewCell+Extensions.swift */; };
-		3C08E099219971A2007AAF8B /* EDTeamViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E098219971A2007AAF8B /* EDTeamViewController+Extensions.swift */; };
 		3C08E09B219A1BFE007AAF8B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E09A219A1BFE007AAF8B /* Type.swift */; };
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
 		3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52C215B9751009523AC /* TasksTabViewCell.swift */; };
@@ -67,7 +65,7 @@
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */; };
 		3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */; };
 		3C2E310621C6E0E300FCB4AD /* CellEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310521C6E0E300FCB4AD /* CellEnum.swift */; };
-		3C2E310821CD6A5500FCB4AD /* EDTeamViiewMultiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310721CD6A5500FCB4AD /* EDTeamViiewMultiHeader.swift */; };
+		3C2E310821CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310721CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift */; };
 		3C2E310A21CD856600FCB4AD /* MultiHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310921CD856600FCB4AD /* MultiHeaderViewModel.swift */; };
 		3C2E310D21CD866400FCB4AD /* MultiHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310C21CD866400FCB4AD /* MultiHeaderCell.swift */; };
 		3C40AED8212D8C090077DDC5 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AED7212D8C090077DDC5 /* Events.swift */; };
@@ -97,7 +95,7 @@
 		3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4A2165537900154B93 /* ToDosTabViewHeader.swift */; };
 		3C570A4D2165587500154B93 /* ToDosTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4C2165587500154B93 /* ToDosTabViewController+Extensions.swift */; };
 		3C570A502165589100154B93 /* ToDosTabViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4F2165589100154B93 /* ToDosTabViewCell+Extensions.swift */; };
-		3C5E539421C4156B00A55467 /* EDTeamViewMultiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E539321C4156B00A55467 /* EDTeamViewMultiCell.swift */; };
+		3C5E539421C4156B00A55467 /* MultiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E539321C4156B00A55467 /* MultiCell.swift */; };
 		3C5E53A821C42A9100A55467 /* SeparatorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C5E539A21C42A8D00A55467 /* SeparatorCell.xib */; };
 		3C5E53A921C42A9100A55467 /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C5E539B21C42A8D00A55467 /* TextCell.xib */; };
 		3C5E53AA21C42A9100A55467 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E539C21C42A8E00A55467 /* CollectionCell.swift */; };
@@ -337,8 +335,6 @@
 		3C08E08E2199713B007AAF8B /* EDTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamView.swift; sourceTree = "<group>"; };
 		3C08E09121997160007AAF8B /* EDTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewCell.swift; sourceTree = "<group>"; };
 		3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewHeader.swift; sourceTree = "<group>"; };
-		3C08E0952199718B007AAF8B /* EDTeamViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDTeamViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		3C08E098219971A2007AAF8B /* EDTeamViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDTeamViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3C08E09A219A1BFE007AAF8B /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3C18E52C215B9751009523AC /* TasksTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewCell.swift; sourceTree = "<group>"; };
@@ -357,9 +353,8 @@
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVwController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		3C2E310521C6E0E300FCB4AD /* CellEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEnum.swift; sourceTree = "<group>"; };
-		3C2E310721CD6A5500FCB4AD /* EDTeamViiewMultiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViiewMultiHeader.swift; sourceTree = "<group>"; };
+		3C2E310721CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewMultiHeader.swift; sourceTree = "<group>"; };
 		3C2E310921CD856600FCB4AD /* MultiHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHeaderViewModel.swift; sourceTree = "<group>"; };
-		3C2E310B21CD866400FCB4AD /* MultiHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiHeaderCell.xib; sourceTree = "<group>"; };
 		3C2E310C21CD866400FCB4AD /* MultiHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHeaderCell.swift; sourceTree = "<group>"; };
 		3C40AED7212D8C090077DDC5 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		3C40AEDB212D8C1F0077DDC5 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
@@ -388,7 +383,7 @@
 		3C570A4A2165537900154B93 /* ToDosTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTabViewHeader.swift; sourceTree = "<group>"; };
 		3C570A4C2165587500154B93 /* ToDosTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDosTabViewController+Extensions.swift"; sourceTree = "<group>"; };
 		3C570A4F2165589100154B93 /* ToDosTabViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDosTabViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		3C5E539321C4156B00A55467 /* EDTeamViewMultiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewMultiCell.swift; sourceTree = "<group>"; };
+		3C5E539321C4156B00A55467 /* MultiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCell.swift; sourceTree = "<group>"; };
 		3C5E539A21C42A8D00A55467 /* SeparatorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeparatorCell.xib; sourceTree = "<group>"; };
 		3C5E539B21C42A8D00A55467 /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		3C5E539C21C42A8E00A55467 /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
@@ -738,25 +733,13 @@
 		3C08E09021997140007AAF8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3C5E539921C42A7B00A55467 /* Cell */,
 				3C08E08E2199713B007AAF8B /* EDTeamView.swift */,
 				3C5E53D421C51A6F00A55467 /* EDTeamViewModel.swift */,
 				3C08E09121997160007AAF8B /* EDTeamViewCell.swift */,
-				3C5E539321C4156B00A55467 /* EDTeamViewMultiCell.swift */,
 				3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */,
-				3C2E310721CD6A5500FCB4AD /* EDTeamViiewMultiHeader.swift */,
-				3C08E0972199718E007AAF8B /* Extensions */,
+				3C2E310721CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3C08E0972199718E007AAF8B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				3C08E0952199718B007AAF8B /* EDTeamViewCell+Extensions.swift */,
-				3C08E098219971A2007AAF8B /* EDTeamViewController+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3C24777E216A99050010EAFA /* ResourceSchedules */ = {
@@ -793,6 +776,20 @@
 			path = AppFlow;
 			sourceTree = "<group>";
 		};
+		3C2E310E21CF9FF700FCB4AD /* Events Main */ = {
+			isa = PBXGroup;
+			children = (
+				3C40AF00212D8E9A0077DDC5 /* Views */,
+				3C40AEE3212D8E550077DDC5 /* EventsTabPresenter.swift */,
+				3C40AEE4212D8E550077DDC5 /* EventsTabWorker.swift */,
+				3C40AEE5212D8E550077DDC5 /* EventsTabRouter.swift */,
+				3C40AEE6212D8E550077DDC5 /* EventsTabModels.swift */,
+				3C40AEE7212D8E550077DDC5 /* EventsTabViewController.swift */,
+				3C40AEE8212D8E550077DDC5 /* EventsTabInteractor.swift */,
+			);
+			path = "Events Main";
+			sourceTree = "<group>";
+		};
 		3C40AEC8212D825B0077DDC5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,13 +802,7 @@
 		3C40AEFB212D8E5F0077DDC5 /* EventsTab */ = {
 			isa = PBXGroup;
 			children = (
-				3C40AF00212D8E9A0077DDC5 /* Views */,
-				3C40AEE3212D8E550077DDC5 /* EventsTabPresenter.swift */,
-				3C40AEE4212D8E550077DDC5 /* EventsTabWorker.swift */,
-				3C40AEE5212D8E550077DDC5 /* EventsTabRouter.swift */,
-				3C40AEE6212D8E550077DDC5 /* EventsTabModels.swift */,
-				3C40AEE7212D8E550077DDC5 /* EventsTabViewController.swift */,
-				3C40AEE8212D8E550077DDC5 /* EventsTabInteractor.swift */,
+				3C2E310E21CF9FF700FCB4AD /* Events Main */,
 				3C62059D219811C1001E8D4B /* Events Detail */,
 			);
 			path = EventsTab;
@@ -924,8 +915,8 @@
 		3C5E539921C42A7B00A55467 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E539321C4156B00A55467 /* MultiCell.swift */,
 				3C2E310C21CD866400FCB4AD /* MultiHeaderCell.swift */,
-				3C2E310B21CD866400FCB4AD /* MultiHeaderCell.xib */,
 				3C5E539E21C42A8E00A55467 /* AlbumCell.swift */,
 				3C5E53A121C42A8F00A55467 /* AlbumCell.xib */,
 				3C5E53A521C42A9000A55467 /* ArtistCell.swift */,
@@ -945,9 +936,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		3C5E53B621C42ABD00A55467 /* Framewerk */ = {
+		3C5E53B621C42ABD00A55467 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E539921C42A7B00A55467 /* Cell */,
 				3C5E53BD21C42AD100A55467 /* CollectionViewCell.swift */,
 				3C5E53BA21C42AD000A55467 /* CollectionViewCell+Reuse.swift */,
 				3C5E53B721C42ACF00A55467 /* CollectionViewController.swift */,
@@ -956,7 +948,7 @@
 				3C5E53BC21C42AD100A55467 /* CollectionViewViewModel.swift */,
 				3C5E53B821C42ACF00A55467 /* Grid.swift */,
 			);
-			path = Framewerk;
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		3C5E53C521C42B8300A55467 /* ViewModels */ = {
@@ -1146,8 +1138,6 @@
 		3CE710122121827900EBF6A5 = {
 			isa = PBXGroup;
 			children = (
-				3C5E53C521C42B8300A55467 /* ViewModels */,
-				3C5E53B621C42ABD00A55467 /* Framewerk */,
 				3CE7101D2121827900EBF6A5 /* YesplanVIP */,
 				3CE710352121827A00EBF6A5 /* YesplanVIPTests */,
 				3CE710402121827A00EBF6A5 /* YesplanVIPUITests */,
@@ -1168,6 +1158,8 @@
 		3CE7101D2121827900EBF6A5 /* YesplanVIP */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E53B621C42ABD00A55467 /* Framework */,
+				3C5E53C521C42B8300A55467 /* ViewModels */,
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
@@ -1635,7 +1627,6 @@
 				3CE710C32121A7E300EBF6A5 /* ToDosWorker.swift in Sources */,
 				3C5E53B021C42A9100A55467 /* SeparatorCell.swift in Sources */,
 				3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */,
-				3C08E099219971A2007AAF8B /* EDTeamViewController+Extensions.swift in Sources */,
 				3C7B4F0E217A220D000D7FDB /* DiscountFormula.swift in Sources */,
 				3C05A02B2198E7E100F93289 /* EDLocationViewController.swift in Sources */,
 				3C7B4EFE217A0648000D7FDB /* ResourceUseResource.swift in Sources */,
@@ -1651,7 +1642,7 @@
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */,
 				3C6205A921981242001E8D4B /* EventsDetailInteractor.swift in Sources */,
-				3C5E539421C4156B00A55467 /* EDTeamViewMultiCell.swift in Sources */,
+				3C5E539421C4156B00A55467 /* MultiCell.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
 				3C05A0172198A42A00F93289 /* ScheduleEntry.swift in Sources */,
@@ -1672,8 +1663,7 @@
 				3C5E53C321C42AD100A55467 /* CollectionViewViewModel.swift in Sources */,
 				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
 				3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */,
-				3C2E310821CD6A5500FCB4AD /* EDTeamViiewMultiHeader.swift in Sources */,
-				3C08E0962199718B007AAF8B /* EDTeamViewCell+Extensions.swift in Sources */,
+				3C2E310821CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
 				3CB59E7B214079E000B6E458 /* MainTabBarPresenter.swift in Sources */,
 				3C08E08A21997115007AAF8B /* EDTeamModels.swift in Sources */,

@@ -1,23 +1,25 @@
 //
-//  EventsDetailViewCell.swift
-//  YesplanVIP
+//  HeaderCell.swift
+//  CVVM
 //
-//  Created by Techcc - FOH - Video on 11/11/18.
-//  Copyright © 2018 Yesplan. All rights reserved.
+//  Created by Tibor Bödecs on 2018. 04. 13..
+//  Copyright © 2018. Tibor Bödecs. All rights reserved.
 //
 
 import UIKit
 import Stevia
 
-class EventsDetailViewCell: UICollectionViewCell {
+class MultiHeaderCell: CollectionViewCell {
     
-    // MARK: Properties
+//    @IBOutlet weak var textLabel: UILabel!
+    
+    var lblTitle = UILabel()
+
     lazy var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
         width.isActive = true
         return width
     }()
-    var lblName = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,10 +39,12 @@ class EventsDetailViewCell: UICollectionViewCell {
         fatalError("Interface Builder is not supported!")
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func reset() {
+        super.reset()
         
-        lblName.text = nil
+        lblTitle.text = nil
+        
+        
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -49,6 +53,7 @@ class EventsDetailViewCell: UICollectionViewCell {
     }
     
     // MARK: Private methods
+    
     private func setupComponents() {
         
         layer.masksToBounds = true
@@ -59,21 +64,22 @@ class EventsDetailViewCell: UICollectionViewCell {
         backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
-            lblName
+            lblTitle
         )
         
-        lblName.numberOfLines = 0
-        lblName.font = UIFont.systemFont(ofSize: 20.0)
-        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblTitle.numberOfLines = 0
+        lblTitle.font = UIFont.systemFont(ofSize: 15.0)
+        lblTitle.textColor = UIColor(r: 64, g: 64, b: 64)
+        
         
     }
     
     private func setupConstraints() {
-        
         layout(
-            8
-            ,|-16-lblName-16-|
-            ,8
+            4
+            ,|-16-lblTitle-16-|
+            ,4
         )
     }
+
 }

@@ -46,9 +46,9 @@ class EDTeamInteractor: EDTeamBusinessLogic, EDTeamDataStore
             }.thenMap { id -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(id)!)!
 //            }.tap { item in print(item)
             }.done { resourcebookings in
-                for res in resourcebookings {
-                    print("res:", res.resource.name)
-                }
+//                for res in resourcebookings {
+//                    print("res:", res.resource.name)
+//                }
                 let dictResourcebookings = Dictionary(grouping: resourcebookings, by: { $0.resource.group })
 //                print(dictResourcebookings)
                 let response = EDTeam.Something.Response(

@@ -10,7 +10,29 @@ import UIKit
 
 class CollectionViewController: UIViewController {
 
-    @IBOutlet open weak var collectionView: UICollectionView!
+//    @IBOutlet open weak var collectionView: UICollectionView!
+    lazy var collectionView : UICollectionView = {
+
+        let flowLayout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+
+        flowLayout.scrollDirection = .vertical
+        flowLayout.minimumLineSpacing = 2
+        flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
+        flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
+        flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 1)
+
+        collectionView.backgroundColor = UIColor.brown // UIColor(r: 176, g: 176, b: 176)
+
+        //        let cellHeight: CGFloat = 75
+        //        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
+        //        flowLayout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
+        //        flowLayout.itemSize = size
+
+        return collectionView
+    }()
     
     open var source: CollectionViewSource? = nil {
         didSet {
@@ -24,9 +46,9 @@ class CollectionViewController: UIViewController {
     open override func loadView() {
         super.loadView()
         
-        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+//        let collectionView = UICollectionView.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.collectionView = collectionView
+//        self.collectionView = collectionView
         self.view.addSubview(self.collectionView)
         
         NSLayoutConstraint.activate([
@@ -40,8 +62,8 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .white
-        self.collectionView.backgroundColor = .clear
+        self.view.backgroundColor = .red
+//        self.collectionView.backgroundColor = .clear
         self.collectionView.alwaysBounceVertical = true
         self.collectionView.showsVerticalScrollIndicator = true
     }
@@ -49,9 +71,9 @@ class CollectionViewController: UIViewController {
     open override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
-        if self.isViewLoaded && self.view.window == nil {
-            self.collectionView = nil
-        }
+//        if self.isViewLoaded && self.view.window == nil {
+//            self.collectionView = nil
+//        }
     }
     
     // MARK: - handle autorotation

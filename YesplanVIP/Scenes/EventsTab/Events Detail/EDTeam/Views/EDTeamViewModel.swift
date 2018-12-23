@@ -24,6 +24,7 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             var name = String()
             var start = String()
             var end = String()
+            var role = String()
             
             name = x.resource.name
             cell.lblName.text = name
@@ -36,7 +37,8 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             var name = String()
             var start = String()
             var end = String()
-            
+            var role = String()
+
             name = x.resource.name
             cell.lblName.text = name
             
@@ -48,7 +50,8 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             var name = String()
             var start = String()
             var end = String()
-            
+            var role = String()
+
             name = x.resource.name
             cell.lblName.text = name
             
@@ -56,11 +59,15 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             end = x.end.convertDateString(dateFormat: "HH:mm")!
             
             cell.lblTime.text = "\(start) - \(end)"
+            
+            cell.lblRole.text = "iets"
+            
         case .instantiableResourceUseGroup(let x):
             var name = String()
             var start = String()
             var end = String()
-            
+            var role = String()
+
             name = x.resource.name
             cell.lblName.text = name
             
@@ -68,10 +75,13 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             end = (x.children[0].end?.convertDateString(dateFormat: "HH:mm")!)!
             
             cell.lblTime.text = "\(start) - \(end)"
+            
+            cell.lblRole.text = "niets"
+
         case .resourceSetUse(let x):
             var name = String()
-            var start = String()
-            var end = String()
+//            var start = String()
+//            var end = String()
             
             name = x.resource.name
             cell.lblName.text = name
@@ -79,36 +89,60 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
 //            start = x.start
 //            end = x.end
             
-            cell.lblTime.text = "\(start) - \(end)"
+//            cell.lblTime.text = "\(start) - \(end)"
         }
         
     }
     
-    
     override func size(data: Resourcebooking, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
-        // note: this is a "complex" displaying the same cell in multiple grids, never done this like before haha
-        if grid.columns == 1 {
-            return grid.size(for: view, ratio: 0.2)
-        }
-        if
-            (view.traitCollection.userInterfaceIdiom == .phone &&
-                view.traitCollection.verticalSizeClass == .compact) ||
-                view.traitCollection.userInterfaceIdiom == .pad
-        {
-            return grid.size(for: view, ratio: 1.2, items: 1, gaps: 3)
-        }
-        return grid.size(for: view, ratio: 1.2, items: 2, gaps: 1)
+        return grid.size(for: view, height: 1)
     }
+    
+//    override func size(data: Resourcebooking, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
+//        return .zero
+//    }
+
+    
+    //    override func size(data: Resourcebooking, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
+//        // note: this is a "complex" displaying the same cell in multiple grids, never done this like before haha
+//        if grid.columns == 1 {
+//            //            return grid.size(for: view, ratio: 1)
+//            return grid.size(for: view, ratio: 0.2, items: 1, gaps: 0)
+//
+//        }
+//        if
+//            (view.traitCollection.userInterfaceIdiom == .phone &&
+//                view.traitCollection.verticalSizeClass == .compact) ||
+//                view.traitCollection.userInterfaceIdiom == .pad
+//        {
+//            return grid.size(for: view, ratio: 1.2, items: 1, gaps: 3)
+//        }
+//        return grid.size(for: view, ratio: 1.2, items: 2, gaps: 1)
+//    }
+//    override func size(data: Resourcebooking, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
+//        // note: this is a "complex" displaying the same cell in multiple grids, never done this like before haha
+//        if grid.columns == 1 {
+//            return grid.size(for: view, ratio: 0.2)
+//        }
+//        if
+//            (view.traitCollection.userInterfaceIdiom == .phone &&
+//                view.traitCollection.verticalSizeClass == .compact) ||
+//                view.traitCollection.userInterfaceIdiom == .pad
+//        {
+//            return grid.size(for: view, ratio: 1.2, items: 1, gaps: 3)
+//        }
+//        return grid.size(for: view, ratio: 1.2, items: 2, gaps: 1)
+//    }
     
     override func callback(data: Resourcebooking, indexPath: IndexPath) {
         self.delegate?.didSelect(resourcebooking: data)
     }
 }
 
-class HorizontalEDTeamViewModel: EDTeamViewModel {
-    
-    override func size(data: Resourcebooking, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
-        return CGSize(width: 140, height: 30)
-    }
-}
+//class HorizontalEDTeamViewModel: EDTeamViewModel {
+//
+//    override func size(data: Resourcebooking, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
+//        return CGSize(width: 140, height: 40)
+//    }
+//}
 

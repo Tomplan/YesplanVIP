@@ -11,7 +11,7 @@ import UIKit
 class MultiHeaderViewModel: CollectionViewViewModel<MultiHeaderCell, String> {
     
     override func config(cell:MultiHeaderCell , data: String, indexPath: IndexPath, grid: Grid) {
-        cell.textLabel.text = data
+        cell.lblTitle.text = data
     }
     
     override func size(data: String, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {

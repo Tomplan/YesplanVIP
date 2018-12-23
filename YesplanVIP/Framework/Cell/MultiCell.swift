@@ -28,9 +28,9 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
         flowLayout.minimumLineSpacing = 2
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
         flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
-        flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 40)
+        flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 100)
 
-        collectionView.backgroundColor = UIColor.lightGray // UIColor(r: 176, g: 176, b: 176)
+        collectionView.backgroundColor = UIColor.green // UIColor(r: 176, g: 176, b: 176)
 
         //        let cellHeight: CGFloat = 75
         //        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
@@ -92,23 +92,13 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         width.constant = bounds.size.width
-        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 100))
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1000))
     }
 //
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EDTeamViewCell", for: indexPath);
-//        cell.backgroundColor = .red;
-////        cell.popu
-//        return cell;
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 5;
-//    }
-//    
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: self.frame.width, height: self.frame.height - 10);
 //    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

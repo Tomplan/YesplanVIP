@@ -324,6 +324,7 @@ extension Resourcebooking {
             
             let item = EDTeamViewModel(self)
             return item
+            
         case .resourceSetUse(let x):
             print("set:", x.resource.name)
             

@@ -15,7 +15,8 @@ class EDTeamViewCell: CollectionViewCell {
 
     var lblName = UILabel()
     var lblTime = UILabel()
-
+    var lblRole = UILabel()
+    
     lazy var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
         width.isActive = true
@@ -47,7 +48,7 @@ class EDTeamViewCell: CollectionViewCell {
         
         lblName.text = nil
         lblTime.text = nil
-        
+        lblRole.text = nil
         
     }
 
@@ -55,7 +56,7 @@ class EDTeamViewCell: CollectionViewCell {
 
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         width.constant = bounds.size.width
-        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 20))
     }
 
     // MARK: Private methods
@@ -72,6 +73,7 @@ class EDTeamViewCell: CollectionViewCell {
         sv(
             lblName
             ,lblTime
+            ,lblRole
         )
 
         lblName.numberOfLines = 0
@@ -82,13 +84,19 @@ class EDTeamViewCell: CollectionViewCell {
         lblTime.font = UIFont.systemFont(ofSize: 12.0)
         lblTime.textColor = UIColor(r: 64, g: 64, b: 64)
 
+        lblRole.numberOfLines = 0
+        lblRole.font = UIFont.systemFont(ofSize: 12.0)
+        lblRole.textColor = UIColor(r: 64, g: 64, b: 64)
     }
 
     private func setupConstraints() {
         layout(
             4
             ,|-16-lblName-16-|
+            ,0
             ,|-16-lblTime-16-|
+            ,0
+            ,|-16-lblRole-16-|
             ,4
         )
     }

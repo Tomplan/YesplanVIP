@@ -36,7 +36,8 @@ class EventsDetailView: UIView {
         flowLayout.minimumLineSpacing = 2
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
         flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
-        flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 40)
+        // Mark: Determine Cell-Width, height depends on Cell-setupConstraints()
+        flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 1)
         flowLayout.sectionHeadersPinToVisibleBounds = true
 
         collectionView.backgroundColor = UIColor.black // UIColor(r: 176, g: 176, b: 176)

@@ -17,6 +17,7 @@ class EventsTabViewCell: UICollectionViewCell {
         width.isActive = true
         return width
     }()
+    
     var lblHeaderName = UILabel()
     var lblName = UILabel()
     var lblDefaultschedulestarttime = UILabel()
@@ -50,6 +51,7 @@ class EventsTabViewCell: UICollectionViewCell {
         lblGroupName.text = nil
     }
     
+    // determine cell-width
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         width.constant = bounds.size.width
         return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
