@@ -43,4 +43,5 @@ open class CollectionViewCell: UICollectionViewCell {
     open func reset() {
         
     }
+    
 }

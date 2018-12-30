@@ -80,9 +80,7 @@ open class Grid {
     
     open func height(for view: UIView, items: CGFloat = 1, gaps: CGFloat? = nil) -> CGFloat {
         let gaps = gaps ?? items - 1
-        
         let height = view.bounds.size.height - self.verticalMargin - self.verticalPadding * gaps
-        
         return (height / self.columns * items).evenRounded
     }
 }

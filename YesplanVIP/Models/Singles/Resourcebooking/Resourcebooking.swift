@@ -35,6 +35,18 @@ enum Resourcebooking {
         }
     }
     
+    var type: String {
+        switch self {
+        case .bulkResourceUse(let x): let type = x.resource.type; return type
+        case .freeFormResourceUse(let x): let type = x.resource.type; return type
+        case .instantiableResourceUse(let x): let type = x.resource.type; return type
+        case .instantiableResourceUseGroup(let x): let type = x.resource.type; return type
+//        case .resourceSetUse(let x): let type = x.resource.type; return type
+        case .resourceSetUse(let x): let type = x.children.compactMap { $0.resource.type}; return type[0]
+
+        }
+    }
+    
     var id: String {
         switch self {
         case .bulkResourceUse(let x): let id = x.id; return id
@@ -221,6 +233,16 @@ enum Resourcebooking {
         case .resourceSetUse(let x): let res = x.children.compactMap { $0.id }; return { res }()
         }
     }
+    
+    var childType: [String] {
+        switch self {
+        case .bulkResourceUse(_): return []
+        case .freeFormResourceUse(_): return []
+        case .instantiableResourceUse(_): return []
+        case .instantiableResourceUseGroup(let x): let res = x.children.compactMap { $0.resource.type }; return { res }()
+        case .resourceSetUse(let x): let res = x.children.compactMap { $0.resource.type }; return { res }()
+        }
+    }
 //
 ////    var type: String? {
 ////        switch self {
@@ -308,32 +330,35 @@ extension Resourcebooking {
 
         switch self {
         case .bulkResourceUse(let x):
-            print("bulk:", x.resource.name)
+//            print("bulk:", x.resource.name)
             let item = EDTeamViewModel(self)
             return item
         case .freeFormResourceUse(let x):
-            print("free:", x.resource.name)
+//            print("free:", x.resource.name)
             let item = EDTeamViewModel(self)
             return item
         case .instantiableResourceUse(let x):
-            print("nst:", x.resource.name)
+//            print("inst:", x.resource.name)
             let item = EDTeamViewModel(self)
             return item
         case .instantiableResourceUseGroup(let x):
-            print("group:", x.resource.name)
+//            print("group:", x.resource.name)
             
             let item = EDTeamViewModel(self)
             return item
             
         case .resourceSetUse(let x):
-            print("set:", x.resource.name)
+//            print("set:", x.resource.name)
             
             let multiheader = MultiHeaderViewModel(x.resource.name)
             let items = x.children.map { resourcebooking -> CollectionViewViewModelProtocol in
                 resourcebooking.unfold()
             }
             let section =  CollectionViewSection(header: multiheader, items: items)
+            
             let k = CollectionViewSource(grid: grid, sections: [section])
+//            let k = CollectionViewSource(sections: [section])
+
             let l = CollectionViewModel(k)
             return l
         }

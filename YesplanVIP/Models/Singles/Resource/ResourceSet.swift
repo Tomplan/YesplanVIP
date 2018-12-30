@@ -16,8 +16,8 @@ struct ResourceSet: Codable {
     var group: String?
     var roles: [String]?
     var description: String?
-    var external: Bool?
-    var rented: Bool?
+    var external: Bool? // important!
+    var rented: Bool? // important!
     var costmodels: [Costmodel]?
     var owner: User?
     var owningteam: Usergroup?

@@ -54,7 +54,7 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     )
     
 //    worker?.getEvents("event:date:#today + event:date:#next13days")
-    worker?.getEvents("event:date:01-12-2018 TO 22-12-2018")
+    worker?.getEvents("event:date:06-12-2018 TO 22-12-2018")
 
         .then((worker?.groupEventsByStartdate)!)
         .then(((worker?.sortEventsInEachGroupByTime)!))

@@ -195,6 +195,7 @@ extension CollectionViewSource: UICollectionViewDelegateFlowLayout {
         return self.itemAt(section)?.grid ?? self.grid
     }
     
+    // here the trick must be done! i presume? tom
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {

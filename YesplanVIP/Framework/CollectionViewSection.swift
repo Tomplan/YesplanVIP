@@ -23,6 +23,7 @@ open class CollectionViewSection {
                 footer: CollectionViewViewModelProtocol? = nil,
                 items: [CollectionViewViewModelProtocol] = [],
                 callback: CollectionViewCallback? = nil) {
+//        grid?.height(for: view, items: items, gaps: nil)
         self.grid = grid
         self.header = header
         self.footer = footer

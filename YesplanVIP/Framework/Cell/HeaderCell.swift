@@ -16,7 +16,7 @@ class HeaderCell: CollectionViewCell {
         super.awakeFromNib()
         
         self.textLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        self.textLabel.textColor = .black
+        self.textLabel.textColor =  UIColor(r: 64, g: 64, b: 64)
     }
     
     override func reset() {

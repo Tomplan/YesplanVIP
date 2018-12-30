@@ -57,6 +57,12 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
             var destinationDS = destinationVC.router!.dataStore!
             passDataToEDTeam(source: dataStore!, destination: &destinationDS)
             navigateToEDTeam(source: viewController!, destination: destinationVC)
+        case "Resources":
+            let x = EDResourcesViewController()
+            let destinationVC = x
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToEDResources(source: dataStore!, destination: &destinationDS)
+            navigateToEDResources(source: viewController!, destination: destinationVC)
         default:
             return
         }
@@ -85,6 +91,11 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
         source.show(destination, sender: nil)
     }
     
+    func navigateToEDResources(source: EventsDetailViewController, destination: EDResourcesViewController)
+    {
+        source.show(destination, sender: nil)
+    }
+    
 //   MARK: Passing data
     
     func passDataToEDInfo(source: EventsDetailDataStore, destination: inout EDInfoDataStore)
@@ -103,6 +114,13 @@ class EventsDetailRouter: NSObject, EventsDetailRoutingLogic, EventsDetailDataPa
     }
     
     func passDataToEDTeam(source: EventsDetailDataStore, destination: inout EDTeamDataStore)
+    {
+        destination.name = source.name
+        destination.id = source.id
+        print(source.id as Any)
+    }
+    
+    func passDataToEDResources(source: EventsDetailDataStore, destination: inout EDResourcesDataStore)
     {
         destination.name = source.name
         destination.id = source.id

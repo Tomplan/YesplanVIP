@@ -21,10 +21,9 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
 {
     var interactor: EDTeamBusinessLogic?
     var router: (NSObjectProtocol & EDTeamRoutingLogic & EDTeamDataPassing)?
-//    var v = EDTeamView()
     var sections: [EDTeam.Something.ViewModel.Section] = [EDTeam.Something.ViewModel.Section]()
+    
     // MARK: Object lifecycle
-//    var resourcebooking = Resourcebooking()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
     {
@@ -54,25 +53,13 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
         router.dataStore = interactor
     }
     
-    // MARK: Routing
-    
-    //  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    //  {
-    //    if let scene = segue.identifier {
-    //      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-    //      if let router = router, router.responds(to: selector) {
-    //        router.perform(selector, with: segue)
-    //      }
-    //    }
-    //  }
-    
     // MARK: View lifecycle
-//    override func loadView() { view = v }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         doSomething()
+//        print("zerzer", v.collectionView.heightConstraint?.constant)
 //        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
 //        v.collectionView.dataSource = self
 //        v.collectionView.delegate = self
@@ -95,18 +82,30 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
         
         sections = viewModel.sections
  
-        let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
+        var grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
         let mysections = sections.compactMap { section -> CollectionViewSection in
             let items = section.rows.compactMap { resourcebooking -> CollectionViewViewModelProtocol in
                 resourcebooking.resourcebooking.unfold()
             }
-            let header = HeaderViewModel(section.header)
+//            grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
+            let header = MultiHeaderViewModel(section.header)
+//            let section =  CollectionViewSection(grid: grid, header: header, items: items)
             let section =  CollectionViewSection(header: header, items: items)
+
+//           print("sese", section)
             return section
         }
-        self.source  = CollectionViewSource(grid: grid, sections: mysections)
-        
-        self.collectionView.reloadData() // ???
+//        grid.size(for: view, height: self.v.collectionView.collectionViewLayout.collectionViewContentSize.height)
+//        print(grid.height(for: view))
+            self.source  = CollectionViewSource(grid: grid, sections: mysections)
+//        self.source  = CollectionViewSource(sections: mysections)
+
+        // this one sets main collectiionview height correct
+//        print("a", self.v.collectionView.collectionViewLayout.collectionViewContentSize)
+//        print("b", self.v.collectionView.heightConstraint)
+//
+//        self.v.collectionView.heightConstraint?.constant = self.v.collectionView.collectionViewLayout.collectionViewContentSize.height
+//        self.v.collectionView.reloadData() // ???
     }
 }
 

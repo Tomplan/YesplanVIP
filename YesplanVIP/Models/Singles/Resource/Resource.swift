@@ -47,7 +47,9 @@ enum Resource {
         case .bulkResource(let x): let type = x.type; return type
         case .adHocResource(let x): let type = x.type; return type
         case .instantiableResource(let x): let type = x.type; return type
+//        case .resourceSet(let x): let type = x.resourcetype; return type! // deprecated!!!
         case .resourceSet(let x): let type = x.resourcetype; return type! // deprecated!!!
+
         }
     }
 
