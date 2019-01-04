@@ -23,7 +23,7 @@ class MultiHeaderCell: CollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
+//        contentView.translatesAutoresizingMaskIntoConstraints = false
         setupComponents()
         setupConstraints()
     }
@@ -43,7 +43,6 @@ class MultiHeaderCell: CollectionViewCell {
         super.reset()
         
         lblTitle.text = nil
-        
         
     }
     

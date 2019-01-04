@@ -15,7 +15,7 @@ class CollectionCell: CollectionViewCell {
     open var source: CollectionViewSource? = nil {
         didSet {
             self.source?.register(itemsFor: self.collectionView)
-            
+//            self.collectionView.backgroundColor = UIColor.red
             self.collectionView.dataSource = self.source
             self.collectionView.delegate = self.source
         }

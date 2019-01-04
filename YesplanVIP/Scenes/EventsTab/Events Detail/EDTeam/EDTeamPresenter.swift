@@ -60,7 +60,9 @@ class EDTeamPresenter: EDTeamPresentationLogic
                     header: header
                     ,rows: rows
                 )
+            if rows.isEmpty == false {
                 sections.append(section)
+                }
             }
             let viewModel = EDTeam.Something.ViewModel(sections: sections)
             viewController?.displaySomething(viewModel: viewModel)

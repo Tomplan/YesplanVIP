@@ -88,7 +88,9 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
                 resourcebooking.resourcebooking.unfold()
             }
 //            grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
-            let header = MultiHeaderViewModel(section.header)
+//            let header = MultiHeaderViewModel(section.header)
+            let header = DynamicTextViewModel(section.header)
+
 //            let section =  CollectionViewSection(grid: grid, header: header, items: items)
             let section =  CollectionViewSection(header: header, items: items)
 

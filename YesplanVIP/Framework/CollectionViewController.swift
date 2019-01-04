@@ -27,7 +27,7 @@ class CollectionViewController: UIViewController {
     open override func loadView() {
         super.loadView()
         view = v
-        v.collectionView.translatesAutoresizingMaskIntoConstraints = false
+//        v.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(v.collectionView)
 
     }
@@ -37,6 +37,66 @@ class CollectionViewController: UIViewController {
 
     }
 
+//    override func viewDidLayoutSubviews() {
+//        for view in v.subviews {
+//            print("view:", view)
+//            var multiCells: [MultiCell]? {
+//                return view.subviews.lazy.compactMap({ $0 as? MultiCell })
+//            }
+//            for multiCell in multiCells! {
+//                print("multiCell:", multiCell)
+//                let multiCellSubviews = multiCell.subviews
+//                print("multiCellSubviews:", multiCellSubviews )
+//                for a in multiCellSubviews {
+//                    print("a:", a)
+//                    for b in a.subviews {
+//                        print("b:", b)
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        for view in v.subviews {
+            print("view:", view)
+            var multiCells: [MultiCell]? {
+                return view.subviews.lazy.compactMap({ $0 as? MultiCell })
+            }
+            //            print(multiCellViews)
+            for multiCell in multiCells! {
+//                print("multiCell:", multiCell)
+                //                multiCell.backgroundColor = UIColor.purple
+                let multiCellSubviews = multiCell.subviews
+//                print("multiCellSubviews:", multiCellSubviews )
+                
+                
+                for a in multiCellSubviews {
+                    //                    a.backgroundColor = UIColor.purple
+//                    print("a:", a)
+                    for b in a.subviews {
+//                        print("b:", b)
+                        var cells: [UICollectionViewCell]? {
+                            return b.subviews.lazy.compactMap({ $0 as? UICollectionViewCell })
+                        }
+                        for c in b.subviews {
+                            print("c:", c)
+                            
+                        }
+
+                        let last = cells?.sorted(by: { $0.frame.origin.y < $1.frame.origin.y } ).last
+                        print("last:", last?.bottomAnchor)
+//                        view.autoPinEdge(.bottom, to: .top, of: last!, withOffset: 0)
+                        multiCell.frame.size.height = (last?.frame.origin.y)! + (last?.frame.size.height)! + 10
+//                        multiCell.autoPinEdge(.bottom, to: .bottom, of: last!, withOffset: 0)
+//                        multiCell.auto
+                    }
+                }
+            }
+        }
+    }
+    
 //    open override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
 //        

@@ -36,7 +36,7 @@ class CollectionView: UIView {
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 1)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         
-        collectionView.backgroundColor = UIColor.black // UIColor(r: 176, g: 176, b: 176)
+        collectionView.backgroundColor = UIColor.darkGray // UIColor(r: 176, g: 176, b: 176)
 
         return collectionView
     }()
@@ -47,15 +47,18 @@ class CollectionView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
         sv(collectionView)
-        collectionView.fillContainer()
+        collectionView.backgroundColor = UIColor.green
+        collectionView.collectionViewLayout.collectionView?.backgroundColor = UIColor.blue
+        setupConstraints()
+//        collectionView.fillContainer()
 
     }
     
     private func setupConstraints() {
         layout(
-            4
+            40
             ,|-16-collectionView-16-|
-            ,4
+            ,40
             
         )
     }

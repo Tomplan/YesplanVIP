@@ -24,7 +24,7 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             var name = String()
             var start = String()
             var end = String()
-            var role = String()
+//            var role = String()
             
             name = x.resource.name
             cell.lblName.text = name
@@ -60,7 +60,7 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             
             cell.lblTime.text = "\(start) - \(end)"
             
-            cell.lblRole.text = "iets"
+//            cell.lblRole.text = "iets"
             
         case .instantiableResourceUseGroup(let x):
             var name = String()
@@ -76,7 +76,7 @@ class EDTeamViewModel: CollectionViewViewModel<EDTeamViewCell, Resourcebooking> 
             
             cell.lblTime.text = "\(start) - \(end)"
             
-            cell.lblRole.text = "niets"
+//            cell.lblRole.text = "niets"
 
         case .resourceSetUse(let x):
             var name = String()

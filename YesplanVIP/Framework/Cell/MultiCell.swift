@@ -71,39 +71,51 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
     override init(frame: CGRect) {
         super.init(frame: frame);
 //        contentView.translatesAutoresizingMaskIntoConstraints = false
-//        contentView.backgroundColor = UIColor.red
-        setupViews()
+        setupComponents()
+//        setupConstraints()
+
     }
     
     
-    func setupViews(){
+    func setupComponents(){
+        
+        contentView.backgroundColor = UIColor.red
+        collectionView.backgroundColor = UIColor.yellow
+//        print(self.collectionView.collectionViewLayout.collectionViewContentSize)
+
         
         sv(collectionView)
 //
-        collectionView.fillContainer()
+//        collectionView.fillContainer()
         
 //        collectionView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
 //        collectionView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
 //        collectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
 //        collectionView.widthAnchor.constraint(equalToConstant: self.width.constant).isActive = true
 ////
+        setupConstraints()
 //        contentView.addSubview(collectionView)
-//        if let lastSubview = contentView.subviews.last {
+        print(contentView.subviews.last)
+        if let lastSubview = contentView.subviews.last {
+//            collectionView.frame
+//            collectionView.autoPinEdge(.bottom, to: .bottom, of: lastSubview)
+            collectionView.frameLayoutGuide.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 20)
 //            contentView.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 10).isActive = true
-//        }
-        
-        collectionView.register(MultiHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "MultiHeaderCell")
-        collectionView.register(MultiCell.self, forCellWithReuseIdentifier: "MultiCell")
+        }
+//        collectionView.register(MultiHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "MultiHeaderCell")
+//        collectionView.register(MultiCell.self, forCellWithReuseIdentifier: "MultiCell")
 
     }
     
     private func setupConstraints() {
         layout(
+            // adjusting yellowView to redView
             4
             ,|-16-collectionView-16-|
             ,4
-            
+
         )
+        
     }
     // Mark: Auto-sizing Cell
     

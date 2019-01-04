@@ -22,7 +22,10 @@ class CollectionViewModel: CollectionViewViewModel<MultiCell, CollectionViewSour
         cell.source = data
         
     }
-
+    
+//    override func size(data: CollectionViewSource, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
+//        return grid.size(for: view, height: 48)
+//    }
     
     // set size off collectionview here
     override func size(data: CollectionViewSource, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
@@ -37,6 +40,7 @@ class CollectionViewModel: CollectionViewViewModel<MultiCell, CollectionViewSour
 //            return grid.size(for: view, ratio: 1)
 ////            return grid.size(for: view, ratio: 0.2, items: 1, gaps: 0)
 ////            print(data.sections[indexPath.row].header?.cell)
+            
             return grid.size(for: view, height: CGFloat(data.sections[indexPath.row].items.count * 60 + 70))
         }
         if
