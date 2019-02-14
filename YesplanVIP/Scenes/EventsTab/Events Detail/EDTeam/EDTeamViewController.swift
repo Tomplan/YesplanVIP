@@ -82,7 +82,7 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
         
         sections = viewModel.sections
  
-        var grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
+        let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
         let mysections = sections.compactMap { section -> CollectionViewSection in
             let items = section.rows.compactMap { resourcebooking -> CollectionViewViewModelProtocol in
                 resourcebooking.resourcebooking.unfold()
@@ -91,10 +91,10 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
 //            let header = MultiHeaderViewModel(section.header)
             let header = DynamicTextViewModel(section.header)
 
-//            let section =  CollectionViewSection(grid: grid, header: header, items: items)
-            let section =  CollectionViewSection(header: header, items: items)
+            let section =  CollectionViewSection(grid: grid, header: header, items: items)
+//            let section =  CollectionViewSection(header: header, items: items)
 
-//           print("sese", section)
+           print("sese")
             return section
         }
 //        grid.size(for: view, height: self.v.collectionView.collectionViewLayout.collectionViewContentSize.height)

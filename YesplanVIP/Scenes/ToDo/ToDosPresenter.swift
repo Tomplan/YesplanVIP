@@ -40,30 +40,30 @@ class ToDosPresenter: ToDosPresentationLogic
         )
 //        viewController?.displaySomething(viewModel: viewModel)
         
-        if viewModel.displayedToDos.isEmpty {
-            toDos.append(ToDosTab.Something.ViewModel.DisplayedToDo(date: "SUPER, All done!", toDos: [YesplanVIP.Task(
-                url: URL(string: "http://")!
-                , id: ""
-                , owner: Optional(YesplanVIP.User(url: "https://", id: "", name: "", email: nil))
-                , owningteam: Optional(YesplanVIP.Usergroup(url: "", id: "1573997569-1498158287", name: Optional("")))
-                , owninggroup: Optional(YesplanVIP.Usergroup(url: "https://", id: "", name: Optional("")))
-                , status: "New"
-                , name: Optional("***** You've finished all your tasks! *****")
-                , team: ""
-                , cost: 0
-                , due: "Keep up the good work!"
-                , start: nil
-                , description: nil
-                , event: Optional(YesplanVIP.Base2(url: "", id: nil, name: Optional(""), _type: nil))
-                , assignedby: Optional("")
-                , assignedto: Optional("")
-                , duration: Optional("")
-                )]))
-            viewModel = ToDosTab.Something.ViewModel(
-                displayedToDos: toDos
-                ,displayedStatuses: statusesDict
-            )
-        }
+//        if viewModel.displayedToDos.isEmpty {
+//            toDos.append(ToDosTab.Something.ViewModel.DisplayedToDo(date: "SUPER, All done!", toDos: [YesplanVIP.Task(
+//                url: URL(string: "http://")!
+//                , id: ""
+//                , owner: Optional(YesplanVIP.User(url: "https://", id: "", name: "", email: nil))
+//                , owningteam: Optional(YesplanVIP.Usergroup(url: "", id: "1573997569-1498158287", name: Optional("")))
+//                , owninggroup: Optional(YesplanVIP.Usergroup(url: "https://", id: "", name: Optional("")))
+//                , status: "New"
+//                , name: Optional("***** You've finished all your tasks! *****")
+//                , team: ""
+//                , cost: 0
+//                , due: "Keep up the good work!"
+//                , start: nil
+//                , description: nil
+//                , event: Optional(YesplanVIP.Base2(url: "", id: nil, name: Optional(""), _type: nil))
+//                , assignedby: Optional("")
+//                , assignedto: Optional("")
+//                , duration: Optional("")
+//                )]))
+//            viewModel = ToDosTab.Something.ViewModel(
+//                displayedToDos: toDos
+//                ,displayedStatuses: statusesDict
+//            )
+//        }
         
         viewController?.displaySomething(viewModel: viewModel)
     }

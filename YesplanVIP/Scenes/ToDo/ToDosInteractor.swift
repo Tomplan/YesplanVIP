@@ -35,21 +35,23 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     
     
     func doSomething(request: ToDosTab.Something.Request)
+    
     {
         worker = ToDosWorker()
-
+        
         worker?.getTasks("task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
-            .andThen((worker?.groupToDosByDue)!)
-            .andThen((worker?.sortToDosInEachGroupByDue)!)
-            .andThen((worker?.sortDictByDate)!)
-            .execute(onSuccess: { items in
+            .then((worker?.groupToDosByDue)!)
+            .then((worker?.sortToDosInEachGroupByDue)!)
+            .then((worker?.sortDictByDate)!)
+            .done { items in
                 self.toDosArray = items
                 let response = ToDosTab.Something.Response(
                     toDos: self.toDosArray
                     ,error: self.error
                 )
                 self.presenter?.presentSomething(response: response)
-            }) { error in
+            }
+        .catch { error in
                 self.error = error.localizedDescription
                 let response = ToDosTab.Something.Response(
                     toDos: self.toDosArray
@@ -58,4 +60,28 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
                 self.presenter?.presentSomething(response: response)
         }
     }
+    
+//    {
+//        worker = ToDosWorker()
+//
+//        worker?.getTasks("task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
+//            .andThen((worker?.groupToDosByDue)!)
+//            .andThen((worker?.sortToDosInEachGroupByDue)!)
+//            .andThen((worker?.sortDictByDate)!)
+//            .execute(onSuccess: { items in
+//                self.toDosArray = items
+//                let response = ToDosTab.Something.Response(
+//                    toDos: self.toDosArray
+//                    ,error: self.error
+//                )
+//                self.presenter?.presentSomething(response: response)
+//            }) { error in
+//                self.error = error.localizedDescription
+//                let response = ToDosTab.Something.Response(
+//                    toDos: self.toDosArray
+//                    ,error: self.error
+//                )
+//                self.presenter?.presentSomething(response: response)
+//        }
+//    }
 }

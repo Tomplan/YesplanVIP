@@ -99,6 +99,7 @@
 		3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AF30212D92610077DDC5 /* Usergroup.swift */; };
 		3C40AF37212DAE8E0077DDC5 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40AF36212DAE8E0077DDC5 /* Base.swift */; };
 		3C41E924212D723E00C2E242 /* Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C41E923212D723E00C2E242 /* Basic.swift */; };
+		3C4E565721E28847004C213F /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4E565621E28847004C213F /* DynamicCollectionView.swift */; };
 		3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A45216552E100154B93 /* ToDosTabView.swift */; };
 		3C570A492165533300154B93 /* ToDosTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A482165533300154B93 /* ToDosTabViewCell.swift */; };
 		3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C570A4A2165537900154B93 /* ToDosTabViewHeader.swift */; };
@@ -158,12 +159,9 @@
 		3C6AC8A0212703050010DFA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6AC89F212703040010DFA5 /* LaunchScreen.storyboard */; };
 		3C70E1812154EAC1009F640D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C70E1802154EAC1009F640D /* PureLayout.framework */; };
 		3C7337A92150427C0045F9E1 /* EventsTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7337A82150427C0045F9E1 /* EventsTabViewController+Extensions.swift */; };
-		3C7337AE21504E730045F9E1 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFAD96E213BF0CD003BAC1C /* Kingfisher.framework */; };
 		3C7337AF21504E730045F9E1 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFAD96C213BF0B7003BAC1C /* Stevia.framework */; };
 		3C7337B221504F310045F9E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE94A0212D757900CE518C /* Alamofire.framework */; };
-		3C7337B321504F310045F9E1 /* Arrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949E212D756A00CE518C /* Arrow.framework */; };
 		3C7337B421504F310045F9E1 /* then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949C212D756000CE518C /* then.framework */; };
-		3C7337B521504F310045F9E1 /* ws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949A212D755500CE518C /* ws.framework */; };
 		3C7B4EFC2179E9AA000D7FDB /* ResourcebookingChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFB2179E9AA000D7FDB /* ResourcebookingChildren.swift */; };
 		3C7B4EFE217A0648000D7FDB /* ResourceUseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFD217A0648000D7FDB /* ResourceUseResource.swift */; };
 		3C7B4F00217A0686000D7FDB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFF217A0686000D7FDB /* Location.swift */; };
@@ -288,6 +286,7 @@
 		3CFF85CF218F914D00DED3FB /* Overwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CE218F914D00DED3FB /* Overwork.swift */; };
 		3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */; };
 		3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */; };
+		E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -396,6 +395,7 @@
 		3C40AF30212D92610077DDC5 /* Usergroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usergroup.swift; sourceTree = "<group>"; };
 		3C40AF36212DAE8E0077DDC5 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		3C41E923212D723E00C2E242 /* Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic.swift; sourceTree = "<group>"; };
+		3C4E565621E28847004C213F /* DynamicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
 		3C570A45216552E100154B93 /* ToDosTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTabView.swift; sourceTree = "<group>"; };
 		3C570A482165533300154B93 /* ToDosTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTabViewCell.swift; sourceTree = "<group>"; };
 		3C570A4A2165537900154B93 /* ToDosTabViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosTabViewHeader.swift; sourceTree = "<group>"; };
@@ -594,6 +594,7 @@
 		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A895A2BFC4C2DFA42EB7607F /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,11 +603,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C7337B221504F310045F9E1 /* Alamofire.framework in Frameworks */,
-				3C7337B321504F310045F9E1 /* Arrow.framework in Frameworks */,
-				3C7337AE21504E730045F9E1 /* Kingfisher.framework in Frameworks */,
 				3C7337AF21504E730045F9E1 /* Stevia.framework in Frameworks */,
 				3C7337B421504F310045F9E1 /* then.framework in Frameworks */,
-				3C7337B521504F310045F9E1 /* ws.framework in Frameworks */,
 				3C70E1812154EAC1009F640D /* PureLayout.framework in Frameworks */,
 				3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */,
 			);
@@ -992,6 +990,7 @@
 				3C5E53BD21C42AD100A55467 /* CollectionViewCell.swift */,
 				3C5E53BA21C42AD000A55467 /* CollectionViewCell+Reuse.swift */,
 				3C2E311021D2340300FCB4AD /* CollectionView.swift */,
+				3C4E565621E28847004C213F /* DynamicCollectionView.swift */,
 				3C5E53B721C42ACF00A55467 /* CollectionViewController.swift */,
 				3C5E53B921C42AD000A55467 /* CollectionViewSection.swift */,
 				3C5E53BB21C42AD000A55467 /* CollectionViewSource.swift */,
@@ -1212,6 +1211,7 @@
 				3C5E53B621C42ABD00A55467 /* Framework */,
 				3C5E53C521C42B8300A55467 /* ViewModels */,
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
+				E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
 				3C6205AA219843D2001E8D4B /*  Main */,
@@ -1420,7 +1420,6 @@
 				3CE710182121827900EBF6A5 /* Frameworks */,
 				3CE710192121827900EBF6A5 /* Resources */,
 				E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */,
-				565C71D73C785F6F43099377 /* [CP] Copy Pods Resources */,
 				3C41E928212D742700C2E242 /* Carthage */,
 			);
 			buildRules = (
@@ -1497,11 +1496,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Arrow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/then.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ws.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
 			);
 			name = Carthage;
@@ -1511,28 +1507,13 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		565C71D73C785F6F43099377 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisedFuture/PromisedFuture.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
@@ -1547,7 +1528,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9250E09F3080259DD52CD7D /* [CP] Check Pods Manifest.lock */ = {
@@ -1714,6 +1695,7 @@
 				3C6205C221988060001E8D4B /* EDInfoModels.swift in Sources */,
 				3C6205A721981242001E8D4B /* EventsDetailModels.swift in Sources */,
 				3CE9D1D72123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
+				E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */,
 				3C5E53C321C42AD100A55467 /* CollectionViewViewModel.swift in Sources */,
 				3C29FF8321D8E0F40094A893 /* EDResourcesModels.swift in Sources */,
 				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
@@ -1833,6 +1815,7 @@
 				3CC37769216A124B0020236D /* InstantiableResourceUse.swift in Sources */,
 				3C05A0062198979E00F93289 /* EDSchedulesInteractor.swift in Sources */,
 				3CFF85C7218F8FDB00DED3FB /* Irregularhours.swift in Sources */,
+				3C4E565721E28847004C213F /* DynamicCollectionView.swift in Sources */,
 				3C05A0282198E7E100F93289 /* EDLocationWorker.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 				3CA2131D218E267100F74EED /* Constants.swift in Sources */,

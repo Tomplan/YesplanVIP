@@ -17,8 +17,10 @@ class CollectionView: UIView {
     
     // MARK:- Properties:
  
+    
     lazy var collectionView : UICollectionView = {
         
+    
         let flowLayout = UICollectionViewFlowLayout()
         
         flowLayout.sectionHeadersPinToVisibleBounds = true
@@ -36,7 +38,7 @@ class CollectionView: UIView {
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 1)
         flowLayout.sectionHeadersPinToVisibleBounds = false
         
-        collectionView.backgroundColor = UIColor.darkGray // UIColor(r: 176, g: 176, b: 176)
+//        collectionView.backgroundColor = UIColor.darkGray // UIColor(r: 176, g: 176, b: 176)
 
         return collectionView
     }()
@@ -47,8 +49,8 @@ class CollectionView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
         sv(collectionView)
-        collectionView.backgroundColor = UIColor.green
-        collectionView.collectionViewLayout.collectionView?.backgroundColor = UIColor.blue
+//        collectionView.backgroundColor = UIColor.green
+//        collectionView.collectionViewLayout.collectionView?.backgroundColor = UIColor.blue
         setupConstraints()
 //        collectionView.fillContainer()
 
@@ -61,5 +63,18 @@ class CollectionView: UIView {
             ,40
             
         )
+    }
+}
+
+extension CollectionView {
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
+            self.invalidateIntrinsicContentSize()
+        }
+    }
+    
+    override open var intrinsicContentSize: CGSize {
+        return collectionView.collectionViewLayout.collectionViewContentSize
     }
 }

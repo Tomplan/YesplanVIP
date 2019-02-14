@@ -21,6 +21,13 @@ DEPENDENCIES:
   - Sourcery
   - Squeaky (from `https://github.com/ajself/squeaky-clean.git`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PromisedFuture
+    - PromiseKit
+    - SearchTextField
+    - Sourcery
+
 EXTERNAL SOURCES:
   Squeaky:
     :git: https://github.com/ajself/squeaky-clean.git
@@ -39,4 +46,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4e0ec2c9e53d257d46fda754616c96bccda1adcc
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0

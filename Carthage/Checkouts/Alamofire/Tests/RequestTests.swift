@@ -36,7 +36,7 @@ class RequestResponseTestCase: BaseTestCase {
         var response: DataResponse<Data?>?
 
         // When
-        Alamofire.request(urlString, parameters: ["foo": "bar"])
+        AF.request(urlString, parameters: ["foo": "bar"])
             .response { resp in
                 response = resp
                 expectation.fulfill()
@@ -62,7 +62,7 @@ class RequestResponseTestCase: BaseTestCase {
         var response: DataResponse<Data?>?
 
         // When
-        Alamofire.request(urlString)
+        AF.request(urlString)
             .downloadProgress { progress in
                 progressValues.append(progress.fractionCompleted)
             }
@@ -108,7 +108,7 @@ class RequestResponseTestCase: BaseTestCase {
         var response: DataResponse<Any>?
 
         // When
-        Alamofire.request(urlString, method: .post, parameters: parameters)
+        AF.request(urlString, method: .post, parameters: parameters)
             .responseJSON { closureResponse in
                 response = closureResponse
                 expectation.fulfill()
@@ -160,7 +160,7 @@ class RequestResponseTestCase: BaseTestCase {
         var response: DataResponse<Any>?
 
         // When
-        Alamofire.request(urlString, method: .post, parameters: parameters)
+        AF.request(urlString, method: .post, parameters: parameters)
             .responseJSON { closureResponse in
                 response = closureResponse
                 expectation.fulfill()
@@ -203,6 +203,65 @@ class RequestResponseTestCase: BaseTestCase {
         // Then
         XCTAssertEqual(response?.result.isSuccess, true)
     }
+
+    // MARK: Encodable Parameters
+
+    func testThatRequestsCanPassEncodableParametersAsJSONBodyData() {
+        // Given
+        let parameters = HTTPBinParameters(property: "one")
+        let expect = expectation(description: "request should complete")
+        var receivedResponse: DataResponse<HTTPBinResponse>?
+
+        // When
+        AF.request("https://httpbin.org/post", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+          .responseDecodable { (response: DataResponse<HTTPBinResponse>) in
+              receivedResponse = response
+              expect.fulfill()
+          }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertEqual(receivedResponse?.result.value?.data, "{\"property\":\"one\"}")
+    }
+
+    func testThatRequestsCanPassEncodableParametersAsAURLQuery() {
+        // Given
+        let parameters = HTTPBinParameters(property: "one")
+        let expect = expectation(description: "request should complete")
+        var receivedResponse: DataResponse<HTTPBinResponse>?
+
+        // When
+        AF.request("https://httpbin.org/get", method: .get, parameters: parameters)
+          .responseDecodable { (response: DataResponse<HTTPBinResponse>) in
+              receivedResponse = response
+              expect.fulfill()
+          }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertEqual(receivedResponse?.result.value?.args, ["property": "one"])
+    }
+
+    func testThatRequestsCanPassEncodableParametersAsURLEncodedBodyData() {
+        // Given
+        let parameters = HTTPBinParameters(property: "one")
+        let expect = expectation(description: "request should complete")
+        var receivedResponse: DataResponse<HTTPBinResponse>?
+
+        // When
+        AF.request("https://httpbin.org/post", method: .post, parameters: parameters)
+            .responseDecodable { (response: DataResponse<HTTPBinResponse>) in
+                receivedResponse = response
+                expect.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertEqual(receivedResponse?.result.value?.form, ["property": "one"])
+    }
 }
 
 // MARK: -
@@ -213,7 +272,6 @@ class RequestDescriptionTestCase: BaseTestCase {
         let urlString = "https://httpbin.org/get"
         let manager = Session(startRequestsImmediately: false)
         let request = manager.request(urlString)
-        let initialRequestDescription = request.description
 
         let expectation = self.expectation(description: "Request description should update: \(urlString)")
 
@@ -228,11 +286,8 @@ class RequestDescriptionTestCase: BaseTestCase {
 
         waitForExpectations(timeout: timeout, handler: nil)
 
-        let finalRequestDescription = request.description
-
         // Then
-        XCTAssertEqual(initialRequestDescription, "No request created yet.")
-        XCTAssertEqual(finalRequestDescription, "GET https://httpbin.org/get (\(response?.statusCode ?? -1))")
+        XCTAssertEqual(request.description, "GET https://httpbin.org/get (\(response?.statusCode ?? -1))")
     }
 }
 
@@ -248,11 +303,11 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
     }()
 
     let managerWithAcceptLanguageHeader: Session = {
-        var headers = HTTPHeaders.defaultHTTPHeaders
+        var headers = HTTPHeaders.default
         headers["Accept-Language"] = "en-US"
 
         let configuration = URLSessionConfiguration.alamofireDefault
-        configuration.httpAdditionalHeaders = headers
+        configuration.httpHeaders = headers
 
         let manager = Session(configuration: configuration)
 
@@ -260,11 +315,11 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
     }()
 
     let managerWithContentTypeHeader: Session = {
-        var headers = HTTPHeaders.defaultHTTPHeaders
+        var headers = HTTPHeaders.default
         headers["Content-Type"] = "application/json"
 
         let configuration = URLSessionConfiguration.alamofireDefault
-        configuration.httpAdditionalHeaders = headers
+        configuration.httpHeaders = headers
 
         let manager = Session(configuration: configuration)
 
@@ -313,7 +368,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let expectation = self.expectation(description: "request should complete")
 
         // When
-        let headers: [String: String] = [ "X-Custom-Header": "{\"key\": \"value\"}" ]
+        let headers: HTTPHeaders = [ "X-Custom-Header": "{\"key\": \"value\"}" ]
         let request = manager.request(urlString, headers: headers).response { _ in expectation.fulfill() }
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -328,7 +383,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let expectation = self.expectation(description: "request should complete")
 
         // When
-        let headers = [ "Accept-Language": "en-GB" ]
+        let headers: HTTPHeaders = [ "Accept-Language": "en-GB" ]
         let request = managerWithAcceptLanguageHeader.request(urlString, headers: headers).response { _ in expectation.fulfill() }
 
         waitForExpectations(timeout: timeout, handler: nil)

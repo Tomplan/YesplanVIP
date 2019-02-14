@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 protocol ToDosDisplayLogic: class
 {
@@ -19,6 +20,8 @@ protocol ToDosDisplayLogic: class
 
 class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout, ToDosDisplayLogic
 {
+    private let notificationPublisher = NotificationPublisher()
+
     var interactor: ToDosBusinessLogic?
     var router: (NSObjectProtocol & ToDosRoutingLogic & ToDosDataPassing)?
     var v = ToDosTabView()
@@ -72,6 +75,9 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        
         
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
@@ -127,6 +133,31 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         displayedToDos = viewModel.displayedToDos
         displayedStatuses = viewModel.displayedStatuses
 
+//        print("displayedToDos:", displayedToDos)
+        
+        
+        
+        
+        for toDos in displayedToDos {
+            for toDo in toDos.toDos {
+                
+                
+//                var dateComponents = DateComponents()
+                if let myDate = toDo.due {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                let date = dateFormatter.date(from:myDate)!
+                let calendar = Calendar.current
+                let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
+                notificationPublisher.sendNotification(title: toDo.name ?? "name", subtitle: toDo.event?.name ?? "eventName", body: toDo.description ?? "description", badge: 1, delayInterval: nil, date: components)
+            }
+            }
+        }
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 20
+//        dateComponents.minute = 42
+//        notificationPublisher.sendNotification(title: "joep", subtitle: "fuck yes", body: "THIS IS WORKING", badge: 1, delayInterval: nil, date: dateComponents )
+        
         self.v.collectionView.reloadData()
         self.v.refreshControl.endRefreshing()
     }

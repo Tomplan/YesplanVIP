@@ -56,7 +56,7 @@ class EDTeamInteractor: EDTeamBusinessLogic, EDTeamDataStore
                     dictionary: dictResourcebookings
                 )
                 self.presenter?.presentSomething(response: response)
-                
+//                print("response:", response)
                 
                 
                 

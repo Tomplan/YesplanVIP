@@ -12,20 +12,27 @@
 
 import UIKit
 import PromisedFuture
+import PromiseKit
 
 class TasksWorker
 {
-    func getTasks(_ path: String) -> Future<Tasks> {
-        return Future(operation: { completion in
+    func getTasks(_ path: String) -> Promise<Tasks> {
+        return firstly {
             APIClient.tasks("\(path)")
+            }
                 .map({$0})
-                .execute(onSuccess: { items in
-                    completion(.success(items))
-                }, onFailure: { error in
-                    completion(.failure(error))
-                })
-        })
     }
+//    func getTasks(_ path: String) -> Future<Tasks> {
+//        return Future(operation: { completion in
+//            APIClient.tasks("\(path)")
+//                .map({$0})
+//                .execute(onSuccess: { items in
+//                    completion(.success(items))
+//                }, onFailure: { error in
+//                    completion(.failure(error))
+//                })
+//        })
+//    }
     
     func stringToDateShort(myDateString: String) -> String {
         if myDateString != "no deadline" {
@@ -44,15 +51,24 @@ class TasksWorker
         }
     }
     
-    func groupTasksByDue(tasks: Tasks) -> Future<[String : [Task]]>
+    func groupTasksByDue(tasks: Tasks) -> Promise<[String : [Task]]>
     {
         var taskDict = [String : [Task]]()
-
+        
         taskDict = Dictionary(grouping: tasks.data, by: { $0.due?.convertDateString(dateFormat: "yyyy-MM-dd")! ?? "no deadline"})
-        return Future(value: taskDict)
+        return Promise { seal in
+            seal.resolve(.fulfilled(taskDict))
+        }
     }
+//    func groupTasksByDue(tasks: Tasks) -> Future<[String : [Task]]>
+//    {
+//        var taskDict = [String : [Task]]()
+//
+//        taskDict = Dictionary(grouping: tasks.data, by: { $0.due?.convertDateString(dateFormat: "yyyy-MM-dd")! ?? "no deadline"})
+//        return Future(value: taskDict)
+//    }
     
-    func sortTasksInEachGroupByDue(taskDict: [String : [Task]]) -> Future<[String : [Task]]>
+    func sortTasksInEachGroupByDue(taskDict: [String : [Task]]) -> Promise<[String : [Task]]>
     {
         var tasks: [String:[Task]] = [String:[Task]]()
         for (key, value) in taskDict {
@@ -60,14 +76,34 @@ class TasksWorker
             tasks[key] = valueSorted
             
         }
-        return Future(value: tasks)
+        return Promise { seal in
+            seal.resolve(.fulfilled(tasks))
+        }
     }
+//    func sortTasksInEachGroupByDue(taskDict: [String : [Task]]) -> Future<[String : [Task]]>
+//    {
+//        var tasks: [String:[Task]] = [String:[Task]]()
+//        for (key, value) in taskDict {
+//            let valueSorted = value.sorted(by: { $0.due ?? "no deadline" < $1.due ?? "no deadline" } )
+//            tasks[key] = valueSorted
+//
+//        }
+//        return Future(value: tasks)
+//    }
     
-    func sortDictByDate(dictTasks: [String:[Task]]) -> Future<[(key: String, value: [Task])]> {
+    func sortDictByDate(dictTasks: [String:[Task]]) -> Promise<[(key: String, value: [Task])]> {
         
         let sortedDictByDate = dictTasks.sorted(by:  { $0.0 < $1.0 })
-        return Future(value: sortedDictByDate)
+        return Promise { seal in
+            seal.resolve(.fulfilled(sortedDictByDate))
+        }
     }
+    
+//    func sortDictByDate(dictTasks: [String:[Task]]) -> Future<[(key: String, value: [Task])]> {
+//
+//        let sortedDictByDate = dictTasks.sorted(by:  { $0.0 < $1.0 })
+//        return Future(value: sortedDictByDate)
+//    }
     
     func showErrorPopup(e:Error) { print("An error occured \(e)") }
     

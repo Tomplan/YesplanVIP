@@ -12,11 +12,24 @@
 //// Sourcery.app/Contents/MacOS/Sourcery --sources Test.swift --templates Templates/AutoCodable.swifttemplate --output ./Generated --disableCache --verbose
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    func requestNotificationAuthorization(application: UIApplication) {
+        
+        let center =  UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        
+        center.requestAuthorization(options: options) { (granted, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        api = Yesplan()
@@ -35,12 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Present the window
         window?.makeKeyAndVisible()
         
+        requestNotificationAuthorization(application: application)
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         AppConfig.shared.setAppInfo()
+        UIApplication.shared.applicationIconBadgeNumber = 0
         NotificationCenter.default.post(name: Notifications.viewActive.name, object: nil)
     }
     

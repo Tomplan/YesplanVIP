@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 protocol TasksDisplayLogic: class
 {
@@ -75,6 +76,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
   override func viewDidLoad() {
 //    print("viewDidLoad")
     super.viewDidLoad()
+    
     
     let button = UIButton(type: .system)
     button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
@@ -154,6 +156,10 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         }))
         self.present(alert, animated: true)
     }
+    
+//    print("displayedTasks:", displayedTasks)
+    
+   
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

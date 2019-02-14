@@ -32,11 +32,12 @@ class EDTeamPresenter: EDTeamPresentationLogic
             header = x
             }
             var rows: [EDTeam.Something.ViewModel.Section.Row] = []
-
+            print("dict:", dict)
             let x = dict.value.filter { $0.type == "Human" }
 //            print("x:", x)
             for i in 0 ..< x.count {
                 let resourcebooking = x[i]
+                print("res:", resourcebooking)
                     switch resourcebooking {
                             case .bulkResourceUse(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
@@ -66,5 +67,6 @@ class EDTeamPresenter: EDTeamPresentationLogic
             }
             let viewModel = EDTeam.Something.ViewModel(sections: sections)
             viewController?.displaySomething(viewModel: viewModel)
+        print("viiewmodel:", viewModel)
     }
 }

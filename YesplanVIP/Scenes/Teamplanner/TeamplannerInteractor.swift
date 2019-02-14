@@ -46,7 +46,7 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
     
 //    print("resourcebookingsArray: ", resourcebookingsArray)
     worker = TeamplannerTabWorker()
-    
+//    print("joep")
 //    worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
 //        .map { $0.data }
 //        .flatMapValues { item  in return item.schedules.compactMap { $0.id }
@@ -55,10 +55,10 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
             } .get { fromTos in
                 self.dict = fromTos.compactMap { [$0.resource.name : $0.schedules]}
             }.flatMapValues { item  in return item.schedules.compactMap { $0.id }
-//            }.tap { result in print("2", result)
+            }.tap { result in print("2", result)
             }.thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)!
             }.done { result in
-//                print(result)
+//                print("result:", result)
                 let response = TeamplannerTab.Something.Response(
                     resourcebookings: result,
                     schedules: self.dict,

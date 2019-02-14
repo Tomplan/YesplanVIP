@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class MainNavigationController: UINavigationController { }
 
@@ -17,7 +18,8 @@ protocol MainTabBarDisplayLogic: class
 }
 
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
-    
+    private let notificationPublisher = NotificationPublisher()
+
     var interactor: MainTabBarBusinessLogic?
     var router: (NSObjectProtocol & MainTabBarRoutingLogic & MainTabBarDataPassing)?
     // MARK: Object lifecycle
@@ -66,6 +68,11 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 20
+//        dateComponents.minute = 39
+//        notificationPublisher.sendNotification(title: "joep", subtitle: "fuck yes", body: "THIS IS WORKING", badge: 1, delayInterval: nil, date: dateComponents )
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .selected)

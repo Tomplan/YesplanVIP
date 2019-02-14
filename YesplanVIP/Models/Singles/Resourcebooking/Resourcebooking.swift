@@ -42,8 +42,11 @@ enum Resourcebooking {
         case .instantiableResourceUse(let x): let type = x.resource.type; return type
         case .instantiableResourceUseGroup(let x): let type = x.resource.type; return type
 //        case .resourceSetUse(let x): let type = x.resource.type; return type
-        case .resourceSetUse(let x): let type = x.children.compactMap { $0.resource.type}; return type[0]
-
+        case .resourceSetUse(let x):
+            let type = x.children.compactMap { $0.type}
+            print("type:", type)
+            ; return type[0]
+            // MARK: TODO, 
         }
     }
     

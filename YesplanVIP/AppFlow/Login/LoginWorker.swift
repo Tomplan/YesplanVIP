@@ -65,8 +65,40 @@ class LoginWorker
                         case .explicitlyCancelled:
                             resolve((false, "AFError: \(error.localizedDescription)"))
 
-                        case .certificatePinningFailed:
-                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .certificatePinningFailed:
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+                        case .parameterEncoderFailed(let reason):
+                            switch reason {
+                            case .encoderFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .missingRequiredComponent(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            }
+                        case .serverTrustEvaluationFailed(let reason):
+                            switch reason {
+                            case .certificatePinningFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .defaultEvaluationFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .hostValidationFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .noCertificatesFound:
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .noPublicKeysFound:
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .noRequiredEvaluator(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .policyApplicationFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .publicKeyPinningFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .revocationCheckFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .revocationPolicyCreationFailed:
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            case .settingAnchorCertificatesFailed(_):
+                                resolve((false, "AFError: \(error.localizedDescription)"))
+                            }
                         }
                         
                     } else if let error = error as? URLError {

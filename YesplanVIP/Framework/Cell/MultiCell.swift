@@ -72,16 +72,15 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
         super.init(frame: frame);
 //        contentView.translatesAutoresizingMaskIntoConstraints = false
         setupComponents()
-//        setupConstraints()
+        setupConstraints()
 
     }
     
     
     func setupComponents(){
         
-        contentView.backgroundColor = UIColor.red
-        collectionView.backgroundColor = UIColor.yellow
-//        print(self.collectionView.collectionViewLayout.collectionViewContentSize)
+//        contentView.backgroundColor = UIColor.red
+//        collectionView.backgroundColor = UIColor.yellow
 
         
         sv(collectionView)
@@ -95,13 +94,16 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
 ////
         setupConstraints()
 //        contentView.addSubview(collectionView)
-        print(contentView.subviews.last)
-        if let lastSubview = contentView.subviews.last {
-//            collectionView.frame
-//            collectionView.autoPinEdge(.bottom, to: .bottom, of: lastSubview)
-            collectionView.frameLayoutGuide.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 20)
-//            contentView.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 10).isActive = true
-        }
+//        print(contentView.subviews.last)
+        
+//        if let lastSubview = contentView.subviews.last {
+////            collectionView.frame
+////            collectionView.autoPinEdge(.bottom, to: .bottom, of: lastSubview)
+//
+//            collectionView.frameLayoutGuide.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 20)
+//            
+////            contentView.bottomAnchor.constraint(equalTo: lastSubview.bottomAnchor, constant: 10).isActive = true
+//        }
 //        collectionView.register(MultiHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "MultiHeaderCell")
 //        collectionView.register(MultiCell.self, forCellWithReuseIdentifier: "MultiCell")
 
@@ -113,7 +115,6 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
             4
             ,|-16-collectionView-16-|
             ,4
-
         )
         
     }

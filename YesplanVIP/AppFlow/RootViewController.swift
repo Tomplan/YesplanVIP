@@ -11,10 +11,11 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 class RootViewController: UIViewController {
-    
+    private let notificationPublisher = NotificationPublisher()
+//    private let calendarEvents = CalendarController()
     private var current: UIViewController
     
     //    var deeplink: DeeplinkType? {
@@ -35,6 +36,13 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        print("rootdidload")
+        
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 20
+//        dateComponents.minute = 35
+//        notificationPublisher.sendNotification(title: "joep", subtitle: "fuck yes", body: "THIS IS WORKING", badge: 1, delayInterval: nil, date: dateComponents )
+//
         addChild(current)
         current.view.frame = view.bounds
         view.addSubview(current.view)
