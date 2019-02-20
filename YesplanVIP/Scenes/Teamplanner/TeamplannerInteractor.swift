@@ -54,8 +54,10 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
             .map { $0.data
             } .get { fromTos in
                 self.dict = fromTos.compactMap { [$0.resource.name : $0.schedules]}
+//            }.tap { result in
+//                print("r", result)
             }.flatMapValues { item  in return item.schedules.compactMap { $0.id }
-            }.tap { result in print("2", result)
+//            }.tap { result in print("2", result)
             }.thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)!
             }.done { result in
 //                print("result:", result)

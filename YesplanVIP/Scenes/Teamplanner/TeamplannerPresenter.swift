@@ -29,7 +29,7 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
   {
   
             let schedules = response.schedules.flatMap { $0.flatMap { $0.value } }
-            print("schedules:", schedules)
+//            print("schedules:", schedules)
     
 
             for i in 0 ..< schedules.count {
@@ -66,12 +66,14 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
                         sections.append(item) }
                 }
             }
+    
             let viewModel = TeamplannerTab.Something.ViewModel(
                     sections: sections
                     ,error: nil
                     )
             self.viewController?.displaySomething(viewModel: viewModel)
-    print("joemojoemo")
+    
+//    print("joemojoemo")
     }
 }
 

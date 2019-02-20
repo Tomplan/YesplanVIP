@@ -39,6 +39,10 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     {
         worker = ToDosWorker()
         
+//        var user = "%22\(UserDefaults.standard.string(forKey: "todo_user")!)"
+//        let usercode = user.removingPercentEncoding
+//        print(usercode)
+        
         worker?.getTasks("task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)

@@ -62,12 +62,12 @@ enum Resourcebooking {
 
     var start: String? {
         switch self {
-        case .bulkResourceUse(_): return nil
-        case .freeFormResourceUse(_): return nil
+        case .bulkResourceUse(let x): let start = x.start ; return start
+        case .freeFormResourceUse(let x): let start = x.start ; return start
         case .instantiableResourceUse(let x): let start = x.start; return start
         case .instantiableResourceUseGroup(let x):
-//            for child in x.children { let start = child.start; return start }
-            print(x)
+            for child in x.children { let start = child.start; return start }
+//            print(x)
         case .resourceSetUse(let x):
             print(x)
 //            for child in x.children { if let start = child.start { return start } else { return nil } }

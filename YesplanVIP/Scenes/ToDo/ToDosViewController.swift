@@ -136,27 +136,48 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
 //        print("displayedToDos:", displayedToDos)
         
         
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+        
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            print("*requests*")
+            for request in requests {
+                print("(request:", request)
+            }
+        })
         
         
         for toDos in displayedToDos {
             for toDo in toDos.toDos {
                 
-                
-//                var dateComponents = DateComponents()
                 if let myDate = toDo.due {
+
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
                 let date = dateFormatter.date(from:myDate)!
                 let calendar = Calendar.current
-                let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)
-                notificationPublisher.sendNotification(title: toDo.name ?? "name", subtitle: toDo.event?.name ?? "eventName", body: toDo.description ?? "description", badge: 1, delayInterval: nil, date: components)
-            }
+                // first notification
+                    var notificationDate = calendar.date(byAdding: .hour, value: -1, to: date)!
+//                    print("notificationDate:", notificationDate)
+                    var components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
+                    notificationPublisher.sendNotification(title: toDo.name ?? "name", subtitle: "due: \(toDo.due?.convertDateString(dateFormat: "EEEE, dd MM yyyy") ?? "")", body: toDo.description ?? "description", badge: 1, delayInterval: nil, date: components, id: "1 \(toDo.id)")
+
+                    // second notification
+                    notificationDate = calendar.date(byAdding: .day, value: -1, to: date)!
+//                    print("notificationDate:", notificationDate)
+                    components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
+                    notificationPublisher.sendNotification(title: toDo.name ?? "name", subtitle: "due: \(toDo.due?.convertDateString(dateFormat: "EEEE, dd MM yyyy") ?? "")", body: toDo.description ?? "description", badge: 1, delayInterval: nil, date: components, id: "2 \(toDo.id)")
+                }
             }
         }
-//        var dateComponents = DateComponents()
-//        dateComponents.hour = 20
-//        dateComponents.minute = 42
-//        notificationPublisher.sendNotification(title: "joep", subtitle: "fuck yes", body: "THIS IS WORKING", badge: 1, delayInterval: nil, date: dateComponents )
+        
+//        center.getPendingNotificationRequests(completionHandler: { requests in
+//            print("requests")
+//            for request in requests {
+//                print("(request:", request)
+//            }
+//        })
         
         self.v.collectionView.reloadData()
         self.v.refreshControl.endRefreshing()

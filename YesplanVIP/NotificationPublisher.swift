@@ -17,14 +17,15 @@ class NotificationPublisher: NSObject {
                           body: String,
                           badge: Int?,
                           delayInterval: Int?,
-                          date: DateComponents?
+                          date: DateComponents?,
+                            id: String
         ) {
         
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = title
         notificationContent.subtitle = subtitle
         notificationContent.body = body
-        
+        notificationContent.sound = UNNotificationSound.default
         
        
 //        var dateComponents = DateComponents()
@@ -33,8 +34,9 @@ class NotificationPublisher: NSObject {
 //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         // Create request
-        let uniqueID = UUID().uuidString // Keep a record of this if necessary
-        
+//        let uniqueID = UUID().uuidString // Keep a record of this if necessary
+        let uniqueID = id // Keep a record of this if necessary
+
 //        var delayTimeTrigger: UNTimeIntervalNotificationTrigger?
 //
 //        if let delayInterval = delayInterval {
@@ -65,11 +67,20 @@ class NotificationPublisher: NSObject {
         
         UNUserNotificationCenter.current().delegate = self
         
-        UNUserNotificationCenter.current().add(request) { error in
+        let center = UNUserNotificationCenter.current()
+       
+        
+        center.add(request) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
         }
+        
+//        center.getPendingNotificationRequests(completionHandler: { requests in
+//            for request in requests {
+//                print(request)
+//            }
+//        })
     }
 }
 
