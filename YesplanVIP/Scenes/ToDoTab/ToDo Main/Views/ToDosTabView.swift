@@ -32,7 +32,7 @@ class ToDosTabView: UIView {
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 10)
         
         collectionView.backgroundColor = UIColor.black // UIColor(r: 176, g: 176, b: 176)
-        
+        collectionView.alwaysBounceVertical = true
         return collectionView
     }()
     

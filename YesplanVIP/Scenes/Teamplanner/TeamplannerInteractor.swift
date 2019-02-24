@@ -59,6 +59,7 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
             }.flatMapValues { item  in return item.schedules.compactMap { $0.id }
 //            }.tap { result in print("2", result)
             }.thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)!
+//            }.tap { result in print("3", result)
             }.done { result in
 //                print("result:", result)
                 let response = TeamplannerTab.Something.Response(

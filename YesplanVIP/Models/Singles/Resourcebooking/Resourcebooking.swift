@@ -71,6 +71,8 @@ enum Resourcebooking {
         case .resourceSetUse(let x):
             print(x)
 //            for child in x.children { if let start = child.start { return start } else { return nil } }
+            // MARK: TODO
+
     }
         return nil
     }
@@ -88,6 +90,7 @@ enum Resourcebooking {
 //            for child in x.children {
 //                if let end = child.end { return end } else { return nil } }
 //            }
+            // MARK: TODO
         }
         return nil
         }
@@ -332,19 +335,19 @@ extension Resourcebooking {
         let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
 
         switch self {
-        case .bulkResourceUse(let x):
+        case .bulkResourceUse(_):
 //            print("bulk:", x.resource.name)
             let item = EDTeamViewModel(self)
             return item
-        case .freeFormResourceUse(let x):
+        case .freeFormResourceUse(_):
 //            print("free:", x.resource.name)
             let item = EDTeamViewModel(self)
             return item
-        case .instantiableResourceUse(let x):
+        case .instantiableResourceUse(_):
 //            print("inst:", x.resource.name)
             let item = EDTeamViewModel(self)
             return item
-        case .instantiableResourceUseGroup(let x):
+        case .instantiableResourceUseGroup(_):
 //            print("group:", x.resource.name)
             
             let item = EDTeamViewModel(self)

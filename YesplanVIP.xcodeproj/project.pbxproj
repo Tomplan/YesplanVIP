@@ -286,6 +286,12 @@
 		3CFF85CF218F914D00DED3FB /* Overwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CE218F914D00DED3FB /* Overwork.swift */; };
 		3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */; };
 		3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */; };
+		E2C50D20221DA6C100D9C6CF /* ToDoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1A221DA6C100D9C6CF /* ToDoDetailPresenter.swift */; };
+		E2C50D21221DA6C100D9C6CF /* ToDoDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1B221DA6C100D9C6CF /* ToDoDetailWorker.swift */; };
+		E2C50D22221DA6C100D9C6CF /* ToDoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1C221DA6C100D9C6CF /* ToDoDetailRouter.swift */; };
+		E2C50D23221DA6C100D9C6CF /* ToDoDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1D221DA6C100D9C6CF /* ToDoDetailModels.swift */; };
+		E2C50D24221DA6C100D9C6CF /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1E221DA6C100D9C6CF /* ToDoDetailViewController.swift */; };
+		E2C50D25221DA6C100D9C6CF /* ToDoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1F221DA6C100D9C6CF /* ToDoDetailInteractor.swift */; };
 		E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */; };
 /* End PBXBuildFile section */
 
@@ -594,6 +600,12 @@
 		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A895A2BFC4C2DFA42EB7607F /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C50D1A221DA6C100D9C6CF /* ToDoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailPresenter.swift; sourceTree = "<group>"; };
+		E2C50D1B221DA6C100D9C6CF /* ToDoDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailWorker.swift; sourceTree = "<group>"; };
+		E2C50D1C221DA6C100D9C6CF /* ToDoDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailRouter.swift; sourceTree = "<group>"; };
+		E2C50D1D221DA6C100D9C6CF /* ToDoDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailModels.swift; sourceTree = "<group>"; };
+		E2C50D1E221DA6C100D9C6CF /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
+		E2C50D1F221DA6C100D9C6CF /* ToDoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailInteractor.swift; sourceTree = "<group>"; };
 		E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1255,7 +1267,7 @@
 				3CE710872121A76B00EBF6A5 /* Teamplanner */,
 				3CE710A02121A79200EBF6A5 /* Tasks */,
 				3CE710B92121A7B200EBF6A5 /* Contacts */,
-				3CE710D22121A7EB00EBF6A5 /* ToDo */,
+				3CE710D22121A7EB00EBF6A5 /* ToDoTab */,
 				3C40AF2F212D921E0077DDC5 /* UserTab */,
 				3CE711042121A84C00EBF6A5 /* Help */,
 				3CD592AA212AC6D2005BBF71 /* Logout */,
@@ -1304,18 +1316,13 @@
 			path = Contacts;
 			sourceTree = "<group>";
 		};
-		3CE710D22121A7EB00EBF6A5 /* ToDo */ = {
+		3CE710D22121A7EB00EBF6A5 /* ToDoTab */ = {
 			isa = PBXGroup;
 			children = (
-				3C570A47216552E600154B93 /* Views */,
-				3CE710BA2121A7E300EBF6A5 /* ToDosPresenter.swift */,
-				3CE710BB2121A7E300EBF6A5 /* ToDosWorker.swift */,
-				3CE710BC2121A7E300EBF6A5 /* ToDosRouter.swift */,
-				3CE710BD2121A7E300EBF6A5 /* ToDosModels.swift */,
-				3CE710BE2121A7E300EBF6A5 /* ToDosViewController.swift */,
-				3CE710BF2121A7E300EBF6A5 /* ToDosInteractor.swift */,
+				E2C50D19221DA4C700D9C6CF /* ToDo Main */,
+				E2C50D26221DA6CC00D9C6CF /* ToDo Detail */,
 			);
-			path = ToDo;
+			path = ToDoTab;
 			sourceTree = "<group>";
 		};
 		3CE711042121A84C00EBF6A5 /* Help */ = {
@@ -1406,6 +1413,41 @@
 				75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E2C50D19221DA4C700D9C6CF /* ToDo Main */ = {
+			isa = PBXGroup;
+			children = (
+				3C570A47216552E600154B93 /* Views */,
+				3CE710BA2121A7E300EBF6A5 /* ToDosPresenter.swift */,
+				3CE710BB2121A7E300EBF6A5 /* ToDosWorker.swift */,
+				3CE710BC2121A7E300EBF6A5 /* ToDosRouter.swift */,
+				3CE710BD2121A7E300EBF6A5 /* ToDosModels.swift */,
+				3CE710BE2121A7E300EBF6A5 /* ToDosViewController.swift */,
+				3CE710BF2121A7E300EBF6A5 /* ToDosInteractor.swift */,
+			);
+			path = "ToDo Main";
+			sourceTree = "<group>";
+		};
+		E2C50D26221DA6CC00D9C6CF /* ToDo Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E2C50D27221DA6DD00D9C6CF /* Main */,
+			);
+			path = "ToDo Detail";
+			sourceTree = "<group>";
+		};
+		E2C50D27221DA6DD00D9C6CF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E2C50D1A221DA6C100D9C6CF /* ToDoDetailPresenter.swift */,
+				E2C50D1B221DA6C100D9C6CF /* ToDoDetailWorker.swift */,
+				E2C50D1C221DA6C100D9C6CF /* ToDoDetailRouter.swift */,
+				E2C50D1D221DA6C100D9C6CF /* ToDoDetailModels.swift */,
+				E2C50D1E221DA6C100D9C6CF /* ToDoDetailViewController.swift */,
+				E2C50D1F221DA6C100D9C6CF /* ToDoDetailInteractor.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1561,6 +1603,7 @@
 				3C40AEF2212D8E550077DDC5 /* EventsTabModels.swift in Sources */,
 				3C08E09221997160007AAF8B /* EDTeamViewCell.swift in Sources */,
 				3CC37771216A2FB90020236D /* BulkResourceUse.swift in Sources */,
+				E2C50D21221DA6C100D9C6CF /* ToDoDetailWorker.swift in Sources */,
 				3C24BAEC215613AB00E28966 /* String+Extensions.swift in Sources */,
 				3C05A02A2198E7E100F93289 /* EDLocationModels.swift in Sources */,
 				3C40AED8212D8C090077DDC5 /* Events.swift in Sources */,
@@ -1633,6 +1676,7 @@
 				3C5E53D021C42B9A00A55467 /* HeaderViewModel.swift in Sources */,
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3C05A0362198E91D00F93289 /* EDLocationViewCell+Extensions.swift in Sources */,
+				E2C50D20221DA6C100D9C6CF /* ToDoDetailPresenter.swift in Sources */,
 				3C5E53CF21C42B9A00A55467 /* AlbumViewModel.swift in Sources */,
 				3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */,
 				3C7B4F06217A210E000D7FDB /* DayPartSetPricingFormula.swift in Sources */,
@@ -1651,6 +1695,7 @@
 				3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */,
 				3CC3774521688E720020236D /* Notifications+Util.swift in Sources */,
 				3CE710C62121A7E300EBF6A5 /* ToDosRouter.swift in Sources */,
+				E2C50D22221DA6C100D9C6CF /* ToDoDetailRouter.swift in Sources */,
 				3C05A0342198E8F300F93289 /* EDLocationViewHeader.swift in Sources */,
 				3C2E310A21CD856600FCB4AD /* MultiHeaderViewModel.swift in Sources */,
 				3C5E53D321C42B9A00A55467 /* CollectionViewModel.swift in Sources */,
@@ -1676,6 +1721,7 @@
 				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */,
+				E2C50D25221DA6C100D9C6CF /* ToDoDetailInteractor.swift in Sources */,
 				3C6205A921981242001E8D4B /* EventsDetailInteractor.swift in Sources */,
 				3C5E539421C4156B00A55467 /* MultiCell.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
@@ -1698,6 +1744,7 @@
 				E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */,
 				3C5E53C321C42AD100A55467 /* CollectionViewViewModel.swift in Sources */,
 				3C29FF8321D8E0F40094A893 /* EDResourcesModels.swift in Sources */,
+				E2C50D24221DA6C100D9C6CF /* ToDoDetailViewController.swift in Sources */,
 				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
 				3C29FF8821D8E1420094A893 /* EDResourcesModel.swift in Sources */,
 				3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */,
@@ -1774,6 +1821,7 @@
 				3C05A0132198992A00F93289 /* EDSchedulesViewController+Extensions.swift in Sources */,
 				3C570A4D2165587500154B93 /* ToDosTabViewController+Extensions.swift in Sources */,
 				3CE710C02121A7E300EBF6A5 /* ToDosPresenter.swift in Sources */,
+				E2C50D23221DA6C100D9C6CF /* ToDoDetailModels.swift in Sources */,
 				3CC377592169E59C0020236D /* Costmodel.swift in Sources */,
 				3C6205BF21988060001E8D4B /* EDInfoPresenter.swift in Sources */,
 				3CE710F52121A84400EBF6A5 /* HelpWorker.swift in Sources */,

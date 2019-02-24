@@ -140,12 +140,12 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         center.removeAllDeliveredNotifications()
         center.removeAllPendingNotificationRequests()
         
-        center.getPendingNotificationRequests(completionHandler: { requests in
-            print("*requests*")
-            for request in requests {
-                print("(request:", request)
-            }
-        })
+//        center.getPendingNotificationRequests(completionHandler: { requests in
+//            print("*requests*")
+//            for request in requests {
+//                print("(request:", request)
+//            }
+//        })
         
         
         for toDos in displayedToDos {

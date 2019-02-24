@@ -30,7 +30,7 @@ class TeamplannerTabView: UIView {
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
         flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 10)
-        
+        collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = UIColor.black // UIColor(r: 176, g: 176, b: 176)
       
         return collectionView
