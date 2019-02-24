@@ -90,9 +90,11 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
     
-    doSomething()
-    
+
+
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+    doSomething()
+
     v.collectionView.dataSource = self
   }
   
@@ -151,7 +153,7 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
 //    displayedResourcebookings = Array(viewModel.sections.sorted(by: { $0.header < $1.header }))
 //    displayedResourcebookings = Array(self.resourcebookings.sorted(by: { $0.date < $1.date }))
     
-//    print(viewModel.sections)
+    print(viewModel.sections)
     sections = viewModel.sections
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
