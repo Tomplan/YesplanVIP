@@ -8,7 +8,7 @@ target 'YesplanVIP' do
   # Pods for YesplanVIP
 pod 'Sourcery'
 # pod 'SwiftyJSON', '~> 4.0'
-# pod 'Alamofire', '~> 4.7'
+# pod 'Alamofire', '5.0.0-rc.3'
 # pod "PromiseKit", "~> 6.0"
 pod 'PromiseKit/Foundation', '~> 6.0'
 

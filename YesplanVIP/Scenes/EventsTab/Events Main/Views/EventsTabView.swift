@@ -39,7 +39,6 @@ class EventsTabView: UIView {
 //        let size: CGSize = CGSize(width: screenWidth, height: cellHeight)
 //        flowLayout.itemSize = CGSize(width: collectionView.frame.size.width, height: 100)
 //        flowLayout.itemSize = size
-        
         return collectionView
     }()
     

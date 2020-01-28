@@ -42,8 +42,11 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
 //        var user = "%22\(UserDefaults.standard.string(forKey: "todo_user")!)"
 //        let usercode = user.removingPercentEncoding
 //        print(usercode)
-        
-        worker?.getTasks("task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)")
+        let string = """
+            task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)
+            """
+        print(string)
+        worker?.getTasks(string)
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)
             .then((worker?.sortDictByDate)!)

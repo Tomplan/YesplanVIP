@@ -96,7 +96,10 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         
 //        doSomething()
 //        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-
+//        v.collectionView.dataSource = self
+//        v.collectionView.delegate = self
+//
+//        v.collectionView.prefetchDataSource = self
   }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,12 +107,13 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//        if #available(iOS 10.0, *) {
-//            v.collectionView.prefetchDataSource = self
-//        }
+        if #available(iOS 10.0, *) {
+            v.collectionView.prefetchDataSource = self
+        }
 //        v.collectionView.prefetchDataSource = self
         v.collectionView.dataSource = self
         v.collectionView.delegate = self
+//        v.collectionView.prefetchDataSource = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -142,6 +146,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     interactor?.doSomething(request: request)
   }
   
+    
   func displaySomething(viewModel: EventsTab.Something.ViewModel ) {
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
@@ -155,9 +160,9 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         }))
     self.present(alert, animated: true)
     }
+    
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }
 }
-
 

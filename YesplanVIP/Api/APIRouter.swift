@@ -76,6 +76,8 @@ enum APIRouter: URLRequestConvertible {
         case .resourcesSchedulesFromTo(let path): return "/api/resources/\(path)/schedules"
         case .statuses(let path): return "/api/statuses/\(path)"
         case .tasks(let path): return "/api/tasks/\(path)"
+//        case .tasks(let path): return "/api/tasks/\(path)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+
 
         case .event(let id): return "/api/event/\(id)"
         case .eventSchedule(let id): return "/api/event/\(id)/schedule"

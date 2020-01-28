@@ -18,7 +18,7 @@ class APIClient {
             
             return Promise(error: APIError.responseUnsuccessful)
         }
-        print(url)
+        print("url:", url)
         return firstly {
             URLSession.shared.dataTask(.promise, with: url)
             }.validate()
