@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-import Kingfisher
+//import Kingfisher
 
 // Here we populate our TableView cell with our Model Data.
 // This could be in the view controller but we like to keep

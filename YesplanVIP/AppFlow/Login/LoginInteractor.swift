@@ -15,7 +15,7 @@ import Foundation
 import Alamofire
 import ws
 //import Arrow
-import then
+import Then
 
 protocol LoginBusinessLogic
 {

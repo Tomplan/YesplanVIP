@@ -12,7 +12,7 @@
 
 import UIKit
 import ws
-import then
+import Then
 
 protocol ToDosBusinessLogic
 {

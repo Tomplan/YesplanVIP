@@ -1,5 +1,4 @@
 PODS:
-  - Alamofire (5.0.0-rc.3)
   - PromisedFuture (1.0.1)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
@@ -10,43 +9,28 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
-  - SearchTextField (1.2.2)
-  - Sourcery (0.15.0)
-  - Squeaky (1.3.2)
+  - SearchTextField (1.2.4)
+  - Sourcery (0.17.0)
 
 DEPENDENCIES:
-  - Alamofire (= 5.0.0-rc.3)
   - PromisedFuture
-  - PromiseKit (~> 6.8)
+  - PromiseKit
   - SearchTextField
   - Sourcery
-  - Squeaky (from `https://github.com/ajself/squeaky-clean.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
     - PromisedFuture
     - PromiseKit
     - SearchTextField
     - Sourcery
 
-EXTERNAL SOURCES:
-  Squeaky:
-    :git: https://github.com/ajself/squeaky-clean.git
-
-CHECKOUT OPTIONS:
-  Squeaky:
-    :commit: b45f0ec920e8377fa5f4c0efcb6faba734654b25
-    :git: https://github.com/ajself/squeaky-clean.git
-
 SPEC CHECKSUMS:
-  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
-  Sourcery: 5895672cae353cdbfa95f3f4aaeb75a664d76f6a
-  Squeaky: daae1f5bf919b1940bbfb2591c6a1cce42d0b505
+  SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
+  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
 
-PODFILE CHECKSUM: 657f95f3ab70d76630fc495efe3747e8a146d687
+PODFILE CHECKSUM: 402a2718a06bdac03c0db3c49580172b355cbec4
 
 COCOAPODS: 1.6.0

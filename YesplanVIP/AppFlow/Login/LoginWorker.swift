@@ -12,7 +12,7 @@
 
 import UIKit
 import Alamofire
-import then
+import Then
 import ws
 //import Arrow
 
