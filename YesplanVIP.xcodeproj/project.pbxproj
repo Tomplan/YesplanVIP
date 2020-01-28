@@ -161,7 +161,6 @@
 		3C7337A92150427C0045F9E1 /* EventsTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7337A82150427C0045F9E1 /* EventsTabViewController+Extensions.swift */; };
 		3C7337AF21504E730045F9E1 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CFAD96C213BF0B7003BAC1C /* Stevia.framework */; };
 		3C7337B221504F310045F9E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE94A0212D757900CE518C /* Alamofire.framework */; };
-		3C7337B421504F310045F9E1 /* then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBE949C212D756000CE518C /* then.framework */; };
 		3C7B4EFC2179E9AA000D7FDB /* ResourcebookingChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFB2179E9AA000D7FDB /* ResourcebookingChildren.swift */; };
 		3C7B4EFE217A0648000D7FDB /* ResourceUseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFD217A0648000D7FDB /* ResourceUseResource.swift */; };
 		3C7B4F00217A0686000D7FDB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B4EFF217A0686000D7FDB /* Location.swift */; };
@@ -300,6 +299,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
 			fileType = pattern.proxy;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -489,8 +490,6 @@
 		3CBBF9D42175E7AE000FE808 /* AutoCodable.swifttemplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AutoCodable.swifttemplate; sourceTree = "<group>"; };
 		3CBBF9D621766F01000FE808 /* ResourcebookingSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcebookingSchedule.swift; sourceTree = "<group>"; };
 		3CBE949A212D755500CE518C /* ws.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ws.framework; path = Carthage/Build/iOS/ws.framework; sourceTree = "<group>"; };
-		3CBE949C212D756000CE518C /* then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = then.framework; path = Carthage/Build/iOS/then.framework; sourceTree = "<group>"; };
-		3CBE949E212D756A00CE518C /* Arrow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arrow.framework; path = Carthage/Build/iOS/Arrow.framework; sourceTree = "<group>"; };
 		3CBE94A0212D757900CE518C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		3CBE94A2212D75C700CE518C /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		3CC3774221688D870020236D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -616,7 +615,6 @@
 			files = (
 				3C7337B221504F310045F9E1 /* Alamofire.framework in Frameworks */,
 				3C7337AF21504E730045F9E1 /* Stevia.framework in Frameworks */,
-				3C7337B421504F310045F9E1 /* then.framework in Frameworks */,
 				3C70E1812154EAC1009F640D /* PureLayout.framework in Frameworks */,
 				3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */,
 			);
@@ -632,8 +630,6 @@
 				3CFAD96E213BF0CD003BAC1C /* Kingfisher.framework */,
 				3CFAD96C213BF0B7003BAC1C /* Stevia.framework */,
 				3CBE94A0212D757900CE518C /* Alamofire.framework */,
-				3CBE949E212D756A00CE518C /* Arrow.framework */,
-				3CBE949C212D756000CE518C /* then.framework */,
 				3CBE949A212D755500CE518C /* ws.framework */,
 				9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */,
 				17917393575B47EDCD19EE33 /* Pods_YesplanVIPTests.framework */,
@@ -1537,10 +1533,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/then.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -1556,6 +1548,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisedFuture/PromisedFuture.framework",
 				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
@@ -1563,6 +1556,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromisedFuture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
@@ -1993,6 +1987,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
@@ -2014,7 +2009,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2025,6 +2020,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
@@ -2046,7 +2042,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

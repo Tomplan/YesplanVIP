@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
 enum Login
 {

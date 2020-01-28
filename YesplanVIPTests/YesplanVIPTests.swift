@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Arrow
+//import Arrow
 @testable import YesplanVIP
 
 class YesplanVIPTests: XCTestCase {

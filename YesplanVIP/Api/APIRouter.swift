@@ -9,7 +9,7 @@
 //
 
 import Foundation
-import Alamofire
+//import Alamofire
 
 enum APIRouter: URLRequestConvertible {    
 

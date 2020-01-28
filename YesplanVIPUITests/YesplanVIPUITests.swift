@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Arrow
+//import Arrow
 class YesplanVIPUITests: XCTestCase {
         
     override func setUp() {
