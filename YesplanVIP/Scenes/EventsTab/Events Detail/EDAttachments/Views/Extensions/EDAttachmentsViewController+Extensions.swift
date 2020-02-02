@@ -59,11 +59,24 @@ extension EDAttachmentsViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
         if let model = sections[indexPath.section].rows[indexPath.item] {
-        print("model: ", model)
-//        router?.routeToSomewhere(id: nil)
-//            router.showProduct(for: model.id)
-            
+            var url : URL
+
+//            print("model: ", model)
+            switch model {
+            case .eventDocumentAttachment(let x):
+//                print("docurl: ", x.dataurl)
+                url = x.dataurl
+            case .eventlinkAttachment(let x):
+//                print("linkurl: ", x.dataurl)
+                url = x.dataurl
+            }
+                      
+            if let urlToGo = URL(string: "\(String(describing: url))"), !urlToGo.absoluteString.isEmpty {
+                UIApplication.shared.open(urlToGo, options: [:], completionHandler: nil)
+            }
+
         }
     }
 }

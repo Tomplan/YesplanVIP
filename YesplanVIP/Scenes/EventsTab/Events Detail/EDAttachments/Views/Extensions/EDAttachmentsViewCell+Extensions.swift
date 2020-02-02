@@ -31,7 +31,7 @@ extension EDAttachmentsViewCell {
                case .eventlinkAttachment(let x):
 
                    let name = x.dataurl
-                    lblName.text = name.absoluteString
+                   lblName.text = name.absoluteString
                    
                    if let date = x.date {
                        lblDate.text = date.convertDateString(dateFormat: "HH:mm") }

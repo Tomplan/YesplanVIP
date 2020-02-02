@@ -31,7 +31,7 @@ class EventsTabRouter: NSObject, EventsTabRoutingLogic, EventsTabDataPassing
   
   func routeToSomewhere(segue: UIStoryboardSegue?)
   {
-    print("routeToSomewhere")
+//    print("routeToSomewhere")
 
       let destinationVC = EventsDetailViewController()
       var destinationDS = destinationVC.router!.dataStore!
