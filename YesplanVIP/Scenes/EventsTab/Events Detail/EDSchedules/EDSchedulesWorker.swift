@@ -11,19 +11,28 @@
 //
 
 import UIKit
-import PromisedFuture
+//import PromisedFuture
+import PromiseKit
 
 class EDSchedulesWorker
 {
-    func getEventSchedule(_ id: String) -> Future<EventSchedule> {
-        return Future(operation: { completion in
-            APIClient.eventSchedule(id)
-                .map({$0})
-                .execute(onSuccess: { items in
-                    completion(.success(items))
-                }, onFailure: { error in
-                    completion(.failure(error))
-                })
-        })
-    }
+//    func getEventSchedule(_ id: String) -> Future<EventSchedule> {
+//        return Promise(operation: { completion in
+//            APIClient.eventSchedule(id)
+//                .map({$0})
+//                .execute(onSuccess: { items in
+//                    completion(.success(items))
+//                }, onFailure: { error in
+//                    completion(.failure(error))
+//                })
+//        })
+//    }
+    
+    func getEventSchedule(_ id: String) -> Promise<EventSchedule> {
+           return firstly {
+               APIClient.eventSchedule("\(id)")
+           }
+               .map({$0})
+               
+       }
 }

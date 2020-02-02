@@ -45,7 +45,7 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
         let string = """
             task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)
             """
-        print(string)
+//        print(string)
         worker?.getTasks(string)
             .then((worker?.groupToDosByDue)!)
             .then((worker?.sortToDosInEachGroupByDue)!)

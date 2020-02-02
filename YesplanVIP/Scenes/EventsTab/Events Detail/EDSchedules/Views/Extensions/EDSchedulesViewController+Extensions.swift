@@ -35,7 +35,7 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
             
             if sections.count != 0 {
                 if let item = sections[indexPath.section].rows {
-                    print(item.entries[indexPath.item])
+//                    print(item.entries[indexPath.item])
             cell.populate(with: item, scheduleEntry: item.entries[indexPath.item])
 
                 }
@@ -92,7 +92,7 @@ extension EDSchedulesViewController: UICollectionViewDataSource, UICollectionVie
             return headerView
             
         default:
-            print("default")
+//            print("default")
             fatalError("Unexpected element kind")
         }
     }

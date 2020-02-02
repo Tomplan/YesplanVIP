@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import PromisedFuture
+//import PromisedFuture
 import PromiseKit
 
 class EventsTabWorker {
@@ -62,30 +62,44 @@ class EventsTabWorker {
             seal.resolve(.fulfilled(sortedDictByDate))
         }
     }
-
-    func getProfiles() -> Future<Profiles> {
-        return Future(operation: { completion in
+    
+    func getProfiles() -> Promise<Profiles> {
+        return firstly {
         APIClient.profiles("")
             .map({$0})
-            .execute(onSuccess: { items in
-                completion(.success(items))
-            }, onFailure: { error in
-                 completion(.failure(error))
-            })
-        })
+        }
     }
+
+//    func getProfiles() -> Future<Profiles> {
+//        return Future(operation: { completion in
+//        APIClient.profiles("")
+//            .map({$0})
+//            .execute(onSuccess: { items in
+//                completion(.success(items))
+//            }, onFailure: { error in
+//                 completion(.failure(error))
+//            })
+//        })
+//    }
     
-    func getStatuses() -> Future<Statuses> {
-        return Future(operation: { completion in
-            APIClient.statuses("")
-                .map({$0})
-                .execute(onSuccess: { items in
-                    completion(.success(items))
-                }, onFailure: { error in
-                    completion(.failure(error))
-                })
-        })
-    }
+    func getStatuses() -> Promise<Statuses> {
+        return firstly {
+              APIClient.statuses("")
+                  .map({$0})
+        }
+      }
+    
+//    func getStatuses() -> Future<Statuses> {
+//        return Future(operation: { completion in
+//            APIClient.statuses("")
+//                .map({$0})
+//                .execute(onSuccess: { items in
+//                    completion(.success(items))
+//                }, onFailure: { error in
+//                    completion(.failure(error))
+//                })
+//        })
+//    }
     
     func showErrorPopup(e:Error) {
         print("An error occured \(e)")

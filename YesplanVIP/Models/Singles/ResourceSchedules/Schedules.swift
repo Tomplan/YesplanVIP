@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PromisedFuture
+//import PromisedFuture
 
 enum Schedules {
     case shift(Shift)

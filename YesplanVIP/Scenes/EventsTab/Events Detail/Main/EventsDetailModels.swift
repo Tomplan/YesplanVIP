@@ -24,6 +24,8 @@ enum EventsDetail
     struct Response
     {
         var event: Event
+        var error: String?
+
     }
     struct ViewModel
     {

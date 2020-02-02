@@ -40,7 +40,7 @@ extension Amount: Decodable {
             let x = try? container.decode(Double.self) {
             self = .double(x)
         } else {
-            print("hmmm?")
+//            print("hmmm?")
             throw Failure.NotImplemented
         }
     }

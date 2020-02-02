@@ -15,8 +15,8 @@ import Foundation
 extension EDSchedulesViewCell {
     
     func populate(with eventSchedule: EventSchedule, scheduleEntry: ScheduleEntry ) {
-        print(eventSchedule.defaultstartidx as Any)
-        print(eventSchedule.defaultstopidx as Any)
+//        print(eventSchedule.defaultstartidx as Any)
+//        print(eventSchedule.defaultstopidx as Any)
 //        print(eventSchedule.entries)
 //        print(eventSchedule.event)
         

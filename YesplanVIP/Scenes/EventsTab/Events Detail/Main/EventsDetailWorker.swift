@@ -11,19 +11,27 @@
 //
 
 import UIKit
-import PromisedFuture
+//import PromisedFuture
+import PromiseKit
 
 class EventsDetailWorker
 {
-    func getEvent(_ id: String) -> Future<Event> {
-        return Future(operation: { completion in
+//    func getEvent(_ id: String) -> Future<Event> {
+//        return Future(operation: { completion in
+//            APIClient.event("\(id)")
+//                .map({$0})
+//                .execute(onSuccess: { items in
+//                    completion(.success(items))
+//                }, onFailure: { error in
+//                    completion(.failure(error))
+//                })
+//        })
+//    }
+    func getEvent(_ id: String) -> Promise<Event> {
+        return firstly {
             APIClient.event("\(id)")
-                .map({$0})
-                .execute(onSuccess: { items in
-                    completion(.success(items))
-                }, onFailure: { error in
-                    completion(.failure(error))
-                })
-        })
+        }
+            .map({$0})
+            
     }
 }

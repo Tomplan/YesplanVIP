@@ -18,19 +18,19 @@ extension TasksTabViewCell {
     func populate(with task: Task) {
         
         if task.status == "New" {
-            lblName.textColor = Color(r: 238, g: 0, b: 0)
+            lblName.textColor = KFCrossPlatformColor(r: 238, g: 0, b: 0)
         }
         if task.status == "Started" {
-            lblName.textColor = Color(r: 100, g: 100, b: 0)
+            lblName.textColor = KFCrossPlatformColor(r: 100, g: 100, b: 0)
         }
         if task.status == "Done" {
-            lblName.textColor = Color(r: 100, g: 100, b: 0)
+            lblName.textColor = KFCrossPlatformColor(r: 100, g: 100, b: 0)
         }
         if task.status == "On Hold" {
-            lblName.textColor = Color(r: 100, g: 100, b: 100)
+            lblName.textColor = KFCrossPlatformColor(r: 100, g: 100, b: 100)
         }
         if task.status == "Obsolete" {
-            lblName.textColor = Color(r: 0, g: 0, b: 238)
+            lblName.textColor = KFCrossPlatformColor(r: 0, g: 0, b: 238)
         }
 
         if let start = task.start {

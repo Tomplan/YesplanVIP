@@ -22,8 +22,7 @@ class LoginWorker
     return Promise { resolve, reject in
         
         
-        
-    AF.request(urlString!)
+        AF.request(urlString!)
         .responseJSON { response in
 
             switch response.result {
@@ -32,81 +31,109 @@ class LoginWorker
                 
             case .failure(let error):
                     if let error = error as? AFError {
-                        switch error {
-                        case .invalidURL(let url):
-                            resolve((false, "Invalid URL: \(url) - \(error.localizedDescription)"))
+                        print("error")
+//                        switch error {
+//                        case .invalidURL(let url):
+//                            resolve((false, "Invalid URL: \(url) - \(error.localizedDescription)"))
+//
+//                        case .parameterEncodingFailed( _):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//
+//                        case .multipartEncodingFailed( _):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//
+//                        case .responseValidationFailed(let reason):
+//
+//                            switch reason {
+//
+//                            case .dataFileNil, .dataFileReadFailed:
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//
+//                            case .missingContentType(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//
+//                            case .unacceptableContentType( _, _):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//
+//                            case .unacceptableStatusCode( _):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//
+////                            case .customValidationFailed( _):
+////                                resolve((false, "AFError: \(error.localizedDescription)"))
+//
+//                            }
+//                        case .responseSerializationFailed( _):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
 
-                        case .parameterEncodingFailed( _):
-                            resolve((false, "AFError: \(error.localizedDescription)"))
-
-                        case .multipartEncodingFailed( _):
-                            resolve((false, "AFError: \(error.localizedDescription)"))
-
-                        case .responseValidationFailed(let reason):
-                            
-                            switch reason {
-                                
-                            case .dataFileNil, .dataFileReadFailed:
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-
-                            case .missingContentType(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-
-                            case .unacceptableContentType( _, _):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-
-                            case .unacceptableStatusCode( _):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-
-                            }
-                        case .responseSerializationFailed( _):
-                            resolve((false, "AFError: \(error.localizedDescription)"))
-
-                        case .explicitlyCancelled:
-                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .explicitlyCancelled:
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
 
 //                        case .certificatePinningFailed:
 //                            resolve((false, "AFError: \(error.localizedDescription)"))
-                        case .parameterEncoderFailed(let reason):
-                            switch reason {
-                            case .encoderFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .missingRequiredComponent(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            }
-                        case .serverTrustEvaluationFailed(let reason):
-                            switch reason {
-                            case .certificatePinningFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .defaultEvaluationFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .hostValidationFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .noCertificatesFound:
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .noPublicKeysFound:
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .noRequiredEvaluator(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .policyApplicationFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .publicKeyPinningFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .revocationCheckFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .revocationPolicyCreationFailed:
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            case .settingAnchorCertificatesFailed(_):
-                                resolve((false, "AFError: \(error.localizedDescription)"))
-                            }
-                        }
+//                        case .parameterEncoderFailed(let reason):
+//                            switch reason {
+//                            case .encoderFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .missingRequiredComponent(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            }
+//                        case .serverTrustEvaluationFailed(let reason):
+//                            switch reason {
+//                            case .certificatePinningFailed(host: _, trust: _, pinnedCertificates: _, serverCertificates: _):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .certificatePinningFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .defaultEvaluationFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .hostValidationFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .noCertificatesFound:
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .noPublicKeysFound:
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .noRequiredEvaluator(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .policyApplicationFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .publicKeyPinningFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .revocationCheckFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .revocationPolicyCreationFailed:
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .settingAnchorCertificatesFailed(_):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            case .trustEvaluationFailed(let error):
+//                                resolve((false, "AFError: \(error?.localizedDescription)"))
+//                            case .customEvaluationFailed(let error):
+//                                resolve((false, "AFError: \(error.localizedDescription)"))
+//                            }
+//                        case .createUploadableFailed(let error):
+//                          resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .createURLRequestFailed(let error):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .downloadedFileMoveFailed(let error, _, _):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .requestAdaptationFailed(let error):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .requestRetryFailed( _, _):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .sessionDeinitialized:
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .sessionInvalidated(let error):
+//                            resolve((false, "AFError: \(error!.localizedDescription)"))
+//                        case .sessionTaskFailed(let error):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        case .urlRequestValidationFailed( _):
+//                            resolve((false, "AFError: \(error.localizedDescription)"))
+//                        }
                         
                     } else if let error = error as? URLError {
                         resolve((false, "Url error: \(error.localizedDescription)"))
 
                     } else {
                         resolve((false, "Unknown error: \(error.localizedDescription)"))
-
+//
                     }
                 }
             }

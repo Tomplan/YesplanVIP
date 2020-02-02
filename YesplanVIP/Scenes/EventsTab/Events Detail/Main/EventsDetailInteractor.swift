@@ -37,13 +37,28 @@ class EventsDetailInteractor: EventsDetailBusinessLogic, EventsDetailDataStore
   {
     worker = EventsDetailWorker()
     worker?.getEvent(id)
-    .execute(onSuccess:
-        { event in
-            self.name = event.name
-            let response = EventsDetail.Something.Response(event: event)
+        .done { result in
+            self.name = result.name
+            let response = EventsDetail.Something.Response(event: result)
             self.presenter?.presentSomething(response: response)
-        }, onFailure: { error in
-            print(error)
-        })
+            }
+    .catch { error in
+        print("error")
+    //          let response = EventsTab.Something.Response(
+    //              event: self.,
+    //              statuses: self.statusesArray,
+    //              profiles: self.profilesArray,
+    //              error: error.localizedDescription
+    //          )
+    //          self.presenter?.presentEvents(response: response)
+        }
+//    .execute(onSuccess:
+//        { event in
+//            self.name = event.name
+//            let response = EventsDetail.Something.Response(event: event)
+//            self.presenter?.presentSomething(response: response)
+//        }, onFailure: { error in
+//            print(error)
+//        })
     }
 }

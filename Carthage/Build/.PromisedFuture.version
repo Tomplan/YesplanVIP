@@ -1,0 +1,10 @@
+{
+  "commitish" : "1.0.1",
+  "iOS" : [
+    {
+      "name" : "PromisedFuture",
+      "hash" : "3e14c8563e222c17fb3001c7b18d8358a0a97cc5140f975e5cc9e0dd6ac9ee7d",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}

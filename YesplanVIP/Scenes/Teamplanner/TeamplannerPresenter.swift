@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import PromisedFuture
+//import PromisedFuture
 
 protocol TeamplannerTabPresentationLogic
 {
@@ -29,7 +29,6 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
   {
     sections = []
             let schedules = response.schedules.flatMap { $0.flatMap { $0.value } }
-    print("schedules:")
 //            print("schedules:", schedules)
     
 
@@ -73,8 +72,6 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
                     ,error: nil
                     )
             self.viewController?.displaySomething(viewModel: viewModel)
-    
-    print("joemojoemo")
     }
 }
 

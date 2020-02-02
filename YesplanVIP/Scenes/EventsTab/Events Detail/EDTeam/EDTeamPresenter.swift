@@ -37,7 +37,7 @@ class EDTeamPresenter: EDTeamPresentationLogic
 //            print("x:", x)
             for i in 0 ..< x.count {
                 let resourcebooking = x[i]
-                print("res:", resourcebooking)
+//                print("res:", resourcebooking)
                     switch resourcebooking {
                             case .bulkResourceUse(_):
                                 let row = EDTeam.Something.ViewModel.Section.Row(resourcebooking: resourcebooking)
@@ -67,6 +67,6 @@ class EDTeamPresenter: EDTeamPresentationLogic
             }
             let viewModel = EDTeam.Something.ViewModel(sections: sections)
             viewController?.displaySomething(viewModel: viewModel)
-        print("viiewmodel:", viewModel)
+//        print("viewmodel:", viewModel)
     }
 }

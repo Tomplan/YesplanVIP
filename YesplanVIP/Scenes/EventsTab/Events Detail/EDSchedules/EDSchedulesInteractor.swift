@@ -34,11 +34,19 @@ class EDSchedulesInteractor: EDSchedulesBusinessLogic, EDSchedulesDataStore
   {
     worker = EDSchedulesWorker()
     worker?.getEventSchedule(id)
-        .execute(onSuccess: { eventSchedule in
-        let response = EDSchedules.Something.Response(eventSchedule: eventSchedule)
-        self.presenter?.presentSomething(response: response)
-        }, onFailure: { error in
-            print(error)
-        })
+        .done { result in
+            let response = EDSchedules.Something.Response(eventSchedule: result)
+            self.presenter?.presentSomething(response: response)
+        }
+        .catch { error in
+                        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        }
+//        .execute(onSuccess: { eventSchedule in
+//        let response = EDSchedules.Something.Response(eventSchedule: eventSchedule)
+//        self.presenter?.presentSomething(response: response)
+//        }, onFailure: { error in
+//            print(error)
+//        })
   }
 }

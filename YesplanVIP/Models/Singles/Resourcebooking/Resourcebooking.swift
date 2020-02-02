@@ -6,7 +6,9 @@
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 import Foundation
-import PromisedFuture
+import UIKit
+//import PromisedFuture
+import PromiseKit
 
 enum Resourcebooking {
     case instantiableResourceUse(InstantiableResourceUse)
@@ -44,7 +46,7 @@ enum Resourcebooking {
 //        case .resourceSetUse(let x): let type = x.resource.type; return type
         case .resourceSetUse(let x):
             let type = x.children.compactMap { $0.type}
-            print("type:", type)
+//            print("type:", type)
             ; return type[0]
             // MARK: TODO, 
         }
@@ -324,7 +326,7 @@ extension Resourcebooking: Decodable {
         } else if let x = try? container.decode(BulkResourceUse.self) {
             self = .bulkResourceUse(x)
         } else {
-            print("chips")
+//            print("chips")
             throw Failure.NotImplemented
         }
     }

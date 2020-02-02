@@ -11,7 +11,7 @@ import UIKit
 extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-            print("prefetch: \(indexPaths)")
+//            print("prefetch: \(indexPaths)")
         }
 
    
@@ -20,7 +20,7 @@ extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        print("section: \(section)")
+//        print("section: \(section)")
         return displayedEvents[section].date
     }
 
@@ -84,7 +84,7 @@ extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewD
             return headerView
             
         default:
-            print("default")
+//            print("default")
             fatalError("Unexpected element kind")
         }
     }

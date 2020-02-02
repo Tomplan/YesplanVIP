@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 protocol EDInfoBusinessLogic
 {
@@ -34,15 +35,14 @@ class EDInfoInteractor: EDInfoBusinessLogic, EDInfoDataStore
   {
     worker = EDInfoWorker()
     worker?.getEvent(id)
-        .execute(onSuccess:
-            { event in
-                print(event)
+    .done
+        { event in
                 let response = EDInfo.Something.Response(event: event)
                 self.presenter?.presentSomething(response: response)
                 
-            }, onFailure: { error in
-                print(error)
-        })
-    
+            }
+  .catch { error in
+    print("error")
     }
+}
 }

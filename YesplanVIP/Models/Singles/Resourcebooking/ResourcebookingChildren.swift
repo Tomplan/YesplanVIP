@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PromisedFuture
+//import PromisedFuture
 
 indirect enum ResourcebookingChildren {
     case instantiableResourceUseGroup(InstantiableResourceUseGroup)

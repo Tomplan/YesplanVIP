@@ -56,7 +56,7 @@ extension EventsDetailViewController: UICollectionViewDataSource, UICollectionVi
             return headerView
 
         default:
-            print("default")
+//            print("default")
             fatalError("Unexpected element kind")
         }
     }

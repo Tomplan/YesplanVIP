@@ -12,6 +12,7 @@
 
 import UIKit
 import PromiseKit
+import SwiftUI
 
 protocol EventsTabDisplayLogic: class
 {
@@ -20,7 +21,10 @@ protocol EventsTabDisplayLogic: class
 
 class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, EventsTabDisplayLogic
 {
-  
+    
+    var datePicker : UIDatePicker = UIDatePicker()
+    var toolBar = UIToolbar()
+
   var interactor: EventsTabBusinessLogic?
   var router: (NSObjectProtocol & EventsTabRoutingLogic & EventsTabDataPassing)?
     var v = EventsTabView()
@@ -78,7 +82,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
@@ -89,6 +93,17 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         heightConstraint.isActive = true
         widthConstraint.isActive = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+        let buttonLeft = UIButton(type: .system)
+        buttonLeft.addTarget(self, action: #selector(addTappedDate), for: .touchUpInside)
+        buttonLeft.setImage(#imageLiteral(resourceName: "DatePicker"), for: .normal)
+        buttonLeft.setTitle("", for: .normal)
+        buttonLeft.tintColor = UIColor.gray
+        let widthConstraintLeft = buttonLeft.widthAnchor.constraint(equalToConstant: 32)
+        let heightConstraintLeft = buttonLeft.heightAnchor.constraint(equalToConstant: 32)
+        heightConstraintLeft.isActive = true
+        widthConstraintLeft.isActive = true
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: buttonLeft)
         
         self.title = "Events"
         
@@ -132,6 +147,80 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
             }
         }
     }
+//    @State private var wakeUp = Date() // Only from iOS13.0
+    // Datepicker:
+    
+    
+    @objc func addTappedDate(sender: AnyObject) {
+
+//  create datePicker
+        datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 95)) // self.view.frame.size.height))
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.setValue(UIColor.lightGray, forKeyPath: "textColor")
+        datePicker.backgroundColor = UIColor.black
+//        datePicker.addTarget(self, action: #selector(dateSelected(datePicker:)), for: UIControl.Event.valueChanged)
+
+        //create the Toolbar for Cancel and Done buttons
+//        var toolBar = UIToolbar(frame: CGRect(x: 0, y: 0
+//            , width: self.view.frame.size.width, height: self.view.frame.size.height - 48))
+//        let toolBar = UIToolbar()
+//        toolBar.sizeToFit()
+//        toolBar.standardAppearance.doneButtonAppearance
+//        toolBar.isHidden = false
+        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0
+            , width: self.view.frame.size.width, height: self.view.frame.size.height - 48))
+
+        toolBar.barTintColor = UIColor.darkGray
+        toolBar.tintColor = UIColor.lightGray
+        toolBar.barStyle = UIBarStyle.blackTranslucent
+        toolBar.isTranslucent = true
+        toolBar.isUserInteractionEnabled = true
+        
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
+        toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+        self.view.addSubview(toolBar)
+        self.view.addSubview(datePicker)
+        }
+ 
+    @objc func dateSelected(datePicker:UIDatePicker) {
+
+              let formatter = DateFormatter()
+              formatter.dateFormat = "dd-MM-yyyy"
+//            print("date:", formatter)
+//              selectedDateString = formatter.string(from:datePicker.date)
+//              let selectedEndDate = Calendar.current.date(byAdding: Calendar.Component.day, value: 10, to: datePicker.date)
+//              selectedEndDateString = formatter.string(from:selectedEndDate!)
+          }
+         @objc func donedatePicker(){
+
+          let formatter = DateFormatter()
+          formatter.dateFormat = "dd/MM/yyyy"
+//            print("date: ", formatter.string(from: datePicker.date))
+            doSomething()
+            self.datePicker.removeFromSuperview()
+            self.toolBar.removeFromSuperview()
+//            self.view.endEditing(true)
+
+        }
+//
+        @objc func cancelDatePicker(){
+//            print("canceled")
+            self.datePicker.removeFromSuperview()
+            self.toolBar.removeFromSuperview()
+
+//           self.view.endEditing(true)
+         }
+//
+//           func dueDateChanged(sender:UIDatePicker){
+//               var dateFormatter = DateFormatter()
+//            print("date:", dateFormatter)
+////            dateFormatter.dateStyle = DateFormatter.Style.LongStyle
+////            dateFormatter.timeStyle = DateFormatter.Style.NoStyle
+////               self.myLabel.text = dateFormatter.stringFromDate(dueDatePickerView.date)
+//           }
     
     @objc private func refresh() {
         doSomething()
@@ -142,7 +231,13 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 
     
   func doSomething() {
-    let request = EventsTab.Something.Request()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd-MM-yyyy"
+    
+    let request = EventsTab.Something.Request(
+        startdate: "\(formatter.string(from: datePicker.date))",
+        enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 14, to: datePicker.date)!))"
+    )
     interactor?.doSomething(request: request)
   }
   

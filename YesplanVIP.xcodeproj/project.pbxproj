@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -281,20 +281,36 @@
 		3CFF85CD218F90D900DED3FB /* Holidaytime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CC218F90D900DED3FB /* Holidaytime.swift */; };
 		3CFF85CF218F914D00DED3FB /* Overwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85CE218F914D00DED3FB /* Overwork.swift */; };
 		3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */; };
-		3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */; };
-		E21151AF23E09F12003377A5 /* Stevia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151AE23E09F12003377A5 /* Stevia.framework */; };
-		E21151B123E09F3B003377A5 /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151B023E09F3B003377A5 /* PureLayout.framework */; };
-		E21151B323E09F45003377A5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151B223E09F45003377A5 /* Kingfisher.framework */; };
-		E21151B723E09F5C003377A5 /* ws.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151B623E09F5B003377A5 /* ws.framework */; };
-		E21151B923E09F66003377A5 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151B823E09F66003377A5 /* Alamofire.framework */; };
-		E21151BB23E09F6C003377A5 /* Arrow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151BA23E09F6C003377A5 /* Arrow.framework */; };
-		E21151BD23E0A776003377A5 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21151BC23E0A776003377A5 /* Then.framework */; };
+		E204172623E5BA5200B3CAFF /* EDAttachmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204172523E5BA5200B3CAFF /* EDAttachmentsViewModel.swift */; };
+		E204172823E5BB1100B3CAFF /* EDAttachmentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204172723E5BB1100B3CAFF /* EDAttachmentsViewCell.swift */; };
+		E204172A23E5BB4D00B3CAFF /* EDAttachmentsViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204172923E5BB4D00B3CAFF /* EDAttachmentsViewHeader.swift */; };
+		E204172D23E5BB8B00B3CAFF /* EDAttachmentsViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204172C23E5BB8B00B3CAFF /* EDAttachmentsViewCell+Extensions.swift */; };
+		E204172F23E5BBD600B3CAFF /* EDAttachmentsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204172E23E5BBD600B3CAFF /* EDAttachmentsViewController+Extensions.swift */; };
+		E204173123E5BC0100B3CAFF /* EDAttachmentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173023E5BC0100B3CAFF /* EDAttachmentsPresenter.swift */; };
+		E204173323E5BC2A00B3CAFF /* EDAttachmentsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173223E5BC2A00B3CAFF /* EDAttachmentsWorker.swift */; };
+		E204173523E5BC4900B3CAFF /* EDAttachmentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173423E5BC4900B3CAFF /* EDAttachmentsRouter.swift */; };
+		E204173723E5BC6E00B3CAFF /* EDAttachmentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173623E5BC6E00B3CAFF /* EDAttachmentsModels.swift */; };
+		E204173923E5BCA300B3CAFF /* EDAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173823E5BCA300B3CAFF /* EDAttachmentsViewController.swift */; };
+		E204173B23E5BCCA00B3CAFF /* EDAttachmentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173A23E5BCCA00B3CAFF /* EDAttachmentsInteractor.swift */; };
+		E204173D23E5CF6800B3CAFF /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204173C23E5CF6800B3CAFF /* Attachments.swift */; };
+		E204174C23E6CC7E00B3CAFF /* EventDocumentAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204174B23E6CC7E00B3CAFF /* EventDocumentAttachment.swift */; };
+		E204174E23E6CD5000B3CAFF /* EventLinkAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204174D23E6CD5000B3CAFF /* EventLinkAttachment.swift */; };
+		E204175023E6CD9800B3CAFF /* EventAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204174F23E6CD9800B3CAFF /* EventAttachment.swift */; };
+		E204175223E6E28400B3CAFF /* EDAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175123E6E28400B3CAFF /* EDAttachmentView.swift */; };
+		E21151C023E0B955003377A5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E21151BF23E0B955003377A5 /* Then */; };
+		E21151C323E0B9A3003377A5 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C223E0B9A3003377A5 /* Stevia */; };
+		E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C823E0BBDB003377A5 /* PromiseKit */; };
+		E24F7E2223E1F29300B76F39 /* Extension DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F7E2123E1F29300B76F39 /* Extension DataRequest.swift */; };
+		E27C9F8A23E210E900BDCE71 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C9F8923E210E900BDCE71 /* SearchTextField.swift */; };
+		E29A3A6E23E23105001C11C1 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */; };
+		E29A3A6F23E23105001C11C1 /* Pods_YesplanVIP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E2C50D20221DA6C100D9C6CF /* ToDoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1A221DA6C100D9C6CF /* ToDoDetailPresenter.swift */; };
 		E2C50D21221DA6C100D9C6CF /* ToDoDetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1B221DA6C100D9C6CF /* ToDoDetailWorker.swift */; };
 		E2C50D22221DA6C100D9C6CF /* ToDoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1C221DA6C100D9C6CF /* ToDoDetailRouter.swift */; };
 		E2C50D23221DA6C100D9C6CF /* ToDoDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1D221DA6C100D9C6CF /* ToDoDetailModels.swift */; };
 		E2C50D24221DA6C100D9C6CF /* ToDoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1E221DA6C100D9C6CF /* ToDoDetailViewController.swift */; };
 		E2C50D25221DA6C100D9C6CF /* ToDoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C50D1F221DA6C100D9C6CF /* ToDoDetailInteractor.swift */; };
+		E2F1476223E206E300FBEE0B /* Viewconfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1476123E206E300FBEE0B /* Viewconfigurable.swift */; };
 		E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */; };
 /* End PBXBuildFile section */
 
@@ -312,8 +328,22 @@
 		};
 /* End PBXBuildRule section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E29A3A7023E23105001C11C1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E29A3A6F23E23105001C11C1 /* Pods_YesplanVIP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		17917393575B47EDCD19EE33 /* Pods_YesplanVIPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AA487BB4B3132D3EB3B64B1 /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
 		3C043F32214D5E6A00A91AE3 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		3C043F36214D5E8B00A91AE3 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		3C059FEF219887CB00F93289 /* EDInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDInfoView.swift; sourceTree = "<group>"; };
@@ -594,10 +624,24 @@
 		3CFF85CC218F90D900DED3FB /* Holidaytime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holidaytime.swift; sourceTree = "<group>"; };
 		3CFF85CE218F914D00DED3FB /* Overwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overwork.swift; sourceTree = "<group>"; };
 		3CFF85D2218F91F100DED3FB /* TwentyFiveweekcounters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyFiveweekcounters.swift; sourceTree = "<group>"; };
-		6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
-		75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.release.xcconfig"; path = "Pods/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
-		9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A895A2BFC4C2DFA42EB7607F /* Pods_YesplanVIPUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIPUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B8CB79EF968A4F46CB365F /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YesplanVIP.debug.xcconfig"; path = "Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
+		BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E204172523E5BA5200B3CAFF /* EDAttachmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsViewModel.swift; sourceTree = "<group>"; };
+		E204172723E5BB1100B3CAFF /* EDAttachmentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsViewCell.swift; sourceTree = "<group>"; };
+		E204172923E5BB4D00B3CAFF /* EDAttachmentsViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsViewHeader.swift; sourceTree = "<group>"; };
+		E204172C23E5BB8B00B3CAFF /* EDAttachmentsViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDAttachmentsViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		E204172E23E5BBD600B3CAFF /* EDAttachmentsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EDAttachmentsViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E204173023E5BC0100B3CAFF /* EDAttachmentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsPresenter.swift; sourceTree = "<group>"; };
+		E204173223E5BC2A00B3CAFF /* EDAttachmentsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsWorker.swift; sourceTree = "<group>"; };
+		E204173423E5BC4900B3CAFF /* EDAttachmentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsRouter.swift; sourceTree = "<group>"; };
+		E204173623E5BC6E00B3CAFF /* EDAttachmentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsModels.swift; sourceTree = "<group>"; };
+		E204173823E5BCA300B3CAFF /* EDAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsViewController.swift; sourceTree = "<group>"; };
+		E204173A23E5BCCA00B3CAFF /* EDAttachmentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentsInteractor.swift; sourceTree = "<group>"; };
+		E204173C23E5CF6800B3CAFF /* Attachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
+		E204174B23E6CC7E00B3CAFF /* EventDocumentAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDocumentAttachment.swift; sourceTree = "<group>"; };
+		E204174D23E6CD5000B3CAFF /* EventLinkAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLinkAttachment.swift; sourceTree = "<group>"; };
+		E204174F23E6CD9800B3CAFF /* EventAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAttachment.swift; sourceTree = "<group>"; };
+		E204175123E6E28400B3CAFF /* EDAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentView.swift; sourceTree = "<group>"; };
 		E21151AE23E09F12003377A5 /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		E21151B023E09F3B003377A5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		E21151B223E09F45003377A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -605,12 +649,15 @@
 		E21151B823E09F66003377A5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E21151BA23E09F6C003377A5 /* Arrow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Arrow.framework; path = Carthage/Build/iOS/Arrow.framework; sourceTree = "<group>"; };
 		E21151BC23E0A776003377A5 /* Then.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Then.framework; path = Carthage/Build/iOS/Then.framework; sourceTree = "<group>"; };
+		E24F7E2123E1F29300B76F39 /* Extension DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension DataRequest.swift"; sourceTree = "<group>"; };
+		E27C9F8923E210E900BDCE71 /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		E2C50D1A221DA6C100D9C6CF /* ToDoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailPresenter.swift; sourceTree = "<group>"; };
 		E2C50D1B221DA6C100D9C6CF /* ToDoDetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailWorker.swift; sourceTree = "<group>"; };
 		E2C50D1C221DA6C100D9C6CF /* ToDoDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailRouter.swift; sourceTree = "<group>"; };
 		E2C50D1D221DA6C100D9C6CF /* ToDoDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailModels.swift; sourceTree = "<group>"; };
 		E2C50D1E221DA6C100D9C6CF /* ToDoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailViewController.swift; sourceTree = "<group>"; };
 		E2C50D1F221DA6C100D9C6CF /* ToDoDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailInteractor.swift; sourceTree = "<group>"; };
+		E2F1476123E206E300FBEE0B /* Viewconfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewconfigurable.swift; sourceTree = "<group>"; };
 		E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -619,14 +666,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E21151AF23E09F12003377A5 /* Stevia.framework in Frameworks */,
-				E21151BD23E0A776003377A5 /* Then.framework in Frameworks */,
-				E21151B123E09F3B003377A5 /* PureLayout.framework in Frameworks */,
-				E21151B723E09F5C003377A5 /* ws.framework in Frameworks */,
-				E21151B323E09F45003377A5 /* Kingfisher.framework in Frameworks */,
-				E21151B923E09F66003377A5 /* Alamofire.framework in Frameworks */,
-				3D8BE849237EFC48A7A8C9D2 /* Pods_YesplanVIP.framework in Frameworks */,
-				E21151BB23E09F6C003377A5 /* Arrow.framework in Frameworks */,
+				E21151C323E0B9A3003377A5 /* Stevia in Frameworks */,
+				E29A3A6E23E23105001C11C1 /* Pods_YesplanVIP.framework in Frameworks */,
+				E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */,
+				E21151C023E0B955003377A5 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,9 +686,7 @@
 				E21151B223E09F45003377A5 /* Kingfisher.framework */,
 				E21151B023E09F3B003377A5 /* PureLayout.framework */,
 				E21151AE23E09F12003377A5 /* Stevia.framework */,
-				9FC66D9D0DD6457301B22EBF /* Pods_YesplanVIP.framework */,
-				17917393575B47EDCD19EE33 /* Pods_YesplanVIPTests.framework */,
-				A895A2BFC4C2DFA42EB7607F /* Pods_YesplanVIPUITests.framework */,
+				BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -909,6 +950,7 @@
 			isa = PBXGroup;
 			children = (
 				3C40AED7212D8C090077DDC5 /* Events.swift */,
+				E204173C23E5CF6800B3CAFF /* Attachments.swift */,
 				3CD714F52163E8DE00CC370A /* Tasks.swift */,
 				3CF142E2212DE257001FC532 /* Groups.swift */,
 				3C230AA721558BA5004477A3 /* Statuses.swift */,
@@ -926,13 +968,14 @@
 				3C40AF36212DAE8E0077DDC5 /* Base.swift */,
 				3CF142EA212DE32A001FC532 /* Children.swift */,
 				3CC377582169E59C0020236D /* Costmodel.swift */,
-				3C7B4F0D217A220D000D7FDB /* DiscountFormula.swift */,
 				3C7B4F0F217A2642000D7FDB /* Failure.swift */,
 				3C7B4F03217A20C0000D7FDB /* Formula.swift */,
-				3C7B4F05217A210E000D7FDB /* DayPartSetPricingFormula.swift */,
-				3C7B4F07217A2143000D7FDB /* DayPartPricingFormula.swift */,
+				E204174023E5D0D500B3CAFF /* Formula Cases */,
 				3C05A0162198A42A00F93289 /* ScheduleEntry.swift */,
 				3C40AEDF212D8C2F0077DDC5 /* Event.swift */,
+				E204174F23E6CD9800B3CAFF /* EventAttachment.swift */,
+				E204174B23E6CC7E00B3CAFF /* EventDocumentAttachment.swift */,
+				E204174D23E6CD5000B3CAFF /* EventLinkAttachment.swift */,
 				3C05A0142198A3BC00F93289 /* EventSchedule.swift */,
 				3C7B4F0B217A21D1000D7FDB /* FixedPricingFormula.swift */,
 				3CF142E6212DE2AE001FC532 /* Group.swift */,
@@ -1044,6 +1087,7 @@
 				3C05A02D2198E7EA00F93289 /* EDLocation */,
 				3C08E08D2199711E007AAF8B /* EDTeam */,
 				3C29FF8621D8E0FD0094A893 /* EDResources */,
+				E204172323E5B9E100B3CAFF /* EDAttachments */,
 			);
 			path = "Events Detail";
 			sourceTree = "<group>";
@@ -1181,11 +1225,7 @@
 			children = (
 				3CC3774D2168C2BE0020236D /* Resourcebooking.swift */,
 				3C7B4EFB2179E9AA000D7FDB /* ResourcebookingChildren.swift */,
-				3CC37768216A124B0020236D /* InstantiableResourceUse.swift */,
-				3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */,
-				3CC3776C216A20F30020236D /* ResourceSetUse.swift */,
-				3CC3776E216A2DC80020236D /* FreeFormResourceUse.swift */,
-				3CC37770216A2FB90020236D /* BulkResourceUse.swift */,
+				E204174723E5DBDC00B3CAFF /* Resourcebooking Cases */,
 				3CBBF9D621766F01000FE808 /* ResourcebookingSchedule.swift */,
 				3C7B4EFD217A0648000D7FDB /* ResourceUseResource.swift */,
 			);
@@ -1212,8 +1252,8 @@
 				3CE710352121827A00EBF6A5 /* YesplanVIPTests */,
 				3CE710402121827A00EBF6A5 /* YesplanVIPUITests */,
 				3CE7101C2121827900EBF6A5 /* Products */,
-				8270B23A3095913C66C9DB3C /* Pods */,
 				067B5A996D35E6233F0B75A4 /* Frameworks */,
+				EA519FFAAA55EBC05F7CDD98 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1246,6 +1286,7 @@
 				3C9A5B692167E2CD00A5D35B /* Settings.bundle */,
 				3C2D1A262173E43000F081A1 /* test.swift */,
 				3C5F42FD2175043D00A90967 /* Codable+Helpers.swift */,
+				E27C9F8923E210E900BDCE71 /* SearchTextField.swift */,
 			);
 			path = YesplanVIP;
 			sourceTree = "<group>";
@@ -1382,6 +1423,8 @@
 				3C24BAEB215613AB00E28966 /* String+Extensions.swift */,
 				3CC3774421688E720020236D /* Notifications+Util.swift */,
 				3CDD24C221ADD6AB007AAB57 /* NSURLSession+Promise.swift */,
+				E24F7E2123E1F29300B76F39 /* Extension DataRequest.swift */,
+				E2F1476123E206E300FBEE0B /* Viewconfigurable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1414,13 +1457,61 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8270B23A3095913C66C9DB3C /* Pods */ = {
+		E204172323E5B9E100B3CAFF /* EDAttachments */ = {
 			isa = PBXGroup;
 			children = (
-				6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */,
-				75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */,
+				E204172423E5BA2A00B3CAFF /* Views */,
+				E204173023E5BC0100B3CAFF /* EDAttachmentsPresenter.swift */,
+				E204173223E5BC2A00B3CAFF /* EDAttachmentsWorker.swift */,
+				E204173423E5BC4900B3CAFF /* EDAttachmentsRouter.swift */,
+				E204173623E5BC6E00B3CAFF /* EDAttachmentsModels.swift */,
+				E204173823E5BCA300B3CAFF /* EDAttachmentsViewController.swift */,
+				E204173A23E5BCCA00B3CAFF /* EDAttachmentsInteractor.swift */,
 			);
-			name = Pods;
+			path = EDAttachments;
+			sourceTree = "<group>";
+		};
+		E204172423E5BA2A00B3CAFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E204175123E6E28400B3CAFF /* EDAttachmentView.swift */,
+				E204172523E5BA5200B3CAFF /* EDAttachmentsViewModel.swift */,
+				E204172723E5BB1100B3CAFF /* EDAttachmentsViewCell.swift */,
+				E204172923E5BB4D00B3CAFF /* EDAttachmentsViewHeader.swift */,
+				E204172B23E5BB7000B3CAFF /* Extensions */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E204172B23E5BB7000B3CAFF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E204172C23E5BB8B00B3CAFF /* EDAttachmentsViewCell+Extensions.swift */,
+				E204172E23E5BBD600B3CAFF /* EDAttachmentsViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E204174023E5D0D500B3CAFF /* Formula Cases */ = {
+			isa = PBXGroup;
+			children = (
+				3C7B4F0D217A220D000D7FDB /* DiscountFormula.swift */,
+				3C7B4F05217A210E000D7FDB /* DayPartSetPricingFormula.swift */,
+				3C7B4F07217A2143000D7FDB /* DayPartPricingFormula.swift */,
+			);
+			path = "Formula Cases";
+			sourceTree = "<group>";
+		};
+		E204174723E5DBDC00B3CAFF /* Resourcebooking Cases */ = {
+			isa = PBXGroup;
+			children = (
+				3CC37768216A124B0020236D /* InstantiableResourceUse.swift */,
+				3CC3776A216A12A50020236D /* InstantiableResourceUseGroup.swift */,
+				3CC3776C216A20F30020236D /* ResourceSetUse.swift */,
+				3CC3776E216A2DC80020236D /* FreeFormResourceUse.swift */,
+				3CC37770216A2FB90020236D /* BulkResourceUse.swift */,
+			);
+			path = "Resourcebooking Cases";
 			sourceTree = "<group>";
 		};
 		E2C50D19221DA4C700D9C6CF /* ToDo Main */ = {
@@ -1458,6 +1549,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		EA519FFAAA55EBC05F7CDD98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76B8CB79EF968A4F46CB365F /* Pods-YesplanVIP.debug.xcconfig */,
+				3AA487BB4B3132D3EB3B64B1 /* Pods-YesplanVIP.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1465,19 +1565,27 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CE710462121827A00EBF6A5 /* Build configuration list for PBXNativeTarget "YesplanVIP" */;
 			buildPhases = (
-				E9250E09F3080259DD52CD7D /* [CP] Check Pods Manifest.lock */,
+				F5F1467A7A919F2B5742BB52 /* [CP] Check Pods Manifest.lock */,
 				3CE710172121827900EBF6A5 /* Sources */,
 				3CE710182121827900EBF6A5 /* Frameworks */,
 				3CE710192121827900EBF6A5 /* Resources */,
-				E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */,
 				3C41E928212D742700C2E242 /* Carthage */,
+				E29A3A7023E23105001C11C1 /* Embed Frameworks */,
+				5FDEC8C252C6EA6CAC95455C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 				3CAC32A7216BFF1200646372 /* PBXBuildRule */,
 			);
 			dependencies = (
+				E27C9F8E23E21C5E00BDCE71 /* PBXTargetDependency */,
+				E27C9F8C23E21C5900BDCE71 /* PBXTargetDependency */,
 			);
 			name = YesplanVIP;
+			packageProductDependencies = (
+				E21151BF23E0B955003377A5 /* Then */,
+				E21151C223E0B9A3003377A5 /* Stevia */,
+				E21151C823E0BBDB003377A5 /* PromiseKit */,
+			);
 			productName = YesplanVIP;
 			productReference = 3CE7101B2121827900EBF6A5 /* YesplanVIP.app */;
 			productType = "com.apple.product-type.application";
@@ -1507,6 +1615,12 @@
 				Base,
 			);
 			mainGroup = 3CE710122121827900EBF6A5;
+			packageReferences = (
+				E21151BE23E0B954003377A5 /* XCRemoteSwiftPackageReference "Then" */,
+				E21151C123E0B9A3003377A5 /* XCRemoteSwiftPackageReference "Stevia" */,
+				E21151C723E0BBDB003377A5 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				E2E61B6923E2282800ACE821 /* XCRemoteSwiftPackageReference "FigmaGen" */,
+			);
 			productRefGroup = 3CE7101C2121827900EBF6A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1546,11 +1660,9 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/ws.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Stevia.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Arrow.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/then.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -1559,38 +1671,42 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		E8F285C3B0DF587AD00060E5 /* [CP] Embed Pods Frameworks */ = {
+		5FDEC8C252C6EA6CAC95455C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisedFuture/PromisedFuture.framework",
-				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromisedFuture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E9250E09F3080259DD52CD7D /* [CP] Check Pods Manifest.lock */ = {
+		F5F1467A7A919F2B5742BB52 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-YesplanVIP-checkManifestLockResult.txt",
 			);
@@ -1635,7 +1751,10 @@
 				3CC377552168D0450020236D /* TeamplannerTabViewController+Extensions.swift in Sources */,
 				3C043F33214D5E6A00A91AE3 /* ErrorViewModel.swift in Sources */,
 				3C05A02C2198E7E100F93289 /* EDLocationInteractor.swift in Sources */,
+				E204173323E5BC2A00B3CAFF /* EDAttachmentsWorker.swift in Sources */,
+				E204172A23E5BB4D00B3CAFF /* EDAttachmentsViewHeader.swift in Sources */,
 				3C40AEF8212D8E550077DDC5 /* EventsTabInteractor.swift in Sources */,
+				E204173D23E5CF6800B3CAFF /* Attachments.swift in Sources */,
 				3C24777D216A96DF0010EAFA /* ResourceScheduleFromTo.swift in Sources */,
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3C2D1A23217126E400F081A1 /* APIRouter.swift in Sources */,
@@ -1646,9 +1765,12 @@
 				3CC377602169E8BE0020236D /* InstantiableResource.swift in Sources */,
 				3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */,
 				3C6205B521985DA7001E8D4B /* EventsDetailViewCell+Extensions.swift in Sources */,
+				E204174E23E6CD5000B3CAFF /* EventLinkAttachment.swift in Sources */,
+				E204173923E5BCA300B3CAFF /* EDAttachmentsViewController.swift in Sources */,
 				3C6205AE21985C66001E8D4B /* EventsDetailView.swift in Sources */,
 				3CE7108E2121A78800EBF6A5 /* TasksPresenter.swift in Sources */,
 				3CC377502168CB010020236D /* Resourcebookings.swift in Sources */,
+				E204172D23E5BB8B00B3CAFF /* EDAttachmentsViewCell+Extensions.swift in Sources */,
 				3C05A0022198979E00F93289 /* EDSchedulesWorker.swift in Sources */,
 				3CD714F82164038A00CC370A /* TasksTabViewController+Extensions.swift in Sources */,
 				3C05A0272198E7E100F93289 /* EDLocationPresenter.swift in Sources */,
@@ -1685,13 +1807,16 @@
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
 				3C05A0362198E91D00F93289 /* EDLocationViewCell+Extensions.swift in Sources */,
 				E2C50D20221DA6C100D9C6CF /* ToDoDetailPresenter.swift in Sources */,
+				E27C9F8A23E210E900BDCE71 /* SearchTextField.swift in Sources */,
 				3C5E53CF21C42B9A00A55467 /* AlbumViewModel.swift in Sources */,
 				3CE710F82121A84400EBF6A5 /* HelpRouter.swift in Sources */,
 				3C7B4F06217A210E000D7FDB /* DayPartSetPricingFormula.swift in Sources */,
 				3C5E53CD21C42B9A00A55467 /* SeparatorViewModel.swift in Sources */,
 				3C7B4F02217A0754000D7FDB /* Resourceplaceholder.swift in Sources */,
+				E204174C23E6CC7E00B3CAFF /* EventDocumentAttachment.swift in Sources */,
 				3C6205B821985E10001E8D4B /* EventsDetailViewController+Extensions.swift in Sources */,
 				3C5E53AB21C42A9100A55467 /* HeaderCell.swift in Sources */,
+				E204173523E5BC4900B3CAFF /* EDAttachmentsRouter.swift in Sources */,
 				3C059FF7219888A300F93289 /* EDInfoViewCell+Extensions.swift in Sources */,
 				3C40AF23212D91F30077DDC5 /* UserTabRouter.swift in Sources */,
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
@@ -1709,6 +1834,7 @@
 				3C5E53D321C42B9A00A55467 /* CollectionViewModel.swift in Sources */,
 				3C05A0042198979E00F93289 /* EDSchedulesModels.swift in Sources */,
 				3C05A0032198979E00F93289 /* EDSchedulesRouter.swift in Sources */,
+				E204172823E5BB1100B3CAFF /* EDAttachmentsViewCell.swift in Sources */,
 				3C862BF62157C1DB00428BF9 /* Profile.swift in Sources */,
 				3CE9D1E32123835600BFA730 /* UIColor+Extension.swift in Sources */,
 				3C05A0012198979E00F93289 /* EDSchedulesPresenter.swift in Sources */,
@@ -1716,6 +1842,7 @@
 				3C5E53B021C42A9100A55467 /* SeparatorCell.swift in Sources */,
 				3C570A46216552E100154B93 /* ToDosTabView.swift in Sources */,
 				3C7B4F0E217A220D000D7FDB /* DiscountFormula.swift in Sources */,
+				E204173123E5BC0100B3CAFF /* EDAttachmentsPresenter.swift in Sources */,
 				3C05A02B2198E7E100F93289 /* EDLocationViewController.swift in Sources */,
 				3C7B4EFE217A0648000D7FDB /* ResourceUseResource.swift in Sources */,
 				3C40AF31212D92610077DDC5 /* Usergroup.swift in Sources */,
@@ -1726,6 +1853,7 @@
 				3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */,
 				3C6205A621981242001E8D4B /* EventsDetailRouter.swift in Sources */,
 				3C570A492165533300154B93 /* ToDosTabViewCell.swift in Sources */,
+				E2F1476223E206E300FBEE0B /* Viewconfigurable.swift in Sources */,
 				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */,
@@ -1734,6 +1862,7 @@
 				3C5E539421C4156B00A55467 /* MultiCell.swift in Sources */,
 				3C570A4B2165537900154B93 /* ToDosTabViewHeader.swift in Sources */,
 				3C40AEEF212D8E550077DDC5 /* EventsTabRouter.swift in Sources */,
+				E24F7E2223E1F29300B76F39 /* Extension DataRequest.swift in Sources */,
 				3C05A0172198A42A00F93289 /* ScheduleEntry.swift in Sources */,
 				3C247786216A9DCB0010EAFA /* Lock.swift in Sources */,
 				3CDD255D21AF421B007AAB57 /* Amount.swift in Sources */,
@@ -1751,7 +1880,9 @@
 				3CE9D1D72123830900BFA730 /* SafeAreaLayout+Extension.swift in Sources */,
 				E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */,
 				3C5E53C321C42AD100A55467 /* CollectionViewViewModel.swift in Sources */,
+				E204175223E6E28400B3CAFF /* EDAttachmentView.swift in Sources */,
 				3C29FF8321D8E0F40094A893 /* EDResourcesModels.swift in Sources */,
+				E204172F23E5BBD600B3CAFF /* EDAttachmentsViewController+Extensions.swift in Sources */,
 				E2C50D24221DA6C100D9C6CF /* ToDoDetailViewController.swift in Sources */,
 				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
 				3C29FF8821D8E1420094A893 /* EDResourcesModel.swift in Sources */,
@@ -1767,6 +1898,7 @@
 				3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */,
 				3CD592A4212AC57B005BBF71 /* LogoutViewController.swift in Sources */,
 				3C7B4F00217A0686000D7FDB /* Location.swift in Sources */,
+				E204172623E5BA5200B3CAFF /* EDAttachmentsViewModel.swift in Sources */,
 				3C5E53BF21C42AD100A55467 /* Grid.swift in Sources */,
 				3C7B4F08217A2143000D7FDB /* DayPartPricingFormula.swift in Sources */,
 				3CE710782121A76400EBF6A5 /* TeamplannerWorker.swift in Sources */,
@@ -1775,6 +1907,7 @@
 				3C40AEF5212D8E550077DDC5 /* EventsTabViewController.swift in Sources */,
 				3CF142E7212DE2AE001FC532 /* Group.swift in Sources */,
 				3C5E53CE21C42B9A00A55467 /* ArtistViewModel.swift in Sources */,
+				E204173B23E5BCCA00B3CAFF /* EDAttachmentsInteractor.swift in Sources */,
 				3CBBF9D721766F01000FE808 /* ResourcebookingSchedule.swift in Sources */,
 				3C05A00C2198988F00F93289 /* EDSchedulesViewCell.swift in Sources */,
 				3CD5929B212AC57B005BBF71 /* LogoutWorker.swift in Sources */,
@@ -1814,6 +1947,7 @@
 				3C40AF14212D917B0077DDC5 /* User.swift in Sources */,
 				3CD5929E212AC57B005BBF71 /* LogoutRouter.swift in Sources */,
 				3C225970219BD3C20055D567 /* ResourceSet.swift in Sources */,
+				E204173723E5BC6E00B3CAFF /* EDAttachmentsModels.swift in Sources */,
 				3CE9D1B921237C1800BFA730 /* LoginPresenter.swift in Sources */,
 				3C5E53B321C42A9100A55467 /* ArtistCell.swift in Sources */,
 				3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */,
@@ -1872,6 +2006,7 @@
 				3C05A0062198979E00F93289 /* EDSchedulesInteractor.swift in Sources */,
 				3CFF85C7218F8FDB00DED3FB /* Irregularhours.swift in Sources */,
 				3C4E565721E28847004C213F /* DynamicCollectionView.swift in Sources */,
+				E204175023E6CD9800B3CAFF /* EventAttachment.swift in Sources */,
 				3C05A0282198E7E100F93289 /* EDLocationWorker.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,
 				3CA2131D218E267100F74EED /* Constants.swift in Sources */,
@@ -1879,6 +2014,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E27C9F8C23E21C5900BDCE71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+		};
+		E27C9F8E23E21C5E00BDCE71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3CE710442121827A00EBF6A5 /* Debug */ = {
@@ -1918,6 +2062,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1932,7 +2077,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1978,6 +2123,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1986,7 +2132,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1997,29 +2143,26 @@
 		};
 		3CE710472121827A00EBF6A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FE5CE4C7D32C7169114F61E /* Pods-YesplanVIP.debug.xcconfig */;
+			baseConfigurationReference = 76B8CB79EF968A4F46CB365F /* Pods-YesplanVIP.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Carthage/Build/iOS\"",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					"\"$(PROJECT_DIR)/Carthage/Build/iOS\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2030,29 +2173,26 @@
 		};
 		3CE710482121827A00EBF6A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75E8E8DE73CA0BD5E92077AC /* Pods-YesplanVIP.release.xcconfig */;
+			baseConfigurationReference = 3AA487BB4B3132D3EB3B64B1 /* Pods-YesplanVIP.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9WC44CBGXS;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Carthage/Build/iOS\"",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
-					"$(inherited)",
-					"\"$(PROJECT_DIR)/path-to-framework-parent-directory/Carthage/Build/iOS\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Yesplan.YesplanVIP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2083,6 +2223,59 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E21151BE23E0B954003377A5 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.4;
+			};
+		};
+		E21151C123E0B9A3003377A5 /* XCRemoteSwiftPackageReference "Stevia" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Stevia.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.8.0;
+			};
+		};
+		E21151C723E0BBDB003377A5 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.13.1;
+			};
+		};
+		E2E61B6923E2282800ACE821 /* XCRemoteSwiftPackageReference "FigmaGen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hhru/FigmaGen.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E21151BF23E0B955003377A5 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21151BE23E0B954003377A5 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		E21151C223E0B9A3003377A5 /* Stevia */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21151C123E0B9A3003377A5 /* XCRemoteSwiftPackageReference "Stevia" */;
+			productName = Stevia;
+		};
+		E21151C823E0BBDB003377A5 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E21151C723E0BBDB003377A5 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */ = {

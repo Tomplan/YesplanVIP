@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F7BA14B6F02336494791596A300DD017"
+               BlueprintIdentifier = "4AE036ABF72D9C96D1148F5ACF1B72F9"
                BuildableName = "Pods_YesplanVIP.framework"
                BlueprintName = "Pods-YesplanVIP"
                ReferencedContainer = "container:Pods.xcodeproj">

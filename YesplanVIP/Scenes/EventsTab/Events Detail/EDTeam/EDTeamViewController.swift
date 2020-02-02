@@ -94,7 +94,7 @@ class EDTeamViewController: CollectionViewController, EDTeamDisplayLogic // UIVi
             let section =  CollectionViewSection(grid: grid, header: header, items: items)
 //            let section =  CollectionViewSection(header: header, items: items)
 
-           print("sese")
+//           print("sese")
             return section
         }
 //        grid.size(for: view, height: self.v.collectionView.collectionViewLayout.collectionViewContentSize.height)

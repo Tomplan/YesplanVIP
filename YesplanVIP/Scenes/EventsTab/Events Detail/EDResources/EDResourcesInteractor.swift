@@ -11,7 +11,7 @@
 //
 
 import UIKit
-//import PromiseKit
+import PromiseKit
 
 protocol EDResourcesBusinessLogic
 {

@@ -8,7 +8,7 @@
 //
 
 import Foundation
-import PromisedFuture
+//import PromisedFuture
 
 struct Schedule: Codable {
     var scheduletype: ScheduleType

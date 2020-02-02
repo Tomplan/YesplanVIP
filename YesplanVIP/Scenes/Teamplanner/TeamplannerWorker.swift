@@ -11,7 +11,7 @@
 //
 
 import UIKit
-import PromisedFuture
+//import PromisedFuture
 import PromiseKit
 
 class TeamplannerTabWorker
@@ -199,20 +199,26 @@ class TeamplannerTabWorker
 ////        return Future(value: schedulesDict)
 ////    }
 //    
-    func getNextResourcesSchedulesFromTo(url: URL) -> Future<ResourcesSchedulesFromTo> {
-        print("getNextResourcesSchedulesFromTo")
-        return Future(operation: { completion in
+//    func getNextResourcesSchedulesFromTo(url: URL) -> Future<ResourcesSchedulesFromTo> {
+//        print("getNextResourcesSchedulesFromTo")
+//        return Future(operation: { completion in
+//            APIClient.nextResourcesSchedulesFromTo(url)
+//                //                .map({$0})
+//                .execute(onSuccess: { items in
+////                    print("getNextResourcesSchedulesFromToitems: ", items)
+//                    completion(.success(items))
+//                }, onFailure: { error in
+//                    print(error)
+//                    completion(.failure(error))
+//                })
+//        })
+//        
+//    }
+    
+    func getNextResourcesSchedulesFromTo(url: URL) -> Promise<ResourcesSchedulesFromTo> {
+        return firstly {
             APIClient.nextResourcesSchedulesFromTo(url)
-                //                .map({$0})
-                .execute(onSuccess: { items in
-//                    print("getNextResourcesSchedulesFromToitems: ", items)
-                    completion(.success(items))
-                }, onFailure: { error in
-                    print(error)
-                    completion(.failure(error))
-                })
-        })
-        
+            }
     }
     
 //    func groupResourecbookingsByStartdate(resourcebookings: Resourcebookings) -> [String:[Resourcebooking]] {

@@ -34,11 +34,12 @@ class EDLocationInteractor: EDLocationBusinessLogic, EDLocationDataStore
     {
         worker = EDLocationWorker()
         worker?.getEvent(id)
-            .execute(onSuccess: { event in
-                let response = EDLocation.Something.Response(event: event)
+            .done { result in
+                let response = EDLocation.Something.Response(event: result)
                 self.presenter?.presentSomething(response: response)
-            }, onFailure: { error in
-                print(error)
-            })
+        }
+        .catch { error in
+            print("error")
+        }
     }
 }

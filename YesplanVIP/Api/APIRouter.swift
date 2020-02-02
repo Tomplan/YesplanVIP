@@ -9,7 +9,7 @@
 //
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 enum APIRouter: URLRequestConvertible {    
 
@@ -24,6 +24,7 @@ enum APIRouter: URLRequestConvertible {
     case tasks(path: String)
     
     case event(id: String)
+    case eventAttachments(id: String)
     case eventSchedule(id: String)
     case eventResourcebookings(id: String)
     
@@ -40,7 +41,8 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
         switch self {
-        case .events
+        case
+        .events
         ,.groups
         ,.profiles
         ,.resourcebookingId
@@ -51,6 +53,7 @@ enum APIRouter: URLRequestConvertible {
         ,.tasks
         
         ,.event
+        ,.eventAttachments
         ,.eventSchedule
         ,.eventResourcebookings
         
@@ -80,6 +83,7 @@ enum APIRouter: URLRequestConvertible {
 
 
         case .event(let id): return "/api/event/\(id)"
+        case .eventAttachments(let id): return "/api/event/\(id)/attachments"
         case .eventSchedule(let id): return "/api/event/\(id)/schedule"
         case .eventResourcebookings(let id): return "/api/event/\(id)/resourcebookings"
             
@@ -97,7 +101,9 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - Parameters
     private var parameters: Parameters? {
         switch self {
-        case .events
+        case
+        
+        .events
         ,.groups
         ,.profiles
         ,.resourcebookings
@@ -108,6 +114,7 @@ enum APIRouter: URLRequestConvertible {
         ,.tasks
         
         ,.event
+        ,.eventAttachments
         ,.eventSchedule
         ,.eventResourcebookings
         
@@ -130,7 +137,9 @@ enum APIRouter: URLRequestConvertible {
     // MARK: - Query
     private var query: [String: String] {
         switch self {
-        case .events
+        case
+        
+        .events
         ,.groups
         ,.profiles
         ,.resourcebookingId
@@ -140,6 +149,7 @@ enum APIRouter: URLRequestConvertible {
         ,.tasks
         
         ,.event
+        ,.eventAttachments
         ,.eventSchedule
         ,.eventResourcebookings
         
@@ -158,7 +168,7 @@ enum APIRouter: URLRequestConvertible {
                 if let queryItems = components.queryItems {
                     for queryItem in queryItems {
                         queryDict[queryItem.name] = queryItem.value
-                        print("\(queryItem.name): \(String(describing: queryItem.value))")
+//                        print("\(queryItem.name): \(String(describing: queryItem.value))")
                     }
                 }
             }

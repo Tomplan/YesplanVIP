@@ -1,36 +1,16 @@
 PODS:
-  - PromisedFuture (1.0.1)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
-    - PromiseKit/CorePromise
-  - SearchTextField (1.2.4)
-  - Sourcery (0.17.0)
+  - PureLayout (3.1.5)
 
 DEPENDENCIES:
-  - PromisedFuture
-  - PromiseKit
-  - SearchTextField
-  - Sourcery
+  - PureLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - PromisedFuture
-    - PromiseKit
-    - SearchTextField
-    - Sourcery
+    - PureLayout
 
 SPEC CHECKSUMS:
-  PromisedFuture: 3f863d17c047c3474c85045b254bb1c94743ed0f
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
-  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
+  PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
 
-PODFILE CHECKSUM: 402a2718a06bdac03c0db3c49580172b355cbec4
+PODFILE CHECKSUM: 2a36abd33a3a807a503caf1d5a39de3077dd2e13
 
 COCOAPODS: 1.6.0

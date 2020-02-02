@@ -4,13 +4,12 @@
 
 [![Language: Swift 5](https://img.shields.io/badge/language-swift5-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat)
-[![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
 [![Build Status](https://app.bitrise.io/app/ffd8fe5df34624ff/status.svg?token=IahWn-RB5hTWzvBbcIktsQ&branch=master)](https://app.bitrise.io/app/ffd8fe5df34624ff)
 [![codebeat badge](https://codebeat.co/badges/f037ac0c-b3d9-4132-9fca-64150a908113)](https://codebeat.co/projects/github-com-freshos-arrow)
 [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/freshOS/Arrow/blob/master/LICENSE)
-![Release version](https://img.shields.io/github/release/freshos/Arrow.svg)
+![Release version](https://img.shields.io/github/release/freshos/then.svg)
 
 [Reason](#reason) - [Example](#example) - [Installation](#installation)
 
@@ -135,36 +134,23 @@ profile.deserialize(json)
 ```
 
 ## Installation
-The Swift Package Manager (SPM) is now the official way to install `Arrow`. The other package managers are now deprecated as of `5.1.2` and won't be supported in future versions.
-
-#### Swift Package Manager
-
-```swift
-import PackageDescription
-
-let package = Package(
-    name: "YourPackage",
-    ...
-    dependencies: [
-        .package(url: "https://github.com/freshOS/Arrow", .exact("5.1.3")) // <-  1. Declare dependency
-        //...
-    ],
-    targets: [
-        .target(name: "YourPackage", dependencies:["Arrow"]), // <-  2. Link it to your target
-    ]
-)
-```
-
-#### Carthage - Deprecated
+#### Carthage
 ```
 github "freshOS/Arrow"
 ```
-#### CocoaPods - Deprecated
+#### CocoaPods
 ```
 target 'MyApp'
 pod 'Arrow'
 use_frameworks!
 ```
+
+#### Manually
+Simply Copy and Paste `.swift` files in your Xcode Project :)
+
+#### As A Framework
+Grab this repository and build the Framework target on the example project. Then Link against this framework.
+
 
 ## How Does That Work
 

@@ -1,0 +1,11 @@
+framework module PromisedFuture {
+  umbrella header "PromisedFuture.h"
+
+  export *
+  module * { export * }
+}
+
+module PromisedFuture.Swift {
+    header "PromisedFuture-Swift.h"
+    requires objc
+}

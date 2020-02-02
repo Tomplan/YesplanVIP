@@ -25,7 +25,7 @@ class EventsDetailPresenter: EventsDetailPresentationLogic
   
   func presentSomething(response: EventsDetail.Something.Response)
   {
-    let rows = ["Info", "Schedules", "Location", "Team", "Resources"]
+    let rows = ["Info", "Schedules", "Location", "Team", "Resources", "Attachments"]
 
 //    let rows = ["Info", "Schedules", "Location", "Team", "Resources", "Tasks", "Contacts"]
     // , "Attachments", "Customdata"
