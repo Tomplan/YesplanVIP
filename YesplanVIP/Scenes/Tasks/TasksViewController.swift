@@ -93,15 +93,17 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
     
-    getTasks()
-    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    v.collectionView.dataSource = self
+//    getTasks()
+//    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//    v.collectionView.dataSource = self
   }
     
     override func viewWillAppear(_ animated: Bool) {
 //        print("viewWillAppear")
         super.viewWillAppear(animated)
         getTasks()
+        v.collectionView.dataSource = self
+        v.collectionView.delegate = self 
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -149,6 +151,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     displayedStatuses = viewModel.displayedStatuses
     
     if viewModel.error != nil {
+//        print("error: ", viewModel.error)
         let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in

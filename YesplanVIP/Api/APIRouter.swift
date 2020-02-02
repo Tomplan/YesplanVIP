@@ -13,6 +13,8 @@ import Alamofire
 
 enum APIRouter: URLRequestConvertible {    
 
+    case multipletest(path: String)
+    
     case events(path: String)
     case groups(path: String)
     case profiles(path: String)
@@ -42,7 +44,10 @@ enum APIRouter: URLRequestConvertible {
     private var method: HTTPMethod {
         switch self {
         case
-        .events
+        
+        .multipletest
+            
+        ,.events
         ,.groups
         ,.profiles
         ,.resourcebookingId
@@ -70,6 +75,9 @@ enum APIRouter: URLRequestConvertible {
     private var path: String {
         
         switch self {
+        
+        case .multipletest(let path): print("APIROUTER"); return "/api/tasks/\(path)"
+
         case .events(let path): return "/api/events/\(path)"
         case .groups(let path): return "/api/groups/\(path)"
         case .profiles(let path): return "/api/profiles/\(path)"
@@ -103,7 +111,9 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case
         
-        .events
+        .multipletest
+        
+        ,.events
         ,.groups
         ,.profiles
         ,.resourcebookings
@@ -139,7 +149,9 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case
         
-        .events
+        .multipletest
+        
+        ,.events
         ,.groups
         ,.profiles
         ,.resourcebookingId
@@ -215,6 +227,7 @@ enum APIRouter: URLRequestConvertible {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
+        print("APIRouter urlRequest: ", urlRequest)
         return urlRequest
     }
 }

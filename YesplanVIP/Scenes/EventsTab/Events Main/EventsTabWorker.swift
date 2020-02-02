@@ -31,9 +31,10 @@ class EventsTabWorker {
     func getEvents(_ path: String) -> Promise<Events> {
         return firstly {
             APIClient.events("\(path)")
+            
         }
             .map({$0})
-            
+        
     }
     
     func groupEventsByStartdate(events: Events) -> Promise<[String:[Event]]> {

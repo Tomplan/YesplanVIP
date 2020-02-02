@@ -297,6 +297,8 @@
 		E204174E23E6CD5000B3CAFF /* EventLinkAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204174D23E6CD5000B3CAFF /* EventLinkAttachment.swift */; };
 		E204175023E6CD9800B3CAFF /* EventAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204174F23E6CD9800B3CAFF /* EventAttachment.swift */; };
 		E204175223E6E28400B3CAFF /* EDAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175123E6E28400B3CAFF /* EDAttachmentView.swift */; };
+		E204175423E7564A00B3CAFF /* MultipleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175323E7564A00B3CAFF /* MultipleTest.swift */; };
+		E204175623E75DAC00B3CAFF /* UserForTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175523E75DAC00B3CAFF /* UserForTask.swift */; };
 		E21151C023E0B955003377A5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E21151BF23E0B955003377A5 /* Then */; };
 		E21151C323E0B9A3003377A5 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C223E0B9A3003377A5 /* Stevia */; };
 		E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C823E0BBDB003377A5 /* PromiseKit */; };
@@ -642,6 +644,8 @@
 		E204174D23E6CD5000B3CAFF /* EventLinkAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLinkAttachment.swift; sourceTree = "<group>"; };
 		E204174F23E6CD9800B3CAFF /* EventAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAttachment.swift; sourceTree = "<group>"; };
 		E204175123E6E28400B3CAFF /* EDAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentView.swift; sourceTree = "<group>"; };
+		E204175323E7564A00B3CAFF /* MultipleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTest.swift; sourceTree = "<group>"; };
+		E204175523E75DAC00B3CAFF /* UserForTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForTask.swift; sourceTree = "<group>"; };
 		E21151AE23E09F12003377A5 /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		E21151B023E09F3B003377A5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		E21151B223E09F45003377A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -958,6 +962,7 @@
 				3CC3774F2168CB010020236D /* Resourcebookings.swift */,
 				3CFF85BE218F681100DED3FB /* Resources.swift */,
 				3C24777A216A95E30010EAFA /* ResourceSchedules.swift */,
+				E204175323E7564A00B3CAFF /* MultipleTest.swift */,
 			);
 			path = Multiples;
 			sourceTree = "<group>";
@@ -989,6 +994,7 @@
 				3C08E09A219A1BFE007AAF8B /* Type.swift */,
 				3C7B4F09217A2194000D7FDB /* UnitPricingFormula.swift */,
 				3C40AF13212D917B0077DDC5 /* User.swift */,
+				E204175523E75DAC00B3CAFF /* UserForTask.swift */,
 				3C40AF30212D92610077DDC5 /* Usergroup.swift */,
 				3CC37767216A122A0020236D /* Resourcebooking */,
 				3CC3775A2169E5EC0020236D /* Resource */,
@@ -1797,6 +1803,7 @@
 				3CD592A7212AC57B005BBF71 /* LogoutInteractor.swift in Sources */,
 				3C08E08821997115007AAF8B /* EDTeamWorker.swift in Sources */,
 				3CE710C92121A7E300EBF6A5 /* ToDosModels.swift in Sources */,
+				E204175623E75DAC00B3CAFF /* UserForTask.swift in Sources */,
 				3CD592A1212AC57B005BBF71 /* LogoutModels.swift in Sources */,
 				3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */,
 				3C05A0292198E7E100F93289 /* EDLocationRouter.swift in Sources */,
@@ -2006,6 +2013,7 @@
 				3C05A0062198979E00F93289 /* EDSchedulesInteractor.swift in Sources */,
 				3CFF85C7218F8FDB00DED3FB /* Irregularhours.swift in Sources */,
 				3C4E565721E28847004C213F /* DynamicCollectionView.swift in Sources */,
+				E204175423E7564A00B3CAFF /* MultipleTest.swift in Sources */,
 				E204175023E6CD9800B3CAFF /* EventAttachment.swift in Sources */,
 				3C05A0282198E7E100F93289 /* EDLocationWorker.swift in Sources */,
 				3C40AF2C212D91F30077DDC5 /* UserTabInteractor.swift in Sources */,

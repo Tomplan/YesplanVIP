@@ -25,10 +25,14 @@ class TasksPresenter: TasksPresentationLogic
   
   func presentSomething(response: TasksTab.Something.Response)
   {
+    print("TasksPresenter")
     var tasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
     var statusesDict: [String:String] = [:]
     
-    if response.error != nil { let viewModel = TasksTab.Something.ViewModel(
+    
+    if response.error != nil {
+//        print(response.error!)
+        let viewModel = TasksTab.Something.ViewModel(
         displayedTasks: tasks
         ,displayedStatuses: statusesDict
         ,error: response.error!

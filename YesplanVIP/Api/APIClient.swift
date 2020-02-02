@@ -23,18 +23,23 @@ class APIClient {
         return Promise { seal in
         
 
-        URLSession.shared.dataTask(with: url) { data, _, error in
-          guard let data = data,
-            let result = try? JSONDecoder().decode(T.self, from: data) else {
-            let genericError = NSError(
-              domain: "PromiseKitTutorial",
-              code: 0,
-              userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
-            seal.reject(error ?? genericError)
-            return
-          }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+          guard let data = data else { return }
+            do {
+            let result = try JSONDecoder().decode(T.self, from: data)
+            seal.fulfill(result)
 
-          seal.fulfill(result)
+//            let genericError = NSError(
+//              domain: "PromiseKitTutorial",
+//              code: 0,
+//              userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
+//            seal.reject(error ?? genericError)
+          }
+            catch {
+                print(error)
+                print(response)
+            }
+
         }.resume()
 //            firstly {
 //            URLSession.shared.dataTask(.promise, with: url)
@@ -124,6 +129,12 @@ class APIClient {
 //        return promiseRequest(route: APIRouter.events(path: path))
 //    }
     
+    
+    static func multipletest(_ path: String) -> Promise<Tasks> {
+        print("APICLIENT")
+        return apiGet(route: APIRouter.multipletest(path: path))
+    }
+    
     static func events(_ path: String) -> Promise<Events> {
         return apiGet(route: APIRouter.events(path: path))
     }
@@ -143,6 +154,8 @@ class APIClient {
 //    static func tasks(_ path: String) -> Future<Tasks> {
 //        return performRequest(route: APIRouter.tasks(path: path))
 //    }
+    
+
     
     static func tasks(_ path: String) -> Promise<Tasks> {
         return apiGet(route: APIRouter.tasks(path: path))

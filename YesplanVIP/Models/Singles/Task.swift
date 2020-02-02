@@ -9,9 +9,11 @@
 import Foundation
 
 struct Task: Codable {
+ 
+    
     var url: URL
     var id: String
-    var owner: User?
+    var owner: UserForTask? // Fault in YesplanAPI !!!
     var owningteam: Usergroup?
     var owninggroup: Usergroup?
     var status: String
@@ -24,6 +26,6 @@ struct Task: Codable {
     var event: Base2?    //
     var assignedby: String?
     var assignedto: String?
-    var duration: String?
+    var duration: String
 
 }

@@ -38,19 +38,25 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
   {
     worker = TasksWorker()
     
-    worker?.getTasks("task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
-        .then((worker?.groupTasksByDue)!)
-        .then((worker?.sortTasksInEachGroupByDue)!)
-        .then((worker?.sortDictByDate)!)
+    worker?
+        .getMainTasks("task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
+        
+//        .get { items in print("items: ") }
+//        .then((worker?.groupTasksByDue)!)
+//        .then((worker?.sortTasksInEachGroupByDue)!)
+//        .then((worker?.sortDictByDate)!)
         .done { items in
-            self.tasksArray = items
-            let response = TasksTab.Something.Response(
-                tasks: self.tasksArray
-                ,error: self.error
-            )
-            self.presenter?.presentSomething(response: response)
+            print("items here")
+//            print("itemsCount: ", items.count)
+//            self.tasksArray = items
+//            let response = TasksTab.Something.Response(
+//                tasks: self.tasksArray
+//                ,error: self.error
+//            )
+//            self.presenter?.presentSomething(response: response)
         }
     .catch { error in
+        print("TasksInteractor: ", error.localizedDescription)
             self.error = error.localizedDescription
             let response = TasksTab.Something.Response(
                 tasks: self.tasksArray

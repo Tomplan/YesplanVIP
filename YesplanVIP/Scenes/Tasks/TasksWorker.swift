@@ -16,23 +16,12 @@ import PromiseKit
 
 class TasksWorker
 {
-    func getTasks(_ path: String) -> Promise<Tasks> {
+    func getMainTasks(_ path: String) -> Promise<Tasks> {
         return firstly {
-            APIClient.tasks("\(path)")
+            APIClient.multipletest("\(path)")
             }
-                .map({$0})
-    }
-//    func getTasks(_ path: String) -> Future<Tasks> {
-//        return Future(operation: { completion in
-//            APIClient.tasks("\(path)")
-//                .map({$0})
-//                .execute(onSuccess: { items in
-//                    completion(.success(items))
-//                }, onFailure: { error in
-//                    completion(.failure(error))
-//                })
-//        })
-//    }
+//        .map({$0})
+        }
     
     func stringToDateShort(myDateString: String) -> String {
         if myDateString != "no deadline" {
