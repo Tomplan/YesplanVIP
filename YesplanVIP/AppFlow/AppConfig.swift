@@ -54,7 +54,17 @@ class AppConfig {
             }
         }
         
+//        let todoStatusArray: [String] = ["*, new, started, on hold, done, obsoleted, tom"]
+//        self.defaults.set(todoStatusArray, forKey: "todo_status" )
+
         defaults.register(defaults: defaultsToRegister)
+//        let array: [String] = UserDefaults.standard.array(forKey: "todo_status") as? [String]
+
+//        value(forKey: "task_status")
+//        print("defaultlist: ", array)
+//        let array = ["Hello", "World"]
+//        defaults.setValue(array, forKey: "test")
+
 //        UserDefaults.standard.set("*", forKey: "tasks_team")
 //        UserDefaults.standard.set("*", forKey: "todo_user")
 //        UserDefaults.standard.set("new", forKey: "todo_status")

@@ -39,24 +39,28 @@ class TasksInteractor: TasksBusinessLogic, TasksDataStore
     worker = TasksWorker()
     
     worker?
-        .getMainTasks("task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
+        .getTasks("task:team:\(UserDefaults.standard.string(forKey: "tasks_team")!) task:status:\(UserDefaults.standard.string(forKey: "task_status")!)")
         
-//        .get { items in print("items: ") }
-//        .then((worker?.groupTasksByDue)!)
-//        .then((worker?.sortTasksInEachGroupByDue)!)
-//        .then((worker?.sortDictByDate)!)
+//        .get { items in
+//            for item in items.data {
+////                print(item.team)
+//            }
+//    }
+        .then((worker?.groupTasksByDue)!)
+        .then((worker?.sortTasksInEachGroupByDue)!)
+        .then((worker?.sortDictByDate)!)
         .done { items in
-            print("items here")
+//            print("items here")
 //            print("itemsCount: ", items.count)
-//            self.tasksArray = items
-//            let response = TasksTab.Something.Response(
-//                tasks: self.tasksArray
-//                ,error: self.error
-//            )
-//            self.presenter?.presentSomething(response: response)
+            self.tasksArray = items
+            let response = TasksTab.Something.Response(
+                tasks: self.tasksArray
+                ,error: self.error
+            )
+            self.presenter?.presentSomething(response: response)
         }
     .catch { error in
-        print("TasksInteractor: ", error.localizedDescription)
+//        print("TasksInteractor: ", error.localizedDescription)
             self.error = error.localizedDescription
             let response = TasksTab.Something.Response(
                 tasks: self.tasksArray

@@ -1,16 +1,20 @@
 PODS:
+  - MDatePickerView (1.2.2)
   - PureLayout (3.1.5)
 
 DEPENDENCIES:
+  - MDatePickerView (~> 1.2.2)
   - PureLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MDatePickerView
     - PureLayout
 
 SPEC CHECKSUMS:
+  MDatePickerView: 92397dc572bf44205f51ee9b65ac5d0d8c11bb42
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
 
-PODFILE CHECKSUM: 2a36abd33a3a807a503caf1d5a39de3077dd2e13
+PODFILE CHECKSUM: 19d001ebfec7b13307b72a375d15fe7316bbee2e
 
 COCOAPODS: 1.6.0

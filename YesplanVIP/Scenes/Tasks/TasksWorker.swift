@@ -16,9 +16,9 @@ import PromiseKit
 
 class TasksWorker
 {
-    func getMainTasks(_ path: String) -> Promise<Tasks> {
+    func getTasks(_ path: String) -> Promise<Tasks> {
         return firstly {
-            APIClient.multipletest("\(path)")
+            APIClient.tasks("\(path)")
             }
 //        .map({$0})
         }

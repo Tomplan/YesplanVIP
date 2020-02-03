@@ -131,7 +131,7 @@ class APIClient {
     
     
     static func multipletest(_ path: String) -> Promise<Tasks> {
-        print("APICLIENT")
+//        print("APICLIENT")
         return apiGet(route: APIRouter.multipletest(path: path))
     }
     

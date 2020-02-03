@@ -12,7 +12,7 @@ import Foundation
 
 struct Groups: Codable {
     var pagination = Pagination()
-    var data = [Group]()
+    var data = [YPGroup]()
 }
 //
 //extension Groups : ArrowParsable {

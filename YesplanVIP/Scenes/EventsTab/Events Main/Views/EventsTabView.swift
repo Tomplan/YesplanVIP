@@ -8,6 +8,7 @@
 
 import UIKit
 import Stevia
+import UserNotifications
 
 // Get the full documentation at https://github.com/freshOS/Stevia
 
@@ -20,7 +21,9 @@ class EventsTabView: UIView {
     @IBOutlet weak var imageTitle: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
     lazy var collectionView : UICollectionView = {
+        
         
         let flowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)

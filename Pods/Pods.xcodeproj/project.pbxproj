@@ -7,108 +7,126 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00D8ABC3B6ED4402035DAD941A7CDDBA /* Pods-YesplanVIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACDCBBE641259FFB2605F4D54E2B8C /* Pods-YesplanVIP-dummy.m */; };
-		0ABC6DD76F407194C5576AD9F1BCD767 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E9767E803CDC51D409DDC24F70C7A309 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29070794CB628176BCEC6DE3B49D92CF /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E4DFABA474333B6F37764DD86C0902 /* PureLayout-dummy.m */; };
-		2CCD533314A7A173B889BEE490C03759 /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = AA81DBBF7E4318B0B9D20BBC1AA5AA42 /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E1EC181B34870E3E71A5F376C4BA9B4 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5080227C5709A54B59B373D61C7F8DCF /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A7A1AFF5E409E5E974AD76C5F374BBF /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 454EB49CCB046170F6F44D0B4479212D /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55C0CA3DA2854BD1AD797E783227F179 /* Pods-YesplanVIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A423DBA65AACB7040824970898EA780B /* Pods-YesplanVIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9121261A5D7570D1F1F5CE2A9458E462 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 87AB5B78570BBAC7E76B270B8A9F6635 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB9E947C1FEBC567801DA465A4A8ACC8 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 065038E7C3A7C06A64DE330D13C9605D /* ALView+PureLayout.m */; };
-		C263D71F34C3017E83A2F4669E28D691 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		C804B93307AC7229DB92F2072A39563E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		CAF9BAC00D9EBA2020E44B1FB3FCD707 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC749DD361663637727554B7C27D91E /* NSLayoutConstraint+PureLayout.m */; };
-		D5A17E0188CA60049E64502FA62130C1 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 604E3BAF7CF024E1576AEC840F99D9FA /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8AA5F25A4D31417A9B5FB157E925546 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = FB100EC3AA5FA4342D9116C72FCBEC37 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD2A2F40F458A34A5C541E617CBA2E2B /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A8ED222FAFBB18B44152AAB4FD444C99 /* NSArray+PureLayout.m */; };
+		0E50B4DF30EF18830F67467F6F81A7AA /* MDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = FAAB2185950DF65DE1F8FBFFDCF43433 /* MDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F1B762AFF1E7CB69198761DA6DC6362 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F29C156A2040F25742651EE5F102E48D /* ALView+PureLayout.m */; };
+		2291CA82FBCA3DBD1CD46B498A8EC00C /* ColDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3FBBDB3FA975E23AE321E93518C97 /* ColDateCell.swift */; };
+		271C3685A9C6E32000D9C4F652EAAEDC /* MDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9378F9BDD368BFB86A61E6510AB0F7AE /* MDatePickerView.swift */; };
+		3D22C39AE2232E464713FD29C934B77E /* MDatePickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A0A40BDDD0B36C3A35E886E6A3EF1 /* MDatePickerView-dummy.m */; };
+		4DC5F40CEC77315AF931777F63442214 /* MDatePickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2936AC782FE548143E7DE265A462CA6 /* MDatePickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B1A71D79E3D3F7974DAD85804A503BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		61B2B05C224DDCB0C74D604432C37ED9 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E73CB11A6B6ED2D87EF046A110E97844 /* NSArray+PureLayout.m */; };
+		785BFC85B943B5040CD8D856730366FA /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F129B76E2DFF6DEA2E399566E4AB51C6 /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78D901AF0353F730C7FE75315401CC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		7AD785295AB85EC65F818D02F29825B8 /* Pods-YesplanVIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACDCBBE641259FFB2605F4D54E2B8C /* Pods-YesplanVIP-dummy.m */; };
+		834B58AC9695C9A97EC666C74402500D /* ColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63EA1B1F71470AAB314937F1CAD550 /* ColCell.swift */; };
+		8D41A30D6C48830FD6CE0E93F1BF26E4 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = EA97A9A872CD6AC64077EE115C88F0F8 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		951EF0BA78F1D5377AFBBAD353E105EB /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACC5BA3D8A6AF9402827282FE9C61B /* PureLayout-dummy.m */; };
+		A0CF15689F14523E55BFD3CF99171986 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CC7C683F18B66D363C8FEA6607403D0 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1FB820BECF577A1A7FA790BD6EABBD7 /* FlatCardCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C0E0C4800EF28FA7ECA101A497F91 /* FlatCardCollectionViewLayout.swift */; };
+		A93E6F6648621806BF6D355C956329AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		AD6F501FB949E3790D15D560F14DA7AA /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C5D5FC44471707C82C7A3E35013498 /* NSLayoutConstraint+PureLayout.m */; };
+		B927154EFB6B4971F377065041FA2B4D /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4717A49C670CF200D34106840B66400A /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC0BEED49757BEC2D1D1895830F82774 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0EDBE7A402692D3F62AD602E0EE87 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD5E680B752C0DB733BC13DE4B152A4A /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CE5FFD19CFA2C5EAE0AF85C78B3BD887 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3B0CC356BDF4D030F7DFC23AA3634F5 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF4D69C6FF33F21FD1AEC38A0465BDEA /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDEE135D68F3A9746CA8771D8B71139D /* Pods-YesplanVIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A423DBA65AACB7040824970898EA780B /* Pods-YesplanVIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1E6FEED1A3FBAE375F1FF53F979E2E80 /* PBXContainerItemProxy */ = {
+		C5BABEB8EEE8ABD10F7AF8104C4C2616 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 965273B75637B53B4224B5D0DAED02EE;
+			remoteGlobalIDString = 4C14801E16A76DBA60763D9819C8C695;
 			remoteInfo = PureLayout;
+		};
+		DE6904D462B160A1F1BFE71D05F9258E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7055D7D499B2400C6CA67BC45778F32E;
+			remoteInfo = MDatePickerView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		065038E7C3A7C06A64DE330D13C9605D /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		1CC7C683F18B66D363C8FEA6607403D0 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		454EB49CCB046170F6F44D0B4479212D /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		4D6DA23324A49B00E72403C4FF59B74F /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
-		5080227C5709A54B59B373D61C7F8DCF /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		40D5C5E1444A79D41921DDC956184A74 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		455687007F90317027AD5B0042AAE143 /* MDatePickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-prefix.pch"; sourceTree = "<group>"; };
+		4717A49C670CF200D34106840B66400A /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
 		52D77FD83430DF1A4828D52701602C2C /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
-		5D4921A956357A3055D7AF0C135142FE /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YesplanVIP.framework; path = "Pods-YesplanVIP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EC749DD361663637727554B7C27D91E /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		604E3BAF7CF024E1576AEC840F99D9FA /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
 		631EBE76185F7D39A6C811EC8696CB15 /* Pods-YesplanVIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YesplanVIP.modulemap"; sourceTree = "<group>"; };
+		65A5580D72B2E03901DA453A805A98FA /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
+		6DAB6B1497E90090C051694E0F6F1543 /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
 		74ACDCBBE641259FFB2605F4D54E2B8C /* Pods-YesplanVIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YesplanVIP-dummy.m"; sourceTree = "<group>"; };
-		74E4DFABA474333B6F37764DD86C0902 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
-		7FDD52B488C8CF5BA3F3825A4575D7CB /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		828FABF6835E28C4C23DD5BB560F1B26 /* Pods-YesplanVIP-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YesplanVIP-acknowledgements.markdown"; sourceTree = "<group>"; };
-		87AB5B78570BBAC7E76B270B8A9F6635 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		87EDA635F4CB2E403417CA20EF75E8B5 /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		9267591DD34F54AF5CD26A7A70E1B04F /* Pods-YesplanVIP-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YesplanVIP-frameworks.sh"; sourceTree = "<group>"; };
 		928837F53470F459ACDFDCBC7C8D67A2 /* Pods-YesplanVIP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-acknowledgements.plist"; sourceTree = "<group>"; };
+		92ACC5BA3D8A6AF9402827282FE9C61B /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		9378F9BDD368BFB86A61E6510AB0F7AE /* MDatePickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MDatePickerView.swift; path = MDatePickerView/MDatePickerView.swift; sourceTree = "<group>"; };
+		99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDatePickerView.xcconfig; sourceTree = "<group>"; };
+		A288ED5945E9B379330C1FE82855E72A /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		A40A0A40BDDD0B36C3A35E886E6A3EF1 /* MDatePickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDatePickerView-dummy.m"; sourceTree = "<group>"; };
 		A423DBA65AACB7040824970898EA780B /* Pods-YesplanVIP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YesplanVIP-umbrella.h"; sourceTree = "<group>"; };
-		A8ED222FAFBB18B44152AAB4FD444C99 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		AA81DBBF7E4318B0B9D20BBC1AA5AA42 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
-		B1A122B99E0FDDED0D7ACE15904605BE /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		B9E0EDBE7A402692D3F62AD602E0EE87 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		C2C5D5FC44471707C82C7A3E35013498 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		C6750FFFA64132EF3B5AB9598AAA2B42 /* MDatePickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDatePickerView.framework; path = MDatePickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C949B62CF0D5B216CCB8C9FAD4891684 /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YesplanVIP.framework; path = "Pods-YesplanVIP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCB3FBBDB3FA975E23AE321E93518C97 /* ColDateCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColDateCell.swift; path = MDatePickerView/ColDateCell.swift; sourceTree = "<group>"; };
+		CE5FFD19CFA2C5EAE0AF85C78B3BD887 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		D2936AC782FE548143E7DE265A462CA6 /* MDatePickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-umbrella.h"; sourceTree = "<group>"; };
 		D83B7F252F98EADF8DB24BC49E40EF30 /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
+		D9D3C47C011AD771A8016462429F14DC /* MDatePickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDatePickerView-Info.plist"; sourceTree = "<group>"; };
+		DF4D69C6FF33F21FD1AEC38A0465BDEA /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		E73CB11A6B6ED2D87EF046A110E97844 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
 		E755DAD472824586DE1EC05902A09F77 /* Pods-YesplanVIP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-Info.plist"; sourceTree = "<group>"; };
-		E8F39C256760538E3AC531E923F9E810 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
-		E9767E803CDC51D409DDC24F70C7A309 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
-		FB100EC3AA5FA4342D9116C72FCBEC37 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		EA97A9A872CD6AC64077EE115C88F0F8 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		F09CBABC19566DF74E658CC05EB154E8 /* MDatePickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDatePickerView.modulemap; sourceTree = "<group>"; };
+		F129B76E2DFF6DEA2E399566E4AB51C6 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		F29C156A2040F25742651EE5F102E48D /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		F74C0E0C4800EF28FA7ECA101A497F91 /* FlatCardCollectionViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlatCardCollectionViewLayout.swift; path = MDatePickerView/FlatCardCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FAAB2185950DF65DE1F8FBFFDCF43433 /* MDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDatePickerView.h; path = MDatePickerView/MDatePickerView.h; sourceTree = "<group>"; };
+		FF63EA1B1F71470AAB314937F1CAD550 /* ColCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColCell.swift; path = MDatePickerView/ColCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5CA12005F01B517EC8DB3F67F91FA2F4 /* Frameworks */ = {
+		365607DE8B46BBB7CB239B2A7E9A376D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C263D71F34C3017E83A2F4669E28D691 /* Foundation.framework in Frameworks */,
+				A93E6F6648621806BF6D355C956329AB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E66C6A12B42B10F50D958A27202B5780 /* Frameworks */ = {
+		61E5698FCDECFE42C35484B5A7752959 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C804B93307AC7229DB92F2072A39563E /* Foundation.framework in Frameworks */,
+				5B1A71D79E3D3F7974DAD85804A503BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D89FAB392FECEAC041BF2ED782F65EBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D901AF0353F730C7FE75315401CC4E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04A2C822144CEC05EB5AD23AE0036229 /* Pods */ = {
+		3172BD82716EC9C7237DD98E49098BE6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3667F1CD5A1683EAAFDE81B56B4FF61A /* PureLayout */,
+				6D6E34110A8DEA9BCE04B101FDB8A715 /* MDatePickerView */,
+				702208D03501A270033A2F12D592478B /* PureLayout */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		3667F1CD5A1683EAAFDE81B56B4FF61A /* PureLayout */ = {
-			isa = PBXGroup;
-			children = (
-				5080227C5709A54B59B373D61C7F8DCF /* ALView+PureLayout.h */,
-				065038E7C3A7C06A64DE330D13C9605D /* ALView+PureLayout.m */,
-				454EB49CCB046170F6F44D0B4479212D /* NSArray+PureLayout.h */,
-				A8ED222FAFBB18B44152AAB4FD444C99 /* NSArray+PureLayout.m */,
-				87AB5B78570BBAC7E76B270B8A9F6635 /* NSLayoutConstraint+PureLayout.h */,
-				5EC749DD361663637727554B7C27D91E /* NSLayoutConstraint+PureLayout.m */,
-				FB100EC3AA5FA4342D9116C72FCBEC37 /* PureLayout.h */,
-				AA81DBBF7E4318B0B9D20BBC1AA5AA42 /* PureLayout+Internal.h */,
-				E9767E803CDC51D409DDC24F70C7A309 /* PureLayoutDefines.h */,
-				B7DB17F15C59AC1E2ED3C23E3171A071 /* Support Files */,
-			);
-			name = PureLayout;
-			path = PureLayout;
 			sourceTree = "<group>";
 		};
 		3F74413675A2B47E42F5BC5CA8F84C0C /* Pods-YesplanVIP */ = {
@@ -128,24 +146,71 @@
 			path = "Target Support Files/Pods-YesplanVIP";
 			sourceTree = "<group>";
 		};
-		911289CD3FE6608FA278C4574B306466 /* Products */ = {
+		63CDF08146C3234B1067AC2B5C9C6505 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D4921A956357A3055D7AF0C135142FE /* Pods_YesplanVIP.framework */,
-				7FDD52B488C8CF5BA3F3825A4575D7CB /* PureLayout.framework */,
+				C6750FFFA64132EF3B5AB9598AAA2B42 /* MDatePickerView.framework */,
+				C949B62CF0D5B216CCB8C9FAD4891684 /* Pods_YesplanVIP.framework */,
+				40D5C5E1444A79D41921DDC956184A74 /* PureLayout.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B7DB17F15C59AC1E2ED3C23E3171A071 /* Support Files */ = {
+		6D6E34110A8DEA9BCE04B101FDB8A715 /* MDatePickerView */ = {
 			isa = PBXGroup;
 			children = (
-				E8F39C256760538E3AC531E923F9E810 /* PureLayout.modulemap */,
-				87EDA635F4CB2E403417CA20EF75E8B5 /* PureLayout.xcconfig */,
-				74E4DFABA474333B6F37764DD86C0902 /* PureLayout-dummy.m */,
-				4D6DA23324A49B00E72403C4FF59B74F /* PureLayout-Info.plist */,
-				B1A122B99E0FDDED0D7ACE15904605BE /* PureLayout-prefix.pch */,
-				604E3BAF7CF024E1576AEC840F99D9FA /* PureLayout-umbrella.h */,
+				FF63EA1B1F71470AAB314937F1CAD550 /* ColCell.swift */,
+				CCB3FBBDB3FA975E23AE321E93518C97 /* ColDateCell.swift */,
+				F74C0E0C4800EF28FA7ECA101A497F91 /* FlatCardCollectionViewLayout.swift */,
+				FAAB2185950DF65DE1F8FBFFDCF43433 /* MDatePickerView.h */,
+				9378F9BDD368BFB86A61E6510AB0F7AE /* MDatePickerView.swift */,
+				A758701D00699129747E6282A5067CBD /* Support Files */,
+			);
+			name = MDatePickerView;
+			path = MDatePickerView;
+			sourceTree = "<group>";
+		};
+		702208D03501A270033A2F12D592478B /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				4717A49C670CF200D34106840B66400A /* ALView+PureLayout.h */,
+				F29C156A2040F25742651EE5F102E48D /* ALView+PureLayout.m */,
+				CE5FFD19CFA2C5EAE0AF85C78B3BD887 /* NSArray+PureLayout.h */,
+				E73CB11A6B6ED2D87EF046A110E97844 /* NSArray+PureLayout.m */,
+				EA97A9A872CD6AC64077EE115C88F0F8 /* NSLayoutConstraint+PureLayout.h */,
+				C2C5D5FC44471707C82C7A3E35013498 /* NSLayoutConstraint+PureLayout.m */,
+				1CC7C683F18B66D363C8FEA6607403D0 /* PureLayout.h */,
+				F129B76E2DFF6DEA2E399566E4AB51C6 /* PureLayout+Internal.h */,
+				B9E0EDBE7A402692D3F62AD602E0EE87 /* PureLayoutDefines.h */,
+				A7C6136769569E9F23B607E5FDF23BF9 /* Support Files */,
+			);
+			name = PureLayout;
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		A758701D00699129747E6282A5067CBD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F09CBABC19566DF74E658CC05EB154E8 /* MDatePickerView.modulemap */,
+				A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */,
+				A40A0A40BDDD0B36C3A35E886E6A3EF1 /* MDatePickerView-dummy.m */,
+				D9D3C47C011AD771A8016462429F14DC /* MDatePickerView-Info.plist */,
+				455687007F90317027AD5B0042AAE143 /* MDatePickerView-prefix.pch */,
+				D2936AC782FE548143E7DE265A462CA6 /* MDatePickerView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MDatePickerView";
+			sourceTree = "<group>";
+		};
+		A7C6136769569E9F23B607E5FDF23BF9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				65A5580D72B2E03901DA453A805A98FA /* PureLayout.modulemap */,
+				99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */,
+				92ACC5BA3D8A6AF9402827282FE9C61B /* PureLayout-dummy.m */,
+				6DAB6B1497E90090C051694E0F6F1543 /* PureLayout-Info.plist */,
+				A288ED5945E9B379330C1FE82855E72A /* PureLayout-prefix.pch */,
+				DF4D69C6FF33F21FD1AEC38A0465BDEA /* PureLayout-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PureLayout";
@@ -164,8 +229,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				04A2C822144CEC05EB5AD23AE0036229 /* Pods */,
-				911289CD3FE6608FA278C4574B306466 /* Products */,
+				3172BD82716EC9C7237DD98E49098BE6 /* Pods */,
+				63CDF08146C3234B1067AC2B5C9C6505 /* Products */,
 				DA0B6935140DBB7D8E167B1B67B66E82 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -189,58 +254,48 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		093731D20BC45B7ABF96E64C7D13FBB2 /* Headers */ = {
+		73B3B3E5DC1E757E3BF9C9E1A8894443 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C0CA3DA2854BD1AD797E783227F179 /* Pods-YesplanVIP-umbrella.h in Headers */,
+				EDEE135D68F3A9746CA8771D8B71139D /* Pods-YesplanVIP-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F42F55BF2542DC5741A5D43224E70552 /* Headers */ = {
+		9B9EC0C6234BB1E860DF74C77A4C9F9E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1EC181B34870E3E71A5F376C4BA9B4 /* ALView+PureLayout.h in Headers */,
-				4A7A1AFF5E409E5E974AD76C5F374BBF /* NSArray+PureLayout.h in Headers */,
-				9121261A5D7570D1F1F5CE2A9458E462 /* NSLayoutConstraint+PureLayout.h in Headers */,
-				2CCD533314A7A173B889BEE490C03759 /* PureLayout+Internal.h in Headers */,
-				D5A17E0188CA60049E64502FA62130C1 /* PureLayout-umbrella.h in Headers */,
-				D8AA5F25A4D31417A9B5FB157E925546 /* PureLayout.h in Headers */,
-				0ABC6DD76F407194C5576AD9F1BCD767 /* PureLayoutDefines.h in Headers */,
+				B927154EFB6B4971F377065041FA2B4D /* ALView+PureLayout.h in Headers */,
+				BD5E680B752C0DB733BC13DE4B152A4A /* NSArray+PureLayout.h in Headers */,
+				8D41A30D6C48830FD6CE0E93F1BF26E4 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				785BFC85B943B5040CD8D856730366FA /* PureLayout+Internal.h in Headers */,
+				D3B0CC356BDF4D030F7DFC23AA3634F5 /* PureLayout-umbrella.h in Headers */,
+				A0CF15689F14523E55BFD3CF99171986 /* PureLayout.h in Headers */,
+				BC0BEED49757BEC2D1D1895830F82774 /* PureLayoutDefines.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADDAA9F817160F07BB8C941D1443DC42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC5F40CEC77315AF931777F63442214 /* MDatePickerView-umbrella.h in Headers */,
+				0E50B4DF30EF18830F67467F6F81A7AA /* MDatePickerView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4AE036ABF72D9C96D1148F5ACF1B72F9 /* Pods-YesplanVIP */ = {
+		4C14801E16A76DBA60763D9819C8C695 /* PureLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36D1FF7BE5117608164EB65C8B643B37 /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */;
+			buildConfigurationList = A17CBC4963D59A441D0730D84422A9EF /* Build configuration list for PBXNativeTarget "PureLayout" */;
 			buildPhases = (
-				093731D20BC45B7ABF96E64C7D13FBB2 /* Headers */,
-				119A6C4F3E3857485300117B35C4E0B8 /* Sources */,
-				E66C6A12B42B10F50D958A27202B5780 /* Frameworks */,
-				32B9D56CA8E183F4BFACD2B02323AF7B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				51397AC8D63BBB1FB4E651DAC0163871 /* PBXTargetDependency */,
-			);
-			name = "Pods-YesplanVIP";
-			productName = "Pods-YesplanVIP";
-			productReference = 5D4921A956357A3055D7AF0C135142FE /* Pods_YesplanVIP.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		965273B75637B53B4224B5D0DAED02EE /* PureLayout */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E442CD3FCFD73409AC92970871B5ADC /* Build configuration list for PBXNativeTarget "PureLayout" */;
-			buildPhases = (
-				F42F55BF2542DC5741A5D43224E70552 /* Headers */,
-				8102CAD51E21C4E55762228B49FB8A4B /* Sources */,
-				5CA12005F01B517EC8DB3F67F91FA2F4 /* Frameworks */,
-				20C16B66FF3E0881DC68158459B46A04 /* Resources */,
+				9B9EC0C6234BB1E860DF74C77A4C9F9E /* Headers */,
+				9ADDE78FA3C99445795DC7CBD7C89BFC /* Sources */,
+				61E5698FCDECFE42C35484B5A7752959 /* Frameworks */,
+				25C6304A0D3715900AC0A3DD18940DFF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -248,7 +303,45 @@
 			);
 			name = PureLayout;
 			productName = PureLayout;
-			productReference = 7FDD52B488C8CF5BA3F3825A4575D7CB /* PureLayout.framework */;
+			productReference = 40D5C5E1444A79D41921DDC956184A74 /* PureLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7055D7D499B2400C6CA67BC45778F32E /* MDatePickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D33C18FD1FB009549D2EB7F866DC5C /* Build configuration list for PBXNativeTarget "MDatePickerView" */;
+			buildPhases = (
+				ADDAA9F817160F07BB8C941D1443DC42 /* Headers */,
+				5854926ACDFF230C366392764E36692F /* Sources */,
+				D89FAB392FECEAC041BF2ED782F65EBD /* Frameworks */,
+				6EB100C9835247D2412F9D3D3B1F8ED8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MDatePickerView;
+			productName = MDatePickerView;
+			productReference = C6750FFFA64132EF3B5AB9598AAA2B42 /* MDatePickerView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ABD02FD529589CDEADCB8F92CF195B77 /* Pods-YesplanVIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF5993E5EE5D6635158815893AD90677 /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */;
+			buildPhases = (
+				73B3B3E5DC1E757E3BF9C9E1A8894443 /* Headers */,
+				9FAD73DEC5D47179E95915B68DB1C77C /* Sources */,
+				365607DE8B46BBB7CB239B2A7E9A376D /* Frameworks */,
+				08C359121F55DC8A83B4D6F13484E649 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADB40C33D80A1F6B37C23754FCF034ED /* PBXTargetDependency */,
+				0671DA2E60CCE6719923CBDC590902EC /* PBXTargetDependency */,
+			);
+			name = "Pods-YesplanVIP";
+			productName = "Pods-YesplanVIP";
+			productReference = C949B62CF0D5B216CCB8C9FAD4891684 /* Pods_YesplanVIP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -269,25 +362,33 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 911289CD3FE6608FA278C4574B306466 /* Products */;
+			productRefGroup = 63CDF08146C3234B1067AC2B5C9C6505 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4AE036ABF72D9C96D1148F5ACF1B72F9 /* Pods-YesplanVIP */,
-				965273B75637B53B4224B5D0DAED02EE /* PureLayout */,
+				7055D7D499B2400C6CA67BC45778F32E /* MDatePickerView */,
+				ABD02FD529589CDEADCB8F92CF195B77 /* Pods-YesplanVIP */,
+				4C14801E16A76DBA60763D9819C8C695 /* PureLayout */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		20C16B66FF3E0881DC68158459B46A04 /* Resources */ = {
+		08C359121F55DC8A83B4D6F13484E649 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		32B9D56CA8E183F4BFACD2B02323AF7B /* Resources */ = {
+		25C6304A0D3715900AC0A3DD18940DFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EB100C9835247D2412F9D3D3B1F8ED8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -297,37 +398,91 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		119A6C4F3E3857485300117B35C4E0B8 /* Sources */ = {
+		5854926ACDFF230C366392764E36692F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D8ABC3B6ED4402035DAD941A7CDDBA /* Pods-YesplanVIP-dummy.m in Sources */,
+				834B58AC9695C9A97EC666C74402500D /* ColCell.swift in Sources */,
+				2291CA82FBCA3DBD1CD46B498A8EC00C /* ColDateCell.swift in Sources */,
+				A1FB820BECF577A1A7FA790BD6EABBD7 /* FlatCardCollectionViewLayout.swift in Sources */,
+				3D22C39AE2232E464713FD29C934B77E /* MDatePickerView-dummy.m in Sources */,
+				271C3685A9C6E32000D9C4F652EAAEDC /* MDatePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8102CAD51E21C4E55762228B49FB8A4B /* Sources */ = {
+		9ADDE78FA3C99445795DC7CBD7C89BFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB9E947C1FEBC567801DA465A4A8ACC8 /* ALView+PureLayout.m in Sources */,
-				FD2A2F40F458A34A5C541E617CBA2E2B /* NSArray+PureLayout.m in Sources */,
-				CAF9BAC00D9EBA2020E44B1FB3FCD707 /* NSLayoutConstraint+PureLayout.m in Sources */,
-				29070794CB628176BCEC6DE3B49D92CF /* PureLayout-dummy.m in Sources */,
+				1F1B762AFF1E7CB69198761DA6DC6362 /* ALView+PureLayout.m in Sources */,
+				61B2B05C224DDCB0C74D604432C37ED9 /* NSArray+PureLayout.m in Sources */,
+				AD6F501FB949E3790D15D560F14DA7AA /* NSLayoutConstraint+PureLayout.m in Sources */,
+				951EF0BA78F1D5377AFBBAD353E105EB /* PureLayout-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FAD73DEC5D47179E95915B68DB1C77C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD785295AB85EC65F818D02F29825B8 /* Pods-YesplanVIP-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		51397AC8D63BBB1FB4E651DAC0163871 /* PBXTargetDependency */ = {
+		0671DA2E60CCE6719923CBDC590902EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PureLayout;
-			target = 965273B75637B53B4224B5D0DAED02EE /* PureLayout */;
-			targetProxy = 1E6FEED1A3FBAE375F1FF53F979E2E80 /* PBXContainerItemProxy */;
+			target = 4C14801E16A76DBA60763D9819C8C695 /* PureLayout */;
+			targetProxy = C5BABEB8EEE8ABD10F7AF8104C4C2616 /* PBXContainerItemProxy */;
+		};
+		ADB40C33D80A1F6B37C23754FCF034ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDatePickerView;
+			target = 7055D7D499B2400C6CA67BC45778F32E /* MDatePickerView */;
+			targetProxy = DE6904D462B160A1F1BFE71D05F9258E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		190C1034B9D96C7CD869C8ADD3D742FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDatePickerView/MDatePickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDatePickerView/MDatePickerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDatePickerView/MDatePickerView.modulemap";
+				PRODUCT_MODULE_NAME = MDatePickerView;
+				PRODUCT_NAME = MDatePickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,9 +547,44 @@
 			};
 			name = Debug;
 		};
-		269469A847F6052E8681F35333E739A4 /* Debug */ = {
+		5783D99CBB60CA6C8F07ADC1483F0071 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52D77FD83430DF1A4828D52701602C2C /* Pods-YesplanVIP.debug.xcconfig */;
+			baseConfigurationReference = A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDatePickerView/MDatePickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDatePickerView/MDatePickerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDatePickerView/MDatePickerView.modulemap";
+				PRODUCT_MODULE_NAME = MDatePickerView;
+				PRODUCT_NAME = MDatePickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1F1785CAC6CA7A6F6C6E9CDCF6C7041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D83B7F252F98EADF8DB24BC49E40EF30 /* Pods-YesplanVIP.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -424,76 +614,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		55D03899A72008CFC747C156CF365EB0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87EDA635F4CB2E403417CA20EF75E8B5 /* PureLayout.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
-				PRODUCT_MODULE_NAME = PureLayout;
-				PRODUCT_NAME = PureLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A17D85260549DA3D175CAD5A6799EA23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87EDA635F4CB2E403417CA20EF75E8B5 /* PureLayout.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
-				PRODUCT_MODULE_NAME = PureLayout;
-				PRODUCT_NAME = PureLayout;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -561,9 +681,45 @@
 			};
 			name = Release;
 		};
-		F1F0B83F3231F3EA0D3C8EA1099693D7 /* Release */ = {
+		C4181A720699A74E8EA0E15FD82D40F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D83B7F252F98EADF8DB24BC49E40EF30 /* Pods-YesplanVIP.release.xcconfig */;
+			baseConfigurationReference = 99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				PRODUCT_MODULE_NAME = PureLayout;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DEE24F50600EE958DA7951536368B308 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52D77FD83430DF1A4828D52701602C2C /* Pods-YesplanVIP.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -594,38 +750,81 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
+		};
+		F4A11FA9C4DC0FB249E74FA0F4D39CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				PRODUCT_MODULE_NAME = PureLayout;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		36D1FF7BE5117608164EB65C8B643B37 /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				269469A847F6052E8681F35333E739A4 /* Debug */,
-				F1F0B83F3231F3EA0D3C8EA1099693D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3E442CD3FCFD73409AC92970871B5ADC /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55D03899A72008CFC747C156CF365EB0 /* Debug */,
-				A17D85260549DA3D175CAD5A6799EA23 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				196DFA3E4A09A28224918543529A1885 /* Debug */,
 				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D33C18FD1FB009549D2EB7F866DC5C /* Build configuration list for PBXNativeTarget "MDatePickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5783D99CBB60CA6C8F07ADC1483F0071 /* Debug */,
+				190C1034B9D96C7CD869C8ADD3D742FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A17CBC4963D59A441D0730D84422A9EF /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A11FA9C4DC0FB249E74FA0F4D39CF0 /* Debug */,
+				C4181A720699A74E8EA0E15FD82D40F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF5993E5EE5D6635158815893AD90677 /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEE24F50600EE958DA7951536368B308 /* Debug */,
+				A1F1785CAC6CA7A6F6C6E9CDCF6C7041 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

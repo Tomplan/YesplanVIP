@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Group: Codable {
+struct YPGroup: Codable {
     var url: String = "" // = URL(string: "http://")!
     var id: String = ""
     var owner: User?

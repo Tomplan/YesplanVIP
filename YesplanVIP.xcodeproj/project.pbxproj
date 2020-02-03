@@ -299,6 +299,13 @@
 		E204175223E6E28400B3CAFF /* EDAttachmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175123E6E28400B3CAFF /* EDAttachmentView.swift */; };
 		E204175423E7564A00B3CAFF /* MultipleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175323E7564A00B3CAFF /* MultipleTest.swift */; };
 		E204175623E75DAC00B3CAFF /* UserForTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E204175523E75DAC00B3CAFF /* UserForTask.swift */; };
+		E2098ADA23E8307700D92C9D /* RKColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD323E8307600D92C9D /* RKColorSettings.swift */; };
+		E2098ADB23E8307700D92C9D /* RKCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD423E8307700D92C9D /* RKCell.swift */; };
+		E2098ADC23E8307700D92C9D /* RKDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD523E8307700D92C9D /* RKDate.swift */; };
+		E2098ADD23E8307700D92C9D /* RKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD623E8307700D92C9D /* RKManager.swift */; };
+		E2098ADE23E8307700D92C9D /* RKMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD723E8307700D92C9D /* RKMonth.swift */; };
+		E2098ADF23E8307700D92C9D /* RKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD823E8307700D92C9D /* RKViewController.swift */; };
+		E2098AE023E8307700D92C9D /* RKWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2098AD923E8307700D92C9D /* RKWeekdayHeader.swift */; };
 		E21151C023E0B955003377A5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E21151BF23E0B955003377A5 /* Then */; };
 		E21151C323E0B9A3003377A5 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C223E0B9A3003377A5 /* Stevia */; };
 		E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C823E0BBDB003377A5 /* PromiseKit */; };
@@ -646,6 +653,13 @@
 		E204175123E6E28400B3CAFF /* EDAttachmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDAttachmentView.swift; sourceTree = "<group>"; };
 		E204175323E7564A00B3CAFF /* MultipleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTest.swift; sourceTree = "<group>"; };
 		E204175523E75DAC00B3CAFF /* UserForTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForTask.swift; sourceTree = "<group>"; };
+		E2098AD323E8307600D92C9D /* RKColorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKColorSettings.swift; sourceTree = "<group>"; };
+		E2098AD423E8307700D92C9D /* RKCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKCell.swift; sourceTree = "<group>"; };
+		E2098AD523E8307700D92C9D /* RKDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKDate.swift; sourceTree = "<group>"; };
+		E2098AD623E8307700D92C9D /* RKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKManager.swift; sourceTree = "<group>"; };
+		E2098AD723E8307700D92C9D /* RKMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKMonth.swift; sourceTree = "<group>"; };
+		E2098AD823E8307700D92C9D /* RKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKViewController.swift; sourceTree = "<group>"; };
+		E2098AD923E8307700D92C9D /* RKWeekdayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKWeekdayHeader.swift; sourceTree = "<group>"; };
 		E21151AE23E09F12003377A5 /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		E21151B023E09F3B003377A5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		E21151B223E09F45003377A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -1274,6 +1288,7 @@
 		3CE7101D2121827900EBF6A5 /* YesplanVIP */ = {
 			isa = PBXGroup;
 			children = (
+				E2098ACF23E82FBE00D92C9D /* Helpers */,
 				3C5E53B621C42ABD00A55467 /* Framework */,
 				3C5E53C521C42B8300A55467 /* ViewModels */,
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
@@ -1520,6 +1535,28 @@
 			path = "Resourcebooking Cases";
 			sourceTree = "<group>";
 		};
+		E2098ACF23E82FBE00D92C9D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E2098AD023E82FC600D92C9D /* RKCalendar */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E2098AD023E82FC600D92C9D /* RKCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				E2098AD423E8307700D92C9D /* RKCell.swift */,
+				E2098AD323E8307600D92C9D /* RKColorSettings.swift */,
+				E2098AD523E8307700D92C9D /* RKDate.swift */,
+				E2098AD623E8307700D92C9D /* RKManager.swift */,
+				E2098AD723E8307700D92C9D /* RKMonth.swift */,
+				E2098AD823E8307700D92C9D /* RKViewController.swift */,
+				E2098AD923E8307700D92C9D /* RKWeekdayHeader.swift */,
+			);
+			path = RKCalendar;
+			sourceTree = "<group>";
+		};
 		E2C50D19221DA4C700D9C6CF /* ToDo Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1686,12 +1723,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MDatePickerView/MDatePickerView.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDatePickerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1739,6 +1778,7 @@
 				3C40AED8212D8C090077DDC5 /* Events.swift in Sources */,
 				3CC3776D216A20F30020236D /* ResourceSetUse.swift in Sources */,
 				3CE710AA2121A7A900EBF6A5 /* ContactsWorker.swift in Sources */,
+				E2098ADA23E8307700D92C9D /* RKColorSettings.swift in Sources */,
 				3C29FF8521D8E0F40094A893 /* EDResourcesInteractor.swift in Sources */,
 				3C40AEFD212D8E920077DDC5 /* EventsTabView.swift in Sources */,
 				3C5E53C421C42AD100A55467 /* CollectionViewCell.swift in Sources */,
@@ -1812,6 +1852,7 @@
 				3CF142DF212DDFF9001FC532 /* Status.swift in Sources */,
 				3C5E53D021C42B9A00A55467 /* HeaderViewModel.swift in Sources */,
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
+				E2098ADF23E8307700D92C9D /* RKViewController.swift in Sources */,
 				3C05A0362198E91D00F93289 /* EDLocationViewCell+Extensions.swift in Sources */,
 				E2C50D20221DA6C100D9C6CF /* ToDoDetailPresenter.swift in Sources */,
 				E27C9F8A23E210E900BDCE71 /* SearchTextField.swift in Sources */,
@@ -1864,6 +1905,7 @@
 				3CC3775E2169E8290020236D /* AdHocResource.swift in Sources */,
 				3CE710B02121A7A900EBF6A5 /* ContactsModels.swift in Sources */,
 				3C7B4F10217A2642000D7FDB /* Failure.swift in Sources */,
+				E2098ADE23E8307700D92C9D /* RKMonth.swift in Sources */,
 				E2C50D25221DA6C100D9C6CF /* ToDoDetailInteractor.swift in Sources */,
 				3C6205A921981242001E8D4B /* EventsDetailInteractor.swift in Sources */,
 				3C5E539421C4156B00A55467 /* MultiCell.swift in Sources */,
@@ -1901,6 +1943,7 @@
 				3C29FF8121D8E0F40094A893 /* EDResourcesWorker.swift in Sources */,
 				3C5E53AA21C42A9100A55467 /* CollectionCell.swift in Sources */,
 				3CE7109D2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
+				E2098ADD23E8307700D92C9D /* RKManager.swift in Sources */,
 				3CE710CF2121A7E300EBF6A5 /* ToDosInteractor.swift in Sources */,
 				3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */,
 				3CD592A4212AC57B005BBF71 /* LogoutViewController.swift in Sources */,
@@ -1939,6 +1982,7 @@
 				3CE710AD2121A7A900EBF6A5 /* ContactsRouter.swift in Sources */,
 				3C5E53C121C42AD100A55467 /* CollectionViewCell+Reuse.swift in Sources */,
 				3CE710842121A76400EBF6A5 /* TeamplannerInteractor.swift in Sources */,
+				E2098AE023E8307700D92C9D /* RKWeekdayHeader.swift in Sources */,
 				3C24777B216A95E30010EAFA /* ResourceSchedules.swift in Sources */,
 				3CE710CC2121A7E300EBF6A5 /* ToDosViewController.swift in Sources */,
 				3CE9D1DB2123832900BFA730 /* UITextField+Extension.swift in Sources */,
@@ -1951,10 +1995,12 @@
 				3C6205C121988060001E8D4B /* EDInfoRouter.swift in Sources */,
 				3C6205A521981242001E8D4B /* EventsDetailWorker.swift in Sources */,
 				3C08E08B21997115007AAF8B /* EDTeamViewController.swift in Sources */,
+				E2098ADC23E8307700D92C9D /* RKDate.swift in Sources */,
 				3C40AF14212D917B0077DDC5 /* User.swift in Sources */,
 				3CD5929E212AC57B005BBF71 /* LogoutRouter.swift in Sources */,
 				3C225970219BD3C20055D567 /* ResourceSet.swift in Sources */,
 				E204173723E5BC6E00B3CAFF /* EDAttachmentsModels.swift in Sources */,
+				E2098ADB23E8307700D92C9D /* RKCell.swift in Sources */,
 				3CE9D1B921237C1800BFA730 /* LoginPresenter.swift in Sources */,
 				3C5E53B321C42A9100A55467 /* ArtistCell.swift in Sources */,
 				3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */,
@@ -2165,7 +2211,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2195,7 +2241,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

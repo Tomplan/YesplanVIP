@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MDatePickerView
 
 extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDataSourcePrefetching {
     
@@ -96,3 +97,12 @@ extension EventsTabViewController: UICollectionViewDataSource, UICollectionViewD
 //        router.showProduct(for: model.id)
     }
 }
+
+extension EventsTabViewController : MDatePickerViewDelegate {
+      func mdatePickerView(selectDate: Date) {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy - MM - dd"
+            datePicker.date = selectDate
+        }
+    }

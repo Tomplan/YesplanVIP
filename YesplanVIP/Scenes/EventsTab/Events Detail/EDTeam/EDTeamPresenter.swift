@@ -32,7 +32,7 @@ class EDTeamPresenter: EDTeamPresentationLogic
             header = x
             }
             var rows: [EDTeam.Something.ViewModel.Section.Row] = []
-            print("dict:", dict)
+//            print("dict:", dict)
             let x = dict.value.filter { $0.type == "Human" }
 //            print("x:", x)
             for i in 0 ..< x.count {

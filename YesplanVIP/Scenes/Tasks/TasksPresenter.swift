@@ -25,7 +25,7 @@ class TasksPresenter: TasksPresentationLogic
   
   func presentSomething(response: TasksTab.Something.Response)
   {
-    print("TasksPresenter")
+//    print("TasksPresenter")
     var tasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
     var statusesDict: [String:String] = [:]
     

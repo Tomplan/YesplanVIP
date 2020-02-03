@@ -12,7 +12,7 @@ import Foundation
 enum Children {
 
     case event(Event)
-    case group(Group)
+    case group(YPGroup)
 }
 
 
@@ -39,7 +39,7 @@ extension Children: Decodable {
         let container = try decoder.singleValueContainer()
         if let x = try? container.decode(Event.self) {
             self = .event(x)
-        } else if let x = try? container.decode(Group.self) {
+        } else if let x = try? container.decode(YPGroup.self) {
             self = .group(x)
         } else {
             throw Failure.NotImplemented
