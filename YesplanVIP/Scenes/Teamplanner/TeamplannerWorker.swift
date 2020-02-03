@@ -21,9 +21,9 @@ class TeamplannerTabWorker
             }
     }
     
-    func getResourcesSchedules(_ path: String) -> Promise<ResourcesSchedulesFromTo> {
+    func getResourcesSchedules(path: String, query: [String:String]) -> Promise<ResourcesSchedulesFromTo> {
         return firstly {
-            APIClient.resourcesSchedulesFromTo("\(path)")
+            APIClient.resourcesSchedules(path, query)
             }
     }
     

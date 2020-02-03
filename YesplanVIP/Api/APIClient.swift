@@ -138,39 +138,19 @@ class APIClient {
     static func events(_ path: String) -> Promise<Events> {
         return apiGet(route: APIRouter.events(path: path))
     }
-    
-//    static func events(_ path: String) -> Future<Events> {
-//        return performRequest(route: APIRouter.events(path: path))
-//    }
-//
-//    static func groups(_ path: String) -> Future<Groups> {
-//        return performRequest(route: APIRouter.groups(path: path))
-//    }
+
     
     static func groups(_ path: String) -> Promise<Groups> {
         return apiGet(route: APIRouter.groups(path: path))
     }
     
-//    static func tasks(_ path: String) -> Future<Tasks> {
-//        return performRequest(route: APIRouter.tasks(path: path))
-//    }
-    
-
-    
     static func tasks(_ path: String) -> Promise<Tasks> {
         return apiGet(route: APIRouter.tasks(path: path))
     }
     
-//    static func profiles(_ path: String) -> Future<Profiles> {
-//        return performRequest(route: APIRouter.profiles(path: path))
-//    }
-    
     static func profiles(_ path: String) -> Promise<Profiles> {
         return apiGet(route: APIRouter.profiles(path: path))
     }
-//    static func resourcebookingId(_ id: String) -> Future<Resourcebooking> {
-//        return performRequest(route: APIRouter.resourcebookingId(id: id))
-//    }
     
     static func resourcebookingId(_ id: String) -> Promise<Resourcebooking> {
         return apiGet(route: APIRouter.resourcebookingId(id: id))
@@ -179,24 +159,15 @@ class APIClient {
     static func resourcebookings(_ path: String) -> Promise<Resourcebookings> {
         return apiGet(route: APIRouter.resourcebookings(path: path))
     }
-    
 
-//    static func resourcebookings(_ path: String) -> Future<Resourcebookings> {
-//        return performRequest(route: APIRouter.resourcebookings(path: path))
-//    }
-    
-//    static func resources(_ path: String) -> Future<Resources> {
-//        return performRequest(route: APIRouter.resources(path: path))
-//    }
     static func resources(_ path: String) -> Promise<Resources> {
         return apiGet(route: APIRouter.resources(path: path))
     }
-//    static func resourcesSchedulesFromTo(_ path: String) -> Future<ResourcesSchedulesFromTo> {
-//        return performRequest(route: APIRouter.resourcesSchedulesFromTo(path: path))
-//    }
-//
-    static func resourcesSchedules(_ path: String) -> Promise<ResourcesSchedulesFromTo> {
-           return apiGet(route: APIRouter.resourcesSchedulesFromTo(path: path))
+
+    static func resourcesSchedules(_ path: String, _ query: [String:String]) -> Promise<ResourcesSchedulesFromTo> {
+        print("path*: ", path)
+        print("query*: ", query)
+        return apiGet(route: APIRouter.resourcesSchedules(path: path, query: query))
        }
     
     static func resourcesSchedulesFromTo(_ path: String) -> Promise<ResourcesSchedulesFromTo> {

@@ -14,7 +14,6 @@ import UIKit
 import PromiseKit
 import SwiftUI
 import MDatePickerView
-import SwiftUI
 
 protocol EventsTabDisplayLogic: class
 {
@@ -51,6 +50,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     var interactor: EventsTabBusinessLogic?
     var router: (NSObjectProtocol & EventsTabRoutingLogic & EventsTabDataPassing)?
     var v = EventsTabView()
+    
     var displayedEvents: [EventsTab.Something.ViewModel.DisplayedEvent] = []
     var displayedStatuses: [String:String] = [:]
     var displayedProfiles: [String:String] = [:]
@@ -160,7 +160,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         self.title = "Events"
         
-        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
         
   }
     
@@ -170,9 +170,9 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         doSomething()
         
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        if #available(iOS 10.0, *) {
-            v.collectionView.prefetchDataSource = self
-        }
+//        if #available(iOS 10.0, *) {
+//            v.collectionView.prefetchDataSource = self
+//        }
         v.collectionView.dataSource = self
         v.collectionView.delegate = self
 //        v.collectionView.prefetchDataSource = self
@@ -302,6 +302,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 
     
   func doSomething() {
+    
     let formatter = DateFormatter()
     formatter.dateFormat = "dd-MM-yyyy"
     

@@ -11,7 +11,6 @@
 //
 
 import UIKit
-//import PromisedFuture
 import PromiseKit
 
 protocol TeamplannerTabBusinessLogic
@@ -26,29 +25,27 @@ protocol TeamplannerTabDataStore
 
 class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataStore
 {
-  var presenter: TeamplannerTabPresentationLogic?
-  var worker: TeamplannerTabWorker?
-//    var resourcebookingArray: [Resourcebooking]? = []
-//    var finalArray: [Resourcebooking]? = []
+    var presenter: TeamplannerTabPresentationLogic?
+    var worker: TeamplannerTabWorker?
     var dict: [[String? : [Schedules]]] = []
-
-  //var name: String = ""
   
   // MARK: Do something
   
   func doSomething(request: TeamplannerTab.Something.Request)
   {
     worker = TeamplannerTabWorker()
-    
-    
-    
-    
-        worker?.getResourcesSchedulesFromTo("resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))")
+   
+    var path = "resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))"
+    var queryItems = [String:String]()
+    queryItems = ["from": request.startdate, "to" : request.enddate]
+
+    worker?.getResourcesSchedules(path: path, query: queryItems)
+//    .tap { items in
+//        print("items: ", items) }
             .map { $0.data
             } .get { fromTos in
                 self.dict = fromTos.compactMap { [$0.resource.name : $0.schedules]}
-//            }.tap { result in
-//                print("r", result)
+            }.tap { result in print("r", result)
             }.flatMapValues { item  in return item.schedules.compactMap { $0.id }
 //            }.tap { result in print("2", result)
             }.thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)!
@@ -61,12 +58,11 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
                     error: nil
                 )
                 self.presenter?.presentSomething(response: response)
-                
+
             }.catch { error in
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
 //                self.present(alert, animated: true, completion: nil)
-    }
-           
+        }
     }
 }

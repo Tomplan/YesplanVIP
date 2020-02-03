@@ -22,7 +22,7 @@ enum APIRouter: URLRequestConvertible {
     case resourcebookings(path: String)
     case resources(path: String)
     case resourcesSchedulesFromTo(path: String)
-    case resourcesSchedules(path: String)
+    case resourcesSchedules(path: String, query: [String:String])
     case statuses(path: String)
     case tasks(path: String)
     
@@ -87,7 +87,14 @@ enum APIRouter: URLRequestConvertible {
         case .resourcebookings(let path): return "/api/resourcebookings/\(path)"
         case .resources(let path): return "/api/resources/\(path)"
         case .resourcesSchedulesFromTo(let path): return "/api/resources/\(path)/schedules"
-        case .resourcesSchedules(let path): return "/api/resources/\(path)/schedules"
+            
+//        case .resourcesSchedules(let path): return "/api/resources/\(path)/schedules"
+            case .resourcesSchedules(let path, let query):
+                print("path: ", path)
+                print("query: ", query)
+                return "/api/resources/\(path)/schedules"
+
+            
         case .statuses(let path): return "/api/statuses/\(path)"
         case .tasks(let path): return "/api/tasks/\(path)"
 //        case .tasks(let path): return "/api/tasks/\(path)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
@@ -123,7 +130,6 @@ enum APIRouter: URLRequestConvertible {
         ,.resourcebookingId
         ,.resources
         ,.resourcesSchedulesFromTo
-        ,.resourcesSchedules
         ,.statuses
         ,.tasks
         
@@ -139,7 +145,10 @@ enum APIRouter: URLRequestConvertible {
         ,.nextResourcesSchedulesFromTo
         :return nil
             
-        
+        case .resourcesSchedules:
+            return nil
+            
+
 //        case .login(let email, let password):
 //            return [K.APIParameterKey.email: email, K.APIParameterKey.password: password]
 //        case .articles, .article:
@@ -161,7 +170,6 @@ enum APIRouter: URLRequestConvertible {
         ,.resourcebookingId
         ,.resourcebookings
         ,.resources
-        ,.resourcesSchedules
         ,.statuses
         ,.tasks
         
@@ -176,6 +184,10 @@ enum APIRouter: URLRequestConvertible {
 
         :return [:]
             
+        case .resourcesSchedules(let path, let query):
+            print("hierook: ", query)
+            return query
+            
         case .resourcesSchedulesFromTo:
             return ["from": "\(getCurrentShortDate())", "to" : "\(currentDatePlus14Days())"]
         case .nextResourcesSchedulesFromTo(let url):
@@ -185,31 +197,34 @@ enum APIRouter: URLRequestConvertible {
                 if let queryItems = components.queryItems {
                     for queryItem in queryItems {
                         queryDict[queryItem.name] = queryItem.value
-//                        print("\(queryItem.name): \(String(describing: queryItem.value))")
+                        print("\(queryItem.name): \(String(describing: queryItem.value))")
                     }
                 }
             }
-
             return queryDict
         }
     }
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-
+        print("self.query: ", self.query)
+        var optionalURLQueryItems = query.map {
+            return URLQueryItem(name: $0, value: $1)}
+        print("optionalQuery: ", optionalURLQueryItems)
         let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,?%#[] ").inverted
+
+        print("1: ", allowedCharacterSet)
+        print("self.path: ", self.path)
         let pathPercentEncoded = path.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!
-        
+        print("2: ", pathPercentEncoded)
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https";
         urlComponents.host = "\(UserDefaults.standard.string(forKey: "URL")!)";
         urlComponents.percentEncodedPath = "\(pathPercentEncoded)";
-
+        print("urlComponents: ", urlComponents)
         var queryItems: [URLQueryItem] = [URLQueryItem(name: "api_key", value: "\(UserDefaults.standard.string(forKey: "KEY")!)")]
         
-        let optionalURLQueryItems = query.map {
-            return URLQueryItem(name: $0, value: $1)
-        }
+        
         queryItems.append(contentsOf: optionalURLQueryItems)
         
         urlComponents.queryItems = queryItems
@@ -232,7 +247,7 @@ enum APIRouter: URLRequestConvertible {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-//        print("APIRouter urlRequest: ", urlRequest)
+        print("APIRouter urlRequest: ", urlRequest)
         return urlRequest
     }
 }

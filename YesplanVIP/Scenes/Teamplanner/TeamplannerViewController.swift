@@ -20,7 +20,7 @@ protocol TeamplannerTabDisplayLogic: class
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
 }
 
-class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
+class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, TeamplannerTabDisplayLogic
 {
     lazy var MDate : MDatePickerView = {
            let mdate = MDatePickerView()
@@ -51,7 +51,6 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
         var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
         var v = TeamplannerTabView()
 
-  // MARK: Object lifecycle
         var sections = [TeamplannerTab.Something.ViewModel.Section]()
     
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -100,7 +99,6 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.red
 
     // Yesplan Prefs Button
     let yesplanPrefsButton = UIButton(type: .system)
@@ -156,14 +154,25 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
     self.title = "Teamplanner"
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
-    
 
-
-    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-    doSomething()
-
-    v.collectionView.dataSource = self
+//    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//    doSomething()
+//
+//    v.collectionView.dataSource = self
   }
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+            doSomething()
+            
+            v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+//            if #available(iOS 10.0, *) {
+////                v.collectionView.prefetchDataSource = self
+//            }
+            v.collectionView.dataSource = self
+            v.collectionView.delegate = self
+    //        v.collectionView.prefetchDataSource = self
+        }
   
   // MARK: Do something
     override func viewWillDisappear(_ animated: Bool) {
@@ -243,11 +252,17 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
         doSomething()
     }
     
-  func doSomething()
-  {
-    let request = TeamplannerTab.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+   func doSomething() {
+     
+     let formatter = DateFormatter()
+     formatter.dateFormat = "yyyy-MM-dd"
+     
+     let request = TeamplannerTab.Something.Request(
+         startdate: "\(formatter.string(from: datePicker.date))",
+         enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 14, to: datePicker.date)!))"
+     )
+     interactor?.doSomething(request: request)
+   }
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
@@ -261,6 +276,7 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
         }))
     self.present(alert, animated: true)
     }
+    
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

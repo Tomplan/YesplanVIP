@@ -11,30 +11,15 @@
 //
 
 import UIKit
-//import PromisedFuture
 import PromiseKit
 
 class EventsTabWorker {
     
-//    func getEvents(_ path: String) -> Future<Events> {
-//        return Future(operation: { completion in
-//            APIClient.events("\(path)")
-//                .map({$0})
-//                .execute(onSuccess: { items in
-//                    completion(.success(items))
-//                }, onFailure: { error in
-//                    completion(.failure(error))
-//                })
-//        })
-//    }
-    
     func getEvents(_ path: String) -> Promise<Events> {
         return firstly {
             APIClient.events("\(path)")
-            
         }
             .map({$0})
-        
     }
     
     func groupEventsByStartdate(events: Events) -> Promise<[String:[Event]]> {

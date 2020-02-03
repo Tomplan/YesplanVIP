@@ -21,6 +21,8 @@ enum TeamplannerTab
   {
     struct Request
     {
+        var startdate: String
+        var enddate: String
     }
     struct Response
     {
