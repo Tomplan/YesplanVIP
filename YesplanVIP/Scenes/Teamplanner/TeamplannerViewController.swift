@@ -11,6 +11,9 @@
 //
 
 import UIKit
+import SwiftUI
+import MDatePickerView
+import SwiftUI
 
 protocol TeamplannerTabDisplayLogic: class
 {
@@ -19,13 +22,37 @@ protocol TeamplannerTabDisplayLogic: class
 
 class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
 {
-  var interactor: TeamplannerTabBusinessLogic?
-  var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
-    var v = TeamplannerTabView()
-//var displayedResourcebookings: [TeamplannerTab.Something.ViewModel.Item] = []
-//    var resourcebookings: Set<TeamplannerTab.Something.ViewModel.Item> = []
+    lazy var MDate : MDatePickerView = {
+           let mdate = MDatePickerView()
+               mdate.delegate = self
+           mdate.Color = UIColor.darkGray
+           mdate.translatesAutoresizingMaskIntoConstraints = false
+           return mdate
+          }()
+
+       let Today : UIButton = {
+           let but = UIButton(type:.system)
+           but.tintColor = UIColor.white
+           but.setTitle("ToDay", for: .normal)
+           but.addTarget(self, action: #selector(today), for: .touchUpInside)
+           but.translatesAutoresizingMaskIntoConstraints = false
+           return but
+       }()
+
+       @objc func today() {
+           MDate.selectDate = Date()
+       }
+       
+       
+       var datePicker : UIDatePicker = UIDatePicker()
+       var toolBar = UIToolbar()
+    
+        var interactor: TeamplannerTabBusinessLogic?
+        var router: (NSObjectProtocol & TeamplannerTabRoutingLogic & TeamplannerTabDataPassing)?
+        var v = TeamplannerTabView()
+
   // MARK: Object lifecycle
-    var sections = [TeamplannerTab.Something.ViewModel.Section]()
+        var sections = [TeamplannerTab.Something.ViewModel.Section]()
     
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
@@ -74,18 +101,58 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   {
     super.viewDidLoad()
     view.backgroundColor = UIColor.red
-    
-    let button = UIButton(type: .system)
-    button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
-    button.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
-    button.setTitle("", for: .normal)
-    button.tintColor = UIColor.yellow
-    let widthConstraint = button.widthAnchor.constraint(equalToConstant: 32)
-    let heightConstraint = button.heightAnchor.constraint(equalToConstant: 32)
-    heightConstraint.isActive = true
-    widthConstraint.isActive = true
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-    
+
+    // Yesplan Prefs Button
+    let yesplanPrefsButton = UIButton(type: .system)
+    yesplanPrefsButton.addTarget(self, action: #selector(yesplanPrefs), for: .touchUpInside)
+    yesplanPrefsButton.setImage(#imageLiteral(resourceName: "yesplanNB 180x180"), for: .normal)
+    yesplanPrefsButton.setTitle("setup", for: .normal)
+    yesplanPrefsButton.tintColor = UIColor.yellow
+    let widthConstraintYesplanPrefsButton = yesplanPrefsButton.widthAnchor.constraint(equalToConstant: 32)
+    let heightConstraintYesplanPrefsButton = yesplanPrefsButton.heightAnchor.constraint(equalToConstant: 32)
+    heightConstraintYesplanPrefsButton.isActive = true
+    widthConstraintYesplanPrefsButton.isActive = true
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: yesplanPrefsButton)
+
+    // CalendarUpButton
+    let calendarUpButton = UIButton(type: .system)
+    calendarUpButton.addTarget(self, action: #selector(calendarUp), for: .touchUpInside)
+    calendarUpButton.setImage(#imageLiteral(resourceName: "CalendarUp"), for: .normal)
+    calendarUpButton.setTitle("", for: .normal)
+    calendarUpButton.tintColor = UIColor.gray
+    let widthConstraintCalendarUpButton = calendarUpButton.widthAnchor.constraint(equalToConstant: 20)
+    let heightConstraintCalendarUpButton = calendarUpButton.heightAnchor.constraint(equalToConstant: 20)
+    heightConstraintCalendarUpButton.isActive = true
+    widthConstraintCalendarUpButton.isActive = true
+    let leftbarButtonItem1 = UIBarButtonItem(customView: calendarUpButton)
+
+    // CalendarButton
+    let calendarButton = UIButton(type: .system)
+    calendarButton.addTarget(self, action: #selector(calendar), for: .touchUpInside)
+    calendarButton.setImage(#imageLiteral(resourceName: "Calendar"), for: .normal)
+    calendarButton.setTitle("", for: .normal)
+    calendarButton.tintColor = UIColor.gray
+    let widthConstraintCalendarButton = calendarButton.widthAnchor.constraint(equalToConstant: 20)
+    let heightConstraintCalendarButton = calendarButton.heightAnchor.constraint(equalToConstant: 20)
+    heightConstraintCalendarButton.isActive = true
+    widthConstraintCalendarButton.isActive = true
+    let leftbarButtonItem2 = UIBarButtonItem(customView: calendarButton)
+
+    // CalendarDownButton
+    let calendarDownButton = UIButton(type: .system)
+    calendarDownButton.addTarget(self, action: #selector(calendarDown), for: .touchUpInside)
+    calendarDownButton.setImage(#imageLiteral(resourceName: "CalendarDown"), for: .normal)
+    calendarDownButton.setTitle("", for: .normal)
+    calendarDownButton.tintColor = UIColor.gray
+    let widthConstraintCalendarDownButton = calendarDownButton.widthAnchor.constraint(equalToConstant: 20)
+    let heightConstraintCalendarDownButton = calendarDownButton.heightAnchor.constraint(equalToConstant: 20)
+    heightConstraintCalendarDownButton.isActive = true
+    widthConstraintCalendarDownButton.isActive = true
+    let leftbarButtonItem3 = UIBarButtonItem(customView: calendarDownButton)
+
+
+    self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
+
     self.title = "Teamplanner"
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
@@ -107,15 +174,70 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
     @objc func userDefaultsDidChange(){
         doSomething()
     }
-    
-    @objc func addTapped(sender: AnyObject) {
+  
+        @objc func calendar() {
+            
+                toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.height)!))
+
+                   toolBar.barTintColor = UIColor.black
+                   toolBar.tintColor = UIColor.white
+                   toolBar.barStyle = UIBarStyle.blackTranslucent
+                   toolBar.isTranslucent = true
+                   toolBar.isUserInteractionEnabled = true
+                   
+                   let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+                   let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+                    let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
+                   toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+                self.view.addSubview(toolBar)
+            
+                view.addSubview(MDate)
+                   NSLayoutConstraint.activate([
+                       MDate.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
+                       MDate.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+                       MDate.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
+                       MDate.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
+                   ])
+
+                view.addSubview(Today)
+                   Today.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+                   Today.topAnchor.constraint(equalTo: MDate.bottomAnchor, constant: 20).isActive = true
+        }
+        
+    @objc func yesplanPrefs(sender: AnyObject) {
         if let url = URL(string:UIApplication.openSettingsURLString) {
-            if UIApplication.shared.canOpenURL(url) {
-                _ =  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if UIApplication.shared.canOpenURL(url) {
+                    _ =   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
             }
         }
+    //    @State private var wakeUp = Date() // Only from iOS13.0
+        // Datepicker:
+    @objc func calendarUp(sender: AnyObject) {
+        datePicker.date = Calendar.current.date(byAdding: .day, value: -14, to: datePicker.date)!
+        doSomething()
+        self.MDate.removeFromSuperview()
+        self.toolBar.removeFromSuperview()
+        }
+        
+    @objc func calendarDown(sender: AnyObject) {
+        datePicker.date = Calendar.current.date(byAdding: .day, value: 14, to: datePicker.date)!
+        doSomething()
+        self.MDate.removeFromSuperview()
+        self.toolBar.removeFromSuperview()
+        }
+      
+    @objc func donedatePicker(){
+        doSomething()
+        self.MDate.removeFromSuperview()
+        self.toolBar.removeFromSuperview()
     }
-    
+
+    @objc func cancelDatePicker(){       self.datePicker.removeFromSuperview()
+        self.toolBar.removeFromSuperview()
+    }
+  
   //@IBOutlet weak var nameTextField: UITextField!
     @objc private func refresh() {
         doSomething()
@@ -129,31 +251,16 @@ class TeamplannerTabViewController: UIViewController, TeamplannerTabDisplayLogic
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
-//    var setje: Set<TeamplannerTab.Something.ViewModel.Displ> = []
-//    for booking in viewModel.toVC {
-////        print("booking: ", booking)
-//        setje.insert(booking)
-//    }
-//    print(setje)
-//    let f = Dictionary(grouping: setje, by: { $0.date })
-//
-//    var items: [String:[TeamplannerTab.Something.ViewModel.Displ]] = [:]
-//    for (key, value) in f {
-////        print(key, ": ",  value)
-//        let valueSorted = value.sorted{ $0.start <  $1.start }
-//        items[key] = valueSorted
-//    }
-    /// miljaar da had wa in ver ik dees stoem lentje gevonne had
-//    self.resourcebookings = []
-//    /// ja da hi veu dus, klowete
-//
-//    for (key, value) in items {
-//        self.resourcebookings.insert(TeamplannerTab.Something.ViewModel.DisplayedResourcebooking(date: key, resourcebookings: value))
-//    }
-//    displayedResourcebookings = Array(viewModel.sections.sorted(by: { $0.header < $1.header }))
-//    displayedResourcebookings = Array(self.resourcebookings.sorted(by: { $0.date < $1.date }))
-    
     sections = viewModel.sections
+    
+    if viewModel.error != nil {
+    let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
+            self.doSomething()
+        }))
+    self.present(alert, animated: true)
+    }
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }

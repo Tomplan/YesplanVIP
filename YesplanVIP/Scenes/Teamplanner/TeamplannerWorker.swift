@@ -11,7 +11,6 @@
 //
 
 import UIKit
-//import PromisedFuture
 import PromiseKit
 
 class TeamplannerTabWorker
@@ -22,6 +21,11 @@ class TeamplannerTabWorker
             }
     }
     
+    func getResourcesSchedules(_ path: String) -> Promise<ResourcesSchedulesFromTo> {
+        return firstly {
+            APIClient.resourcesSchedulesFromTo("\(path)")
+            }
+    }
     
     
 //    func getResourcesSchedulesFromTo() -> Promise<ResourcesSchedulesFromTo> {

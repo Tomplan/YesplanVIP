@@ -227,22 +227,18 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
 //    @State private var wakeUp = Date() // Only from iOS13.0
     // Datepicker:
     @objc func calendarUp(sender: AnyObject) {
-//        print(datePicker.date)
         datePicker.date = Calendar.current.date(byAdding: .day, value: -14, to: datePicker.date)!
 
         doSomething()
         self.MDate.removeFromSuperview()
-//        self.datePicker.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
     
     @objc func calendarDown(sender: AnyObject) {
-//        print(datePicker.date)
         datePicker.date = Calendar.current.date(byAdding: .day, value: 14, to: datePicker.date)!
 
         doSomething()
         self.MDate.removeFromSuperview()
-//        self.datePicker.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
     

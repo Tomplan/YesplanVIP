@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MDatePickerView
 
 extension TeamplannerTabViewController: UICollectionViewDataSource {
     
@@ -72,3 +73,12 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
         }
     }
 }
+
+extension TeamplannerTabViewController : MDatePickerViewDelegate {
+      func mdatePickerView(selectDate: Date) {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy - MM - dd"
+            datePicker.date = selectDate
+        }
+    }

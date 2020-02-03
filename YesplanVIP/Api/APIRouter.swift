@@ -22,6 +22,7 @@ enum APIRouter: URLRequestConvertible {
     case resourcebookings(path: String)
     case resources(path: String)
     case resourcesSchedulesFromTo(path: String)
+    case resourcesSchedules(path: String)
     case statuses(path: String)
     case tasks(path: String)
     
@@ -54,6 +55,7 @@ enum APIRouter: URLRequestConvertible {
         ,.resourcebookings
         ,.resources
         ,.resourcesSchedulesFromTo
+        ,.resourcesSchedules
         ,.statuses
         ,.tasks
         
@@ -85,6 +87,7 @@ enum APIRouter: URLRequestConvertible {
         case .resourcebookings(let path): return "/api/resourcebookings/\(path)"
         case .resources(let path): return "/api/resources/\(path)"
         case .resourcesSchedulesFromTo(let path): return "/api/resources/\(path)/schedules"
+        case .resourcesSchedules(let path): return "/api/resources/\(path)/schedules"
         case .statuses(let path): return "/api/statuses/\(path)"
         case .tasks(let path): return "/api/tasks/\(path)"
 //        case .tasks(let path): return "/api/tasks/\(path)".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
@@ -120,6 +123,7 @@ enum APIRouter: URLRequestConvertible {
         ,.resourcebookingId
         ,.resources
         ,.resourcesSchedulesFromTo
+        ,.resourcesSchedules
         ,.statuses
         ,.tasks
         
@@ -157,6 +161,7 @@ enum APIRouter: URLRequestConvertible {
         ,.resourcebookingId
         ,.resourcebookings
         ,.resources
+        ,.resourcesSchedules
         ,.statuses
         ,.tasks
         

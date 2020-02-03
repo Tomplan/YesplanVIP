@@ -195,6 +195,10 @@ class APIClient {
 //        return performRequest(route: APIRouter.resourcesSchedulesFromTo(path: path))
 //    }
 //
+    static func resourcesSchedules(_ path: String) -> Promise<ResourcesSchedulesFromTo> {
+           return apiGet(route: APIRouter.resourcesSchedulesFromTo(path: path))
+       }
+    
     static func resourcesSchedulesFromTo(_ path: String) -> Promise<ResourcesSchedulesFromTo> {
         return apiGet(route: APIRouter.resourcesSchedulesFromTo(path: path))
     }
