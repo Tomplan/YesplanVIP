@@ -207,21 +207,14 @@ enum APIRouter: URLRequestConvertible {
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        print("self.query: ", self.query)
         var optionalURLQueryItems = query.map {
             return URLQueryItem(name: $0, value: $1)}
-        print("optionalQuery: ", optionalURLQueryItems)
         let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,?%#[] ").inverted
-
-        print("1: ", allowedCharacterSet)
-        print("self.path: ", self.path)
         let pathPercentEncoded = path.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!
-        print("2: ", pathPercentEncoded)
         let urlComponents = NSURLComponents()
         urlComponents.scheme = "https";
         urlComponents.host = "\(UserDefaults.standard.string(forKey: "URL")!)";
         urlComponents.percentEncodedPath = "\(pathPercentEncoded)";
-        print("urlComponents: ", urlComponents)
         var queryItems: [URLQueryItem] = [URLQueryItem(name: "api_key", value: "\(UserDefaults.standard.string(forKey: "KEY")!)")]
         
         

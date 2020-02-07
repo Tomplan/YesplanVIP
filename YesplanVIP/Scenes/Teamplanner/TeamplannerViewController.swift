@@ -100,6 +100,16 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
   {
     super.viewDidLoad()
 
+    //Swipe Gestures
+    let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+    let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+    leftSwipe.direction = .left
+    rightSwipe.direction = .right
+
+    self.view.addGestureRecognizer(leftSwipe)
+    self.view.addGestureRecognizer(rightSwipe)
+    
     // Yesplan Prefs Button
     let yesplanPrefsButton = UIButton(type: .system)
     yesplanPrefsButton.addTarget(self, action: #selector(yesplanPrefs), for: .touchUpInside)
@@ -111,19 +121,19 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     heightConstraintYesplanPrefsButton.isActive = true
     widthConstraintYesplanPrefsButton.isActive = true
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: yesplanPrefsButton)
-
-    // CalendarUpButton
-    let calendarUpButton = UIButton(type: .system)
-    calendarUpButton.addTarget(self, action: #selector(calendarUp), for: .touchUpInside)
-    calendarUpButton.setImage(#imageLiteral(resourceName: "CalendarUp"), for: .normal)
-    calendarUpButton.setTitle("", for: .normal)
-    calendarUpButton.tintColor = UIColor.gray
-    let widthConstraintCalendarUpButton = calendarUpButton.widthAnchor.constraint(equalToConstant: 20)
-    let heightConstraintCalendarUpButton = calendarUpButton.heightAnchor.constraint(equalToConstant: 20)
-    heightConstraintCalendarUpButton.isActive = true
-    widthConstraintCalendarUpButton.isActive = true
-    let leftbarButtonItem1 = UIBarButtonItem(customView: calendarUpButton)
-
+    
+    // calendarLeftButton
+    let calendarLeftButton = UIButton(type: .system)
+    calendarLeftButton.addTarget(self, action: #selector(calendarLeft), for: .touchUpInside)
+    calendarLeftButton.setImage(#imageLiteral(resourceName: "CalendarLeft.png"), for: .normal)
+    calendarLeftButton.setTitle("", for: .normal)
+    calendarLeftButton.tintColor = UIColor.gray
+    let widthConstraintCalendarLeftButton = calendarLeftButton.widthAnchor.constraint(equalToConstant: 20)
+    let heightConstraintCalendarLeftButton = calendarLeftButton.heightAnchor.constraint(equalToConstant: 20)
+    heightConstraintCalendarLeftButton.isActive = true
+    widthConstraintCalendarLeftButton.isActive = true
+    let leftbarButtonItem1 = UIBarButtonItem(customView: calendarLeftButton)
+    
     // CalendarButton
     let calendarButton = UIButton(type: .system)
     calendarButton.addTarget(self, action: #selector(calendar), for: .touchUpInside)
@@ -135,19 +145,18 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     heightConstraintCalendarButton.isActive = true
     widthConstraintCalendarButton.isActive = true
     let leftbarButtonItem2 = UIBarButtonItem(customView: calendarButton)
-
-    // CalendarDownButton
-    let calendarDownButton = UIButton(type: .system)
-    calendarDownButton.addTarget(self, action: #selector(calendarDown), for: .touchUpInside)
-    calendarDownButton.setImage(#imageLiteral(resourceName: "CalendarDown"), for: .normal)
-    calendarDownButton.setTitle("", for: .normal)
-    calendarDownButton.tintColor = UIColor.gray
-    let widthConstraintCalendarDownButton = calendarDownButton.widthAnchor.constraint(equalToConstant: 20)
-    let heightConstraintCalendarDownButton = calendarDownButton.heightAnchor.constraint(equalToConstant: 20)
-    heightConstraintCalendarDownButton.isActive = true
-    widthConstraintCalendarDownButton.isActive = true
-    let leftbarButtonItem3 = UIBarButtonItem(customView: calendarDownButton)
-
+    
+    // CalendarRightButton
+    let calendarRightButton = UIButton(type: .system)
+    calendarRightButton.addTarget(self, action: #selector(calendarRight), for: .touchUpInside)
+    calendarRightButton.setImage(#imageLiteral(resourceName: "CalendarRight"), for: .normal)
+    calendarRightButton.setTitle("", for: .normal)
+    calendarRightButton.tintColor = UIColor.gray
+    let widthConstraintCalendarRightButton = calendarRightButton.widthAnchor.constraint(equalToConstant: 20)
+    let heightConstraintCalendarRightButton = calendarRightButton.heightAnchor.constraint(equalToConstant: 20)
+    heightConstraintCalendarRightButton.isActive = true
+    widthConstraintCalendarRightButton.isActive = true
+    let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
 
     self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
 
@@ -183,25 +192,35 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     @objc func userDefaultsDidChange(){
         doSomething()
     }
-  
-        @objc func calendar() {
-            
-                toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.height)!))
 
-                   toolBar.barTintColor = UIColor.black
-                   toolBar.tintColor = UIColor.white
-                   toolBar.barStyle = UIBarStyle.blackTranslucent
-                   toolBar.isTranslucent = true
-                   toolBar.isUserInteractionEnabled = true
-                   
-                   let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-                   let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-                    let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
-                   toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-
-                self.view.addSubview(toolBar)
+  @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+          
+      if (sender.direction == .left) {
+          calendarDayPlus()
+      }
+          
+      if (sender.direction == .right) {
+          calendarDayMinus()
+      }
+  }
+        
+    @objc func calendar() {
             
-                view.addSubview(MDate)
+        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.height)!))
+
+        toolBar.barTintColor = UIColor.black
+        toolBar.tintColor = UIColor.white
+        toolBar.barStyle = UIBarStyle.blackTranslucent
+        toolBar.isTranslucent = true
+        toolBar.isUserInteractionEnabled = true
+    
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
+        toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+
+        self.view.addSubview(toolBar)
+        self.view.addSubview(MDate)
                    NSLayoutConstraint.activate([
                        MDate.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
                        MDate.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
@@ -209,7 +228,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
                        MDate.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
                    ])
 
-                view.addSubview(Today)
+        self.view.addSubview(Today)
                    Today.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
                    Today.topAnchor.constraint(equalTo: MDate.bottomAnchor, constant: 20).isActive = true
         }
@@ -223,27 +242,46 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         }
     //    @State private var wakeUp = Date() // Only from iOS13.0
         // Datepicker:
-    @objc func calendarUp(sender: AnyObject) {
-        datePicker.date = Calendar.current.date(byAdding: .day, value: -14, to: datePicker.date)!
+    
+    @objc func calendarLeft(sender: AnyObject) {
+        calendarDayMinus()
+    }
+    
+    func calendarDayMinus() {
+        datePicker.date = Calendar.current.date(byAdding: .day, value: -7, to: datePicker.date)!
+
         doSomething()
+//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
-        }
+    }
+    
+    @objc func calendarRight(sender: AnyObject) {
+        calendarDayPlus()
+    }
+    
+    func calendarDayPlus() {
         
-    @objc func calendarDown(sender: AnyObject) {
-        datePicker.date = Calendar.current.date(byAdding: .day, value: 14, to: datePicker.date)!
+        datePicker.date = Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!
         doSomething()
+//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
-        }
+    }
+    
       
     @objc func donedatePicker(){
+        
         doSomething()
+//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
 
-    @objc func cancelDatePicker(){       self.datePicker.removeFromSuperview()
+    @objc func cancelDatePicker(){
+        
+//        self.datePicker.removeFromSuperview()
+        self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
   
@@ -259,7 +297,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
      
      let request = TeamplannerTab.Something.Request(
          startdate: "\(formatter.string(from: datePicker.date))",
-         enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 14, to: datePicker.date)!))"
+         enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!))"
      )
      interactor?.doSomething(request: request)
    }
