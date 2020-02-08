@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Kingfisher
+import UIKit
+//import Kingfisher
 
 // Here we populate our TableView cell with our Model Data.
 // This could be in the view controller but we like to keep
@@ -18,19 +19,24 @@ extension TasksTabViewCell {
     func populate(with task: Task) {
         
         if task.status == "New" {
-            lblName.textColor = KFCrossPlatformColor(r: 238, g: 0, b: 0)
+            lblName.textColor = UIColor(red: 238, green: 0, blue: 0, alpha: 1)
+//                KFCrossPlatformColor(r: 238, g: 0, b: 0)
         }
         if task.status == "Started" {
-            lblName.textColor = KFCrossPlatformColor(r: 100, g: 100, b: 0)
+            lblName.textColor = UIColor(red: 100, green: 100, blue: 0, alpha: 1)
+//                KFCrossPlatformColor(r: 100, g: 100, b: 0)
         }
         if task.status == "Done" {
-            lblName.textColor = KFCrossPlatformColor(r: 100, g: 100, b: 0)
+            lblName.textColor = UIColor(red: 100, green: 100, blue: 0, alpha: 1)
+//                KFCrossPlatformColor(r: 100, g: 100, b: 0)
         }
         if task.status == "On Hold" {
-            lblName.textColor = KFCrossPlatformColor(r: 100, g: 100, b: 100)
+            lblName.textColor = UIColor(red: 100, green: 100, blue: 100, alpha: 1)
+//                KFCrossPlatformColor(r: 100, g: 100, b: 100)
         }
         if task.status == "Obsolete" {
-            lblName.textColor = KFCrossPlatformColor(r: 0, g: 0, b: 238)
+            lblName.textColor = UIColor(red: 0, green: 0, blue: 238, alpha: 1)
+//                KFCrossPlatformColor(r: 0, g: 0, b: 238)
         }
 
         if let start = task.start {

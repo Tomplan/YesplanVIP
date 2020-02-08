@@ -82,7 +82,7 @@ class EDResourcesViewController: CollectionViewController, EDResourcesDisplayLog
         
         sections = viewModel.sections
         
-        var grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
+        let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
         let mysections = sections.compactMap { section -> CollectionViewSection in
             let items = section.rows.compactMap { resourcebooking -> CollectionViewViewModelProtocol in
                 resourcebooking.resourcebooking.unfold()

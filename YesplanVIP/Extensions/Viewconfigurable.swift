@@ -21,7 +21,7 @@ public protocol ViewConfigurable: AnyObject {
   func setupConstraints()
 }
 
-public extension ViewConfigurable {
+extension ViewConfigurable {
   public func setupViewConfiguration() {
     setupViewHierarchy()
     setupViews()

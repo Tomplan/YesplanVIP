@@ -30,7 +30,7 @@ class LoginWorker
                 resolve((true, nil))
                 
             case .failure(let error):
-                    if let error = error as? AFError {
+//                if (error as? AFError) != nil {
                         print("error")
 //                        switch error {
 //                        case .invalidURL(let url):
@@ -128,10 +128,11 @@ class LoginWorker
 //                            resolve((false, "AFError: \(error.localizedDescription)"))
 //                        }
                         
-                    } else if let error = error as? URLError {
-                        resolve((false, "Url error: \(error.localizedDescription)"))
-
-                    } else {
+//                    } else
+//            if let error = error as? URLError {
+//                        resolve((false, "Url error: \(error.localizedDescription)"))
+//
+//                    } else {
                         resolve((false, "Unknown error: \(error.localizedDescription)"))
 //
                     }
@@ -139,4 +140,4 @@ class LoginWorker
             }
         }
     }
-}
+//}

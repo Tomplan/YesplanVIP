@@ -184,8 +184,8 @@ enum APIRouter: URLRequestConvertible {
 
         :return [:]
             
-        case .resourcesSchedules(let path, let query):
-            print("hierook: ", query)
+        case .resourcesSchedules( _, let query):
+//            print("hierook: ", query)
             return query
             
         case .resourcesSchedulesFromTo:
@@ -207,7 +207,7 @@ enum APIRouter: URLRequestConvertible {
     
     // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
-        var optionalURLQueryItems = query.map {
+        let optionalURLQueryItems = query.map {
             return URLQueryItem(name: $0, value: $1)}
         let allowedCharacterSet = CharacterSet(charactersIn: "!*'();:@&=+$,?%#[] ").inverted
         let pathPercentEncoded = path.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)!

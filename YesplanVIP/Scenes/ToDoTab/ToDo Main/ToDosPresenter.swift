@@ -34,7 +34,7 @@ class ToDosPresenter: ToDosPresentationLogic
         
         statusesDict = ["New": "rgb(255,200,200)", "Started": "rgb(255,230,200)", "Done": "rgb(230,255,200)", "On hold": "rgb(100,100,200)", "Obsolete": "rgb(165,100,200)"]
         
-        var viewModel = ToDosTab.Something.ViewModel(
+        let viewModel = ToDosTab.Something.ViewModel(
             displayedToDos: toDos
             ,displayedStatuses: statusesDict
         )

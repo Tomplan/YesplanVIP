@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UILabel {
+extension UILabel {
     
     public class func height(forWidth width: CGFloat, font: UIFont, text: String) -> CGFloat {
         let size = CGSize(width: width, height: .greatestFiniteMagnitude)

@@ -307,7 +307,7 @@ public class CalendarView: UIView {
             if #available(iOS 10.0, *) {
                 isRtl = self.effectiveUserInterfaceLayoutDirection == .rightToLeft
             }
-            else if #available(iOS 9.0, *) {
+            else  {
                 isRtl = UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft
             }
         }

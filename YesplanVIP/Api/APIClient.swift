@@ -37,7 +37,7 @@ class APIClient {
           }
             catch {
                 print(error)
-                print(response)
+//                print(response)
             }
 
         }.resume()

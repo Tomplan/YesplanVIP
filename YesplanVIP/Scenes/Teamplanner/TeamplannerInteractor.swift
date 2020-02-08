@@ -35,7 +35,7 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
   {
     worker = TeamplannerTabWorker()
    
-    var path = "resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))"
+    let path = "resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))"
     var queryItems = [String:String]()
     queryItems = ["from": request.startdate, "to" : request.enddate]
 
