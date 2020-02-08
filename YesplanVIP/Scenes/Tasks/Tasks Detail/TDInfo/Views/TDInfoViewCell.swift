@@ -157,29 +157,29 @@ class TDInfoViewCell: UICollectionViewCell {
         layout(
             4
             ,|-16-lblStatus-16-|
-            ,0
+            ,2
             ,|-16-lblName-16-|
-            ,0
+            ,2
             ,|-16-lblPartOf-16-|
-            ,0
+            ,2
 //            ,|-16-lblEvent-16-|
 //            ,0
             ,|-16-lblDescription-16-|
-            ,0
+            ,2
             ,|-16-lblCost-16-|
-            ,0
+            ,2
             ,|-16-lblDueDate-16-|
-            ,0
+            ,2
             ,|-16-lblStartDate-16-|
-            ,0
+            ,2
             ,|-16-lblDuration-16-|
-            ,0
+            ,2
             ,|-16-lblTeam-16-|
-            ,0
+            ,2
             ,|-16-lblAssignedTo-16-|
-            ,0
+            ,2
             ,|-16-lblAssignedBy-16-|
-            ,0
+            ,2
             ,|-16-lblYesplanID-16-|
             ,4
         )

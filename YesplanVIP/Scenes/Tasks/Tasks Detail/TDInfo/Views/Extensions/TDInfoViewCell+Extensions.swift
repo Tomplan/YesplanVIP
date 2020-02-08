@@ -72,5 +72,10 @@ extension TDInfoViewCell {
             print("taskAssignedBy: ", task.assignedby ?? "not assigned by anyone")
             lblAssignedBy.text = "AssignedBy: \n\t\(assignedBy)"
         }
+        
+        let yesplanID = task.id
+            print("taskYesplanID: , task.id")
+            lblYesplanID.text = "YesplanID: \n\t\(yesplanID)"
+               
     }
 }
