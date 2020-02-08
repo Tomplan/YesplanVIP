@@ -75,5 +75,14 @@ extension TasksViewController: UICollectionViewDataSource {
 //            print("default")
             fatalError("Unexpected element kind")
         }
+        
     }
+    
+
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    //         let model = displayedEvents[indexPath.section].events[indexPath.item]
+    //        print("indexPath ", indexPath)
+            router?.routeToSomewhere(segue: nil)
+    //        router.showProduct(for: model.id)
+        }
 }

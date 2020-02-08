@@ -27,7 +27,7 @@ class EDAttachmentsPresenter: EDAttachmentsPresentationLogic
     func presentSomething(response: EDAttachments.Something.Response)
     {
         
-            let header = "attachment"
+            let header = "Attachments"
         
         let viewModel = EDAttachments.Something.ViewModel(sections: [EDAttachments.Something.ViewModel.Item(
             header: header,

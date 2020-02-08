@@ -28,7 +28,6 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
   var presenter: EventsTabPresentationLogic?
   var worker: EventsTabWorker?
     
-//    var date = EventsTab.Something.Request(startdate: <#String#>)
     var eventsArray: [(key: String, value: [Event])] = [(key: String, value: [Event])]()
     var statusesArray: [Status] = [Status]()
     var profilesArray: [Profile] = [Profile]()
@@ -42,24 +41,11 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
     worker = EventsTabWorker()
     worker?.getProfiles()
         .done { result in
-//            print("startdate: ", request.startdate)
             self.profilesArray = result.data
     }
   .catch { error in
       print("error")
-  //          let response = EventsTab.Something.Response(
-  //              event: self.,
-  //              statuses: self.statusesArray,
-  //              profiles: self.profilesArray,
-  //              error: error.localizedDescription
-  //          )
-  //          self.presenter?.presentEvents(response: response)
       }
-//        .execute(onSuccess: { items in
-//            self.profilesArray = items.data
-//        }, onFailure: { error in
-//            print(error) }
-        
     
     worker?.getStatuses()
         .done { result in
@@ -69,24 +55,12 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
         print("error")
     }
     
-//        .execute(onSuccess: { items in
-//            self.statusesArray = items.data
-//        }, onFailure: { error in
-//            print(error) }
-//    )
     
     worker?.getEvents("event:date:\(request.startdate) TO \(request.enddate)")
-//    worker?.getEvents("event:date:#today + event:date:#next13days")
-//    worker?.getEvents("event:date:19-01-2019 TO 22-01-2019")
-//    let date = EventsTab.Something.Request(startdate: <#T##String?#>)
-//    worker?.getEvents(date)
-
         .then((worker?.groupEventsByStartdate)!)
         .then(((worker?.sortEventsInEachGroupByTime)!))
         .then((worker?.sortDictByDate)!)
         .done { items in
-//            print("event:date:\(request.startdate) + event:date:\(request.enddate)")
-
             self.eventsDS = items
             self.eventsArray = items
             let response = EventsTab.Something.Response(
@@ -107,58 +81,5 @@ class EventsTabInteractor: EventsTabBusinessLogic, EventsTabDataStore
                 )
                 self.presenter?.presentEvents(response: response)
         }
-//        .execute(onSuccess: { items in
-//            self.eventsDS = items
-//            self.eventsArray = items
-//            let response = EventsTab.Something.Response(
-//                events: self.eventsArray,
-//                statuses: self.statusesArray,
-//                profiles: self.profilesArray,
-//                error: self.error
-//            )
-//            self.presenter?.presentEvents(response: response)
-//        }) { error in
-//            //                print(error)
-//            self.error = error.localizedDescription
-//            let response = EventsTab.Something.Response(
-//                events: self.eventsArray,
-//                statuses: self.statusesArray,
-//                profiles: self.profilesArray,
-//                error: self.error
-//            )
-//            self.presenter?.presentEvents(response: response)
-//
-//    }
-//    worker?.getEvents("event:date:#today + event:date:#next13days")
-//        .andThen((worker?.groupEventsByStartdate)!)
-//        .andThen((worker?.sortEventsInEachGroupByTime)!)
-//        .andThen((worker?.sortDictByDate)!)
-//        .execute(onSuccess: { items in
-//            self.eventsDS = items
-//                self.eventsArray = items
-//                let response = EventsTab.Something.Response(
-//                    events: self.eventsArray,
-//                    statuses: self.statusesArray,
-//                    profiles: self.profilesArray,
-//                    error: self.error
-//                    )
-//                self.presenter?.presentEvents(response: response)
-//            }) { error in
-////                print(error)
-//                self.error = error.localizedDescription
-//                let response = EventsTab.Something.Response(
-//                    events: self.eventsArray,
-//                    statuses: self.statusesArray,
-//                    profiles: self.profilesArray,
-//                    error: self.error
-//                    )
-//                self.presenter?.presentEvents(response: response)
-//
-//            }
-
-////                print("pagination: ", self.fetchedEvents.pagination )
-////                self.yesplan.getMore(self.fetchedEvents, paginationNext: self.fetchedEvents.pagination.next!).then { more in
-////                    print("more", more.pagination)
-//                }
   }
 }

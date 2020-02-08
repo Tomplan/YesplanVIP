@@ -205,4 +205,12 @@ class APIClient {
     static func locationId(_ id: String) -> Promise<Location> {
         return apiGet(route: APIRouter.locationId(id: id))
     }
+    
+    static func task(_ id: String) -> Promise<Task> {
+        return apiGet(route: APIRouter.task(id: id))
+    }
+    
+    static func taskAttachments(_ id: String) -> Promise<[TaskAttachment]> {
+        return apiGet(route: APIRouter.taskAttachments(id: id))
+    }
 }

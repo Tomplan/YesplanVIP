@@ -31,6 +31,9 @@ enum APIRouter: URLRequestConvertible {
     case eventSchedule(id: String)
     case eventResourcebookings(id: String)
     
+    case task(id: String)
+    case taskAttachments(id: String)
+
     case locationId(id: String)
     
     case resourceId(id: String)
@@ -64,6 +67,9 @@ enum APIRouter: URLRequestConvertible {
         ,.eventSchedule
         ,.eventResourcebookings
         
+        ,.task
+        ,.taskAttachments
+
         ,.locationId
         
         ,.resourceId
@@ -105,6 +111,9 @@ enum APIRouter: URLRequestConvertible {
         case .eventSchedule(let id): return "/api/event/\(id)/schedule"
         case .eventResourcebookings(let id): return "/api/event/\(id)/resourcebookings"
             
+        case .task(let id): return "/api/task/\(id)"
+        case .taskAttachments(let id): return "/api/task/\(id)/attachments"
+
         case .locationId(let id): return "/api/location/\(id)"
             
         case .resourceId(let id): return "/api/resource/\(id)"
@@ -138,6 +147,9 @@ enum APIRouter: URLRequestConvertible {
         ,.eventSchedule
         ,.eventResourcebookings
         
+        ,.task
+        ,.taskAttachments
+
         ,.locationId
         
         ,.resourceId
@@ -178,6 +190,9 @@ enum APIRouter: URLRequestConvertible {
         ,.eventSchedule
         ,.eventResourcebookings
         
+        ,.task
+        ,.taskAttachments
+
         ,.locationId
         
         ,.resourceId
