@@ -17,12 +17,20 @@ class TDInfoViewCell: UICollectionViewCell {
         width.isActive = true
         return width
     }()
+    var lblStatus = UILabel()
     var lblName = UILabel()
-    var lblGroup = UILabel()
-    var lblDefaultschedulestart = UILabel()
-    var lblDefaultscheduleend = UILabel()
-    var lblProfileName = UILabel()
-    var lblStatusName = UILabel()
+    var lblPartOf = UILabel()
+    var lblEvent = UILabel()
+    var lblDescription = UILabel()
+    var lblCost = UILabel()
+    var lblDueDate = UILabel()
+    var lblStartDate = UILabel()
+    var lblDuration = UILabel()
+    var lblTeam = UILabel()
+    var lblAssignedTo = UILabel()
+    var lblAssignedBy = UILabel()
+    var lblYesplanID = UILabel()
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,13 +53,19 @@ class TDInfoViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        lblStatus.text = nil
         lblName.text = nil
-        lblGroup.text = nil
-        lblDefaultschedulestart.text = nil
-        lblDefaultscheduleend.text = nil
-        lblProfileName.text = nil
-        lblStatusName.text = nil
-        
+        lblPartOf.text = nil
+//        lblEvent.text = nil
+        lblDescription.text = nil
+        lblCost.text = nil
+        lblDueDate.text = nil
+        lblStartDate.text = nil
+        lblDuration.text = nil
+        lblTeam.text = nil
+        lblAssignedTo.text = nil
+        lblAssignedBy.text = nil
+        lblYesplanID.text = nil
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -70,54 +84,103 @@ class TDInfoViewCell: UICollectionViewCell {
         backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
-            lblName
-            ,lblGroup
-            ,lblDefaultschedulestart
-            ,lblDefaultscheduleend
-            ,lblProfileName
-            ,lblStatusName
+            lblStatus
+            ,lblName
+            ,lblPartOf
+//            ,lblEvent
+            ,lblDescription
+            ,lblCost
+            ,lblDueDate
+            ,lblStartDate
+            ,lblDuration
+            ,lblTeam
+            ,lblAssignedTo
+            ,lblAssignedBy
+            ,lblYesplanID
         )
+        
+        lblStatus.numberOfLines = 0
+        lblStatus.font = UIFont.systemFont(ofSize: 15.0)
+        lblStatus.textColor = UIColor(r: 64, g: 64, b: 64)
         
         lblName.numberOfLines = 0
         lblName.font = UIFont.systemFont(ofSize: 15.0)
         lblName.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        lblGroup.numberOfLines = 0
-        lblGroup.font = UIFont.systemFont(ofSize: 15.0)
-        lblGroup.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblPartOf.numberOfLines = 0
+        lblPartOf.font = UIFont.systemFont(ofSize: 15.0)
+        lblPartOf.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        lblDefaultschedulestart.numberOfLines = 0
-        lblDefaultschedulestart.font = UIFont.systemFont(ofSize: 15.0)
-        lblDefaultschedulestart.textColor = UIColor(r: 64, g: 64, b: 64)
+//        lblEvent.numberOfLines = 0
+//        lblEvent.font = UIFont.systemFont(ofSize: 15.0)
+//        lblEvent.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        lblDefaultscheduleend.numberOfLines = 0
-        lblDefaultscheduleend.font = UIFont.systemFont(ofSize: 15.0)
-        lblDefaultscheduleend.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblDescription.numberOfLines = 0
+        lblDescription.font = UIFont.systemFont(ofSize: 15.0)
+        lblDescription.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        lblProfileName.numberOfLines = 0
-        lblProfileName.font = UIFont.systemFont(ofSize: 15.0)
-        lblProfileName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblCost.numberOfLines = 0
+        lblCost.font = UIFont.systemFont(ofSize: 15.0)
+        lblCost.textColor = UIColor(r: 64, g: 64, b: 64)
         
-        lblStatusName.numberOfLines = 0
-        lblStatusName.font = UIFont.systemFont(ofSize: 15.0)
-        lblStatusName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblDueDate.numberOfLines = 0
+        lblDueDate.font = UIFont.systemFont(ofSize: 15.0)
+        lblDueDate.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblStartDate.numberOfLines = 0
+        lblStartDate.font = UIFont.systemFont(ofSize: 15.0)
+        lblStartDate.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblDuration.numberOfLines = 0
+        lblDuration.font = UIFont.systemFont(ofSize: 15.0)
+        lblDuration.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblTeam.numberOfLines = 0
+        lblTeam.font = UIFont.systemFont(ofSize: 15.0)
+        lblTeam.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblAssignedTo.numberOfLines = 0
+        lblAssignedTo.font = UIFont.systemFont(ofSize: 15.0)
+        lblAssignedTo.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblAssignedBy.numberOfLines = 0
+        lblAssignedBy.font = UIFont.systemFont(ofSize: 15.0)
+        lblAssignedBy.textColor = UIColor(r: 64, g: 64, b: 64)
+        
+        lblYesplanID.numberOfLines = 0
+        lblYesplanID.font = UIFont.systemFont(ofSize: 15.0)
+        lblYesplanID.textColor = UIColor(r: 64, g: 64, b: 64)
     }
     
     private func setupConstraints() {
         
         layout(
             4
+            ,|-16-lblStatus-16-|
+            ,0
             ,|-16-lblName-16-|
             ,0
-            ,|-16-lblGroup-16-|
+            ,|-16-lblPartOf-16-|
             ,0
-            ,|-16-lblDefaultschedulestart-16-|
+//            ,|-16-lblEvent-16-|
+//            ,0
+            ,|-16-lblDescription-16-|
             ,0
-            ,|-16-lblDefaultscheduleend-16-|
+            ,|-16-lblCost-16-|
             ,0
-            ,|-16-lblProfileName-16-|
+            ,|-16-lblDueDate-16-|
             ,0
-            ,|-16-lblStatusName-16-|
+            ,|-16-lblStartDate-16-|
+            ,0
+            ,|-16-lblDuration-16-|
+            ,0
+            ,|-16-lblTeam-16-|
+            ,0
+            ,|-16-lblAssignedTo-16-|
+            ,0
+            ,|-16-lblAssignedBy-16-|
+            ,0
+            ,|-16-lblYesplanID-16-|
             ,4
         )
     }
