@@ -33,19 +33,7 @@ extension TasksViewController: UICollectionViewDataSource {
             if displayedTasks.count != 0 {
                 let task = displayedTasks[indexPath.section].tasks[indexPath.item]
                 cell.populate(with: task)
-                
-//            let taskStatusName = displayedTasks[indexPath.section].tasks[indexPath.item].status
-//
-//                    if let taskStatusColor = displayedStatuses[taskStatusName]
-//                    {
-//                        if let backgroundColor = UIColor(rgbString: taskStatusColor) {
-//                            cell.backgroundColor = backgroundColor
-//                        } else {
-//                            print("invalid color specification")
-//                        }
-//                    }
-                }
-            
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -75,14 +63,11 @@ extension TasksViewController: UICollectionViewDataSource {
 //            print("default")
             fatalError("Unexpected element kind")
         }
-        
     }
     
 
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //         let model = displayedEvents[indexPath.section].events[indexPath.item]
-    //        print("indexPath ", indexPath)
+            print("extension col")
             router?.routeToSomewhere(segue: nil)
-    //        router.showProduct(for: model.id)
         }
 }

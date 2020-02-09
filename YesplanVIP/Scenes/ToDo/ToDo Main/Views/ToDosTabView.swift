@@ -1,8 +1,8 @@
 //
-//  TasksTabView.swift
+//  ToDosTabView.swift
 //  YesplanVIP
 //
-//  Created by Techcc - FOH - Video on 25/09/18.
+//  Created by Techcc - FOH - Video on 3/10/18.
 //  Copyright © 2018 Yesplan. All rights reserved.
 //
 
@@ -11,8 +11,10 @@ import Stevia
 
 // Get the full documentation at https://github.com/freshOS/Stevia
 
-class TasksTabView: UIView {
+class ToDosTabView: UIView {
     
+//    var toDoPrefsAction: (() -> Void)?
+
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
     let spinner = UIActivityIndicatorView(style: .whiteLarge)
@@ -31,7 +33,6 @@ class TasksTabView: UIView {
         
         collectionView.backgroundColor = UIColor.black
         collectionView.alwaysBounceVertical = true
-        
         return collectionView
     }()
     
@@ -42,6 +43,16 @@ class TasksTabView: UIView {
 //        return iv
 //    }()
     
+//    let toDoPrefsButton: UIButton = {
+//        let button = UIButton(title: "Login", borderColor: .greenBorderColor)
+//        button.addTarget(self, action: #selector(handleToDoPrefs), for: .touchUpInside)
+//        return button
+//    }()
+//
+//    @objc func handleToDoPrefs() {
+//        toDoPrefsAction?()
+//    }
+    
     convenience init() {
         self.init(frame: CGRect.zero)
         
@@ -49,7 +60,7 @@ class TasksTabView: UIView {
         collectionView.fillContainer()
         collectionView.addSubview(refreshControl)
         collectionView.addSubview(spinner)
-        collectionView.register(TasksTabViewCell.self, forCellWithReuseIdentifier: "TasksTabViewCell")
-        collectionView.register(TasksTabViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "TasksTabViewHeader")
+        collectionView.register(ToDosTabViewCell.self, forCellWithReuseIdentifier: "ToDosTabViewCell")
+        collectionView.register(ToDosTabViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "ToDosTabViewHeader")
     }
 }

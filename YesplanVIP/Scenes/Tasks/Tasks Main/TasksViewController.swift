@@ -74,7 +74,6 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     override func loadView() { view = v }
 
   override func viewDidLoad() {
-//    print("viewDidLoad")
     super.viewDidLoad()
     
     
@@ -92,14 +91,9 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     self.title = "Tasks"
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
-    
-//    getTasks()
-//    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//    v.collectionView.dataSource = self
   }
     
     override func viewWillAppear(_ animated: Bool) {
-//        print("viewWillAppear")
         super.viewWillAppear(animated)
         getTasks()
         v.collectionView.dataSource = self
@@ -107,21 +101,16 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        print("viewWillDisappear")
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
     
     @objc func userDefaultsDidChange(){
-//        print("userDefaultsDidChange")
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         getTasks()
-//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//        v.collectionView.dataSource = self
     }
     
     @objc func addTapped(sender: AnyObject) {
-        print("addTapped")
 //        NotificationCenter.default.removeObserver(self)
         if let url = URL(string:UIApplication.openSettingsURLString) {
             if UIApplication.shared.canOpenURL(url) {
@@ -131,10 +120,7 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     }
     
     @objc private func refresh() {
-//        print("refresh")
         getTasks()
-//        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//        v.collectionView.dataSource = self
     }
     
     // MARK: getTasks()
@@ -151,18 +137,12 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     displayedStatuses = viewModel.displayedStatuses
     
     if viewModel.error != nil {
-//        print("error: ", viewModel.error)
         let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
-//            self.getTasks()
         }))
         self.present(alert, animated: true)
     }
-    
-//    print("displayedTasks:", displayedTasks)
-    
-   
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }
