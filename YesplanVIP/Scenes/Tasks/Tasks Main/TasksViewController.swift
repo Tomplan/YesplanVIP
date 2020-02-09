@@ -12,6 +12,7 @@
 
 import UIKit
 import UserNotifications
+import SwipeCellKit
 
 protocol TasksDisplayLogic: class
 {
@@ -20,8 +21,15 @@ protocol TasksDisplayLogic: class
 
 class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout, TasksDisplayLogic
 {
-  var interactor: TasksBusinessLogic?
-  var router: (NSObjectProtocol & TasksRoutingLogic & TasksDataPassing)?
+    
+    var defaultOptions = SwipeOptions()
+    var isSwipeRightEnabled = true
+    var buttonDisplayMode: ButtonDisplayMode = .titleAndImage
+    var buttonStyle: ButtonStyle = .backgroundColor
+    var usesTallCells = false
+    
+    var interactor: TasksBusinessLogic?
+    var router: (NSObjectProtocol & TasksRoutingLogic & TasksDataPassing)?
     var v = TasksTabView()
     var displayedTasks: [TasksTab.Something.ViewModel.DisplayedTask] = []
     var displayedStatuses: [String:String] = [:]
@@ -146,4 +154,122 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }
+}
+
+
+extension TasksViewController: SwipeCollectionViewCellDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        print("action")
+        let task = displayedTasks[indexPath.row]
+        
+        if orientation == .left {
+            guard isSwipeRightEnabled else { return nil }
+            print("swipe right")
+            print(task.date)
+//            let read = SwipeAction(style: .default, title: nil) { action, indexPath in
+//                let updatedStatus = !email.unread
+//                email.unread = updatedStatus
+//
+//                let cell = collectionView.cellForItem(at: indexPath) as! MailCollectionViewCell
+//                cell.setUnread(updatedStatus, animated: true)
+//            }
+//
+//            read.hidesWhenSelected = true
+//            read.accessibilityLabel = email.unread ? "Mark as Read" : "Mark as Unread"
+//
+//            let descriptor: ActionDescriptor = email.unread ? .read : .unread
+//            configure(action: read, with: descriptor)
+//
+//            return [read]
+        } else {
+            print("swipe left")
+
+            let flag = SwipeAction(style: .default, title: nil, handler: nil)
+            flag.hidesWhenSelected = true
+            configure(action: flag, with: .flag)
+
+            let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+                print("done")
+//                self.emails.remove(at: indexPath.row)
+                
+//              *****************************************************
+                // TODO: YESPLAN API PUT TASK STATUS TO DONE URL SEND
+//              *****************************************************
+
+            }
+            configure(action: delete, with: .trash)
+
+            let cell = collectionView.cellForItem(at: indexPath) as! TasksTabViewCell
+            
+            let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
+            
+            let more = SwipeAction(style: .default, title: nil) { action, indexPath in
+                let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                controller.addAction(UIAlertAction(title: "New", style: .default, handler: closure))
+                controller.addAction(UIAlertAction(title: "Started", style: .default, handler: closure))
+                controller.addAction(UIAlertAction(title: "Obsolete", style: .default, handler: closure))
+                controller.addAction(UIAlertAction(title: "Done", style: .default, handler: closure))
+                controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
+                self.present(controller, animated: true, completion: nil)
+            }
+            configure(action: more, with: .more)
+
+            return [delete, flag, more]
+        }
+        return nil
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = orientation == .left ? .selection : .destructive
+        options.transitionStyle = defaultOptions.transitionStyle
+        
+        switch buttonStyle {
+        case .backgroundColor:
+            options.buttonSpacing = 11
+        case .circular:
+            options.buttonSpacing = 4
+        #if canImport(Combine)
+            if #available(iOS 13.0, *) {
+                options.backgroundColor = UIColor.systemGray6
+            } else {
+                options.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
+            }
+        #else
+            options.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
+        #endif
+        }
+        
+        return options
+    }
+    
+    func visibleRect(for collectionView: UICollectionView) -> CGRect? {
+        if usesTallCells == false { return nil }
+        
+        if #available(iOS 11.0, *) {
+            return collectionView.safeAreaLayoutGuide.layoutFrame
+        } else {
+            let topInset = navigationController?.navigationBar.frame.height ?? 0
+            let bottomInset = navigationController?.toolbar?.frame.height ?? 0
+            let bounds = collectionView.bounds
+            
+            return CGRect(x: bounds.origin.x, y: bounds.origin.y + topInset, width: bounds.width, height: bounds.height - bottomInset)
+        }
+    }
+    
+    func configure(action: SwipeAction, with descriptor: ActionDescriptor) {
+        action.title = descriptor.title(forDisplayMode: buttonDisplayMode)
+        action.image = descriptor.image(forStyle: buttonStyle, displayMode: buttonDisplayMode)
+        
+        switch buttonStyle {
+        case .backgroundColor:
+            action.backgroundColor = descriptor.color(forStyle: buttonStyle)
+        case .circular:
+            action.backgroundColor = .clear
+            action.textColor = descriptor.color(forStyle: buttonStyle)
+            action.font = .systemFont(ofSize: 13)
+            action.transitionDelegate = ScaleTransition.default
+        }
+    }
 }

@@ -68,42 +68,29 @@ class ToDosDetailViewController: UIViewController, UICollectionViewDelegateFlowL
   
   // MARK: View lifecycle
     override func loadView() {
-        print("ToDo Detail loadView")
         view = v }
 
-  override func viewDidLoad()
-  {
+  override func viewDidLoad() {
     super.viewDidLoad()
-    print("ToDo Detail viewDidLoad")
-
     doSomething()
     v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     v.collectionView.dataSource = self
     v.collectionView.delegate = self
   }
+    
     @objc private func refresh() {
-        print("ToDo Detail refresh")
-
         doSomething()
     }
   // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    print("ToDo Detail doSomething")
+    
+  func doSomething() {
     let request = ToDosDetail.Something.Request()
     interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: ToDosDetail.Something.ViewModel)
-  {
-    print("ToDo Detail displaySomething")
-
+  func displaySomething(viewModel: ToDosDetail.Something.ViewModel) {
     displayedToDos = viewModel.sections
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
-    
     }
 }

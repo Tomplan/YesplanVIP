@@ -31,7 +31,6 @@ class ToDosRouter: NSObject, ToDosRoutingLogic, ToDosDataPassing
   
   func routeToSomewhere(segue: UIStoryboardSegue?)
   {
-    print("ToDos Main routeToSomewhere")
       let destinationVC = ToDosDetailViewController()
       var destinationDS = destinationVC.router!.dataStore!
         passDataToSomewhere(source: dataStore!, destination: &destinationDS)
@@ -41,14 +40,12 @@ class ToDosRouter: NSObject, ToDosRoutingLogic, ToDosDataPassing
   // MARK: Navigation
   func navigateToSomewhere(source: ToDosViewController, destination: ToDosDetailViewController)
   {
-    print("ToDos Main navigateToSomewhere")
     source.show(destination, sender: nil)
   }
   
   // MARK: Passing data
   func passDataToSomewhere(source: ToDosDataStore, destination: inout ToDosDetailDataStore)
   {
-    print("ToDos Main passDataToSomewhere")
     let selectedItem = viewController?.v.collectionView.indexPathsForSelectedItems
     let section = selectedItem![0][0]
     let item = selectedItem![0][1]

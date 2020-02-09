@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 extension ToDosViewController: UICollectionViewDataSource {
     
@@ -33,6 +34,8 @@ extension ToDosViewController: UICollectionViewDataSource {
             if displayedToDos.count != 0 {
                 let toDo = displayedToDos[indexPath.section].toDos[indexPath.item]
                 cell.populate(with: toDo)
+                cell.delegate = self
+
             }
             return cell
         }
@@ -65,8 +68,18 @@ extension ToDosViewController: UICollectionViewDataSource {
         }
     
 
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            print("extension col")
-            router?.routeToSomewhere(segue: nil)
-        }
+//        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//            router?.routeToSomewhere(segue: nil)
+//        }
+    
+//        func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+//            let toDos = displayedToDos[indexPath.row]
+//            
+//            if orientation == .left {
+//            guard isSwipeRightEnabled else { return nil }
+//                
+//            }
+//            return [done, started]
+//    }
+   
 }

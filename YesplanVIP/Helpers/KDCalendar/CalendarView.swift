@@ -184,7 +184,6 @@ public class CalendarView: UIView {
     // MARK: Create Subviews
     private func setup() {
         
-        print("setup!")
         self.clipsToBounds = true
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -255,7 +254,6 @@ public class CalendarView: UIView {
     override open func layoutSubviews() {
         
         super.layoutSubviews()
-        print("layoutsubviews")
         self.headerView?.frame = CGRect(
             x: 0.0,
             y: 0.0,

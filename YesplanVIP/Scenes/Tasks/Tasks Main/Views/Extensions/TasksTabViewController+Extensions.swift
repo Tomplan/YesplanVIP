@@ -33,6 +33,7 @@ extension TasksViewController: UICollectionViewDataSource {
             if displayedTasks.count != 0 {
                 let task = displayedTasks[indexPath.section].tasks[indexPath.item]
                 cell.populate(with: task)
+                cell.delegate = self // for swipe-function!!
             }
             return cell
         }
@@ -60,14 +61,13 @@ extension TasksViewController: UICollectionViewDataSource {
             return headerView
             
         default:
-//            print("default")
             fatalError("Unexpected element kind")
         }
     }
     
 
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            print("extension col")
             router?.routeToSomewhere(segue: nil)
         }
+    
 }

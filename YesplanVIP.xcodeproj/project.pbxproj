@@ -329,6 +329,8 @@
 		E20FD8F023EF4A7C0073318A /* TaskDocumentAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD8EF23EF4A7C0073318A /* TaskDocumentAttachment.swift */; };
 		E20FD8F223EF4A9E0073318A /* TaskLinkAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD8F123EF4A9E0073318A /* TaskLinkAttachment.swift */; };
 		E20FD8F423EF50850073318A /* TDInfoViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20FD8F323EF50850073318A /* TDInfoViewController+Extensions.swift */; };
+		E2100C7723F0AD7500D6C67F /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = E2100C7623F0AD7500D6C67F /* SwipeCellKit */; };
+		E2100C7A23F0B38F00D6C67F /* SwipeShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2100C7923F0B38F00D6C67F /* SwipeShared.swift */; };
 		E21151C023E0B955003377A5 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E21151BF23E0B955003377A5 /* Then */; };
 		E21151C323E0B9A3003377A5 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C223E0B9A3003377A5 /* Stevia */; };
 		E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = E21151C823E0BBDB003377A5 /* PromiseKit */; };
@@ -727,6 +729,7 @@
 		E20FD8EF23EF4A7C0073318A /* TaskDocumentAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDocumentAttachment.swift; sourceTree = "<group>"; };
 		E20FD8F123EF4A9E0073318A /* TaskLinkAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLinkAttachment.swift; sourceTree = "<group>"; };
 		E20FD8F323EF50850073318A /* TDInfoViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TDInfoViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E2100C7923F0B38F00D6C67F /* SwipeShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeShared.swift; sourceTree = "<group>"; };
 		E21151AE23E09F12003377A5 /* Stevia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stevia.framework; path = Carthage/Build/iOS/Stevia.framework; sourceTree = "<group>"; };
 		E21151B023E09F3B003377A5 /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
 		E21151B223E09F45003377A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -775,6 +778,7 @@
 				E29A3A6E23E23105001C11C1 /* Pods_YesplanVIP.framework in Frameworks */,
 				E2B7E73D23EC06DD00518F36 /* KDCalendar in Frameworks */,
 				E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */,
+				E2100C7723F0AD7500D6C67F /* SwipeCellKit in Frameworks */,
 				E21151C023E0B955003377A5 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1602,6 +1606,7 @@
 				E20FD89623EDAB600073318A /* ColCell.swift */,
 				E20FD89823EDAC7F0073318A /* FlatCardCollectionViewLayout.swift */,
 				E20FD89A23EDACC50073318A /* MDatePickerView.swift */,
+				E2100C7923F0B38F00D6C67F /* SwipeShared.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1848,6 +1853,7 @@
 				E21151C223E0B9A3003377A5 /* Stevia */,
 				E21151C823E0BBDB003377A5 /* PromiseKit */,
 				E2B7E73C23EC06DD00518F36 /* KDCalendar */,
+				E2100C7623F0AD7500D6C67F /* SwipeCellKit */,
 			);
 			productName = YesplanVIP;
 			productReference = 3CE7101B2121827900EBF6A5 /* YesplanVIP.app */;
@@ -1884,6 +1890,7 @@
 				E21151C723E0BBDB003377A5 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				E2E61B6923E2282800ACE821 /* XCRemoteSwiftPackageReference "FigmaGen" */,
 				E2B7E73B23EC06DD00518F36 /* XCRemoteSwiftPackageReference "CalendarView" */,
+				E2100C7523F0AD7500D6C67F /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 			);
 			productRefGroup = 3CE7101C2121827900EBF6A5 /* Products */;
 			projectDirPath = "";
@@ -2276,6 +2283,7 @@
 				E20FD8CB23EF45760073318A /* TDInfoViewCell+Extensions.swift in Sources */,
 				3C05A0132198992A00F93289 /* EDSchedulesViewController+Extensions.swift in Sources */,
 				E20FD8A823EF36910073318A /* TasksDetailViewController.swift in Sources */,
+				E2100C7A23F0B38F00D6C67F /* SwipeShared.swift in Sources */,
 				3CE710C02121A7E300EBF6A5 /* ToDosPresenter.swift in Sources */,
 				3CC377592169E59C0020236D /* Costmodel.swift in Sources */,
 				3C6205BF21988060001E8D4B /* EDInfoPresenter.swift in Sources */,
@@ -2543,6 +2551,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E2100C7523F0AD7500D6C67F /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		E21151BE23E0B954003377A5 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freshOS/Then";
@@ -2586,6 +2602,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E2100C7623F0AD7500D6C67F /* SwipeCellKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2100C7523F0AD7500D6C67F /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			productName = SwipeCellKit;
+		};
 		E21151BF23E0B955003377A5 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E21151BE23E0B954003377A5 /* XCRemoteSwiftPackageReference "Then" */;

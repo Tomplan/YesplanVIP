@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwipeCellKit
 
 // Here we populate our TableView cell with our Model Data.
 // This could be in the view controller but we like to keep

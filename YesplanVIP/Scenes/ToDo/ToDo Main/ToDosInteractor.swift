@@ -38,12 +38,10 @@ class ToDosInteractor: ToDosBusinessLogic, ToDosDataStore
     func doSomething(request: ToDosTab.Something.Request)
     
     {
-        print("dosome")
         worker = ToDosWorker()
         
 //        var user = "%22\(UserDefaults.standard.string(forKey: "todo_user")!)"
 //        let usercode = user.removingPercentEncoding
-//        print(usercode)
         let string = """
             task:assignedto:\(UserDefaults.standard.string(forKey: "todo_user")!) task:status:\(UserDefaults.standard.string(forKey: "todo_status")!)
             """

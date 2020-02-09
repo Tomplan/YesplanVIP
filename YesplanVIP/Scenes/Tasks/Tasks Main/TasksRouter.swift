@@ -31,7 +31,6 @@ class TasksRouter: NSObject, TasksRoutingLogic, TasksDataPassing
   
   func routeToSomewhere(segue: UIStoryboardSegue?)
   {
-    print("Tasks Main routeToSomewhere")
       let destinationVC = TasksDetailViewController()
       var destinationDS = destinationVC.router!.dataStore!
         passDataToSomewhere(source: dataStore!, destination: &destinationDS)
@@ -41,14 +40,12 @@ class TasksRouter: NSObject, TasksRoutingLogic, TasksDataPassing
   // MARK: Navigation
   func navigateToSomewhere(source: TasksViewController, destination: TasksDetailViewController)
   {
-    print("Tasks Main navigateToSomewhere")
     source.show(destination, sender: nil)
   }
   
   // MARK: Passing data
   func passDataToSomewhere(source: TasksDataStore, destination: inout TasksDetailDataStore)
   {
-    print("Tasks Main passDataToSomewhere")
     let selectedItem = viewController?.v.collectionView.indexPathsForSelectedItems
     let section = selectedItem![0][0]
     let item = selectedItem![0][1]

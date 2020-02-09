@@ -84,7 +84,7 @@ enum APIRouter: URLRequestConvertible {
         
         switch self {
         
-        case .multipletest(let path): print("APIROUTER"); return "/api/tasks/\(path)"
+        case .multipletest(let path): return "/api/tasks/\(path)"
 
         case .events(let path): return "/api/events/\(path)"
         case .groups(let path): return "/api/groups/\(path)"
@@ -95,9 +95,9 @@ enum APIRouter: URLRequestConvertible {
         case .resourcesSchedulesFromTo(let path): return "/api/resources/\(path)/schedules"
             
 //        case .resourcesSchedules(let path): return "/api/resources/\(path)/schedules"
-            case .resourcesSchedules(let path, let query):
-                print("path: ", path)
-                print("query: ", query)
+            case .resourcesSchedules(let path, _):
+//                print("path: ", path)
+//                print("query: ", query)
                 return "/api/resources/\(path)/schedules"
 
             
@@ -212,7 +212,7 @@ enum APIRouter: URLRequestConvertible {
                 if let queryItems = components.queryItems {
                     for queryItem in queryItems {
                         queryDict[queryItem.name] = queryItem.value
-                        print("\(queryItem.name): \(String(describing: queryItem.value))")
+//                        print("\(queryItem.name): \(String(describing: queryItem.value))")
                     }
                 }
             }
