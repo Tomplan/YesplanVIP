@@ -233,11 +233,17 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
         } else {
             print("swipe left")
 
-            let flag = SwipeAction(style: .default, title: nil, handler: nil)
+            let flag = SwipeAction(style: .default, title: nil) { action, indexPath in
+            print("flag")
+            
+//          *****************************************************
+            // TODO Add user notification
+//          *****************************************************
+            }
             flag.hidesWhenSelected = true
             configure(action: flag, with: .flag)
 
-            let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+            let done = SwipeAction(style: .destructive, title: nil) { action, indexPath in
                 print("done")
 //                self.emails.remove(at: indexPath.row)
                 
@@ -246,7 +252,7 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
 //              *****************************************************
 
             }
-            configure(action: delete, with: .trash)
+            configure(action: done, with: .trash)
 
             let cell = collectionView.cellForItem(at: indexPath) as! ToDosTabViewCell
             
@@ -256,14 +262,15 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
                 let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
                 controller.addAction(UIAlertAction(title: "New", style: .default, handler: closure))
                 controller.addAction(UIAlertAction(title: "Started", style: .default, handler: closure))
-                controller.addAction(UIAlertAction(title: "Obsolete", style: .default, handler: closure))
+                controller.addAction(UIAlertAction(title: "OnHold", style: .default, handler: closure))
                 controller.addAction(UIAlertAction(title: "Done", style: .default, handler: closure))
+                controller.addAction(UIAlertAction(title: "Obsolete", style: .default, handler: closure))
                 controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
                 self.present(controller, animated: true, completion: nil)
             }
             configure(action: more, with: .more)
 
-            return [delete, flag, more]
+            return [done, flag, more]
         }
         return nil
     }

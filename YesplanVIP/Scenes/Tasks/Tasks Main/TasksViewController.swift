@@ -185,39 +185,46 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
         } else {
             print("swipe left")
 
-            let flag = SwipeAction(style: .default, title: nil, handler: nil)
-            flag.hidesWhenSelected = true
-            configure(action: flag, with: .flag)
+                let flag = SwipeAction(style: .default, title: nil) { action, indexPath in
+                        print("flag")
+                        
+            //          *****************************************************
+                        // TODO Add user notification
+            //          *****************************************************
+                        }
+                        flag.hidesWhenSelected = true
+                        configure(action: flag, with: .flag)
 
-            let delete = SwipeAction(style: .destructive, title: nil) { action, indexPath in
-                print("done")
-//                self.emails.remove(at: indexPath.row)
-                
-//              *****************************************************
-                // TODO: YESPLAN API PUT TASK STATUS TO DONE URL SEND
-//              *****************************************************
+                        let done = SwipeAction(style: .destructive, title: nil) { action, indexPath in
+                            print("done")
+            //                self.emails.remove(at: indexPath.row)
+                            
+            //              *****************************************************
+                            // TODO: YESPLAN API PUT TASK STATUS TO DONE URL SEND
+            //              *****************************************************
 
-            }
-            configure(action: delete, with: .trash)
+                        }
+            configure(action: done, with: .trash)
 
-            let cell = collectionView.cellForItem(at: indexPath) as! TasksTabViewCell
-            
-            let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
-            
-            let more = SwipeAction(style: .default, title: nil) { action, indexPath in
-                let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-                controller.addAction(UIAlertAction(title: "New", style: .default, handler: closure))
-                controller.addAction(UIAlertAction(title: "Started", style: .default, handler: closure))
-                controller.addAction(UIAlertAction(title: "Obsolete", style: .default, handler: closure))
-                controller.addAction(UIAlertAction(title: "Done", style: .default, handler: closure))
-                controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
-                self.present(controller, animated: true, completion: nil)
-            }
-            configure(action: more, with: .more)
+                        let cell = collectionView.cellForItem(at: indexPath) as! TasksTabViewCell
+                        
+                        let closure: (UIAlertAction) -> Void = { _ in cell.hideSwipe(animated: true) }
+                        
+                        let more = SwipeAction(style: .default, title: nil) { action, indexPath in
+                            let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+                            controller.addAction(UIAlertAction(title: "New", style: .default, handler: closure))
+                            controller.addAction(UIAlertAction(title: "Started", style: .default, handler: closure))
+                            controller.addAction(UIAlertAction(title: "OnHold", style: .default, handler: closure))
+                            controller.addAction(UIAlertAction(title: "Done", style: .default, handler: closure))
+                            controller.addAction(UIAlertAction(title: "Obsolete", style: .default, handler: closure))
+                            controller.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: closure))
+                            self.present(controller, animated: true, completion: nil)
+                        }
+                        configure(action: more, with: .more)
 
-            return [delete, flag, more]
-        }
-        return nil
+                        return [done, flag, more]
+                    }
+                    return nil
     }
     
     func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
