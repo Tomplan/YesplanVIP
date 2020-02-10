@@ -22,56 +22,120 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
 {
   weak var viewController: TeamplannerTabDisplayLogic?
     
+//    var section: TeamplannerTab.Something.ViewModel.Section
     var sections : [TeamplannerTab.Something.ViewModel.Section] = []
+    var sectionsDays : [TeamplannerTab.Something.ViewModel.Section] = []
+
     // MARK: Do something
     
   func presentSomething(response: TeamplannerTab.Something.Response)
   {
-    sections = []
-            let schedules = response.schedules.flatMap { $0.flatMap { $0.value } }
-//            print("schedules:", schedules)
-    
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
 
+        let calendar = Calendar.current
+        //    calendar.timeZone = .autoupdatingCurrent
+
+        let dayOfWeek = calendar.component(.weekday, from: response.startdate) - 1
+        let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: response.startdate)!
+        let days = (weekdays.lowerBound ..< weekdays.upperBound)
+            .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: response.startdate) }
+
+        print(days)
+//
+//
+    sectionsDays = []
+    sections = []
+//    print("1: ", sections)
+    
+//  *************************************************************************************
+    // Make empty Week Teamplanner
+    
+    for i in days {
+        let header = "\(formatter.string(from: i))"
+        let emptyRow = TeamplannerTab.Something.ViewModel.Section.Row()
+        let rows: [TeamplannerTab.Something.ViewModel.Section.Row] = [emptyRow]
+        let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
+
+        if sectionsDays.contains(where: { $0.header == header }) == false {
+        sectionsDays.append(item) }
+    }
+//    print("2: ", sections)
+//  *************************************************************************************
+
+//  *************************************************************************************
+    // Fill the empty Week of the Teamplanner
+//    for section in sections {
+        let schedules = response.schedules.flatMap { $0.flatMap { $0.value } }
             for i in 0 ..< schedules.count {
                 var rows: [TeamplannerTab.Something.ViewModel.Section.Row] = []
                 let header = schedules[i].start.convertDateString(dateFormat: "yyyy-MM-dd")!
-
                 for i in 0 ..< schedules.count where
                     schedules[i].start.convertDateString(dateFormat: "yyyy-MM-dd")! == header {
-                var row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: nil)
-                        
-                let schedule = schedules[i]
-                    switch schedule {
-                    case .shift( _):
-                        row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedule, resourcebooking: nil)
-                    case .scheduleBreak( _):
-                        row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedule, resourcebooking: nil)
-                    case .lock( _):
-                        row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedule, resourcebooking: nil)
-                    case .schedule(let x):
-                        guard let id = x.resourcebooking.id else { return }
-                            guard let bookings = response.resourcebookings else { return }
-
-                        let booking = bookings.first(where: {$0.id == id})
-//                        print(booking)
-                        row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: booking)
-
-                            }
-                    rows.append(row)
+                    var row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: nil)
+                    let schedule = schedules[i]
+                        switch schedule {
+                        case .shift( _):
+                            row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedule, resourcebooking: nil)
+                        case .scheduleBreak( _):
+                            row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedule, resourcebooking: nil)
+                        case .lock( _):
+                            row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: schedule, resourcebooking: nil)
+                        case .schedule(let x):
+                            guard let id = x.resourcebooking.id else { return }
+                                guard let bookings = response.resourcebookings else { return }
+                            let booking = bookings.first(where: {$0.id == id})
+                            row = TeamplannerTab.Something.ViewModel.Section.Row(schedules: nil, resourcebooking: booking)
+                                }
+                        rows.append(row)
                     }
-//                print(rows)
+//                for section in sections {
+//                    print("section :", section)
+//                    print("sectionRow: ", section.rows )
+//                    print("row: ", rows)
+//
+//                }
+//                for section in sections where section.header == header {
+//                    print("section :", section)
+////                    section.rows.append(rows)
+//                }
             if rows.isEmpty == false {
-            let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
-            if sections.contains(where: { $0.header == header }) == false {
-                        sections.append(item) }
-                }
+                
+                let item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
+                if sections.contains(where: { $0.header == header }) == false {
+                            sections.append(item) }
             }
+        }
     
-            let viewModel = TeamplannerTab.Something.ViewModel(
-                    sections: sections
-                    ,error: nil
-                    )
-            self.viewController?.displaySomething(viewModel: viewModel)
+//        print("sections: ", sections)
+    
+   
+    for section in sections {
+        let header = section.header
+        
+        if let index = sectionsDays.firstIndex(where: {$0.header == header}) {
+            sectionsDays[index].rows = section.rows
+        }
+    }
+    
+    
+//        for i in days {
+//            let header = "\(formatter.string(from: i))"
+//            var rows: [TeamplannerTab.Something.ViewModel.Section.Row] = []
+//            var item = TeamplannerTab.Something.ViewModel.Section(header: header, rows: rows)
+//
+//            if sections.contains(where: { $0.header == header }) == false {
+////            sections.append(item)
+//                print()
+//            }
+//        }
+//    }
+  
+//        print("sectionDays: ", sectionsDays)
+        let viewModel = TeamplannerTab.Something.ViewModel(
+            sections: sectionsDays
+            ,error: nil )
+        self.viewController?.displaySomething(viewModel: viewModel)
     }
 }
 

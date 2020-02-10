@@ -34,25 +34,54 @@ class TeamplannerTabInteractor: TeamplannerTabBusinessLogic, TeamplannerTabDataS
   func doSomething(request: TeamplannerTab.Something.Request)
   {
     worker = TeamplannerTabWorker()
-   
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    
     let path = "resource:name:\(String(describing: UserDefaults.standard.string(forKey: "todo_user")!))"
     var queryItems = [String:String]()
-    queryItems = ["from": request.startdate, "to" : request.enddate]
+    
+//    let dateInWeek = Date()//7th June 2017
 
+    NSTimeZone.resetSystemTimeZone()
+    let calendar = Calendar.current
+//    calendar.timeZone = .autoupdatingCurrent
+    
+    let dayOfWeek = calendar.component(.weekday, from: request.startdate) - 1
+    let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: request.startdate)!
+    let days = (weekdays.lowerBound ..< weekdays.upperBound)
+        .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: request.startdate) }
+//
+//    print(days)
+    
+    queryItems = ["from": "\(formatter.string(from: days.first!))", "to" : "\(formatter.string(from: days.last!))"]
+
+    // Replace the hour (time) of both dates with 00:00
+//    let date1 = calendar.startOfDay(for: request.startdate)
+//    let date2 = calendar.startOfDay(for: request.enddate)
+
+//    let components = calendar.dateComponents([.day], from: request.startdate, to: request.enddate)
+    
+//    print("components: ", components.day)
+    
     worker?.getResourcesSchedules(path: path, query: queryItems)
 //    .tap { items in
 //        print("items: ", items) }
             .map { $0.data
             } .get { fromTos in
                 self.dict = fromTos.compactMap { [$0.resource.name : $0.schedules]}
-            }.tap { result in print("r", result)
+//            }.tap { result in print("r", result)
             }.flatMapValues { item  in return item.schedules.compactMap { $0.id }
 //            }.tap { result in print("2", result)
             }.thenMap { item -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(item)!)!
 //            }.tap { result in print("3", result)
             }.done { result in
-//                print("result:", result)
+//                for i in 1...components.day! {
+//                    self.dict.append(["\(formatter.string(from: Calendar.current.date(byAdding: .day, value: i - 1, to: request.startdate)!))":[]])
+//                }
+//                print("selfDict:", self.dict)
                 let response = TeamplannerTab.Something.Response(
+                    startdate: request.startdate ,
+                    enddate: request.enddate,
                     resourcebookings: result,
                     schedules: self.dict,
                     error: nil

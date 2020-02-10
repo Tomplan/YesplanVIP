@@ -21,8 +21,8 @@ enum TeamplannerTab
   {
     struct Request
     {
-        var startdate: String
-        var enddate: String
+        var startdate: Date
+        var enddate: Date
     }
     struct Response
     {
@@ -32,7 +32,8 @@ enum TeamplannerTab
 //        }
 //        var header: String?
 //        var rows: [Row]
-
+        var startdate: Date
+        var enddate: Date
         var resourcebookings: [Resourcebooking]?
         var schedules: [[String? : [Schedules]]]
         var error: String?
@@ -44,26 +45,17 @@ enum TeamplannerTab
     
     struct ViewModel
     {
-        struct Section: Codable {
-            var header: String?
-            struct Row: Codable {
-                let schedules: Schedules?
-                let resourcebooking: Resourcebooking?
-            }
-            let rows: [Row]
-        }
-//
-//        struct Displ: Hashable {
-//
-//            let date: String
-//            let scheduleType: String
-//            let start: String
-//            let end: String
-//            let eventName: String?
-//        }
-
-//        var sections: Set<Item>
         var sections: [Section]
+            struct Section: Codable {
+                var header: String?
+                    struct Row: Codable {
+                        var schedules: Schedules?
+                        var resourcebooking: Resourcebooking?
+                    }
+                var rows: [Row]
+            }
+        
+//        var sections: [Section]
         var error: String?
 
     }

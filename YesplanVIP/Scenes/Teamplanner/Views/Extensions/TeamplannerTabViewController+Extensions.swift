@@ -39,8 +39,9 @@ extension TeamplannerTabViewController: UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamplannerTabViewCell", for: indexPath) as? TeamplannerTabViewCell {
             if sections.count != 0 {
                 let item = sections[indexPath.section].rows[indexPath.item]
-
+                    
                     cell.populate(with: item)
+                cell.minHeight = 50
             }
             return cell
         }

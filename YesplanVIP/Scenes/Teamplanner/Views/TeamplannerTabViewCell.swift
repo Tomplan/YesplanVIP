@@ -22,6 +22,16 @@ class TeamplannerTabViewCell: UICollectionViewCell {
     var lblEventName = UILabel()
 //    var lblGroupName = UILabel()
     
+    var minHeight: CGFloat?
+
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        let size = super.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: horizontalFittingPriority, verticalFittingPriority: verticalFittingPriority)
+        guard let minHeight = minHeight else { return size }
+        width.constant = bounds.size.width
+//        contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: max(size.height, minHeight)))
+        return CGSize(width: targetSize.width, height: max(size.height, minHeight))
+    }
+    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -50,10 +60,10 @@ class TeamplannerTabViewCell: UICollectionViewCell {
 //        lblGroupName.text = nil
     }
     
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        width.constant = bounds.size.width
-        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
-    }
+//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+//        width.constant = bounds.size.width
+//        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+//    }
     
     // MARK: Private methods
     private func setupComponents() {

@@ -292,18 +292,18 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     
    func doSomething() {
      
-     let formatter = DateFormatter()
-     formatter.dateFormat = "yyyy-MM-dd"
+     
      
      let request = TeamplannerTab.Something.Request(
-         startdate: "\(formatter.string(from: datePicker.date))",
-         enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!))"
+         startdate: datePicker.date,
+         enddate:  Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!
      )
      interactor?.doSomething(request: request)
    }
   
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
   {
+    
     sections = viewModel.sections
     
     if viewModel.error != nil {
