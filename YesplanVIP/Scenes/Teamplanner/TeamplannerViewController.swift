@@ -14,6 +14,7 @@ import UIKit
 import SwiftUI
 import MDatePickerView
 import SwiftUI
+import YYCalendar
 
 protocol TeamplannerTabDisplayLogic: class
 {
@@ -136,7 +137,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     
     // CalendarButton
     let calendarButton = UIButton(type: .system)
-    calendarButton.addTarget(self, action: #selector(calendar), for: .touchUpInside)
+    calendarButton.addTarget(self, action: #selector(showCalendar), for: .touchUpInside)
     calendarButton.setImage(#imageLiteral(resourceName: "Calendar"), for: .normal)
     calendarButton.setTitle("", for: .normal)
     calendarButton.tintColor = UIColor.gray
@@ -203,7 +204,27 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
           calendarDayMinus()
       }
   }
+    
+    @objc func showCalendar(_ sender: UIButton) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
         
+        let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "\(formatter.string(from: Date()))", format: "yyyy-MM-dd") { (date) in
+            
+//            print(formatter.date(from:date))
+//            self.selectedDateLabel.text = date
+        }
+        
+//        calendar.firstWeekDay = 6
+        calendar.saturdayColor = UIColor.red
+        calendar.sundayColor = UIColor.red
+        calendar.dayButtonStyle = .circle
+        calendar.show()
+        
+//        let cal = Calendar(identifier: .gregorian)
+//        cal.firstWeekday = 2
+    }
+    
     @objc func calendar() {
             
         toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.height)!))

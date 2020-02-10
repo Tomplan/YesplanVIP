@@ -7,105 +7,218 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E50B4DF30EF18830F67467F6F81A7AA /* MDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = FAAB2185950DF65DE1F8FBFFDCF43433 /* MDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F1B762AFF1E7CB69198761DA6DC6362 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F29C156A2040F25742651EE5F102E48D /* ALView+PureLayout.m */; };
-		2291CA82FBCA3DBD1CD46B498A8EC00C /* ColDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3FBBDB3FA975E23AE321E93518C97 /* ColDateCell.swift */; };
-		271C3685A9C6E32000D9C4F652EAAEDC /* MDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9378F9BDD368BFB86A61E6510AB0F7AE /* MDatePickerView.swift */; };
-		3D22C39AE2232E464713FD29C934B77E /* MDatePickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A40A0A40BDDD0B36C3A35E886E6A3EF1 /* MDatePickerView-dummy.m */; };
-		4DC5F40CEC77315AF931777F63442214 /* MDatePickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2936AC782FE548143E7DE265A462CA6 /* MDatePickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B1A71D79E3D3F7974DAD85804A503BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		61B2B05C224DDCB0C74D604432C37ED9 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E73CB11A6B6ED2D87EF046A110E97844 /* NSArray+PureLayout.m */; };
-		785BFC85B943B5040CD8D856730366FA /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = F129B76E2DFF6DEA2E399566E4AB51C6 /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78D901AF0353F730C7FE75315401CC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		7AD785295AB85EC65F818D02F29825B8 /* Pods-YesplanVIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ACDCBBE641259FFB2605F4D54E2B8C /* Pods-YesplanVIP-dummy.m */; };
-		834B58AC9695C9A97EC666C74402500D /* ColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63EA1B1F71470AAB314937F1CAD550 /* ColCell.swift */; };
-		8D41A30D6C48830FD6CE0E93F1BF26E4 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = EA97A9A872CD6AC64077EE115C88F0F8 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		951EF0BA78F1D5377AFBBAD353E105EB /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ACC5BA3D8A6AF9402827282FE9C61B /* PureLayout-dummy.m */; };
-		A0CF15689F14523E55BFD3CF99171986 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CC7C683F18B66D363C8FEA6607403D0 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A1FB820BECF577A1A7FA790BD6EABBD7 /* FlatCardCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74C0E0C4800EF28FA7ECA101A497F91 /* FlatCardCollectionViewLayout.swift */; };
-		A93E6F6648621806BF6D355C956329AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		AD6F501FB949E3790D15D560F14DA7AA /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C5D5FC44471707C82C7A3E35013498 /* NSLayoutConstraint+PureLayout.m */; };
-		B927154EFB6B4971F377065041FA2B4D /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 4717A49C670CF200D34106840B66400A /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC0BEED49757BEC2D1D1895830F82774 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E0EDBE7A402692D3F62AD602E0EE87 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD5E680B752C0DB733BC13DE4B152A4A /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = CE5FFD19CFA2C5EAE0AF85C78B3BD887 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3B0CC356BDF4D030F7DFC23AA3634F5 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF4D69C6FF33F21FD1AEC38A0465BDEA /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EDEE135D68F3A9746CA8771D8B71139D /* Pods-YesplanVIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A423DBA65AACB7040824970898EA780B /* Pods-YesplanVIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00D3D2CB631EE87DFE8D3E07BA5B3525 /* top_btn_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9058A0DA086E3C8BD09D0D8AB14FE50 /* top_btn_close@2x.png */; };
+		011684433E937AA8196581D5C96796BB /* top_btn_close_pr@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFDA67275162CC467757922F7029C3AD /* top_btn_close_pr@3x.png */; };
+		119333F7A2344A8BB8233DEFA2A87131 /* top_btn_close_pr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B57B7261DBDD41D8137B7A5D411D1750 /* top_btn_close_pr@2x.png */; };
+		126DFC8A559C9E66E16C6587E4A58EBC /* ColDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F10AE8EE9FBC9EA6D60D9B9DF961C6 /* ColDateCell.swift */; };
+		14EAF6C08C5D30284FF91C50BF419F64 /* calendar_prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66FAB7250E20DB634F108F2A8D6F9C2F /* calendar_prev@2x.png */; };
+		18F8B84D7CC3299F3DA72D53DD32E216 /* calendar_prev_pr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF48102C694A9AB7D02CD8C36D0E4789 /* calendar_prev_pr@2x.png */; };
+		200C954F8B8D72CFDA5F67744DF2FEF7 /* CalendarView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EFA6D19355B930AD2E678B75A54F59 /* CalendarView+DataSource.swift */; };
+		29F477B426E97AC81C2D867965814EE7 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B418A5B4C22ACF461C56F10AFC360E4 /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CC128A647CF3F2BDC09C018A9298080 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03DC4D99799B5B5BD8E2810C346356C /* Constants.swift */; };
+		2FFD9BA6F8CAF1AEA65FAB6F621CEAB3 /* calendar_next_pr@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F3DB72E2071252EE55F6AE85663C29 /* calendar_next_pr@3x.png */; };
+		31B7C2E01A6CA4F9865301F35BB658BB /* MDatePickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5686B5F8BA3153BFF63A33266FEA8E94 /* MDatePickerView-dummy.m */; };
+		367D95B373E2DB3E4C433BE0BB0DAFE8 /* LimitedCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC207D8C1D0F4F21C3286C881F68A18A /* LimitedCalendar.swift */; };
+		36E7EC1068A8FB75E8AB8C783CCBF257 /* YYCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 14455315393C56E174D64C8EB0C3F388 /* YYCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F32413FD2F2D30C857511C7ABBF5DE4 /* KDCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C04E5095DD4AD92D00B45374EC4C2BC /* KDCalendar-dummy.m */; };
+		3FEA79AB938D263EDD0576109321847D /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = C231DE1D6757867D46F7AB6E46D021D9 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4045C989802E6898F645FC18EF6B7E3A /* today_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6F1829AE7873268F0A914B082FED3E /* today_icon@2x.png */; };
+		409A1D49ED51111DC02B8151E1617733 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		41CFAD8021D2C70F1C97453A612518FD /* CalendarView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337D79F875A05EDEC673DA1258890B12 /* CalendarView+Extensions.swift */; };
+		41E11C707BD983D284F9A0473B5BB1F7 /* NormalCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048829CBE0014A4054A6BF497071F8F7 /* NormalCalendar.swift */; };
+		4A710C5F7545A859718F50EC5DA12D4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		4F1FB9AEEE07E1F59564B151729FD031 /* calendar_prev@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E84F5EE9249EA53B5E5A79B4CDE540C4 /* calendar_prev@3x.png */; };
+		516464DB7004848131A1A280E725BB30 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 43C03CD943A9F73427113330F29A3C85 /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D9C3B29FA6E5E5E4B5D05A4B8F42F09 /* CalendarView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B97ACC7BEEBFC6F39BBB5DA23E50567 /* CalendarView+Style.swift */; };
+		62AF872D9B16C9715670A089EEF32DCD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		62D585D67B3934FF26F22F19578CADB6 /* CalendarView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C52E32A382830E979D415FABB9014 /* CalendarView+Delegate.swift */; };
+		68341106738C750A7F15B1242F698009 /* top_btn_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 603F3A99856A593A9686F74156DA4DD0 /* top_btn_close@3x.png */; };
+		6923E5A849A397C0B3381BF4FBA3D31F /* YYCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9571960B9AD19A0565E953A2223851F1 /* YYCalendar.swift */; };
+		78D901AF0353F730C7FE75315401CC4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		7A259A75E992348A11DFA2B17D7DB52A /* today_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5C392E44BF7916A9B767028696054B /* today_icon@3x.png */; };
+		80E68C5951775453B15FC528CCEA6F62 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D830F9D13968B333FE31CCEFD62AC72 /* CalendarHeaderView.swift */; };
+		87B421D22F8DEF852B16EE6C257987E8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B08C616E3DB9881CEAF90956EB0FE93 /* Image.swift */; };
+		89DF43A8E14F43BA85845486848E66D4 /* Useful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF50AE3645B98305FE0938659E99114 /* Useful.swift */; };
+		8C142F3AA1A1CC81034C33AF25F17629 /* Pods-YesplanVIP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5DF4442DB8C546FAAA71B46CCE3A4 /* Pods-YesplanVIP-dummy.m */; };
+		90E11860B6F9BDC73E00A1AF0116A0BA /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D3B9C875BFCFDC5BA7DE379305E023 /* ALView+PureLayout.m */; };
+		945CCB91B74B18BCC27645AB06740F48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		94BC6A9CC4D7D4C05D632CFED38BD464 /* calendar_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8314D1F01C27A858486A8F0B8D18DE5B /* calendar_next@2x.png */; };
+		98A56A86BE0A1C7F74E5C8D649E8EEAB /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633779F4B14C8269394CA94A9A2EF089 /* CalendarDayCell.swift */; };
+		9AB6E130BA790CA0CFFF3E48C5AD17E9 /* calendar_prev_pr@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9356D7E142232988345860660AC8D35C /* calendar_prev_pr@3x.png */; };
+		AE028A669BDCC596930B9CD7B34C231D /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E712C23FE0081F5B8B5687A03D271AC /* NSArray+PureLayout.m */; };
+		B2E7EACC7AE26C972020DAE68654BD89 /* MDatePickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C8803643DA132D55DB8290682CEF4D /* MDatePickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B45733DF72B8F6519ED2C771C8E252EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		B5ACE5F3B77C3D13CC50486AC2F9E3FC /* DayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F5CE52D0576088EB98C450C249131A /* DayButton.swift */; };
+		B85C189FBED26C06783DA6CFEAF554DE /* MDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209738E1679BDBCBDE39AC638B0794C7 /* MDatePickerView.swift */; };
+		C0755186A58D51E66D2E89092AD1BFEC /* calendar_next@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EFBA18C5727187AF2B25F804F96BFDC9 /* calendar_next@3x.png */; };
+		C083E0C1A52728A974A958C249DFBFCC /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 901057EB7C51F9A5808C888833AFDE04 /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8CC098B3CF1478B08137AD23E184E9A /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B574D3DCA5C4743C5E09C9807F7F41B /* CalendarView.swift */; };
+		CAEF5A694258EA759B5AC90CBEB72CCC /* PureLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A2B82F9535896A45D7D6DE0988814C /* PureLayout-dummy.m */; };
+		CE4A4613E048E61DCDEB6B4C6AA5487E /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 09079EBC748243DE9C273542428BA477 /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2C11DF548577228E619AAFEAD503619 /* Pods-YesplanVIP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BABC3BCF94CDA15C16B26545E472E34 /* Pods-YesplanVIP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D64335AFA176E95D8A1892337EDB9819 /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3354D78BB0754029602A13C8D0FCC2A /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB285E990754DEC949B350A700FF5AB5 /* FlatCardCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7AAC0665A337E8923B5620B30241C6 /* FlatCardCollectionViewLayout.swift */; };
+		DBF45D59546F58E4F8118B65DBC9B0F4 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5DCC9ADEB660FFC5D7D96920800E81 /* NSLayoutConstraint+PureLayout.m */; };
+		E1EFEFD1AFB2C7751F7BA786E78A4047 /* ColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE57F523F52D12295FD9B07091CFB28 /* ColCell.swift */; };
+		E4B074278E2C8D9D0F8DF5EA159DE404 /* KDCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ED533C119FCF9E67DCB7149DF95CDF /* KDCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE3903AC92477CAE5D7295E0C04082C0 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE46C72F5FA488F3D01837D2AA04D56 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F78E87825E57CBAFCFA72198670FE83B /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44F8EC29693EA43B2F9BAB34BD6A29 /* EventsManager.swift */; };
+		FA96585FA2EBE8E4AD3AAAAA4BA64284 /* MDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2D100B2366818AD53959EB902576FC /* MDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC5CE0F9931E76FE38E6E301EC19210B /* CalendarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A4886645A8510F351E7D5055428FE3 /* CalendarFlowLayout.swift */; };
+		FCF61368DC215E4BDDB3B18428A70D22 /* YYCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A200DD1CC83E246AA0E10852A95B098E /* YYCalendar-dummy.m */; };
+		FDE0D58858D1F74F2BB3EE49E84D1703 /* calendar_next_pr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97543CCC22E3187CA13A4F62C0C6383B /* calendar_next_pr@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C5BABEB8EEE8ABD10F7AF8104C4C2616 /* PBXContainerItemProxy */ = {
+		18DD2DF22ECDA9E4E2D1B688F6C6EF9F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4C14801E16A76DBA60763D9819C8C695;
+			remoteGlobalIDString = ECF030B04A631ADB65190BABE8925EC5;
+			remoteInfo = MDatePickerView;
+		};
+		61691EA2081770D4F6D98B66BD91BB4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06F5CDD6235E25837519792853B145A1;
 			remoteInfo = PureLayout;
 		};
-		DE6904D462B160A1F1BFE71D05F9258E /* PBXContainerItemProxy */ = {
+		980A391FD25F5B3BE710284EB138ECD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7055D7D499B2400C6CA67BC45778F32E;
-			remoteInfo = MDatePickerView;
+			remoteGlobalIDString = D87692C79C9F80E864A21E2BE2E9628C;
+			remoteInfo = YYCalendar;
+		};
+		B05503B86A05A7F5742262A29BB49EDB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BB7A4D260FDCE05D3AB31199589BBE5;
+			remoteInfo = KDCalendar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CC7C683F18B66D363C8FEA6607403D0 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		40D5C5E1444A79D41921DDC956184A74 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		455687007F90317027AD5B0042AAE143 /* MDatePickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-prefix.pch"; sourceTree = "<group>"; };
-		4717A49C670CF200D34106840B66400A /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
-		52D77FD83430DF1A4828D52701602C2C /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
-		631EBE76185F7D39A6C811EC8696CB15 /* Pods-YesplanVIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YesplanVIP.modulemap"; sourceTree = "<group>"; };
-		65A5580D72B2E03901DA453A805A98FA /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
-		6DAB6B1497E90090C051694E0F6F1543 /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
-		74ACDCBBE641259FFB2605F4D54E2B8C /* Pods-YesplanVIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YesplanVIP-dummy.m"; sourceTree = "<group>"; };
-		828FABF6835E28C4C23DD5BB560F1B26 /* Pods-YesplanVIP-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YesplanVIP-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9267591DD34F54AF5CD26A7A70E1B04F /* Pods-YesplanVIP-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YesplanVIP-frameworks.sh"; sourceTree = "<group>"; };
-		928837F53470F459ACDFDCBC7C8D67A2 /* Pods-YesplanVIP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-acknowledgements.plist"; sourceTree = "<group>"; };
-		92ACC5BA3D8A6AF9402827282FE9C61B /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
-		9378F9BDD368BFB86A61E6510AB0F7AE /* MDatePickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MDatePickerView.swift; path = MDatePickerView/MDatePickerView.swift; sourceTree = "<group>"; };
-		99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
+		048829CBE0014A4054A6BF497071F8F7 /* NormalCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NormalCalendar.swift; path = YYCalendar/Classes/Components/NormalCalendar.swift; sourceTree = "<group>"; };
+		04A2B82F9535896A45D7D6DE0988814C /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
+		07C8803643DA132D55DB8290682CEF4D /* MDatePickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-umbrella.h"; sourceTree = "<group>"; };
+		08F5CE52D0576088EB98C450C249131A /* DayButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DayButton.swift; path = YYCalendar/Classes/Components/DayButton.swift; sourceTree = "<group>"; };
+		09079EBC748243DE9C273542428BA477 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		0A2D41BF166ED268441226F84D114C79 /* Pods-YesplanVIP-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YesplanVIP-frameworks.sh"; sourceTree = "<group>"; };
+		0B08C616E3DB9881CEAF90956EB0FE93 /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = YYCalendar/Classes/Image.swift; sourceTree = "<group>"; };
+		0BC33034D9E84B6EAD418624E87ED966 /* KDCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KDCalendar-Info.plist"; sourceTree = "<group>"; };
+		0DE46C72F5FA488F3D01837D2AA04D56 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		11C6F80D8567A88E023DAE5BBC18A270 /* Pods-YesplanVIP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-YesplanVIP.modulemap"; sourceTree = "<group>"; };
+		14455315393C56E174D64C8EB0C3F388 /* YYCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYCalendar-umbrella.h"; sourceTree = "<group>"; };
+		1B418A5B4C22ACF461C56F10AFC360E4 /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		209738E1679BDBCBDE39AC638B0794C7 /* MDatePickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MDatePickerView.swift; path = MDatePickerView/MDatePickerView.swift; sourceTree = "<group>"; };
+		29A4886645A8510F351E7D5055428FE3 /* CalendarFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarFlowLayout.swift; path = KDCalendar/CalendarView/CalendarFlowLayout.swift; sourceTree = "<group>"; };
+		2BABC3BCF94CDA15C16B26545E472E34 /* Pods-YesplanVIP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YesplanVIP-umbrella.h"; sourceTree = "<group>"; };
+		2D830F9D13968B333FE31CCEFD62AC72 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarHeaderView.swift; path = KDCalendar/CalendarView/CalendarHeaderView.swift; sourceTree = "<group>"; };
+		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		337D79F875A05EDEC673DA1258890B12 /* CalendarView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CalendarView+Extensions.swift"; path = "KDCalendar/CalendarView/CalendarView+Extensions.swift"; sourceTree = "<group>"; };
+		34BFDA40C69BAA48749D1C87CCD8FEEA /* MDatePickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDatePickerView.xcconfig; sourceTree = "<group>"; };
+		3B97ACC7BEEBFC6F39BBB5DA23E50567 /* CalendarView+Style.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CalendarView+Style.swift"; path = "KDCalendar/CalendarView/CalendarView+Style.swift"; sourceTree = "<group>"; };
+		3C04E5095DD4AD92D00B45374EC4C2BC /* KDCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KDCalendar-dummy.m"; sourceTree = "<group>"; };
+		3E712C23FE0081F5B8B5687A03D271AC /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		42F3DB72E2071252EE55F6AE85663C29 /* calendar_next_pr@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next_pr@3x.png"; path = "YYCalendar/Assets/calendar_next_pr@3x.png"; sourceTree = "<group>"; };
+		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		43C03CD943A9F73427113330F29A3C85 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		4F4C11E54E48D8164A2F8BBE569FEC2E /* MDatePickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDatePickerView.modulemap; sourceTree = "<group>"; };
+		50F89A0810788A991C7F0ABBBE73D5AE /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YesplanVIP.framework; path = "Pods-YesplanVIP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5132B2512995F284D84CC5E1835B43B6 /* MDatePickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-prefix.pch"; sourceTree = "<group>"; };
+		5686B5F8BA3153BFF63A33266FEA8E94 /* MDatePickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDatePickerView-dummy.m"; sourceTree = "<group>"; };
+		5A4EDB27E8DA70C3571A3FCF76066E12 /* YYCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCalendar.xcconfig; sourceTree = "<group>"; };
+		5B574D3DCA5C4743C5E09C9807F7F41B /* CalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarView.swift; path = KDCalendar/CalendarView/CalendarView.swift; sourceTree = "<group>"; };
+		5FEBFFE8A1F3D6309102302D726511CF /* Pods-YesplanVIP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.debug.xcconfig"; sourceTree = "<group>"; };
+		603F3A99856A593A9686F74156DA4DD0 /* top_btn_close@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "top_btn_close@3x.png"; path = "YYCalendar/Assets/top_btn_close@3x.png"; sourceTree = "<group>"; };
+		62EFA6D19355B930AD2E678B75A54F59 /* CalendarView+DataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CalendarView+DataSource.swift"; path = "KDCalendar/CalendarView/CalendarView+DataSource.swift"; sourceTree = "<group>"; };
+		633779F4B14C8269394CA94A9A2EF089 /* CalendarDayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarDayCell.swift; path = KDCalendar/CalendarView/CalendarDayCell.swift; sourceTree = "<group>"; };
+		6404D5EB611EE2D85617269FA9B62304 /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
+		66FAB7250E20DB634F108F2A8D6F9C2F /* calendar_prev@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev@2x.png"; path = "YYCalendar/Assets/calendar_prev@2x.png"; sourceTree = "<group>"; };
+		68D3B9C875BFCFDC5BA7DE379305E023 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		6A5DCC9ADEB660FFC5D7D96920800E81 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		718C52E32A382830E979D415FABB9014 /* CalendarView+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CalendarView+Delegate.swift"; path = "KDCalendar/CalendarView/CalendarView+Delegate.swift"; sourceTree = "<group>"; };
+		75DE6E87A0520EAC27562FCAD1B75052 /* KDCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KDCalendar.framework; path = KDCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B44F8EC29693EA43B2F9BAB34BD6A29 /* EventsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventsManager.swift; path = KDCalendar/CalendarView/EventsManager.swift; sourceTree = "<group>"; };
+		7BBF2D3DCF2F95B035DE72A5B0EE6379 /* MDatePickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDatePickerView-Info.plist"; sourceTree = "<group>"; };
+		7D2D100B2366818AD53959EB902576FC /* MDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDatePickerView.h; path = MDatePickerView/MDatePickerView.h; sourceTree = "<group>"; };
+		82C785979F88B921DEB5F3D252DA24F3 /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
+		8314D1F01C27A858486A8F0B8D18DE5B /* calendar_next@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next@2x.png"; path = "YYCalendar/Assets/calendar_next@2x.png"; sourceTree = "<group>"; };
+		84B843FF6CF907B9F0350B5BB4C86A0F /* MDatePickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDatePickerView.framework; path = MDatePickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DF50AE3645B98305FE0938659E99114 /* Useful.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Useful.swift; path = YYCalendar/Classes/Useful.swift; sourceTree = "<group>"; };
+		901057EB7C51F9A5808C888833AFDE04 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		9356D7E142232988345860660AC8D35C /* calendar_prev_pr@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev_pr@3x.png"; path = "YYCalendar/Assets/calendar_prev_pr@3x.png"; sourceTree = "<group>"; };
+		9571960B9AD19A0565E953A2223851F1 /* YYCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YYCalendar.swift; path = YYCalendar/Classes/YYCalendar.swift; sourceTree = "<group>"; };
+		969536A3622FA97207C2EE60D1C26DEF /* Pods-YesplanVIP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-Info.plist"; sourceTree = "<group>"; };
+		97543CCC22E3187CA13A4F62C0C6383B /* calendar_next_pr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next_pr@2x.png"; path = "YYCalendar/Assets/calendar_next_pr@2x.png"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDatePickerView.xcconfig; sourceTree = "<group>"; };
-		A288ED5945E9B379330C1FE82855E72A /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
-		A40A0A40BDDD0B36C3A35E886E6A3EF1 /* MDatePickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDatePickerView-dummy.m"; sourceTree = "<group>"; };
-		A423DBA65AACB7040824970898EA780B /* Pods-YesplanVIP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YesplanVIP-umbrella.h"; sourceTree = "<group>"; };
-		B9E0EDBE7A402692D3F62AD602E0EE87 /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
-		C2C5D5FC44471707C82C7A3E35013498 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		C6750FFFA64132EF3B5AB9598AAA2B42 /* MDatePickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDatePickerView.framework; path = MDatePickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C949B62CF0D5B216CCB8C9FAD4891684 /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YesplanVIP.framework; path = "Pods-YesplanVIP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCB3FBBDB3FA975E23AE321E93518C97 /* ColDateCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColDateCell.swift; path = MDatePickerView/ColDateCell.swift; sourceTree = "<group>"; };
-		CE5FFD19CFA2C5EAE0AF85C78B3BD887 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		D2936AC782FE548143E7DE265A462CA6 /* MDatePickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-umbrella.h"; sourceTree = "<group>"; };
-		D83B7F252F98EADF8DB24BC49E40EF30 /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
-		D9D3C47C011AD771A8016462429F14DC /* MDatePickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDatePickerView-Info.plist"; sourceTree = "<group>"; };
-		DF4D69C6FF33F21FD1AEC38A0465BDEA /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
-		E73CB11A6B6ED2D87EF046A110E97844 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		E755DAD472824586DE1EC05902A09F77 /* Pods-YesplanVIP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-Info.plist"; sourceTree = "<group>"; };
-		EA97A9A872CD6AC64077EE115C88F0F8 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		F09CBABC19566DF74E658CC05EB154E8 /* MDatePickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDatePickerView.modulemap; sourceTree = "<group>"; };
-		F129B76E2DFF6DEA2E399566E4AB51C6 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
-		F29C156A2040F25742651EE5F102E48D /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
-		F74C0E0C4800EF28FA7ECA101A497F91 /* FlatCardCollectionViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlatCardCollectionViewLayout.swift; path = MDatePickerView/FlatCardCollectionViewLayout.swift; sourceTree = "<group>"; };
-		FAAB2185950DF65DE1F8FBFFDCF43433 /* MDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDatePickerView.h; path = MDatePickerView/MDatePickerView.h; sourceTree = "<group>"; };
-		FF63EA1B1F71470AAB314937F1CAD550 /* ColCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColCell.swift; path = MDatePickerView/ColCell.swift; sourceTree = "<group>"; };
+		A055044A215B4919517FD8397724B795 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
+		A200DD1CC83E246AA0E10852A95B098E /* YYCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYCalendar-dummy.m"; sourceTree = "<group>"; };
+		A3EDC96F0ABBB943609723D72BCB2208 /* YYCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYCalendar-Info.plist"; sourceTree = "<group>"; };
+		A3F10AE8EE9FBC9EA6D60D9B9DF961C6 /* ColDateCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColDateCell.swift; path = MDatePickerView/ColDateCell.swift; sourceTree = "<group>"; };
+		A66F46B2B756E5A351C7DBD59098622D /* YYCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYCalendar.framework; path = YYCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACE57F523F52D12295FD9B07091CFB28 /* ColCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColCell.swift; path = MDatePickerView/ColCell.swift; sourceTree = "<group>"; };
+		B57B7261DBDD41D8137B7A5D411D1750 /* top_btn_close_pr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "top_btn_close_pr@2x.png"; path = "YYCalendar/Assets/top_btn_close_pr@2x.png"; sourceTree = "<group>"; };
+		B5A458690BA0E1955547F1BF5E48E851 /* Pods-YesplanVIP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-acknowledgements.plist"; sourceTree = "<group>"; };
+		BC4623C42C3CCECA8309AF6F868EA23C /* KDCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KDCalendar.modulemap; sourceTree = "<group>"; };
+		BCD5DF4442DB8C546FAAA71B46CCE3A4 /* Pods-YesplanVIP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YesplanVIP-dummy.m"; sourceTree = "<group>"; };
+		BF48102C694A9AB7D02CD8C36D0E4789 /* calendar_prev_pr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev_pr@2x.png"; path = "YYCalendar/Assets/calendar_prev_pr@2x.png"; sourceTree = "<group>"; };
+		BFDA67275162CC467757922F7029C3AD /* top_btn_close_pr@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "top_btn_close_pr@3x.png"; path = "YYCalendar/Assets/top_btn_close_pr@3x.png"; sourceTree = "<group>"; };
+		C231DE1D6757867D46F7AB6E46D021D9 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		CA7AAC0665A337E8923B5620B30241C6 /* FlatCardCollectionViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FlatCardCollectionViewLayout.swift; path = MDatePickerView/FlatCardCollectionViewLayout.swift; sourceTree = "<group>"; };
+		CD5C392E44BF7916A9B767028696054B /* today_icon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "today_icon@3x.png"; path = "YYCalendar/Assets/today_icon@3x.png"; sourceTree = "<group>"; };
+		CD9F0E4C6FBDE60F59915FB32BA7A81D /* Pods-YesplanVIP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YesplanVIP.release.xcconfig"; sourceTree = "<group>"; };
+		CE6F1829AE7873268F0A914B082FED3E /* today_icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "today_icon@2x.png"; path = "YYCalendar/Assets/today_icon@2x.png"; sourceTree = "<group>"; };
+		D5F2CEC2B2E22D42BF0861AAA69951A1 /* Pods-YesplanVIP-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YesplanVIP-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D8C94DBAE6E53874EB1BE5EE2F2BCFD9 /* YYCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = YYCalendar.modulemap; sourceTree = "<group>"; };
+		D9058A0DA086E3C8BD09D0D8AB14FE50 /* top_btn_close@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "top_btn_close@2x.png"; path = "YYCalendar/Assets/top_btn_close@2x.png"; sourceTree = "<group>"; };
+		DE9FEECEAF1782F99FDDF1AB4724BFC8 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
+		E03DC4D99799B5B5BD8E2810C346356C /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = YYCalendar/Classes/Constants.swift; sourceTree = "<group>"; };
+		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E84F5EE9249EA53B5E5A79B4CDE540C4 /* calendar_prev@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev@3x.png"; path = "YYCalendar/Assets/calendar_prev@3x.png"; sourceTree = "<group>"; };
+		E9ED533C119FCF9E67DCB7149DF95CDF /* KDCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCalendar-umbrella.h"; sourceTree = "<group>"; };
+		EFBA18C5727187AF2B25F804F96BFDC9 /* calendar_next@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next@3x.png"; path = "YYCalendar/Assets/calendar_next@3x.png"; sourceTree = "<group>"; };
+		F15A1674DBCD9B7C844BE7EA7640E297 /* KDCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KDCalendar.xcconfig; sourceTree = "<group>"; };
+		F3354D78BB0754029602A13C8D0FCC2A /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
+		FAF6EFDCE7D036837C7BFC5520A753E7 /* KDCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCalendar-prefix.pch"; sourceTree = "<group>"; };
+		FC207D8C1D0F4F21C3286C881F68A18A /* LimitedCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LimitedCalendar.swift; path = YYCalendar/Classes/Components/LimitedCalendar.swift; sourceTree = "<group>"; };
+		FC60995B1E310D459933AD49CE49CC54 /* YYCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYCalendar-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		365607DE8B46BBB7CB239B2A7E9A376D /* Frameworks */ = {
+		0D428E24A60F2BB44F1E7F156C585784 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93E6F6648621806BF6D355C956329AB /* Foundation.framework in Frameworks */,
+				B45733DF72B8F6519ED2C771C8E252EE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61E5698FCDECFE42C35484B5A7752959 /* Frameworks */ = {
+		50AD8B5FC883A5DE3189AB3A85E7CFF1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B1A71D79E3D3F7974DAD85804A503BC /* Foundation.framework in Frameworks */,
+				62AF872D9B16C9715670A089EEF32DCD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60FAD0DB883D0A6036A81D4F18CC42A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945CCB91B74B18BCC27645AB06740F48 /* Foundation.framework in Frameworks */,
+				4A710C5F7545A859718F50EC5DA12D4B /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91A1A1067E322E8C01CF7EE10E17BFF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				409A1D49ED51111DC02B8151E1617733 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,182 +233,295 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3172BD82716EC9C7237DD98E49098BE6 /* Pods */ = {
+		08DBF76E9F284ECF342A36CD2671E746 /* PureLayout */ = {
 			isa = PBXGroup;
 			children = (
-				6D6E34110A8DEA9BCE04B101FDB8A715 /* MDatePickerView */,
-				702208D03501A270033A2F12D592478B /* PureLayout */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3F74413675A2B47E42F5BC5CA8F84C0C /* Pods-YesplanVIP */ = {
-			isa = PBXGroup;
-			children = (
-				631EBE76185F7D39A6C811EC8696CB15 /* Pods-YesplanVIP.modulemap */,
-				828FABF6835E28C4C23DD5BB560F1B26 /* Pods-YesplanVIP-acknowledgements.markdown */,
-				928837F53470F459ACDFDCBC7C8D67A2 /* Pods-YesplanVIP-acknowledgements.plist */,
-				74ACDCBBE641259FFB2605F4D54E2B8C /* Pods-YesplanVIP-dummy.m */,
-				9267591DD34F54AF5CD26A7A70E1B04F /* Pods-YesplanVIP-frameworks.sh */,
-				E755DAD472824586DE1EC05902A09F77 /* Pods-YesplanVIP-Info.plist */,
-				A423DBA65AACB7040824970898EA780B /* Pods-YesplanVIP-umbrella.h */,
-				52D77FD83430DF1A4828D52701602C2C /* Pods-YesplanVIP.debug.xcconfig */,
-				D83B7F252F98EADF8DB24BC49E40EF30 /* Pods-YesplanVIP.release.xcconfig */,
-			);
-			name = "Pods-YesplanVIP";
-			path = "Target Support Files/Pods-YesplanVIP";
-			sourceTree = "<group>";
-		};
-		63CDF08146C3234B1067AC2B5C9C6505 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C6750FFFA64132EF3B5AB9598AAA2B42 /* MDatePickerView.framework */,
-				C949B62CF0D5B216CCB8C9FAD4891684 /* Pods_YesplanVIP.framework */,
-				40D5C5E1444A79D41921DDC956184A74 /* PureLayout.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6D6E34110A8DEA9BCE04B101FDB8A715 /* MDatePickerView */ = {
-			isa = PBXGroup;
-			children = (
-				FF63EA1B1F71470AAB314937F1CAD550 /* ColCell.swift */,
-				CCB3FBBDB3FA975E23AE321E93518C97 /* ColDateCell.swift */,
-				F74C0E0C4800EF28FA7ECA101A497F91 /* FlatCardCollectionViewLayout.swift */,
-				FAAB2185950DF65DE1F8FBFFDCF43433 /* MDatePickerView.h */,
-				9378F9BDD368BFB86A61E6510AB0F7AE /* MDatePickerView.swift */,
-				A758701D00699129747E6282A5067CBD /* Support Files */,
-			);
-			name = MDatePickerView;
-			path = MDatePickerView;
-			sourceTree = "<group>";
-		};
-		702208D03501A270033A2F12D592478B /* PureLayout */ = {
-			isa = PBXGroup;
-			children = (
-				4717A49C670CF200D34106840B66400A /* ALView+PureLayout.h */,
-				F29C156A2040F25742651EE5F102E48D /* ALView+PureLayout.m */,
-				CE5FFD19CFA2C5EAE0AF85C78B3BD887 /* NSArray+PureLayout.h */,
-				E73CB11A6B6ED2D87EF046A110E97844 /* NSArray+PureLayout.m */,
-				EA97A9A872CD6AC64077EE115C88F0F8 /* NSLayoutConstraint+PureLayout.h */,
-				C2C5D5FC44471707C82C7A3E35013498 /* NSLayoutConstraint+PureLayout.m */,
-				1CC7C683F18B66D363C8FEA6607403D0 /* PureLayout.h */,
-				F129B76E2DFF6DEA2E399566E4AB51C6 /* PureLayout+Internal.h */,
-				B9E0EDBE7A402692D3F62AD602E0EE87 /* PureLayoutDefines.h */,
-				A7C6136769569E9F23B607E5FDF23BF9 /* Support Files */,
+				0DE46C72F5FA488F3D01837D2AA04D56 /* ALView+PureLayout.h */,
+				68D3B9C875BFCFDC5BA7DE379305E023 /* ALView+PureLayout.m */,
+				C231DE1D6757867D46F7AB6E46D021D9 /* NSArray+PureLayout.h */,
+				3E712C23FE0081F5B8B5687A03D271AC /* NSArray+PureLayout.m */,
+				43C03CD943A9F73427113330F29A3C85 /* NSLayoutConstraint+PureLayout.h */,
+				6A5DCC9ADEB660FFC5D7D96920800E81 /* NSLayoutConstraint+PureLayout.m */,
+				1B418A5B4C22ACF461C56F10AFC360E4 /* PureLayout.h */,
+				901057EB7C51F9A5808C888833AFDE04 /* PureLayout+Internal.h */,
+				09079EBC748243DE9C273542428BA477 /* PureLayoutDefines.h */,
+				583F909265606CB3EDE1B9754E0D57CD /* Support Files */,
 			);
 			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
-		A758701D00699129747E6282A5067CBD /* Support Files */ = {
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F09CBABC19566DF74E658CC05EB154E8 /* MDatePickerView.modulemap */,
-				A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */,
-				A40A0A40BDDD0B36C3A35E886E6A3EF1 /* MDatePickerView-dummy.m */,
-				D9D3C47C011AD771A8016462429F14DC /* MDatePickerView-Info.plist */,
-				455687007F90317027AD5B0042AAE143 /* MDatePickerView-prefix.pch */,
-				D2936AC782FE548143E7DE265A462CA6 /* MDatePickerView-umbrella.h */,
+				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MDatePickerView";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A7C6136769569E9F23B607E5FDF23BF9 /* Support Files */ = {
+		18525ECB45048EC64E0A9D91CDC6C9C7 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				65A5580D72B2E03901DA453A805A98FA /* PureLayout.modulemap */,
-				99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */,
-				92ACC5BA3D8A6AF9402827282FE9C61B /* PureLayout-dummy.m */,
-				6DAB6B1497E90090C051694E0F6F1543 /* PureLayout-Info.plist */,
-				A288ED5945E9B379330C1FE82855E72A /* PureLayout-prefix.pch */,
-				DF4D69C6FF33F21FD1AEC38A0465BDEA /* PureLayout-umbrella.h */,
+				BC4623C42C3CCECA8309AF6F868EA23C /* KDCalendar.modulemap */,
+				F15A1674DBCD9B7C844BE7EA7640E297 /* KDCalendar.xcconfig */,
+				3C04E5095DD4AD92D00B45374EC4C2BC /* KDCalendar-dummy.m */,
+				0BC33034D9E84B6EAD418624E87ED966 /* KDCalendar-Info.plist */,
+				FAF6EFDCE7D036837C7BFC5520A753E7 /* KDCalendar-prefix.pch */,
+				E9ED533C119FCF9E67DCB7149DF95CDF /* KDCalendar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/KDCalendar";
+			sourceTree = "<group>";
+		};
+		32E6CCA918B71292ABF2C82E5C17BAC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75DE6E87A0520EAC27562FCAD1B75052 /* KDCalendar.framework */,
+				84B843FF6CF907B9F0350B5BB4C86A0F /* MDatePickerView.framework */,
+				50F89A0810788A991C7F0ABBBE73D5AE /* Pods_YesplanVIP.framework */,
+				E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */,
+				A66F46B2B756E5A351C7DBD59098622D /* YYCalendar.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42844E0211028923F0923434C0571424 /* Pods-YesplanVIP */ = {
+			isa = PBXGroup;
+			children = (
+				11C6F80D8567A88E023DAE5BBC18A270 /* Pods-YesplanVIP.modulemap */,
+				D5F2CEC2B2E22D42BF0861AAA69951A1 /* Pods-YesplanVIP-acknowledgements.markdown */,
+				B5A458690BA0E1955547F1BF5E48E851 /* Pods-YesplanVIP-acknowledgements.plist */,
+				BCD5DF4442DB8C546FAAA71B46CCE3A4 /* Pods-YesplanVIP-dummy.m */,
+				0A2D41BF166ED268441226F84D114C79 /* Pods-YesplanVIP-frameworks.sh */,
+				969536A3622FA97207C2EE60D1C26DEF /* Pods-YesplanVIP-Info.plist */,
+				2BABC3BCF94CDA15C16B26545E472E34 /* Pods-YesplanVIP-umbrella.h */,
+				5FEBFFE8A1F3D6309102302D726511CF /* Pods-YesplanVIP.debug.xcconfig */,
+				CD9F0E4C6FBDE60F59915FB32BA7A81D /* Pods-YesplanVIP.release.xcconfig */,
+			);
+			name = "Pods-YesplanVIP";
+			path = "Target Support Files/Pods-YesplanVIP";
+			sourceTree = "<group>";
+		};
+		51C379002627DBC3F23A6198F0F166A2 /* EventManager */ = {
+			isa = PBXGroup;
+			children = (
+				633779F4B14C8269394CA94A9A2EF089 /* CalendarDayCell.swift */,
+				29A4886645A8510F351E7D5055428FE3 /* CalendarFlowLayout.swift */,
+				2D830F9D13968B333FE31CCEFD62AC72 /* CalendarHeaderView.swift */,
+				5B574D3DCA5C4743C5E09C9807F7F41B /* CalendarView.swift */,
+				62EFA6D19355B930AD2E678B75A54F59 /* CalendarView+DataSource.swift */,
+				718C52E32A382830E979D415FABB9014 /* CalendarView+Delegate.swift */,
+				337D79F875A05EDEC673DA1258890B12 /* CalendarView+Extensions.swift */,
+				3B97ACC7BEEBFC6F39BBB5DA23E50567 /* CalendarView+Style.swift */,
+				7B44F8EC29693EA43B2F9BAB34BD6A29 /* EventsManager.swift */,
+			);
+			name = EventManager;
+			sourceTree = "<group>";
+		};
+		544F38259A3060F6D94C9FE79C7FD4C0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8C94DBAE6E53874EB1BE5EE2F2BCFD9 /* YYCalendar.modulemap */,
+				5A4EDB27E8DA70C3571A3FCF76066E12 /* YYCalendar.xcconfig */,
+				A200DD1CC83E246AA0E10852A95B098E /* YYCalendar-dummy.m */,
+				A3EDC96F0ABBB943609723D72BCB2208 /* YYCalendar-Info.plist */,
+				FC60995B1E310D459933AD49CE49CC54 /* YYCalendar-prefix.pch */,
+				14455315393C56E174D64C8EB0C3F388 /* YYCalendar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/YYCalendar";
+			sourceTree = "<group>";
+		};
+		583F909265606CB3EDE1B9754E0D57CD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE9FEECEAF1782F99FDDF1AB4724BFC8 /* PureLayout.modulemap */,
+				6404D5EB611EE2D85617269FA9B62304 /* PureLayout.xcconfig */,
+				04A2B82F9535896A45D7D6DE0988814C /* PureLayout-dummy.m */,
+				82C785979F88B921DEB5F3D252DA24F3 /* PureLayout-Info.plist */,
+				A055044A215B4919517FD8397724B795 /* PureLayout-prefix.pch */,
+				F3354D78BB0754029602A13C8D0FCC2A /* PureLayout-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PureLayout";
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		6FBADDD4546D5FC10375CB58D904AC87 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				76BEEA0770F1C90F78F8D526B7632863 /* KDCalendar */,
+				D42CCF06C28DD5C42F275D756499722C /* MDatePickerView */,
+				08DBF76E9F284ECF342A36CD2671E746 /* PureLayout */,
+				70C12F038F92D34FFCE8397FDDBCF777 /* YYCalendar */,
 			);
-			name = iOS;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		70C12F038F92D34FFCE8397FDDBCF777 /* YYCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				E03DC4D99799B5B5BD8E2810C346356C /* Constants.swift */,
+				08F5CE52D0576088EB98C450C249131A /* DayButton.swift */,
+				0B08C616E3DB9881CEAF90956EB0FE93 /* Image.swift */,
+				FC207D8C1D0F4F21C3286C881F68A18A /* LimitedCalendar.swift */,
+				048829CBE0014A4054A6BF497071F8F7 /* NormalCalendar.swift */,
+				8DF50AE3645B98305FE0938659E99114 /* Useful.swift */,
+				9571960B9AD19A0565E953A2223851F1 /* YYCalendar.swift */,
+				ED85F67CF72770BE01824A9F38AD8E55 /* Resources */,
+				544F38259A3060F6D94C9FE79C7FD4C0 /* Support Files */,
+			);
+			name = YYCalendar;
+			path = YYCalendar;
+			sourceTree = "<group>";
+		};
+		76BEEA0770F1C90F78F8D526B7632863 /* KDCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				51C379002627DBC3F23A6198F0F166A2 /* EventManager */,
+				18525ECB45048EC64E0A9D91CDC6C9C7 /* Support Files */,
+			);
+			name = KDCalendar;
+			path = KDCalendar;
+			sourceTree = "<group>";
+		};
+		C2A47CA32A44CB6E7E8DA51A328FFCE5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F4C11E54E48D8164A2F8BBE569FEC2E /* MDatePickerView.modulemap */,
+				34BFDA40C69BAA48749D1C87CCD8FEEA /* MDatePickerView.xcconfig */,
+				5686B5F8BA3153BFF63A33266FEA8E94 /* MDatePickerView-dummy.m */,
+				7BBF2D3DCF2F95B035DE72A5B0EE6379 /* MDatePickerView-Info.plist */,
+				5132B2512995F284D84CC5E1835B43B6 /* MDatePickerView-prefix.pch */,
+				07C8803643DA132D55DB8290682CEF4D /* MDatePickerView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MDatePickerView";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				3172BD82716EC9C7237DD98E49098BE6 /* Pods */,
-				63CDF08146C3234B1067AC2B5C9C6505 /* Products */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				6FBADDD4546D5FC10375CB58D904AC87 /* Pods */,
+				32E6CCA918B71292ABF2C82E5C17BAC3 /* Products */,
 				DA0B6935140DBB7D8E167B1B67B66E82 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D42CCF06C28DD5C42F275D756499722C /* MDatePickerView */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				ACE57F523F52D12295FD9B07091CFB28 /* ColCell.swift */,
+				A3F10AE8EE9FBC9EA6D60D9B9DF961C6 /* ColDateCell.swift */,
+				CA7AAC0665A337E8923B5620B30241C6 /* FlatCardCollectionViewLayout.swift */,
+				7D2D100B2366818AD53959EB902576FC /* MDatePickerView.h */,
+				209738E1679BDBCBDE39AC638B0794C7 /* MDatePickerView.swift */,
+				C2A47CA32A44CB6E7E8DA51A328FFCE5 /* Support Files */,
 			);
-			name = Frameworks;
+			name = MDatePickerView;
+			path = MDatePickerView;
 			sourceTree = "<group>";
 		};
 		DA0B6935140DBB7D8E167B1B67B66E82 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3F74413675A2B47E42F5BC5CA8F84C0C /* Pods-YesplanVIP */,
+				42844E0211028923F0923434C0571424 /* Pods-YesplanVIP */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
+				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ED85F67CF72770BE01824A9F38AD8E55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8314D1F01C27A858486A8F0B8D18DE5B /* calendar_next@2x.png */,
+				EFBA18C5727187AF2B25F804F96BFDC9 /* calendar_next@3x.png */,
+				97543CCC22E3187CA13A4F62C0C6383B /* calendar_next_pr@2x.png */,
+				42F3DB72E2071252EE55F6AE85663C29 /* calendar_next_pr@3x.png */,
+				66FAB7250E20DB634F108F2A8D6F9C2F /* calendar_prev@2x.png */,
+				E84F5EE9249EA53B5E5A79B4CDE540C4 /* calendar_prev@3x.png */,
+				BF48102C694A9AB7D02CD8C36D0E4789 /* calendar_prev_pr@2x.png */,
+				9356D7E142232988345860660AC8D35C /* calendar_prev_pr@3x.png */,
+				CE6F1829AE7873268F0A914B082FED3E /* today_icon@2x.png */,
+				CD5C392E44BF7916A9B767028696054B /* today_icon@3x.png */,
+				D9058A0DA086E3C8BD09D0D8AB14FE50 /* top_btn_close@2x.png */,
+				603F3A99856A593A9686F74156DA4DD0 /* top_btn_close@3x.png */,
+				B57B7261DBDD41D8137B7A5D411D1750 /* top_btn_close_pr@2x.png */,
+				BFDA67275162CC467757922F7029C3AD /* top_btn_close_pr@3x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		73B3B3E5DC1E757E3BF9C9E1A8894443 /* Headers */ = {
+		4BE56ED29B3EDBC672C2E79B2493909B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEE135D68F3A9746CA8771D8B71139D /* Pods-YesplanVIP-umbrella.h in Headers */,
+				36E7EC1068A8FB75E8AB8C783CCBF257 /* YYCalendar-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B9EC0C6234BB1E860DF74C77A4C9F9E /* Headers */ = {
+		544CC0B67376CD04A76B55FA8974F38B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B927154EFB6B4971F377065041FA2B4D /* ALView+PureLayout.h in Headers */,
-				BD5E680B752C0DB733BC13DE4B152A4A /* NSArray+PureLayout.h in Headers */,
-				8D41A30D6C48830FD6CE0E93F1BF26E4 /* NSLayoutConstraint+PureLayout.h in Headers */,
-				785BFC85B943B5040CD8D856730366FA /* PureLayout+Internal.h in Headers */,
-				D3B0CC356BDF4D030F7DFC23AA3634F5 /* PureLayout-umbrella.h in Headers */,
-				A0CF15689F14523E55BFD3CF99171986 /* PureLayout.h in Headers */,
-				BC0BEED49757BEC2D1D1895830F82774 /* PureLayoutDefines.h in Headers */,
+				EE3903AC92477CAE5D7295E0C04082C0 /* ALView+PureLayout.h in Headers */,
+				3FEA79AB938D263EDD0576109321847D /* NSArray+PureLayout.h in Headers */,
+				516464DB7004848131A1A280E725BB30 /* NSLayoutConstraint+PureLayout.h in Headers */,
+				C083E0C1A52728A974A958C249DFBFCC /* PureLayout+Internal.h in Headers */,
+				D64335AFA176E95D8A1892337EDB9819 /* PureLayout-umbrella.h in Headers */,
+				29F477B426E97AC81C2D867965814EE7 /* PureLayout.h in Headers */,
+				CE4A4613E048E61DCDEB6B4C6AA5487E /* PureLayoutDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADDAA9F817160F07BB8C941D1443DC42 /* Headers */ = {
+		93A5BEDDEC758E4BE88C1EBB6D303DA0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DC5F40CEC77315AF931777F63442214 /* MDatePickerView-umbrella.h in Headers */,
-				0E50B4DF30EF18830F67467F6F81A7AA /* MDatePickerView.h in Headers */,
+				D2C11DF548577228E619AAFEAD503619 /* Pods-YesplanVIP-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B29511F8217BB98BF3D078CFE0580C85 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E7EACC7AE26C972020DAE68654BD89 /* MDatePickerView-umbrella.h in Headers */,
+				FA96585FA2EBE8E4AD3AAAAA4BA64284 /* MDatePickerView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF1341612062AD7D6B14C512BDE3C1D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B074278E2C8D9D0F8DF5EA159DE404 /* KDCalendar-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4C14801E16A76DBA60763D9819C8C695 /* PureLayout */ = {
+		06F5CDD6235E25837519792853B145A1 /* PureLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A17CBC4963D59A441D0730D84422A9EF /* Build configuration list for PBXNativeTarget "PureLayout" */;
+			buildConfigurationList = 97C7148CC41A8E2AE2997FBA410BDDCE /* Build configuration list for PBXNativeTarget "PureLayout" */;
 			buildPhases = (
-				9B9EC0C6234BB1E860DF74C77A4C9F9E /* Headers */,
-				9ADDE78FA3C99445795DC7CBD7C89BFC /* Sources */,
-				61E5698FCDECFE42C35484B5A7752959 /* Frameworks */,
-				25C6304A0D3715900AC0A3DD18940DFF /* Resources */,
+				544CC0B67376CD04A76B55FA8974F38B /* Headers */,
+				D40A35B0FE6C420CD6BD3A6FD6C3DE47 /* Sources */,
+				0D428E24A60F2BB44F1E7F156C585784 /* Frameworks */,
+				693D6118C8EA30DA148B4891A30AFD5E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -303,15 +529,73 @@
 			);
 			name = PureLayout;
 			productName = PureLayout;
-			productReference = 40D5C5E1444A79D41921DDC956184A74 /* PureLayout.framework */;
+			productReference = E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7055D7D499B2400C6CA67BC45778F32E /* MDatePickerView */ = {
+		7BB7A4D260FDCE05D3AB31199589BBE5 /* KDCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 133E3A108C9BDF1298CFC9C4829118C5 /* Build configuration list for PBXNativeTarget "KDCalendar" */;
+			buildPhases = (
+				CF1341612062AD7D6B14C512BDE3C1D6 /* Headers */,
+				31131560C2DC70A2A6AF0C6D0C558845 /* Sources */,
+				50AD8B5FC883A5DE3189AB3A85E7CFF1 /* Frameworks */,
+				2DD67CB14B0EC1006EC23D338DACCDAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KDCalendar;
+			productName = KDCalendar;
+			productReference = 75DE6E87A0520EAC27562FCAD1B75052 /* KDCalendar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AC4A02B9369A44C4A65C39E1820BD8B9 /* Pods-YesplanVIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0492220794297739E89FC2385210F7DE /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */;
+			buildPhases = (
+				93A5BEDDEC758E4BE88C1EBB6D303DA0 /* Headers */,
+				33B67D35FD61C6609E914F16220DF8B0 /* Sources */,
+				91A1A1067E322E8C01CF7EE10E17BFF2 /* Frameworks */,
+				1696C6DAE8E49ED24C9B026E1B30E200 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				267EFDAD9C5FDD2E245A37F76597729D /* PBXTargetDependency */,
+				9E04DF26B6B58C6114BEEE975E3CA472 /* PBXTargetDependency */,
+				6C146E6A74FE7AF1A7C219609D625A9E /* PBXTargetDependency */,
+				53AFB687AD46D92DAD96538179976E12 /* PBXTargetDependency */,
+			);
+			name = "Pods-YesplanVIP";
+			productName = "Pods-YesplanVIP";
+			productReference = 50F89A0810788A991C7F0ABBBE73D5AE /* Pods_YesplanVIP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D87692C79C9F80E864A21E2BE2E9628C /* YYCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45317498A1E860B7B338F5303F3CDA56 /* Build configuration list for PBXNativeTarget "YYCalendar" */;
+			buildPhases = (
+				4BE56ED29B3EDBC672C2E79B2493909B /* Headers */,
+				5333BF26D6357C5025DB5AE52BBCC1A0 /* Sources */,
+				60FAD0DB883D0A6036A81D4F18CC42A3 /* Frameworks */,
+				BAF760D0103FB77AAA10D2CEC9C7EDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YYCalendar;
+			productName = YYCalendar;
+			productReference = A66F46B2B756E5A351C7DBD59098622D /* YYCalendar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ECF030B04A631ADB65190BABE8925EC5 /* MDatePickerView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58D33C18FD1FB009549D2EB7F866DC5C /* Build configuration list for PBXNativeTarget "MDatePickerView" */;
 			buildPhases = (
-				ADDAA9F817160F07BB8C941D1443DC42 /* Headers */,
-				5854926ACDFF230C366392764E36692F /* Sources */,
+				B29511F8217BB98BF3D078CFE0580C85 /* Headers */,
+				E1621C20B41A9933A03472FBA3294FEC /* Sources */,
 				D89FAB392FECEAC041BF2ED782F65EBD /* Frameworks */,
 				6EB100C9835247D2412F9D3D3B1F8ED8 /* Resources */,
 			);
@@ -321,27 +605,7 @@
 			);
 			name = MDatePickerView;
 			productName = MDatePickerView;
-			productReference = C6750FFFA64132EF3B5AB9598AAA2B42 /* MDatePickerView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		ABD02FD529589CDEADCB8F92CF195B77 /* Pods-YesplanVIP */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF5993E5EE5D6635158815893AD90677 /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */;
-			buildPhases = (
-				73B3B3E5DC1E757E3BF9C9E1A8894443 /* Headers */,
-				9FAD73DEC5D47179E95915B68DB1C77C /* Sources */,
-				365607DE8B46BBB7CB239B2A7E9A376D /* Frameworks */,
-				08C359121F55DC8A83B4D6F13484E649 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ADB40C33D80A1F6B37C23754FCF034ED /* PBXTargetDependency */,
-				0671DA2E60CCE6719923CBDC590902EC /* PBXTargetDependency */,
-			);
-			name = "Pods-YesplanVIP";
-			productName = "Pods-YesplanVIP";
-			productReference = C949B62CF0D5B216CCB8C9FAD4891684 /* Pods_YesplanVIP.framework */;
+			productReference = 84B843FF6CF907B9F0350B5BB4C86A0F /* MDatePickerView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -362,26 +626,35 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 63CDF08146C3234B1067AC2B5C9C6505 /* Products */;
+			productRefGroup = 32E6CCA918B71292ABF2C82E5C17BAC3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7055D7D499B2400C6CA67BC45778F32E /* MDatePickerView */,
-				ABD02FD529589CDEADCB8F92CF195B77 /* Pods-YesplanVIP */,
-				4C14801E16A76DBA60763D9819C8C695 /* PureLayout */,
+				7BB7A4D260FDCE05D3AB31199589BBE5 /* KDCalendar */,
+				ECF030B04A631ADB65190BABE8925EC5 /* MDatePickerView */,
+				AC4A02B9369A44C4A65C39E1820BD8B9 /* Pods-YesplanVIP */,
+				06F5CDD6235E25837519792853B145A1 /* PureLayout */,
+				D87692C79C9F80E864A21E2BE2E9628C /* YYCalendar */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		08C359121F55DC8A83B4D6F13484E649 /* Resources */ = {
+		1696C6DAE8E49ED24C9B026E1B30E200 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25C6304A0D3715900AC0A3DD18940DFF /* Resources */ = {
+		2DD67CB14B0EC1006EC23D338DACCDAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		693D6118C8EA30DA148B4891A30AFD5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,61 +668,164 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BAF760D0103FB77AAA10D2CEC9C7EDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BC6A9CC4D7D4C05D632CFED38BD464 /* calendar_next@2x.png in Resources */,
+				C0755186A58D51E66D2E89092AD1BFEC /* calendar_next@3x.png in Resources */,
+				FDE0D58858D1F74F2BB3EE49E84D1703 /* calendar_next_pr@2x.png in Resources */,
+				2FFD9BA6F8CAF1AEA65FAB6F621CEAB3 /* calendar_next_pr@3x.png in Resources */,
+				14EAF6C08C5D30284FF91C50BF419F64 /* calendar_prev@2x.png in Resources */,
+				4F1FB9AEEE07E1F59564B151729FD031 /* calendar_prev@3x.png in Resources */,
+				18F8B84D7CC3299F3DA72D53DD32E216 /* calendar_prev_pr@2x.png in Resources */,
+				9AB6E130BA790CA0CFFF3E48C5AD17E9 /* calendar_prev_pr@3x.png in Resources */,
+				4045C989802E6898F645FC18EF6B7E3A /* today_icon@2x.png in Resources */,
+				7A259A75E992348A11DFA2B17D7DB52A /* today_icon@3x.png in Resources */,
+				00D3D2CB631EE87DFE8D3E07BA5B3525 /* top_btn_close@2x.png in Resources */,
+				68341106738C750A7F15B1242F698009 /* top_btn_close@3x.png in Resources */,
+				119333F7A2344A8BB8233DEFA2A87131 /* top_btn_close_pr@2x.png in Resources */,
+				011684433E937AA8196581D5C96796BB /* top_btn_close_pr@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		5854926ACDFF230C366392764E36692F /* Sources */ = {
+		31131560C2DC70A2A6AF0C6D0C558845 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				834B58AC9695C9A97EC666C74402500D /* ColCell.swift in Sources */,
-				2291CA82FBCA3DBD1CD46B498A8EC00C /* ColDateCell.swift in Sources */,
-				A1FB820BECF577A1A7FA790BD6EABBD7 /* FlatCardCollectionViewLayout.swift in Sources */,
-				3D22C39AE2232E464713FD29C934B77E /* MDatePickerView-dummy.m in Sources */,
-				271C3685A9C6E32000D9C4F652EAAEDC /* MDatePickerView.swift in Sources */,
+				98A56A86BE0A1C7F74E5C8D649E8EEAB /* CalendarDayCell.swift in Sources */,
+				FC5CE0F9931E76FE38E6E301EC19210B /* CalendarFlowLayout.swift in Sources */,
+				80E68C5951775453B15FC528CCEA6F62 /* CalendarHeaderView.swift in Sources */,
+				200C954F8B8D72CFDA5F67744DF2FEF7 /* CalendarView+DataSource.swift in Sources */,
+				62D585D67B3934FF26F22F19578CADB6 /* CalendarView+Delegate.swift in Sources */,
+				41CFAD8021D2C70F1C97453A612518FD /* CalendarView+Extensions.swift in Sources */,
+				5D9C3B29FA6E5E5E4B5D05A4B8F42F09 /* CalendarView+Style.swift in Sources */,
+				C8CC098B3CF1478B08137AD23E184E9A /* CalendarView.swift in Sources */,
+				F78E87825E57CBAFCFA72198670FE83B /* EventsManager.swift in Sources */,
+				3F32413FD2F2D30C857511C7ABBF5DE4 /* KDCalendar-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9ADDE78FA3C99445795DC7CBD7C89BFC /* Sources */ = {
+		33B67D35FD61C6609E914F16220DF8B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1B762AFF1E7CB69198761DA6DC6362 /* ALView+PureLayout.m in Sources */,
-				61B2B05C224DDCB0C74D604432C37ED9 /* NSArray+PureLayout.m in Sources */,
-				AD6F501FB949E3790D15D560F14DA7AA /* NSLayoutConstraint+PureLayout.m in Sources */,
-				951EF0BA78F1D5377AFBBAD353E105EB /* PureLayout-dummy.m in Sources */,
+				8C142F3AA1A1CC81034C33AF25F17629 /* Pods-YesplanVIP-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9FAD73DEC5D47179E95915B68DB1C77C /* Sources */ = {
+		5333BF26D6357C5025DB5AE52BBCC1A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AD785295AB85EC65F818D02F29825B8 /* Pods-YesplanVIP-dummy.m in Sources */,
+				2CC128A647CF3F2BDC09C018A9298080 /* Constants.swift in Sources */,
+				B5ACE5F3B77C3D13CC50486AC2F9E3FC /* DayButton.swift in Sources */,
+				87B421D22F8DEF852B16EE6C257987E8 /* Image.swift in Sources */,
+				367D95B373E2DB3E4C433BE0BB0DAFE8 /* LimitedCalendar.swift in Sources */,
+				41E11C707BD983D284F9A0473B5BB1F7 /* NormalCalendar.swift in Sources */,
+				89DF43A8E14F43BA85845486848E66D4 /* Useful.swift in Sources */,
+				FCF61368DC215E4BDDB3B18428A70D22 /* YYCalendar-dummy.m in Sources */,
+				6923E5A849A397C0B3381BF4FBA3D31F /* YYCalendar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D40A35B0FE6C420CD6BD3A6FD6C3DE47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90E11860B6F9BDC73E00A1AF0116A0BA /* ALView+PureLayout.m in Sources */,
+				AE028A669BDCC596930B9CD7B34C231D /* NSArray+PureLayout.m in Sources */,
+				DBF45D59546F58E4F8118B65DBC9B0F4 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				CAEF5A694258EA759B5AC90CBEB72CCC /* PureLayout-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1621C20B41A9933A03472FBA3294FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1EFEFD1AFB2C7751F7BA786E78A4047 /* ColCell.swift in Sources */,
+				126DFC8A559C9E66E16C6587E4A58EBC /* ColDateCell.swift in Sources */,
+				DB285E990754DEC949B350A700FF5AB5 /* FlatCardCollectionViewLayout.swift in Sources */,
+				31B7C2E01A6CA4F9865301F35BB658BB /* MDatePickerView-dummy.m in Sources */,
+				B85C189FBED26C06783DA6CFEAF554DE /* MDatePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0671DA2E60CCE6719923CBDC590902EC /* PBXTargetDependency */ = {
+		267EFDAD9C5FDD2E245A37F76597729D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KDCalendar;
+			target = 7BB7A4D260FDCE05D3AB31199589BBE5 /* KDCalendar */;
+			targetProxy = B05503B86A05A7F5742262A29BB49EDB /* PBXContainerItemProxy */;
+		};
+		53AFB687AD46D92DAD96538179976E12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YYCalendar;
+			target = D87692C79C9F80E864A21E2BE2E9628C /* YYCalendar */;
+			targetProxy = 980A391FD25F5B3BE710284EB138ECD1 /* PBXContainerItemProxy */;
+		};
+		6C146E6A74FE7AF1A7C219609D625A9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PureLayout;
-			target = 4C14801E16A76DBA60763D9819C8C695 /* PureLayout */;
-			targetProxy = C5BABEB8EEE8ABD10F7AF8104C4C2616 /* PBXContainerItemProxy */;
+			target = 06F5CDD6235E25837519792853B145A1 /* PureLayout */;
+			targetProxy = 61691EA2081770D4F6D98B66BD91BB4C /* PBXContainerItemProxy */;
 		};
-		ADB40C33D80A1F6B37C23754FCF034ED /* PBXTargetDependency */ = {
+		9E04DF26B6B58C6114BEEE975E3CA472 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MDatePickerView;
-			target = 7055D7D499B2400C6CA67BC45778F32E /* MDatePickerView */;
-			targetProxy = DE6904D462B160A1F1BFE71D05F9258E /* PBXContainerItemProxy */;
+			target = ECF030B04A631ADB65190BABE8925EC5 /* MDatePickerView */;
+			targetProxy = 18DD2DF22ECDA9E4E2D1B688F6C6EF9F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0889BE0F3F4C331C28020154566CD4B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FEBFFE8A1F3D6309102302D726511CF /* Pods-YesplanVIP.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		190C1034B9D96C7CD869C8ADD3D742FF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */;
+			baseConfigurationReference = 34BFDA40C69BAA48749D1C87CCD8FEEA /* MDatePickerView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -547,44 +923,9 @@
 			};
 			name = Debug;
 		};
-		5783D99CBB60CA6C8F07ADC1483F0071 /* Debug */ = {
+		32D98F1D06346F32921C26C88172C0F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A113D191F66C81E7EB2090629149AC45 /* MDatePickerView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MDatePickerView/MDatePickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MDatePickerView/MDatePickerView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/MDatePickerView/MDatePickerView.modulemap";
-				PRODUCT_MODULE_NAME = MDatePickerView;
-				PRODUCT_NAME = MDatePickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A1F1785CAC6CA7A6F6C6E9CDCF6C7041 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D83B7F252F98EADF8DB24BC49E40EF30 /* Pods-YesplanVIP.release.xcconfig */;
+			baseConfigurationReference = CD9F0E4C6FBDE60F59915FB32BA7A81D /* Pods-YesplanVIP.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -620,6 +961,146 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		5783D99CBB60CA6C8F07ADC1483F0071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34BFDA40C69BAA48749D1C87CCD8FEEA /* MDatePickerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MDatePickerView/MDatePickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDatePickerView/MDatePickerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MDatePickerView/MDatePickerView.modulemap";
+				PRODUCT_MODULE_NAME = MDatePickerView;
+				PRODUCT_NAME = MDatePickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6E81FC164009D20402ED16D64D34969F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6404D5EB611EE2D85617269FA9B62304 /* PureLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				PRODUCT_MODULE_NAME = PureLayout;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B1F12A2E1AFF5E58C70F3669E787655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6404D5EB611EE2D85617269FA9B62304 /* PureLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
+				PRODUCT_MODULE_NAME = PureLayout;
+				PRODUCT_NAME = PureLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFAEA89AE8A8CF3FAA8863ED28E889DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F15A1674DBCD9B7C844BE7EA7640E297 /* KDCalendar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KDCalendar/KDCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KDCalendar/KDCalendar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KDCalendar/KDCalendar.modulemap";
+				PRODUCT_MODULE_NAME = KDCalendar;
+				PRODUCT_NAME = KDCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -681,9 +1162,9 @@
 			};
 			name = Release;
 		};
-		C4181A720699A74E8EA0E15FD82D40F1 /* Release */ = {
+		B09B40155C7362D617007194DA60E87B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */;
+			baseConfigurationReference = F15A1674DBCD9B7C844BE7EA7640E297 /* KDCalendar.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -694,8 +1175,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/KDCalendar/KDCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KDCalendar/KDCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -703,9 +1184,45 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
-				PRODUCT_MODULE_NAME = PureLayout;
-				PRODUCT_NAME = PureLayout;
+				MODULEMAP_FILE = "Target Support Files/KDCalendar/KDCalendar.modulemap";
+				PRODUCT_MODULE_NAME = KDCalendar;
+				PRODUCT_NAME = KDCalendar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BCB5EC3B873985821FCD8FEEF503D404 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4EDB27E8DA70C3571A3FCF76066E12 /* YYCalendar.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YYCalendar/YYCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYCalendar/YYCalendar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/YYCalendar/YYCalendar.modulemap";
+				PRODUCT_MODULE_NAME = YYCalendar;
+				PRODUCT_NAME = YYCalendar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -717,11 +1234,10 @@
 			};
 			name = Release;
 		};
-		DEE24F50600EE958DA7951536368B308 /* Debug */ = {
+		ECA075DA1F5CF93A6C364BD7AB080155 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52D77FD83430DF1A4828D52701602C2C /* Pods-YesplanVIP.debug.xcconfig */;
+			baseConfigurationReference = 5A4EDB27E8DA70C3571A3FCF76066E12 /* YYCalendar.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -732,7 +1248,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/YYCalendar/YYCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YYCalendar/YYCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -740,46 +1257,9 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-YesplanVIP/Pods-YesplanVIP.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F4A11FA9C4DC0FB249E74FA0F4D39CF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99A020C37D11DD681426267B4825B51A /* PureLayout.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PureLayout/PureLayout-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PureLayout/PureLayout-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PureLayout/PureLayout.modulemap";
-				PRODUCT_MODULE_NAME = PureLayout;
-				PRODUCT_NAME = PureLayout;
+				MODULEMAP_FILE = "Target Support Files/YYCalendar/YYCalendar.modulemap";
+				PRODUCT_MODULE_NAME = YYCalendar;
+				PRODUCT_NAME = YYCalendar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -793,6 +1273,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0492220794297739E89FC2385210F7DE /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0889BE0F3F4C331C28020154566CD4B6 /* Debug */,
+				32D98F1D06346F32921C26C88172C0F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		133E3A108C9BDF1298CFC9C4829118C5 /* Build configuration list for PBXNativeTarget "KDCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFAEA89AE8A8CF3FAA8863ED28E889DD /* Debug */,
+				B09B40155C7362D617007194DA60E87B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45317498A1E860B7B338F5303F3CDA56 /* Build configuration list for PBXNativeTarget "YYCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECA075DA1F5CF93A6C364BD7AB080155 /* Debug */,
+				BCB5EC3B873985821FCD8FEEF503D404 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -811,20 +1318,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A17CBC4963D59A441D0730D84422A9EF /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
+		97C7148CC41A8E2AE2997FBA410BDDCE /* Build configuration list for PBXNativeTarget "PureLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4A11FA9C4DC0FB249E74FA0F4D39CF0 /* Debug */,
-				C4181A720699A74E8EA0E15FD82D40F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF5993E5EE5D6635158815893AD90677 /* Build configuration list for PBXNativeTarget "Pods-YesplanVIP" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DEE24F50600EE958DA7951536368B308 /* Debug */,
-				A1F1785CAC6CA7A6F6C6E9CDCF6C7041 /* Release */,
+				9B1F12A2E1AFF5E58C70F3669E787655 /* Debug */,
+				6E81FC164009D20402ED16D64D34969F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

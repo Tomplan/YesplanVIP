@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ABD02FD529589CDEADCB8F92CF195B77"
+               BlueprintIdentifier = "AC4A02B9369A44C4A65C39E1820BD8B9"
                BuildableName = "Pods_YesplanVIP.framework"
                BlueprintName = "Pods-YesplanVIP"
                ReferencedContainer = "container:Pods.xcodeproj">

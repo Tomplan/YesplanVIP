@@ -5,6 +5,7 @@ target 'YesplanVIP' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
+pod 'YYCalendar'
 pod 'KDCalendar', '~> 1.8.9'
 pod 'MDatePickerView', '~> 1.2.2'
 # pod 'ws'
