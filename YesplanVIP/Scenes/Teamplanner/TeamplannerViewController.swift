@@ -210,15 +210,37 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         formatter.dateFormat = "yyyy-MM-dd"
         
         let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "\(formatter.string(from: Date()))", format: "yyyy-MM-dd") { (date) in
-            
-//            print(formatter.date(from:date))
-//            self.selectedDateLabel.text = date
+            print("return: ", date)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            self.datePicker.date = formatter.date(from: date) ?? Date()
+//            self.datePicker.date = date
+                self.doSomething()
         }
         
-//        calendar.firstWeekDay = 6
-        calendar.saturdayColor = UIColor.red
-        calendar.sundayColor = UIColor.red
+//        calendar.firstWeekDay = 
         calendar.dayButtonStyle = .circle
+        calendar.dimmedBackgroundColor = UIColor.black
+        calendar.dimmedBackgroundAlpha = 0.7
+        calendar.headerViewBackgroundColor = UIColor.black
+//        rgba(0, 0, 0, 0.45)
+        calendar.bodyViewBackgroundColor = UIColor.black
+//        rgba(21, 21, 21, 0.98)
+        calendar.sundayColor = UIColor.red
+//        calendar.disabledSundayColor = UIColor.blue
+        calendar.saturdayColor = UIColor.red
+//        calendar.disabledSaturdayColor = UIColor.green
+        calendar.defaultDayColor = UIColor(red: 120, green: 120, blue: 120, alpha: 0.1)
+//        rgba(120, 120, 120, 0.1)
+//        calendar.disabledDefaultDayColor = UIColor
+        calendar.lineSeparatorColor = UIColor.lightGray
+        calendar.selectedDayColor = UIColor.blue
+        calendar.headerLabelFont = UIFont(name: "Helvetica", size: 24.0)!
+        calendar.headerLabelBackgroundColor = UIColor.black
+        calendar.headerLabelTextColor = UIColor.lightGray
+
+        calendar.weekLabelFont = UIFont(name: "Helvetica", size: 16.0)!
+        calendar.dayLabelFont = UIFont(name: "Helvetica", size: 16.0)!
         calendar.show()
         
 //        let cal = Calendar(identifier: .gregorian)
