@@ -5,7 +5,7 @@
 ////  Created by Techcc - FOH - Video on 13/08/18.
 ////  Copyright © 2018 Yesplan. All rights reserved.
 //// https://dewerft.yesplan.be/api/events?api_key=C857C01360BB5777DABE5B7EE6594CD1"
-//// cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/*Tom
+//// cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/*Tom/YesplanVip
 //// dewerft.yesplan.be
 //// C857C01360BB5777DABE5B7EE6594CD1
 /// 202F1E32BFF1441C3107CEF18CE41E78

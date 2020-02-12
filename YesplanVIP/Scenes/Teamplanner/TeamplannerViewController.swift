@@ -13,36 +13,18 @@
 import UIKit
 import SwiftUI
 import MDatePickerView
-import SwiftUI
 import YYCalendar
+import Network
 
 protocol TeamplannerTabDisplayLogic: class
 {
   func displaySomething(viewModel: TeamplannerTab.Something.ViewModel)
 }
 
-class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, TeamplannerTabDisplayLogic
+class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, TeamplannerTabDisplayLogic,  NetworkCheckObserver
 {
-    lazy var MDate : MDatePickerView = {
-           let mdate = MDatePickerView()
-               mdate.delegate = self
-           mdate.Color = UIColor.darkGray
-           mdate.translatesAutoresizingMaskIntoConstraints = false
-           return mdate
-          }()
+   var networkCheck = NetworkCheck.sharedInstance()
 
-       let Today : UIButton = {
-           let but = UIButton(type:.system)
-           but.tintColor = UIColor.white
-           but.setTitle("ToDay", for: .normal)
-           but.addTarget(self, action: #selector(today), for: .touchUpInside)
-           but.translatesAutoresizingMaskIntoConstraints = false
-           return but
-       }()
-
-       @objc func today() {
-           MDate.selectDate = Date()
-       }
        
        
        var datePicker : UIDatePicker = UIDatePicker()
@@ -101,6 +83,17 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
   {
     super.viewDidLoad()
 
+    // Check Network
+    if networkCheck.currentStatus == .satisfied{
+                   //Do something
+        print("Network OK")
+               }else{
+        print("Network NOT OK")
+        
+//        YesplanAlert.ShowAlert(title: "Warning", message: "The Internet is not available", in: self)
+        }
+               networkCheck.addObserver(observer: self)
+    
     //Swipe Gestures
     let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
     let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
@@ -111,6 +104,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     self.view.addGestureRecognizer(leftSwipe)
     self.view.addGestureRecognizer(rightSwipe)
     
+    // NavigationBarButtons:
     // Yesplan Prefs Button
     let yesplanPrefsButton = UIButton(type: .system)
     yesplanPrefsButton.addTarget(self, action: #selector(yesplanPrefs), for: .touchUpInside)
@@ -185,20 +179,49 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         NotificationCenter.default.removeObserver(self)
     }
     
+    // @objc functions:
+
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+          
+          if (sender.direction == .left) {
+              calendarDayPlus()
+          }
+              
+          if (sender.direction == .right) {
+              calendarDayMinus()
+          }
+      }
+    
     @objc func userDefaultsDidChange(){
         doSomething()
     }
-
-  @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
-          
-      if (sender.direction == .left) {
-          calendarDayPlus()
-      }
-          
-      if (sender.direction == .right) {
-          calendarDayMinus()
-      }
-  }
+    
+    @objc func yesplanPrefs(sender: AnyObject) {
+    if let url = URL(string:UIApplication.openSettingsURLString) {
+    if UIApplication.shared.canOpenURL(url) {
+                _ =   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
+    @objc func calendarLeft(sender: AnyObject) {
+           calendarDayMinus()
+       }
+       
+       func calendarDayMinus() {
+           datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
+           doSomething()
+       }
+       
+       @objc func calendarRight(sender: AnyObject) {
+           calendarDayPlus()
+       }
+       
+       func calendarDayPlus() {
+           datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
+           doSomething()
+           self.datePicker.removeFromSuperview()
+       }
     
     @objc func showCalendar(_ sender: UIButton) {
         let formatter = DateFormatter()
@@ -230,48 +253,35 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         calendar.show()
     }
      
-    @objc func yesplanPrefs(sender: AnyObject) {
-        if let url = URL(string:UIApplication.openSettingsURLString) {
-        if UIApplication.shared.canOpenURL(url) {
-                    _ =   UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                }
-            }
-        }
+    
     //    @State private var wakeUp = Date() // Only from iOS13.0
-        // Datepicker:
-    
-    @objc func calendarLeft(sender: AnyObject) {
-        calendarDayMinus()
-    }
-    
-    func calendarDayMinus() {
-        datePicker.date = Calendar.current.date(byAdding: .day, value: -7, to: datePicker.date)!
-
-        doSomething()
-        self.MDate.removeFromSuperview()
-        self.toolBar.removeFromSuperview()
-    }
-    
-    @objc func calendarRight(sender: AnyObject) {
-        calendarDayPlus()
-    }
-    
-    func calendarDayPlus() {
-        
-        datePicker.date = Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!
-        doSomething()
-        self.MDate.removeFromSuperview()
-        self.toolBar.removeFromSuperview()
-    }
   
     @objc private func refresh() {
         doSomething()
     }
     
-   func doSomething() {
-     
-     
-     
+    func statusDidChange(status: NWPath.Status) {
+        if status == .satisfied {
+            //Do something
+            print("Network Changed OK")
+        }else if status == .unsatisfied {
+            //Show no network alert
+//            showNetworkAlert()
+            
+            print("Network Changed NOT OK")
+
+        }
+    }
+    
+    func showNetworkAlert() {
+            let alert = UIAlertController(title: "Warning", message: "The Internet is not available", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+    }
+    
+   private func doSomething() {
+   
      let request = TeamplannerTab.Something.Request(
          startdate: datePicker.date,
          enddate:  Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!
@@ -286,8 +296,8 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     
     if viewModel.error != nil {
     let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
+    alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+    alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
             self.doSomething()
         }))
     self.present(alert, animated: true)

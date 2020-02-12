@@ -36,6 +36,10 @@ class EventsTabPresenter: EventsTabPresentationLogic
         error: response.error
         )
         viewController?.displaySomething(viewModel: viewModel)
+//        viewController?.popupAlert(title: "Warning", message: "Internet Connection Changed!", actionTitles: ["Dismiss", "Retry Connection"], actions: [
+//        {action1 in
+//            viewController?.networkCheck.addObserver(observer: viewController?)
+//        }])
     }
     else {
     for (key, value) in response.events {

@@ -15,41 +15,23 @@ import PromiseKit
 import SwiftUI
 import MDatePickerView
 import YYCalendar
+import Network
 
 protocol EventsTabDisplayLogic: class
 {
   func displaySomething(viewModel: EventsTab.Something.ViewModel)
 }
 
-class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, EventsTabDisplayLogic
+class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, EventsTabDisplayLogic, NetworkCheckObserver
 {
-     lazy var MDate : MDatePickerView = {
-        let mdate = MDatePickerView()
-            mdate.delegate = self
-        mdate.Color = UIColor.darkGray
-        mdate.translatesAutoresizingMaskIntoConstraints = false
-        return mdate
-       }()
+    var networkCheck = NetworkCheck.sharedInstance()
     
-    private var embedController: EmbedController?
-    
-    let Today : UIButton = {
-        let but = UIButton(type:.system)
-        but.tintColor = UIColor.white
-        but.setTitle("ToDay", for: .normal)
-        but.addTarget(self, action: #selector(today), for: .touchUpInside)
-        but.translatesAutoresizingMaskIntoConstraints = false
-        return but
-    }()
-    
-    @objc func today() {
-        MDate.selectDate = Date()
-    }
-    
+//    private var embedController: EmbedController?
+
     // *************
-    
-    @IBOutlet weak var calendarView: CalendarView!
-    @IBOutlet weak var caldatePicker: UIDatePicker!
+//
+//    @IBOutlet weak var calendarView: CalendarView!
+//    @IBOutlet weak var caldatePicker: UIDatePicker!
        
     
     // **************
@@ -115,6 +97,21 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Check Network
+        if networkCheck.currentStatus == .satisfied{
+                       //Do something
+            print("Network OK")
+            networkCheck.addObserver(observer: self)
+        } else {
+            popupAlert(title: "Warning", message: "The Internet is not available", actionTitles: ["Dismiss", "Retry Connection"], actions: [
+                {action1 in
+                    self.networkCheck.addObserver(observer: self)
+                },
+                {action2 in
+                self.doSomething()}])
+            
+        }
         
         //Swipe Gestures
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
@@ -235,8 +232,6 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     func calendarDayMinus() {
         datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
         doSomething()
-        self.MDate.removeFromSuperview()
-        self.toolBar.removeFromSuperview()
     }
     
     @objc func calendarRight(sender: AnyObject) {
@@ -247,8 +242,6 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
         doSomething()
         self.datePicker.removeFromSuperview()
-        self.MDate.removeFromSuperview()
-        self.toolBar.removeFromSuperview()
     }
     
     @objc func showCalendar(_ sender: UIButton) {
@@ -256,7 +249,6 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
            formatter.dateFormat = "yyyy-MM-dd"
            
            let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "\(formatter.string(from: Date()))", format: "yyyy-MM-dd") { (date) in
-               print("return: ", date)
                let formatter = DateFormatter()
                formatter.dateFormat = "yyyy-MM-dd"
                self.datePicker.date = formatter.date(from: date) ?? Date()
@@ -285,39 +277,100 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         doSomething()
     }
     
-    // MARK: Do something
+    func statusDidChange(status: NWPath.Status) {
+        if status == .satisfied{
+            print("status: ", status)
+                       //Do something
+            print("statusDidChange.Satisfied")
+            popupAlert(title: "Internet Connection!", message: "You're Online!", actionTitles: ["OK", ], actions: [nil
+//            {action1 in
+////                self.networkCheck.removeObserver(observer: self)
+////
+////                self.networkCheck.addObserver(observer: self)
+//            }
+            ])
+        }else if status == .unsatisfied {
+            print("statusDidChange.Unsatisfied")
+            print("status: ", status)
+
+            networkCheck = NetworkCheck.sharedInstance()
+            popupAlert(title: "Warning", message: "You're Offline!", actionTitles: ["Dismiss", "Retry Connection"], actions: [nil, nil
+//                {action1 in
+////                    self.networkCheck.removeObserver(observer: self)
+////                    self.networkCheck.addObserver(observer: self)
+//                },
+//                {action2 in
+//                self.networkCheck.removeObserver(observer: self)
+//                self.doSomething()}
+            ])
+            
+        }
+    }    
+//  private func doSomething() {
+//
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "dd-MM-yyyy"
+//
+//    let request = EventsTab.Something.Request(
+//        startdate: "\(formatter.string(from: datePicker.date))",
+//        enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 0, to: datePicker.date)!))"
+//    )
+//    interactor?.doSomething(request: request)
+//  }
 
 
-    
-  func doSomething() {
-    
-    let formatter = DateFormatter()
-    formatter.dateFormat = "dd-MM-yyyy"
-    
-    let request = EventsTab.Something.Request(
-        startdate: "\(formatter.string(from: datePicker.date))",
-        enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 0, to: datePicker.date)!))"
-    )
-    interactor?.doSomething(request: request)
-  }
-  
-    
   func displaySomething(viewModel: EventsTab.Something.ViewModel ) {
     displayedEvents = viewModel.displayedEvents
     displayedProfiles = viewModel.displayedProfiles
     displayedStatuses = viewModel.displayedStatuses
-    
+
     if viewModel.error != nil {
+        
+        
     let alert = UIAlertController(title: "Alert", message: "\(viewModel.error!)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
+    alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+    alert.addAction(UIAlertAction(title: "Retry", style: .cancel, handler: { action in
             self.doSomething()
         }))
     self.present(alert, animated: true)
     }
-    
+
     self.v.collectionView.reloadData()
     self.v.refreshControl.endRefreshing()
   }
 }
 
+extension EventsTabViewController {
+    
+    // Get YesplanEvents
+    private func doSomething() {
+      // Check Network
+//    self.networkCheck = NetworkCheck.sharedInstance()
+//      if networkCheck.currentStatus == .satisfied{
+          let formatter = DateFormatter()
+          formatter.dateFormat = "dd-MM-yyyy"
+          
+          let request = EventsTab.Something.Request(
+              startdate: "\(formatter.string(from: datePicker.date))",
+              enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 0, to: datePicker.date)!))"
+          )
+          interactor?.doSomething(request: request)
+//      } else {
+//          popupAlert(title: "Warning", message: "The Internet is not available", actionTitles: ["Dismiss", "Retry Connection"], actions: [nil, {action2 in
+//            self.networkCheck.removeObserver(observer: self)
+//            self.doSomething()}])
+//
+//      }
+//      networkCheck.addObserver(observer: self)
+//      let formatter = DateFormatter()
+//      formatter.dateFormat = "dd-MM-yyyy"
+//
+//      let request = EventsTab.Something.Request(
+//          startdate: "\(formatter.string(from: datePicker.date))",
+//          enddate: "\(formatter.string(from: Calendar.current.date(byAdding: .day, value: 0, to: datePicker.date)!))"
+//      )
+//      interactor?.doSomething(request: request)
+    }
+    
+
+}
