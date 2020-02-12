@@ -14,6 +14,7 @@ import UIKit
 import PromiseKit
 import SwiftUI
 import MDatePickerView
+import YYCalendar
 
 protocol EventsTabDisplayLogic: class
 {
@@ -152,7 +153,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         
         // CalendarButton
         let calendarButton = UIButton(type: .system)
-        calendarButton.addTarget(self, action: #selector(calendar), for: .touchUpInside)
+        calendarButton.addTarget(self, action: #selector(showCalendar(_:)), for: .touchUpInside)
         calendarButton.setImage(#imageLiteral(resourceName: "Calendar"), for: .normal)
         calendarButton.setTitle("", for: .normal)
         calendarButton.tintColor = UIColor.gray
@@ -212,59 +213,12 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
             calendarDayMinus()
         }
     }
+    
     @objc func userDefaultsDidChange(){
         doSomething()
     }
-    
-    @objc func calendar() {
-        
-        
-//        if #available(iOS 13.0, *) {
-//            let calendarView = ContentView()
-//            
-//            let host = UIHostingController(rootView: calendarView)
-//            navigationController?.pushViewController(host, animated: true)
-//            
-//        } else {
-            
-        
-//            embedController = EmbedController(rootViewController: self)
-//
-//               let newViewController = CalViewController()
-//        newViewController.view.frame = CGRect(x: 0, y: 85, width: self.view.frame.width, height: self.view.frame.height)
-//
-//               newViewController.view.backgroundColor = .lightGray
-//               embedController?.append(viewController: newViewController)
-           
-        
-        
-        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.height)!))
 
-        toolBar.barTintColor = UIColor.black
-        toolBar.tintColor = UIColor.white
-        toolBar.barStyle = UIBarStyle.blackTranslucent
-        toolBar.isTranslucent = true
-        toolBar.isUserInteractionEnabled = true
-
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
-        toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-
-        self.view.addSubview(toolBar)
-        self.view.addSubview(MDate)
-               NSLayoutConstraint.activate([
-                   MDate.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
-                   MDate.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-                   MDate.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-                   MDate.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
-               ])
-        self.view.addSubview(Today)
-               Today.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-               Today.topAnchor.constraint(equalTo: MDate.bottomAnchor, constant: 20).isActive = true
-//        }
-    }
-    
+        
     @objc func yesplanPrefs(sender: AnyObject) {
         if let url = URL(string:UIApplication.openSettingsURLString) {
             if UIApplication.shared.canOpenURL(url) {
@@ -273,17 +227,14 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         }
     }
 //    @State private var wakeUp = Date() // Only from iOS13.0
-    // Datepicker:
     
     @objc func calendarLeft(sender: AnyObject) {
         calendarDayMinus()
     }
     
     func calendarDayMinus() {
-        
         datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
         doSomething()
-//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
@@ -293,67 +244,43 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
     }
     
     func calendarDayPlus() {
-        
         datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
         doSomething()
         self.datePicker.removeFromSuperview()
-//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
     
-//    @objc func pick(sender: AnyObject) {
-//
-//        datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 95)) // self.view.frame.size.height))
-//        datePicker.datePickerMode = UIDatePicker.Mode.date
-//        datePicker.setValue(UIColor.lightGray, forKeyPath: "textColor")
-//        datePicker.backgroundColor = UIColor.black
-//
-//        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0
-//            , width: self.view.frame.size.width, height: self.view.frame.size.height - 48))
-//
-//        toolBar.barTintColor = UIColor.darkGray
-//        toolBar.tintColor = UIColor.lightGray
-//        toolBar.barStyle = UIBarStyle.blackTranslucent
-//        toolBar.isTranslucent = true
-//        toolBar.isUserInteractionEnabled = true
-//
-//        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-//         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
-//        toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-//
-//        self.view.addSubview(toolBar)
-//        self.view.addSubview(datePicker)
-//        }
+    @objc func showCalendar(_ sender: UIButton) {
+           let formatter = DateFormatter()
+           formatter.dateFormat = "yyyy-MM-dd"
+           
+           let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "\(formatter.string(from: Date()))", format: "yyyy-MM-dd") { (date) in
+               print("return: ", date)
+               let formatter = DateFormatter()
+               formatter.dateFormat = "yyyy-MM-dd"
+               self.datePicker.date = formatter.date(from: date) ?? Date()
+                   self.doSomething()
+           }
+           
+           calendar.dayButtonStyle = .circle
+           calendar.dimmedBackgroundColor = UIColor.black
+           calendar.dimmedBackgroundAlpha = 0.7
+           calendar.headerViewBackgroundColor = UIColor.black
+           calendar.bodyViewBackgroundColor = UIColor.black
+           calendar.sundayColor = UIColor.red
+           calendar.saturdayColor = UIColor.red
+           calendar.defaultDayColor = UIColor(red: 120, green: 120, blue: 120, alpha: 0.1)
+           calendar.lineSeparatorColor = UIColor.lightGray
+           calendar.selectedDayColor = UIColor.blue
+           calendar.headerLabelFont = UIFont(name: "Helvetica", size: 24.0)!
+           calendar.headerLabelBackgroundColor = UIColor.black
+           calendar.headerLabelTextColor = UIColor.lightGray
+           calendar.weekLabelFont = UIFont(name: "Helvetica", size: 16.0)!
+           calendar.dayLabelFont = UIFont(name: "Helvetica", size: 16.0)!
+           calendar.show()
+    }
 
-         @objc func donedatePicker(){
-
-            doSomething()
-            self.MDate.removeFromSuperview()
-//            self.datePicker.removeFromSuperview()
-            self.toolBar.removeFromSuperview()
-//            self.view.endEditing(true)
-
-        }
-//
-        @objc func cancelDatePicker(){
-//            print("canceled")
-//            self.datePicker.removeFromSuperview()
-            self.MDate.removeFromSuperview()
-            self.toolBar.removeFromSuperview()
-
-//           self.view.endEditing(true)
-         }
-//
-//           func dueDateChanged(sender:UIDatePicker){
-//               var dateFormatter = DateFormatter()
-//            print("date:", dateFormatter)
-////            dateFormatter.dateStyle = DateFormatter.Style.LongStyle
-////            dateFormatter.timeStyle = DateFormatter.Style.NoStyle
-////               self.myLabel.text = dateFormatter.stringFromDate(dueDatePickerView.date)
-//           }
-    
     @objc private func refresh() {
         doSomething()
     }

@@ -164,11 +164,6 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     self.title = "Teamplanner"
     
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
-
-//    v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-//    doSomething()
-//
-//    v.collectionView.dataSource = self
   }
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
@@ -214,68 +209,27 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             self.datePicker.date = formatter.date(from: date) ?? Date()
-//            self.datePicker.date = date
                 self.doSomething()
         }
         
-//        calendar.firstWeekDay = 
         calendar.dayButtonStyle = .circle
         calendar.dimmedBackgroundColor = UIColor.black
         calendar.dimmedBackgroundAlpha = 0.7
         calendar.headerViewBackgroundColor = UIColor.black
-//        rgba(0, 0, 0, 0.45)
         calendar.bodyViewBackgroundColor = UIColor.black
-//        rgba(21, 21, 21, 0.98)
         calendar.sundayColor = UIColor.red
-//        calendar.disabledSundayColor = UIColor.blue
         calendar.saturdayColor = UIColor.red
-//        calendar.disabledSaturdayColor = UIColor.green
         calendar.defaultDayColor = UIColor(red: 120, green: 120, blue: 120, alpha: 0.1)
-//        rgba(120, 120, 120, 0.1)
-//        calendar.disabledDefaultDayColor = UIColor
         calendar.lineSeparatorColor = UIColor.lightGray
         calendar.selectedDayColor = UIColor.blue
         calendar.headerLabelFont = UIFont(name: "Helvetica", size: 24.0)!
         calendar.headerLabelBackgroundColor = UIColor.black
         calendar.headerLabelTextColor = UIColor.lightGray
-
         calendar.weekLabelFont = UIFont(name: "Helvetica", size: 16.0)!
         calendar.dayLabelFont = UIFont(name: "Helvetica", size: 16.0)!
         calendar.show()
-        
-//        let cal = Calendar(identifier: .gregorian)
-//        cal.firstWeekday = 2
     }
-    
-    @objc func calendar() {
-            
-        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - (self.tabBarController?.tabBar.frame.height)!))
-
-        toolBar.barTintColor = UIColor.black
-        toolBar.tintColor = UIColor.white
-        toolBar.barStyle = UIBarStyle.blackTranslucent
-        toolBar.isTranslucent = true
-        toolBar.isUserInteractionEnabled = true
-    
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDatePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donedatePicker));
-        toolBar.setItems([doneButton,spaceButton,cancelButton], animated: false)
-
-        self.view.addSubview(toolBar)
-        self.view.addSubview(MDate)
-                   NSLayoutConstraint.activate([
-                       MDate.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0),
-                       MDate.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
-                       MDate.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
-                       MDate.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4)
-                   ])
-
-        self.view.addSubview(Today)
-                   Today.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
-                   Today.topAnchor.constraint(equalTo: MDate.bottomAnchor, constant: 20).isActive = true
-        }
-        
+     
     @objc func yesplanPrefs(sender: AnyObject) {
         if let url = URL(string:UIApplication.openSettingsURLString) {
         if UIApplication.shared.canOpenURL(url) {
@@ -294,7 +248,6 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         datePicker.date = Calendar.current.date(byAdding: .day, value: -7, to: datePicker.date)!
 
         doSomething()
-//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
@@ -307,28 +260,10 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         
         datePicker.date = Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!
         doSomething()
-//        self.datePicker.removeFromSuperview()
-        self.MDate.removeFromSuperview()
-        self.toolBar.removeFromSuperview()
-    }
-    
-      
-    @objc func donedatePicker(){
-        
-        doSomething()
-//        self.datePicker.removeFromSuperview()
-        self.MDate.removeFromSuperview()
-        self.toolBar.removeFromSuperview()
-    }
-
-    @objc func cancelDatePicker(){
-        
-//        self.datePicker.removeFromSuperview()
         self.MDate.removeFromSuperview()
         self.toolBar.removeFromSuperview()
     }
   
-  //@IBOutlet weak var nameTextField: UITextField!
     @objc private func refresh() {
         doSomething()
     }
