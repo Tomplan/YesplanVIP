@@ -263,7 +263,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
                    self.doSomething()
            }
            
-           calendar.dayButtonStyle = .circle
+//           calendar.dayButtonStyle = .circle
            calendar.dimmedBackgroundColor = UIColor.black
            calendar.dimmedBackgroundAlpha = 0.7
            calendar.headerViewBackgroundColor = UIColor.black
@@ -272,8 +272,8 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
            calendar.saturdayColor = UIColor.red
            calendar.defaultDayColor = UIColor(red: 120, green: 120, blue: 120, alpha: 0.1)
            calendar.lineSeparatorColor = UIColor.lightGray
-           calendar.selectedDayColor = UIColor.blue
-           calendar.headerLabelFont = UIFont(name: "Helvetica", size: 24.0)!
+//           calendar.selectedDayColor = UIColor.darkGray
+//           calendar.headerLabelFont = UIFont(name: "Helvetica", size: 24.0)!
            calendar.headerLabelBackgroundColor = UIColor.black
            calendar.headerLabelTextColor = UIColor.lightGray
            calendar.weekLabelFont = UIFont(name: "Helvetica", size: 16.0)!

@@ -212,7 +212,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
                 self.doSomething()
         }
         
-        calendar.dayButtonStyle = .circle
+//        calendar.dayButtonStyle = .circle
         calendar.dimmedBackgroundColor = UIColor.black
         calendar.dimmedBackgroundAlpha = 0.7
         calendar.headerViewBackgroundColor = UIColor.black
@@ -221,8 +221,8 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         calendar.saturdayColor = UIColor.red
         calendar.defaultDayColor = UIColor(red: 120, green: 120, blue: 120, alpha: 0.1)
         calendar.lineSeparatorColor = UIColor.lightGray
-        calendar.selectedDayColor = UIColor.blue
-        calendar.headerLabelFont = UIFont(name: "Helvetica", size: 24.0)!
+//        calendar.selectedDayColor = UIColor.blue
+//        calendar.headerLabelFont = UIFont(name: "Helvetica", size: 20.0)!
         calendar.headerLabelBackgroundColor = UIColor.black
         calendar.headerLabelTextColor = UIColor.lightGray
         calendar.weekLabelFont = UIFont(name: "Helvetica", size: 16.0)!

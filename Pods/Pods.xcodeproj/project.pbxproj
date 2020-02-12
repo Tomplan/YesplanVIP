@@ -127,7 +127,7 @@
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		43C03CD943A9F73427113330F29A3C85 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
 		4F4C11E54E48D8164A2F8BBE569FEC2E /* MDatePickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MDatePickerView.modulemap; sourceTree = "<group>"; };
-		50F89A0810788A991C7F0ABBBE73D5AE /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_YesplanVIP.framework; path = "Pods-YesplanVIP.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50F89A0810788A991C7F0ABBBE73D5AE /* Pods_YesplanVIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YesplanVIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5132B2512995F284D84CC5E1835B43B6 /* MDatePickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDatePickerView-prefix.pch"; sourceTree = "<group>"; };
 		5686B5F8BA3153BFF63A33266FEA8E94 /* MDatePickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDatePickerView-dummy.m"; sourceTree = "<group>"; };
 		5A4EDB27E8DA70C3571A3FCF76066E12 /* YYCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCalendar.xcconfig; sourceTree = "<group>"; };
@@ -141,25 +141,25 @@
 		68D3B9C875BFCFDC5BA7DE379305E023 /* ALView+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
 		6A5DCC9ADEB660FFC5D7D96920800E81 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
 		718C52E32A382830E979D415FABB9014 /* CalendarView+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CalendarView+Delegate.swift"; path = "KDCalendar/CalendarView/CalendarView+Delegate.swift"; sourceTree = "<group>"; };
-		75DE6E87A0520EAC27562FCAD1B75052 /* KDCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KDCalendar.framework; path = KDCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75DE6E87A0520EAC27562FCAD1B75052 /* KDCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KDCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B44F8EC29693EA43B2F9BAB34BD6A29 /* EventsManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventsManager.swift; path = KDCalendar/CalendarView/EventsManager.swift; sourceTree = "<group>"; };
 		7BBF2D3DCF2F95B035DE72A5B0EE6379 /* MDatePickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MDatePickerView-Info.plist"; sourceTree = "<group>"; };
 		7D2D100B2366818AD53959EB902576FC /* MDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDatePickerView.h; path = MDatePickerView/MDatePickerView.h; sourceTree = "<group>"; };
 		82C785979F88B921DEB5F3D252DA24F3 /* PureLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PureLayout-Info.plist"; sourceTree = "<group>"; };
 		8314D1F01C27A858486A8F0B8D18DE5B /* calendar_next@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next@2x.png"; path = "YYCalendar/Assets/calendar_next@2x.png"; sourceTree = "<group>"; };
-		84B843FF6CF907B9F0350B5BB4C86A0F /* MDatePickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MDatePickerView.framework; path = MDatePickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B843FF6CF907B9F0350B5BB4C86A0F /* MDatePickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDatePickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF50AE3645B98305FE0938659E99114 /* Useful.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Useful.swift; path = YYCalendar/Classes/Useful.swift; sourceTree = "<group>"; };
 		901057EB7C51F9A5808C888833AFDE04 /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		9356D7E142232988345860660AC8D35C /* calendar_prev_pr@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev_pr@3x.png"; path = "YYCalendar/Assets/calendar_prev_pr@3x.png"; sourceTree = "<group>"; };
 		9571960B9AD19A0565E953A2223851F1 /* YYCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YYCalendar.swift; path = YYCalendar/Classes/YYCalendar.swift; sourceTree = "<group>"; };
 		969536A3622FA97207C2EE60D1C26DEF /* Pods-YesplanVIP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-Info.plist"; sourceTree = "<group>"; };
 		97543CCC22E3187CA13A4F62C0C6383B /* calendar_next_pr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next_pr@2x.png"; path = "YYCalendar/Assets/calendar_next_pr@2x.png"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A055044A215B4919517FD8397724B795 /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
 		A200DD1CC83E246AA0E10852A95B098E /* YYCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYCalendar-dummy.m"; sourceTree = "<group>"; };
 		A3EDC96F0ABBB943609723D72BCB2208 /* YYCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYCalendar-Info.plist"; sourceTree = "<group>"; };
 		A3F10AE8EE9FBC9EA6D60D9B9DF961C6 /* ColDateCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColDateCell.swift; path = MDatePickerView/ColDateCell.swift; sourceTree = "<group>"; };
-		A66F46B2B756E5A351C7DBD59098622D /* YYCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYCalendar.framework; path = YYCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A66F46B2B756E5A351C7DBD59098622D /* YYCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE57F523F52D12295FD9B07091CFB28 /* ColCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColCell.swift; path = MDatePickerView/ColCell.swift; sourceTree = "<group>"; };
 		B57B7261DBDD41D8137B7A5D411D1750 /* top_btn_close_pr@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "top_btn_close_pr@2x.png"; path = "YYCalendar/Assets/top_btn_close_pr@2x.png"; sourceTree = "<group>"; };
 		B5A458690BA0E1955547F1BF5E48E851 /* Pods-YesplanVIP-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YesplanVIP-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		D9058A0DA086E3C8BD09D0D8AB14FE50 /* top_btn_close@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "top_btn_close@2x.png"; path = "YYCalendar/Assets/top_btn_close@2x.png"; sourceTree = "<group>"; };
 		DE9FEECEAF1782F99FDDF1AB4724BFC8 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
 		E03DC4D99799B5B5BD8E2810C346356C /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = YYCalendar/Classes/Constants.swift; sourceTree = "<group>"; };
-		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PureLayout.framework; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84F5EE9249EA53B5E5A79B4CDE540C4 /* calendar_prev@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev@3x.png"; path = "YYCalendar/Assets/calendar_prev@3x.png"; sourceTree = "<group>"; };
 		E9ED533C119FCF9E67DCB7149DF95CDF /* KDCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCalendar-umbrella.h"; sourceTree = "<group>"; };
 		EFBA18C5727187AF2B25F804F96BFDC9 /* calendar_next@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_next@3x.png"; path = "YYCalendar/Assets/calendar_next@3x.png"; sourceTree = "<group>"; };
@@ -247,7 +247,6 @@
 				09079EBC748243DE9C273542428BA477 /* PureLayoutDefines.h */,
 				583F909265606CB3EDE1B9754E0D57CD /* Support Files */,
 			);
-			name = PureLayout;
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
@@ -352,12 +351,12 @@
 				76BEEA0770F1C90F78F8D526B7632863 /* KDCalendar */,
 				D42CCF06C28DD5C42F275D756499722C /* MDatePickerView */,
 				08DBF76E9F284ECF342A36CD2671E746 /* PureLayout */,
-				70C12F038F92D34FFCE8397FDDBCF777 /* YYCalendar */,
+				70C12F038F92D34FFCE8397FDDBCF777 /* YYCalendarTom */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		70C12F038F92D34FFCE8397FDDBCF777 /* YYCalendar */ = {
+		70C12F038F92D34FFCE8397FDDBCF777 /* YYCalendarTom */ = {
 			isa = PBXGroup;
 			children = (
 				E03DC4D99799B5B5BD8E2810C346356C /* Constants.swift */,
@@ -370,8 +369,7 @@
 				ED85F67CF72770BE01824A9F38AD8E55 /* Resources */,
 				544F38259A3060F6D94C9FE79C7FD4C0 /* Support Files */,
 			);
-			name = YYCalendar;
-			path = YYCalendar;
+			path = YYCalendarTom;
 			sourceTree = "<group>";
 		};
 		76BEEA0770F1C90F78F8D526B7632863 /* KDCalendar */ = {
@@ -380,7 +378,6 @@
 				51C379002627DBC3F23A6198F0F166A2 /* EventManager */,
 				18525ECB45048EC64E0A9D91CDC6C9C7 /* Support Files */,
 			);
-			name = KDCalendar;
 			path = KDCalendar;
 			sourceTree = "<group>";
 		};
@@ -419,7 +416,6 @@
 				209738E1679BDBCBDE39AC638B0794C7 /* MDatePickerView.swift */,
 				C2A47CA32A44CB6E7E8DA51A328FFCE5 /* Support Files */,
 			);
-			name = MDatePickerView;
 			path = MDatePickerView;
 			sourceTree = "<group>";
 		};
