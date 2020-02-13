@@ -10,6 +10,7 @@ import UIKit
 @available(iOS 10.0, *)
 @objcMembers public class NormalCalendar: UIViewController {
 
+    lazy var monthYearPickerView = MonthYearPickerView()
     
     // MARK: - UI Property
     var previousWindow: UIWindow!
@@ -20,7 +21,9 @@ import UIKit
     var bodyView: UIView!
     var lineSeparatorView: UIView!
     var yearLabel: UILabel!
-    var monthLabel: UILabel!
+    var monthLabel: UIButton!
+    var yearLabelPicker: UITextField!
+    var monthLabelPicker: UITextField!
     var closeButton: UIButton!
     var yearLeftButton: UIButton!
     var yearRightButton: UIButton!
@@ -253,12 +256,25 @@ import UIKit
         self.todayButton.addTarget(self, action: #selector(changeMonthOrYear(_:)), for: .touchUpInside)
         
         // Setup Month, Year Label
-        self.monthLabel = UILabel.init()
+//        self.monthYearPickerView.frame = CGRect(x: 0, y: 0, width: self.backgroundView.frame.width / 2, height: self.backgroundView.frame.height / 2)
+//        view.addSubview(self.monthYearPickerView)
+        
+        self.monthLabel = UIButton.init()
+        self.monthLabel.isUserInteractionEnabled = true
+        self.monthLabel.addTarget(self, action: #selector(monthpicker), for: .touchUpInside)
+//        self.monthLabelPicker = UITextField.init()
+//        self.monthLabelPicker.inputView = self.monthYearPickerView
+//        self.monthLabelPicker.backgroundColor = .red
         self.yearLabel = UILabel.init()
-        self.monthLabel.text = String(format: "%02d월", self.inputMonth)
-        self.monthLabel.font = self.headerLabelFont
+        self.yearLabel.isUserInteractionEnabled = true
+//        self.yearLabelPicker = UITextField.init()
+//        self.yearLabelPicker.inputView = self.monthYearPickerView
+//        self.yearLabelPicker.backgroundColor = .blue
+        
+        self.monthLabel.setTitle(getMonthName(inputMonth: self.inputMonth), for: .normal)
+        self.monthLabel.titleLabel!.font = self.headerLabelFont
         self.monthLabel.backgroundColor = self.headerLabelBackgroundColor
-        self.monthLabel.textColor = self.headerLabelTextColor
+        self.monthLabel.titleLabel!.textColor = self.headerLabelTextColor
         self.yearLabel.text = String(format: "%d년", self.inputYear)
         self.yearLabel.font = self.headerLabelFont
         self.yearLabel.backgroundColor = self.headerLabelBackgroundColor
@@ -296,6 +312,7 @@ import UIKit
         self.selectMonthYearStackView.addArrangedSubview(self.yearLeftButton)
         self.selectMonthYearStackView.addArrangedSubview(self.yearLabel)
         self.selectMonthYearStackView.addArrangedSubview(self.yearRightButton)
+        
         self.headerView.addSubview(self.selectMonthYearStackView)
 
         // Setup Week StackView
@@ -361,6 +378,8 @@ import UIKit
 
         self.bodyView.addSubview(self.dayStackView)
         self.bodyView.addSubview(self.todayButton)
+//        self.bodyView.addSubview(self.monthLabelPicker)
+//        self.bodyView.addSubview(self.yearLabelPicker)
 
     }
 
@@ -372,7 +391,9 @@ import UIKit
         self.lineSeparatorView.translatesAutoresizingMaskIntoConstraints = false
         self.bodyView.translatesAutoresizingMaskIntoConstraints = false
         self.monthLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.monthLabelPicker.translatesAutoresizingMaskIntoConstraints = false
         self.yearLabel.translatesAutoresizingMaskIntoConstraints = false
+//        self.yearLabelPicker.translatesAutoresizingMaskIntoConstraints = false
         self.weekStackView.translatesAutoresizingMaskIntoConstraints = false
         self.closeButton.translatesAutoresizingMaskIntoConstraints = false
         self.todayButton.translatesAutoresizingMaskIntoConstraints = false
@@ -427,7 +448,12 @@ import UIKit
 //        self.monthLeftButton.widthAnchor.constraint(equalToConstant: 30)
 //        self.monthRightButton.heightAnchor.constraint(equalToConstant: 35)
 //        self.monthRightButton.widthAnchor.constraint(equalToConstant: 30)
-
+//       self.monthYearPickerView.topAnchor.constraint(equalTo: self.lineSeparatorView.topAnchor).isActive = true
+//       self.monthYearPickerView.leadingAnchor.constraint(equalTo: self.weekStackView.leadingAnchor).isActive = true
+//       self.monthYearPickerView.trailingAnchor.constraint(equalTo: self.weekStackView.trailingAnchor).isActive = true
+//       self.monthYearPickerView.bottomAnchor.constraint(equalTo: self.weekStackView.bottomAnchor).isActive = true
+        
+        
         // SelectMonthYear StackView
         self.selectMonthYearStackView.topAnchor.constraint(equalTo: self.headerView.topAnchor, constant: 20).isActive = true
         self.selectMonthYearStackView.centerXAnchor.constraint(equalTo: self.headerView.centerXAnchor).isActive = true
@@ -449,6 +475,11 @@ import UIKit
         // TodayButton TOM
         self.todayButton.bottomAnchor.constraint(equalTo: self.bodyView.bottomAnchor, constant: -15).isActive = true
         self.todayButton.centerXAnchor.constraint(equalTo: self.headerView.centerXAnchor, constant: 0).isActive = true
+//
+//        self.monthYearPickerView.topAnchor.constraint(equalTo: self.lineSeparatorView.topAnchor).isActive = true
+//              self.monthYearPickerView.leadingAnchor.constraint(equalTo: self.weekStackView.leadingAnchor).isActive = true
+//              self.monthYearPickerView.trailingAnchor.constraint(equalTo: self.weekStackView.trailingAnchor).isActive = true
+//              self.monthYearPickerView.bottomAnchor.constraint(equalTo: self.weekStackView.bottomAnchor).isActive = true
     }
 
     func setupCalendar() {
@@ -517,12 +548,46 @@ import UIKit
 
         }
     }
+//    private func dateTextFieldSetup()
+//
+//        {
+//            let datePickerView  : UIDatePicker = UIDatePicker()
+//            datePickerView.datePickerMode = UIDatePicker.Mode.date
+//        self.monthLabel.inputView = datePickerView
+//        self.yearLabel.inputView = datePickerView
+//            datePickerView.addTarget(self, action:#selector(booh), for: UIControl.Event.valueChanged)
+//
+//    }
+    func monthpicker() {
+                print("dfdfdfd")
+            self.monthYearPickerView.backgroundColor = .darkGray
+            self.monthYearPickerView.tintColor = .white
+//            self.bodyView.addSubview(monthYearPickerView)
+        
+//            self.monthYearPickerView.topAnchor.constraint(equalTo: self.lineSeparatorView.topAnchor).isActive = true
+        
+        
+        
+//            self.monthYearPickerView.leadingAnchor.constraint(equalTo: self.weekStackView.leadingAnchor).isActive = true
+//            self.monthYearPickerView.trailingAnchor.constraint(equalTo: self.weekStackView.trailingAnchor).isActive = true
+//            self.monthYearPickerView.bottomAnchor.constraint(equalTo: self.bodyView.bottomAnchor).isActive = true
+
+            self.monthYearPickerView.onDateSelected = { (month: Int, year: Int) in
+                let string = String(format: "%02d/%d", month, year)
+                NSLog(string) // should show something like 05/2015
+                
+            }
+            }
     
+    func booh() {
+        
+        print("hpihpihpi")
+    }
     // set year and month label
     func setLabel() {
         let monthName = getMonthName(inputMonth: self.inputMonth)
         
-        self.monthLabel.text = monthName
+        self.monthLabel.titleLabel!.text = monthName
 
         
         

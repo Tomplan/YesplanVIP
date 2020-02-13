@@ -28,7 +28,7 @@ class APIClient {
 
             print("****************************")
             print("NOT DATA")
-            print(error)
+//            print(error)
             print("****************************")
             return
             

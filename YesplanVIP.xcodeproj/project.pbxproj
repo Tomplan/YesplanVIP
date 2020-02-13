@@ -326,6 +326,8 @@
 		E21668AF23F4306700BC3EAD /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668AE23F4306700BC3EAD /* NetworkCheck.swift */; };
 		E21668B123F4915900BC3EAD /* Network Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B023F4915900BC3EAD /* Network Functions.swift */; };
 		E21668B323F4A69300BC3EAD /* SetupCalendarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B223F4A69300BC3EAD /* SetupCalendarPicker.swift */; };
+		E21668B523F5D47E00BC3EAD /* ApiReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B423F5D47E00BC3EAD /* ApiReachabilityManager.swift */; };
+		E21668B723F5E73B00BC3EAD /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */; };
 		E22049E423F081CC00EDF651 /* ToDosModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22049E323F081CC00EDF651 /* ToDosModels.swift */; };
 		E23FFCE423F084F1001B92F3 /* ToDosDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE323F084F1001B92F3 /* ToDosDetailView.swift */; };
 		E23FFCE623F0851B001B92F3 /* ToDosDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE523F0851B001B92F3 /* ToDosDetailViewCell.swift */; };
@@ -710,6 +712,8 @@
 		E21668AE23F4306700BC3EAD /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		E21668B023F4915900BC3EAD /* Network Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Functions.swift"; sourceTree = "<group>"; };
 		E21668B223F4A69300BC3EAD /* SetupCalendarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCalendarPicker.swift; sourceTree = "<group>"; };
+		E21668B423F5D47E00BC3EAD /* ApiReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiReachabilityManager.swift; sourceTree = "<group>"; };
+		E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonthYearPicker.swift; path = ../../Pods/YYCalendarTom/MonthYearPicker.swift; sourceTree = "<group>"; };
 		E22049E323F081CC00EDF651 /* ToDosModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosModels.swift; sourceTree = "<group>"; };
 		E23FFCE323F084F1001B92F3 /* ToDosDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailView.swift; sourceTree = "<group>"; };
 		E23FFCE523F0851B001B92F3 /* ToDosDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailViewCell.swift; sourceTree = "<group>"; };
@@ -1231,6 +1235,7 @@
 				3C87F351216E2865008120FA /* APIError.swift */,
 				3C2D1A22217126E400F081A1 /* APIRouter.swift */,
 				3CA2131E218E274A00F74EED /* APIClient.swift */,
+				E21668B423F5D47E00BC3EAD /* ApiReachabilityManager.swift */,
 				3CA2131C218E267100F74EED /* Constants.swift */,
 			);
 			path = Api;
@@ -1564,6 +1569,7 @@
 				E21668AE23F4306700BC3EAD /* NetworkCheck.swift */,
 				E21668B023F4915900BC3EAD /* Network Functions.swift */,
 				E21668B223F4A69300BC3EAD /* SetupCalendarPicker.swift */,
+				E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2005,6 +2011,7 @@
 				3C05A02F2198E8A600F93289 /* EDLocationView.swift in Sources */,
 				3CF142DF212DDFF9001FC532 /* Status.swift in Sources */,
 				E2FFF0C023EC917900BA1FE8 /* EmbedViewController.swift in Sources */,
+				E21668B723F5E73B00BC3EAD /* MonthYearPicker.swift in Sources */,
 				3C5E53D021C42B9A00A55467 /* HeaderViewModel.swift in Sources */,
 				E22049E423F081CC00EDF651 /* ToDosModels.swift in Sources */,
 				3CE710B62121A7A900EBF6A5 /* ContactsInteractor.swift in Sources */,
@@ -2059,6 +2066,7 @@
 				3CE710972121A78800EBF6A5 /* TasksModels.swift in Sources */,
 				3C5E53C021C42AD100A55467 /* CollectionViewSection.swift in Sources */,
 				3CFF85CB218F904F00DED3FB /* OverworkTimePerPercentage.swift in Sources */,
+				E21668B523F5D47E00BC3EAD /* ApiReachabilityManager.swift in Sources */,
 				3CFF85D3218F91F100DED3FB /* TwentyFiveweekcounters.swift in Sources */,
 				3C6205A621981242001E8D4B /* EventsDetailRouter.swift in Sources */,
 				3C570A492165533300154B93 /* ToDosTabViewCell.swift in Sources */,

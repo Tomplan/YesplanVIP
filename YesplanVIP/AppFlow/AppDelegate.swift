@@ -19,11 +19,16 @@
 
 import UIKit
 import UserNotifications
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    // We need to start the listeners at some point, we’ve chosen to do it directly at app launch, in AppDelegate since our app needs network calls directly:
+//    ApiReachabilityManager.shared.start()
+    
     
     func requestNotificationAuthorization(application: UIApplication) {
         
