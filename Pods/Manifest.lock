@@ -1,20 +1,31 @@
 PODS:
+  - KDCalendar (1.8.9):
+    - KDCalendar/EventManager (= 1.8.9)
+  - KDCalendar/EventManager (1.8.9)
   - MDatePickerView (1.2.2)
   - PureLayout (3.1.5)
+  - YYCalendar (1.3.1)
 
 DEPENDENCIES:
+  - KDCalendar (~> 1.8.9)
   - MDatePickerView (~> 1.2.2)
   - PureLayout
+  - YYCalendar
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - MDatePickerView
     - PureLayout
+  trunk:
+    - KDCalendar
+    - YYCalendar
 
 SPEC CHECKSUMS:
+  KDCalendar: a587bc486b992d82ef94bd04001fce9baf45e518
   MDatePickerView: 92397dc572bf44205f51ee9b65ac5d0d8c11bb42
   PureLayout: 9b4ad47b2f0388c84ff534af23d96e720c1b875a
+  YYCalendar: c1502e0a8da3600a44b81a88c8baace76b9ff055
 
-PODFILE CHECKSUM: 19d001ebfec7b13307b72a375d15fe7316bbee2e
+PODFILE CHECKSUM: eaaf9aa7f6b0b18e40db06b8c39eda29e902ee33
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.8.4

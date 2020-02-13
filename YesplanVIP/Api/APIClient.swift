@@ -24,7 +24,15 @@ class APIClient {
         
 
         URLSession.shared.dataTask(with: url) { data, response, error in
-          guard let data = data else { return }
+          guard let data = data else {
+
+            print("****************************")
+            print("NOT DATA")
+            print(error)
+            print("****************************")
+            return
+            
+            }
             do {
             let result = try JSONDecoder().decode(T.self, from: data)
             seal.fulfill(result)
@@ -36,8 +44,9 @@ class APIClient {
 //            seal.reject(error ?? genericError)
           }
             catch {
+                print("****************************")
                 print(error)
-//                print(response)
+                print("****************************")
             }
 
         }.resume()

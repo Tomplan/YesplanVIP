@@ -22,9 +22,10 @@ protocol EventsTabDisplayLogic: class
   func displaySomething(viewModel: EventsTab.Something.ViewModel)
 }
 
-class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, EventsTabDisplayLogic, NetworkCheckObserver
+class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLayout, EventsTabDisplayLogic
+//    ,NetworkCheckObserver
 {
-    var networkCheck = NetworkCheck.sharedInstance()
+//    var networkCheck = NetworkCheck.sharedInstance()
     
 //    private var embedController: EmbedController?
 
@@ -99,19 +100,19 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         super.viewDidLoad()
         
         // Check Network
-        if networkCheck.currentStatus == .satisfied{
-                       //Do something
-            print("Network OK")
-            networkCheck.addObserver(observer: self)
-        } else {
-            popupAlert(title: "Warning", message: "The Internet is not available", actionTitles: ["Dismiss", "Retry Connection"], actions: [
-                {action1 in
-                    self.networkCheck.addObserver(observer: self)
-                },
-                {action2 in
-                self.doSomething()}])
-            
-        }
+//        if networkCheck.currentStatus == .satisfied{
+//                       //Do something
+//            print("Network OK")
+//            networkCheck.addObserver(observer: self)
+//        } else {
+//            popupAlert(title: "Warning", message: "The Internet is not available", actionTitles: ["Dismiss", "Retry Connection"], actions: [
+//                {action1 in
+//                    self.networkCheck.addObserver(observer: self)
+//                },
+//                {action2 in
+//                self.doSomething()}])
+//
+//        }
         
         //Swipe Gestures
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
@@ -277,35 +278,21 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         doSomething()
     }
     
-    func statusDidChange(status: NWPath.Status) {
-        if status == .satisfied{
-            print("status: ", status)
-                       //Do something
-            print("statusDidChange.Satisfied")
-            popupAlert(title: "Internet Connection!", message: "You're Online!", actionTitles: ["OK", ], actions: [nil
-//            {action1 in
-////                self.networkCheck.removeObserver(observer: self)
-////
-////                self.networkCheck.addObserver(observer: self)
-//            }
-            ])
-        }else if status == .unsatisfied {
-            print("statusDidChange.Unsatisfied")
-            print("status: ", status)
-
-            networkCheck = NetworkCheck.sharedInstance()
-            popupAlert(title: "Warning", message: "You're Offline!", actionTitles: ["Dismiss", "Retry Connection"], actions: [nil, nil
-//                {action1 in
-////                    self.networkCheck.removeObserver(observer: self)
-////                    self.networkCheck.addObserver(observer: self)
-//                },
-//                {action2 in
-//                self.networkCheck.removeObserver(observer: self)
-//                self.doSomething()}
-            ])
-            
-        }
-    }    
+//    func statusDidChange(status: NWPath.Status) {
+//        if status == .satisfied{
+//            print("status: ", status)
+//                       //Do something
+//            print("statusDidChange.Satisfied")
+//            popupAlert(title: "Connected to the Internet!", message: "You're Online!", actionTitles: ["OK"], actions: [nil])
+//        }else if status == .unsatisfied {
+//            print("statusDidChange.Unsatisfied")
+//            print("status: ", status)
+//
+//            networkCheck = NetworkCheck.sharedInstance()
+//            popupAlert(title: "Warning", message: "You're Offline!", actionTitles: ["Dismiss"], actions: [nil])
+//            
+//        }
+//    }    
 //  private func doSomething() {
 //
 //    let formatter = DateFormatter()

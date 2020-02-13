@@ -13,3 +13,4 @@ enum ApiError: Error {
     case general(error: Error?)
     case justerror
 }
+
