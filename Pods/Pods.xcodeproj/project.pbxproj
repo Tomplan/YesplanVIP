@@ -61,6 +61,8 @@
 		DBF45D59546F58E4F8118B65DBC9B0F4 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5DCC9ADEB660FFC5D7D96920800E81 /* NSLayoutConstraint+PureLayout.m */; };
 		E1EFEFD1AFB2C7751F7BA786E78A4047 /* ColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE57F523F52D12295FD9B07091CFB28 /* ColCell.swift */; };
 		E21668B923F5E7CF00BC3EAD /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B823F5E7CF00BC3EAD /* MonthYearPicker.swift */; };
+		E2E48DA723F87D4D00A8BB54 /* YearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E48DA623F87D4D00A8BB54 /* YearPicker.swift */; };
+		E2E48DA923F892F600A8BB54 /* MonthPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E48DA823F892F600A8BB54 /* MonthPicker.swift */; };
 		E4B074278E2C8D9D0F8DF5EA159DE404 /* KDCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9ED533C119FCF9E67DCB7149DF95CDF /* KDCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE3903AC92477CAE5D7295E0C04082C0 /* ALView+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DE46C72F5FA488F3D01837D2AA04D56 /* ALView+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F78E87825E57CBAFCFA72198670FE83B /* EventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B44F8EC29693EA43B2F9BAB34BD6A29 /* EventsManager.swift */; };
@@ -179,6 +181,8 @@
 		DE9FEECEAF1782F99FDDF1AB4724BFC8 /* PureLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PureLayout.modulemap; sourceTree = "<group>"; };
 		E03DC4D99799B5B5BD8E2810C346356C /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = YYCalendar/Classes/Constants.swift; sourceTree = "<group>"; };
 		E21668B823F5E7CF00BC3EAD /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPicker.swift; sourceTree = "<group>"; };
+		E2E48DA623F87D4D00A8BB54 /* YearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPicker.swift; sourceTree = "<group>"; };
+		E2E48DA823F892F600A8BB54 /* MonthPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPicker.swift; sourceTree = "<group>"; };
 		E4E7B3DD46ABB0DBBB56BD5AE90E4911 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84F5EE9249EA53B5E5A79B4CDE540C4 /* calendar_prev@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "calendar_prev@3x.png"; path = "YYCalendar/Assets/calendar_prev@3x.png"; sourceTree = "<group>"; };
 		E9ED533C119FCF9E67DCB7149DF95CDF /* KDCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCalendar-umbrella.h"; sourceTree = "<group>"; };
@@ -369,6 +373,8 @@
 				8DF50AE3645B98305FE0938659E99114 /* Useful.swift */,
 				9571960B9AD19A0565E953A2223851F1 /* YYCalendar.swift */,
 				E21668B823F5E7CF00BC3EAD /* MonthYearPicker.swift */,
+				E2E48DA623F87D4D00A8BB54 /* YearPicker.swift */,
+				E2E48DA823F892F600A8BB54 /* MonthPicker.swift */,
 				ED85F67CF72770BE01824A9F38AD8E55 /* Resources */,
 				544F38259A3060F6D94C9FE79C7FD4C0 /* Support Files */,
 			);
@@ -725,8 +731,10 @@
 				87B421D22F8DEF852B16EE6C257987E8 /* Image.swift in Sources */,
 				E21668B923F5E7CF00BC3EAD /* MonthYearPicker.swift in Sources */,
 				367D95B373E2DB3E4C433BE0BB0DAFE8 /* LimitedCalendar.swift in Sources */,
+				E2E48DA723F87D4D00A8BB54 /* YearPicker.swift in Sources */,
 				41E11C707BD983D284F9A0473B5BB1F7 /* NormalCalendar.swift in Sources */,
 				89DF43A8E14F43BA85845486848E66D4 /* Useful.swift in Sources */,
+				E2E48DA923F892F600A8BB54 /* MonthPicker.swift in Sources */,
 				FCF61368DC215E4BDDB3B18428A70D22 /* YYCalendar-dummy.m in Sources */,
 				6923E5A849A397C0B3381BF4FBA3D31F /* YYCalendar.swift in Sources */,
 			);
