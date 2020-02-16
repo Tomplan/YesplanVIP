@@ -174,8 +174,9 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
 
         
-        self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
-        
+//        self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
+        self.navigationItem.leftBarButtonItems = [leftbarButtonItem2]
+
         self.title = "Events"
         
     NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)

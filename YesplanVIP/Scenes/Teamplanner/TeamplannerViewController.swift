@@ -153,7 +153,8 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     widthConstraintCalendarRightButton.isActive = true
     let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
 
-    self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
+//    self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
+    self.navigationItem.leftBarButtonItems = [leftbarButtonItem2]
 
     self.title = "Teamplanner"
     
