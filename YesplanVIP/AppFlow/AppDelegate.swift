@@ -4,6 +4,8 @@
 ////
 ////  Created by Techcc - FOH - Video on 13/08/18.
 ////  Copyright © 2018 Yesplan. All rights reserved.
+//// demo.yesplan.be
+///// demo.yesplan.be tom thebest2018 17674B8C9589340177AD505DDD128C2D
 //// https://dewerft.yesplan.be/api/events?api_key=C857C01360BB5777DABE5B7EE6594CD1"
 //// cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/*Tom/YesplanVip
 //// dewerft.yesplan.be
@@ -11,6 +13,7 @@
 /// 202F1E32BFF1441C3107CEF18CE41E78
 ///admin tom
 ///AnneimmeWietse01
+///190815745-1478707406 contact id
 //// 190813697-1478707406
 /// 190813697-1478707406 id Tom
 ///  user 776035841-1478520961

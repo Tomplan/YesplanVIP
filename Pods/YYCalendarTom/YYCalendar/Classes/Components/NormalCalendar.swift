@@ -156,6 +156,9 @@ import UIKit
 //        print("self.inquiryDate: ", self.inquiryDate)
         self.inputYear = self.calendar.component(.year, from: self.inquiryDate)
         self.inputMonth = self.calendar.ordinality(of: .month, in: .year, for: self.inquiryDate)!
+//        self.monthLabel.setTitle(self.getMonthName(inputMonth: self.inputMonth), for: .normal)
+//        self.yearLabel.setTitle(String(format: "%d", self.inputYear), for: .normal)
+
         self.inputDay = self.calendar.ordinality(of: .weekday, in: .weekOfYear, for: self.inquiryDate)!
         self.lastDay = self.calendar.component(.day, from: self.inquiryDate.endOfMonth())
         self.firstWeekDay = self.calendar.ordinality(of: .weekday, in: .weekOfYear, for: self.inquiryDate.startOfMonth())!
@@ -528,14 +531,16 @@ import UIKit
     }
 
     func monthpicker() {
-            self.monthPickerView.backgroundColor = .darkGray
-            self.monthPickerView.tintColor = .white
+            self.monthPickerView.backgroundColor = .black
+            self.monthPickerView.setValue(UIColor.white, forKey: "textColor")
+            self.monthPickerView.frame = self.dayStackView.frame
             self.bodyView.addSubview(monthPickerView)
        
-        self.monthPickerView.onDateSelected = { (month: Int) in
+            self.monthPickerView.onDateSelected = { (month: Int) in
            
             var dateComponent = DateComponents()
                 dateComponent.month = month
+                
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: 0, month: month - self.inputMonth, day: 0) ?? Date()
 
             self.monthLabel.setTitle(self.getMonthName(inputMonth: month), for: .normal)
@@ -547,13 +552,15 @@ import UIKit
     
 
         func yearpicker() {
-                self.yearPickerView.backgroundColor = .darkGray
-                self.yearPickerView.tintColor = .white
+//            self.yearPickerView.rowSize(forComponent: 50)
+                self.yearPickerView.backgroundColor = .black
+                self.yearPickerView.setValue(UIColor.white, forKey: "textColor")
+            self.yearPickerView.frame = self.dayStackView.frame
                 self.bodyView.addSubview(yearPickerView)
-            
-    //            self.monthYearPickerView.topAnchor.constraint(equalTo: self.lineSeparatorView.topAnchor).isActive = true
-    //            self.monthYearPickerView.leadingAnchor.constraint(equalTo: self.weekStackView.leadingAnchor).isActive = true
-    //            self.monthYearPickerView.trailingAnchor.constraint(equalTo: self.weekStackView.trailingAnchor).isActive = true
+
+//                self.yearPickerView.topAnchor.constraint(equalTo: self.lineSeparatorView.bottomAnchor).isActive = true
+//                self.yearPickerView.leadingAnchor.constraint(equalTo: self.weekStackView.leadingAnchor).isActive = true
+//                self.yearPickerView.trailingAnchor.constraint(equalTo: self.weekStackView.trailingAnchor).isActive = true
     //            self.monthYearPickerView.bottomAnchor.constraint(equalTo: self.bodyView.bottomAnchor).isActive = true
     
             self.yearPickerView.onDateSelected = { (year: Int) in
@@ -574,9 +581,6 @@ import UIKit
         let monthName = getMonthName(inputMonth: self.inputMonth)
         
         self.monthLabel.titleLabel!.text = monthName
-
-        
-        
         self.yearLabel.titleLabel!.text = String(format: "%d", self.inputYear)
 //        self.monthLabel.text = String(format: "%02d", self.inputMonth)
     }
@@ -619,10 +623,11 @@ import UIKit
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: -1, month: 0, day: 0) ?? Date()
         case "nextYear":
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: 1, month: 0, day: 0) ?? Date()
+
         default:
             break
         }
-
+        self.setLabel()
         self.setupDate()
         self.setupCalendar()
     }
