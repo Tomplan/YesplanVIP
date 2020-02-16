@@ -206,6 +206,7 @@ import UIKit
             self.tapOutsideTouchGestureRecognizer.addTarget(self, action: #selector(dismissView))
         }
 
+        
         // Setup Background
         self.backgroundView = UIView.init()
         self.backgroundView.addGestureRecognizer(self.tapOutsideTouchGestureRecognizer)
@@ -224,7 +225,17 @@ import UIKit
         self.headerView.backgroundColor = self.headerViewBackgroundColor
         self.headerView.clipsToBounds = true
         self.contentView.addSubview(self.headerView)
+        
+            // Setup Swipe
+            let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+              let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+                  
+              leftSwipe.direction = .left
+              rightSwipe.direction = .right
 
+              self.headerView.addGestureRecognizer(leftSwipe)
+              self.headerView.addGestureRecognizer(rightSwipe)
+        
         // Setup lineSeparatorView
         self.lineSeparatorView = UIView.init()
         self.lineSeparatorView.backgroundColor = self.lineSeparatorColor
@@ -298,14 +309,17 @@ import UIKit
         // Setup SelectMonthYear StackView
         self.selectMonthYearStackView = UIStackView.init()
         self.selectMonthYearStackView.axis = .horizontal
-        self.selectMonthYearStackView.spacing = 2
         self.selectMonthYearStackView.addArrangedSubview(self.monthLeftButton)
         self.selectMonthYearStackView.addArrangedSubview(self.monthLabel)
-        self.selectMonthYearStackView.addArrangedSubview(self.monthRightButton)
-        self.selectMonthYearStackView.addArrangedSubview(self.yearLeftButton)
+//        self.selectMonthYearStackView.addArrangedSubview(self.monthRightButton)
+//        self.selectMonthYearStackView.addArrangedSubview(self.yearLeftButton)
         self.selectMonthYearStackView.addArrangedSubview(self.yearLabel)
-        self.selectMonthYearStackView.addArrangedSubview(self.yearRightButton)
-        
+//        self.selectMonthYearStackView.addArrangedSubview(self.yearRightButton)
+        self.selectMonthYearStackView.addArrangedSubview(self.monthRightButton)
+        self.selectMonthYearStackView.axis = .horizontal
+         self.selectMonthYearStackView.spacing = 20
+        self.selectMonthYearStackView.distribution = .equalSpacing
+
         self.headerView.addSubview(self.selectMonthYearStackView)
 
         // Setup Week StackView
@@ -374,6 +388,21 @@ import UIKit
 
     }
 
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        
+        if (sender.direction == .left) {
+//            print("left")
+//            self.monthLeftButton.restorationIdentifier = "nextMonth"
+            changeMonthOrYear(_:self.monthRightButton)
+        }
+            
+        if (sender.direction == .right) {
+//            print("right")
+//            self.monthRightButton.restorationIdentifier = "previousMonth"
+            changeMonthOrYear(_:self.monthLeftButton)
+        }
+    }
+    
     func setupAutoLayout() {
         // Use Autolayout
         self.backgroundView.translatesAutoresizingMaskIntoConstraints = false
@@ -513,18 +542,42 @@ import UIKit
     }
     private func getMonthName(inputMonth: Int) -> String {
         switch inputMonth {
-        case 1: return "Jan"
-        case 2: return "Feb"
-        case 3: return "Mar"
-        case 4: return "Apr"
-        case 5: return "May"
-        case 6: return "Jun"
-        case 7: return "Jul"
-        case 8: return "Aug"
-        case 9: return "Sep"
-        case 10: return "Oct"
-        case 11: return "Nov"
-        case 12: return "Dec"
+        case 1:
+//            print("Jan")
+            return "Jan"
+        case 2:
+//            print("Feb")
+            return "Feb"
+        case 3:
+//            print("Mar")
+            return "Mar"
+        case 4:
+//            print("Apr")
+            return "Apr"
+        case 5:
+//            print("May")
+            return "May"
+        case 6:
+//            print("Jun")
+            return "Jun"
+        case 7:
+//            print("Jul")
+            return "Jul"
+        case 8:
+//            print("Aug")
+            return "Aug"
+        case 9:
+//            print("Sep")
+            return "Sep"
+        case 10:
+//            print("Oct")
+            return "Oct"
+        case 11:
+//            print("Nov")
+            return "Nov"
+        case 12:
+//            print("Dec")
+            return "Dec"
         default: return ""
 
         }
@@ -538,12 +591,14 @@ import UIKit
        
             self.monthPickerView.onDateSelected = { (month: Int) in
            
-            var dateComponent = DateComponents()
-                dateComponent.month = month
+//            var dateComponent = DateComponents()
+//                dateComponent.month = month
                 
-            self.inquiryDate = Useful.addDate(self.inquiryDate, year: 0, month: month - self.inputMonth, day: 0) ?? Date()
+                self.inquiryDate = Useful.addDate(self.inquiryDate, year: 0, month: month - self.inputMonth, day: 0) ?? Date()
 
-            self.monthLabel.setTitle(self.getMonthName(inputMonth: month), for: .normal)
+//            self.monthLabel.setTitle(self.getMonthName(inputMonth: month), for: .normal)
+                
+            self.setLabel()
             self.setupDate()
             self.setupCalendar()
             self.monthPickerView.removeFromSuperview()
@@ -578,10 +633,14 @@ import UIKit
     
     // set year and month label
     func setLabel() {
-        let monthName = getMonthName(inputMonth: self.inputMonth)
+        print("ertert", self.inquiryDate)
+        let component = self.calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.inquiryDate)
+        print(component.month)
+        let monthName = getMonthName(inputMonth: component.month!)
         
-        self.monthLabel.titleLabel!.text = monthName
-        self.yearLabel.titleLabel!.text = String(format: "%d", self.inputYear)
+//        self.monthLabel.titleLabel!.text = monthName
+        self.monthLabel.setTitle(monthName, for: .normal)
+        self.yearLabel.setTitle(String(format: "%d", self.inputYear), for: .normal)
 //        self.monthLabel.text = String(format: "%02d", self.inputMonth)
     }
 
@@ -592,13 +651,11 @@ import UIKit
         }
     }
 
-    // mark today icon (red dot)
+    // mark today icon (Gray Square)
     func setTodayIcon(button: DayButton, day: String?) {
         let todayString = Useful.intToString(self.todayDay)
 
         if isTodayMonth && day == todayString {
-//            print("todayString: ", todayString)
-//            print("isTodayMonth: ", isTodayMonth)
 
             button.beforeTextColor = UIColor.red
             button.backgroundColor = UIColor.darkGray
@@ -617,12 +674,17 @@ import UIKit
             self.inquiryDate = Date()
         case "previousMonth":
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: 0, month: -1, day: 0) ?? Date()
+//            self.inputMonth = self.inputMonth - 1
         case "nextMonth":
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: 0, month: 1, day: 0) ?? Date()
+//            self.inputMonth = self.inputMonth - 1
         case "previousYear":
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: -1, month: 0, day: 0) ?? Date()
+//            self.inputYear = self.inputYear - 1
         case "nextYear":
             self.inquiryDate = Useful.addDate(self.inquiryDate, year: 1, month: 0, day: 0) ?? Date()
+//            self.inputYear = self.inputYear + 1
+
 
         default:
             break

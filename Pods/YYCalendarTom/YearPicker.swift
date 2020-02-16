@@ -20,7 +20,7 @@ class YearPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource
     var years: [Int]!
     var year = Calendar.current.component(.year, from: Date()) {
         didSet {
-            print("didset: ", year)
+//            print("didset: ", year)
             selectRow(years.firstIndex(of: year)!, inComponent: 0, animated: true)
         }
     }
