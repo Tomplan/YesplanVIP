@@ -41,7 +41,7 @@ class TeamplannerTabPresenter: TeamplannerTabPresentationLogic
         let days = (weekdays.lowerBound ..< weekdays.upperBound)
             .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: response.startdate) }
 
-        print(days)
+//        print(days)
 //
 //
     sectionsDays = []

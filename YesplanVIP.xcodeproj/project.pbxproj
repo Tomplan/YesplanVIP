@@ -329,6 +329,7 @@
 		E21668B523F5D47E00BC3EAD /* ApiReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B423F5D47E00BC3EAD /* ApiReachabilityManager.swift */; };
 		E21668B723F5E73B00BC3EAD /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */; };
 		E22049E423F081CC00EDF651 /* ToDosModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22049E323F081CC00EDF651 /* ToDosModels.swift */; };
+		E2235FDA2404528600FA8565 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2235FD92404528500FA8565 /* CustomLoader.swift */; };
 		E23FFCE423F084F1001B92F3 /* ToDosDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE323F084F1001B92F3 /* ToDosDetailView.swift */; };
 		E23FFCE623F0851B001B92F3 /* ToDosDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE523F0851B001B92F3 /* ToDosDetailViewCell.swift */; };
 		E23FFCE823F08544001B92F3 /* TodosDetailViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE723F08544001B92F3 /* TodosDetailViewHeader.swift */; };
@@ -345,7 +346,7 @@
 		E27C9F8A23E210E900BDCE71 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C9F8923E210E900BDCE71 /* SearchTextField.swift */; };
 		E29A3A6E23E23105001C11C1 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */; };
 		E29A3A6F23E23105001C11C1 /* Pods_YesplanVIP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E2B7E73D23EC06DD00518F36 /* KDCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = E2B7E73C23EC06DD00518F36 /* KDCalendar */; };
+		E2E48DAC23FC122E00A8BB54 /* getProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E48DAB23FC122E00A8BB54 /* getProfiles.swift */; };
 		E2F1476223E206E300FBEE0B /* Viewconfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F1476123E206E300FBEE0B /* Viewconfigurable.swift */; };
 		E2F55B522215C5D8002587E6 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */; };
 		E2FF29F223F0908A00FD0537 /* ToDosTabViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF29F123F0908A00FD0537 /* ToDosTabViewController+Extensions.swift */; };
@@ -715,6 +716,7 @@
 		E21668B423F5D47E00BC3EAD /* ApiReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiReachabilityManager.swift; sourceTree = "<group>"; };
 		E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonthYearPicker.swift; path = ../../Pods/YYCalendarTom/MonthYearPicker.swift; sourceTree = "<group>"; };
 		E22049E323F081CC00EDF651 /* ToDosModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosModels.swift; sourceTree = "<group>"; };
+		E2235FD92404528500FA8565 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
 		E23FFCE323F084F1001B92F3 /* ToDosDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailView.swift; sourceTree = "<group>"; };
 		E23FFCE523F0851B001B92F3 /* ToDosDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailViewCell.swift; sourceTree = "<group>"; };
 		E23FFCE723F08544001B92F3 /* TodosDetailViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosDetailViewHeader.swift; sourceTree = "<group>"; };
@@ -729,6 +731,7 @@
 		E249504623E9FF5800F010DF /* SUIEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIEventsView.swift; sourceTree = "<group>"; };
 		E24F7E2123E1F29300B76F39 /* Extension DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension DataRequest.swift"; sourceTree = "<group>"; };
 		E27C9F8923E210E900BDCE71 /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		E2E48DAB23FC122E00A8BB54 /* getProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfiles.swift; sourceTree = "<group>"; };
 		E2F1476123E206E300FBEE0B /* Viewconfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewconfigurable.swift; sourceTree = "<group>"; };
 		E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 		E2FF29F123F0908A00FD0537 /* ToDosTabViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDosTabViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -742,7 +745,6 @@
 			files = (
 				E21151C323E0B9A3003377A5 /* Stevia in Frameworks */,
 				E29A3A6E23E23105001C11C1 /* Pods_YesplanVIP.framework in Frameworks */,
-				E2B7E73D23EC06DD00518F36 /* KDCalendar in Frameworks */,
 				E21151C923E0BBDB003377A5 /* PromiseKit in Frameworks */,
 				E2100C7723F0AD7500D6C67F /* SwipeCellKit in Frameworks */,
 				E21151C023E0B955003377A5 /* Then in Frameworks */,
@@ -1322,10 +1324,12 @@
 		3CE7101D2121827900EBF6A5 /* YesplanVIP */ = {
 			isa = PBXGroup;
 			children = (
+				E2E48DAA23FC121100A8BB54 /* Global functions */,
 				E2098ACF23E82FBE00D92C9D /* Helpers */,
 				3C5E53B621C42ABD00A55467 /* Framework */,
 				3C5E53C521C42B8300A55467 /* ViewModels */,
 				3CE7101E2121827900EBF6A5 /* AppDelegate.swift */,
+				E2235FD92404528500FA8565 /* CustomLoader.swift */,
 				E2F55B512215C5D8002587E6 /* NotificationPublisher.swift */,
 				3CE7102D2121827A00EBF6A5 /* Info.plist */,
 				3CE710252121827900EBF6A5 /* YesplanVIP.xcdatamodeld */,
@@ -1749,6 +1753,14 @@
 			path = "ToDo Main";
 			sourceTree = "<group>";
 		};
+		E2E48DAA23FC121100A8BB54 /* Global functions */ = {
+			isa = PBXGroup;
+			children = (
+				E2E48DAB23FC122E00A8BB54 /* getProfiles.swift */,
+			);
+			path = "Global functions";
+			sourceTree = "<group>";
+		};
 		EA519FFAAA55EBC05F7CDD98 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1785,7 +1797,6 @@
 				E21151BF23E0B955003377A5 /* Then */,
 				E21151C223E0B9A3003377A5 /* Stevia */,
 				E21151C823E0BBDB003377A5 /* PromiseKit */,
-				E2B7E73C23EC06DD00518F36 /* KDCalendar */,
 				E2100C7623F0AD7500D6C67F /* SwipeCellKit */,
 			);
 			productName = YesplanVIP;
@@ -1822,7 +1833,6 @@
 				E21151C123E0B9A3003377A5 /* XCRemoteSwiftPackageReference "Stevia" */,
 				E21151C723E0BBDB003377A5 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				E2E61B6923E2282800ACE821 /* XCRemoteSwiftPackageReference "FigmaGen" */,
-				E2B7E73B23EC06DD00518F36 /* XCRemoteSwiftPackageReference "CalendarView" */,
 				E2100C7523F0AD7500D6C67F /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 			);
 			productRefGroup = 3CE7101C2121827900EBF6A5 /* Products */;
@@ -1958,6 +1968,7 @@
 				E20FD8C123EF440D0073318A /* TDInfoModels.swift in Sources */,
 				3C40AF29212D91F30077DDC5 /* UserTabViewController.swift in Sources */,
 				3C2D1A23217126E400F081A1 /* APIRouter.swift in Sources */,
+				E2235FDA2404528600FA8565 /* CustomLoader.swift in Sources */,
 				3C059FFA219888F500F93289 /* EDinfoViewController+Extensions.swift in Sources */,
 				3C059FF0219887CB00F93289 /* EDInfoView.swift in Sources */,
 				E20FD8F023EF4A7C0073318A /* TaskDocumentAttachment.swift in Sources */,
@@ -1990,6 +2001,7 @@
 				E20FD8B523EF387C0073318A /* TasksDetailViewController+Extensions.swift in Sources */,
 				3C05A0392198E96700F93289 /* EDLocationViewController+Extensions.swift in Sources */,
 				3CE9D1C221237C1800BFA730 /* LoginModels.swift in Sources */,
+				E2E48DAC23FC122E00A8BB54 /* getProfiles.swift in Sources */,
 				3C29FF8221D8E0F40094A893 /* EDResourcesRouter.swift in Sources */,
 				3C40AF1D212D91F30077DDC5 /* UserTabPresenter.swift in Sources */,
 				3CFF85BF218F681100DED3FB /* Resources.swift in Sources */,
@@ -2492,14 +2504,6 @@
 				minimumVersion = 6.13.1;
 			};
 		};
-		E2B7E73B23EC06DD00518F36 /* XCRemoteSwiftPackageReference "CalendarView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mmick66/CalendarView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.9;
-			};
-		};
 		E2E61B6923E2282800ACE821 /* XCRemoteSwiftPackageReference "FigmaGen" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hhru/FigmaGen.git";
@@ -2530,11 +2534,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E21151C723E0BBDB003377A5 /* XCRemoteSwiftPackageReference "PromiseKit" */;
 			productName = PromiseKit;
-		};
-		E2B7E73C23EC06DD00518F36 /* KDCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2B7E73B23EC06DD00518F36 /* XCRemoteSwiftPackageReference "CalendarView" */;
-			productName = KDCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 

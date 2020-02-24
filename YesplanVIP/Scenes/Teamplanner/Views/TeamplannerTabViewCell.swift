@@ -35,7 +35,6 @@ class TeamplannerTabViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         setupComponents()
         setupConstraints()
     }

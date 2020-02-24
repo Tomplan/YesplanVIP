@@ -255,7 +255,7 @@ enum APIRouter: URLRequestConvertible {
                 throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
             }
         }
-        print("APIRouter urlRequest: ", urlRequest)
+//        print("APIRouter urlRequest: ", urlRequest)
         return urlRequest
     }
 }

@@ -15,6 +15,8 @@ import UserNotifications
 
 class RootViewController: UIViewController {
     private let notificationPublisher = NotificationPublisher()
+//    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+
 //    private let calendarEvents = CalendarController()
     private var current: UIViewController
     
@@ -36,13 +38,18 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print("rootdidload")
+        print("rootdidload")
         
 //        var dateComponents = DateComponents()
 //        dateComponents.hour = 20
 //        dateComponents.minute = 35
 //        notificationPublisher.sendNotification(title: "joep", subtitle: "fuck yes", body: "THIS IS WORKING", badge: 1, delayInterval: nil, date: dateComponents )
 //
+//        view.addSubview(activityIndicator)
+//               
+//            activityIndicator.frame = view.bounds
+//            activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        
         addChild(current)
         current.view.frame = view.bounds
         view.addSubview(current.view)
@@ -51,7 +58,7 @@ class RootViewController: UIViewController {
     }
     
     func showLoginScreen() {
-
+        print("showLoginScreen")
         let new = UINavigationController(rootViewController: LoginViewController())
         let navigationBarAppearace = UINavigationBar.appearance()
         
@@ -62,6 +69,7 @@ class RootViewController: UIViewController {
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(r: 185, g: 185, b: 185)]
         
         addChild(new)
+       
         new.view.frame = view.bounds
         view.addSubview(new.view)
         new.didMove(toParent: self)
@@ -74,7 +82,7 @@ class RootViewController: UIViewController {
     }
     
     func switchToLogout() {
-
+        print("switchToLogout")
         let loginViewController = LoginViewController()
         let logoutScreen = UINavigationController(rootViewController: loginViewController)
         UserDefaults.standard.set(false, forKey: "LOGGED_IN")
@@ -82,7 +90,7 @@ class RootViewController: UIViewController {
     }
     
     func switchToMainScreen() {
-
+        print("switchToMainScreen")
         let mainViewController = MainTabBarViewController()
         let mainScreen = MainNavigationController(rootViewController: mainViewController)
         animateFadeTransition(to: mainScreen)
@@ -92,9 +100,21 @@ class RootViewController: UIViewController {
     private func animateFadeTransition(to new: UIViewController, completion: (() -> Void)? = nil) {
         current.willMove(toParent: nil)
         addChild(new)
-        transition(from: current, to: new, duration: 0.3, options: [], animations: {
-        
+//        new.view.frame = view.bounds
+//        new.view.alpha = 1
+//        view.addSubview(new.view)
+//        UIView.animate(withDuration: 2, delay: 0, options: .transitionCrossDissolve, animations: {
+//            new.view.alpha = 1
+//        }, completion: { _ in
+//            self.current.view.removeFromSuperview()
+//            self.current.removeFromParent()
+//            new.didMove(toParent: self)
+//            self.current = new
+//        })
+        transition(from: current, to: new, duration: (1.0), options: [.transitionCrossDissolve], animations: {
+
         }) { completed in
+
             self.current.removeFromParent()
             new.didMove(toParent: self)
             self.current = new

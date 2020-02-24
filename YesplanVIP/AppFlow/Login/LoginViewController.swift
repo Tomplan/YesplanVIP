@@ -65,10 +65,10 @@ class LoginViewController: UIViewController, LoginDisplayLogic
 extension LoginViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(activityIndicator)
+//        view.addSubview(activityIndicator)
         
-        activityIndicator.frame = view.bounds
-        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
+//        activityIndicator.frame = view.bounds
+//        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
         setupViewConfiguration()
     }
 }
@@ -144,10 +144,30 @@ private extension LoginViewController {
   
   func login()
   {
+    print("Login")
+//    title = NSLocalizedString("", comment: String(describing: LoginViewController.self))
+//    UIView.animate(withDuration: 2.0, animations: {self.view.alpha = 0.0},
+//    completion: {(value: Bool) in
+//        self.loginView.removeFromSuperview()
+//                })
+   
+
+//    UIView.transition(with: self.loginView,
+//                             duration: 2,
+//                             options: [.transitionFlipFromRight],
+//                             animations: {
+//
+//                               self.loginView.isHidden = true
+//           },
+//                             completion: nil)
+
+
     
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-        self.activityIndicator.stopAnimating()
-    }
+//    AppInstance.showLoader()
+//    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+////        self.activityIndicator.stopAnimating()
+////        AppInstance.hideLoader()
+//    }
         
     let companyUrl = loginView.companyURLTextField.text
     let apiKey = loginView.apiKeyTextField.text

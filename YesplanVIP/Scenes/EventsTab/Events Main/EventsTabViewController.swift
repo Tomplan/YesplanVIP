@@ -147,7 +147,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         let heightConstraintCalendarLeftButton = calendarLeftButton.heightAnchor.constraint(equalToConstant: 20)
         heightConstraintCalendarLeftButton.isActive = true
         widthConstraintCalendarLeftButton.isActive = true
-        let leftbarButtonItem1 = UIBarButtonItem(customView: calendarLeftButton)
+//        let leftbarButtonItem1 = UIBarButtonItem(customView: calendarLeftButton)
         
         // CalendarButton
         let calendarButton = UIButton(type: .system)
@@ -171,7 +171,7 @@ class EventsTabViewController: UIViewController, UICollectionViewDelegateFlowLay
         let heightConstraintCalendarRightButton = calendarRightButton.heightAnchor.constraint(equalToConstant: 20)
         heightConstraintCalendarRightButton.isActive = true
         widthConstraintCalendarRightButton.isActive = true
-        let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
+//        let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
 
         
 //        self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]

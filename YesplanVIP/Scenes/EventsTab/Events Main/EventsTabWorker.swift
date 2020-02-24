@@ -20,6 +20,7 @@ class EventsTabWorker {
             APIClient.events("\(path)")
         }
             .map({$0})
+            
     }
     
     func groupEventsByStartdate(events: Events) -> Promise<[String:[Event]]> {

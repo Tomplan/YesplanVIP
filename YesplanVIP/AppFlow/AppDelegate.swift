@@ -24,11 +24,27 @@ import UIKit
 import UserNotifications
 import Alamofire
 
+//@UIApplicationMain
+var AppInstance: AppDelegate!
 @UIApplicationMain
+//class AppDelegate: UIResponder, UIApplicationDelegate
+//{    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
+//{
+//    AppInstance = self
+//}
+    
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    func showLoader()
+    {
+        CustomLoader.sharedInstance.startAnimation()
+    }
+    func hideLoader()
+    {
+        CustomLoader.sharedInstance.stopAnimation()
+    }
     // We need to start the listeners at some point, we’ve chosen to do it directly at app launch, in AppDelegate since our app needs network calls directly:
 //    ApiReachabilityManager.shared.start()
     
@@ -46,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        AppInstance = self
+
 //        api = Yesplan()
 //        UIApplication
 //            .sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
@@ -61,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Present the window
         window?.makeKeyAndVisible()
-        
         requestNotificationAuthorization(application: application)
         return true
     }

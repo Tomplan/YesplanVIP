@@ -633,9 +633,9 @@ import UIKit
     
     // set year and month label
     func setLabel() {
-        print("ertert", self.inquiryDate)
+//        print("ertert", self.inquiryDate)
         let component = self.calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.inquiryDate)
-        print(component.month)
+//        print(component.month)
         let monthName = getMonthName(inputMonth: component.month!)
         
 //        self.monthLabel.titleLabel!.text = monthName

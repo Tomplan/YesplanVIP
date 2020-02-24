@@ -54,15 +54,15 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
       // MARK: Routing
     
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-      {
-        if let scene = segue.identifier {
-          let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-          if let router = router, router.responds(to: selector) {
-            router.perform(selector, with: segue)
-          }
-        }
-      }
+//      override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//      {
+//        if let scene = segue.identifier {
+//          let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+//          if let router = router, router.responds(to: selector) {
+//            router.perform(selector, with: segue)
+//          }
+//        }
+//      }
     
       // MARK: View lifecycle
     
@@ -88,7 +88,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabBar() {
-        
+        print("setupTabBar")
         // Mark: Create Navigation Controllers
         
         self.delegate = self
@@ -98,7 +98,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let VC04 = createNavController(vc: TeamplannerTabViewController(), title: "Teamplanner", selected: #imageLiteral(resourceName: "Teamplanner Selected"), unselected: #imageLiteral(resourceName: "Teamplanner Unselected"))
         let VC05 = createNavController(vc: ToDosViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: #imageLiteral(resourceName: "To Do Unselected"))
 //        let VC06 = createNavController(vc: UserTabViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
-        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
+//        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
         let VC08 = createNavController(vc: LogoutViewController(), title: "Logout", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
 
         let controllers = [
@@ -108,7 +108,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             , VC04
             , VC05
 //            , VC06
-            , VC07
+//            , VC07
             , VC08
         ]
         setViewControllers(controllers, animated: false)

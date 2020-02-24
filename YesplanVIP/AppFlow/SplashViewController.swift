@@ -14,7 +14,7 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
-    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+//    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {
 
@@ -29,20 +29,21 @@ class SplashViewController: UIViewController {
 //                return iv
 //            }()
 //        view.addSubview(backgroundImageView)
-        view.addSubview(activityIndicator)
-        
-        activityIndicator.frame = view.bounds
-        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
+//        view.addSubview(activityIndicator)
+//        
+//        activityIndicator.frame = view.bounds
+//        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
         
         makeServiceCall()
     }
     
     private func makeServiceCall() {
-
-        activityIndicator.startAnimating()
+        AppInstance.showLoader()
+//        activityIndicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-            self.activityIndicator.stopAnimating()
-            
+//            self.activityIndicator.stopAnimating()
+//            AppInstance.showLoader()
+            AppInstance.hideLoader()
             // Mark: Create autofillCompanyURL and autofillApiKey in Userdefaults if not existing
           
             if UserDefaults.standard.bool(forKey: "autofillCompanyURLCheck") {

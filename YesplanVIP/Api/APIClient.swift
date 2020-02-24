@@ -14,18 +14,18 @@ import PromiseKit
 class APIClient {
     
     private static func apiGet<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder()) -> Promise<T> {
+        AppInstance.showLoader()
         guard let url =  route.urlRequest else {
 //            print("urlerror: ")
             
             return Promise(error: APIError.responseUnsuccessful)
         }
 //        print("url:", url)
-        return Promise { seal in
         
-
+        return Promise { seal in
         URLSession.shared.dataTask(with: url) { data, response, error in
           guard let data = data else {
-
+            AppInstance.hideLoader()
             print("****************************")
             print("NOT DATA")
 //            print(error)
@@ -34,8 +34,15 @@ class APIClient {
             
             }
             do {
+//                    print("Executing the promise body.")
             let result = try JSONDecoder().decode(T.self, from: data)
-            seal.fulfill(result)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                    print("Executing asyncAfter.")
+                    AppInstance.hideLoader()
+                    return seal.fulfill(result)
+                }
+//            seal.fulfill(result)
+//                AppInstance.hideLoader()
 
 //            let genericError = NSError(
 //              domain: "PromiseKitTutorial",
@@ -43,7 +50,9 @@ class APIClient {
 //              userInfo: [NSLocalizedDescriptionKey: "Unknown error"])
 //            seal.reject(error ?? genericError)
           }
+            
             catch {
+                AppInstance.hideLoader()
                 print("****************************")
                 print(error)
                 print("****************************")
@@ -56,7 +65,11 @@ class APIClient {
 ////            .validate()
 //            .map {
 //                try JSONDecoder().decode(T.self, from: $0.data)
-            }
+        }
+//        .tap { result in
+//            AppInstance.hideLoader()
+//        }
+        
     }
     
     
@@ -174,8 +187,8 @@ class APIClient {
     }
 
     static func resourcesSchedules(_ path: String, _ query: [String:String]) -> Promise<ResourcesSchedulesFromTo> {
-        print("path*: ", path)
-        print("query*: ", query)
+//        print("path*: ", path)
+//        print("query*: ", query)
         return apiGet(route: APIRouter.resourcesSchedules(path: path, query: query))
        }
     

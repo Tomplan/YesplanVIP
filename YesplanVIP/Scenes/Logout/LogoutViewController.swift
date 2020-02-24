@@ -56,12 +56,12 @@ class LogoutViewController: UIViewController, LogoutDisplayLogic
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
+//    if let scene = segue.identifier {
+//      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+//      if let router = router, router.responds(to: selector) {
+//        router.perform(selector, with: segue)
+//      }
+//    }
   }
   
   // MARK: View lifecycle
@@ -85,7 +85,7 @@ class LogoutViewController: UIViewController, LogoutDisplayLogic
     
     func setupView(){
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
-        navigationItem.setLeftBarButton(logoutButton, animated: true)
+        navigationItem.setLeftBarButton(logoutButton, animated: false)
     }
     
     @objc

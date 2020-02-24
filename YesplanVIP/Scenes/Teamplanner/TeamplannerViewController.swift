@@ -86,9 +86,9 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     // Check Network
     if networkCheck.currentStatus == .satisfied{
                    //Do something
-        print("Network OK")
+//        print("Network OK")
                }else{
-        print("Network NOT OK")
+//        print("Network NOT OK")
         
 //        YesplanAlert.ShowAlert(title: "Warning", message: "The Internet is not available", in: self)
         }
@@ -127,7 +127,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     let heightConstraintCalendarLeftButton = calendarLeftButton.heightAnchor.constraint(equalToConstant: 20)
     heightConstraintCalendarLeftButton.isActive = true
     widthConstraintCalendarLeftButton.isActive = true
-    let leftbarButtonItem1 = UIBarButtonItem(customView: calendarLeftButton)
+//    let leftbarButtonItem1 = UIBarButtonItem(customView: calendarLeftButton)
     
     // CalendarButton
     let calendarButton = UIButton(type: .system)
@@ -151,7 +151,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     let heightConstraintCalendarRightButton = calendarRightButton.heightAnchor.constraint(equalToConstant: 20)
     heightConstraintCalendarRightButton.isActive = true
     widthConstraintCalendarRightButton.isActive = true
-    let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
+//    let leftbarButtonItem3 = UIBarButtonItem(customView: calendarRightButton)
 
 //    self.navigationItem.leftBarButtonItems = [leftbarButtonItem1, leftbarButtonItem2, leftbarButtonItem3]
     self.navigationItem.leftBarButtonItems = [leftbarButtonItem2]
@@ -210,7 +210,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
        }
        
        func calendarDayMinus() {
-           datePicker.date = Calendar.current.date(byAdding: .day, value: -1, to: datePicker.date)!
+           datePicker.date = Calendar.current.date(byAdding: .day, value: -7 , to: datePicker.date)!
            doSomething()
        }
        
@@ -219,7 +219,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
        }
        
        func calendarDayPlus() {
-           datePicker.date = Calendar.current.date(byAdding: .day, value: 1, to: datePicker.date)!
+           datePicker.date = Calendar.current.date(byAdding: .day, value: 7, to: datePicker.date)!
            doSomething()
            self.datePicker.removeFromSuperview()
        }
@@ -229,7 +229,7 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
         formatter.dateFormat = "yyyy-MM-dd"
         
         let calendar = YYCalendar(normalCalendarLangType: .ENG, date: "\(formatter.string(from: Date()))", format: "yyyy-MM-dd") { (date) in
-            print("return: ", date)
+//            print("return: ", date)
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             self.datePicker.date = formatter.date(from: date) ?? Date()
@@ -264,12 +264,12 @@ class TeamplannerTabViewController: UIViewController, UICollectionViewDelegateFl
     func statusDidChange(status: NWPath.Status) {
         if status == .satisfied {
             //Do something
-            print("Network Changed OK")
+//            print("Network Changed OK")
         }else if status == .unsatisfied {
             //Show no network alert
 //            showNetworkAlert()
             
-            print("Network Changed NOT OK")
+//            print("Network Changed NOT OK")
 
         }
     }
