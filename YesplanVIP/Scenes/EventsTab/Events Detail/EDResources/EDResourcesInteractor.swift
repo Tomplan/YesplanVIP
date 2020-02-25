@@ -28,7 +28,7 @@ class EDResourcesInteractor: EDResourcesBusinessLogic, EDResourcesDataStore
 {
     var presenter: EDResourcesPresentationLogic?
     var worker: EDResourcesWorker?
-    var dict: [[String : [String]]] = []
+//    var dict: [[String : [String]]] = []
     var dict2: [[String : String]] = []
     var id: String!
     var name: String!
@@ -46,11 +46,23 @@ class EDResourcesInteractor: EDResourcesBusinessLogic, EDResourcesDataStore
             }.thenMap { id -> Promise<Resourcebooking> in (self.worker?.getResourcebookingId(id)!)!
                 //            }.tap { item in print(item)
             }.done { resourcebookings in
-                //                for res in resourcebookings {
-                //                    print("res:", res.resource.name)
-                //                }
+//                                for resourcebooking in resourcebookings {
+//                                    switch resourcebooking {
+//                                    case .bulkResourceUse(let x):
+//                                        print(x._type)
+//                                    case .freeFormResourceUse(let x):
+//                                        print(x._type)
+//                                    case .instantiableResourceUse(let x):
+//                                        print(x._type)
+//                                    case .instantiableResourceUseGroup(let x):
+//                                        print(x._type)
+//                                    case .resourceSetUse(let x):
+//                                        print(x._type)
+//                                    }
+//                                    print("res:", resourcebooking.resource.name)
+//                                }
                 let dictResourcebookings = Dictionary(grouping: resourcebookings, by: { $0.resource.group })
-                //                print(dictResourcebookings)
+//                print(dictResourcebookings)
                 let response = EDResources.Something.Response(
                     //                    resourcebookings: resourcebookings
                     dictionary: dictResourcebookings

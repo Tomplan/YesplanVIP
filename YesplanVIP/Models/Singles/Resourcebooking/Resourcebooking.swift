@@ -11,11 +11,11 @@ import UIKit
 import PromiseKit
 
 enum Resourcebooking {
+    case bulkResourceUse(BulkResourceUse)
+    case freeFormResourceUse(FreeFormResourceUse)
     case instantiableResourceUse(InstantiableResourceUse)
     case instantiableResourceUseGroup(InstantiableResourceUseGroup)
     case resourceSetUse(ResourceSetUse)
-    case freeFormResourceUse(FreeFormResourceUse)
-    case bulkResourceUse(BulkResourceUse)
     
     var resource: ResourceUseResource {
         switch self {

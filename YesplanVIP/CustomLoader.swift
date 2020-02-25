@@ -14,7 +14,7 @@ class CustomLoader: UIView
 {
     //MARK:- NOT ACCESSABLE OUT SIDE
 
-    fileprivate var duration : CFTimeInterval! = 0.5
+    fileprivate var duration : CFTimeInterval! = 0.0
     fileprivate var isAnimating :Bool = false
     fileprivate var backgroundView : UIView!
 
@@ -96,7 +96,7 @@ class CustomLoader: UIView
     @objc fileprivate func addCenterImage()
     {
         /// add image in center
-        let centerImage = UIImage(named: "yesplanNB 1024x1024")
+        let centerImage = UIImage(named: "yesplanNB 1024x1024.png")
 //        let centerImage = UIImage(systemName: "square.and.arrow.down" )
 
         let imageSize = loaderSize/2.5
