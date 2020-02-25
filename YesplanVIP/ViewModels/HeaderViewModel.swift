@@ -15,7 +15,7 @@ class HeaderViewModel: CollectionViewViewModel<HeaderCell, String> {
     }
     
     override func size(data: String, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
-        return grid.size(for: view, height: 48)
+        return grid.size(for: view, height: 1)
     }
     
 }

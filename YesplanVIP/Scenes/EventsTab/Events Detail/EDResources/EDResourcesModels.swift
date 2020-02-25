@@ -24,8 +24,6 @@ enum EDResources
         
         struct Response
         {
-            //            var dict: [[String : [String]]]
-            //            var resourcebookings: [Resourcebooking]
             var dictionary: [String? : [Resourcebooking]]
         }
         

@@ -356,7 +356,6 @@ extension Resourcebooking {
             return item
             
         case .resourceSetUse(let x):
-//            print("set:", x.resource.name)
             
             let multiheader = DynamicTextViewModel(x.resource.name)
             let items = x.children.map { resourcebooking -> CollectionViewViewModelProtocol in

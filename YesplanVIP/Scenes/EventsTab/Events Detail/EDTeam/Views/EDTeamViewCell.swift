@@ -64,12 +64,13 @@ class EDTeamViewCell: CollectionViewCell {
     private func setupComponents() {
 
         layer.masksToBounds = true
-        layer.cornerRadius = 5
-        layer.borderWidth = 4
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
-
+//        layer.cornerRadius = 5
+        layer.borderWidth = 1
+//        layer.shadowOffset = CGSize(width: -2, height: 2)
+        //        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+                layer.borderColor = UIColor.black.cgColor
+        //        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+//                backgroundColor = UIColor.green
         sv(
             lblName
             ,lblTime
@@ -78,7 +79,9 @@ class EDTeamViewCell: CollectionViewCell {
 
         lblName.numberOfLines = 0
         lblName.font = UIFont.systemFont(ofSize: 15.0)
-        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+//        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblName.textColor = UIColor.lightGray
+
 
         lblTime.numberOfLines = 0
         lblTime.font = UIFont.systemFont(ofSize: 12.0)
@@ -91,13 +94,13 @@ class EDTeamViewCell: CollectionViewCell {
 
     private func setupConstraints() {
         layout(
-            4
+            2
             ,|-16-lblName-16-|
             ,0
             ,|-16-lblTime-16-|
             ,0
             ,|-16-lblRole-16-|
-            ,4
+            ,2
         )
     }
 }

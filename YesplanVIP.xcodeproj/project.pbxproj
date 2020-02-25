@@ -44,9 +44,7 @@
 		3C08E08A21997115007AAF8B /* EDTeamModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08421997115007AAF8B /* EDTeamModels.swift */; };
 		3C08E08B21997115007AAF8B /* EDTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08521997115007AAF8B /* EDTeamViewController.swift */; };
 		3C08E08C21997115007AAF8B /* EDTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08621997115007AAF8B /* EDTeamInteractor.swift */; };
-		3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E08E2199713B007AAF8B /* EDTeamView.swift */; };
 		3C08E09221997160007AAF8B /* EDTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E09121997160007AAF8B /* EDTeamViewCell.swift */; };
-		3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */; };
 		3C08E09B219A1BFE007AAF8B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08E09A219A1BFE007AAF8B /* Type.swift */; };
 		3C0DD7A82125FFA500F8FBDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */; };
 		3C18E52D215B9751009523AC /* TasksTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C18E52C215B9751009523AC /* TasksTabViewCell.swift */; };
@@ -71,7 +69,6 @@
 		3C2D1A23217126E400F081A1 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D1A22217126E400F081A1 /* APIRouter.swift */; };
 		3C2D8FDC21270AF100BDEA18 /* MainTabBarVwController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */; };
 		3C2D8FE3212819E200BDEA18 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */; };
-		3C2E310821CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310721CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift */; };
 		3C2E310A21CD856600FCB4AD /* MultiHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310921CD856600FCB4AD /* MultiHeaderViewModel.swift */; };
 		3C2E310D21CD866400FCB4AD /* MultiHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E310C21CD866400FCB4AD /* MultiHeaderCell.swift */; };
 		3C2E311121D2340300FCB4AD /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E311021D2340300FCB4AD /* CollectionView.swift */; };
@@ -330,6 +327,7 @@
 		E21668B723F5E73B00BC3EAD /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */; };
 		E22049E423F081CC00EDF651 /* ToDosModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22049E323F081CC00EDF651 /* ToDosModels.swift */; };
 		E2235FDA2404528600FA8565 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2235FD92404528500FA8565 /* CustomLoader.swift */; };
+		E2235FDC2405513B00FA8565 /* TextCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2235FDB2405513B00FA8565 /* TextCell2.swift */; };
 		E23FFCE423F084F1001B92F3 /* ToDosDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE323F084F1001B92F3 /* ToDosDetailView.swift */; };
 		E23FFCE623F0851B001B92F3 /* ToDosDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE523F0851B001B92F3 /* ToDosDetailViewCell.swift */; };
 		E23FFCE823F08544001B92F3 /* TodosDetailViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCE723F08544001B92F3 /* TodosDetailViewHeader.swift */; };
@@ -420,9 +418,7 @@
 		3C08E08421997115007AAF8B /* EDTeamModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamModels.swift; sourceTree = "<group>"; };
 		3C08E08521997115007AAF8B /* EDTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewController.swift; sourceTree = "<group>"; };
 		3C08E08621997115007AAF8B /* EDTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamInteractor.swift; sourceTree = "<group>"; };
-		3C08E08E2199713B007AAF8B /* EDTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamView.swift; sourceTree = "<group>"; };
 		3C08E09121997160007AAF8B /* EDTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewCell.swift; sourceTree = "<group>"; };
-		3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewHeader.swift; sourceTree = "<group>"; };
 		3C08E09A219A1BFE007AAF8B /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		3C0DD79A2125FFA500F8FBDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3C18E52C215B9751009523AC /* TasksTabViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTabViewCell.swift; sourceTree = "<group>"; };
@@ -447,7 +443,6 @@
 		3C2D1A22217126E400F081A1 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		3C2D8FDB21270AF100BDEA18 /* MainTabBarVwController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVwController.swift; sourceTree = "<group>"; };
 		3C2D8FE2212819E200BDEA18 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		3C2E310721CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDTeamViewMultiHeader.swift; sourceTree = "<group>"; };
 		3C2E310921CD856600FCB4AD /* MultiHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHeaderViewModel.swift; sourceTree = "<group>"; };
 		3C2E310C21CD866400FCB4AD /* MultiHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHeaderCell.swift; sourceTree = "<group>"; };
 		3C2E311021D2340300FCB4AD /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
@@ -717,6 +712,7 @@
 		E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonthYearPicker.swift; path = ../../Pods/YYCalendarTom/MonthYearPicker.swift; sourceTree = "<group>"; };
 		E22049E323F081CC00EDF651 /* ToDosModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosModels.swift; sourceTree = "<group>"; };
 		E2235FD92404528500FA8565 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		E2235FDB2405513B00FA8565 /* TextCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell2.swift; sourceTree = "<group>"; };
 		E23FFCE323F084F1001B92F3 /* ToDosDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailView.swift; sourceTree = "<group>"; };
 		E23FFCE523F0851B001B92F3 /* ToDosDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailViewCell.swift; sourceTree = "<group>"; };
 		E23FFCE723F08544001B92F3 /* TodosDetailViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosDetailViewHeader.swift; sourceTree = "<group>"; };
@@ -888,11 +884,8 @@
 		3C08E09021997140007AAF8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3C08E08E2199713B007AAF8B /* EDTeamView.swift */,
 				3C5E53D421C51A6F00A55467 /* EDTeamViewModel.swift */,
 				3C08E09121997160007AAF8B /* EDTeamViewCell.swift */,
-				3C08E0932199717A007AAF8B /* EDTeamViewHeader.swift */,
-				3C2E310721CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1112,6 +1105,7 @@
 				3C5E539A21C42A8D00A55467 /* SeparatorCell.xib */,
 				3C5E53A721C42A9100A55467 /* TextCell.swift */,
 				3C5E539B21C42A8D00A55467 /* TextCell.xib */,
+				E2235FDB2405513B00FA8565 /* TextCell2.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2040,6 +2034,7 @@
 				E204173523E5BC4900B3CAFF /* EDAttachmentsRouter.swift in Sources */,
 				3C059FF7219888A300F93289 /* EDInfoViewCell+Extensions.swift in Sources */,
 				3C40AF23212D91F30077DDC5 /* UserTabRouter.swift in Sources */,
+				E2235FDC2405513B00FA8565 /* TextCell2.swift in Sources */,
 				E20FD8A923EF36910073318A /* TasksDetailInteractor.swift in Sources */,
 				3C40AEE9212D8E550077DDC5 /* EventsTabPresenter.swift in Sources */,
 				3C40AEE0212D8C2F0077DDC5 /* Event.swift in Sources */,
@@ -2121,8 +2116,6 @@
 				3CFF85C9218F900600DED3FB /* Overtimebonuspercentages.swift in Sources */,
 				E20FD8BE23EF440D0073318A /* TDInfoPresenter.swift in Sources */,
 				3C29FF8821D8E1420094A893 /* EDResourcesModel.swift in Sources */,
-				3C08E0942199717A007AAF8B /* EDTeamViewHeader.swift in Sources */,
-				3C2E310821CD6A5500FCB4AD /* EDTeamViewMultiHeader.swift in Sources */,
 				3CE7101F2121827900EBF6A5 /* AppDelegate.swift in Sources */,
 				3CB59E7B214079E000B6E458 /* MainTabBarPresenter.swift in Sources */,
 				3C08E08A21997115007AAF8B /* EDTeamModels.swift in Sources */,
@@ -2192,7 +2185,6 @@
 				E204173723E5BC6E00B3CAFF /* EDAttachmentsModels.swift in Sources */,
 				3CE9D1B921237C1800BFA730 /* LoginPresenter.swift in Sources */,
 				E20FD8A423EF36910073318A /* TasksDetailPresenter.swift in Sources */,
-				3C08E08F2199713B007AAF8B /* EDTeamView.swift in Sources */,
 				3CF142E3212DE257001FC532 /* Groups.swift in Sources */,
 				3C5E53C221C42AD100A55467 /* CollectionViewSource.swift in Sources */,
 				E20FD8EA23EF49800073318A /* TDAttachmentsInteractor.swift in Sources */,
@@ -2404,7 +2396,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2434,7 +2426,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = YesplanVIP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

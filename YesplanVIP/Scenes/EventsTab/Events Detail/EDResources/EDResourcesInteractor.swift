@@ -28,7 +28,6 @@ class EDResourcesInteractor: EDResourcesBusinessLogic, EDResourcesDataStore
 {
     var presenter: EDResourcesPresentationLogic?
     var worker: EDResourcesWorker?
-//    var dict: [[String : [String]]] = []
     var dict2: [[String : String]] = []
     var id: String!
     var name: String!

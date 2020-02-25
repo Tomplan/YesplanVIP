@@ -56,7 +56,8 @@ class EDResourcesViewCell: CollectionViewCell {
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         width.constant = bounds.size.width
-        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 20))
+        
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
     }
     
     // MARK: Private methods
@@ -64,12 +65,13 @@ class EDResourcesViewCell: CollectionViewCell {
     private func setupComponents() {
         
         layer.masksToBounds = true
-        layer.cornerRadius = 5
-        layer.borderWidth = 4
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
-        
+//        layer.cornerRadius = 5
+//        layer.borderWidth = 4
+//        layer.shadowOffset = CGSize(width: -2, height: 2)
+//        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+//        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+        backgroundColor = UIColor.blue
+
         sv(
             lblName
             ,lblTime
@@ -91,13 +93,13 @@ class EDResourcesViewCell: CollectionViewCell {
     
     private func setupConstraints() {
         layout(
-            4
+            2
             ,|-16-lblName-16-|
             ,0
             ,|-16-lblTime-16-|
             ,0
             ,|-16-lblRole-16-|
-            ,4
+            ,2
         )
     }
 }

@@ -57,27 +57,32 @@ class MultiHeaderCell: CollectionViewCell {
         
         layer.masksToBounds = true
         layer.cornerRadius = 5
-        layer.borderWidth = 4
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+        layer.borderWidth = 1
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+//        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+        layer.borderColor = UIColor.black.cgColor
+//        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+        backgroundColor = UIColor.black
+
         
         sv(
             lblTitle
         )
         
         lblTitle.numberOfLines = 0
-        lblTitle.font = UIFont.systemFont(ofSize: 18.0)
-        lblTitle.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblTitle.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+//        lblTitle.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblTitle.textColor = UIColor.red
+
         
         
     }
     
     private func setupConstraints() {
         layout(
-            4
+            2
             ,|-16-lblTitle-16-|
-            ,4
+            ,2
         )
     }
 

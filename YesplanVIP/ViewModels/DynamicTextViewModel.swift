@@ -22,17 +22,17 @@ extension UILabel {
     }
 }
 
-class DynamicTextViewModel: CollectionViewViewModel<TextCell, String> {
+class DynamicTextViewModel: CollectionViewViewModel<TextCell2, String> {
     
-    override func config(cell: TextCell, data: String, indexPath: IndexPath, grid: Grid) {
+    override func config(cell: TextCell2, data: String, indexPath: IndexPath, grid: Grid) {
         cell.textLabel.text = data
     }
     
     override func size(data: String, indexPath: IndexPath, grid: Grid, view: UIView) -> CGSize {
         // note: cell has 8pt paddings on every side, that's why the +-16...
-        let width = grid.width(for: view) - 16
-        let font = UIFont.systemFont(ofSize: 12, weight: .bold)
-        let height = UILabel.height(forWidth: width - 16, font: font, text: data)
-        return CGSize(width: width, height: height + 16)
+        let width = grid.width(for: view) - 8
+        let font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        let height = UILabel.height(forWidth: width - 8, font: font, text: data)
+        return CGSize(width: width, height: height + 8)
     }
 }

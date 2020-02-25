@@ -19,6 +19,7 @@ protocol LogoutDisplayLogic: class
 
 class LogoutViewController: UIViewController, LogoutDisplayLogic
 {
+    
   var interactor: LogoutBusinessLogic?
   var router: (NSObjectProtocol & LogoutRoutingLogic & LogoutDataPassing)?
 
@@ -86,6 +87,8 @@ class LogoutViewController: UIViewController, LogoutDisplayLogic
     func setupView(){
         let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: false)
+        
+//        APIButton.
     }
     
     @objc

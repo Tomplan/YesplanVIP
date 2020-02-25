@@ -15,7 +15,7 @@ import Stevia
 class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
    
     let refreshControl = UIRefreshControl()
-    let spinner = UIActivityIndicatorView(style: .gray)
+//    let spinner = UIActivityIndicatorView(style: .gray)
     
     lazy var collectionView : UICollectionView = {
 
@@ -25,10 +25,10 @@ class MultiCell: CollectionViewCell, UICollectionViewDelegateFlowLayout {
         let screenWidth = screenSize.width
 
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 4 // vertical space
+        flowLayout.minimumLineSpacing = 1 // vertical space
         flowLayout.minimumInteritemSpacing = 0 // horizontal space
         flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
-        flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
+        flowLayout.sectionInset = UIEdgeInsets(top: 1.0, left: 0.0, bottom: 1.0, right: 0.0)
         // cell size:
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 1)
         collectionView.backgroundColor = UIColor.black

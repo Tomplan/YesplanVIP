@@ -59,10 +59,6 @@ class EDResourcesViewController: CollectionViewController, EDResourcesDisplayLog
     {
         super.viewDidLoad()
         doSomething()
-        //        print("zerzer", v.collectionView.heightConstraint?.constant)
-        //        v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        //        v.collectionView.dataSource = self
-        //        v.collectionView.delegate = self
     }
     
     @objc private func refresh() {
@@ -82,30 +78,17 @@ class EDResourcesViewController: CollectionViewController, EDResourcesDisplayLog
         
         sections = viewModel.sections
         
-        let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
+        let grid = Grid(columns: 1, margin: UIEdgeInsets(all: 4))
         let mysections = sections.compactMap { section -> CollectionViewSection in
             let items = section.rows.compactMap { resourcebooking -> CollectionViewViewModelProtocol in
                 resourcebooking.resourcebooking.unfold()
             }
-            //            grid = Grid(columns: 1, margin: UIEdgeInsets(all: 8))
             let header = MultiHeaderViewModel(section.header)
-            //            let section =  CollectionViewSection(grid: grid, header: header, items: items)
             let section =  CollectionViewSection(header: header, items: items)
             
-            //           print("sese", section)
             return section
         }
-        //        grid.size(for: view, height: self.v.collectionView.collectionViewLayout.collectionViewContentSize.height)
-        //        print(grid.height(for: view))
         self.source  = CollectionViewSource(grid: grid, sections: mysections)
-        //        self.source  = CollectionViewSource(sections: mysections)
-        
-        // this one sets main collectiionview height correct
-        //        print("a", self.v.collectionView.collectionViewLayout.collectionViewContentSize)
-        //        print("b", self.v.collectionView.heightConstraint)
-        //
-        //        self.v.collectionView.heightConstraint?.constant = self.v.collectionView.collectionViewLayout.collectionViewContentSize.height
-        //        self.v.collectionView.reloadData() // ???
     }
 }
 

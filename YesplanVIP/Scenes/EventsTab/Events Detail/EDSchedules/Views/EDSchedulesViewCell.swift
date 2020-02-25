@@ -55,11 +55,11 @@ class EDSchedulesViewCell: UICollectionViewCell {
     private func setupComponents() {
         
         layer.masksToBounds = true
-        layer.cornerRadius = 5
-        layer.borderWidth = 4
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+//        layer.cornerRadius = 5
+//        layer.borderWidth = 4
+//        layer.shadowOffset = CGSize(width: -2, height: 2)
+//        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+//        backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
             lblStarttime
@@ -68,11 +68,11 @@ class EDSchedulesViewCell: UICollectionViewCell {
         
         lblStarttime.numberOfLines = 0
         lblStarttime.font = UIFont.systemFont(ofSize: 15.0)
-        lblStarttime.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblStarttime.textColor = UIColor.lightGray
         
         lblDescription.numberOfLines = 0
         lblDescription.font = UIFont.systemFont(ofSize: 12.0)
-        lblDescription.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblDescription.textColor = UIColor.darkGray
     }
     
     private func setupConstraints() {

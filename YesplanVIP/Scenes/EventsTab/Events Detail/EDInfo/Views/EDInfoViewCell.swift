@@ -63,11 +63,11 @@ class EDInfoViewCell: UICollectionViewCell {
     private func setupComponents() {
         
         layer.masksToBounds = true
-        layer.cornerRadius = 5
-        layer.borderWidth = 4
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+//        layer.cornerRadius = 5
+//        layer.borderWidth = 4
+//        layer.shadowOffset = CGSize(width: -2, height: 2)
+//        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+//        backgroundColor = UIColor(r: 158, g: 158, b: 158)
         
         sv(
             lblName
@@ -80,27 +80,27 @@ class EDInfoViewCell: UICollectionViewCell {
         
         lblName.numberOfLines = 0
         lblName.font = UIFont.systemFont(ofSize: 15.0)
-        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblName.textColor = UIColor.lightGray
         
         lblGroup.numberOfLines = 0
         lblGroup.font = UIFont.systemFont(ofSize: 15.0)
-        lblGroup.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblGroup.textColor = UIColor.lightGray
         
         lblDefaultschedulestart.numberOfLines = 0
         lblDefaultschedulestart.font = UIFont.systemFont(ofSize: 15.0)
-        lblDefaultschedulestart.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblDefaultschedulestart.textColor = UIColor.lightGray
         
         lblDefaultscheduleend.numberOfLines = 0
         lblDefaultscheduleend.font = UIFont.systemFont(ofSize: 15.0)
-        lblDefaultscheduleend.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblDefaultscheduleend.textColor = UIColor.lightGray
         
         lblProfileName.numberOfLines = 0
         lblProfileName.font = UIFont.systemFont(ofSize: 15.0)
-        lblProfileName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblProfileName.textColor = UIColor.lightGray
         
         lblStatusName.numberOfLines = 0
         lblStatusName.font = UIFont.systemFont(ofSize: 15.0)
-        lblStatusName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblStatusName.textColor = UIColor.lightGray
     }
     
     private func setupConstraints() {

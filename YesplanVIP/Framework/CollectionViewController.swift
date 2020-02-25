@@ -27,6 +27,9 @@ class CollectionViewController: UIViewController {
     open override func loadView() {
         super.loadView()
         view = v
+//        v.collectionView.flashScrollIndicators()
+//        v.collectionView.showsVerticalScrollIndicator = true
+//        v.collectionView.indicatorStyle = .white
 //        v.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(v.collectionView)
 

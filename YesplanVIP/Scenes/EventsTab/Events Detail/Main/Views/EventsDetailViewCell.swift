@@ -53,10 +53,12 @@ class EventsDetailViewCell: UICollectionViewCell {
         
         layer.masksToBounds = true
         layer.cornerRadius = 5
-        layer.borderWidth = 4
+        layer.borderWidth = 1
         layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+//        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+        layer.borderColor = UIColor.darkGray.cgColor
+//        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+        backgroundColor = UIColor.black
         
         sv(
             lblName
@@ -64,7 +66,8 @@ class EventsDetailViewCell: UICollectionViewCell {
         
         lblName.numberOfLines = 0
         lblName.font = UIFont.systemFont(ofSize: 20.0)
-        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+//        lblName.textColor = UIColor(r: 64, g: 64, b: 64
+        lblName.textColor = UIColor.lightGray
         
     }
     

@@ -23,21 +23,20 @@ class CollectionView: UIView {
     
         let flowLayout = UICollectionViewFlowLayout()
         
-        flowLayout.sectionHeadersPinToVisibleBounds = true
-        
-        
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         
         flowLayout.scrollDirection = .vertical
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 35)
+        flowLayout.minimumLineSpacing = 1
+        flowLayout.headerReferenceSize = CGSize(width: screenWidth, height: 1)
         flowLayout.sectionInset = UIEdgeInsets(top: 4.0, left: 0.0, bottom: 4.0, right: 0.0)
         // Mark: Determine Cell-Width, height depends on Cell-setupConstraints() or layoutupdate()
         flowLayout.estimatedItemSize = CGSize(width: screenWidth, height: 1)
         flowLayout.sectionHeadersPinToVisibleBounds = false
-        
+        collectionView.flashScrollIndicators()
+        collectionView.showsVerticalScrollIndicator = true
+        collectionView.indicatorStyle = .white
 //        collectionView.backgroundColor = UIColor.darkGray // UIColor(r: 176, g: 176, b: 176)
 
         return collectionView
@@ -58,9 +57,9 @@ class CollectionView: UIView {
     
     private func setupConstraints() {
         layout(
-            40
+            1
             ,|-16-collectionView-16-|
-            ,40
+            ,1
             
         )
     }

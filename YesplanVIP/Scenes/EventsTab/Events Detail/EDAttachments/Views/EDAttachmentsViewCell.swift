@@ -64,11 +64,11 @@ class EDAttachmentsViewCell: CollectionViewCell {
     private func setupComponents() {
 
         layer.masksToBounds = true
-        layer.cornerRadius = 5
-        layer.borderWidth = 4
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
-        backgroundColor = UIColor(r: 158, g: 158, b: 158)
+//        layer.cornerRadius = 5
+//        layer.borderWidth = 4
+//        layer.shadowOffset = CGSize(width: -2, height: 2)
+//        layer.borderColor = UIColor(r: 144, g: 144, b: 144).cgColor
+//        backgroundColor = UIColor(r: 158, g: 158, b: 158)
 
         sv(
             lblName
@@ -77,8 +77,8 @@ class EDAttachmentsViewCell: CollectionViewCell {
         )
 
         lblName.numberOfLines = 0
-        lblName.font = UIFont.systemFont(ofSize: 15.0)
-        lblName.textColor = UIColor(r: 64, g: 64, b: 64)
+        lblName.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        lblName.textColor = UIColor.red
 
         lblDate.numberOfLines = 0
         lblDate.font = UIFont.systemFont(ofSize: 12.0)
