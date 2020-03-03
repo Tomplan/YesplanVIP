@@ -18,6 +18,7 @@ protocol MainTabBarDisplayLogic: class
 }
 
 class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
+    public var tabBarItems =  [UITabBarItem]()
     private let notificationPublisher = NotificationPublisher()
 
     var interactor: MainTabBarBusinessLogic?
@@ -73,12 +74,14 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 //        dateComponents.hour = 20
 //        dateComponents.minute = 39
 //        notificationPublisher.sendNotification(title: "joep", subtitle: "fuck yes", body: "THIS IS WORKING", badge: 1, delayInterval: nil, date: dateComponents )
-        
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .selected)
         UITabBar.appearance().barTintColor = UIColor.black
         setupTabBar()
         setup()
+        tabBarItems = self.tabBar.items!
+        print(tabBarItems[3])
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,11 +99,11 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let VC02 = createNavController(vc: TasksViewController(), title: "Tasks", selected: #imageLiteral(resourceName: "Tasks Selected"), unselected: #imageLiteral(resourceName: "Tasks Unselected"))
 //        let VC03 = createNavController(vc: ContactsViewController(), title: "Contacts", selected: #imageLiteral(resourceName: "Contacts Selected"), unselected: #imageLiteral(resourceName: "Contacts Unselected"))
         let VC04 = createNavController(vc: TeamplannerTabViewController(), title: "Teamplanner", selected: #imageLiteral(resourceName: "Teamplanner Selected"), unselected: #imageLiteral(resourceName: "Teamplanner Unselected"))
-        let VC05 = createNavController(vc: ToDosViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: #imageLiteral(resourceName: "To Do Unselected"))
+        let VC05 = createNavController(vc: ToDosViewController(), title: "ToDo", selected: #imageLiteral(resourceName: "To Do Selected"), unselected: UIImage(named: "To Do Unselected")!)
 //        let VC06 = createNavController(vc: UserTabViewController(), title: "User", selected: #imageLiteral(resourceName: "User Selected"), unselected: #imageLiteral(resourceName: "User Unselected"))
 //        let VC07 = createNavController(vc: HelpViewController(), title: "Help", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
         let VC08 = createNavController(vc: LogoutViewController(), title: "Logout", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
-        let VC09 = createNavController(vc: LogoutViewController(), title: "API", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
+//        let VC09 = createNavController(vc: LogoutViewController(), title: "API", selected: #imageLiteral(resourceName: "Help Selected"), unselected: #imageLiteral(resourceName: "Help Unselected"))
         let controllers = [
             VC01
             , VC02
@@ -112,7 +115,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
             , VC08
         ]
         setViewControllers(controllers, animated: false)
-        
+//        VC05.tabBarItem = UITabBarItem(title: "To Do", image: UIImage(named: "To Do Red"), selectedImage: UIImage(named: "To Do Red"))
         // Mark: Create tabBarItems
         
         if viewControllers != nil {
@@ -127,6 +130,7 @@ class MainTabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let defaults: UserDefaults = UserDefaults.standard
         
         // Mark: Create tabOrder
+        
         
         var tabOrder: [Int]?
 

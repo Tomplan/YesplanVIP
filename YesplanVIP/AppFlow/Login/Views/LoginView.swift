@@ -21,7 +21,7 @@ public class LoginView: UIView {
     
     // View properties
     let refreshControl = UIRefreshControl()
-    let spinner = UIActivityIndicatorView(style: .gray)
+    let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     let containerView: UIView = {
         let view = UIView.newAutoLayout()
 //        view.backgroundColor = .clear

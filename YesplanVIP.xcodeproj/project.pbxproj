@@ -341,6 +341,7 @@
 		E23FFCF923F086A4001B92F3 /* ToDosDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23FFCF823F086A4001B92F3 /* ToDosDetailInteractor.swift */; };
 		E249504723E9FF5800F010DF /* SUIEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249504623E9FF5800F010DF /* SUIEventsView.swift */; };
 		E24F7E2223E1F29300B76F39 /* Extension DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F7E2123E1F29300B76F39 /* Extension DataRequest.swift */; };
+		E266C7F5240D5DE2003E9195 /* addReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E266C7F4240D5DE2003E9195 /* addReminder.swift */; };
 		E27C9F8A23E210E900BDCE71 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27C9F8923E210E900BDCE71 /* SearchTextField.swift */; };
 		E29A3A6E23E23105001C11C1 /* Pods_YesplanVIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */; };
 		E29A3A6F23E23105001C11C1 /* Pods_YesplanVIP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A0EF8AD8B9AE7854EE79C /* Pods_YesplanVIP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -726,6 +727,7 @@
 		E23FFCF823F086A4001B92F3 /* ToDosDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosDetailInteractor.swift; sourceTree = "<group>"; };
 		E249504623E9FF5800F010DF /* SUIEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIEventsView.swift; sourceTree = "<group>"; };
 		E24F7E2123E1F29300B76F39 /* Extension DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension DataRequest.swift"; sourceTree = "<group>"; };
+		E266C7F4240D5DE2003E9195 /* addReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addReminder.swift; sourceTree = "<group>"; };
 		E27C9F8923E210E900BDCE71 /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		E2E48DAB23FC122E00A8BB54 /* getProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfiles.swift; sourceTree = "<group>"; };
 		E2F1476123E206E300FBEE0B /* Viewconfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewconfigurable.swift; sourceTree = "<group>"; };
@@ -1568,6 +1570,7 @@
 				E21668B023F4915900BC3EAD /* Network Functions.swift */,
 				E21668B223F4A69300BC3EAD /* SetupCalendarPicker.swift */,
 				E21668B623F5E73B00BC3EAD /* MonthYearPicker.swift */,
+				E266C7F4240D5DE2003E9195 /* addReminder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2125,6 +2128,7 @@
 				3CE7109D2121A78800EBF6A5 /* TasksInteractor.swift in Sources */,
 				E20FD8D323EF47740073318A /* TDAttachmentView.swift in Sources */,
 				3CE710CF2121A7E300EBF6A5 /* ToDosInteractor.swift in Sources */,
+				E266C7F5240D5DE2003E9195 /* addReminder.swift in Sources */,
 				3C043F37214D5E8B00A91AE3 /* ErrorPresenter.swift in Sources */,
 				3CD592A4212AC57B005BBF71 /* LogoutViewController.swift in Sources */,
 				3C7B4F00217A0686000D7FDB /* Location.swift in Sources */,

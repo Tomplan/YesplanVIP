@@ -15,7 +15,7 @@ import UserNotifications
 
 class RootViewController: UIViewController {
     private let notificationPublisher = NotificationPublisher()
-//    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+//    private let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
 
 //    private let calendarEvents = CalendarController()
     private var current: UIViewController

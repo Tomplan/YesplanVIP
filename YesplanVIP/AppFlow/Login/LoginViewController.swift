@@ -22,7 +22,7 @@ protocol LoginDisplayLogic: AnyObject
 
 class LoginViewController: UIViewController, LoginDisplayLogic
 {
-    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    private let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
 
   var interactor: LoginBusinessLogic?
   var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?

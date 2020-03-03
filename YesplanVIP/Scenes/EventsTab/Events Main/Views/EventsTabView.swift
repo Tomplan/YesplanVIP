@@ -16,7 +16,7 @@ class EventsTabView: UIView {
 
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
-//    let spinner = UIActivityIndicatorView(style: .gray)
+//    let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageTitle: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

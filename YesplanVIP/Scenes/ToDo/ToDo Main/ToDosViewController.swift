@@ -13,6 +13,7 @@
 import UIKit
 import UserNotifications
 import SwipeCellKit
+import EventKitUI
 
 protocol ToDosDisplayLogic: class
 {
@@ -22,6 +23,48 @@ protocol ToDosDisplayLogic: class
 class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout, ToDosDisplayLogic
 {
     private let notificationPublisher = NotificationPublisher()
+    
+//    private static let
+        var calendarEventStore = EKEventStore()
+        var remindersEventStore = EKEventStore()
+//    var eventStore: EKEventStore!
+    var reminders: [EKReminder]!
+//    var eventStore = EKEventStore()
+    var calendars:Array<EKCalendar> = []
+    
+    func setReminder() {
+        let reminder = EKReminder(eventStore:
+            self.remindersEventStore)
+        reminder.title = "Go to the store and buy milk"
+        reminder.calendar = remindersEventStore.defaultCalendarForNewReminders()
+        do {
+            try remindersEventStore.save(reminder,
+                                commit: true)
+        } catch let error {
+            print("Reminder failed with error \(error.localizedDescription)")
+        }
+        print("reminderSet")
+         // Create the alert controller
+                let alertController = UIAlertController(title: "Reminder Created Successfully", message: "Open Reminders?", preferredStyle: .alert)
+
+                // Create the actions
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                    UIAlertAction in
+                    NSLog("OK Pressed")
+//                    let url = URL(string: "x-apple-reminderkit://")
+//                        UIApplication.shared.open(url!, options: [:]) { (finish) in }
+
+        //            self.reminderText.text = ""
+        //            self.activityIndicator.stopAnimating()
+                }
+
+                // Add the actions
+                alertController.addAction(okAction)
+
+                // Present the controller
+                self.present(alertController, animated: true, completion: nil)
+
+    }
     
     var defaultOptions = SwipeOptions()
     var isSwipeRightEnabled = true
@@ -57,7 +100,7 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         let interactor = ToDosInteractor()
         let presenter = ToDosPresenter()
         let router = ToDosRouter()
-    viewController.interactor = interactor
+        viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
@@ -82,6 +125,35 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Reminders:
+         // get permission
+//        eventStore.requestAccess(
+//            to: EKEntityType.event, completion: {(granted, error) in
+//                if !granted {
+//                    print("Access to store not granted")
+//                    print(error!.localizedDescription)
+//                } else {
+//                    print("Access granted")
+//                    print(self.eventStore)
+////                    self.createReminder(in: self.eventStore)
+//                }
+//        })
+            //                   if !granted {
+            //                       print("Access to store not granted")
+            //                   }})
+//           eventStore.requestAccess(to: EKEntityType.reminder, completion:
+//               {(granted, error) in
+//                   if !granted {
+//                       print("Access to store not granted")
+//                   }
+//           })
+
+        // you need calender's permission for the reminders as they live there
+//           calendars = eventStore.calendars(for: EKEntityType.reminder)
+
+//           for calendar in calendars as [EKCalendar] {
+//               print("Calendar = \(calendar.title)")
+//           }
         
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
@@ -101,9 +173,69 @@ class ToDosViewController: UIViewController, UICollectionViewDelegateFlowLayout,
         doSomething()
         v.refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         v.collectionView.dataSource = self
+        
+//        let tabOrder = (UserDefaults.standard.object(forKey: "tabOrder") as? [Int]) // back in if more tabs needed!!!
+
+//        if let count = MainTabBarViewController.tabBar.items?.count {
+//               for i in 0...(count-1) {
+//                   let imageNameForSelectedState   = arrayOfImageNameForSelectedState[i]
+//                   let imageNameForUnselectedState = arrayOfImageNameForUnselectedState[i]
+//
+//                   self.tabBar.items?[i].selectedImage = UIImage(named: imageNameForSelectedState)?.withRenderingMode(.alwaysOriginal)
+//                   self.tabBar.items?[i].image = UIImage(named: imageNameForUnselectedState)?.withRenderingMode(.alwaysOriginal)
+//               }
+//           }
+//
+//           let selectedColor   = UIColor(red: 246.0/255.0, green: 155.0/255.0, blue: 13.0/255.0, alpha: 1.0)
+//           let unselectedColor = UIColor(red: 16.0/255.0, green: 224.0/255.0, blue: 223.0/255.0, alpha: 1.0)
+//
+//           UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: unselectedColor], for: .normal)
+//           UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: selectedColor], for: .selected)
+
+//        MainTabBar.Something
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // 1
+//               self. = EKEventStore()
+//               self.reminders = [EKReminder]()
+        self.remindersEventStore.reset()
+        self.remindersEventStore.requestAccess(to: EKEntityType.reminder, completion:
+                {(granted, error) in
+                    if !granted {
+                        print("Access to store not granted")
+                    }
+            })
+        let predicate = self.remindersEventStore.predicateForReminders(in: nil)
+        self.remindersEventStore.fetchReminders(matching: predicate, completion: { (reminders: [EKReminder]?) -> Void in
+            self.reminders = reminders
+//            print(self.reminders as Any)
+                DispatchQueue.main.async {
+                    // code
+            }
+        })
+         // you need calender's permission for the reminders as they live there
+//            calendars = eventStore.calendars(for: EKEntityType.reminder)
+//
+//            for calendar in calendars as [EKCalendar] {
+//                print("Calendar = \(calendar.title)")
+//            }
+
+        
+//               if granted{
+//                       // 2
+//                       let predicate = self.eventStore.predicateForRemindersInCalendars(nil)
+//                       self.eventStore.fetchRemindersMatchingPredicate(predicate, completion: { (reminders: [EKReminder]?) -> Void in
+//
+//                           self.reminders = reminders
+//                           dispatch_async(dispatch_get_main_queue()) {
+//                               self.tableView.reloadData()
+//                       }
+//                   })
+//               }else{
+//                       print("The app is not permitted to access reminders, make sure to grant permission in the settings and try again")
+//               })
+                
         doSomething()
         v.collectionView.dataSource = self
         v.collectionView.delegate = self
@@ -209,12 +341,12 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         print("action")
-        let toDo = displayedToDos[indexPath.row]
+        let toDo = displayedToDos[indexPath.section].toDos[indexPath.row]
         
         if orientation == .left {
             guard isSwipeRightEnabled else { return nil }
             print("swipe right")
-            print(toDo.date)
+            print(toDo.name ?? "TO DO")
 //            let read = SwipeAction(style: .default, title: nil) { action, indexPath in
 //                let updatedStatus = !email.unread
 //                email.unread = updatedStatus
@@ -234,8 +366,38 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
             print("swipe left")
 
             let flag = SwipeAction(style: .default, title: nil) { action, indexPath in
-            print("flag")
-            
+            print("flag", indexPath)
+                let reminder = EKReminder(eventStore: self.remindersEventStore)
+                let dateFormatter = ISO8601DateFormatter()
+                let calendar = Calendar.current
+                
+                print(toDo.name)
+                reminder.title = toDo.name ?? "TO DO"
+                
+                print(toDo.due)
+                let dueDate = dateFormatter.date(from:toDo.due ?? "")!
+                let dueComponents = calendar.dateComponents([.year, .month, .day, .hour], from: dueDate)
+                reminder.dueDateComponents = dueComponents
+                
+                print(toDo.description)
+                reminder.notes = toDo.description
+                
+                print(toDo.start)
+                let startDate = dateFormatter.date(from:toDo.start ?? "")!
+                let startComponents = calendar.dateComponents([.year, .month, .day, .hour], from: startDate)
+                reminder.startDateComponents = startComponents
+
+                print(toDo.url)
+                reminder.url = toDo.url
+                
+                let alarm = EKAlarm(absoluteDate: startDate)
+                reminder.addAlarm(alarm)
+                
+                let alarmMinusOneDay = EKAlarm(absoluteDate: dueDate.addingTimeInterval(-3600*24))
+                reminder.addAlarm(alarmMinusOneDay)
+
+                self.createReminder(reminder: reminder)
+
 //          *****************************************************
             // TODO Add user notification
 //          *****************************************************
@@ -326,6 +488,106 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
             action.font = .systemFont(ofSize: 13)
             action.transitionDelegate = ScaleTransition.default
         }
+    }
+    
+    func createReminder(reminder: EKReminder) {
+//    DispatchQueue.main.async {
+//        let reminder = EKReminder(eventStore: eventStore)
+
+//        reminder.title = reminderText.text! + " " + "(Pose Beauty Salon)"
+//        reminder.title = reminderText
+        //
+        print("reminder.completionDate: ", reminder.completionDate)
+        print("reminder.dueDateComponents: ", reminder.dueDateComponents)
+        print("reminder.isCompleted: ", reminder.isCompleted)
+        print("reminder.priority: ", reminder.priority)
+        print("reminder.startDateComponents: ", reminder.startDateComponents)
+        print("reminder.alarms: ", reminder.alarms)
+        print("reminder.attendees: ", reminder.attendees)
+        print("reminder.calendar: ", reminder.calendar)
+        print("reminder.calendarItemExternalIdentifier: ", reminder.calendarItemExternalIdentifier)
+        print("reminder.calendarItemIdentifier: ", reminder.calendarItemIdentifier)
+        print("reminder.creationDate: ", reminder.creationDate)
+        print("reminder.debugDescription: ", reminder.debugDescription)
+        print("reminder.description: ", reminder.description)
+        print("reminder.hasAlarms: ", reminder.hasAlarms)
+        print("reminder.hasAttendees: ", reminder.hasAttendees)
+        print("reminder.hasChanges: ", reminder.hasChanges)
+        print("reminder.hasNotes: ", reminder.hasNotes)
+        print("reminder.hasRecurrenceRules: ", reminder.hasRecurrenceRules)
+        print("reminder.isNew: ", reminder.isNew)
+        print("reminder.isProxy: ", reminder.isProxy())
+        print("reminder.lastModifiedDate: ", reminder.lastModifiedDate)
+        print("reminder.location: ", reminder.location)
+        print("reminder.notes: ", reminder.notes)
+        print("reminder.recurrenceRules: ", reminder.recurrenceRules)
+        print("reminder.timeZone: ", reminder.timeZone)
+        print("reminder.title: ", reminder.title)
+        print("reminder.url: ", reminder.url)
+        
+
+        reminder.calendar = remindersEventStore.defaultCalendarForNewReminders()
+//        let date = Date()
+//
+//        let alarm = EKAlarm(absoluteDate: date)
+//        reminder.addAlarm(alarm)
+//
+//        let earlierDate = date.addingTimeInterval(-3600*24)
+//        let earlierAlarm = EKAlarm(absoluteDate: earlierDate)
+//        reminder.addAlarm(earlierAlarm)
+//
+//        reminder.startDate = date
+//        reminder.endDate = date.addingTimeInterval(3600)
+//
+        do {
+            try remindersEventStore.save(reminder, commit: true)
+//            (reminder, span: .thisEvent, commit: true)
+        } catch let error  {
+            print("Reminder failed with error \(error.localizedDescription)")
+            return
+        }
+        
+        print(reminder.calendarItemIdentifier)
+        let alertController = UIAlertController(title: "Reminder Created Successfully", message: "Open Reminders?", preferredStyle: .alert)
+        // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
+            NSLog("OK Pressed")
+            let url = URL(string: "x-apple-reminderkit:/\(reminder.calendarItemIdentifier)")
+            UIApplication.shared.open(url!, options: [:]) { (finish) in }
+                        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { UIAlertAction in
+            NSLog("Cancelled")}
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+
+        switch action
+        {
+        case .saved:
+            // Create the alert controller
+            let alertController = UIAlertController(title: "Reminder Created Successfully", message: "Open Reminders?", preferredStyle: .alert)
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
+                NSLog("OK Pressed")
+                let url = URL(string: "x-apple-reminderkit://")
+                UIApplication.shared.open(url!, options: [:]) { (finish) in }
+                            }
+            // Add the actions
+            alertController.addAction(okAction)
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+
+        default:
+            self.dismiss(animated: true, completion: nil)
+        }
+
     }
 }
 //

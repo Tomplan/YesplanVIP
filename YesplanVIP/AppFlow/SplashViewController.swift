@@ -14,7 +14,7 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
-//    private let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+//    private let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     override func viewDidLoad() {
 

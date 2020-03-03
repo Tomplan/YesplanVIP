@@ -17,7 +17,7 @@ class EventsDetailView: UIView {
     
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
-    let spinner = UIActivityIndicatorView(style: .gray)
+    let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     
     lazy var collectionView : UICollectionView = {
         

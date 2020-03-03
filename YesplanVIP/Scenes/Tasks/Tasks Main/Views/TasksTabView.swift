@@ -15,7 +15,7 @@ class TasksTabView: UIView {
     
     // MARK:- Properties:
     let refreshControl = UIRefreshControl()
-    let spinner = UIActivityIndicatorView(style: .whiteLarge)
+    let spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     lazy var collectionView : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
