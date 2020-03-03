@@ -13,6 +13,7 @@
 import UIKit
 import UserNotifications
 import SwipeCellKit
+import EventKitUI
 
 protocol TasksDisplayLogic: class
 {
@@ -21,7 +22,10 @@ protocol TasksDisplayLogic: class
 
 class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout, TasksDisplayLogic
 {
-    
+     var calendarEventStore = EKEventStore()
+     var remindersEventStore = EKEventStore()
+     var reminders: [EKReminder]!
+ 
     var defaultOptions = SwipeOptions()
     var isSwipeRightEnabled = true
     var buttonDisplayMode: ButtonDisplayMode = .titleAndImage
@@ -103,6 +107,19 @@ class TasksViewController: UIViewController, UICollectionViewDelegateFlowLayout,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    self.remindersEventStore.reset()
+    self.remindersEventStore.requestAccess(to: EKEntityType.reminder, completion: {(granted, error) in if !granted {
+        print("Access to store not granted")}
+        })
+        let predicate = self.remindersEventStore.predicateForReminders(in: nil)
+    self.remindersEventStore.fetchReminders(matching: predicate, completion: { (reminders: [EKReminder]?) -> Void in
+        self.reminders = reminders
+        //            print(self.reminders as Any)
+        DispatchQueue.main.async {
+                            // code
+                    }
+                })
+        
         getTasks()
         v.collectionView.dataSource = self
         v.collectionView.delegate = self 
@@ -161,12 +178,12 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
     
     func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         print("action")
-        let task = displayedTasks[indexPath.row]
+        let task = displayedTasks[indexPath.section].tasks[indexPath.row]
         
         if orientation == .left {
             guard isSwipeRightEnabled else { return nil }
             print("swipe right")
-            print(task.date)
+//            print(task.name ?? "")
 //            let read = SwipeAction(style: .default, title: nil) { action, indexPath in
 //                let updatedStatus = !email.unread
 //                email.unread = updatedStatus
@@ -186,7 +203,38 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
             print("swipe left")
 
                 let flag = SwipeAction(style: .default, title: nil) { action, indexPath in
-                        print("flag")
+                     
+                    let reminder = EKReminder(eventStore: self.remindersEventStore)
+                    let dateFormatter = ISO8601DateFormatter()
+                    let calendar = Calendar.current
+                    
+                    print(task.name)
+                    reminder.title = task.name ?? "TO DO"
+                    
+                    print(task.due)
+                    let dueDate = dateFormatter.date(from:task.due ?? "")!
+                    let dueComponents = calendar.dateComponents([.year, .month, .day, .hour], from: dueDate)
+                    reminder.dueDateComponents = dueComponents
+                    
+                    print(task.description)
+                    reminder.notes = task.description
+                    
+                    print(task.start)
+                    let startDate = dateFormatter.date(from:task.start ?? "")!
+                    let startComponents = calendar.dateComponents([.year, .month, .day, .hour], from: startDate)
+                    reminder.startDateComponents = startComponents
+
+                    print(task.url)
+                    reminder.url = task.url
+                    
+                    let alarm = EKAlarm(absoluteDate: startDate)
+                    reminder.addAlarm(alarm)
+                    
+                    let alarmMinusOneDay = EKAlarm(absoluteDate: dueDate.addingTimeInterval(-3600*24))
+                    reminder.addAlarm(alarmMinusOneDay)
+
+                    self.createReminder(reminder: reminder)
+
                         
             //          *****************************************************
                         // TODO Add user notification
@@ -279,4 +327,30 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
             action.transitionDelegate = ScaleTransition.default
         }
     }
+    
+     func createReminder(reminder: EKReminder) {            do {
+                try remindersEventStore.save(reminder, commit: true)
+            } catch let error  {
+                print("Reminder failed with error \(error.localizedDescription)")
+                return
+            }
+            
+            print(reminder.calendarItemIdentifier)
+            let alertController = UIAlertController(title: "Reminder Created Successfully", message: "Open Reminders?", preferredStyle: .alert)
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
+                NSLog("OK Pressed")
+                let url = URL(string: "x-apple-reminderkit:/\(reminder.calendarItemIdentifier)")
+                UIApplication.shared.open(url!, options: [:]) { (finish) in }
+                            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { UIAlertAction in
+                NSLog("Cancelled")}
+            // Add the actions
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+
+            // Present the controller
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
 }
