@@ -212,7 +212,7 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
                     reminder.title = task.name ?? "TO DO"
                     
                     print(task.due)
-                    let dueDate = dateFormatter.date(from:task.due ?? "")!
+                    let dueDate = dateFormatter.date(from:task.due ?? (String(describing: Date())))!
                     let dueComponents = calendar.dateComponents([.year, .month, .day, .hour], from: dueDate)
                     reminder.dueDateComponents = dueComponents
                     
@@ -220,7 +220,7 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
                     reminder.notes = task.description
                     
                     print(task.start)
-                    let startDate = dateFormatter.date(from:task.start ?? "")!
+                    if let startDate = dateFormatter.date(from:task.start ?? (String(describing: Date()))) {
                     let startComponents = calendar.dateComponents([.year, .month, .day, .hour], from: startDate)
                     reminder.startDateComponents = startComponents
 
@@ -232,7 +232,7 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
                     
                     let alarmMinusOneDay = EKAlarm(absoluteDate: dueDate.addingTimeInterval(-3600*24))
                     reminder.addAlarm(alarmMinusOneDay)
-
+                    }
                     self.createReminder(reminder: reminder)
 
                         
@@ -328,7 +328,11 @@ extension TasksViewController: SwipeCollectionViewCellDelegate {
         }
     }
     
-     func createReminder(reminder: EKReminder) {            do {
+     func createReminder(reminder: EKReminder) {
+        
+        reminder.calendar = remindersEventStore.defaultCalendarForNewReminders()
+
+        do {
                 try remindersEventStore.save(reminder, commit: true)
             } catch let error  {
                 print("Reminder failed with error \(error.localizedDescription)")

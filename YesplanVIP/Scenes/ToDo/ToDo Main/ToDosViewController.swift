@@ -292,7 +292,7 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
                 reminder.title = toDo.name ?? "TO DO"
                 
                 print(toDo.due)
-                let dueDate = dateFormatter.date(from:toDo.due ?? "")!
+                let dueDate = dateFormatter.date(from:toDo.due ?? (String(describing: Date())))!
                 let dueComponents = calendar.dateComponents([.year, .month, .day, .hour], from: dueDate)
                 reminder.dueDateComponents = dueComponents
                 
@@ -300,7 +300,7 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
                 reminder.notes = toDo.description
                 
                 print(toDo.start)
-                let startDate = dateFormatter.date(from:toDo.start ?? "")!
+                if let startDate = dateFormatter.date(from:toDo.start ?? (String(describing: Date()))) {
                 let startComponents = calendar.dateComponents([.year, .month, .day, .hour], from: startDate)
                 reminder.startDateComponents = startComponents
 
@@ -312,7 +312,7 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
                 
                 let alarmMinusOneDay = EKAlarm(absoluteDate: dueDate.addingTimeInterval(-3600*24))
                 reminder.addAlarm(alarmMinusOneDay)
-
+                }
                 self.createReminder(reminder: reminder)
 
 //          *****************************************************
@@ -443,7 +443,7 @@ extension ToDosViewController: SwipeCollectionViewCellDelegate {
 //        print("reminder.url: ", reminder.url)
         
 
-//        reminder.calendar = remindersEventStore.defaultCalendarForNewReminders()
+        reminder.calendar = remindersEventStore.defaultCalendarForNewReminders()
 //
 //        var predicate: NSPredicate? = remindersEventStore.predicateForReminders(in: nil)
 //        if let aPredicate = predicate {
